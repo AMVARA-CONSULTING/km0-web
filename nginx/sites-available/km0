@@ -1,0 +1,49 @@
+# Kilómetro 0 Digital — landing estática (Docker :9180)
+# Dominio: km0.amvara.de
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name km0.amvara.de;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+        allow all;
+        try_files $uri =404;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+
+    server_name km0.amvara.de;
+
+    ssl_certificate     /etc/letsencrypt/live/km0.amvara.de/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/km0.amvara.de/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+
+    client_max_body_size 1m;
+
+    location / {
+        proxy_pass http://127.0.0.1:9180;
+        proxy_http_version 1.1;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    add_header X-Frame-Options SAMEORIGIN always;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+}

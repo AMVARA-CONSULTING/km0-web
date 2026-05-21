@@ -1,0 +1,63 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-navy antialiased;
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply px-6 py-24 md:px-12 md:py-32 lg:px-20;
+  }
+
+  .heading-display {
+    @apply text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl;
+  }
+
+  .heading-section {
+    @apply text-3xl font-semibold tracking-tight md:text-4xl;
+  }
+
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-gradient px-8 py-3 text-sm font-medium text-white shadow-lg transition-all duration-500 ease-apple hover:scale-[1.02] hover:shadow-xl;
+  }
+
+  .reveal {
+    @apply translate-y-6 opacity-0 transition-all duration-[600ms] ease-apple;
+  }
+
+  .reveal.is-visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .chip {
+    @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-sm font-medium text-navy/80 shadow-sm;
+  }
+}

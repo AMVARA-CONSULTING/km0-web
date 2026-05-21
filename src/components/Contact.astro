@@ -1,0 +1,26 @@
+---
+const email = 'contacto@amvara.de';
+---
+
+<section id="contacto" class="section-pad bg-white">
+  <div class="mx-auto max-w-2xl text-center">
+    <p data-reveal class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
+      Contacto
+    </p>
+    <h2 data-reveal data-delay="80" class="heading-section mb-8 text-navy">
+      ¿Hablamos?
+    </h2>
+    <p data-reveal data-delay="160" class="mb-10 text-lg text-navy/60">
+      Estamos construyendo el futuro digital desde el origen. Escríbenos para colaborar
+      o conocer el proyecto.
+    </p>
+    <a
+      data-reveal
+      data-delay="240"
+      href={`mailto:${email}`}
+      class="btn-primary"
+    >
+      {email}
+    </a>
+  </div>
+</section>

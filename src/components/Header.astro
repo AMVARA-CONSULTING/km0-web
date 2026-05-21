@@ -1,0 +1,44 @@
+---
+const nav = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#valores', label: 'Valores' },
+  { href: '#significado', label: 'Significado' },
+  { href: '#mision', label: 'Misión' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/80 backdrop-blur-md"
+>
+  <nav
+    class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12"
+  >
+    <a href="#inicio" class="flex items-center gap-3 text-white">
+      <img
+        src="/brand/logo.png"
+        alt="Kilómetro 0 Digital"
+        width="44"
+        height="44"
+        class="h-10 w-10 shrink-0 object-contain sm:h-11 sm:w-11"
+      />
+      <span class="hidden text-sm font-semibold tracking-wide sm:inline">
+        Kilómetro <span class="text-gradient font-bold">0</span> Digital
+      </span>
+    </a>
+    <ul class="flex gap-6 text-sm text-white/70">
+      {
+        nav.map((item) => (
+          <li class="hidden md:block">
+            <a
+              href={item.href}
+              class="transition-colors duration-300 hover:text-white"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

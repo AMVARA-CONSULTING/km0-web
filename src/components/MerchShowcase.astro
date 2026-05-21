@@ -1,0 +1,83 @@
+---
+---
+
+<section class="section-pad overflow-hidden bg-navy text-white">
+  <div class="mx-auto max-w-6xl">
+    <p data-reveal class="mb-4 text-center text-sm font-medium uppercase tracking-[0.2em] text-white/50">
+      Aplicaciones
+    </p>
+    <h2 data-reveal data-delay="80" class="heading-section mb-20 text-center">
+      Identidad en <span class="text-gradient">cada pantalla</span>
+    </h2>
+
+    <div
+      data-reveal
+      data-delay="160"
+      class="relative mx-auto flex max-w-4xl flex-col items-center justify-center gap-12 md:flex-row md:gap-16"
+    >
+      <!-- Laptop mockup -->
+      <div class="device-laptop relative w-full max-w-xl">
+        <div class="rounded-t-xl bg-navy border border-white/10 p-1 shadow-2xl">
+          <div
+            class="flex aspect-[16/10] flex-col items-center justify-center rounded-t-lg bg-gradient-to-b from-navy to-[#0f1a2e]"
+          >
+            <img
+              src="/brand/logo.png"
+              alt="KM0 en laptop"
+              width="144"
+              height="144"
+              class="mb-4 h-28 w-28 object-contain md:h-36 md:w-36"
+            />
+            <p class="text-lg font-semibold tracking-wide md:text-xl">
+              Kilómetro <span class="text-gradient">0</span> Digital
+            </p>
+          </div>
+        </div>
+        <div class="mx-auto h-3 w-[90%] rounded-b-lg bg-white/10"></div>
+        <div class="mx-auto mt-1 h-1 w-16 rounded-full bg-white/20"></div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="device-phone relative w-44 shrink-0 md:-mb-8 lg:w-48">
+        <div class="rounded-[2rem] border-4 border-white/15 bg-navy p-2 shadow-2xl">
+          <div
+            class="flex aspect-[9/16] flex-col items-center justify-center rounded-[1.5rem] bg-gradient-to-b from-navy to-[#0f1a2e] px-4"
+          >
+            <img
+              src="/brand/logo.png"
+              alt="KM0 en móvil"
+              width="80"
+              height="80"
+              class="mb-3 h-16 w-16 object-contain sm:h-20 sm:w-20"
+            />
+            <p class="text-center text-xs font-semibold leading-tight">
+              KM<span class="text-gradient">0</span> Digital
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .device-laptop,
+  .device-phone {
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .device-laptop:hover {
+    transform: translateY(-4px);
+  }
+
+  .device-phone:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .device-laptop:hover,
+    .device-phone:hover {
+      transform: none;
+    }
+  }
+</style>

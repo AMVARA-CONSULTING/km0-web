@@ -1,0 +1,30 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-navy/10 bg-surface px-6 py-12 md:px-12">
+  <div
+    class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row"
+  >
+    <div class="flex items-center gap-3">
+      <img
+        src="/brand/logo.png"
+        alt=""
+        width="40"
+        height="40"
+        class="h-10 w-10 object-contain"
+      />
+      <span class="text-sm font-medium text-navy/80">
+        Kilómetro 0 Digital
+      </span>
+    </div>
+    <p class="text-sm text-navy/50">
+      © {year} Kilómetro 0 Digital. Todos los derechos reservados.
+    </p>
+    <nav class="flex gap-6 text-sm text-navy/50">
+      <a href="#inicio" class="transition-colors hover:text-navy">Inicio</a>
+      <a href="#mision" class="transition-colors hover:text-navy">Misión</a>
+      <a href="#contacto" class="transition-colors hover:text-navy">Contacto</a>
+    </nav>
+  </div>
+</footer>

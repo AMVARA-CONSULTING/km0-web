@@ -1,0 +1,14 @@
+:root {
+  --color-navy: #0b1220;
+  --color-surface: #f5f5f7;
+  --color-white: #ffffff;
+  --gradient-brand: linear-gradient(
+    135deg,
+    #ff5f2e 0%,
+    #e040a0 35%,
+    #7b3fe4 65%,
+    #007bff 100%
+  );
+  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-reveal: 600ms;
+}

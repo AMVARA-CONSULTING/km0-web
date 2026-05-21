@@ -1,0 +1,9 @@
+name: km0
+
+services:
+  km0-web:
+    build: .
+    container_name: km0-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:9180:80"

@@ -1,0 +1,77 @@
+---
+---
+
+<section
+  id="inicio"
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy px-6 pt-24 text-center text-white"
+>
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(123,63,228,0.15)_0%,_transparent_70%)]"
+  >
+  </div>
+
+  <div data-reveal class="relative z-10 max-w-4xl">
+    <div class="logo-pulse mx-auto mb-12 w-48 sm:w-56 md:w-72 lg:w-80">
+      <img
+        src="/brand/logo.png"
+        alt="Logo Kilómetro 0 Digital"
+        width="320"
+        height="320"
+        class="mx-auto h-auto w-full max-h-[min(46vh,24rem)] object-contain drop-shadow-2xl"
+      />
+    </div>
+
+    <p class="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/50">
+      Kilómetro 0 Digital
+    </p>
+
+    <h1 class="heading-display mb-6 leading-tight">
+      ORIGEN LOCAL.<br />
+      <span class="text-gradient">IMPACTO DIGITAL.</span>
+    </h1>
+
+    <p class="mx-auto max-w-xl text-lg font-light tracking-wide text-white/70 md:text-xl">
+      CONECTA. TRANSFORMA. IMPULSA.
+    </p>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-4">
+      <a href="#mision" class="btn-primary">Descubre más</a>
+      <a
+        href="#contacto"
+        class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-sm font-medium text-white transition-all duration-500 ease-apple hover:border-white/40 hover:bg-white/5"
+      >
+        Contactar
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 5v14M5 12l7 7 7-7" />
+    </svg>
+  </div>
+</section>
+
+<style>
+  .logo-pulse {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 20px rgba(123, 63, 228, 0.3));
+    }
+    50% {
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 40px rgba(0, 123, 255, 0.4));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-pulse {
+      animation: none;
+    }
+  }
+</style>

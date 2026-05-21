@@ -16,6 +16,10 @@ Translations live in **`src/i18n/{es,ca,en}.json`**; default language is Spanish
 
 (Project docs and this README are mainly in English; on-site wording follows each locale.)
 
+## Version
+
+RELEASE version lives in **`VERSION`** (semver, one line). When you bump releases, keep it in sync with **`package.json`** `version`.
+
 ## Locales
 
 | Language | Path |

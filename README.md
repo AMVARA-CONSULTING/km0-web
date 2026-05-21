@@ -1,16 +1,63 @@
 # Kilómetro 0 Digital — Web
 
-Landing estática del proyecto KM0, construida con **Astro** y servida en producción con **Docker + Nginx**.
+Landing estática del proyecto **Kilómetro 0 Digital**: origen local, impacto digital.
 
-**URL pública:** https://km0.amvara.de
+**Sitio en producción:** [https://km0.amvara.de](https://km0.amvara.de)
 
-## Inicio rápido (desarrollo local con Docker)
+![Vista previa del hero — Kilómetro 0 Digital](docs/preview-hero.png)
+
+## Sobre el proyecto
+
+KM0 Digital conecta personas, ideas y oportunidades desde el punto de origen. Esta web es la presencia pública del proyecto: una sola página con secciones informativas, identidad de marca (gradiente naranja → magenta → púrpura → azul) y animaciones suaves al hacer scroll.
+
+**Mensaje principal:** *ORIGEN LOCAL. IMPACTO DIGITAL.* — *CONECTA. TRANSFORMA. IMPULSA.*
+
+## Stack
+
+| Capa | Tecnología |
+|------|------------|
+| Frontend | [Astro](https://astro.build) 5 + [Tailwind CSS](https://tailwindcss.com) |
+| Build | Node 22 (multi-stage Docker) |
+| Servidor estático | nginx (Alpine) en contenedor |
+| Producción | Docker Compose → `127.0.0.1:9180` detrás de Nginx host (TLS) |
+
+## Estructura del repositorio
+
+```
+├── src/
+│   ├── components/     # Hero, Valores, Significado, Misión, Merch, Contacto…
+│   ├── layouts/
+│   ├── pages/
+│   ├── scripts/        # scroll-reveal (Intersection Observer)
+│   └── styles/
+├── public/brand/       # logo.png, brand-guide.png
+├── docs/
+│   ├── brand-tokens.md
+│   ├── runbook.md      # operación en servidor
+│   └── preview-hero.png
+├── nginx/              # config contenedor + plantilla vhost host
+├── Dockerfile
+└── docker-compose.yml
+```
+
+## Inicio rápido
+
+### Con Docker (recomendado)
 
 ```bash
-cd /opt/km0-web
+git clone git@github.com:Luipy56/km0-web.git
+cd km0-web
 docker compose build
 docker compose up -d
 curl -sI http://127.0.0.1:9180/
+```
+
+### Desarrollo local (Node en el host)
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # salida en dist/
 ```
 
 ## Editar contenido
@@ -22,16 +69,17 @@ curl -sI http://127.0.0.1:9180/
 | Logo e imágenes | `public/brand/` |
 | Dominio / SEO | `astro.config.mjs` (`site`) |
 
-Tras editar, redeploy:
+Tras editar en producción:
 
 ```bash
-cd /opt/km0-web
 docker compose build && docker compose up -d
 ```
 
-## Documentación operativa
+## Despliegue en servidor
 
-Ver **[docs/runbook.md](docs/runbook.md)** para Nginx, TLS, puertos, troubleshooting y migración de OpenCloud a `cloud.amvara.de`.
+El reverse proxy del host termina TLS y hace proxy a `127.0.0.1:9180`. Plantilla Nginx: `nginx/sites-available/km0`.
+
+Documentación operativa completa: **[docs/runbook.md](docs/runbook.md)** (TLS, puertos, troubleshooting, coexistencia con OpenCloud en `cloud.amvara.de`).
 
 ## Arquitectura
 
@@ -39,4 +87,8 @@ Ver **[docs/runbook.md](docs/runbook.md)** para Nginx, TLS, puertos, troubleshoo
 Internet → Nginx (km0.amvara.de:443) → 127.0.0.1:9180 (contenedor km0-web)
 ```
 
-OpenCloud (almacenamiento) vive en **https://cloud.amvara.de** (requiere registro DNS A).
+OpenCloud (almacenamiento de archivos) está en **[https://cloud.amvara.de](https://cloud.amvara.de)** — dominio separado del sitio de marketing.
+
+## Licencia
+
+Proyecto privado — © Kilómetro 0 Digital.

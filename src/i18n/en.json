@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "Kilometer 0 Digital",
+    "description": "Local origin. Digital impact. Connect, transform, and boost from the starting point."
+  },
+  "brandName": "Kilometer 0 Digital",
+  "brandNameShort": "KM0 Digital",
+  "brandMark": {
+    "before": "Kilometer ",
+    "after": " Digital"
+  },
+  "nav": {
+    "inicio": "Home",
+    "valores": "Values",
+    "significado": "Meaning",
+    "mision": "Mission",
+    "contacto": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Kilometer 0 Digital",
+    "titleLine1": "LOCAL ORIGIN.",
+    "titleGradient": "DIGITAL IMPACT.",
+    "tagline": "CONNECT. TRANSFORM. BOOST.",
+    "ctaPrimary": "Learn more",
+    "ctaSecondary": "Get in touch",
+    "logoAlt": "Kilometer 0 Digital logo",
+    "laptopAlt": "Kilometer 0 Digital on laptop",
+    "mobileAlt": "Kilometer 0 Digital on mobile"
+  },
+  "values": {
+    "eyebrow": "Our values",
+    "headingBefore": "A brand that is ",
+    "headingAccent": "close-knit",
+    "headingAfter": " and digital",
+    "chips": ["Modern", "Accessible", "Approachable", "Digital"]
+  },
+  "meaning": {
+    "eyebrow": "Meaning",
+    "heading": "More than a logo",
+    "items": [
+      {
+        "title": "Starting point",
+        "desc": "The pin marks the departure point: Kilometre Zero, where everything begins."
+      },
+      {
+        "title": "Outreach",
+        "desc": "Signal waves symbolise digital reach and how ideas spread."
+      },
+      {
+        "title": "Network",
+        "desc": "Connected nodes stand for people, ideas, and opportunities linked together."
+      },
+      {
+        "title": "Local transformation",
+        "desc": "Ripples at the base evoke local impact with global resonance."
+      }
+    ]
+  },
+  "mission": {
+    "eyebrow": "Mission",
+    "heading": "Born at the origin",
+    "body": "Kilometer 0 Digital starts at the origin and expands by connecting people, ideas, and opportunities to build a more accessible and innovative digital future."
+  },
+  "merch": {
+    "eyebrow": "Applications",
+    "headingBefore": "Identity on ",
+    "headingGradient": "every screen"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Shall we talk?",
+    "body": "We're building the digital future from the origin. Write to us to collaborate or learn about the project.",
+    "email": "contacto@amvara.de"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

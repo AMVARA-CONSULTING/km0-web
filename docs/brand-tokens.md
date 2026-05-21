@@ -23,6 +23,8 @@
 - **Values:** Moderna · Accesible · Cercana · Digital
 - **Mission:** Kilómetro 0 Digital nace en el punto de origen y se expande conectando personas, ideas y oportunidades para construir un futuro digital más accesible e innovador.
 
+Catalan and English UI strings mirror this content in **`src/i18n/ca.json`** and **`src/i18n/en.json`**.
+
 ## Assets
 
 | Asset | Path |

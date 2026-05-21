@@ -1,0 +1,38 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Values from '../components/Values.astro';
+import Meaning from '../components/Meaning.astro';
+import Mission from '../components/Mission.astro';
+import MerchShowcase from '../components/MerchShowcase.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const siteRoot = Astro.site ?? new URL('https://km0.amvara.de');
+const canonicalUrl =
+  locale === 'es'
+    ? new URL('/', siteRoot).href
+    : new URL(`${locale}/`, siteRoot).href;
+---
+
+<Layout locale={locale} messages={messages} canonicalUrl={canonicalUrl}>
+  <Header locale={locale} messages={messages} />
+  <main>
+    <Hero locale={locale} messages={messages} />
+    <Values messages={messages} />
+    <Meaning messages={messages} />
+    <Mission messages={messages} />
+    <MerchShowcase messages={messages} />
+    <Contact messages={messages} />
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

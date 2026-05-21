@@ -1,6 +1,28 @@
 # Operations Runbook — Kilómetro 0 Digital Web
 
-**URL:** https://km0.amvara.de · **Server:** `116.202.10.106` · **Deployed:** 2026-05-21
+**URL:** https://km0.amvara.de (`/` = español por defecto) · **Català:** `/ca/` · **English:** `/en/`
+
+**Server:** `116.202.10.106` · **Deployed:** 2026-05-21
+
+---
+
+## Locales (i18n)
+
+| Idioma | Ruta | Fichero de copy |
+|--------|------|-----------------|
+| Español (default) | `/` | `src/i18n/es.json` |
+| Català | `/ca/` | `src/i18n/ca.json` |
+| English | `/en/` | `src/i18n/en.json` |
+
+- Configuración Astro i18n: `astro.config.mjs` (`defaultLocale: es`, `prefixDefaultLocale: false`).
+- Vista única: `src/views/Landing.astro`; entradas en `src/pages/index.astro`, `src/pages/ca/index.astro`, `src/pages/en/index.astro`.
+- SEO (canonical, `hreflang`, `x-default`): `src/layouts/Layout.astro`.
+- Selector CA | ES | EN y anclas `/#id` o `/ca/#id`: `src/components/Header.astro` y `src/i18n/paths.ts`.
+- Sitemap con alternates: integración `@astrojs/sitemap` en `astro.config.mjs` (`i18n.locales` usa códigos BCP-47: `es`, `ca`, `en`).
+
+```bash
+curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/en/
+```
 
 ---
 
@@ -13,7 +35,7 @@
 | Container | `km0-web` | `127.0.0.1:9180→80` |
 | Nginx vhost | `km0.amvara.de` | `/etc/nginx/sites-available/km0` |
 | TLS | Let's Encrypt | `/etc/letsencrypt/live/km0.amvara.de/` |
-| OpenCloud (separate) | `cloud.amvara.de` → `:9200` | `/opt/opencloud/` |
+| OpenCloud (separate) | `cloud.km0.amvara.de` → `:9200` | `/opt/opencloud/` |
 
 ---
 
@@ -46,10 +68,11 @@ ss -tlnp | grep 9180
 
 ## Edit content (no backend)
 
-1. Change copy or layout in `src/components/` or `src/pages/index.astro`.
-2. Update brand reference in `docs/brand-tokens.md` if colors or slogans change.
-3. Replace images in `public/brand/` (keep filenames or update references in components).
-4. Run `docker compose build && docker compose up -d`.
+1. **Traducciones:** editar `src/i18n/es.json`, `ca.json` y `en.json` (mismas claves en los tres).
+2. **Layout o secciones:** `src/components/*.astro` o `src/views/Landing.astro`.
+3. **Marca / colores:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs`.
+4. **Imágenes:** `public/brand/`.
+5. Desplegar: `docker compose build && docker compose up -d`.
 
 ---
 
@@ -107,18 +130,18 @@ certbot certonly --webroot -w /var/www/certbot \
 
 ## OpenCloud coexistence
 
-The marketing site uses **km0.amvara.de**. OpenCloud was moved to **cloud.amvara.de** to avoid vhost conflict.
+The marketing site uses **km0.amvara.de**. OpenCloud was moved to **cloud.km0.amvara.de** to avoid vhost conflict.
 
 | Service | Hostname | Backend |
 |---------|----------|---------|
 | KM0 landing | `km0.amvara.de` | `127.0.0.1:9180` |
-| OpenCloud | `cloud.amvara.de` | `127.0.0.1:9200` |
+| OpenCloud | `cloud.km0.amvara.de` | `127.0.0.1:9200` |
 
-**Required:** DNS A record `cloud.amvara.de` → `116.202.10.106`, then:
+**Required:** DNS A record `cloud.km0.amvara.de` → `116.202.10.106`, then:
 
 ```bash
 certbot certonly --webroot -w /var/www/certbot \
-  -d cloud.amvara.de \
+  -d cloud.km0.amvara.de \
   --email admin@amvara.de --agree-tos --no-eff-email
 ```
 
@@ -130,7 +153,7 @@ docker compose down && docker compose up -d
 nginx -t && systemctl reload nginx
 ```
 
-Until DNS exists, OpenCloud uses a self-signed cert on `cloud.amvara.de` (`/etc/nginx/ssl/cloud-selfsigned.*`).
+Until DNS exists, OpenCloud uses a self-signed cert on `cloud.km0.amvara.de` (`/etc/nginx/ssl/cloud-selfsigned.*`).
 
 ---
 
@@ -159,6 +182,8 @@ journalctl -u nginx --since "1 hour ago" --no-pager
 ```
 /opt/km0-web/
 ├── src/                    # Astro source
+│   ├── i18n/               # es.json, ca.json, en.json, paths, types
+│   ├── views/              # Landing.astro (compartida)
 ├── public/brand/           # logo.png, brand-guide.png
 ├── Dockerfile
 ├── docker-compose.yml
@@ -177,4 +202,5 @@ journalctl -u nginx --since "1 hour ago" --no-pager
 | Date | Change |
 |------|--------|
 | 2026-05-21 | Initial deploy: Astro, Docker :9180, Nginx km0.amvara.de, LE TLS |
-| 2026-05-21 | OpenCloud moved to cloud.amvara.de (DNS + LE pending) |
+| 2026-05-21 | OpenCloud moved to cloud.km0.amvara.de (DNS + LE pending) |
+| 2026-05-21 | i18n: `/` ES, `/ca/` CA, `/en/` EN; JSON strings + hreflang |

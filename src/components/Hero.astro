@@ -1,4 +1,14 @@
 ---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+import { withHash } from '../i18n/paths';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
 ---
 
 <section
@@ -14,7 +24,7 @@
     <div class="logo-pulse mx-auto mb-12 w-48 sm:w-56 md:w-72 lg:w-80">
       <img
         src="/brand/logo.png"
-        alt="Logo Kilómetro 0 Digital"
+        alt={m.hero.logoAlt}
         width="320"
         height="320"
         class="mx-auto h-auto w-full max-h-[min(46vh,24rem)] object-contain drop-shadow-2xl"
@@ -22,25 +32,25 @@
     </div>
 
     <p class="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/50">
-      Kilómetro 0 Digital
+      {m.hero.eyebrow}
     </p>
 
     <h1 class="heading-display mb-6 leading-tight">
-      ORIGEN LOCAL.<br />
-      <span class="text-gradient">IMPACTO DIGITAL.</span>
+      {m.hero.titleLine1}<br />
+      <span class="text-gradient">{m.hero.titleGradient}</span>
     </h1>
 
     <p class="mx-auto max-w-xl text-lg font-light tracking-wide text-white/70 md:text-xl">
-      CONECTA. TRANSFORMA. IMPULSA.
+      {m.hero.tagline}
     </p>
 
     <div class="mt-12 flex flex-wrap justify-center gap-4">
-      <a href="#mision" class="btn-primary">Descubre más</a>
+      <a href={withHash(locale, 'mision')} class="btn-primary">{m.hero.ctaPrimary}</a>
       <a
-        href="#contacto"
+        href={withHash(locale, 'contacto')}
         class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-sm font-medium text-white transition-all duration-500 ease-apple hover:border-white/40 hover:bg-white/5"
       >
-        Contactar
+        {m.hero.ctaSecondary}
       </a>
     </div>
   </div>

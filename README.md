@@ -1,18 +1,30 @@
-# Kilómetro 0 Digital — Web
+# KM0 — Web
 
-Static landing site for **Kilómetro 0 Digital**: local origin, digital impact.
+Public marketing landing for **KM0 Digital** (Kilometer / Kilòmetre / Kilómetro 0 in localized site copy).
 
-**Production:** [https://km0.amvara.de](https://km0.amvara.de)
+**Production:** Spanish (default) [https://km0.amvara.de](https://km0.amvara.de) · Catalan [/ca/](https://km0.amvara.de/ca/) · English [/en/](https://km0.amvara.de/en/)
 
-![Hero preview — Kilómetro 0 Digital](docs/preview-hero.png)
+![Hero preview — KM0 Digital](docs/preview-hero.png)
 
 ## About
 
-KM0 Digital connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site: a single page with informational sections, brand identity (orange → magenta → purple → blue gradient), and smooth scroll animations.
+KM0 connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site with informational sections, brand identity (orange → magenta → purple → blue gradient), and smooth scroll animations.
+
+Translations live in **`src/i18n/{es,ca,en}.json`**; default language is Spanish at `/`.
 
 **Core message:** *ORIGEN LOCAL. IMPACTO DIGITAL.* — *CONECTA. TRANSFORMA. IMPULSA.*
 
-(Site copy is in Spanish; project documentation is in English.)
+(Project docs and this README are mainly in English; on-site wording follows each locale.)
+
+## Locales
+
+| Language | Path |
+|---------|------|
+| Spanish (default) | `/` |
+| Catalan | `/ca/` |
+| English | `/en/` |
+
+Edit **`src/i18n/es.json`**, **`ca.json`**, and **`en.json`** together so keys stay aligned.
 
 ## Stack
 
@@ -27,10 +39,12 @@ KM0 Digital connects people, ideas, and opportunities from the point of origin. 
 
 ```
 ├── src/
-│   ├── components/     # Hero, Values, Meaning, Mission, Merch, Contact, etc.
+│   ├── i18n/           # Translation JSON + helpers
+│   ├── components/
 │   ├── layouts/
 │   ├── pages/
-│   ├── scripts/        # scroll-reveal (Intersection Observer)
+│   ├── views/          # Shared Landing.astro
+│   ├── scripts/
 │   └── styles/
 ├── public/brand/       # logo.png, brand-guide.png
 ├── docs/
@@ -66,7 +80,8 @@ npm run build    # output in dist/
 
 | Change | Location |
 |--------|----------|
-| Text and sections | `src/components/*.astro`, `src/pages/index.astro` |
+| Translate text | **`src/i18n/es.json`**, **`ca.json`**, **`en.json`** |
+| Sections / markup | **`src/views/Landing.astro`** and **`src/components/*.astro`** |
 | Colors and brand | `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs` |
 | Logo and images | `public/brand/` |
 | Domain / SEO | `astro.config.mjs` (`site`) |
@@ -81,7 +96,7 @@ docker compose build && docker compose up -d
 
 The host reverse proxy terminates TLS and proxies to `127.0.0.1:9180`. Nginx template: `nginx/sites-available/km0`.
 
-Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troubleshooting, coexistence with OpenCloud at `cloud.amvara.de`).
+Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troubleshooting, coexistence with OpenCloud at **`cloud.km0.amvara.de`**).
 
 ## Architecture
 
@@ -89,8 +104,8 @@ Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troub
 Internet → Nginx (km0.amvara.de:443) → 127.0.0.1:9180 (km0-web container)
 ```
 
-OpenCloud (file storage) runs at **[https://cloud.amvara.de](https://cloud.amvara.de)** — separate hostname from this marketing site.
+OpenCloud (file storage) runs at **[https://cloud.km0.amvara.de](https://cloud.km0.amvara.de)** — separate hostname from this marketing site.
 
 ## License
 
-Private project — © Kilómetro 0 Digital.
+Private project — © KM0 Digital.

@@ -1,5 +1,15 @@
 ---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+import { withHash } from '../i18n/paths';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
 const year = new Date().getFullYear();
+const { locale, messages: m } = Astro.props;
 ---
 
 <footer class="border-t border-navy/10 bg-surface px-6 py-12 md:px-12">
@@ -15,16 +25,16 @@ const year = new Date().getFullYear();
         class="h-10 w-10 object-contain"
       />
       <span class="text-sm font-medium text-navy/80">
-        Kilómetro 0 Digital
+        {m.brandName}
       </span>
     </div>
     <p class="text-sm text-navy/50">
-      © {year} Kilómetro 0 Digital. Todos los derechos reservados.
+      © {year} {m.brandName}. {m.footer.rights}
     </p>
     <nav class="flex gap-6 text-sm text-navy/50">
-      <a href="#inicio" class="transition-colors hover:text-navy">Inicio</a>
-      <a href="#mision" class="transition-colors hover:text-navy">Misión</a>
-      <a href="#contacto" class="transition-colors hover:text-navy">Contacto</a>
+      <a href={withHash(locale, 'inicio')} class="transition-colors hover:text-navy">{m.nav.inicio}</a>
+      <a href={withHash(locale, 'mision')} class="transition-colors hover:text-navy">{m.nav.mision}</a>
+      <a href={withHash(locale, 'contacto')} class="transition-colors hover:text-navy">{m.nav.contacto}</a>
     </nav>
   </div>
 </footer>

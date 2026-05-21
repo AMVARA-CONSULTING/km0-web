@@ -1,13 +1,20 @@
 ---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  messages: Messages;
+}
+
+const { messages: m } = Astro.props;
 ---
 
 <section class="section-pad overflow-hidden bg-navy text-white">
   <div class="mx-auto max-w-6xl">
     <p data-reveal class="mb-4 text-center text-sm font-medium uppercase tracking-[0.2em] text-white/50">
-      Aplicaciones
+      {m.merch.eyebrow}
     </p>
     <h2 data-reveal data-delay="80" class="heading-section mb-20 text-center">
-      Identidad en <span class="text-gradient">cada pantalla</span>
+      {m.merch.headingBefore}<span class="text-gradient">{m.merch.headingGradient}</span>
     </h2>
 
     <div
@@ -15,21 +22,20 @@
       data-delay="160"
       class="relative mx-auto flex max-w-4xl flex-col items-center justify-center gap-12 md:flex-row md:gap-16"
     >
-      <!-- Laptop mockup -->
       <div class="device-laptop relative w-full max-w-xl">
-        <div class="rounded-t-xl bg-navy border border-white/10 p-1 shadow-2xl">
+        <div class="rounded-t-xl border border-white/10 bg-navy p-1 shadow-2xl">
           <div
             class="flex aspect-[16/10] flex-col items-center justify-center rounded-t-lg bg-gradient-to-b from-navy to-[#0f1a2e]"
           >
             <img
               src="/brand/logo.png"
-              alt="KM0 en laptop"
+              alt={m.hero.laptopAlt}
               width="144"
               height="144"
               class="mb-4 h-28 w-28 object-contain md:h-36 md:w-36"
             />
             <p class="text-lg font-semibold tracking-wide md:text-xl">
-              Kilómetro <span class="text-gradient">0</span> Digital
+              {m.brandMark.before}<span class="text-gradient font-bold">0</span>{m.brandMark.after}
             </p>
           </div>
         </div>
@@ -37,7 +43,6 @@
         <div class="mx-auto mt-1 h-1 w-16 rounded-full bg-white/20"></div>
       </div>
 
-      <!-- Phone mockup -->
       <div class="device-phone relative w-44 shrink-0 md:-mb-8 lg:w-48">
         <div class="rounded-[2rem] border-4 border-white/15 bg-navy p-2 shadow-2xl">
           <div
@@ -45,7 +50,7 @@
           >
             <img
               src="/brand/logo.png"
-              alt="KM0 en móvil"
+              alt={m.hero.mobileAlt}
               width="80"
               height="80"
               class="mb-3 h-16 w-16 object-contain sm:h-20 sm:w-20"

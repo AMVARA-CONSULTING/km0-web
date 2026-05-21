@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "Kilómetro 0 Digital",
+    "description": "Origen local. Impacto digital. Conecta, transforma e impulsa desde el punto de origen."
+  },
+  "brandName": "Kilómetro 0 Digital",
+  "brandNameShort": "KM0 Digital",
+  "brandMark": {
+    "before": "Kilómetro ",
+    "after": " Digital"
+  },
+  "nav": {
+    "inicio": "Inicio",
+    "valores": "Valores",
+    "significado": "Significado",
+    "mision": "Misión",
+    "contacto": "Contacto"
+  },
+  "hero": {
+    "eyebrow": "Kilómetro 0 Digital",
+    "titleLine1": "ORIGEN LOCAL.",
+    "titleGradient": "IMPACTO DIGITAL.",
+    "tagline": "CONECTA. TRANSFORMA. IMPULSA.",
+    "ctaPrimary": "Descubre más",
+    "ctaSecondary": "Contactar",
+    "logoAlt": "Logo Kilómetro 0 Digital",
+    "laptopAlt": "Kilómetro 0 Digital en ordenador portátil",
+    "mobileAlt": "Kilómetro 0 Digital en móvil"
+  },
+  "values": {
+    "eyebrow": "Nuestros valores",
+    "headingBefore": "Una marca ",
+    "headingAccent": "cercana",
+    "headingAfter": " y digital",
+    "chips": ["Moderna", "Accesible", "Cercana", "Digital"]
+  },
+  "meaning": {
+    "eyebrow": "Significado",
+    "heading": "Más que un logo",
+    "items": [
+      {
+        "title": "Punto de origen",
+        "desc": "El pin representa el punto de partida: el Kilómetro 0 desde el que todo comienza."
+      },
+      {
+        "title": "Difusión",
+        "desc": "Las ondas de señal simbolizan la difusión digital y el alcance de las ideas."
+      },
+      {
+        "title": "Red",
+        "desc": "Los nodos conectados representan personas, ideas y oportunidades unidas."
+      },
+      {
+        "title": "Transformación local",
+        "desc": "Las ondas en la base evocan el impacto local con proyección global."
+      }
+    ]
+  },
+  "mission": {
+    "eyebrow": "Misión",
+    "heading": "Nacemos en el origen",
+    "body": "Kilómetro 0 Digital nace en el punto de origen y se expande conectando personas, ideas y oportunidades para construir un futuro digital más accesible e innovador."
+  },
+  "merch": {
+    "eyebrow": "Aplicaciones",
+    "headingBefore": "Identidad en ",
+    "headingGradient": "cada pantalla"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "heading": "¿Hablamos?",
+    "body": "Estamos construyendo el futuro digital desde el origen. Escríbenos para colaborar o conocer el proyecto.",
+    "email": "contacto@amvara.de"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}

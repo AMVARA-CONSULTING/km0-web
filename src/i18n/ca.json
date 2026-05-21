@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "Kilòmetre 0 Digital",
+    "description": "Origen local. Impacte digital. Connecta, transforma i impulsa des del punt d'origen."
+  },
+  "brandName": "Kilòmetre 0 Digital",
+  "brandNameShort": "KM0 Digital",
+  "brandMark": {
+    "before": "Kilòmetre ",
+    "after": " Digital"
+  },
+  "nav": {
+    "inicio": "Inici",
+    "valores": "Valors",
+    "significado": "Significat",
+    "mision": "Missió",
+    "contacto": "Contacte"
+  },
+  "hero": {
+    "eyebrow": "Kilòmetre 0 Digital",
+    "titleLine1": "ORIGEN LOCAL.",
+    "titleGradient": "IMPACTE DIGITAL.",
+    "tagline": "CONNECTA. TRANSFORMA. IMPULSA.",
+    "ctaPrimary": "Descobreix-ne més",
+    "ctaSecondary": "Contactar",
+    "logoAlt": "Logo Kilòmetre 0 Digital",
+    "laptopAlt": "Kilòmetre 0 Digital en portàtil",
+    "mobileAlt": "Kilòmetre 0 Digital al mòbil"
+  },
+  "values": {
+    "eyebrow": "Els nostres valors",
+    "headingBefore": "Una marca ",
+    "headingAccent": "propera",
+    "headingAfter": " i digital",
+    "chips": ["Moderna", "Accessible", "Propera", "Digital"]
+  },
+  "meaning": {
+    "eyebrow": "Significat",
+    "heading": "Més que un logotip",
+    "items": [
+      {
+        "title": "Punt d'origen",
+        "desc": "El pin representa el punt de partida: el Kilòmetre 0 des del qual tot comença."
+      },
+      {
+        "title": "Difusió",
+        "desc": "Les onades de senyal simbolitzen la difusió digital i l'abast de les idees."
+      },
+      {
+        "title": "Xarxa",
+        "desc": "Els nodes connectats representen persones, idees i oportunitats unides."
+      },
+      {
+        "title": "Transformació local",
+        "desc": "Les onades a la base evoquen l'impacte local amb projecció global."
+      }
+    ]
+  },
+  "mission": {
+    "eyebrow": "Missió",
+    "heading": "Naixem a l'origen",
+    "body": "Kilòmetre 0 Digital neix al punt d'origen i s'expandeix connectant persones, idees i oportunitats per construir un futur digital més accessible i innovador."
+  },
+  "merch": {
+    "eyebrow": "Aplicacions",
+    "headingBefore": "Identitat a ",
+    "headingGradient": "cada pantalla"
+  },
+  "contact": {
+    "eyebrow": "Contacte",
+    "heading": "Parlem?",
+    "body": "Estem construint el futur digital des de l'origen. Escriu-nos per col·laborar o conèixer el projecte.",
+    "email": "contacto@amvara.de"
+  },
+  "footer": {
+    "rights": "Tots els drets reservats."
+  }
+}

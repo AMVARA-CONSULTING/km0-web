@@ -1,4 +1,4 @@
-# Kilómetro 0 Digital — static landing (Docker :9180)
+# KM0 Digital — static landing (Docker :9180)
 # Hostname: km0.amvara.de
 
 server {

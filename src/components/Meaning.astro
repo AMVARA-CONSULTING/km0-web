@@ -1,39 +1,29 @@
 ---
-const items = [
-  {
-    title: 'Punto de origen',
-    desc: 'El pin representa el punto de partida: el Kilómetro 0 desde el que todo comienza.',
-    icon: 'pin',
-    delay: 0,
-  },
-  {
-    title: 'Difusión',
-    desc: 'Las ondas de señal simbolizan la difusión digital y el alcance de las ideas.',
-    icon: 'signal',
-    delay: 100,
-  },
-  {
-    title: 'Red',
-    desc: 'Los nodos conectados representan personas, ideas y oportunidades unidas.',
-    icon: 'network',
-    delay: 200,
-  },
-  {
-    title: 'Transformación local',
-    desc: 'Las ondas en la base evocan el impacto local con proyección global.',
-    icon: 'ripple',
-    delay: 300,
-  },
-];
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  messages: Messages;
+}
+
+const iconOrder = ['pin', 'signal', 'network', 'ripple'] as const;
+const delays = [0, 100, 200, 300];
+
+const { messages: m } = Astro.props;
+
+const items = m.meaning.items.map((item, i) => ({
+  ...item,
+  icon: iconOrder[i] ?? 'pin',
+  delay: delays[i] ?? 0,
+}));
 ---
 
 <section id="significado" class="section-pad bg-white">
   <div class="mx-auto max-w-6xl">
     <p data-reveal class="mb-4 text-center text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
-      Significado
+      {m.meaning.eyebrow}
     </p>
     <h2 data-reveal data-delay="80" class="heading-section mb-20 text-center text-navy">
-      Más que un logo
+      {m.meaning.heading}
     </h2>
 
     <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">

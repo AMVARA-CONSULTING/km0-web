@@ -1,21 +1,27 @@
 ---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  messages: Messages;
+}
+
+const { messages: m } = Astro.props;
 ---
 
 <section id="mision" class="section-pad bg-surface">
   <div class="mx-auto max-w-3xl text-center">
     <p data-reveal class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
-      Misión
+      {m.mission.eyebrow}
     </p>
     <h2 data-reveal data-delay="80" class="heading-section mb-12 text-navy">
-      Nacemos en el origen
+      {m.mission.heading}
     </h2>
     <p
       data-reveal
       data-delay="160"
       class="text-lg leading-relaxed text-navy/70 md:text-xl md:leading-relaxed"
     >
-      Kilómetro 0 Digital nace en el punto de origen y se expande conectando personas,
-      ideas y oportunidades para construir un futuro digital más accesible e innovador.
+      {m.mission.body}
     </p>
   </div>
 </section>

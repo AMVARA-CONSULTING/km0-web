@@ -1,23 +1,42 @@
 ---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+
 interface Props {
-  title?: string;
-  description?: string;
+  locale: Locale;
+  messages: Messages;
+  canonicalUrl: string;
 }
 
-const {
-  title = 'Kilómetro 0 Digital',
-  description =
-    'Origen local. Impacto digital. Conecta, transforma e impulsa desde el punto de origen.',
-} = Astro.props;
+const site = Astro.site ?? new URL('https://km0.amvara.de');
+
+const hrefs: Record<Locale, string> = {
+  es: new URL('/', site).href,
+  ca: new URL('/ca/', site).href,
+  en: new URL('/en/', site).href,
+};
+
+const langAttr: Record<Locale, string> = {
+  es: 'es',
+  ca: 'ca',
+  en: 'en',
+};
+
+const { locale, messages: m, canonicalUrl } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={langAttr[locale]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
+    <meta name="description" content={m.meta.description} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={hrefs.es} />
+    <link rel="alternate" hreflang="ca" href={hrefs.ca} />
+    <link rel="alternate" hreflang="en" href={hrefs.en} />
+    <link rel="alternate" hreflang="x-default" href={hrefs.es} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,12 +44,13 @@ const {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={m.meta.title} />
+    <meta property="og:description" content={m.meta.description} />
     <meta property="og:image" content="https://km0.amvara.de/brand/logo.png" />
-    <meta property="og:url" content="https://km0.amvara.de" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <title>{title}</title>
+    <meta property="og:locale" content={langAttr[locale]} />
+    <title>{m.meta.title}</title>
   </head>
   <body>
     <slot />

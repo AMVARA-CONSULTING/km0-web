@@ -1,10 +1,27 @@
 ---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+import { withHash } from '../i18n/paths';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
+
 const nav = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#valores', label: 'Valores' },
-  { href: '#significado', label: 'Significado' },
-  { href: '#mision', label: 'Misión' },
-  { href: '#contacto', label: 'Contacto' },
+  { id: 'inicio', label: m.nav.inicio },
+  { id: 'valores', label: m.nav.valores },
+  { id: 'significado', label: m.nav.significado },
+  { id: 'mision', label: m.nav.mision },
+  { id: 'contacto', label: m.nav.contacto },
+] as const;
+
+const langs: { code: Locale; href: string; label: string }[] = [
+  { code: 'ca', href: '/ca/', label: 'CA' },
+  { code: 'es', href: '/', label: 'ES' },
+  { code: 'en', href: '/en/', label: 'EN' },
 ];
 ---
 
@@ -12,33 +29,59 @@ const nav = [
   class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/80 backdrop-blur-md"
 >
   <nav
-    class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12"
+    class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-12"
   >
-    <a href="#inicio" class="flex items-center gap-3 text-white">
+    <a href={withHash(locale, 'inicio')} class="flex min-w-0 items-center gap-3 text-white">
       <img
         src="/brand/logo.png"
-        alt="Kilómetro 0 Digital"
+        alt={m.hero.logoAlt}
         width="44"
         height="44"
         class="h-10 w-10 shrink-0 object-contain sm:h-11 sm:w-11"
       />
       <span class="hidden text-sm font-semibold tracking-wide sm:inline">
-        Kilómetro <span class="text-gradient font-bold">0</span> Digital
+        {m.brandMark.before}<span class="text-gradient font-bold">0</span>{m.brandMark.after}
       </span>
     </a>
-    <ul class="flex gap-6 text-sm text-white/70">
-      {
-        nav.map((item) => (
-          <li class="hidden md:block">
+    <div class="flex items-center gap-4 md:gap-6">
+      <ul class="hidden gap-5 text-sm text-white/70 md:flex">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={withHash(locale, item.id)}
+                class="transition-colors duration-300 hover:text-white"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div
+        class="flex shrink-0 items-center gap-1 rounded-full border border-white/15 bg-white/5 px-1 py-0.5 text-xs font-medium text-white/80"
+        role="navigation"
+        aria-label="Language"
+      >
+        {
+          langs.map((lang) => (
             <a
-              href={item.href}
-              class="transition-colors duration-300 hover:text-white"
+              href={lang.href}
+              class:list={[
+                'rounded-full px-2 py-1 transition-colors',
+                locale === lang.code
+                  ? 'bg-white/15 text-white'
+                  : 'text-white/60 hover:text-white',
+              ]}
+              hreflang={
+                lang.code === 'es' ? 'es' : lang.code === 'ca' ? 'ca' : 'en'
+              }
             >
-              {item.label}
+              {lang.label}
             </a>
-          </li>
-        ))
-      }
-    </ul>
+          ))
+        }
+      </div>
+    </div>
   </nav>
 </header>

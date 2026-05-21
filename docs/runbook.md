@@ -13,7 +13,7 @@
 | Container | `km0-web` | `127.0.0.1:9180→80` |
 | Nginx vhost | `km0.amvara.de` | `/etc/nginx/sites-available/km0` |
 | TLS | Let's Encrypt | `/etc/letsencrypt/live/km0.amvara.de/` |
-| OpenCloud (separado) | `cloud.amvara.de` → `:9200` | `/opt/opencloud/` |
+| OpenCloud (separate) | `cloud.amvara.de` → `:9200` | `/opt/opencloud/` |
 
 ---
 

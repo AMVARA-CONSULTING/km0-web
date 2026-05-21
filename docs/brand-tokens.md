@@ -1,32 +1,32 @@
-# Kilómetro 0 Digital — tokens de marca
+# Kilómetro 0 Digital — brand tokens
 
-## Colores
+## Colors
 
-| Token | Hex | Uso |
-|-------|-----|-----|
-| Navy | `#0B1220` | Texto, hero oscuro, header |
-| Surface | `#F5F5F7` | Fondos alternos (estilo Apple) |
-| White | `#FFFFFF` | Fondos principales |
-| Gradiente | `#FF5F2E → #E040A0 → #7B3FE4 → #007BFF` | Acentos, botones, titulares |
+| Token | Hex | Usage |
+|-------|-----|-------|
+| Navy | `#0B1220` | Text, dark hero, header |
+| Surface | `#F5F5F7` | Alternate backgrounds (Apple-like) |
+| White | `#FFFFFF` | Main backgrounds |
+| Brand gradient | `#FF5F2E → #E040A0 → #7B3FE4 → #007BFF` | Accents, buttons, headlines |
 
-## Tipografía
+## Typography
 
-- **Familia:** Inter (Google Fonts), fallback `system-ui`
-- **Display:** 600 weight, tracking tight
-- **Body:** 400 weight, line-height relaxed
+- **Family:** Inter (Google Fonts), fallback `system-ui`
+- **Display:** 600 weight, tight tracking
+- **Body:** 400 weight, relaxed line-height
 
-## Copy oficial
+## Official copy (Spanish UI)
 
-- **Nombre:** Kilómetro 0 Digital (abrev. KM0 Digital)
-- **Eslógan:** ORIGEN LOCAL. IMPACTO DIGITAL.
+- **Name:** Kilómetro 0 Digital (abbr. KM0 Digital)
+- **Slogan:** ORIGEN LOCAL. IMPACTO DIGITAL.
 - **Tagline:** CONECTA. TRANSFORMA. IMPULSA.
-- **Valores:** Moderna · Accesible · Cercana · Digital
-- **Misión:** Kilómetro 0 Digital nace en el punto de origen y se expande conectando personas, ideas y oportunidades para construir un futuro digital más accesible e innovador.
+- **Values:** Moderna · Accesible · Cercana · Digital
+- **Mission:** Kilómetro 0 Digital nace en el punto de origen y se expande conectando personas, ideas y oportunidades para construir un futuro digital más accesible e innovador.
 
 ## Assets
 
-| Archivo | Ruta |
-|---------|------|
-| Logo principal | `public/brand/logo.png` |
-| Guía de marca (ref.) | `public/brand/brand-guide.png` |
+| Asset | Path |
+|-------|------|
+| Main logo | `public/brand/logo.png` |
+| Brand guide (reference) | `public/brand/brand-guide.png` |
 | Favicon | `public/favicon.svg` |

@@ -1,31 +1,33 @@
 # Kilómetro 0 Digital — Web
 
-Landing estática del proyecto **Kilómetro 0 Digital**: origen local, impacto digital.
+Static landing site for **Kilómetro 0 Digital**: local origin, digital impact.
 
-**Sitio en producción:** [https://km0.amvara.de](https://km0.amvara.de)
+**Production:** [https://km0.amvara.de](https://km0.amvara.de)
 
-![Vista previa del hero — Kilómetro 0 Digital](docs/preview-hero.png)
+![Hero preview — Kilómetro 0 Digital](docs/preview-hero.png)
 
-## Sobre el proyecto
+## About
 
-KM0 Digital conecta personas, ideas y oportunidades desde el punto de origen. Esta web es la presencia pública del proyecto: una sola página con secciones informativas, identidad de marca (gradiente naranja → magenta → púrpura → azul) y animaciones suaves al hacer scroll.
+KM0 Digital connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site: a single page with informational sections, brand identity (orange → magenta → purple → blue gradient), and smooth scroll animations.
 
-**Mensaje principal:** *ORIGEN LOCAL. IMPACTO DIGITAL.* — *CONECTA. TRANSFORMA. IMPULSA.*
+**Core message:** *ORIGEN LOCAL. IMPACTO DIGITAL.* — *CONECTA. TRANSFORMA. IMPULSA.*
+
+(Site copy is in Spanish; project documentation is in English.)
 
 ## Stack
 
-| Capa | Tecnología |
-|------|------------|
+| Layer | Technology |
+|-------|------------|
 | Frontend | [Astro](https://astro.build) 5 + [Tailwind CSS](https://tailwindcss.com) |
 | Build | Node 22 (multi-stage Docker) |
-| Servidor estático | nginx (Alpine) en contenedor |
-| Producción | Docker Compose → `127.0.0.1:9180` detrás de Nginx host (TLS) |
+| Static server | nginx (Alpine) in container |
+| Production | Docker Compose → `127.0.0.1:9180` behind host Nginx (TLS) |
 
-## Estructura del repositorio
+## Repository layout
 
 ```
 ├── src/
-│   ├── components/     # Hero, Valores, Significado, Misión, Merch, Contacto…
+│   ├── components/     # Hero, Values, Meaning, Mission, Merch, Contact, etc.
 │   ├── layouts/
 │   ├── pages/
 │   ├── scripts/        # scroll-reveal (Intersection Observer)
@@ -33,16 +35,16 @@ KM0 Digital conecta personas, ideas y oportunidades desde el punto de origen. Es
 ├── public/brand/       # logo.png, brand-guide.png
 ├── docs/
 │   ├── brand-tokens.md
-│   ├── runbook.md      # operación en servidor
+│   ├── runbook.md      # server operations
 │   └── preview-hero.png
-├── nginx/              # config contenedor + plantilla vhost host
+├── nginx/              # container config + host vhost template
 ├── Dockerfile
 └── docker-compose.yml
 ```
 
-## Inicio rápido
+## Quick start
 
-### Con Docker (recomendado)
+### Docker (recommended)
 
 ```bash
 git clone git@github.com:Luipy56/km0-web.git
@@ -52,43 +54,43 @@ docker compose up -d
 curl -sI http://127.0.0.1:9180/
 ```
 
-### Desarrollo local (Node en el host)
+### Local development (Node on host)
 
 ```bash
 npm install
 npm run dev      # http://localhost:4321
-npm run build    # salida en dist/
+npm run build    # output in dist/
 ```
 
-## Editar contenido
+## Editing content
 
-| Qué cambiar | Dónde |
-|-------------|-------|
-| Textos y secciones | `src/components/*.astro`, `src/pages/index.astro` |
-| Colores y marca | `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs` |
-| Logo e imágenes | `public/brand/` |
-| Dominio / SEO | `astro.config.mjs` (`site`) |
+| Change | Location |
+|--------|----------|
+| Text and sections | `src/components/*.astro`, `src/pages/index.astro` |
+| Colors and brand | `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs` |
+| Logo and images | `public/brand/` |
+| Domain / SEO | `astro.config.mjs` (`site`) |
 
-Tras editar en producción:
+After changes on the server:
 
 ```bash
 docker compose build && docker compose up -d
 ```
 
-## Despliegue en servidor
+## Server deployment
 
-El reverse proxy del host termina TLS y hace proxy a `127.0.0.1:9180`. Plantilla Nginx: `nginx/sites-available/km0`.
+The host reverse proxy terminates TLS and proxies to `127.0.0.1:9180`. Nginx template: `nginx/sites-available/km0`.
 
-Documentación operativa completa: **[docs/runbook.md](docs/runbook.md)** (TLS, puertos, troubleshooting, coexistencia con OpenCloud en `cloud.amvara.de`).
+Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troubleshooting, coexistence with OpenCloud at `cloud.amvara.de`).
 
-## Arquitectura
+## Architecture
 
 ```
-Internet → Nginx (km0.amvara.de:443) → 127.0.0.1:9180 (contenedor km0-web)
+Internet → Nginx (km0.amvara.de:443) → 127.0.0.1:9180 (km0-web container)
 ```
 
-OpenCloud (almacenamiento de archivos) está en **[https://cloud.amvara.de](https://cloud.amvara.de)** — dominio separado del sitio de marketing.
+OpenCloud (file storage) runs at **[https://cloud.amvara.de](https://cloud.amvara.de)** — separate hostname from this marketing site.
 
-## Licencia
+## License
 
-Proyecto privado — © Kilómetro 0 Digital.
+Private project — © Kilómetro 0 Digital.

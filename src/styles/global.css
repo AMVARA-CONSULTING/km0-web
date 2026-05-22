@@ -89,8 +89,14 @@
     @apply mb-4;
   }
 
+  .doc-article {
+    @apply text-justify;
+    hyphens: auto;
+  }
+
   .doc-dek {
-    @apply max-w-2xl text-lg leading-relaxed text-navy/70 md:text-xl;
+    @apply text-lg leading-relaxed text-navy/70 md:text-xl;
+    text-align: justify;
   }
 
   .doc-date {
@@ -135,41 +141,61 @@
   }
 
   .doc-body {
-    @apply text-base leading-relaxed text-navy/80 md:text-lg;
-  }
-
-  .doc-body :global(.doc-lead) {
-    @apply mb-10 text-xl leading-relaxed text-navy/90 md:text-2xl md:leading-relaxed;
+    @apply flex flex-col gap-10 text-base leading-[1.85] text-navy/80 md:gap-12 md:text-lg;
     text-align: justify;
   }
 
-  .doc-body :global(h2) {
-    @apply relative mb-5 mt-14 scroll-mt-28 pb-4 text-2xl font-semibold tracking-tight text-navy md:text-3xl;
+  .doc-body :global(.doc-lead-block) {
+    @apply rounded-2xl border border-navy/10 bg-surface px-6 py-8 md:px-10 md:py-10;
+    text-align: justify;
   }
 
-  .doc-body :global(h2)::after {
-    content: '';
-    @apply absolute bottom-0 left-0 h-1 w-20 rounded-full bg-brand-gradient;
+  .doc-body :global(.doc-lead) {
+    @apply mb-6 text-xl leading-[1.85] text-navy/90 last:mb-0 md:text-2xl;
+    text-align: justify;
   }
 
-  .doc-body :global(h3) {
-    @apply mb-3 mt-8 text-lg font-semibold text-navy md:text-xl;
+  .doc-body :global(.doc-block) {
+    @apply scroll-mt-28 rounded-2xl border border-navy/10 bg-white px-6 py-8 md:px-10 md:py-10;
+    text-align: justify;
   }
 
-  .doc-body :global(p) {
-    @apply mb-5 text-justify;
+  .doc-body :global(.doc-block-alt) {
+    @apply bg-surface;
   }
 
-  .doc-body :global(ul:not(.doc-list):not(.doc-steps)) {
-    @apply mb-8 list-disc space-y-2 pl-6 text-justify;
+  .doc-body :global(.doc-block-title) {
+    @apply mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-gradient;
+  }
+
+  .doc-body :global(.doc-block-heading) {
+    @apply mb-6 border-b border-navy/10 pb-4 text-2xl font-semibold tracking-tight text-navy md:text-3xl;
+  }
+
+  .doc-body :global(.doc-block-intro) {
+    @apply mb-8 text-justify leading-[1.85] text-navy/80;
+  }
+
+  .doc-body :global(.doc-block > p:last-child),
+  .doc-body :global(.doc-block > p:only-of-type) {
+    @apply mb-0;
+  }
+
+  .doc-body :global(.doc-block p) {
+    @apply mb-6 text-justify leading-[1.85] last:mb-0;
   }
 
   .doc-body :global(ul.doc-list) {
-    @apply mb-8 list-none space-y-3 p-0;
+    @apply mb-0 list-none space-y-4 p-0;
   }
 
   .doc-body :global(ul.doc-list li) {
-    @apply rounded-xl border border-navy/10 bg-surface px-5 py-4 text-justify leading-relaxed;
+    @apply rounded-xl border border-navy/10 bg-surface/80 px-5 py-4 leading-[1.85] md:px-6 md:py-5;
+    text-align: justify;
+  }
+
+  .doc-body :global(.doc-block-alt ul.doc-list li) {
+    @apply bg-white;
   }
 
   .doc-body :global(ul.doc-list li strong) {
@@ -177,13 +203,14 @@
   }
 
   .doc-body :global(ol.doc-steps) {
-    @apply mb-8 list-none space-y-4 p-0;
+    @apply mb-0 list-none space-y-5 p-0;
     counter-reset: doc-step;
   }
 
   .doc-body :global(ol.doc-steps li) {
-    @apply relative rounded-xl border border-navy/10 bg-white px-6 py-5 pl-16 text-justify leading-relaxed shadow-sm;
+    @apply relative rounded-xl border border-navy/10 bg-surface px-6 py-5 pl-16 leading-[1.85] md:py-6;
     counter-increment: doc-step;
+    text-align: justify;
   }
 
   .doc-body :global(ol.doc-steps li)::before {
@@ -195,12 +222,13 @@
     @apply font-semibold text-navy;
   }
 
-  .doc-body :global(li) {
-    @apply text-navy/80;
+  .doc-body :global(.doc-subtitle) {
+    @apply mb-4 mt-8 text-base font-semibold text-navy md:text-lg;
   }
 
   .doc-body :global(.doc-callout) {
-    @apply relative my-8 overflow-hidden rounded-2xl bg-surface px-6 py-5 pl-8 text-justify leading-relaxed text-navy/80 md:px-8 md:py-6;
+    @apply relative mt-6 overflow-hidden rounded-xl bg-white px-6 py-6 pl-8 leading-[1.85] md:px-8;
+    text-align: justify;
   }
 
   .doc-body :global(.doc-callout)::before {
@@ -209,15 +237,16 @@
   }
 
   .doc-body :global(.doc-callout-title) {
-    @apply mb-2 block text-sm font-semibold uppercase tracking-wider text-gradient;
+    @apply mb-4 block text-sm font-semibold uppercase tracking-wider text-gradient;
   }
 
-  .doc-body :global(.doc-callout p:last-child) {
-    @apply mb-0;
+  .doc-body :global(.doc-callout p) {
+    @apply mb-4 text-justify last:mb-0;
   }
 
   .doc-body :global(.doc-note) {
-    @apply my-8 rounded-2xl border border-dashed border-navy/20 bg-white px-6 py-5 text-justify text-sm leading-relaxed text-navy/70 md:text-base;
+    @apply mt-6 rounded-xl border border-dashed border-navy/20 bg-white px-6 py-5 text-sm leading-[1.85] text-navy/70 md:text-base;
+    text-align: justify;
   }
 
   .doc-body :global(code) {
@@ -228,16 +257,22 @@
     @apply font-medium text-navy underline decoration-navy/30 underline-offset-4 transition-colors hover:decoration-navy;
   }
 
-  .doc-body :global(strong:not(li strong)) {
+  .doc-body :global(strong) {
     @apply font-semibold text-navy;
   }
 
-  .doc-body :global(hr) {
-    @apply my-12 border-0 border-t border-navy/10;
+  .doc-body :global(.doc-closing-block) {
+    @apply rounded-2xl border border-navy/10 bg-gradient-to-br from-surface to-white px-6 py-8 md:px-10 md:py-10;
+    text-align: justify;
+  }
+
+  .doc-body :global(.doc-closing-block .doc-block-title) {
+    @apply mb-3;
   }
 
   .doc-body :global(.doc-closing) {
-    @apply mt-10 rounded-2xl border border-navy/10 bg-gradient-to-br from-surface to-white p-6 text-justify leading-relaxed md:p-8;
+    @apply m-0 leading-[1.85];
+    text-align: justify;
   }
 
   .doc-body :global(.doc-closing strong) {

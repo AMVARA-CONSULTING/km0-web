@@ -1,6 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 
-/** URL slug from collection id (e.g. es/dia-0 → dia-0) */
+/** URL slug from collection id (e.g. es/dia-0 -> dia-0) */
 export function docSlug(entry: CollectionEntry<'doc'>): string {
   const parts = entry.id.split('/');
   const last = parts[parts.length - 1] ?? entry.id;

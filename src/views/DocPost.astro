@@ -32,7 +32,7 @@ const pageTitle = `${post.data.title} — ${messages.brandNameShort}`;
 >
   <Header locale={locale} messages={messages} />
   <main class="section-pad bg-white pt-28">
-    <article class="doc-article mx-auto max-w-3xl">
+    <article class="doc-article mx-auto max-w-4xl">
       <nav class="doc-breadcrumb mb-10" aria-label="Breadcrumb">
         <a href={localeHref(locale, '/doc/')} class="doc-breadcrumb-link">
           {messages.doc.breadcrumbHome}
@@ -46,7 +46,7 @@ const pageTitle = `${post.data.title} — ${messages.brandNameShort}`;
           {formatDocDate(post.data.pubDate, locale)}
         </time>
         <h1 class="heading-section doc-title text-navy">{post.data.title}</h1>
-        <p class="doc-dek">{post.data.description}</p>
+        <p class="doc-dek text-justify">{post.data.description}</p>
       </header>
 
       <div class="doc-body">

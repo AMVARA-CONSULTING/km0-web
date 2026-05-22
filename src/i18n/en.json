@@ -12,8 +12,10 @@
   "nav": {
     "inicio": "Home",
     "valores": "Values",
+    "servicios": "Services",
     "significado": "Meaning",
     "mision": "Mission",
+    "blog": "Blog",
     "contacto": "Contact"
   },
   "hero": {
@@ -33,6 +35,40 @@
     "headingAccent": "close-knit",
     "headingAfter": " and digital",
     "chips": ["Modern", "Accessible", "Approachable", "Digital"]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "headingBefore": "Technology that stays ",
+    "headingAccent": "close",
+    "headingAfter": " and under your control",
+    "intro": "We offer digital tools built for people and teams who want to work with peace of mind: local infrastructure, direct support, and no reliance on foreign giants for the essentials.",
+    "slogan": "Your data, your origin. No ties to hyperscalers.",
+    "items": [
+      {
+        "id": "cloud",
+        "title": "KM0 Cloud",
+        "desc": "Cloud storage and collaboration like your own drive: share files, sync, and work as a team with the confidence of a service that understands your context.",
+        "cta": "Open Cloud",
+        "url": "https://cloud.km0.amvara.de"
+      },
+      {
+        "id": "email",
+        "title": "KM0 Email",
+        "desc": "Professional email integrated in the same ecosystem. Secure mailboxes, your own domain, and human support when you need it.",
+        "cta": "Open Email",
+        "url": "https://email.km0.amvara.de"
+      }
+    ]
+  },
+  "doc": {
+    "metaTitle": "Blog — Kilometer 0 Digital",
+    "metaDescription": "Documentation, decisions, and updates from the KM0 project. Transparency from day zero.",
+    "eyebrow": "Blog",
+    "heading": "Documentation and updates",
+    "intro": "This is where we share the pulse of the project: why we make each decision, how our services evolve, and what we learn along the way. A close technical diary, not empty marketing.",
+    "readMore": "Read post",
+    "backToIndex": "Back to blog",
+    "breadcrumbHome": "Blog"
   },
   "meaning": {
     "eyebrow": "Meaning",

@@ -1,6 +1,6 @@
 # Operations Runbook — Kilómetro 0 Digital Web
 
-**URL:** https://km0.amvara.de (`/` = español por defecto) · **Català:** `/ca/` · **English:** `/en/`
+**URL:** https://km0.amvara.de (`/` = español por defecto) · **Català:** `/ca/` · **English:** `/en/` · **Blog:** `/doc/` (nav: “Blog”)
 
 **Server:** `116.202.10.106` · **Deployed:** 2026-05-21
 
@@ -22,7 +22,22 @@
 
 ```bash
 curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/en/
+curl -sI http://127.0.0.1:9180/doc/ http://127.0.0.1:9180/doc/dia-0/
+curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/dia-0/
 ```
+
+### Blog (`/doc/`)
+
+| Ruta | Vista |
+|------|--------|
+| `/doc/`, `/ca/doc/`, `/en/doc/` | `src/views/DocIndex.astro` |
+| `/doc/dia-0/`, etc. | `src/views/DocPost.astro` |
+
+- Entradas Markdown: `src/content/doc/{es,ca,en}/<slug>.md`
+- Esquema: `src/content.config.ts` (`title`, `description`, `pubDate`, `locale`)
+- Home: sección **Servicios** (`#servicios`) entre Valores y Significado; enlaces Cloud/Email en i18n `services.items`
+
+**Añadir entrada:** crear el `.md` en cada idioma (mismo slug de fichero, p. ej. `dia-0.md`), `docker compose build && docker compose up -d`.
 
 ---
 
@@ -30,7 +45,7 @@ curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/
 
 | Component | Version / detail | Location |
 |-----------|------------------|----------|
-| Astro site | km0-web 1.0.0 | `/opt/km0-web/` |
+| Astro site | km0-web 1.1.0 | `/opt/km0-web/` |
 | Docker image | `km0-km0-web` | Built from `/opt/km0-web/Dockerfile` |
 | Container | `km0-web` | `127.0.0.1:9180→80` |
 | Nginx vhost | `km0.amvara.de` | `/etc/nginx/sites-available/km0` |
@@ -69,10 +84,11 @@ ss -tlnp | grep 9180
 ## Edit content (no backend)
 
 1. **Traducciones:** editar `src/i18n/es.json`, `ca.json` y `en.json` (mismas claves en los tres).
-2. **Layout o secciones:** `src/components/*.astro` o `src/views/Landing.astro`.
-3. **Marca / colores:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs`.
-4. **Imágenes:** `public/brand/`.
-5. Desplegar: `docker compose build && docker compose up -d`.
+2. **Blog:** `src/content/doc/{locale}/<slug>.md` (ver sección Blog arriba).
+3. **Layout o secciones:** `src/components/*.astro` o `src/views/Landing.astro`.
+4. **Marca / colores:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs`.
+5. **Imágenes:** `public/brand/`.
+6. Desplegar: `docker compose build && docker compose up -d`.
 
 ---
 

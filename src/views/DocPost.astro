@@ -1,0 +1,61 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref, docPostHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+import type { CollectionEntry } from 'astro:content';
+import { docSlug, formatDocDate } from '../lib/doc';
+
+interface Props {
+  locale: Locale;
+  post: CollectionEntry<'doc'>;
+}
+
+const { locale, post } = Astro.props;
+const messages = getMessages(locale);
+const { Content } = await post.render();
+
+const siteRoot = Astro.site ?? new URL('https://km0.amvara.de');
+const postPath = docPostHref(locale, docSlug(post));
+const canonicalUrl = new URL(postPath, siteRoot).href;
+const pageTitle = `${post.data.title} — ${messages.brandNameShort}`;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={pageTitle}
+  pageDescription={post.data.description}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <article class="doc-article mx-auto max-w-3xl">
+      <nav class="mb-8 text-sm text-navy/50" aria-label="Breadcrumb">
+        <a href={localeHref(locale, '/doc/')} class="transition-colors hover:text-navy">
+          {messages.doc.breadcrumbHome}
+        </a>
+        <span class="mx-2" aria-hidden="true">→</span>
+        <span class="text-navy">{post.data.title}</span>
+      </nav>
+      <time datetime={post.data.pubDate.toISOString()} class="mb-4 block text-sm text-navy/50">
+        {formatDocDate(post.data.pubDate, locale)}
+      </time>
+      <h1 class="heading-section mb-8 text-navy">{post.data.title}</h1>
+      <div class="doc-body">
+        <Content />
+      </div>
+      <p class="mt-12 border-t border-navy/10 pt-8">
+        <a
+          href={localeHref(locale, '/doc/')}
+          class="text-sm font-medium text-navy transition-colors hover:text-navy/70"
+        >
+          ← {messages.doc.backToIndex}
+        </a>
+      </p>
+    </article>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

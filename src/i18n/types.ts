@@ -20,8 +20,10 @@ export interface Messages {
   nav: {
     inicio: string;
     valores: string;
+    servicios: string;
     significado: string;
     mision: string;
+    blog: string;
     contacto: string;
   };
   hero: {
@@ -41,6 +43,31 @@ export interface Messages {
     headingAccent: string;
     headingAfter: string;
     chips: string[];
+  };
+  services: {
+    eyebrow: string;
+    headingBefore: string;
+    headingAccent: string;
+    headingAfter: string;
+    intro: string;
+    slogan: string;
+    items: {
+      id: string;
+      title: string;
+      desc: string;
+      cta: string;
+      url: string;
+    }[];
+  };
+  doc: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    readMore: string;
+    backToIndex: string;
+    breadcrumbHome: string;
   };
   meaning: {
     eyebrow: string;

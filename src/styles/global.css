@@ -60,4 +60,40 @@
   .chip {
     @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-sm font-medium text-navy/80 shadow-sm;
   }
+
+  .doc-body {
+    @apply text-lg leading-relaxed text-navy/80;
+  }
+
+  .doc-body :global(h2) {
+    @apply mb-4 mt-10 text-2xl font-semibold text-navy;
+  }
+
+  .doc-body :global(h3) {
+    @apply mb-3 mt-8 text-xl font-semibold text-navy;
+  }
+
+  .doc-body :global(p) {
+    @apply mb-4;
+  }
+
+  .doc-body :global(ul) {
+    @apply mb-6 list-disc space-y-2 pl-6;
+  }
+
+  .doc-body :global(ol) {
+    @apply mb-6 list-decimal space-y-2 pl-6;
+  }
+
+  .doc-body :global(li) {
+    @apply text-navy/80;
+  }
+
+  .doc-body :global(a) {
+    @apply font-medium text-navy underline underline-offset-4 transition-colors hover:text-navy/70;
+  }
+
+  .doc-body :global(strong) {
+    @apply font-semibold text-navy;
+  }
 }

@@ -12,8 +12,10 @@
   "nav": {
     "inicio": "Inicio",
     "valores": "Valores",
+    "servicios": "Servicios",
     "significado": "Significado",
     "mision": "Misión",
+    "blog": "Blog",
     "contacto": "Contacto"
   },
   "hero": {
@@ -33,6 +35,40 @@
     "headingAccent": "cercana",
     "headingAfter": " y digital",
     "chips": ["Moderna", "Accesible", "Cercana", "Digital"]
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "headingBefore": "Tecnología ",
+    "headingAccent": "cercana",
+    "headingAfter": " y bajo tu control",
+    "intro": "Ofrecemos herramientas digitales pensadas para personas y equipos que quieren trabajar con tranquilidad: infraestructura local, trato directo y sin depender de los gigantes extranjeros para lo esencial.",
+    "slogan": "Tus datos, tu origen. Sin ataduras a hyperscalers.",
+    "items": [
+      {
+        "id": "cloud",
+        "title": "KM0 Cloud",
+        "desc": "Almacenamiento y colaboración en la nube, como un drive propio: comparte archivos, sincroniza y trabaja en equipo con la confianza de un servicio que conoce tu contexto.",
+        "cta": "Abrir Cloud",
+        "url": "https://cloud.km0.amvara.de"
+      },
+      {
+        "id": "email",
+        "title": "KM0 Email",
+        "desc": "Correo profesional integrado en el mismo ecosistema. Buzones seguros, dominio propio y soporte cercano cuando lo necesites.",
+        "cta": "Abrir Email",
+        "url": "https://email.km0.amvara.de"
+      }
+    ]
+  },
+  "doc": {
+    "metaTitle": "Blog — Kilómetro 0 Digital",
+    "metaDescription": "Documentación, decisiones y novedades del proyecto KM0. Transparencia desde el día cero.",
+    "eyebrow": "Blog",
+    "heading": "Documentación y novedades",
+    "intro": "Aquí publicamos el pulso del proyecto: por qué tomamos cada decisión, cómo evolucionan nuestros servicios y qué aprendemos en el camino. Un diario técnico cercano, sin marketing vacío.",
+    "readMore": "Leer entrada",
+    "backToIndex": "Volver al blog",
+    "breadcrumbHome": "Blog"
   },
   "meaning": {
     "eyebrow": "Significado",

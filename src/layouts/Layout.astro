@@ -6,6 +6,8 @@ interface Props {
   locale: Locale;
   messages: Messages;
   canonicalUrl: string;
+  pageTitle?: string;
+  pageDescription?: string;
 }
 
 const site = Astro.site ?? new URL('https://km0.amvara.de');
@@ -22,7 +24,9 @@ const langAttr: Record<Locale, string> = {
   en: 'en',
 };
 
-const { locale, messages: m, canonicalUrl } = Astro.props;
+const { locale, messages: m, canonicalUrl, pageTitle, pageDescription } = Astro.props;
+const title = pageTitle ?? m.meta.title;
+const description = pageDescription ?? m.meta.description;
 ---
 
 <!doctype html>
@@ -30,7 +34,7 @@ const { locale, messages: m, canonicalUrl } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={m.meta.description} />
+    <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="es" href={hrefs.es} />
@@ -44,13 +48,13 @@ const { locale, messages: m, canonicalUrl } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <meta property="og:title" content={m.meta.title} />
-    <meta property="og:description" content={m.meta.description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="https://km0.amvara.de/brand/logo.png" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={langAttr[locale]} />
-    <title>{m.meta.title}</title>
+    <title>{title}</title>
   </head>
   <body>
     <slot />

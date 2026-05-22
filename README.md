@@ -2,7 +2,7 @@
 
 Public marketing landing for **KM0 Digital** (Kilometer / Kilòmetre / Kilómetro 0 in localized site copy).
 
-**Production:** Spanish (default) [https://km0.amvara.de](https://km0.amvara.de) · Catalan [/ca/](https://km0.amvara.de/ca/) · English [/en/](https://km0.amvara.de/en/)
+**Production:** Spanish (default) [https://km0.amvara.de](https://km0.amvara.de) · Catalan [/ca/](https://km0.amvara.de/ca/) · English [/en/](https://km0.amvara.de/en/) · Blog [/doc/](https://km0.amvara.de/doc/)
 
 ![Hero preview — KM0 Digital](docs/preview-hero.png)
 
@@ -28,7 +28,15 @@ RELEASE version lives in **`VERSION`** (semver, one line). When you bump release
 | Catalan | `/ca/` |
 | English | `/en/` |
 
+| Blog (doc) | `/doc/` · `/ca/doc/` · `/en/doc/` |
+
 Edit **`src/i18n/es.json`**, **`ca.json`**, and **`en.json`** together so keys stay aligned.
+
+### Blog / doc
+
+Markdown posts live in **`src/content/doc/{es,ca,en}/`**. Collection schema: **`src/content.config.ts`**. Index and post pages use **`src/views/DocIndex.astro`** and **`DocPost.astro`**.
+
+To add a post: create e.g. `src/content/doc/es/my-post.md` with frontmatter (`title`, `description`, `pubDate`, `locale`) and mirror in `ca/` and `en/` if localized. Rebuild to publish.
 
 ## Stack
 
@@ -46,8 +54,9 @@ Edit **`src/i18n/es.json`**, **`ca.json`**, and **`en.json`** together so keys s
 │   ├── i18n/           # Translation JSON + helpers
 │   ├── components/
 │   ├── layouts/
-│   ├── pages/
-│   ├── views/          # Shared Landing.astro
+│   ├── content/doc/    # Blog markdown (per locale)
+│   ├── pages/          # Landing + /doc/ routes
+│   ├── views/          # Landing, DocIndex, DocPost
 │   ├── scripts/
 │   └── styles/
 ├── public/brand/       # logo.png, brand-guide.png

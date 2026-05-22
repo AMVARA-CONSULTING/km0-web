@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
-import { withHash } from '../i18n/paths';
+import { withHash, localeHref } from '../i18n/paths';
 
 interface Props {
   locale: Locale;
@@ -34,6 +34,7 @@ const { locale, messages: m } = Astro.props;
     <nav class="flex gap-6 text-sm text-navy/50">
       <a href={withHash(locale, 'inicio')} class="transition-colors hover:text-navy">{m.nav.inicio}</a>
       <a href={withHash(locale, 'mision')} class="transition-colors hover:text-navy">{m.nav.mision}</a>
+      <a href={localeHref(locale, '/doc/')} class="transition-colors hover:text-navy">{m.nav.blog}</a>
       <a href={withHash(locale, 'contacto')} class="transition-colors hover:text-navy">{m.nav.contacto}</a>
     </nav>
   </div>

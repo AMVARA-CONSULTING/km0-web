@@ -1,0 +1,73 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref, docPostHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+import { getCollection } from 'astro:content';
+import { docSlug, formatDocDate } from '../lib/doc';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const posts = (await getCollection('doc', ({ data }) => data.locale === locale)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const siteRoot = Astro.site ?? new URL('https://km0.amvara.de');
+const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={messages.doc.metaTitle}
+  pageDescription={messages.doc.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <div class="mx-auto max-w-3xl">
+      <p class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
+        {messages.doc.eyebrow}
+      </p>
+      <h1 class="heading-section mb-6 text-navy">{messages.doc.heading}</h1>
+      <p class="mb-12 text-lg text-navy/70">{messages.doc.intro}</p>
+
+      <ul class="space-y-8 border-t border-navy/10 pt-8">
+        {
+          posts.map((post) => (
+            <li>
+              <time
+                datetime={post.data.pubDate.toISOString()}
+                class="mb-2 block text-sm text-navy/50"
+              >
+                {formatDocDate(post.data.pubDate, locale)}
+              </time>
+              <h2 class="mb-2 text-xl font-semibold text-navy">
+                <a
+                  href={docPostHref(locale, docSlug(post))}
+                  class="transition-colors hover:text-navy/70"
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="mb-3 text-navy/70">{post.data.description}</p>
+              <a
+                href={docPostHref(locale, docSlug(post))}
+                class="text-sm font-medium text-navy underline-offset-4 hover:underline"
+              >
+                {messages.doc.readMore} →
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
-import { withHash } from '../i18n/paths';
+import { withHash, localeHref } from '../i18n/paths';
 
 interface Props {
   locale: Locale;
@@ -11,11 +11,13 @@ interface Props {
 const { locale, messages: m } = Astro.props;
 
 const nav = [
-  { id: 'inicio', label: m.nav.inicio },
-  { id: 'valores', label: m.nav.valores },
-  { id: 'significado', label: m.nav.significado },
-  { id: 'mision', label: m.nav.mision },
-  { id: 'contacto', label: m.nav.contacto },
+  { id: 'inicio', label: m.nav.inicio, href: withHash(locale, 'inicio') },
+  { id: 'valores', label: m.nav.valores, href: withHash(locale, 'valores') },
+  { id: 'servicios', label: m.nav.servicios, href: withHash(locale, 'servicios') },
+  { id: 'significado', label: m.nav.significado, href: withHash(locale, 'significado') },
+  { id: 'mision', label: m.nav.mision, href: withHash(locale, 'mision') },
+  { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
+  { id: 'contacto', label: m.nav.contacto, href: withHash(locale, 'contacto') },
 ] as const;
 
 const langs: { code: Locale; href: string; label: string }[] = [
@@ -49,7 +51,7 @@ const langs: { code: Locale; href: string; label: string }[] = [
           nav.map((item) => (
             <li>
               <a
-                href={withHash(locale, item.id)}
+                href={item.href}
                 class="transition-colors duration-300 hover:text-white"
               >
                 {item.label}

@@ -1,0 +1,17 @@
+---
+import DocPost from '../../../views/DocPost.astro';
+import { getCollection } from 'astro:content';
+import { docSlug } from '../../../lib/doc';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('doc', ({ data }) => data.locale === 'en');
+  return posts.map((post) => ({
+    params: { slug: docSlug(post) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<DocPost locale="en" post={post} />

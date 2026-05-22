@@ -165,11 +165,24 @@
   }
 
   .doc-body :global(.doc-block-title) {
-    @apply mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-gradient;
+    @apply mb-1 text-2xl font-bold tracking-tight text-gradient md:text-3xl;
+  }
+
+  .doc-body :global(.doc-block-title)::after {
+    content: '';
+    @apply mt-3 block h-1 w-16 rounded-full bg-brand-gradient;
   }
 
   .doc-body :global(.doc-block-heading) {
-    @apply mb-6 border-b border-navy/10 pb-4 text-2xl font-semibold tracking-tight text-navy md:text-3xl;
+    @apply mb-6 mt-4 text-lg font-medium text-navy/75 md:text-xl;
+  }
+
+  .doc-body :global(.doc-lead-block .doc-block-title) {
+    @apply text-xl md:text-2xl;
+  }
+
+  .doc-body :global(.doc-lead-block .doc-block-title)::after {
+    @apply mt-2 w-12;
   }
 
   .doc-body :global(.doc-block-intro) {

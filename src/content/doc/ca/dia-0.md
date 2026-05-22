@@ -12,7 +12,7 @@ locale: ca
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Bloc 1 · Infraestructura</p>
+  <p class="doc-block-title">Infraestructura</p>
   <h2 class="doc-block-heading">Pla tècnic de l'arrencada</h2>
   <p class="doc-block-intro">KM0 persegueix una infraestructura operable per l'equip, sense panells propietaris opacs. La visió completa de l'arrencada inclou:</p>
   <ul class="doc-list">
@@ -26,7 +26,7 @@ locale: ca
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Bloc 2 · Disc i sistema</p>
+  <p class="doc-block-title">Disc i sistema</p>
   <h2 class="doc-block-heading">Provisionament del VPS i particions</h2>
   <p class="doc-block-intro">Es va triar <strong>Debian</strong> per predictibilitat de paquets i documentació per a administració manual, sense panells obligatoris. El primer pas va ser revisar el layout del disc:</p>
   <ul class="doc-list">
@@ -38,7 +38,7 @@ locale: ca
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Bloc 3 · Paquets base</p>
+  <p class="doc-block-title">Paquets base</p>
   <h2 class="doc-block-heading">Programari base</h2>
   <p class="doc-block-intro">Es va instal·lar el mínim raonable per a administració remota segura i Docker, sense pes mort:</p>
   <ul class="doc-list">
@@ -51,7 +51,7 @@ locale: ca
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Bloc 4 · Consola</p>
+  <p class="doc-block-title">Consola</p>
   <h2 class="doc-block-heading">Ergonòmica del shell</h2>
   <p class="doc-block-intro">Per a sessions SSH consistents es va aplicar la guia <a href="https://wiki.ldeluipy.es/initialConfiguration.html">initialConfiguration</a> del wiki:</p>
   <ul class="doc-list">
@@ -63,7 +63,7 @@ locale: ca
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Bloc 5 · Eines</p>
+  <p class="doc-block-title">Eines</p>
   <h2 class="doc-block-heading">cursor-agent</h2>
   <div class="doc-callout">
     <span class="doc-callout-title">Assistència a la línia d'ordres</span>
@@ -73,7 +73,7 @@ locale: ca
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Bloc 6 · Tancament del dia</p>
+  <p class="doc-block-title">Tancament del dia</p>
   <h2 class="doc-block-heading">Estat en acabar el dia 0</h2>
   <p class="doc-block-intro">En tancar el dia, el servidor compleix tres propietats:</p>
   <ol class="doc-steps">

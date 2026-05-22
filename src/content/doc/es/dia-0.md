@@ -12,7 +12,7 @@ locale: es
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Bloque 1 · Infraestructura</p>
+  <p class="doc-block-title">Infraestructura</p>
   <h2 class="doc-block-heading">Plan técnico del arranque</h2>
   <p class="doc-block-intro">KM0 persigue una infraestructura operable por el equipo, sin paneles propietarios opacos. La visión completa del arranque incluye:</p>
   <ul class="doc-list">
@@ -26,7 +26,7 @@ locale: es
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Bloque 2 · Disco y sistema</p>
+  <p class="doc-block-title">Disco y sistema</p>
   <h2 class="doc-block-heading">Provisionamiento del VPS y particiones</h2>
   <p class="doc-block-intro">Se eligió <strong>Debian</strong> por predictibilidad de paquetes y documentación para administración manual, sin paneles obligatorios. El primer paso fue revisar el layout del disco:</p>
   <ul class="doc-list">
@@ -38,7 +38,7 @@ locale: es
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Bloque 3 · Paquetes base</p>
+  <p class="doc-block-title">Paquetes base</p>
   <h2 class="doc-block-heading">Software base</h2>
   <p class="doc-block-intro">Se instaló el mínimo razonable para administración remota segura y Docker, sin peso muerto:</p>
   <ul class="doc-list">
@@ -51,7 +51,7 @@ locale: es
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Bloque 4 · Consola</p>
+  <p class="doc-block-title">Consola</p>
   <h2 class="doc-block-heading">Ergonómica del shell</h2>
   <p class="doc-block-intro">Para sesiones SSH consistentes se aplicó la guía <a href="https://wiki.ldeluipy.es/initialConfiguration.html">initialConfiguration</a> del wiki:</p>
   <ul class="doc-list">
@@ -63,7 +63,7 @@ locale: es
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Bloque 5 · Herramientas</p>
+  <p class="doc-block-title">Herramientas</p>
   <h2 class="doc-block-heading">cursor-agent</h2>
   <div class="doc-callout">
     <span class="doc-callout-title">Asistencia en la línea de comandos</span>
@@ -73,7 +73,7 @@ locale: es
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Bloque 6 · Cierre del día</p>
+  <p class="doc-block-title">Cierre del día</p>
   <h2 class="doc-block-heading">Estado al terminar el día 0</h2>
   <p class="doc-block-intro">Al cerrar el día, el servidor cumple tres propiedades:</p>
   <ol class="doc-steps">

@@ -12,7 +12,7 @@ locale: en
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Block 1 · Infrastructure</p>
+  <p class="doc-block-title">Infrastructure</p>
   <h2 class="doc-block-heading">Bootstrap technical plan</h2>
   <p class="doc-block-intro">KM0 aims for infrastructure the team can operate without opaque proprietary panels. The full bootstrap picture includes:</p>
   <ul class="doc-list">
@@ -26,7 +26,7 @@ locale: en
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Block 2 · Disk and system</p>
+  <p class="doc-block-title">Disk and system</p>
   <h2 class="doc-block-heading">VPS provisioning and partitions</h2>
   <p class="doc-block-intro"><strong>Debian</strong> was chosen for predictable packages and hands-on documentation, without mandatory control panels. The first step was to review disk layout:</p>
   <ul class="doc-list">
@@ -38,7 +38,7 @@ locale: en
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Block 3 · Base packages</p>
+  <p class="doc-block-title">Base packages</p>
   <h2 class="doc-block-heading">Base software</h2>
   <p class="doc-block-intro">A reasonable minimum was installed for secure remote administration and Docker, without bloat:</p>
   <ul class="doc-list">
@@ -51,7 +51,7 @@ locale: en
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Block 4 · Console</p>
+  <p class="doc-block-title">Console</p>
   <h2 class="doc-block-heading">Shell ergonomics</h2>
   <p class="doc-block-intro">For consistent SSH sessions, the wiki <a href="https://wiki.ldeluipy.es/initialConfiguration.html">initialConfiguration</a> guide was applied:</p>
   <ul class="doc-list">
@@ -63,7 +63,7 @@ locale: en
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Block 5 · Tooling</p>
+  <p class="doc-block-title">Tooling</p>
   <h2 class="doc-block-heading">cursor-agent</h2>
   <div class="doc-callout">
     <span class="doc-callout-title">Command-line assistance</span>
@@ -73,7 +73,7 @@ locale: en
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">Block 6 · End of day</p>
+  <p class="doc-block-title">End of day</p>
   <h2 class="doc-block-heading">State at the end of day 0</h2>
   <p class="doc-block-intro">By the end of the day, the server satisfies three properties:</p>
   <ol class="doc-steps">

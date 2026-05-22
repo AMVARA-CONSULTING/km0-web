@@ -1,33 +1,66 @@
 ---
-title: "Day 0"
-description: "The digital Kilometer 0: why KM0 exists, local services, and what you will find on this blog."
+title: "Day 0 — Server foundations"
+description: "Debian, partitioning, Docker, Nginx, and a reproducible base so the KM0 stack stays auditable and operable."
 pubDate: 2026-05-21
 locale: en
 ---
 
-## Welcome to the origin
+Day 0 is dedicated to **foundations**: without a reproducible operating system and working environment, any later stack would be fragile and hard to audit. The goal is to end the day with stable Debian, an orderly disk layout, minimal but sufficient tooling, and a shell that encourages documenting every change.
 
-**Kilometer 0 Digital** is the starting point of a project born close to home: close to people, to data, and to the decisions that matter. We are not trying to outscale global giants; we want to offer a **local, human, and transparent** alternative for anyone who cares where their files live and who they talk to when something breaks.
+## Bootstrap technical plan (full picture)
 
-The name is deliberate. In cities, kilometer zero marks the origin of distances. Here it marks the origin of digital infrastructure that **does not push you away** from your context.
+KM0 aims for infrastructure that the team can operate without opaque proprietary panels:
 
-## Why our own services (Cloud and Email)
+- **System:** VPS on up-to-date Debian, with a partition scheme that separates system from data where it makes sense (easier snapshots and backup policies).
+- **Collaboration:** [OpenCloud](https://cloud.km0.amvara.de) deployed as coordinated microservices inside an official image maintained by the [OpenCloud.eu](https://opencloud.eu) community, with stable volume naming (`COMPOSE_PROJECT_NAME`) so backups do not depend on the directory from which Compose is run.
+- **Perimeter:** Nginx as the sole HTTPS front; Docker overlays that publish HTTP only on `127.0.0.1`.
+- **Communication:** Dockerized Astro site serving static files on another loopback port; separate virtual hosts for marketing (`km0.amvara.de`) and cloud (`cloud.km0.amvara.de`).
+- **Observability and maintenance:** rotated container logs (`json-file` with a max size), routine commands documented in runbooks (`docker compose ps` / `logs` / `pull`), volume backups as compressed artifacts.
+- **Evolution:** room to harden TLS between internal microservices once certificates are fully trusted in chain (move from test to production mode), automate backups, and tighten Fail2ban policies per specific jails.
 
-Today it is easy to hand everything to four or five foreign platforms. It works — until it stops working for you: rising prices, locked accounts with no explanation, data in distant jurisdictions, or no support at all.
+## VPS provisioning and partitions
 
-That is why we are opening two essential services under the KM0 umbrella:
+A **Debian** server was chosen for predictable package cycles and extensive documentation for hands-on administration (no mandatory control panels). The first step was to review disk layout and create partitions aligned with intended use:
 
-- **[KM0 Cloud](https://cloud.km0.amvara.de)** — storage and drive-style collaboration on infrastructure we control and can explain.
-- **[KM0 Email](https://email.km0.amvara.de)** — professional mail in the same ecosystem, without scattering communication across third-party inboxes.
+- Separation that lets project data grow without mixing it with the root filesystem when volume-level backup is needed.
+- Clear mount criteria (`/var/lib/docker` may concentrate OpenCloud I/O depending on VPS size).
+- Documented conventions so anyone on the team can tell persistent data mounts from system mounts.
 
-This is not tech nostalgia: it is **practical sovereignty**. Your files and your mail stay in an environment built for teams and people who prefer a direct conversation to endless FAQs.
+Exact partition maps depend on provider and contracted size; what matters is documenting them outside this blog in the project wiki or runbook for disaster recovery.
 
-## What you will find on this blog
+## Base software
 
-This section — **Blog** in the menu, routes under `/en/doc/` — is our technical and project diary:
+A reasonable minimum was installed for secure remote administration and building on Docker without unnecessary bloat:
 
-- Architecture and deployment decisions, explained in plain language.
-- Product milestones (new features, domain changes, maintenance).
-- Reflections on privacy, accessibility, and sustainable digital work from the origin.
+- Common system tools (`curl`, editors, network and diagnostic utilities).
+- **Docker Engine** with rotated log policy (`/etc/docker/daemon.json`) so logs do not fill the disk.
+- **Nginx** from system packages as a stable front.
+- **Certbot** / TLS strategy by project phase (initial HTTP-01 issuance vs self-signed certificate for lab work).
 
-This post is the first: **Day 0**, the day the site and KM0’s public story go live. Thanks for reading. If you want to collaborate or ask something specific, [get in touch](/en/#contacto).
+The idea is that each component has a single, observable role in the dependency tree (`systemctl status`, `nginx -t`, `docker compose ps`).
+
+## Shell ergonomics and reproducible initial setup
+
+To keep later SSH sessions consistent, improvements followed the wiki’s internal [initialConfiguration](https://wiki.ldeluipy.es/initialConfiguration.html) guide:
+
+- A more readable Bash prompt (current directory, command status, visual hints).
+- Settings that reduce repeated mistakes (useful history, safe defaults where applicable).
+- Aliases and `PATH` conventions that anticipate Docker Compose and Git work under `/opt/...`.
+
+Having this base written down off-server lets the same “template” be repeated on other project VPS instances without improvising each time.
+
+## cursor-agent
+
+**cursor-agent** was installed to bring day-to-day server work closer to an assisted development flow: automated reviews, helper scripts, and incremental documentation without leaving the command line.
+
+It does not replace human review or team change controls, but it lowers friction for verifiable repeat tasks (updating Compose overlays, validating Nginx syntax before reload, etc.).
+
+## State at the end of day 0
+
+By the end of the day the server satisfies three properties:
+
+1. **Auditable:** known disk layout and packages.
+2. **Repeatable:** main steps link to wiki and runbooks.
+3. **Ready** for Docker workloads without prematurely exposing services to the public.
+
+**Day 1** builds on this base to bring up OpenCloud, the proxy virtual host, and the KM0 site over TLS. In the meantime, explore the published [services](/en/#servicios) or [get in touch](/en/#contacto) if you want to collaborate.

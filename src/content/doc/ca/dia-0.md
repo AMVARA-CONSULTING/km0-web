@@ -1,33 +1,66 @@
 ---
-title: "Dia 0"
-description: "El Kilòmetre 0 digital: per què existeix KM0, serveis locals i què trobaràs en aquest blog."
+title: "Dia 0 — Fonaments del servidor"
+description: "Debian, particions, Docker, Nginx i base reproducible: el dia dedicat a fer l'stack KM0 auditable i operable."
 pubDate: 2026-05-21
 locale: ca
 ---
 
-## Benvinguts a l'origen
+El dia 0 està dedicat als **fonaments**: sense una base reproducible del sistema operatiu i de l'entorn de treball, qualsevol stack posterior seria fràgil i difícil d'auditar. L'objectiu és sortir del dia amb Debian estable, disc ordenat, eines mínimes però suficients i una consola que convidi a documentar cada canvi.
 
-**Kilòmetre 0 Digital** és el punt de partida d'un projecte que neix a prop: a prop de les persones, de les dades i de les decisions que importen. No pretenem competir amb els gegants globals en escala; volem oferir una alternativa **local, humana i transparent** per a qui valora saber on viuen els seus fitxers i amb qui parla quan alguna cosa falla.
+## Pla tècnic de l'arrencada (visió completa)
 
-El nom no és casual. A les ciutats, el kilòmetre zero marca l'origen de les distàncies. Aquí marca l'origen d'una infraestructura digital que **no t'allunya** del teu context.
+KM0 persegueix una infraestructura que pugui ser operada per persones de l'equip sense dependre de panells propietaris opacs:
 
-## Per què serveis propis (Cloud i Email)
+- **Sistema:** VPS amb Debian actualitzat, esquema de particions que separa sistema de dades quan té sentit al projecte (facilita snapshots i polítiques de còpia de seguretat).
+- **Col·laboració:** [OpenCloud](https://cloud.km0.amvara.de) desplegat com a conjunt de microserveis coordinats dins d'una imatge oficial mantinguda per la comunitat [OpenCloud.eu](https://opencloud.eu), amb volums nomenats de forma estable (`COMPOSE_PROJECT_NAME`) perquè les còpies no depenguin del directori des del qual s'executa Compose.
+- **Perímetre:** Nginx com a únic frontal HTTPS; overlays Docker que publiquen HTTP només a `127.0.0.1`.
+- **Comunicació:** Lloc Astro dockeritzat servint estàtics en un altre port loopback; virtual hosts independents per a màrqueting (`km0.amvara.de`) i cloud (`cloud.km0.amvara.de`).
+- **Observabilitat i manteniment:** logs de contenidor rotats (`json-file` amb mida màxima), ordres habituals documentades en runbooks (`docker compose ps` / `logs` / `pull`), còpies de volums com a artefactes comprimits.
+- **Evolució:** espai per endureir TLS entre microserveis interns quan els certificats siguin totalment fiables en cadena (passar de mode prova a producció), automatitzar còpies de seguretat i endureir polítiques Fail2ban per jails específics.
 
-Avui és fàcil delegar-ho tot en quatre o cinc plataformes estrangeres. Funciona — fins que deixa de funcionar per a tu: preus que pugen, comptes bloquejats sense explicació, dades en jurisdiccions llunyanes o suport inexistent.
+## Provisionament del VPS i particions
 
-Per això obrim dos serveis essencials sota el paraigua KM0:
+Es va triar un servidor amb **Debian** per la predictibilitat del cicle de paquets i l'amplia documentació per a administració manual (sense panells obligatoris). El primer pas va ser revisar el layout del disc i crear particions coherents amb l'ús previst:
 
-- **[KM0 Cloud](https://cloud.km0.amvara.de)** — emmagatzematge i col·laboració tipus drive, en infraestructura que controlem i podem explicar.
-- **[KM0 Email](https://email.km0.amvara.de)** — correu professional en el mateix ecosistema, sense dispersar la comunicació en bústies alienes.
+- Separació que permeti créixer dades del projecte sense barrejar-les amb el sistema de fitxers arrel quan calgui fer còpia per volum.
+- Criteris clars per a muntatges (`/var/lib/docker` pot concentrar l'I/O d'OpenCloud segons la mida del VPS).
+- Convencions documentades perquè qualsevol persona de l'equip reconegui quin muntatge correspon a dades persistents o al sistema.
 
-No és nostàlgia tecnològica: és **sobirania pràctica**. Els teus fitxers i el teu correu queden en un entorn dissenyat per a equips i persones que prefereixen tracte directe a llegir FAQs infinites.
+Els detalls exactes del mapa de particions són específics del proveïdor i de la mida contractada; el que importa és que quedin documentats fora del blog a la wiki o runbook del projecte per a recuperació davant fallades.
 
-## Què trobaràs en aquest blog
+## Programari base
 
-Aquest apartat — **Blog** al menú, rutes sota `/ca/doc/` — és el nostre diari tècnic i de projecte:
+Es va instal·lar el conjunt mínim raonable per a administració segura remota i per construir sobre Docker sense “pes mort” innecessari:
 
-- Decisions d'arquitectura i desplegament, explicades en llenguatge clar.
-- Fites del producte (novetats, canvis de domini, manteniment).
-- Reflexions sobre privacitat, accessibilitat i sostenibilitat digital des de l'origen.
+- Eines de sistema habituals (`curl`, editors, utilitats de xarxa i diagnòstic).
+- **Docker Engine** amb política de logs rotatius (`/etc/docker/daemon.json`) perquè els registres no ocupin tot el disc.
+- **Nginx** des de paquets del sistema com a frontal estable.
+- **Certbot** / estratègia TLS segons la fase del projecte (emissió inicial HTTP-01 o certificat provisional autofirmat per a laboratori).
 
-La primera entrada és aquesta: **Dia 0**, el dia en què el lloc i la història pública de KM0 surten a la llum. Gràcies per llegir-nos. Si vols col·laborar o preguntar alguna cosa concreta, [escriu-nos](/ca/#contacto).
+La filosofia és que cada component té un rol únic i observable a l'arbre de dependències del sistema (`systemctl status`, `nginx -t`, `docker compose ps`).
+
+## Ergonòmica del shell i configuració inicial reproducible
+
+Perquè les sessions SSH posteriors siguin consistents es van aplicar millores guiades per la documentació interna [initialConfiguration](https://wiki.ldeluipy.es/initialConfiguration.html) del wiki:
+
+- Prompt de Bash més llegible (directori actual, estat de l'ordre, pistes visuals).
+- Ajustos que redueixen errors repetits (historial útil, opcions segures per defecte on calgui).
+- Convencions per a àlies i `PATH` que anticipen el treball amb Docker Compose i Git des de `/opt/...`.
+
+Tenir aquesta base escrita fora del servidor permet repetir el mateix motlle en altres VPS del projecte sense improvisar cada vegada.
+
+## cursor-agent
+
+Es va instal·lar **cursor-agent** per acostar el flux de treball del dia a dia al de l'entorn de desenvolupament assistit: revisions automatitzades, generació de scripts auxiliars i documentació incremental sense abandonar la línia d'ordres del servidor.
+
+No substitueix la revisió humana ni els controls de canvi de l'equip, però redueix fricció quan cal repetir tasques verificables (actualitzar overlays de Compose, validar sintaxi de Nginx abans de recarregar, etc.).
+
+## Estat al tancament del dia 0
+
+En acabar el dia el servidor compleix tres propietats:
+
+1. **És auditable:** layout de disc i paquets coneguts.
+2. **És repetible:** els passos principals enllacen amb wiki i runbooks.
+3. **Està llest** per a càrregues Docker sense exposar serveis prematurament al públic.
+
+El **dia 1** aprofita aquesta base per materialitzar OpenCloud, el virtual host del proxy i la web KM0 ja enllaçades per TLS. Mentrestant, pots explorar els [serveis](/ca/#servicios) publicats o [escriure'ns](/ca/#contacto) si vols col·laborar.

@@ -31,37 +31,26 @@ const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
 >
   <Header locale={locale} messages={messages} />
   <main class="section-pad bg-white pt-28">
-    <div class="mx-auto max-w-3xl">
-      <p class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
-        {messages.doc.eyebrow}
-      </p>
-      <h1 class="heading-section mb-6 text-navy">{messages.doc.heading}</h1>
-      <p class="mb-12 text-lg text-navy/70">{messages.doc.intro}</p>
+    <div class="doc-index mx-auto max-w-3xl">
+      <header class="doc-index-header mb-12">
+        <p class="doc-eyebrow">{messages.doc.eyebrow}</p>
+        <h1 class="heading-section text-navy">{messages.doc.heading}</h1>
+        <p class="doc-index-intro">{messages.doc.intro}</p>
+      </header>
 
-      <ul class="space-y-8 border-t border-navy/10 pt-8">
+      <ul class="doc-post-list">
         {
           posts.map((post) => (
-            <li>
-              <time
-                datetime={post.data.pubDate.toISOString()}
-                class="mb-2 block text-sm text-navy/50"
-              >
+            <li class="doc-post-card">
+              <time datetime={post.data.pubDate.toISOString()} class="doc-date">
                 {formatDocDate(post.data.pubDate, locale)}
               </time>
-              <h2 class="mb-2 text-xl font-semibold text-navy">
-                <a
-                  href={docPostHref(locale, docSlug(post))}
-                  class="transition-colors hover:text-navy/70"
-                >
-                  {post.data.title}
-                </a>
+              <h2 class="doc-post-card-title">
+                <a href={docPostHref(locale, docSlug(post))}>{post.data.title}</a>
               </h2>
-              <p class="mb-3 text-navy/70">{post.data.description}</p>
-              <a
-                href={docPostHref(locale, docSlug(post))}
-                class="text-sm font-medium text-navy underline-offset-4 hover:underline"
-              >
-                {messages.doc.readMore} →
+              <p class="doc-post-card-desc">{post.data.description}</p>
+              <a href={docPostHref(locale, docSlug(post))} class="doc-read-more">
+                {messages.doc.readMore}
               </a>
             </li>
           ))

@@ -61,39 +61,186 @@
     @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-sm font-medium text-navy/80 shadow-sm;
   }
 
-  .doc-body {
-    @apply text-lg leading-relaxed text-navy/80;
+  .doc-eyebrow {
+    @apply mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50;
   }
 
-  .doc-body :global(h2) {
-    @apply mb-4 mt-10 text-2xl font-semibold text-navy;
+  .doc-breadcrumb {
+    @apply flex flex-wrap items-center gap-2 text-sm text-navy/50;
   }
 
-  .doc-body :global(h3) {
-    @apply mb-3 mt-8 text-xl font-semibold text-navy;
+  .doc-breadcrumb-link {
+    @apply font-medium transition-colors hover:text-navy;
   }
 
-  .doc-body :global(p) {
+  .doc-breadcrumb-sep {
+    @apply text-navy/30;
+  }
+
+  .doc-breadcrumb-current {
+    @apply font-medium text-navy;
+  }
+
+  .doc-header {
+    @apply border-b border-navy/10 pb-10;
+  }
+
+  .doc-title {
     @apply mb-4;
   }
 
-  .doc-body :global(ul) {
-    @apply mb-6 list-disc space-y-2 pl-6;
+  .doc-dek {
+    @apply max-w-2xl text-lg leading-relaxed text-navy/70 md:text-xl;
   }
 
-  .doc-body :global(ol) {
-    @apply mb-6 list-decimal space-y-2 pl-6;
+  .doc-date {
+    @apply mb-4 inline-block rounded-full border border-navy/10 bg-surface px-4 py-1 text-xs font-medium uppercase tracking-wider text-navy/60;
+  }
+
+  .doc-footer {
+    @apply mt-14 border-t border-navy/10 pt-8;
+  }
+
+  .doc-back {
+    @apply inline-flex items-center rounded-full border border-navy/15 bg-surface px-5 py-2.5 text-sm font-medium text-navy transition-colors hover:border-navy/25 hover:bg-white;
+  }
+
+  .doc-index-intro {
+    @apply mt-6 text-lg leading-relaxed text-navy/70 md:text-xl;
+    text-align: justify;
+  }
+
+  .doc-post-list {
+    @apply list-none space-y-6 p-0;
+  }
+
+  .doc-post-card {
+    @apply rounded-2xl border border-navy/10 bg-surface p-6 md:p-8;
+  }
+
+  .doc-post-card-title {
+    @apply mb-3 text-xl font-semibold md:text-2xl;
+  }
+
+  .doc-post-card-title a {
+    @apply text-navy transition-colors hover:text-navy/70;
+  }
+
+  .doc-post-card-desc {
+    @apply mb-4 text-justify leading-relaxed text-navy/70;
+  }
+
+  .doc-read-more {
+    @apply text-sm font-semibold text-gradient;
+  }
+
+  .doc-body {
+    @apply text-base leading-relaxed text-navy/80 md:text-lg;
+  }
+
+  .doc-body :global(.doc-lead) {
+    @apply mb-10 text-xl leading-relaxed text-navy/90 md:text-2xl md:leading-relaxed;
+    text-align: justify;
+  }
+
+  .doc-body :global(h2) {
+    @apply relative mb-5 mt-14 scroll-mt-28 pb-4 text-2xl font-semibold tracking-tight text-navy md:text-3xl;
+  }
+
+  .doc-body :global(h2)::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-1 w-20 rounded-full bg-brand-gradient;
+  }
+
+  .doc-body :global(h3) {
+    @apply mb-3 mt-8 text-lg font-semibold text-navy md:text-xl;
+  }
+
+  .doc-body :global(p) {
+    @apply mb-5 text-justify;
+  }
+
+  .doc-body :global(ul:not(.doc-list):not(.doc-steps)) {
+    @apply mb-8 list-disc space-y-2 pl-6 text-justify;
+  }
+
+  .doc-body :global(ul.doc-list) {
+    @apply mb-8 list-none space-y-3 p-0;
+  }
+
+  .doc-body :global(ul.doc-list li) {
+    @apply rounded-xl border border-navy/10 bg-surface px-5 py-4 text-justify leading-relaxed;
+  }
+
+  .doc-body :global(ul.doc-list li strong) {
+    @apply bg-brand-gradient bg-clip-text font-semibold text-transparent;
+  }
+
+  .doc-body :global(ol.doc-steps) {
+    @apply mb-8 list-none space-y-4 p-0;
+    counter-reset: doc-step;
+  }
+
+  .doc-body :global(ol.doc-steps li) {
+    @apply relative rounded-xl border border-navy/10 bg-white px-6 py-5 pl-16 text-justify leading-relaxed shadow-sm;
+    counter-increment: doc-step;
+  }
+
+  .doc-body :global(ol.doc-steps li)::before {
+    content: counter(doc-step);
+    @apply absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white;
+  }
+
+  .doc-body :global(ol.doc-steps li strong) {
+    @apply font-semibold text-navy;
   }
 
   .doc-body :global(li) {
     @apply text-navy/80;
   }
 
-  .doc-body :global(a) {
-    @apply font-medium text-navy underline underline-offset-4 transition-colors hover:text-navy/70;
+  .doc-body :global(.doc-callout) {
+    @apply relative my-8 overflow-hidden rounded-2xl bg-surface px-6 py-5 pl-8 text-justify leading-relaxed text-navy/80 md:px-8 md:py-6;
   }
 
-  .doc-body :global(strong) {
+  .doc-body :global(.doc-callout)::before {
+    content: '';
+    @apply absolute inset-y-0 left-0 w-1.5 bg-brand-gradient;
+  }
+
+  .doc-body :global(.doc-callout-title) {
+    @apply mb-2 block text-sm font-semibold uppercase tracking-wider text-gradient;
+  }
+
+  .doc-body :global(.doc-callout p:last-child) {
+    @apply mb-0;
+  }
+
+  .doc-body :global(.doc-note) {
+    @apply my-8 rounded-2xl border border-dashed border-navy/20 bg-white px-6 py-5 text-justify text-sm leading-relaxed text-navy/70 md:text-base;
+  }
+
+  .doc-body :global(code) {
+    @apply rounded-md bg-surface px-1.5 py-0.5 font-mono text-sm text-navy;
+  }
+
+  .doc-body :global(a) {
+    @apply font-medium text-navy underline decoration-navy/30 underline-offset-4 transition-colors hover:decoration-navy;
+  }
+
+  .doc-body :global(strong:not(li strong)) {
     @apply font-semibold text-navy;
+  }
+
+  .doc-body :global(hr) {
+    @apply my-12 border-0 border-t border-navy/10;
+  }
+
+  .doc-body :global(.doc-closing) {
+    @apply mt-10 rounded-2xl border border-navy/10 bg-gradient-to-br from-surface to-white p-6 text-justify leading-relaxed md:p-8;
+  }
+
+  .doc-body :global(.doc-closing strong) {
+    @apply bg-brand-gradient bg-clip-text font-semibold text-transparent;
   }
 }

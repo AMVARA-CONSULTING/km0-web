@@ -65,7 +65,7 @@ Edit **`src/i18n/es.json`**, **`ca.json`**, and **`en.json`** together so keys s
 ### Docker (recommended)
 
 ```bash
-git clone git@github.com:Luipy56/km0-web.git
+git clone git@github.com:AMVARA-CONSULTING/km0-web.git
 cd km0-web
 docker compose build
 docker compose up -d

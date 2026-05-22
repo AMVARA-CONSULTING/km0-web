@@ -69,15 +69,15 @@ h2. Project layout on the server
 *h3. Git*
 
 |_.Field|_.Value|
-| Remote | git@github.com:Luipy56/km0-web.git |
+| Remote | git@github.com:AMVARA-CONSULTING/km0-web.git |
 | Default branch | @main@ (tracks @origin/main@) |
 | Clone (SSH) | See block below |
 
 <pre><code class="shell">
-git clone git@github.com:Luipy56/km0-web.git
+git clone git@github.com:AMVARA-CONSULTING/km0-web.git
 </code></pre>
 
-"GitHub repo (browser)":"https://github.com/Luipy56/km0-web"
+"GitHub repo (browser)":"https://github.com/AMVARA-CONSULTING/km0-web"
 
 *h3. Common commands*
 

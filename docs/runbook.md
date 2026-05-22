@@ -177,6 +177,32 @@ journalctl -u nginx --since "1 hour ago" --no-pager
 
 ---
 
+## Git and GitHub
+
+| Item | Value |
+|------|--------|
+| Remote (SSH) | `git@github.com:AMVARA-CONSULTING/km0-web.git` |
+| Web UI | https://github.com/AMVARA-CONSULTING/km0-web |
+| Working tree | `/opt/km0-web` |
+
+### Deploy key (SSH) on this server
+
+Add the **public** key below as a **Deploy key** on the GitHub repo (Settings → Deploy keys → Add, enable write if you push from the server).
+
+| File | Path |
+|------|------|
+| Private key (do not share) | `/root/.ssh/github_luipy56_ed25519` |
+| Public key (for GitHub) | `/root/.ssh/github_luipy56_ed25519.pub` |
+| SSH config for `github.com` | `/root/.ssh/config` → `IdentityFile` above |
+
+Show public key:
+
+```bash
+cat /root/.ssh/github_luipy56_ed25519.pub
+```
+
+---
+
 ## File map
 
 ```

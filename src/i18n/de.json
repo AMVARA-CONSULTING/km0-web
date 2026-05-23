@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Kilometer 0 Digital",
+    "description": "Lokaler Ursprung. Digitale Wirkung. Verbinden, transformieren und voranbringen — vom Ausgangspunkt aus."
+  },
+  "brandName": "Kilometer 0 Digital",
+  "brandNameShort": "KM0 Digital",
+  "brandMark": {
+    "before": "Kilometer ",
+    "after": " Digital"
+  },
+  "nav": {
+    "inicio": "Start",
+    "valores": "Werte",
+    "servicios": "Services",
+    "significado": "Bedeutung",
+    "mision": "Mission",
+    "blog": "Blog",
+    "contacto": "Kontakt"
+  },
+  "hero": {
+    "eyebrow": "Kilometer 0 Digital",
+    "titleLine1": "LOKALER URSPRUNG.",
+    "titleGradient": "DIGITALE WIRKUNG.",
+    "tagline": "VERBINDEN. TRANSFORMIEREN. VORANBRINGEN.",
+    "ctaPrimary": "Mehr erfahren",
+    "ctaSecondary": "Kontakt aufnehmen",
+    "logoAlt": "Kilometer 0 Digital Logo",
+    "laptopAlt": "Kilometer 0 Digital auf dem Laptop",
+    "mobileAlt": "Kilometer 0 Digital auf dem Smartphone"
+  },
+  "values": {
+    "eyebrow": "Unsere Werte",
+    "headingBefore": "Eine Marke, die ",
+    "headingAccent": "nah",
+    "headingAfter": " und digital ist",
+    "chips": ["Modern", "Zugänglich", "Nahbar", "Digital"]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "headingBefore": "Technologie, die ",
+    "headingAccent": "nah",
+    "headingAfter": " bleibt und unter Ihrer Kontrolle",
+    "intro": "Wir bieten digitale Werkzeuge für Menschen und Teams, die mit Ruhe arbeiten wollen: lokale Infrastruktur, direkter Support und keine Abhängigkeit von ausländischen Giganten für das Wesentliche.",
+    "slogan": "Ihre Daten, Ihr Ursprung. Keine Bindung an Hyperscaler.",
+    "items": [
+      {
+        "id": "cloud",
+        "title": "KM0 Cloud",
+        "desc": "Cloud-Speicher und Zusammenarbeit wie Ihr eigenes Laufwerk: Dateien teilen, synchronisieren und im Team arbeiten — mit dem Vertrauen eines Services, der Ihren Kontext versteht.",
+        "cta": "Cloud öffnen",
+        "url": "https://cloud.km0.amvara.de"
+      },
+      {
+        "id": "email",
+        "title": "KM0 Email",
+        "desc": "Professionelle E-Mail im selben Ökosystem. Sichere Postfächer, eigene Domain und menschlicher Support, wenn Sie ihn brauchen.",
+        "cta": "E-Mail öffnen",
+        "url": "https://email.km0.amvara.de"
+      }
+    ]
+  },
+  "doc": {
+    "metaTitle": "Blog — Kilometer 0 Digital",
+    "metaDescription": "Dokumentation, Entscheidungen und Updates zum KM0-Projekt. Transparenz ab Tag null.",
+    "eyebrow": "Blog",
+    "heading": "Dokumentation und Updates",
+    "intro": "Hier teilen wir den Puls des Projekts: warum wir jede Entscheidung treffen, wie sich unsere Services entwickeln und was wir unterwegs lernen. Ein nahes technisches Tagebuch — kein leeres Marketing.",
+    "readMore": "Beitrag lesen",
+    "backToIndex": "Zurück zum Blog",
+    "breadcrumbHome": "Blog"
+  },
+  "meaning": {
+    "eyebrow": "Bedeutung",
+    "heading": "Mehr als ein Logo",
+    "items": [
+      {
+        "title": "Ausgangspunkt",
+        "desc": "Die Markierung zeigt den Startpunkt: Kilometer Null, wo alles beginnt."
+      },
+      {
+        "title": "Reichweite",
+        "desc": "Signalfunken symbolisieren digitale Reichweite und wie sich Ideen verbreiten."
+      },
+      {
+        "title": "Netzwerk",
+        "desc": "Verbundene Knoten stehen für Menschen, Ideen und Chancen, die miteinander verknüpft sind."
+      },
+      {
+        "title": "Lokale Transformation",
+        "desc": "Wellen an der Basis evozieren lokale Wirkung mit globaler Resonanz."
+      }
+    ]
+  },
+  "mission": {
+    "eyebrow": "Mission",
+    "heading": "Am Ursprung geboren",
+    "body": "Kilometer 0 Digital startet am Ursprung und wächst, indem es Menschen, Ideen und Chancen verbindet — für eine zugänglichere und innovativere digitale Zukunft."
+  },
+  "merch": {
+    "eyebrow": "Anwendungen",
+    "headingBefore": "Identität auf ",
+    "headingGradient": "jedem Bildschirm"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading": "Sprechen wir?",
+    "body": "Wir gestalten die digitale Zukunft vom Ursprung aus. Schreiben Sie uns, um zusammenzuarbeiten oder mehr über das Projekt zu erfahren.",
+    "email": "contacto@amvara.de"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "github": "GitHub"
+  }
+}

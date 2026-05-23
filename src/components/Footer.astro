@@ -36,6 +36,12 @@ const { locale, messages: m } = Astro.props;
       <a href={withHash(locale, 'mision')} class="transition-colors hover:text-navy">{m.nav.mision}</a>
       <a href={localeHref(locale, '/doc/')} class="transition-colors hover:text-navy">{m.nav.blog}</a>
       <a href={withHash(locale, 'contacto')} class="transition-colors hover:text-navy">{m.nav.contacto}</a>
+      <a
+        href="https://github.com/AMVARA-CONSULTING/km0-web"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="transition-colors hover:text-navy"
+      >{m.footer.github}</a>
     </nav>
   </div>
 </footer>

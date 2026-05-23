@@ -6,7 +6,7 @@ const doc = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    locale: z.enum(['es', 'ca', 'en']),
+    locale: z.enum(['es', 'ca', 'en', 'de']),
   }),
 });
 

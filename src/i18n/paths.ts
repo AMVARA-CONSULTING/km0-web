@@ -1,9 +1,15 @@
 import type { Locale } from './types';
 
+const LOCALE_PREFIX: Record<Locale, '' | '/ca' | '/en' | '/de'> = {
+  es: '',
+  ca: '/ca',
+  en: '/en',
+  de: '/de',
+};
+
 /** Path prefix without trailing slash, empty for default locale Spanish */
-export function localePath(locale: Locale): '' | '/ca' | '/en' {
-  if (locale === 'es') return '';
-  return locale === 'ca' ? '/ca' : '/en';
+export function localePath(locale: Locale): '' | '/ca' | '/en' | '/de' {
+  return LOCALE_PREFIX[locale];
 }
 
 /** Link to anchor on current locale page */

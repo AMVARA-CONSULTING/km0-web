@@ -1,4 +1,11 @@
-export type Locale = 'es' | 'ca' | 'en';
+export type Locale = 'es' | 'ca' | 'en' | 'de';
+
+export const localeBcp47: Record<Locale, string> = {
+  es: 'es',
+  ca: 'ca',
+  en: 'en',
+  de: 'de',
+};
 
 export interface MeaningItemJSON {
   title: string;
@@ -92,5 +99,6 @@ export interface Messages {
   };
   footer: {
     rights: string;
+    github: string;
   };
 }

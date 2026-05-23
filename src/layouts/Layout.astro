@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
+import { localeBcp47 } from '../i18n/types';
 
 interface Props {
   locale: Locale;
@@ -16,12 +17,7 @@ const hrefs: Record<Locale, string> = {
   es: new URL('/', site).href,
   ca: new URL('/ca/', site).href,
   en: new URL('/en/', site).href,
-};
-
-const langAttr: Record<Locale, string> = {
-  es: 'es',
-  ca: 'ca',
-  en: 'en',
+  de: new URL('/de/', site).href,
 };
 
 const { locale, messages: m, canonicalUrl, pageTitle, pageDescription } = Astro.props;
@@ -30,7 +26,7 @@ const description = pageDescription ?? m.meta.description;
 ---
 
 <!doctype html>
-<html lang={langAttr[locale]}>
+<html lang={localeBcp47[locale]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,6 +36,7 @@ const description = pageDescription ?? m.meta.description;
     <link rel="alternate" hreflang="es" href={hrefs.es} />
     <link rel="alternate" hreflang="ca" href={hrefs.ca} />
     <link rel="alternate" hreflang="en" href={hrefs.en} />
+    <link rel="alternate" hreflang="de" href={hrefs.de} />
     <link rel="alternate" hreflang="x-default" href={hrefs.es} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,7 +50,7 @@ const description = pageDescription ?? m.meta.description;
     <meta property="og:image" content="https://km0.amvara.de/brand/logo.png" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={langAttr[locale]} />
+    <meta property="og:locale" content={localeBcp47[locale]} />
     <title>{title}</title>
   </head>
   <body>

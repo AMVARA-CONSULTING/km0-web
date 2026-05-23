@@ -109,6 +109,7 @@
     "email": "contacto@amvara.de"
   },
   "footer": {
-    "rights": "Tots els drets reservats."
+    "rights": "Tots els drets reservats.",
+    "github": "GitHub"
   }
 }

@@ -7,7 +7,13 @@ export function docSlug(entry: CollectionEntry<'doc'>): string {
   return last.replace(/\.md$/i, '');
 }
 
-export function formatDocDate(date: Date, locale: 'es' | 'ca' | 'en'): string {
-  const tag = locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-GB' : 'es-ES';
-  return new Intl.DateTimeFormat(tag, { dateStyle: 'long' }).format(date);
+const DATE_LOCALE: Record<'es' | 'ca' | 'en' | 'de', string> = {
+  es: 'es-ES',
+  ca: 'ca-ES',
+  en: 'en-GB',
+  de: 'de-DE',
+};
+
+export function formatDocDate(date: Date, locale: 'es' | 'ca' | 'en' | 'de'): string {
+  return new Intl.DateTimeFormat(DATE_LOCALE[locale], { dateStyle: 'long' }).format(date);
 }

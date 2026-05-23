@@ -6,7 +6,7 @@ import { getMessages } from '../i18n';
 import { localeHref, docPostHref } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import { getCollection } from 'astro:content';
-import { docSlug, formatDocDate } from '../lib/doc';
+import { docSlug, formatDocDate, compareDocPosts } from '../lib/doc';
 
 interface Props {
   locale: Locale;
@@ -15,7 +15,7 @@ interface Props {
 const { locale } = Astro.props;
 const messages = getMessages(locale);
 const posts = (await getCollection('doc', ({ data }) => data.locale === locale)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  compareDocPosts,
 );
 
 const siteRoot = Astro.site ?? new URL('https://km0.amvara.de');

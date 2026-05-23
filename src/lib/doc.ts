@@ -7,6 +7,22 @@ export function docSlug(entry: CollectionEntry<'doc'>): string {
   return last.replace(/\.md$/i, '');
 }
 
+/** Day index from slug (e.g. dia-2 -> 2); 0 when pattern does not match */
+export function docDayNumber(entry: CollectionEntry<'doc'>): number {
+  const match = docSlug(entry).match(/^dia-(\d+)$/);
+  return match ? Number(match[1]) : 0;
+}
+
+/** Newest first: pubDate desc, then day number desc for same-day entries */
+export function compareDocPosts(
+  a: CollectionEntry<'doc'>,
+  b: CollectionEntry<'doc'>,
+): number {
+  const dateDiff = b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+  if (dateDiff !== 0) return dateDiff;
+  return docDayNumber(b) - docDayNumber(a);
+}
+
 const DATE_LOCALE: Record<'es' | 'ca' | 'en' | 'de', string> = {
   es: 'es-ES',
   ca: 'ca-ES',

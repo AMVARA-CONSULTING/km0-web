@@ -1,0 +1,1 @@
+# UTC stamps appended by agent 001 and local preflight (one line per run)

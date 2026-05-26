@@ -98,7 +98,7 @@ Volúmenes Docker:
 <section class="doc-block">
   <p class="doc-block-title">Web KM0</p>
   <h2 class="doc-block-heading">Flujo HTTPS del sitio corporativo</h2>
-  <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0.amvara.de)
+  <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0digital.com)
                      └──► http://127.0.0.1:9180  (km0-web — solo loopback)
                             Astro estático + nginx Alpine</pre></div>
   <ul class="doc-list">
@@ -112,7 +112,7 @@ Volúmenes Docker:
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Perímetro</p>
   <h2 class="doc-block-heading">Fail2ban y subdominio del cloud</h2>
-  <p class="doc-block-intro">Tras el primer corte estable se añadió Fail2ban como red complementaria al firewall. El cloud quedó publicado en <code>cloud.km0.amvara.de</code>, separado de la marca de marketing en <code>km0.amvara.de</code>:</p>
+  <p class="doc-block-intro">Tras el primer corte estable se añadió Fail2ban como red complementaria al firewall. El cloud quedó publicado en <code>cloud.km0digital.com</code>, separado de la marca de marketing en <code>km0digital.com</code>:</p>
   <ul class="doc-list">
     <li>Certificados y políticas CSP pueden divergir.</li>
     <li>Los usuarios entienden qué URL usar para trabajo vs comunicación.</li>

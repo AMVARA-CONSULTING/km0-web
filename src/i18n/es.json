@@ -49,14 +49,14 @@
         "title": "KM0 Cloud",
         "desc": "Almacenamiento y colaboración en la nube, como un drive propio: comparte archivos, sincroniza y trabaja en equipo con la confianza de un servicio que conoce tu contexto.",
         "cta": "Abrir Cloud",
-        "url": "https://cloud.km0.amvara.de"
+        "url": "https://cloud.km0digital.com"
       },
       {
         "id": "email",
         "title": "KM0 Email",
         "desc": "Correo profesional integrado en el mismo ecosistema. Buzones seguros, dominio propio y soporte cercano cuando lo necesites.",
         "cta": "Abrir Email",
-        "url": "https://email.km0.amvara.de"
+        "url": "https://email.km0digital.com"
       }
     ]
   },

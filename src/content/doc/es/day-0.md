@@ -17,9 +17,9 @@ locale: es
   <p class="doc-block-intro">KM0 persigue una infraestructura operable por el equipo, sin paneles propietarios opacos. La visión completa del arranque incluye:</p>
   <ul class="doc-list">
     <li><strong>Sistema:</strong> VPS con Debian actualizado y particiones que separan sistema de datos cuando el proyecto lo requiere (snapshots y backups más claros).</li>
-    <li><strong>Colaboración:</strong> <a href="https://cloud.km0.amvara.de">OpenCloud</a> como microservicios en imagen oficial de <a href="https://opencloud.eu">OpenCloud.eu</a>, con volúmenes estables (<code>COMPOSE_PROJECT_NAME</code>) independientes del directorio de ejecución de Compose.</li>
+    <li><strong>Colaboración:</strong> <a href="https://cloud.km0digital.com">OpenCloud</a> como microservicios en imagen oficial de <a href="https://opencloud.eu">OpenCloud.eu</a>, con volúmenes estables (<code>COMPOSE_PROJECT_NAME</code>) independientes del directorio de ejecución de Compose.</li>
     <li><strong>Perímetro:</strong> Nginx como único frontal HTTPS; Docker publicando HTTP solo en <code>127.0.0.1</code>.</li>
-    <li><strong>Comunicación:</strong> Astro dockerizado en otro puerto loopback; vhosts separados para <code>km0.amvara.de</code> y <code>cloud.km0.amvara.de</code>.</li>
+    <li><strong>Comunicación:</strong> Astro dockerizado en otro puerto loopback; vhosts separados para <code>km0digital.com</code> y <code>cloud.km0digital.com</code>.</li>
     <li><strong>Observabilidad:</strong> logs rotados (<code>json-file</code>), runbooks con <code>docker compose ps</code>, <code>logs</code>, <code>pull</code>, y backups de volúmenes comprimidos.</li>
     <li><strong>Evolución:</strong> TLS interno en producción, copias automatizadas y Fail2ban por jails concretos.</li>
   </ul>

@@ -1,0 +1,52 @@
+---
+description: autoagents task pipeline for km0-web (FEAT/NEW/WIP/TEST/CLOSED)
+globs: autoagents/**/*
+alwaysApply: false
+---
+
+# autoagents workflow
+
+When editing files under `autoagents/` or executing agent steps:
+
+## Task filenames
+
+`<STATUS>-<issue>-<YYYYMMDD>-<HHMM>-<slug>.md` — see `autoagents/TASKS-README.md`.
+
+## Before git-changing steps
+
+```bash
+./scripts/git-sync-main.sh
+```
+
+Branch: **`main`**. Remote: **AMVARA-CONSULTING/km0-web**.
+
+## Agent roles
+
+| File | Role |
+|------|------|
+| `001-gh-reviewer.md` | GH issues → FEAT tasks; Docker incidents → NEW |
+| `010-feature-coder.md` | FEAT → WIP → UNTESTED |
+| `002-coder/CODER.md` | NEW/WIP → UNTESTED |
+| `020-test.md` | UNTESTED → TESTING → CLOSED or WIP |
+| `030-closing-reviewer.md` | CLOSED → done/ archive |
+| `040-committer.md` | Commit on main |
+
+## Loop
+
+```bash
+./autoagents/autoagents-loop.sh [001|feat|coder|tester|closing-review|committer]
+```
+
+Uses **cursor-agent** with prompt file body + loop message (`--yolo --print --trust --workspace` repo root). Requires `gh` auth (`./scripts/setup-autoagents-gh.sh`).
+
+## Scope
+
+- Edit product files only in coder/tester roles (`src/`, `astro.config.mjs`, `docs/`).
+- 001/030 touch only `autoagents/` task files.
+- Never commit `.env`, tokens, or secrets.
+
+## Archive closed tasks
+
+```bash
+./scripts/move-agent-task-to-done.sh autoagents/tasks/CLOSED-<N>-<date>-<slug>.md
+```

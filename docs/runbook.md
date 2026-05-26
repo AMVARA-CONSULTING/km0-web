@@ -1,6 +1,6 @@
 # Operations Runbook — Kilómetro 0 Digital Web
 
-**URL:** https://km0.amvara.de (`/` = Spanish default locale) · **Català:** `/ca/` · **English:** `/en/` · **Deutsch:** `/de/` · **Blog:** `/doc/` (nav label: “Blog”)
+**URL:** https://km0digital.com (`/` = Spanish default locale) · **Català:** `/ca/` · **English:** `/en/` · **Deutsch:** `/de/` · **Blog:** `/doc/` (nav label: “Blog”)
 
 **Server:** `116.202.10.106` · **Deployed:** 2026-05-21
 
@@ -49,9 +49,9 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 | Astro site | km0-web 1.1.0 | `/opt/km0-web/` |
 | Docker image | `km0-km0-web` | Built from `/opt/km0-web/Dockerfile` |
 | Container | `km0-web` | `127.0.0.1:9180→80` |
-| Nginx vhost | `km0.amvara.de` | `/etc/nginx/sites-available/km0` |
-| TLS | Let's Encrypt | `/etc/letsencrypt/live/km0.amvara.de/` |
-| OpenCloud (separate) | `cloud.km0.amvara.de` → `:9200` | `/opt/opencloud/` |
+| Nginx vhost | `km0digital.com` | `/etc/nginx/sites-available/km0` |
+| TLS | Let's Encrypt | `/etc/letsencrypt/live/km0digital.com/` |
+| OpenCloud (separate) | `cloud.km0digital.com` → `:9200` | `/opt/opencloud/` |
 
 ---
 
@@ -76,7 +76,7 @@ docker compose logs -f km0-web
 
 ```bash
 curl -sI http://127.0.0.1:9180/
-curl -sI https://km0.amvara.de/
+curl -sI https://km0digital.com/
 ss -tlnp | grep 9180
 ```
 
@@ -120,12 +120,12 @@ ln -sf /etc/nginx/sites-available/km0 /etc/nginx/sites-enabled/km0
 
 ## TLS (Let's Encrypt)
 
-**Certificate:** `/etc/letsencrypt/live/km0.amvara.de/`
+**Certificate:** `/etc/letsencrypt/live/km0digital.com/`
 
 Check expiry:
 
 ```bash
-openssl x509 -in /etc/letsencrypt/live/km0.amvara.de/fullchain.pem -noout -dates
+openssl x509 -in /etc/letsencrypt/live/km0digital.com/fullchain.pem -noout -dates
 ```
 
 Renewal test:
@@ -139,26 +139,45 @@ Re-issue if needed:
 
 ```bash
 certbot certonly --webroot -w /var/www/certbot \
-  -d km0.amvara.de \
+  -d km0digital.com -d www.km0digital.com \
   --email admin@amvara.de --agree-tos --no-eff-email
 ```
+
+**Domain migration (2026-05-26):** Before running certbot, create DNS A records:
+
+| Host | Type | Value |
+|------|------|-------|
+| `km0digital.com` | A | `116.202.10.106` |
+| `www.km0digital.com` | A | `116.202.10.106` (or CNAME → `km0digital.com`) |
+
+After DNS propagates:
+
+```bash
+certbot certonly --webroot -w /var/www/certbot \
+  -d km0digital.com -d www.km0digital.com \
+  --email admin@amvara.de --agree-tos --no-eff-email
+cp /opt/km0-web/nginx/sites-available/km0 /etc/nginx/sites-available/km0
+nginx -t && systemctl reload nginx
+```
+
+The repo vhost redirects `km0.amvara.de` and `www.km0digital.com` → `https://km0digital.com`.
 
 ---
 
 ## OpenCloud coexistence
 
-The marketing site uses **km0.amvara.de**. OpenCloud was moved to **cloud.km0.amvara.de** to avoid vhost conflict.
+The marketing site uses **km0digital.com**. OpenCloud was moved to **cloud.km0digital.com** to avoid vhost conflict.
 
 | Service | Hostname | Backend |
 |---------|----------|---------|
-| KM0 landing | `km0.amvara.de` | `127.0.0.1:9180` |
-| OpenCloud | `cloud.km0.amvara.de` | `127.0.0.1:9200` |
+| KM0 landing | `km0digital.com` | `127.0.0.1:9180` |
+| OpenCloud | `cloud.km0digital.com` | `127.0.0.1:9200` |
 
-**Required:** DNS A record `cloud.km0.amvara.de` → `116.202.10.106`, then:
+**Required:** DNS A record `cloud.km0digital.com` → `116.202.10.106`, then:
 
 ```bash
 certbot certonly --webroot -w /var/www/certbot \
-  -d cloud.km0.amvara.de \
+  -d cloud.km0digital.com \
   --email admin@amvara.de --agree-tos --no-eff-email
 ```
 
@@ -170,7 +189,7 @@ docker compose down && docker compose up -d
 nginx -t && systemctl reload nginx
 ```
 
-Until DNS exists, OpenCloud uses a self-signed cert on `cloud.km0.amvara.de` (`/etc/nginx/ssl/cloud-selfsigned.*`).
+Until DNS exists, OpenCloud uses a self-signed cert on `cloud.km0digital.com` (`/etc/nginx/ssl/cloud-selfsigned.*`).
 
 ---
 
@@ -244,6 +263,7 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 
 | Date | Change |
 |------|--------|
-| 2026-05-21 | Initial deploy: Astro, Docker :9180, Nginx km0.amvara.de, LE TLS |
-| 2026-05-21 | OpenCloud moved to cloud.km0.amvara.de (DNS + LE pending) |
+| 2026-05-21 | Initial deploy: Astro, Docker :9180, Nginx km0digital.com, LE TLS |
+| 2026-05-21 | OpenCloud moved to cloud.km0digital.com (DNS + LE pending) |
 | 2026-05-21 | i18n: `/` ES, `/ca/` CA, `/en/` EN; JSON strings + hreflang |
+| 2026-05-26 | Domain migration: `km0.amvara.de` → `km0digital.com` (301 redirect from old hostname) |

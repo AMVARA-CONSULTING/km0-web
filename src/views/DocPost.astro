@@ -17,7 +17,7 @@ const { locale, post } = Astro.props;
 const messages = getMessages(locale);
 const { Content } = await post.render();
 
-const siteRoot = Astro.site ?? new URL('https://km0.amvara.de');
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const postPath = docPostHref(locale, docSlug(post));
 const canonicalUrl = new URL(postPath, siteRoot).href;
 const pageTitle = `${post.data.title} — ${messages.brandNameShort}`;

@@ -98,7 +98,7 @@ Volums Docker:
 <div class="doc-block">
   <p class="doc-block-title">Web KM0</p>
   <h2 class="doc-block-heading">Flux HTTPS del lloc corporatiu</h2>
-  <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0.amvara.de)
+  <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0digital.com)
                      └──► http://127.0.0.1:9180  (km0-web — només loopback)
                             Astro estàtic + nginx Alpine</pre></div>
   <ul class="doc-list">
@@ -112,7 +112,7 @@ Volums Docker:
 <div class="doc-block doc-block-alt">
   <p class="doc-block-title">Perímetre</p>
   <h2 class="doc-block-heading">Fail2ban i subdomini del cloud</h2>
-  <p class="doc-block-intro">Després del primer tall estable es va afegir Fail2ban com a xarxa complementària al firewall. El cloud va quedar publicat a <code>cloud.km0.amvara.de</code>, separat de la marca de màrqueting a <code>km0.amvara.de</code>:</p>
+  <p class="doc-block-intro">Després del primer tall estable es va afegir Fail2ban com a xarxa complementària al firewall. El cloud va quedar publicat a <code>cloud.km0digital.com</code>, separat de la marca de màrqueting a <code>km0digital.com</code>:</p>
   <ul class="doc-list">
     <li>Certificats i polítiques CSP poden divergir.</li>
     <li>Els usuaris entenen quina URL fer servir per a treball vs comunicació.</li>

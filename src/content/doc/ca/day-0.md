@@ -17,9 +17,9 @@ locale: ca
   <p class="doc-block-intro">KM0 persegueix una infraestructura operable per l'equip, sense panells propietaris opacs. La visió completa de l'arrencada inclou:</p>
   <ul class="doc-list">
     <li><strong>Sistema:</strong> VPS amb Debian actualitzat i particions que separen sistema de dades quan el projecte ho requereix (snapshots i còpies més clares).</li>
-    <li><strong>Col·laboració:</strong> <a href="https://cloud.km0.amvara.de">OpenCloud</a> com a microserveis en imatge oficial d'<a href="https://opencloud.eu">OpenCloud.eu</a>, amb volums estables (<code>COMPOSE_PROJECT_NAME</code>) independents del directori d'execució de Compose.</li>
+    <li><strong>Col·laboració:</strong> <a href="https://cloud.km0digital.com">OpenCloud</a> com a microserveis en imatge oficial d'<a href="https://opencloud.eu">OpenCloud.eu</a>, amb volums estables (<code>COMPOSE_PROJECT_NAME</code>) independents del directori d'execució de Compose.</li>
     <li><strong>Perímetre:</strong> Nginx com a únic frontal HTTPS; Docker publicant HTTP només a <code>127.0.0.1</code>.</li>
-    <li><strong>Comunicació:</strong> Astro dockeritzat en un altre port loopback; vhosts separats per a <code>km0.amvara.de</code> i <code>cloud.km0.amvara.de</code>.</li>
+    <li><strong>Comunicació:</strong> Astro dockeritzat en un altre port loopback; vhosts separats per a <code>km0digital.com</code> i <code>cloud.km0digital.com</code>.</li>
     <li><strong>Observabilitat:</strong> logs rotats (<code>json-file</code>), runbooks amb <code>docker compose ps</code>, <code>logs</code>, <code>pull</code>, i còpies de volums comprimits.</li>
     <li><strong>Evolució:</strong> TLS intern en producció, còpies automatitzades i Fail2ban per jails concrets.</li>
   </ul>

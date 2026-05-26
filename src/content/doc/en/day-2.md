@@ -8,7 +8,7 @@ locale: en
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
   <p class="doc-lead">Day 2 (22 May 2026) focuses on the <strong>authentication perimeter</strong> and on maturing the OpenCloud stack deployed the previous day: version upgrade, Dex OIDC broker (Google and Apple), Nginx adjustments, first full backup, and operational documentation.</p>
-  <p class="doc-lead">The initial deployment (Debian, Docker, TLS, separate hostnames) was closed on the 21st; today’s work builds on that production base at <a href="https://cloud.km0.amvara.de">cloud.km0.amvara.de</a>.</p>
+  <p class="doc-lead">The initial deployment (Debian, Docker, TLS, separate hostnames) was closed on the 21st; today’s work builds on that production base at <a href="https://cloud.km0digital.com">cloud.km0digital.com</a>.</p>
 </section>
 
 <section class="doc-block">
@@ -18,8 +18,8 @@ locale: en
     <li><strong>OpenCloud:</strong> <code>opencloudeu/opencloud-rolling:7.0.0</code> at <code>127.0.0.1:9200</code>.</li>
     <li><strong>Dex (OIDC):</strong> <code>ghcr.io/dexidp/dex:v2.41.1</code> at <code>127.0.0.1:5556</code>.</li>
     <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> — TLS → <code>/dex/</code> + <code>/</code>.</li>
-    <li><strong>OC_DOMAIN:</strong> <code>cloud.km0.amvara.de</code> with <code>INSECURE=false</code>.</li>
-    <li><strong>Dex issuer:</strong> <code>https://cloud.km0.amvara.de/dex</code> — Google + Apple connectors.</li>
+    <li><strong>OC_DOMAIN:</strong> <code>cloud.km0digital.com</code> with <code>INSECURE=false</code>.</li>
+    <li><strong>Dex issuer:</strong> <code>https://cloud.km0digital.com/dex</code> — Google + Apple connectors.</li>
   </ul>
   <p>Routine checks: <code>docker compose ps</code>, <code>nginx -t</code>, and HTTP headers against the public cloud URL.</p>
 </section>
@@ -27,12 +27,12 @@ locale: en
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Architecture</p>
   <h2 class="doc-block-heading">Authentication + application</h2>
-  <div class="doc-note"><pre>Browser ── HTTPS :443 cloud.km0.amvara.de ── Nginx
+  <div class="doc-note"><pre>Browser ── HTTPS :443 cloud.km0digital.com ── Nginx
               ├─ /dex/         → Dex        127.0.0.1:5556
               ├─ /login.html   → /var/www/opencloud-auth/
               └─ /             → OpenCloud  127.0.0.1:9200
                                     └─ opencloud_* volumes + dex_dex-data</pre></div>
-  <p>The corporate site on the same host remains on another virtual host: <a href="https://km0.amvara.de/">km0.amvara.de</a> → static container on loopback.</p>
+  <p>The corporate site on the same host remains on another virtual host: <a href="https://km0digital.com/">km0digital.com</a> → static container on loopback.</p>
 </section>
 
 <section class="doc-block">
@@ -64,11 +64,11 @@ locale: en
   <p class="doc-block-title">Public endpoints</p>
   <h2 class="doc-block-heading">Access URLs</h2>
   <ul class="doc-list">
-    <li><strong><a href="https://cloud.km0.amvara.de/">cloud.km0.amvara.de/</a>:</strong> OpenCloud web interface.</li>
-    <li><strong><a href="https://cloud.km0.amvara.de/dex/">/dex/</a>:</strong> OIDC issuer / Dex login.</li>
-    <li><strong><a href="https://cloud.km0.amvara.de/login.html">/login.html</a>:</strong> static Google / Apple selector.</li>
+    <li><strong><a href="https://cloud.km0digital.com/">cloud.km0digital.com/</a>:</strong> OpenCloud web interface.</li>
+    <li><strong><a href="https://cloud.km0digital.com/dex/">/dex/</a>:</strong> OIDC issuer / Dex login.</li>
+    <li><strong><a href="https://cloud.km0digital.com/login.html">/login.html</a>:</strong> static Google / Apple selector.</li>
   </ul>
-  <div class="doc-note">Redirect URI in Google Cloud Console: <code>https://cloud.km0.amvara.de/dex/callback</code>. Apple credentials under <code>/opt/</code> — secrets not detailed here.</div>
+  <div class="doc-note">Redirect URI in Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Apple credentials under <code>/opt/</code> — secrets not detailed here.</div>
 </section>
 
 <section class="doc-block doc-block-alt">

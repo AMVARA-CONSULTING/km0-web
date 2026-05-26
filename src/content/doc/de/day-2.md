@@ -8,7 +8,7 @@ locale: de
 <section class="doc-lead-block">
   <p class="doc-block-title">Einleitung</p>
   <p class="doc-lead">Tag 2 (22. Mai 2026) konzentriert sich auf den <strong>Authentifizierungs-Perimeter</strong> und die Reifung des am Vortag deployten OpenCloud-Stacks: Versions-Upgrade, OIDC-Broker mit Dex (Google und Apple), Nginx-Anpassungen, erstes vollständiges Backup und operative Dokumentation.</p>
-  <p class="doc-lead">Das Erst-Deployment (Debian, Docker, TLS, getrennte Hostnames) wurde am 21. abgeschlossen; heute wird auf dieser Basis in Produktion unter <a href="https://cloud.km0.amvara.de">cloud.km0.amvara.de</a> weitergearbeitet.</p>
+  <p class="doc-lead">Das Erst-Deployment (Debian, Docker, TLS, getrennte Hostnames) wurde am 21. abgeschlossen; heute wird auf dieser Basis in Produktion unter <a href="https://cloud.km0digital.com">cloud.km0digital.com</a> weitergearbeitet.</p>
 </section>
 
 <section class="doc-block">
@@ -18,8 +18,8 @@ locale: de
     <li><strong>OpenCloud:</strong> <code>opencloudeu/opencloud-rolling:7.0.0</code> auf <code>127.0.0.1:9200</code>.</li>
     <li><strong>Dex (OIDC):</strong> <code>ghcr.io/dexidp/dex:v2.41.1</code> auf <code>127.0.0.1:5556</code>.</li>
     <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> — TLS → <code>/dex/</code> + <code>/</code>.</li>
-    <li><strong>OC_DOMAIN:</strong> <code>cloud.km0.amvara.de</code> mit <code>INSECURE=false</code>.</li>
-    <li><strong>Dex-Issuer:</strong> <code>https://cloud.km0.amvara.de/dex</code> — Connectors Google + Apple.</li>
+    <li><strong>OC_DOMAIN:</strong> <code>cloud.km0digital.com</code> mit <code>INSECURE=false</code>.</li>
+    <li><strong>Dex-Issuer:</strong> <code>https://cloud.km0digital.com/dex</code> — Connectors Google + Apple.</li>
   </ul>
   <p>Übliche Checks: <code>docker compose ps</code>, <code>nginx -t</code> und HTTP-Header gegen die öffentliche Cloud-URL.</p>
 </section>
@@ -27,12 +27,12 @@ locale: de
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Architektur</p>
   <h2 class="doc-block-heading">Authentifizierung + Anwendung</h2>
-  <div class="doc-note"><pre>Browser ── HTTPS :443 cloud.km0.amvara.de ── Nginx
+  <div class="doc-note"><pre>Browser ── HTTPS :443 cloud.km0digital.com ── Nginx
               ├─ /dex/         → Dex        127.0.0.1:5556
               ├─ /login.html   → /var/www/opencloud-auth/
               └─ /             → OpenCloud  127.0.0.1:9200
                                     └─ Volumes opencloud_* + dex_dex-data</pre></div>
-  <p>Die Unternehmenswebsite auf demselben Host läuft in einem anderen Virtual Host: <a href="https://km0.amvara.de/">km0.amvara.de</a> → statischer Container auf Loopback.</p>
+  <p>Die Unternehmenswebsite auf demselben Host läuft in einem anderen Virtual Host: <a href="https://km0digital.com/">km0digital.com</a> → statischer Container auf Loopback.</p>
 </section>
 
 <section class="doc-block">
@@ -64,11 +64,11 @@ locale: de
   <p class="doc-block-title">Öffentliche Einstiege</p>
   <h2 class="doc-block-heading">Zugangs-URLs</h2>
   <ul class="doc-list">
-    <li><strong><a href="https://cloud.km0.amvara.de/">cloud.km0.amvara.de/</a>:</strong> OpenCloud-Web-Oberfläche.</li>
-    <li><strong><a href="https://cloud.km0.amvara.de/dex/">/dex/</a>:</strong> OIDC-Issuer / Dex-Login.</li>
-    <li><strong><a href="https://cloud.km0.amvara.de/login.html">/login.html</a>:</strong> statischer Google-/Apple-Selector.</li>
+    <li><strong><a href="https://cloud.km0digital.com/">cloud.km0digital.com/</a>:</strong> OpenCloud-Web-Oberfläche.</li>
+    <li><strong><a href="https://cloud.km0digital.com/dex/">/dex/</a>:</strong> OIDC-Issuer / Dex-Login.</li>
+    <li><strong><a href="https://cloud.km0digital.com/login.html">/login.html</a>:</strong> statischer Google-/Apple-Selector.</li>
   </ul>
-  <div class="doc-note">Redirect-URI in der Google Cloud Console: <code>https://cloud.km0.amvara.de/dex/callback</code>. Apple-Credentials unter <code>/opt/</code> — keine Secrets hier.</div>
+  <div class="doc-note">Redirect-URI in der Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Apple-Credentials unter <code>/opt/</code> — keine Secrets hier.</div>
 </section>
 
 <section class="doc-block doc-block-alt">

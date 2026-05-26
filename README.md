@@ -2,7 +2,7 @@
 
 Public marketing landing for **KM0 Digital** (Kilometer / Kilòmetre / Kilómetro 0 in localized site copy).
 
-**Production:** Spanish (default) [https://km0.amvara.de](https://km0.amvara.de) · Catalan [/ca/](https://km0.amvara.de/ca/) · English [/en/](https://km0.amvara.de/en/) · Blog [/doc/](https://km0.amvara.de/doc/)
+**Production:** Spanish (default) [https://km0digital.com](https://km0digital.com) · Catalan [/ca/](https://km0digital.com/ca/) · English [/en/](https://km0digital.com/en/) · Blog [/doc/](https://km0digital.com/doc/)
 
 ![Hero preview — KM0 Digital](docs/preview-hero.png)
 
@@ -109,15 +109,27 @@ docker compose build && docker compose up -d
 
 The host reverse proxy terminates TLS and proxies to `127.0.0.1:9180`. Nginx template: `nginx/sites-available/km0`.
 
-Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troubleshooting, coexistence with OpenCloud at **`cloud.km0.amvara.de`**).
+Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troubleshooting, coexistence with OpenCloud at **`cloud.km0digital.com`**).
 
 ## Architecture
 
 ```
-Internet → Nginx (km0.amvara.de:443) → 127.0.0.1:9180 (km0-web container)
+Internet → Nginx (km0digital.com:443) → 127.0.0.1:9180 (km0-web container)
 ```
 
-OpenCloud (file storage) runs at **[https://cloud.km0.amvara.de](https://cloud.km0.amvara.de)** — separate hostname from this marketing site.
+OpenCloud (file storage) runs at **[https://cloud.km0digital.com](https://cloud.km0digital.com)** — separate hostname from this marketing site.
+
+## autoagents (Cursor agent loop)
+
+GitHub-driven task pipeline using **cursor-agent** (no Ollama). See **[docs/agent-loop.md](docs/agent-loop.md)**.
+
+```bash
+./scripts/setup-autoagents-gh.sh    # once: Luipy56 + AMVARA-CONSULTING/km0-web
+./autoagents/autoagents-loop.sh   # full cycle every 5 min
+./autoagents/autoagents-loop.sh 001   # GitHub reviewer only
+```
+
+Task files live under **`autoagents/tasks/`**. Direct IDE chat follows **`.cursor/rules/direct-user-prompts.mdc`**.
 
 ## License
 

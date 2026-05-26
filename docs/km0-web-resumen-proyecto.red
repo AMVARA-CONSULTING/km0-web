@@ -10,19 +10,19 @@ Document the public marketing site for *Kilometer 0 Digital* (localised as *Kil�
 h2. URLs
 
 |_.Service|_.URL|_.Site path|
-| Spanish production (default) | "https://km0.amvara.de":https://km0.amvara.de | Root @/@ |
-| Catalan | "https://km0.amvara.de/ca/":https://km0.amvara.de/ca/ | @/ca/@ |
-| English | "https://km0.amvara.de/en/":https://km0.amvara.de/en/ | @/en/@ |
-| OpenCloud (same host, separate stack) | "https://cloud.km0.amvara.de":https://cloud.km0.amvara.de | Not part of the @km0-web@ repo |
+| Spanish production (default) | "https://km0digital.com":https://km0digital.com | Root @/@ |
+| Catalan | "https://km0digital.com/ca/":https://km0digital.com/ca/ | @/ca/@ |
+| English | "https://km0digital.com/en/":https://km0digital.com/en/ | @/en/@ |
+| OpenCloud (same host, separate stack) | "https://cloud.km0digital.com":https://cloud.km0digital.com | Not part of the @km0-web@ repo |
 
-> Marketing uses @km0.amvara.de@; OpenCloud is served under @cloud.km0.amvara.de@ once DNS/TLS are in place—the host vhost should proxy to @127.0.0.1:9200@.
+> Marketing uses @km0digital.com@; OpenCloud is served under @cloud.km0digital.com@ once DNS/TLS are in place—the host vhost should proxy to @127.0.0.1:9200@.
 
 ---
 
 h2. HTTPS traffic flow
 
 <pre><code>
-Internet  --443-->  Host nginx (TLS, km0.amvara.de)
+Internet  --443-->  Host nginx (TLS, km0digital.com)
                            |
                            +--9180-->  Docker km0-web (nginx Alpine, Astro /dist static)
 Internet  --443-->  Other vhosts OpenCloud localhost:9200
@@ -94,7 +94,7 @@ h2. Delivery summary (high level)
 
 * Astro + Tailwind static marketing landing; brand gradients, light scroll-motion via IntersectionObserver.
 * Dockerised build with Alpine nginx runtime behind host nginx/TLS.
-* Split hostnames so marketing stays on @km0.amvara.de@ while OpenCloud uses @cloud.km0.amvara.de@.
+* Split hostnames so marketing stays on @km0digital.com@ while OpenCloud uses @cloud.km0digital.com@.
 * Logo assets iterated (including transparent PNG workflow for the web UI).
 * Full i18n: Catalan / Spanish (default at @/@) / English; header locale switch CA | ES | EN.
 * Repo documentation updated (@README.md@, @docs/runbook.md@, @docs/brand-tokens.md@) and this *.red* export for Redmine/Textile.
@@ -136,7 +136,7 @@ h2. Dependencies and security (2026-05-26)
 
 h2. Risks / follow-ups
 
-* Keep @certbot.timer@ renewal healthy on the host for @km0.amvara.de@.
+* Keep @certbot.timer@ renewal healthy on the host for @km0digital.com@.
 * Re-run @npm audit@ periodically; bump pinned versions deliberately (edit @package.json@, regenerate lockfile, rebuild image).
 * Regression on Spanish default landing: verify Astro @i18n.defaultLocale@ and @prefixDefaultLocale@.
 * Host nginx lives outside Git—always @nginx -t@ then @systemctl reload nginx@ after edits under @/etc/nginx/sites-available/@.

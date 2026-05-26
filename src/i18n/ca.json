@@ -49,14 +49,14 @@
         "title": "KM0 Cloud",
         "desc": "Emmagatzematge i col·laboració al núvol, com un drive propi: comparteix fitxers, sincronitza i treballa en equip amb la confiança d'un servei que coneix el teu context.",
         "cta": "Obrir Cloud",
-        "url": "https://cloud.km0.amvara.de"
+        "url": "https://cloud.km0digital.com"
       },
       {
         "id": "email",
         "title": "KM0 Email",
         "desc": "Correu professional integrat en el mateix ecosistema. Bústies segures, domini propi i suport proper quan ho necessitis.",
         "cta": "Obrir Email",
-        "url": "https://email.km0.amvara.de"
+        "url": "https://email.km0digital.com"
       }
     ]
   },

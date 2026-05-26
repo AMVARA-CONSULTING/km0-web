@@ -17,9 +17,9 @@ locale: en
   <p class="doc-block-intro">KM0 aims for infrastructure the team can operate without opaque proprietary panels. The full bootstrap picture includes:</p>
   <ul class="doc-list">
     <li><strong>System:</strong> VPS on up-to-date Debian with partitions separating system from data where needed (clearer snapshots and backups).</li>
-    <li><strong>Collaboration:</strong> <a href="https://cloud.km0.amvara.de">OpenCloud</a> as microservices on an official <a href="https://opencloud.eu">OpenCloud.eu</a> image, with stable volumes (<code>COMPOSE_PROJECT_NAME</code>) independent of the Compose working directory.</li>
+    <li><strong>Collaboration:</strong> <a href="https://cloud.km0digital.com">OpenCloud</a> as microservices on an official <a href="https://opencloud.eu">OpenCloud.eu</a> image, with stable volumes (<code>COMPOSE_PROJECT_NAME</code>) independent of the Compose working directory.</li>
     <li><strong>Perimeter:</strong> Nginx as the sole HTTPS front; Docker publishing HTTP only on <code>127.0.0.1</code>.</li>
-    <li><strong>Communication:</strong> Dockerized Astro on another loopback port; separate vhosts for <code>km0.amvara.de</code> and <code>cloud.km0.amvara.de</code>.</li>
+    <li><strong>Communication:</strong> Dockerized Astro on another loopback port; separate vhosts for <code>km0digital.com</code> and <code>cloud.km0digital.com</code>.</li>
     <li><strong>Observability:</strong> rotated logs (<code>json-file</code>), runbooks with <code>docker compose ps</code>, <code>logs</code>, <code>pull</code>, and compressed volume backups.</li>
     <li><strong>Evolution:</strong> production TLS internally, automated backups, and Fail2ban per specific jails.</li>
   </ul>

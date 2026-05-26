@@ -98,7 +98,7 @@ Docker volumes:
 <section class="doc-block">
   <p class="doc-block-title">KM0 web</p>
   <h2 class="doc-block-heading">Corporate site HTTPS flow</h2>
-  <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0.amvara.de)
+  <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0digital.com)
                      └──► http://127.0.0.1:9180  (km0-web — loopback only)
                             Astro static + nginx Alpine</pre></div>
   <ul class="doc-list">
@@ -112,7 +112,7 @@ Docker volumes:
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Perimeter</p>
   <h2 class="doc-block-heading">Fail2ban and cloud subdomain</h2>
-  <p class="doc-block-intro">After the first stable cut, Fail2ban was added as a complementary layer to the firewall. The cloud was published at <code>cloud.km0.amvara.de</code>, separate from the marketing brand at <code>km0.amvara.de</code>:</p>
+  <p class="doc-block-intro">After the first stable cut, Fail2ban was added as a complementary layer to the firewall. The cloud was published at <code>cloud.km0digital.com</code>, separate from the marketing brand at <code>km0digital.com</code>:</p>
   <ul class="doc-list">
     <li>Certificates and CSP policies can diverge.</li>
     <li>Users understand which URL to use for work vs communication.</li>

@@ -18,7 +18,7 @@ const posts = (await getCollection('doc', ({ data }) => data.locale === locale))
   compareDocPosts,
 );
 
-const siteRoot = Astro.site ?? new URL('https://km0.amvara.de');
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
 ---
 

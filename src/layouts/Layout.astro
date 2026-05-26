@@ -11,7 +11,7 @@ interface Props {
   pageDescription?: string;
 }
 
-const site = Astro.site ?? new URL('https://km0.amvara.de');
+const site = Astro.site ?? new URL('https://km0digital.com');
 
 const hrefs: Record<Locale, string> = {
   es: new URL('/', site).href,
@@ -47,7 +47,7 @@ const description = pageDescription ?? m.meta.description;
     />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://km0.amvara.de/brand/logo.png" />
+    <meta property="og:image" content="https://km0digital.com/brand/logo.png" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={localeBcp47[locale]} />

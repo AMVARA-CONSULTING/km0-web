@@ -1,10 +1,10 @@
 # KM0 Digital — static landing (Docker :9180)
-# Hostname: km0.amvara.de
+# Primary hostname: km0digital.com
 
 server {
     listen 80;
     listen [::]:80;
-    server_name km0.amvara.de;
+    server_name km0digital.com www.km0digital.com km0.amvara.de;
 
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
@@ -13,6 +13,12 @@ server {
     }
 
     location / {
+        if ($host = km0.amvara.de) {
+            return 301 https://km0digital.com$request_uri;
+        }
+        if ($host = www.km0digital.com) {
+            return 301 https://km0digital.com$request_uri;
+        }
         return 301 https://$host$request_uri;
     }
 }
@@ -22,10 +28,10 @@ server {
     listen [::]:443 ssl;
     http2 on;
 
-    server_name km0.amvara.de;
+    server_name km0digital.com;
 
-    ssl_certificate     /etc/letsencrypt/live/km0.amvara.de/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/km0.amvara.de/privkey.pem;
+    ssl_certificate     /etc/letsencrypt/live/km0digital.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/km0digital.com/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_prefer_server_ciphers off;
 
@@ -46,4 +52,34 @@ server {
     add_header X-Frame-Options SAMEORIGIN always;
     add_header X-Content-Type-Options nosniff always;
     add_header Referrer-Policy strict-origin-when-cross-origin always;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+
+    server_name www.km0digital.com;
+
+    ssl_certificate     /etc/letsencrypt/live/km0digital.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/km0digital.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    return 301 https://km0digital.com$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+
+    server_name km0.amvara.de;
+
+    ssl_certificate     /etc/letsencrypt/live/km0.amvara.de/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/km0.amvara.de/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    return 301 https://km0digital.com$request_uri;
 }

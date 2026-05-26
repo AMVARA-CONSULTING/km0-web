@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
-const site = 'https://km0.amvara.de';
+const site = 'https://km0digital.com';
 
 export default defineConfig({
   site,

@@ -8,7 +8,7 @@ locale: es
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
   <p class="doc-lead">El día 2 (22 de mayo de 2026) se centra en el <strong>perímetro de autenticación</strong> y en madurar el stack OpenCloud ya desplegado el día anterior: actualización de versión, broker OIDC con Dex (Google y Apple), ajustes de Nginx, primer backup integral y documentación operativa.</p>
-  <p class="doc-lead">El despliegue inicial (Debian, Docker, TLS, hostnames separados) quedó cerrado el 21; hoy se trabaja sobre esa base en producción en <a href="https://cloud.km0.amvara.de">cloud.km0.amvara.de</a>.</p>
+  <p class="doc-lead">El despliegue inicial (Debian, Docker, TLS, hostnames separados) quedó cerrado el 21; hoy se trabaja sobre esa base en producción en <a href="https://cloud.km0digital.com">cloud.km0digital.com</a>.</p>
 </section>
 
 <section class="doc-block">
@@ -18,8 +18,8 @@ locale: es
     <li><strong>OpenCloud:</strong> <code>opencloudeu/opencloud-rolling:7.0.0</code> en <code>127.0.0.1:9200</code>.</li>
     <li><strong>Dex (OIDC):</strong> <code>ghcr.io/dexidp/dex:v2.41.1</code> en <code>127.0.0.1:5556</code>.</li>
     <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> — TLS → <code>/dex/</code> + <code>/</code>.</li>
-    <li><strong>OC_DOMAIN:</strong> <code>cloud.km0.amvara.de</code> con <code>INSECURE=false</code>.</li>
-    <li><strong>Emisor Dex:</strong> <code>https://cloud.km0.amvara.de/dex</code> — conectores Google + Apple.</li>
+    <li><strong>OC_DOMAIN:</strong> <code>cloud.km0digital.com</code> con <code>INSECURE=false</code>.</li>
+    <li><strong>Emisor Dex:</strong> <code>https://cloud.km0digital.com/dex</code> — conectores Google + Apple.</li>
   </ul>
   <p>Comprobaciones habituales: <code>docker compose ps</code>, <code>nginx -t</code> y cabeceras HTTP contra la URL pública del cloud.</p>
 </section>
@@ -27,12 +27,12 @@ locale: es
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Arquitectura</p>
   <h2 class="doc-block-heading">Autenticación + aplicación</h2>
-  <div class="doc-note"><pre>Browser ── HTTPS :443 cloud.km0.amvara.de ── Nginx
+  <div class="doc-note"><pre>Browser ── HTTPS :443 cloud.km0digital.com ── Nginx
               ├─ /dex/         → Dex        127.0.0.1:5556
               ├─ /login.html   → /var/www/opencloud-auth/
               └─ /             → OpenCloud  127.0.0.1:9200
                                     └─ volúmenes opencloud_* + dex_dex-data</pre></div>
-  <p>La web corporativa en el mismo host sigue en otro virtual host: <a href="https://km0.amvara.de/">km0.amvara.de</a> → contenedor estático en loopback.</p>
+  <p>La web corporativa en el mismo host sigue en otro virtual host: <a href="https://km0digital.com/">km0digital.com</a> → contenedor estático en loopback.</p>
 </section>
 
 <section class="doc-block">
@@ -64,11 +64,11 @@ locale: es
   <p class="doc-block-title">Entradas públicas</p>
   <h2 class="doc-block-heading">URLs de acceso</h2>
   <ul class="doc-list">
-    <li><strong><a href="https://cloud.km0.amvara.de/">cloud.km0.amvara.de/</a>:</strong> interfaz web OpenCloud.</li>
-    <li><strong><a href="https://cloud.km0.amvara.de/dex/">/dex/</a>:</strong> emisor OIDC / login Dex.</li>
-    <li><strong><a href="https://cloud.km0.amvara.de/login.html">/login.html</a>:</strong> selector estático Google / Apple.</li>
+    <li><strong><a href="https://cloud.km0digital.com/">cloud.km0digital.com/</a>:</strong> interfaz web OpenCloud.</li>
+    <li><strong><a href="https://cloud.km0digital.com/dex/">/dex/</a>:</strong> emisor OIDC / login Dex.</li>
+    <li><strong><a href="https://cloud.km0digital.com/login.html">/login.html</a>:</strong> selector estático Google / Apple.</li>
   </ul>
-  <div class="doc-note">Redirect URI en Google Cloud Console: <code>https://cloud.km0.amvara.de/dex/callback</code>. Credenciales Apple bajo <code>/opt/</code> — sin detallar secretos aquí.</div>
+  <div class="doc-note">Redirect URI en Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Credenciales Apple bajo <code>/opt/</code> — sin detallar secretos aquí.</div>
 </section>
 
 <section class="doc-block doc-block-alt">

@@ -49,14 +49,14 @@
         "title": "KM0 Cloud",
         "desc": "Cloud-Speicher und Zusammenarbeit wie Ihr eigenes Laufwerk: Dateien teilen, synchronisieren und im Team arbeiten — mit dem Vertrauen eines Services, der Ihren Kontext versteht.",
         "cta": "Cloud öffnen",
-        "url": "https://cloud.km0.amvara.de"
+        "url": "https://cloud.km0digital.com"
       },
       {
         "id": "email",
         "title": "KM0 Email",
         "desc": "Professionelle E-Mail im selben Ökosystem. Sichere Postfächer, eigene Domain und menschlicher Support, wenn Sie ihn brauchen.",
         "cta": "E-Mail öffnen",
-        "url": "https://email.km0.amvara.de"
+        "url": "https://email.km0digital.com"
       }
     ]
   },

@@ -17,7 +17,9 @@
     "mission": "Misión",
     "blog": "Blog",
     "faq": "FAQ",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
   },
   "hero": {
     "eyebrow": "Kilómetro 0 Digital",

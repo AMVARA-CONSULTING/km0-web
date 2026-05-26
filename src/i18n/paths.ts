@@ -32,3 +32,22 @@ export function localeHref(locale: Locale, path: string): string {
 export function docPostHref(locale: Locale, slug: string): string {
   return `${localeHref(locale, '/doc')}${slug}/`;
 }
+
+/** Strip locale prefix from a pathname, leaving the locale-neutral path (e.g. /ca/doc/foo/ → /doc/foo/) */
+export function stripLocalePrefix(pathname: string, locale: Locale): string {
+  const prefix = localePath(locale);
+  if (!prefix) return pathname || '/';
+  if (pathname === prefix || pathname === `${prefix}/`) return '/';
+  if (pathname.startsWith(`${prefix}/`)) return pathname.slice(prefix.length) || '/';
+  return pathname;
+}
+
+/** Same page in another locale (preserves /doc/ paths and slugs) */
+export function switchLocaleHref(
+  pathname: string,
+  fromLocale: Locale,
+  toLocale: Locale,
+): string {
+  const logicalPath = stripLocalePrefix(pathname, fromLocale);
+  return localeHref(toLocale, logicalPath);
+}

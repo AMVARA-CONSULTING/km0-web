@@ -1,3 +1,5 @@
 # UTC stamps appended by agent 001 and local preflight (one line per run)
 2026-05-26T21:46:00Z FEAT=1 NEW=0 (issue #1 FAQ section; favicon 404 log noise — no NEW task)
 2026-05-26T22:04:00Z FEAT=0 NEW=0 (open issues: 1; skip #1 — CLOSED in done/2026/05/26/; Docker clean; gh write blocked for comment/label/close)
+2026-05-26T22:22:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-web/autoagents/.runtime/001-latest-context.txt
+

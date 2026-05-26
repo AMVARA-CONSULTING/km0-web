@@ -2,7 +2,7 @@
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
 import { localeBcp47 } from '../i18n/types';
-import { withHash, localeHref } from '../i18n/paths';
+import { withHash, localeHref, switchLocaleHref } from '../i18n/paths';
 
 interface Props {
   locale: Locale;
@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { locale, messages: m } = Astro.props;
+const pathname = Astro.url.pathname;
 
 const nav = [
   { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
@@ -23,15 +24,16 @@ const nav = [
 ] as const;
 
 const langs: { code: Locale; href: string; label: string }[] = [
-  { code: 'ca', href: '/ca/', label: 'CA' },
-  { code: 'de', href: '/de/', label: 'DE' },
-  { code: 'en', href: '/en/', label: 'EN' },
-  { code: 'es', href: '/', label: 'ES' },
+  { code: 'ca', href: switchLocaleHref(pathname, locale, 'ca'), label: 'CA' },
+  { code: 'de', href: switchLocaleHref(pathname, locale, 'de'), label: 'DE' },
+  { code: 'en', href: switchLocaleHref(pathname, locale, 'en'), label: 'EN' },
+  { code: 'es', href: switchLocaleHref(pathname, locale, 'es'), label: 'ES' },
 ];
 ---
 
 <header
   class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/80 backdrop-blur-md"
+  data-mobile-nav-root
 >
   <nav
     class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-12"
@@ -48,7 +50,7 @@ const langs: { code: Locale; href: string; label: string }[] = [
         {m.brandMark.before}<span class="text-gradient font-bold">0</span>{m.brandMark.after}
       </span>
     </a>
-    <div class="flex items-center gap-4 md:gap-6">
+    <div class="flex items-center gap-3 md:gap-6">
       <ul class="hidden gap-5 text-sm text-white/70 md:flex">
         {
           nav.map((item) => (
@@ -72,6 +74,7 @@ const langs: { code: Locale; href: string; label: string }[] = [
           langs.map((lang) => (
             <a
               href={lang.href}
+              data-lang-switch
               class:list={[
                 'rounded-full px-2 py-1 transition-colors',
                 locale === lang.code
@@ -85,6 +88,129 @@ const langs: { code: Locale; href: string; label: string }[] = [
           ))
         }
       </div>
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 md:hidden"
+        data-mobile-menu-toggle
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label={m.nav.menuOpen}
+        data-label-open={m.nav.menuOpen}
+        data-label-close={m.nav.menuClose}
+      >
+        <svg
+          class="h-5 w-5"
+          data-menu-icon-open
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg
+          class="hidden h-5 w-5"
+          data-menu-icon-close
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
     </div>
   </nav>
+  <div
+    id="mobile-nav"
+    class="mobile-nav border-b border-white/10 bg-navy/95 backdrop-blur-md md:hidden"
+    hidden
+    data-open="false"
+  >
+    <ul class="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4 text-base font-medium text-white/80">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              data-mobile-nav-link
+              class="block rounded-lg px-3 py-3 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </header>
+
+<script>
+  function applyLangSwitchHash() {
+    const hash = window.location.hash;
+    if (!hash) return;
+    document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
+      link.href = `${link.pathname}${hash}`;
+    });
+  }
+
+  function initMobileMenu() {
+    const root = document.querySelector('[data-mobile-nav-root]');
+    const toggle = root?.querySelector<HTMLButtonElement>('[data-mobile-menu-toggle]');
+    const menu = document.getElementById('mobile-nav');
+    const iconOpen = toggle?.querySelector('[data-menu-icon-open]');
+    const iconClose = toggle?.querySelector('[data-menu-icon-close]');
+    if (!toggle || !menu || !iconOpen || !iconClose) return;
+
+    const openLabel = toggle.dataset.labelOpen ?? '';
+    const closeLabel = toggle.dataset.labelClose ?? '';
+
+    const setOpen = (open: boolean) => {
+      menu.hidden = !open;
+      menu.dataset.open = open ? 'true' : 'false';
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+      iconOpen.classList.toggle('hidden', open);
+      iconClose.classList.toggle('hidden', !open);
+      document.body.classList.toggle('overflow-hidden', open);
+    };
+
+    toggle.addEventListener('click', () => setOpen(menu.hidden));
+    menu.querySelectorAll('[data-mobile-nav-link]').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !menu.hidden) setOpen(false);
+    });
+  }
+
+  applyLangSwitchHash();
+  window.addEventListener('hashchange', applyLangSwitchHash);
+  initMobileMenu();
+</script>
+
+<style>
+  .mobile-nav {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+      opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .mobile-nav[data-open='true'] {
+    max-height: 24rem;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-nav {
+      transition: none;
+    }
+  }
+</style>

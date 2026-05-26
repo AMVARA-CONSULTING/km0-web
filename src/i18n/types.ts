@@ -33,6 +33,8 @@ export interface Messages {
     blog: string;
     faq: string;
     contact: string;
+    menuOpen: string;
+    menuClose: string;
   };
   hero: {
     eyebrow: string;

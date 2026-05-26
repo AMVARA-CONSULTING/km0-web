@@ -37,7 +37,7 @@ Footer displays **`package.json`** semver. Coders **must** run **`./scripts/bump
 | `autoagents/tasks/` | Active task queue |
 | `scripts/git-sync-main.sh` | Sync before edits |
 | `scripts/move-agent-task-to-done.sh` | Archive CLOSED tasks |
-| `autoagents/.env` | GH_TOKEN (gitignored) |
+| `autoagents/.env` | GH_TOKEN, REDMINE_* (gitignored) |
 
 ## Single commands
 
@@ -50,7 +50,7 @@ Footer displays **`package.json`** semver. Coders **must** run **`./scripts/bump
 | `tester` | Tester |
 | `closing-review` | Archive CLOSED |
 | `committer` | Git commit (`AGENT_COMMITTER_USE_CURSOR=1` in `.env`) |
-| `sync_github_from_tasks.py` | FEAT → comment/label; CLOSED → comment/close |
+| `sync_github_from_tasks.py` | FEAT → comment/label; CLOSED → comment/close + Redmine note |
 
 ## GitHub
 

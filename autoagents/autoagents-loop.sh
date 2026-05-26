@@ -12,10 +12,8 @@ TASKDIR="${SCRIPTDIR}/tasks"
 REPO_ROOT="$(cd "${SCRIPTDIR}/.." && pwd)"
 sleepminutes="${AGENT_LOOP_SLEEP_MINUTES:-5}"
 sleepseconds=$((sleepminutes * 60))
-_tdir="${TMPDIR:-/tmp}"
-_tdir="${_tdir%/}"
-AGENT_LOOP_TMP="${AGENT_LOOP_TMP:-${_tdir}/autoagents-loop}"
-unset _tdir
+# Runtime artifacts (preflight digest, gh stderr) stay inside the repo — not /tmp.
+AGENT_LOOP_TMP="${AGENT_LOOP_TMP:-${SCRIPTDIR}/.runtime}"
 GH_REPO="${AGENT_GH_REPO:-AMVARA-CONSULTING/km0-web}"
 GIT_BRANCH="${AGENT_GIT_BRANCH:-main}"
 LAST_REVIEW_FILE="${SCRIPTDIR}/001-gh-reviewer/time-of-last-review.txt"
@@ -352,13 +350,32 @@ append_001_local_no_cursor_stamp() {
 }
 
 warn_001_github_auth_if_needed() {
-  local d="${AGENT_LOOP_TMP:-${TMPDIR:-/tmp}/autoagents-loop}"
+  local d="${AGENT_LOOP_TMP:-${SCRIPTDIR}/.runtime}"
   if [[ "${G001_GH_AUTH_FAILED:-0}" == "1" ]]; then
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" >&2
     echo "!!! 001 / GitHub: NOT AUTHENTICATED. Run ./scripts/setup-autoagents-gh.sh     !!!" >&2
     echo "!!! Digest: $d/001-latest-context.txt                                          !!!" >&2
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" >&2
   fi
+}
+
+run_issue_checker_and_gh_sync() {
+  if ! command -v python3 >/dev/null 2>&1; then
+    echo "----- issue checker (skip: python3 not on PATH)"
+    return 0
+  fi
+  echo "----- issue checker (FEAT from open issues)"
+  python3 "${SCRIPTDIR}/issue_checker_agent.py" || true
+  echo "----- GitHub sync (FEAT → planned)"
+  python3 "${SCRIPTDIR}/sync_github_from_tasks.py" planned || true
+}
+
+run_gh_sync_closed() {
+  if ! command -v python3 >/dev/null 2>&1; then
+    return 0
+  fi
+  echo "----- GitHub sync (CLOSED → comment + close, incl. done/)"
+  python3 "${SCRIPTDIR}/sync_github_from_tasks.py" closed || true
 }
 
 step_log_reviewer() {
@@ -368,6 +385,10 @@ step_log_reviewer() {
   prepare_001_preflight_context "$ctx"
   echo "----- 001 preflight digest: $ctx"
   warn_001_github_auth_if_needed
+  if [[ "$G001_GH_OK" == "1" ]] && [[ "${G001_UNTRACKED_ISSUES:-0}" -gt 0 ]]; then
+    run_issue_checker_and_gh_sync
+    prepare_001_preflight_context "$ctx"
+  fi
   if should_run_001_cursor_agent; then
     if ! have_cursor_agent; then
       echo "----- log reviewer (001) (skip: cursor-agent not on PATH)" >&2
@@ -517,6 +538,7 @@ run_full_cycle() {
   step_feature_coder_handoff
   step_tester
   step_closing_review
+  run_gh_sync_closed
   step_committer
 }
 
@@ -539,7 +561,8 @@ Environment:
   AGENT_GH_REPO              GitHub repo (default: AMVARA-CONSULTING/km0-web)
   AGENT_GIT_BRANCH           Git branch (default: main)
   AGENT_LOOP_SLEEP_MINUTES   Loop interval (default: 5)
-  AGENT_COMMITTER_USE_CURSOR Set 1 to run 040-committer via cursor-agent
+  AGENT_COMMITTER_USE_CURSOR Set 1 to run 040-committer via cursor-agent (default in .env.example)
+  AGENT_LOOP_TMP             Runtime dir (default: autoagents/.runtime inside repo)
   GH_TOKEN                   GitHub API token (or autoagents/.env)
 
 See docs/agent-loop.md and .cursor/skills/autoagents/SKILL.md
@@ -554,7 +577,10 @@ if [[ -n "${1:-}" ]]; then
     coder) step_coder ;;
     handoff | 012 | feature-handoff) step_feature_coder_handoff ;;
     tester) step_tester ;;
-    closing-review | closing-closed) step_closing_review ;;
+    closing-review | closing-closed)
+      step_closing_review
+      run_gh_sync_closed
+      ;;
     committer) step_committer ;;
     *) usage; exit 1 ;;
   esac

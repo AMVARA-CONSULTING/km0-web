@@ -28,8 +28,9 @@ else
     echo ""
     echo "Option A — token file (recommended on server):"
     echo "  1. Create a fine-grained PAT at https://github.com/settings/tokens"
-    echo "     Scopes: Issues (read/write), Contents (read), Metadata (read)"
+    echo "     Permissions: Issues (Read and write), Contents (Read), Metadata (Read)"
     echo "     Repository: AMVARA-CONSULTING/km0-web"
+    echo "     (Comments, labels, and close require Issues write — not read-only)"
     echo "  2. cp autoagents/.env.example autoagents/.env"
     echo "  3. Set GH_TOKEN=github_pat_... in autoagents/.env"
     echo "  4. Re-run: ./scripts/setup-autoagents-gh.sh"
@@ -39,6 +40,13 @@ else
     exit 1
   fi
 fi
+
+echo ""
+echo "Ensuring agent workflow labels exist ..."
+gh label create "agent:planned" --repo "$GH_REPO" --color "0E8A16" --description "001 created FEAT task" --force 2>/dev/null || true
+gh label create "agent:wip" --repo "$GH_REPO" --color "1D76DB" --description "Coder working" --force 2>/dev/null || true
+gh label create "agent:untested" --repo "$GH_REPO" --color "FBCA04" --description "Ready for tester" --force 2>/dev/null || true
+gh label create "agent:testing" --repo "$GH_REPO" --color "5319E7" --description "Tester active" --force 2>/dev/null || true
 
 echo ""
 echo "Testing issue list for ${GH_REPO} ..."

@@ -16,6 +16,7 @@
     "meaning": "Significat",
     "mission": "Missió",
     "blog": "Blog",
+    "faq": "FAQ",
     "contact": "Contacte"
   },
   "hero": {
@@ -56,9 +57,15 @@
         "title": "KM0 Email",
         "desc": "Correu professional integrat en el mateix ecosistema. Bústies segures, domini propi i suport proper quan ho necessitis.",
         "cta": "Obrir Email",
-        "url": "https://email.km0digital.com"
+        "url": "https://email.km0digital.com",
+        "available": false
       }
-    ]
+    ],
+    "comingSoon": {
+      "title": "KM0 Email",
+      "message": "Aquest servei encara no està disponible, però aviat ho estarà.",
+      "close": "Entesos"
+    }
   },
   "doc": {
     "metaTitle": "Blog — Kilòmetre 0 Digital",
@@ -102,6 +109,17 @@
     "headingBefore": "Identitat a ",
     "headingGradient": "cada pantalla"
   },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Preguntes freqüents",
+    "items": [
+      {
+        "id": "hosting",
+        "question": "On està allotjat el servei?",
+        "answerHtml": "La nostra infraestructura funciona a Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a> — un proveïdor europeu que hem triat per la seva fiabilitat, preus transparents i per mantenir les teves dades dins la UE."
+      }
+    ]
+  },
   "contact": {
     "eyebrow": "Contacte",
     "heading": "Parlem?",
@@ -110,6 +128,7 @@
   },
   "footer": {
     "rights": "Tots els drets reservats.",
-    "github": "GitHub"
+    "github": "GitHub",
+    "version": "Versió"
   }
 }

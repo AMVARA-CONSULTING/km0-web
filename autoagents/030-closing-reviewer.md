@@ -31,7 +31,7 @@ You do **not** implement code or run tests.
 ### Always
 
 - **`./scripts/git-sync-main.sh`** before edits.
-- **GitHub:** comment on issue, remove agent labels, close issue if fully delivered.
+- **GitHub:** the loop runs `sync_github_from_tasks.py closed` after this step (comment + close). You may still comment manually if needed.
 
 ### Instructions
 

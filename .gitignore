@@ -3,4 +3,6 @@ dist/
 .astro/
 .env
 autoagents/.env
+autoagents/.runtime/
 .DS_Store
+__pycache__/

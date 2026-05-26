@@ -1,0 +1,30 @@
+---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  messages: Messages;
+}
+
+const { messages: m } = Astro.props;
+const c = m.services.comingSoon;
+---
+
+<div
+  id="service-coming-soon-modal"
+  class="service-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="service-coming-soon-title"
+  aria-describedby="service-coming-soon-message"
+  hidden
+>
+  <div class="service-modal__backdrop" data-modal-backdrop aria-hidden="true"></div>
+  <div class="service-modal__panel">
+    <div class="service-modal__accent" aria-hidden="true"></div>
+    <h3 id="service-coming-soon-title" class="service-modal__title">{c.title}</h3>
+    <p id="service-coming-soon-message" class="service-modal__message">{c.message}</p>
+    <button type="button" class="btn-primary service-modal__close" data-modal-close>
+      {c.close}
+    </button>
+  </div>
+</div>

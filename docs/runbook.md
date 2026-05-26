@@ -91,6 +91,8 @@ ss -tlnp | grep 9180
 5. **Images:** `public/brand/`.
 6. Deploy: `docker compose build && docker compose up -d`.
 
+**Footer version:** `package.json` `version` (e.g. `1.1.1`) is shown on every page. Autoagents coders run **`./scripts/bump-patch-version.sh`** once per completed task (patch +1).
+
 ---
 
 ## Nginx (host reverse proxy)
@@ -120,7 +122,7 @@ ln -sf /etc/nginx/sites-available/km0 /etc/nginx/sites-enabled/km0
 
 ## TLS (Let's Encrypt)
 
-**Certificate:** `/etc/letsencrypt/live/km0digital.com/`
+**Certificate:** `/etc/letsencrypt/live/km0digital.com/` (apex only; add `www` to DNS and re-run certbot with `-d www.km0digital.com` when needed)
 
 Check expiry:
 

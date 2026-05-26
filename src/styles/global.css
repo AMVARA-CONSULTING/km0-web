@@ -61,6 +61,51 @@
     @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-sm font-medium text-navy/80 shadow-sm;
   }
 
+  .service-modal {
+    @apply fixed inset-0 z-[100] flex items-start justify-center px-4 pt-16 md:pt-24;
+    pointer-events: none;
+  }
+
+  .service-modal[hidden] {
+    display: none !important;
+  }
+
+  .service-modal[data-open='true'] {
+    pointer-events: auto;
+  }
+
+  .service-modal__backdrop {
+    @apply absolute inset-0 bg-navy/50 opacity-0 transition-opacity duration-300 ease-apple;
+  }
+
+  .service-modal[data-open='true'] .service-modal__backdrop {
+    @apply opacity-100;
+  }
+
+  .service-modal__panel {
+    @apply relative z-10 w-full max-w-md -translate-y-full rounded-2xl border border-navy/10 bg-white p-8 text-center shadow-2xl opacity-0 transition-all duration-500 ease-apple;
+  }
+
+  .service-modal[data-open='true'] .service-modal__panel {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .service-modal__accent {
+    @apply mx-auto mb-5 h-1 w-16 rounded-full bg-brand-gradient;
+  }
+
+  .service-modal__title {
+    @apply mb-4 text-2xl font-semibold text-navy;
+  }
+
+  .service-modal__message {
+    @apply mb-8 text-base leading-relaxed text-navy/70;
+  }
+
+  .service-modal__close {
+    @apply w-full sm:w-auto;
+  }
+
   .doc-eyebrow {
     @apply mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50;
   }

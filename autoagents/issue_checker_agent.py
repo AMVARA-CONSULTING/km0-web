@@ -2,22 +2,58 @@
 """
 Issue Checker Agent — creates FEAT task files from open GitHub issues.
 Uses gh CLI; repo from AGENT_GH_REPO env (default AMVARA-CONSULTING/km0-web).
+After each new FEAT file, posts a GitHub comment and sets agent:planned (see lib/gh_issue_actions.py).
 """
 import json
 import os
 import subprocess
+import sys
 from datetime import datetime, timezone
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(SCRIPT_DIR, "lib"))
+
+from gh_issue_actions import ensure_agent_labels, notify_feat_planned  # noqa: E402
+
 TASKS_DIR = os.path.join(SCRIPT_DIR, "tasks")
 GH_REPO = os.environ.get("AGENT_GH_REPO", "AMVARA-CONSULTING/km0-web")
 
 
 def has_task_file(issue_num: int) -> bool:
-    if not os.path.isdir(TASKS_DIR):
+    """True if any pipeline task for this issue exists (active queue or done/)."""
+    prefixes = (
+        f"FEAT-{issue_num}-",
+        f"NEW-{issue_num}-",
+        f"WIP-{issue_num}-",
+        f"UNTESTED-{issue_num}-",
+        f"TESTING-{issue_num}-",
+        f"CLOSED-{issue_num}-",
+    )
+    if issue_num == 0:
+        prefixes = (f"NEW-0-",)
+
+    def dir_has_match(directory: str) -> bool:
+        if not os.path.isdir(directory):
+            return False
+        for f in os.listdir(directory):
+            for p in prefixes:
+                if f.startswith(p):
+                    return True
         return False
-    prefix = f"FEAT-{issue_num}-"
-    return any(f.startswith(prefix) for f in os.listdir(TASKS_DIR))
+
+    if dir_has_match(TASKS_DIR):
+        return True
+    done_root = os.path.join(TASKS_DIR, "done")
+    if not os.path.isdir(done_root):
+        return False
+    for root, _dirs, files in os.walk(done_root):
+        for f in files:
+            if not f.endswith(".md"):
+                continue
+            for p in prefixes:
+                if f.startswith(p):
+                    return True
+    return False
 
 
 def get_open_issues():
@@ -115,6 +151,8 @@ def run_workflow() -> bool:
     print(f"Repo: {GH_REPO}")
     print("=" * 60)
 
+    ensure_agent_labels()
+
     issues = get_open_issues()
     if not issues:
         print("\nNo open GitHub issues (or gh not authenticated).")
@@ -124,7 +162,7 @@ def run_workflow() -> bool:
     for issue in issues:
         num = issue["number"]
         if has_task_file(num):
-            print(f"  skip #{num} — FEAT file exists")
+            print(f"  skip #{num} — task already exists (queue or done/)")
             continue
         details = fetch_issue_details(num)
         if not details:
@@ -134,7 +172,12 @@ def run_workflow() -> bool:
             print(f"  skip #{num} — agent:planned")
             continue
         path = create_task(details)
-        print(f"  created: {os.path.basename(path)}")
+        bn = os.path.basename(path)
+        print(f"  created: {bn}")
+        if notify_feat_planned(num, bn):
+            print(f"  GitHub: comment + agent:planned on #{num}")
+        else:
+            print(f"  GitHub: notify failed for #{num} (check GH_TOKEN / label permissions)", file=sys.stderr)
         created += 1
 
     print(f"\nCreated {created} task file(s)")

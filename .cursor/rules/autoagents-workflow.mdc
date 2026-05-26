@@ -18,6 +18,10 @@ When editing files under `autoagents/` or executing agent steps:
 ./scripts/git-sync-main.sh
 ```
 
+## Site version (footer)
+
+**`package.json`** `version` is shown in the site footer. **Every** coder task (FEAT/NEW → UNTESTED) must run **`./scripts/bump-patch-version.sh`** once before renaming to **UNTESTED-** (patch +1). Committer verifies the bump is in the diff.
+
 Branch: **`main`**. Remote: **AMVARA-CONSULTING/km0-web**.
 
 ## Agent roles

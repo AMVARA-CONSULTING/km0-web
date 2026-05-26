@@ -2,6 +2,7 @@
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
 import { withHash, localeHref } from '../i18n/paths';
+import { SITE_VERSION } from '../lib/site-version';
 
 interface Props {
   locale: Locale;
@@ -28,10 +29,19 @@ const { locale, messages: m } = Astro.props;
         {m.brandName}
       </span>
     </div>
-    <p class="text-sm text-navy/50">
-      © {year} {m.brandName}. {m.footer.rights}
-    </p>
-    <nav class="flex gap-6 text-sm text-navy/50">
+    <div class="flex flex-col items-center gap-1 text-center md:items-start">
+      <p class="text-sm text-navy/50">
+        © {year} {m.brandName}. {m.footer.rights}
+      </p>
+      <p
+        class="text-xs font-medium tabular-nums tracking-wide text-navy/45"
+        title={`${m.footer.version} ${SITE_VERSION}`}
+      >
+        {m.footer.version}
+        <span class="text-navy/60">{SITE_VERSION}</span>
+      </p>
+    </div>
+    <nav class="flex flex-wrap justify-center gap-6 text-sm text-navy/50">
       <a href={withHash(locale, 'home')} class="transition-colors hover:text-navy">{m.nav.home}</a>
       <a href={withHash(locale, 'mission')} class="transition-colors hover:text-navy">{m.nav.mission}</a>
       <a href={localeHref(locale, '/doc/')} class="transition-colors hover:text-navy">{m.nav.blog}</a>

@@ -31,6 +31,7 @@ export interface Messages {
     meaning: string;
     mission: string;
     blog: string;
+    faq: string;
     contact: string;
   };
   hero: {
@@ -64,7 +65,13 @@ export interface Messages {
       desc: string;
       cta: string;
       url: string;
+      available?: boolean;
     }[];
+    comingSoon: {
+      title: string;
+      message: string;
+      close: string;
+    };
   };
   doc: {
     metaTitle: string;
@@ -91,6 +98,15 @@ export interface Messages {
     headingBefore: string;
     headingGradient: string;
   };
+  faq: {
+    eyebrow: string;
+    heading: string;
+    items: {
+      id: string;
+      question: string;
+      answerHtml: string;
+    }[];
+  };
   contact: {
     eyebrow: string;
     heading: string;
@@ -100,5 +116,6 @@ export interface Messages {
   footer: {
     rights: string;
     github: string;
+    version: string;
   };
 }

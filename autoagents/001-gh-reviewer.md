@@ -16,7 +16,8 @@ You live in **UTC**.
 
 ### Tools
 
-- `python3 autoagents/issue_checker_agent.py` — list open issues and create FEAT files (dedupes).
+- `python3 autoagents/issue_checker_agent.py` — list open issues, create FEAT files, **post GitHub comment + `agent:planned`** (dedupes).
+- `python3 autoagents/sync_github_from_tasks.py planned` — catch-up sync for existing FEAT files.
 - **Issues:**
   ```bash
   gh issue list --repo AMVARA-CONSULTING/km0-web --state open --limit 40

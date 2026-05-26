@@ -44,7 +44,7 @@ On test failure: **testing → wip**, then **wip → untested** when ready.
 ## Rules of thumb
 
 - **feat → wip** when feature coder starts.
-- **wip → untested** when implementation complete + **Testing instructions** at end.
+- **wip → untested** when implementation complete + **`./scripts/bump-patch-version.sh`** (once per task) + **Testing instructions** at end.
 - **untested → testing** when tester starts.
 - **testing → closed** on pass; **testing → wip** on fail.
 - **closed → done/** after closing summary (move script).

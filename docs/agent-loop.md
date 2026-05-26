@@ -62,7 +62,20 @@ Create labels in the repo if missing.
 | `AGENT_GH_REPO` | `AMVARA-CONSULTING/km0-web` |
 | `AGENT_GIT_BRANCH` | `main` |
 | `AGENT_LOOP_SLEEP_MINUTES` | `5` |
-| `AGENT_COMMITTER_USE_CURSOR` | `0` |
+| `AGENT_COMMITTER_USE_CURSOR` | `1` (in `.env.example`) |
+| `AGENT_LOOP_TMP` | `autoagents/.runtime/` (inside repo; not `/tmp`) |
 | `GH_TOKEN` | from `autoagents/.env` |
 
-Preflight digest: `$TMPDIR/autoagents-loop/001-latest-context.txt`
+Preflight digest: `autoagents/.runtime/001-latest-context.txt`
+
+## GitHub comments and close (deterministic)
+
+Shell/Python sync — do not rely on cursor-agent alone:
+
+| When | Script |
+|------|--------|
+| New FEAT from open issue | `issue_checker_agent.py` → comment + `agent:planned` |
+| FEAT without GitHub sync | `sync_github_from_tasks.py planned` |
+| CLOSED task in `tasks/` | `sync_github_from_tasks.py closed` → comment + close issue |
+
+Run `./scripts/setup-autoagents-gh.sh` once to create `agent:*` labels. Token needs **Issues: Read and write**.

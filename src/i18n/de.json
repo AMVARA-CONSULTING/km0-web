@@ -16,6 +16,7 @@
     "meaning": "Bedeutung",
     "mission": "Mission",
     "blog": "Blog",
+    "faq": "FAQ",
     "contact": "Kontakt"
   },
   "hero": {
@@ -56,9 +57,15 @@
         "title": "KM0 Email",
         "desc": "Professionelle E-Mail im selben Ökosystem. Sichere Postfächer, eigene Domain und menschlicher Support, wenn Sie ihn brauchen.",
         "cta": "E-Mail öffnen",
-        "url": "https://email.km0digital.com"
+        "url": "https://email.km0digital.com",
+        "available": false
       }
-    ]
+    ],
+    "comingSoon": {
+      "title": "KM0 Email",
+      "message": "Dieser Dienst ist noch nicht verfügbar, wird aber bald bereitstehen.",
+      "close": "Verstanden"
+    }
   },
   "doc": {
     "metaTitle": "Blog — Kilometer 0 Digital",
@@ -102,6 +109,17 @@
     "headingBefore": "Identität auf ",
     "headingGradient": "jedem Bildschirm"
   },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Häufige Fragen",
+    "items": [
+      {
+        "id": "hosting",
+        "question": "Wo wird der Service gehostet?",
+        "answerHtml": "Unsere Infrastruktur läuft in Falkenstein, Deutschland, bei <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a> — einem europäischen Anbieter, den wir wegen Zuverlässigkeit, transparenter Preise und der Speicherung Ihrer Daten innerhalb der EU gewählt haben."
+      }
+    ]
+  },
   "contact": {
     "eyebrow": "Kontakt",
     "heading": "Sprechen wir?",
@@ -110,6 +128,7 @@
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
-    "github": "GitHub"
+    "github": "GitHub",
+    "version": "Version"
   }
 }

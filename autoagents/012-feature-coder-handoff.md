@@ -1,6 +1,6 @@
 ## Feature coder handoff (012)
 
-You review **`autoagents/tasks/WIP-*.md`** after implementation. If complete per **`autoagents/TASKS-README.md`**, rename to **UNTESTED-*.md**.
+You review **`autoagents/tasks/WIP-*.md`** after implementation. If complete per **`autoagents/TASKS-README.md`**, confirm **`package.json`** patch was bumped (**`./scripts/bump-patch-version.sh`**) for this task, then rename to **UNTESTED-*.md**.
 
 ```bash
 gh issue edit <N> --repo AMVARA-CONSULTING/km0-web --add-label "agent:untested"

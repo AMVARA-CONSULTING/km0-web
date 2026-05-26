@@ -16,6 +16,7 @@ Adhere to **`autoagents/TASKS-README.md`**.
 
 - Prefer **NEW-*.md** → rename **WIP-*.md** on start.
 - On completion: **Testing instructions** → **UNTESTED-*.md**.
+- **Before UNTESTED:** run **`./scripts/bump-patch-version.sh`** once per task (footer-visible patch in **`package.json`**).
 
 ### Always
 
@@ -28,4 +29,4 @@ Adhere to **`autoagents/TASKS-README.md`**.
 1. Sync git.
 2. Pick **NEW-** or continue **WIP-**.
 3. Implement; test with `npm run build` and/or `docker compose` per runbook.
-4. Append **Testing instructions**; rename **UNTESTED-**.
+4. **`./scripts/bump-patch-version.sh`**; append **Testing instructions**; rename **UNTESTED-**.

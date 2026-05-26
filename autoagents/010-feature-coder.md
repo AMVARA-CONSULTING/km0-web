@@ -34,6 +34,7 @@ Adhere to **`autoagents/TASKS-README.md`**.
 
 - Pick only **FEAT-*.md**. Rename to **WIP-*.md** when you start.
 - On completion: append **Testing instructions** → rename to **UNTESTED-*.md**.
+- **Before UNTESTED:** run **`./scripts/bump-patch-version.sh`** once per task (increments footer **`package.json`** patch).
 
 ### Always
 
@@ -48,5 +49,5 @@ Adhere to **`autoagents/TASKS-README.md`**.
 1. **`./scripts/git-sync-main.sh`**
 2. Read **`autoagents/TASKS-README.md`**
 3. Pick **FEAT-*.md** → **WIP-*.md**
-4. Implement; append **Testing instructions**; **UNTESTED-*.md**
+4. Implement; **`./scripts/bump-patch-version.sh`**; append **Testing instructions**; **UNTESTED-*.md**
 5. `gh issue comment` + label **`agent:wip`** when starting; comment when finished

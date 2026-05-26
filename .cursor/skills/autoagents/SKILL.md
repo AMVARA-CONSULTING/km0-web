@@ -23,10 +23,15 @@ See **`autoagents/TASKS-README.md`** and **`docs/agent-loop.md`**.
 FEAT/NEW → WIP → UNTESTED → TESTING → CLOSED → done/YYYY/MM/DD/
 ```
 
+## Site version
+
+Footer displays **`package.json`** semver. Coders **must** run **`./scripts/bump-patch-version.sh`** once per task before **UNTESTED-**.
+
 ## Key paths
 
 | Path | Purpose |
 |------|---------|
+| `scripts/bump-patch-version.sh` | Patch bump for footer version |
 | `autoagents/autoagents-loop.sh` | Orchestrator |
 | `autoagents/issue_checker_agent.py` | GH → FEAT helper |
 | `autoagents/tasks/` | Active task queue |
@@ -44,7 +49,8 @@ FEAT/NEW → WIP → UNTESTED → TESTING → CLOSED → done/YYYY/MM/DD/
 | `handoff` | WIP → UNTESTED check |
 | `tester` | Tester |
 | `closing-review` | Archive CLOSED |
-| `committer` | Git commit (needs `AGENT_COMMITTER_USE_CURSOR=1`) |
+| `committer` | Git commit (`AGENT_COMMITTER_USE_CURSOR=1` in `.env`) |
+| `sync_github_from_tasks.py` | FEAT → comment/label; CLOSED → comment/close |
 
 ## GitHub
 

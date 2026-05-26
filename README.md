@@ -1,6 +1,6 @@
 # KM0 — Web
 
-Public marketing landing for **KM0 Digital** (Kilometer / Kilòmetre / Kilómetro 0 in localized site copy).
+Public marketing landing for **KM0 Digital**.
 
 **Production:** Spanish (default) [https://km0digital.com](https://km0digital.com) · Catalan [/ca/](https://km0digital.com/ca/) · English [/en/](https://km0digital.com/en/) · Blog [/doc/](https://km0digital.com/doc/)
 
@@ -118,18 +118,6 @@ Internet → Nginx (km0digital.com:443) → 127.0.0.1:9180 (km0-web container)
 ```
 
 OpenCloud (file storage) runs at **[https://cloud.km0digital.com](https://cloud.km0digital.com)** — separate hostname from this marketing site.
-
-## autoagents (Cursor agent loop)
-
-GitHub-driven task pipeline using **cursor-agent** (no Ollama). See **[docs/agent-loop.md](docs/agent-loop.md)**.
-
-```bash
-./scripts/setup-autoagents-gh.sh    # once: Luipy56 + AMVARA-CONSULTING/km0-web
-./autoagents/autoagents-loop.sh   # full cycle every 5 min
-./autoagents/autoagents-loop.sh 001   # GitHub reviewer only
-```
-
-Task files live under **`autoagents/tasks/`**. Direct IDE chat follows **`.cursor/rules/direct-user-prompts.mdc`**.
 
 ## License
 

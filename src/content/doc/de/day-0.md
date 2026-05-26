@@ -86,5 +86,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Nächster Schritt</p>
   <h2 class="doc-block-heading">Tag 1</h2>
-  <p class="doc-closing"><strong>Tag 1</strong> bringt OpenCloud, den Proxy-Virtual-Host und die KM0-Website über TLS hoch. In der Zwischenzeit: die veröffentlichten <a href="/de/#servicios">Services</a> erkunden oder <a href="/de/#contacto">Kontakt aufnehmen</a>, wenn Sie mitarbeiten möchten.</p>
+  <p class="doc-closing"><strong>Tag 1</strong> bringt OpenCloud, den Proxy-Virtual-Host und die KM0-Website über TLS hoch. In der Zwischenzeit: die veröffentlichten <a href="/de/#services">Services</a> erkunden oder <a href="/de/#contact">Kontakt aufnehmen</a>, wenn Sie mitarbeiten möchten.</p>
 </section>

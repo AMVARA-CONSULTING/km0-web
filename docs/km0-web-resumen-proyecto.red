@@ -114,9 +114,30 @@ curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/
 
 ---
 
+h2. Dependencies and security (2026-05-26)
+
+* Direct dependencies in @package.json@ are *pinned* to exact versions (no @^@, @~@, or @>@ ranges).
+* @package-lock.json@ is versioned in Git; the Docker build stage runs @npm ci@ for reproducible installs.
+* Audit date: *26 May 2026* (@npm audit@ in Node 22 Alpine).
+
+|_.Package|_.Pinned version|_.Notes|
+| @astrojs/sitemap@ | 3.7.3 | hreflang sitemap integration |
+| @astrojs/tailwind@ | 6.0.2 | Tailwind integration |
+| @astro@ | 5.18.2 | Latest 5.x line; includes fix for CVE-2026-33769 (remotePatterns allowlist bypass, relevant to SSR/image endpoints) |
+| @tailwindcss@ | 3.4.19 | CSS framework |
+
+*npm audit* reported *2 advisories* on @astro@ still open in the npm advisory DB for the 5.x line (fix tagged for Astro @>=6.1.6@ / @>=6.1.10@):
+** *Moderate* — XSS in @define:vars@ via incomplete @</script>@ sanitization (GHSA-j687-52p2-xcff).
+** *Low* — Server island encrypted parameters replay (GHSA-xr5h-phrj-8vxv).
+* This site uses @output: 'static'@ only; it does not use @define:vars@ or server islands. Production exposure for those two items is assessed as *low*. Resolving them without a major bump would require migrating to Astro 6 when the team accepts that upgrade.
+* CVE-2025-64757 (dev-server local file read via image endpoint) is patched from Astro 5.14.3 onward — covered by @5.18.2@; affects @astro dev@ only, not the nginx static container.
+
+---
+
 h2. Risks / follow-ups
 
 * Keep @certbot.timer@ renewal healthy on the host for @km0.amvara.de@.
+* Re-run @npm audit@ periodically; bump pinned versions deliberately (edit @package.json@, regenerate lockfile, rebuild image).
 * Regression on Spanish default landing: verify Astro @i18n.defaultLocale@ and @prefixDefaultLocale@.
 * Host nginx lives outside Git—always @nginx -t@ then @systemctl reload nginx@ after edits under @/etc/nginx/sites-available/@.
 

@@ -126,5 +126,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Offen</p>
   <h2 class="doc-block-heading">Nächste Schritte</h2>
-  <p class="doc-closing">OpenCloud 7.0.1 prüfen, sobald das Image validiert ist, Apple Sign In abschließen falls nötig, Cron für das vollständige Backup einrichten und Rotation des administrativen Zugangs überdenken. Erkunden Sie die <a href="/de/#servicios">Services</a> oder <a href="/de/#contacto">nehmen Sie Kontakt auf</a>, wenn Sie mitarbeiten möchten.</p>
+  <p class="doc-closing">OpenCloud 7.0.1 prüfen, sobald das Image validiert ist, Apple Sign In abschließen falls nötig, Cron für das vollständige Backup einrichten und Rotation des administrativen Zugangs überdenken. Erkunden Sie die <a href="/de/#services">Services</a> oder <a href="/de/#contact">nehmen Sie Kontakt auf</a>, wenn Sie mitarbeiten möchten.</p>
 </section>

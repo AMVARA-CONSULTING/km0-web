@@ -25,13 +25,13 @@ export interface Messages {
     after: string;
   };
   nav: {
-    inicio: string;
-    valores: string;
-    servicios: string;
-    significado: string;
-    mision: string;
+    home: string;
+    values: string;
+    services: string;
+    meaning: string;
+    mission: string;
     blog: string;
-    contacto: string;
+    contact: string;
   };
   hero: {
     eyebrow: string;

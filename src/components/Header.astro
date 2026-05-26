@@ -12,13 +12,13 @@ interface Props {
 const { locale, messages: m } = Astro.props;
 
 const nav = [
-  { id: 'inicio', label: m.nav.inicio, href: withHash(locale, 'inicio') },
-  { id: 'valores', label: m.nav.valores, href: withHash(locale, 'valores') },
-  { id: 'servicios', label: m.nav.servicios, href: withHash(locale, 'servicios') },
-  { id: 'significado', label: m.nav.significado, href: withHash(locale, 'significado') },
-  { id: 'mision', label: m.nav.mision, href: withHash(locale, 'mision') },
+  { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
+  { id: 'values', label: m.nav.values, href: withHash(locale, 'values') },
+  { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
+  { id: 'meaning', label: m.nav.meaning, href: withHash(locale, 'meaning') },
+  { id: 'mission', label: m.nav.mission, href: withHash(locale, 'mission') },
   { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
-  { id: 'contacto', label: m.nav.contacto, href: withHash(locale, 'contacto') },
+  { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
 ] as const;
 
 const langs: { code: Locale; href: string; label: string }[] = [
@@ -35,7 +35,7 @@ const langs: { code: Locale; href: string; label: string }[] = [
   <nav
     class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-12"
   >
-    <a href={withHash(locale, 'inicio')} class="flex min-w-0 items-center gap-3 text-white">
+    <a href={withHash(locale, 'home')} class="flex min-w-0 items-center gap-3 text-white">
       <img
         src="/brand/logo.png"
         alt={m.hero.logoAlt}

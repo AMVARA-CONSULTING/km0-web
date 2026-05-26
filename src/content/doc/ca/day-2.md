@@ -126,5 +126,5 @@ locale: ca
 <div class="doc-closing-block">
   <p class="doc-block-title">Pendents</p>
   <h2 class="doc-block-heading">Següents passos</h2>
-  <p class="doc-closing">Valorar OpenCloud 7.0.1 quan la imatge estigui validada, completar Apple Sign In si falta, instal·lar cron per a la còpia integral i revisar la rotació de l'accés administratiu. Explora els <a href="/ca/#servicios">serveis</a> o <a href="/ca/#contacto">escriu-nos</a> per col·laborar.</p>
+  <p class="doc-closing">Valorar OpenCloud 7.0.1 quan la imatge estigui validada, completar Apple Sign In si falta, instal·lar cron per a la còpia integral i revisar la rotació de l'accés administratiu. Explora els <a href="/ca/#services">serveis</a> o <a href="/ca/#contact">escriu-nos</a> per col·laborar.</p>
 </div>

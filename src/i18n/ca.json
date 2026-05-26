@@ -10,13 +10,13 @@
     "after": " Digital"
   },
   "nav": {
-    "inicio": "Inici",
-    "valores": "Valors",
-    "servicios": "Serveis",
-    "significado": "Significat",
-    "mision": "Missió",
+    "home": "Inici",
+    "values": "Valors",
+    "services": "Serveis",
+    "meaning": "Significat",
+    "mission": "Missió",
     "blog": "Blog",
-    "contacto": "Contacte"
+    "contact": "Contacte"
   },
   "hero": {
     "eyebrow": "Kilòmetre 0 Digital",

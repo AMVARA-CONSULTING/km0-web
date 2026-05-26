@@ -126,5 +126,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Outstanding</p>
   <h2 class="doc-block-heading">Next steps</h2>
-  <p class="doc-closing">Evaluate OpenCloud 7.0.1 when the image is validated, complete Apple Sign In if missing, install cron for the full backup, and review rotation of administrative access. Explore the <a href="/en/#servicios">services</a> or <a href="/en/#contacto">get in touch</a> to collaborate.</p>
+  <p class="doc-closing">Evaluate OpenCloud 7.0.1 when the image is validated, complete Apple Sign In if missing, install cron for the full backup, and review rotation of administrative access. Explore the <a href="/en/#services">services</a> or <a href="/en/#contact">get in touch</a> to collaborate.</p>
 </section>

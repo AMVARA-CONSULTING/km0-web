@@ -32,10 +32,10 @@ const { locale, messages: m } = Astro.props;
       © {year} {m.brandName}. {m.footer.rights}
     </p>
     <nav class="flex gap-6 text-sm text-navy/50">
-      <a href={withHash(locale, 'inicio')} class="transition-colors hover:text-navy">{m.nav.inicio}</a>
-      <a href={withHash(locale, 'mision')} class="transition-colors hover:text-navy">{m.nav.mision}</a>
+      <a href={withHash(locale, 'home')} class="transition-colors hover:text-navy">{m.nav.home}</a>
+      <a href={withHash(locale, 'mission')} class="transition-colors hover:text-navy">{m.nav.mission}</a>
       <a href={localeHref(locale, '/doc/')} class="transition-colors hover:text-navy">{m.nav.blog}</a>
-      <a href={withHash(locale, 'contacto')} class="transition-colors hover:text-navy">{m.nav.contacto}</a>
+      <a href={withHash(locale, 'contact')} class="transition-colors hover:text-navy">{m.nav.contact}</a>
       <a
         href="https://github.com/AMVARA-CONSULTING/km0-web"
         target="_blank"

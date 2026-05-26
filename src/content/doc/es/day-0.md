@@ -86,5 +86,5 @@ locale: es
 <section class="doc-closing-block">
   <p class="doc-block-title">Siguiente paso</p>
   <h2 class="doc-block-heading">Día 1</h2>
-  <p class="doc-closing">El <strong>día 1</strong> materializa OpenCloud, el virtual host del proxy y la web KM0 con TLS. Mientras tanto, explora los <a href="/#servicios">servicios</a> o <a href="/#contacto">escríbenos</a> si quieres colaborar.</p>
+  <p class="doc-closing">El <strong>día 1</strong> materializa OpenCloud, el virtual host del proxy y la web KM0 con TLS. Mientras tanto, explora los <a href="/#services">servicios</a> o <a href="/#contact">escríbenos</a> si quieres colaborar.</p>
 </section>

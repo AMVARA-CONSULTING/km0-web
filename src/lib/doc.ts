@@ -1,15 +1,15 @@
 import type { CollectionEntry } from 'astro:content';
 
-/** URL slug from collection id (e.g. es/dia-0 -> dia-0) */
+/** URL slug from collection id (e.g. es/day-0 -> day-0) */
 export function docSlug(entry: CollectionEntry<'doc'>): string {
   const parts = entry.id.split('/');
   const last = parts[parts.length - 1] ?? entry.id;
   return last.replace(/\.md$/i, '');
 }
 
-/** Day index from slug (e.g. dia-2 -> 2); 0 when pattern does not match */
+/** Day index from slug (e.g. day-2 -> 2); 0 when pattern does not match */
 export function docDayNumber(entry: CollectionEntry<'doc'>): number {
-  const match = docSlug(entry).match(/^dia-(\d+)$/);
+  const match = docSlug(entry).match(/^day-(\d+)$/);
   return match ? Number(match[1]) : 0;
 }
 

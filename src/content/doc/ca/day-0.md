@@ -86,5 +86,5 @@ locale: ca
 <section class="doc-closing-block">
   <p class="doc-block-title">Següent pas</p>
   <h2 class="doc-block-heading">Dia 1</h2>
-  <p class="doc-closing">El <strong>dia 1</strong> materialitza OpenCloud, el virtual host del proxy i la web KM0 amb TLS. Mentrestant, explora els <a href="/ca/#servicios">serveis</a> o <a href="/ca/#contacto">escriu-nos</a> si vols col·laborar.</p>
+  <p class="doc-closing">El <strong>dia 1</strong> materialitza OpenCloud, el virtual host del proxy i la web KM0 amb TLS. Mentrestant, explora els <a href="/ca/#services">serveis</a> o <a href="/ca/#contact">escriu-nos</a> si vols col·laborar.</p>
 </section>

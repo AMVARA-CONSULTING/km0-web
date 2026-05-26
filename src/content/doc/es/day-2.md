@@ -126,5 +126,5 @@ locale: es
 <section class="doc-closing-block">
   <p class="doc-block-title">Pendientes</p>
   <h2 class="doc-block-heading">Siguientes pasos</h2>
-  <p class="doc-closing">Valorar OpenCloud 7.0.1 cuando la imagen esté validada, completar Apple Sign In si falta, instalar cron para el backup integral y revisar rotación del acceso administrativo. Explora los <a href="/#servicios">servicios</a> o <a href="/#contacto">escríbenos</a> para colaborar.</p>
+  <p class="doc-closing">Valorar OpenCloud 7.0.1 cuando la imagen esté validada, completar Apple Sign In si falta, instalar cron para el backup integral y revisar rotación del acceso administrativo. Explora los <a href="/#services">servicios</a> o <a href="/#contact">escríbenos</a> para colaborar.</p>
 </section>

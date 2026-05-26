@@ -148,5 +148,5 @@ bash /opt/opencloud/scripts/backup-volumes.sh</pre></div>
 <div class="doc-closing-block">
   <p class="doc-block-title">Següent pas</p>
   <h2 class="doc-block-heading">Dia 2</h2>
-  <p class="doc-closing">El <strong>dia 2</strong> madura l'autenticació OIDC amb Dex, actualitza OpenCloud 7.x i estableix la primera còpia integral. Mentrestant, explora els <a href="/ca/#servicios">serveis</a> o el <a href="/ca/doc/dia-2/">relat del dia 2</a>.</p>
+  <p class="doc-closing">El <strong>dia 2</strong> madura l'autenticació OIDC amb Dex, actualitza OpenCloud 7.x i estableix la primera còpia integral. Mentrestant, explora els <a href="/ca/#services">serveis</a> o el <a href="/ca/doc/day-2/">relat del dia 2</a>.</p>
 </div>

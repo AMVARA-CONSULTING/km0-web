@@ -1,6 +1,6 @@
 # Operations Runbook — Kilómetro 0 Digital Web
 
-**URL:** https://km0.amvara.de (`/` = español por defecto) · **Català:** `/ca/` · **English:** `/en/` · **Blog:** `/doc/` (nav: “Blog”)
+**URL:** https://km0.amvara.de (`/` = Spanish default locale) · **Català:** `/ca/` · **English:** `/en/` · **Deutsch:** `/de/` · **Blog:** `/doc/` (nav label: “Blog”)
 
 **Server:** `116.202.10.106` · **Deployed:** 2026-05-21
 
@@ -8,36 +8,37 @@
 
 ## Locales (i18n)
 
-| Idioma | Ruta | Fichero de copy |
-|--------|------|-----------------|
-| Español (default) | `/` | `src/i18n/es.json` |
-| Català | `/ca/` | `src/i18n/ca.json` |
+| Locale | Path | Copy file |
+|--------|------|-----------|
+| Spanish (default) | `/` | `src/i18n/es.json` |
+| Catalan | `/ca/` | `src/i18n/ca.json` |
 | English | `/en/` | `src/i18n/en.json` |
+| German | `/de/` | `src/i18n/de.json` |
 
 - Configuración Astro i18n: `astro.config.mjs` (`defaultLocale: es`, `prefixDefaultLocale: false`).
-- Vista única: `src/views/Landing.astro`; entradas en `src/pages/index.astro`, `src/pages/ca/index.astro`, `src/pages/en/index.astro`.
+- Shared view: `src/views/Landing.astro`; page entries in `src/pages/index.astro`, `src/pages/{ca,en,de}/index.astro`.
 - SEO (canonical, `hreflang`, `x-default`): `src/layouts/Layout.astro`.
-- Selector CA | ES | EN y anclas `/#id` o `/ca/#id`: `src/components/Header.astro` y `src/i18n/paths.ts`.
-- Sitemap con alternates: integración `@astrojs/sitemap` en `astro.config.mjs` (`i18n.locales` usa códigos BCP-47: `es`, `ca`, `en`).
+- Locale switcher (CA | DE | EN | ES) and hash anchors `/#id` or `/ca/#id`: `src/components/Header.astro` and `src/i18n/paths.ts`.
+- Sitemap alternates: `@astrojs/sitemap` in `astro.config.mjs` (BCP-47 locale codes: `es`, `ca`, `en`, `de`).
 
 ```bash
 curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/en/
-curl -sI http://127.0.0.1:9180/doc/ http://127.0.0.1:9180/doc/dia-0/
-curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/dia-0/
+curl -sI http://127.0.0.1:9180/doc/ http://127.0.0.1:9180/doc/day-0/
+curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 ```
 
 ### Blog (`/doc/`)
 
-| Ruta | Vista |
-|------|--------|
-| `/doc/`, `/ca/doc/`, `/en/doc/` | `src/views/DocIndex.astro` |
-| `/doc/dia-0/`, etc. | `src/views/DocPost.astro` |
+| Path | View |
+|------|------|
+| `/doc/`, `/ca/doc/`, `/en/doc/`, `/de/doc/` | `src/views/DocIndex.astro` |
+| `/doc/day-0/`, etc. | `src/views/DocPost.astro` |
 
-- Entradas Markdown: `src/content/doc/{es,ca,en}/<slug>.md`
-- Esquema: `src/content.config.ts` (`title`, `description`, `pubDate`, `locale`)
-- Home: sección **Servicios** (`#servicios`) entre Valores y Significado; enlaces Cloud/Email en i18n `services.items`
+- Markdown entries: `src/content/doc/{es,ca,en,de}/<slug>.md`
+- Schema: `src/content.config.ts` (`title`, `description`, `pubDate`, `locale`)
+- Home: **Services** section (`#services`) between Values and Meaning; Cloud/Email links in i18n `services.items`
 
-**Añadir entrada:** crear el `.md` en cada idioma (mismo slug de fichero, p. ej. `dia-0.md`), `docker compose build && docker compose up -d`.
+**Add a post:** create the `.md` in each locale (same filename slug, e.g. `day-0.md`), then `docker compose build && docker compose up -d`.
 
 ---
 
@@ -83,12 +84,12 @@ ss -tlnp | grep 9180
 
 ## Edit content (no backend)
 
-1. **Traducciones:** editar `src/i18n/es.json`, `ca.json` y `en.json` (mismas claves en los tres).
-2. **Blog:** `src/content/doc/{locale}/<slug>.md` (ver sección Blog arriba).
-3. **Layout o secciones:** `src/components/*.astro` o `src/views/Landing.astro`.
-4. **Marca / colores:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs`.
-5. **Imágenes:** `public/brand/`.
-6. Desplegar: `docker compose build && docker compose up -d`.
+1. **Translations:** edit `src/i18n/es.json`, `ca.json`, `en.json`, and `de.json` (keep the same keys across locales).
+2. **Blog:** `src/content/doc/{locale}/<slug>.md` (see Blog section above).
+3. **Layout or sections:** `src/components/*.astro` or `src/views/Landing.astro`.
+4. **Brand / colors:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs`.
+5. **Images:** `public/brand/`.
+6. Deploy: `docker compose build && docker compose up -d`.
 
 ---
 
@@ -225,7 +226,7 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 /opt/km0-web/
 ├── src/                    # Astro source
 │   ├── i18n/               # es.json, ca.json, en.json, paths, types
-│   ├── views/              # Landing.astro (compartida)
+│   ├── views/              # Landing.astro (shared)
 ├── public/brand/           # logo.png, brand-guide.png
 ├── Dockerfile
 ├── docker-compose.yml

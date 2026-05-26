@@ -86,5 +86,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Next step</p>
   <h2 class="doc-block-heading">Day 1</h2>
-  <p class="doc-closing"><strong>Day 1</strong> brings up OpenCloud, the proxy virtual host, and the KM0 site over TLS. In the meantime, explore the published <a href="/en/#servicios">services</a> or <a href="/en/#contacto">get in touch</a> if you want to collaborate.</p>
+  <p class="doc-closing"><strong>Day 1</strong> brings up OpenCloud, the proxy virtual host, and the KM0 site over TLS. In the meantime, explore the published <a href="/en/#services">services</a> or <a href="/en/#contact">get in touch</a> if you want to collaborate.</p>
 </section>

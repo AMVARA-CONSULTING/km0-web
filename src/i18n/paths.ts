@@ -7,7 +7,7 @@ const LOCALE_PREFIX: Record<Locale, '' | '/ca' | '/en' | '/de'> = {
   de: '/de',
 };
 
-/** Path prefix without trailing slash, empty for default locale Spanish */
+/** Path prefix without trailing slash; empty when `es` is the default locale (unprefixed URLs) */
 export function localePath(locale: Locale): '' | '/ca' | '/en' | '/de' {
   return LOCALE_PREFIX[locale];
 }
@@ -28,7 +28,7 @@ export function localeHref(locale: Locale, path: string): string {
   return joined.endsWith('/') ? joined : `${joined}/`;
 }
 
-/** Doc post URL from slug (e.g. dia-0) */
+/** Doc post URL from slug (e.g. day-0) */
 export function docPostHref(locale: Locale, slug: string): string {
   return `${localeHref(locale, '/doc')}${slug}/`;
 }

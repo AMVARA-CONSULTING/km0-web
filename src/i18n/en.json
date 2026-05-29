@@ -126,7 +126,10 @@
     "eyebrow": "Contact",
     "heading": "Shall we talk?",
     "body": "We're building the digital future from the origin. Write to us to collaborate or learn about the project.",
-    "email": "contacto@amvara.de"
+    "email": "contacto@amvara.de",
+    "whatsappLabel": "Join our WhatsApp group",
+    "whatsappQrAlt": "QR code to join the km0 WhatsApp group",
+    "whatsappAria": "Open link to the km0 WhatsApp group"
   },
   "footer": {
     "rights": "All rights reserved.",

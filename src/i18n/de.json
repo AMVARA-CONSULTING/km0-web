@@ -126,7 +126,10 @@
     "eyebrow": "Kontakt",
     "heading": "Sprechen wir?",
     "body": "Wir gestalten die digitale Zukunft vom Ursprung aus. Schreiben Sie uns, um zusammenzuarbeiten oder mehr über das Projekt zu erfahren.",
-    "email": "contacto@amvara.de"
+    "email": "contacto@amvara.de",
+    "whatsappLabel": "Treten Sie unserer WhatsApp-Gruppe bei",
+    "whatsappQrAlt": "QR-Code zum Beitritt zur km0-WhatsApp-Gruppe",
+    "whatsappAria": "Link zur km0-WhatsApp-Gruppe öffnen"
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",

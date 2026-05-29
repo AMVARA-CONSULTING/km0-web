@@ -114,6 +114,9 @@ export interface Messages {
     heading: string;
     body: string;
     email: string;
+    whatsappLabel: string;
+    whatsappQrAlt: string;
+    whatsappAria: string;
   };
   footer: {
     rights: string;

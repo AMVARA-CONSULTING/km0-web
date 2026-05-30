@@ -124,7 +124,7 @@ locale: en
 </section>
 
 <section class="doc-closing-block">
-  <p class="doc-block-title">Outstanding</p>
-  <h2 class="doc-block-heading">Next steps</h2>
-  <p class="doc-closing">Evaluate OpenCloud 7.0.1 when the image is validated, complete Apple Sign In if missing, install cron for the full backup, and review rotation of administrative access. Explore the <a href="/en/#services">services</a> or <a href="/en/#contact">get in touch</a> to collaborate.</p>
+  <p class="doc-block-title">Next step</p>
+  <h2 class="doc-block-heading">Day 3</h2>
+  <p class="doc-closing"><strong>Day 3</strong> consolidates versioned Git repositories, migrates the site to <code>km0digital.com</code>, and introduces the autoagents loop in both projects. In the meantime, explore the <a href="/en/#services">services</a> or the <a href="/en/doc/day-3/">day 3 story</a>.</p>
 </section>

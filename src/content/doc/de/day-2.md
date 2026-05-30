@@ -124,7 +124,7 @@ locale: de
 </section>
 
 <section class="doc-closing-block">
-  <p class="doc-block-title">Offen</p>
-  <h2 class="doc-block-heading">Nächste Schritte</h2>
-  <p class="doc-closing">OpenCloud 7.0.1 prüfen, sobald das Image validiert ist, Apple Sign In abschließen falls nötig, Cron für das vollständige Backup einrichten und Rotation des administrativen Zugangs überdenken. Erkunden Sie die <a href="/de/#services">Services</a> oder <a href="/de/#contact">nehmen Sie Kontakt auf</a>, wenn Sie mitarbeiten möchten.</p>
+  <p class="doc-block-title">Nächster Schritt</p>
+  <h2 class="doc-block-heading">Tag 3</h2>
+  <p class="doc-closing"><strong>Tag 3</strong> konsolidiert versionierte Git-Repositories, migriert die Website auf <code>km0digital.com</code> und führt die Autoagents-Schleife in beiden Projekten ein. In der Zwischenzeit: die <a href="/de/#services">Services</a> erkunden oder den <a href="/de/doc/day-3/">Bericht zu Tag 3</a> lesen.</p>
 </section>

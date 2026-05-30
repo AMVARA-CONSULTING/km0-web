@@ -24,6 +24,10 @@ User messages may be in any language; respond in English by default.
 2. Branch **`main`**. Account Luipy56 / yoelberjaga@gmail.com for GitHub operations.
 3. Read **`README.md`**, **`docs/runbook.md`**, **`docs/agent-loop.md`** for context.
 
+## Site version
+
+Any change under `src/` or other built site paths **must** run **`./scripts/bump-patch-version.sh`** before you finish (see `.cursor/rules/site-version-bump.mdc`). Include `package.json` in the same commit.
+
 ## Implementation
 
 - **Minimal scope** — smallest correct diff; match existing Astro/i18n conventions.

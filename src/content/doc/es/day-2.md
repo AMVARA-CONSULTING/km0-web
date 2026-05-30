@@ -124,7 +124,7 @@ locale: es
 </section>
 
 <section class="doc-closing-block">
-  <p class="doc-block-title">Pendientes</p>
-  <h2 class="doc-block-heading">Siguientes pasos</h2>
-  <p class="doc-closing">Valorar OpenCloud 7.0.1 cuando la imagen esté validada, completar Apple Sign In si falta, instalar cron para el backup integral y revisar rotación del acceso administrativo. Explora los <a href="/#services">servicios</a> o <a href="/#contact">escríbenos</a> para colaborar.</p>
+  <p class="doc-block-title">Siguiente paso</p>
+  <h2 class="doc-block-heading">Día 3</h2>
+  <p class="doc-closing">El <strong>día 3</strong> consolida repositorios Git versionados, migra la web a <code>km0digital.com</code> e introduce el bucle autoagents en ambos proyectos. Mientras tanto, explora los <a href="/#services">servicios</a> o el <a href="/doc/day-3/">relato del día 3</a>.</p>
 </section>

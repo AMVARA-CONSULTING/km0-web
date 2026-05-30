@@ -1,0 +1,40 @@
+---
+description: Bump package.json patch version whenever shipped site code changes (footer semver)
+alwaysApply: true
+---
+
+# Site version bump (footer)
+
+The public site version comes from **`package.json`** → **`src/lib/site-version.ts`** → footer (`Footer.astro`). Users and operators treat it as the deploy label.
+
+## When to bump
+
+Run **`./scripts/bump-patch-version.sh`** (patch +1) **once per delivery** whenever you change anything that ships in the Astro site:
+
+- `src/**` (components, views, pages, i18n, content, lib)
+- `astro.config.mjs`, `public/**`, `nginx/**` used by the container
+- Blog posts under `src/content/doc/**`
+
+**Do not skip** because the change was “small”, docs-only inside `src/content/doc/`, or done in direct IDE chat instead of autoagents.
+
+**Skip the bump** only when the diff is limited to `autoagents/`, `.cursor/`, root docs (`docs/`, `README.md`), or other files that never affect the built site.
+
+## How
+
+```bash
+./scripts/bump-patch-version.sh   # prints e.g. 1.1.5 → 1.1.6
+```
+
+Include the updated `package.json` in the same commit as the product change. Never edit the version string by hand unless fixing a mistake.
+
+## Verify
+
+After `docker compose build && docker compose up -d`, confirm the footer shows the new semver (all locales). Optionally:
+
+```bash
+curl -s http://127.0.0.1:9180/ | grep -o 'Versión [0-9.]*\|Version [0-9.]*\|Versió [0-9.]*'
+```
+
+## autoagents
+
+Coder steps (FEAT/NEW → UNTESTED) and the committer role must enforce the same rule; see also `.cursor/rules/autoagents-workflow.mdc`.

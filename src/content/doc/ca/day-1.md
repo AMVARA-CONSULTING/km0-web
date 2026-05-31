@@ -1,5 +1,5 @@
 ---
-title: "Dia 1 — OpenCloud, proxy i web del projecte"
+title: "Dia 1 - OpenCloud, proxy i web del projecte"
 description: "OpenCloud en Docker Compose, Nginx amb TLS en loopback, Fail2ban, subdomini cloud i la landing Astro KM0 publicada com a segon backend."
 pubDate: 2026-05-21
 locale: ca
@@ -8,7 +8,7 @@ locale: ca
 <div class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
   <p class="doc-lead">El dia 1 converteix la base Debian en una plataforma completa: <strong>OpenCloud</strong> sobre Docker Compose amb overlays oficials, Nginx que finalitza TLS i encamina només al loopback, polítiques de firewall coherents i la landing Astro del projecte publicada com a segon backend darrere del mateix frontal.</p>
-  <p class="doc-lead">També s'introdueixen millores posteriors al primer tall — Fail2ban i el subdomini dedicat del cloud — perquè formen part del relat operatiu real del desplegament.</p>
+  <p class="doc-lead">També s'introdueixen millores posteriors al primer tall - Fail2ban i el subdomini dedicat del cloud - perquè formen part del relat operatiu real del desplegament.</p>
 </div>
 
 <div class="doc-block">
@@ -46,10 +46,10 @@ Volums Docker:
   <p class="doc-block-title">Ports</p>
   <h2 class="doc-block-heading">Mapa de superfície exposada</h2>
   <ul class="doc-list">
-    <li><strong>22 (sshd):</strong> administració SSH — Internet segons política.</li>
-    <li><strong>80/443 (Nginx):</strong> HTTP/S públic — redirecció ACME i virtual hosts KM0 + OpenCloud.</li>
-    <li><strong>9200 (Docker → OpenCloud):</strong> només <code>127.0.0.1</code> — backend HTTP que ve Nginx.</li>
-    <li><strong>9140–9300:</strong> microserveis interns del contenidor — no publicats a l'host.</li>
+    <li><strong>22 (sshd):</strong> administració SSH - Internet segons política.</li>
+    <li><strong>80/443 (Nginx):</strong> HTTP/S públic - redirecció ACME i virtual hosts KM0 + OpenCloud.</li>
+    <li><strong>9200 (Docker → OpenCloud):</strong> només <code>127.0.0.1</code> - backend HTTP que ve Nginx.</li>
+    <li><strong>9140–9300:</strong> microserveis interns del contenidor, no publicats a l'host.</li>
   </ul>
   <div class="doc-note">UFW reforça la política permetent des d'Internet només el necessari. Si no l'ha de conèixer el navegador extern, no escolta a totes les interfícies.</div>
 </div>
@@ -74,7 +74,7 @@ Volums Docker:
 ├── opencloud-compose/     # clon upstream + overlays
 │   ├── docker-compose.yml
 │   ├── external-proxy/opencloud.yml
-│   └── .env                 # actiu — fora de git, chmod 600
+│   └── .env                 # actiu - fora de git, chmod 600
 ├── nginx/                   # plantilles TLS + proxy
 ├── scripts/backup-volumes.sh
 └── docs/runbook.md</pre></div>
@@ -99,7 +99,7 @@ Volums Docker:
   <p class="doc-block-title">Web KM0</p>
   <h2 class="doc-block-heading">Flux HTTPS del lloc corporatiu</h2>
   <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0digital.com)
-                     └──► http://127.0.0.1:9180  (km0-web — només loopback)
+                     └──► http://127.0.0.1:9180  (km0-web - només loopback)
                             Astro estàtic + nginx Alpine</pre></div>
   <ul class="doc-list">
     <li><strong>Stack:</strong> Astro 5 + Tailwind 3, sortida estàtica.</li>
@@ -138,7 +138,7 @@ bash /opt/opencloud/scripts/backup-volumes.sh</pre></div>
   <p class="doc-block-title">Laboratori vs producció</p>
   <h2 class="doc-block-heading">Fases del desplegament</h2>
   <ul class="doc-list">
-    <li><strong>TLS provisional:</strong> certificat autofirmat útil per validar el proxy — alertes al navegador fins a Let's Encrypt amb DNS estable.</li>
+    <li><strong>TLS provisional:</strong> certificat autofirmat útil per validar el proxy - alertes al navegador fins a Let's Encrypt amb DNS estable.</li>
     <li><strong>Domini:</strong> passar d'IP en brut a FQDN millora enllaços interns i cookies.</li>
     <li><strong>INSECURE relaxat:</strong> només coherent mentre els certificats interns no formen una PKI de confiança.</li>
     <li><strong>Còpies de seguretat:</strong> script manual fins a cron supervisat; vigilar <code>certbot.timer</code> en producció.</li>

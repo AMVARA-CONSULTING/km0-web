@@ -1,5 +1,5 @@
 ---
-title: "Día 4 — Login local Dex LDAP contra IDM OpenCloud"
+title: "Día 4 - Login local Dex LDAP contra IDM OpenCloud"
 description: "Conector LDAP de Dex hacia el IDM integrado de OpenCloud, corrección TLS del certificado LDAPS y cierre de la issue #1 con pruebas automatizadas."
 pubDate: 2026-05-27
 locale: es
@@ -62,8 +62,8 @@ locale: es
   <p class="doc-block-title">Commits</p>
   <h2 class="doc-block-heading">Ventana del día (CEST)</h2>
   <ul class="doc-list">
-    <li><code>cf5a561</code> (15:27) — <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
-    <li><code>0a042db</code> (15:39) — <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
+    <li><code>cf5a561</code> (15:27) - <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
+    <li><code>0a042db</code> (15:39) - <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
   </ul>
 </section>
 
@@ -71,12 +71,12 @@ locale: es
   <p class="doc-block-title">Autoagents</p>
   <h2 class="doc-block-heading">Comprobaciones de cierre</h2>
   <ul class="doc-list">
-    <li>SAN del cert IDM incluye <code>opencloud</code> — PASS.</li>
-    <li>Dex LDAP <code>host: opencloud:9235</code> — PASS.</li>
-    <li><code>curl</code> con <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> — PASS.</li>
-    <li>Contraseña incorrecta → HTTP 401, bind LDAP, sin x509 en logs — PASS.</li>
-    <li>Humo conector Google — PASS.</li>
-    <li>Login manual dos usuarios distintos → <code>/files</code> — NO VERIFICADO (operador).</li>
+    <li>SAN del cert IDM incluye <code>opencloud</code> - PASS.</li>
+    <li>Dex LDAP <code>host: opencloud:9235</code> - PASS.</li>
+    <li><code>curl</code> con <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> - PASS.</li>
+    <li>Contraseña incorrecta → HTTP 401, bind LDAP, sin x509 en logs - PASS.</li>
+    <li>Humo conector Google - PASS.</li>
+    <li>Login manual dos usuarios distintos → <code>/files</code> - NO VERIFICADO (operador).</li>
   </ul>
 </section>
 

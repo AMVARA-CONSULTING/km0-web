@@ -1,5 +1,5 @@
 ---
-title: "Dia 3 — Repos Git, dominis km0digital.com i bucle autoagents"
+title: "Dia 3 - Repos Git, dominis km0digital.com i bucle autoagents"
 description: "Repositori Git d'OpenCloud, migració a km0digital.com, FAQ multilingüe, navegació mòbil, switchLocaleHref i bucle autoagents en ambdós repos."
 pubDate: 2026-05-26
 locale: ca
@@ -29,8 +29,8 @@ locale: ca
     └── cloud.km0digital.com    → nginx opencloud → 127.0.0.1:9200  (OpenCloud external-proxy)
                                       └── /dex/*  → 127.0.0.1:5556  (Dex OIDC)</pre></div>
   <ul class="doc-list">
-    <li><strong>Marketing:</strong> <a href="https://km0digital.com/">km0digital.com</a> — <code>/opt/km0-web</code>.</li>
-    <li><strong>OpenCloud:</strong> <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> — <code>/opt/opencloud</code>.</li>
+    <li><strong>Marketing:</strong> <a href="https://km0digital.com/">km0digital.com</a>, <code>/opt/km0-web</code>.</li>
+    <li><strong>OpenCloud:</strong> <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>, <code>/opt/opencloud</code>.</li>
     <li><strong>Llegat:</strong> <code>km0.amvara.de</code> → redirecció 301 a l'apex.</li>
   </ul>
 </div>
@@ -40,12 +40,12 @@ locale: ca
   <h2 class="doc-block-heading">Repositori Git (km0-opencloud)</h2>
   <p class="doc-block-intro">Commit inicial (<code>f454889</code>, 26-maig 21:13 CEST) a <code>git@github.com:AMVARA-CONSULTING/km0-opencloud.git</code>, branca <code>main</code>. Va quedar versionat (63 fitxers), entre d'altres:</p>
   <ul class="doc-list">
-    <li><code>overrides/opencloud-compose/</code> — CSP, overlay external-proxy, pedaç OIDC.</li>
-    <li><code>dex/</code> — compose Dex, tema KM0, plantilles de login.</li>
-    <li><code>nginx/</code> — plantilla vhost per a <code>cloud.km0digital.com</code>.</li>
-    <li><code>host-www/opencloud-auth/</code> — login híbrid (<code>login.html</code>, JSON d'auth).</li>
-    <li><code>scripts/</code> — còpies de seguretat, <code>apply-opencloud-compose-overrides.sh</code>.</li>
-    <li><code>docs/</code> — runbook, resum Redmine.</li>
+    <li><code>overrides/opencloud-compose/</code> - CSP, overlay external-proxy, pedaç OIDC.</li>
+    <li><code>dex/</code> - compose Dex, tema KM0, plantilles de login.</li>
+    <li><code>nginx/</code> - plantilla vhost per a <code>cloud.km0digital.com</code>.</li>
+    <li><code>host-www/opencloud-auth/</code> - login híbrid (<code>login.html</code>, JSON d'auth).</li>
+    <li><code>scripts/</code> - còpies de seguretat, <code>apply-opencloud-compose-overrides.sh</code>.</li>
+    <li><code>docs/</code> - runbook, resum Redmine.</li>
   </ul>
   <div class="doc-note">Fora de Git (només al servidor): clon upstream <code>opencloud-compose/</code>, <code>.env</code> vius, secrets OAuth, volums Docker i <code>/etc/letsencrypt/</code>.</div>
 </div>
@@ -76,7 +76,7 @@ locale: ca
     <li><strong>FAQ</strong> (GitHub #1): secció FAQ, 4 locales.</li>
     <li><strong>Idioma</strong> (GitHub #2): <code>switchLocaleHref</code>.</li>
     <li><strong>Menú mòbil</strong> (GitHub #3): navegació hamburguesa.</li>
-    <li><strong>Fum</strong> (test): bucle autoagents — PASS a :9180 i producció.</li>
+    <li><strong>Fum</strong> (test): bucle autoagents - PASS a :9180 i producció.</li>
   </ul>
   <p>Progressió de versió del lloc: baseline Astro 5 a :9180 → 1.1.3 (FAQ, peu semver, modal, nav mòbil, locale) → 1.1.4 (README/docs).</p>
 </div>

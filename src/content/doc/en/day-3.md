@@ -1,5 +1,5 @@
 ---
-title: "Day 3 — Git repos, km0digital.com domains, and autoagents loop"
+title: "Day 3 - Git repos, km0digital.com domains, and autoagents loop"
 description: "OpenCloud Git repository, migration to km0digital.com, multilingual FAQ, mobile navigation, switchLocaleHref, and the autoagents loop in both repos."
 pubDate: 2026-05-26
 locale: en
@@ -29,8 +29,8 @@ locale: en
     └── cloud.km0digital.com    → nginx opencloud → 127.0.0.1:9200  (OpenCloud external-proxy)
                                       └── /dex/*  → 127.0.0.1:5556  (Dex OIDC)</pre></div>
   <ul class="doc-list">
-    <li><strong>Marketing:</strong> <a href="https://km0digital.com/">km0digital.com</a> — <code>/opt/km0-web</code>.</li>
-    <li><strong>OpenCloud:</strong> <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> — <code>/opt/opencloud</code>.</li>
+    <li><strong>Marketing:</strong> <a href="https://km0digital.com/">km0digital.com</a>, <code>/opt/km0-web</code>.</li>
+    <li><strong>OpenCloud:</strong> <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>, <code>/opt/opencloud</code>.</li>
     <li><strong>Legacy:</strong> <code>km0.amvara.de</code> → 301 redirect to apex.</li>
   </ul>
 </section>
@@ -40,12 +40,12 @@ locale: en
   <h2 class="doc-block-heading">Git repository (km0-opencloud)</h2>
   <p class="doc-block-intro">Initial commit (<code>f454889</code>, 26 May 21:13 CEST) at <code>git@github.com:AMVARA-CONSULTING/km0-opencloud.git</code>, branch <code>main</code>. Versioned (63 files), including:</p>
   <ul class="doc-list">
-    <li><code>overrides/opencloud-compose/</code> — CSP, external-proxy overlay, OIDC patch.</li>
-    <li><code>dex/</code> — Dex compose, KM0 theme, login templates.</li>
-    <li><code>nginx/</code> — vhost template for <code>cloud.km0digital.com</code>.</li>
-    <li><code>host-www/opencloud-auth/</code> — hybrid login (<code>login.html</code>, auth JSON).</li>
-    <li><code>scripts/</code> — backups, <code>apply-opencloud-compose-overrides.sh</code>.</li>
-    <li><code>docs/</code> — runbook, Redmine summary.</li>
+    <li><code>overrides/opencloud-compose/</code> - CSP, external-proxy overlay, OIDC patch.</li>
+    <li><code>dex/</code> - Dex compose, KM0 theme, login templates.</li>
+    <li><code>nginx/</code> - vhost template for <code>cloud.km0digital.com</code>.</li>
+    <li><code>host-www/opencloud-auth/</code> - hybrid login (<code>login.html</code>, auth JSON).</li>
+    <li><code>scripts/</code> - backups, <code>apply-opencloud-compose-overrides.sh</code>.</li>
+    <li><code>docs/</code> - runbook, Redmine summary.</li>
   </ul>
   <div class="doc-note">Outside Git (server only): upstream clone <code>opencloud-compose/</code>, live <code>.env</code>, OAuth secrets, Docker volumes, and <code>/etc/letsencrypt/</code>.</div>
 </section>
@@ -76,7 +76,7 @@ locale: en
     <li><strong>FAQ</strong> (GitHub #1): FAQ section, 4 locales.</li>
     <li><strong>Language</strong> (GitHub #2): <code>switchLocaleHref</code>.</li>
     <li><strong>Mobile menu</strong> (GitHub #3): hamburger navigation.</li>
-    <li><strong>Smoke</strong> (test): autoagents loop — PASS on :9180 and production.</li>
+    <li><strong>Smoke</strong> (test): autoagents loop - PASS on :9180 and production.</li>
   </ul>
   <p>Site version progression: Astro 5 baseline on :9180 → 1.1.3 (FAQ, semver footer, modal, mobile nav, locale) → 1.1.4 (README/docs).</p>
 </section>

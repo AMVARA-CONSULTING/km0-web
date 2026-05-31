@@ -1,5 +1,5 @@
 ---
-title: "Day 1 — OpenCloud, proxy, and project web"
+title: "Day 1 - OpenCloud, proxy, and project web"
 description: "OpenCloud on Docker Compose, Nginx with TLS on loopback, Fail2ban, cloud subdomain, and the KM0 Astro landing published as a second backend."
 pubDate: 2026-05-21
 locale: en
@@ -8,7 +8,7 @@ locale: en
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
   <p class="doc-lead">Day 1 turns the Debian base into a full platform: <strong>OpenCloud</strong> on Docker Compose with official overlays, Nginx terminating TLS and routing only to loopback, coherent firewall policies, and the project’s Astro landing published as a second backend behind the same front door.</p>
-  <p class="doc-lead">Post–first-cut improvements are also covered — Fail2ban and the dedicated cloud subdomain — because they are part of the real operational story of the deployment.</p>
+  <p class="doc-lead">Post–first-cut improvements are also covered - Fail2ban and the dedicated cloud subdomain - because they are part of the real operational story of the deployment.</p>
 </section>
 
 <section class="doc-block">
@@ -46,10 +46,10 @@ Docker volumes:
   <p class="doc-block-title">Ports</p>
   <h2 class="doc-block-heading">Exposed surface map</h2>
   <ul class="doc-list">
-    <li><strong>22 (sshd):</strong> SSH administration — Internet per policy.</li>
-    <li><strong>80/443 (Nginx):</strong> public HTTP/S — ACME redirect and KM0 + OpenCloud virtual hosts.</li>
-    <li><strong>9200 (Docker → OpenCloud):</strong> <code>127.0.0.1</code> only — HTTP backend seen by Nginx.</li>
-    <li><strong>9140–9300:</strong> internal container microservices — not published on the host.</li>
+    <li><strong>22 (sshd):</strong> SSH administration - Internet per policy.</li>
+    <li><strong>80/443 (Nginx):</strong> public HTTP/S - ACME redirect and KM0 + OpenCloud virtual hosts.</li>
+    <li><strong>9200 (Docker → OpenCloud):</strong> <code>127.0.0.1</code> only - HTTP backend seen by Nginx.</li>
+    <li><strong>9140–9300:</strong> internal container microservices, not published on the host.</li>
   </ul>
   <div class="doc-note">UFW reinforces the policy, allowing from the Internet only what is necessary. If the external browser should not know about it, it does not listen on all interfaces.</div>
 </section>
@@ -74,7 +74,7 @@ Docker volumes:
 ├── opencloud-compose/     # upstream clone + overlays
 │   ├── docker-compose.yml
 │   ├── external-proxy/opencloud.yml
-│   └── .env                 # active — outside git, chmod 600
+│   └── .env                 # active - outside git, chmod 600
 ├── nginx/                   # TLS + proxy templates
 ├── scripts/backup-volumes.sh
 └── docs/runbook.md</pre></div>
@@ -99,7 +99,7 @@ Docker volumes:
   <p class="doc-block-title">KM0 web</p>
   <h2 class="doc-block-heading">Corporate site HTTPS flow</h2>
   <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0digital.com)
-                     └──► http://127.0.0.1:9180  (km0-web — loopback only)
+                     └──► http://127.0.0.1:9180  (km0-web - loopback only)
                             Astro static + nginx Alpine</pre></div>
   <ul class="doc-list">
     <li><strong>Stack:</strong> Astro 5 + Tailwind 3, static output.</li>
@@ -138,7 +138,7 @@ bash /opt/opencloud/scripts/backup-volumes.sh</pre></div>
   <p class="doc-block-title">Lab vs production</p>
   <h2 class="doc-block-heading">Deployment phases</h2>
   <ul class="doc-list">
-    <li><strong>Provisional TLS:</strong> self-signed certificate useful for validating the proxy — browser warnings until Let's Encrypt with stable DNS.</li>
+    <li><strong>Provisional TLS:</strong> self-signed certificate useful for validating the proxy - browser warnings until Let's Encrypt with stable DNS.</li>
     <li><strong>Domain:</strong> moving from raw IP to FQDN improves internal links and cookies.</li>
     <li><strong>Relaxed INSECURE:</strong> only coherent while internal certificates do not form a trusted PKI.</li>
     <li><strong>Backups:</strong> manual script until supervised cron; watch <code>certbot.timer</code> in production.</li>

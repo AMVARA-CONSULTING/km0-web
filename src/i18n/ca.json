@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kilòmetre 0 Digital",
-    "description": "KM0 Digital és un moviment comunitari per recuperar el control digital. Serveis oberts, propers i sostenibles — no un altre proveïdor més."
+    "description": "KM0 Digital és un moviment comunitari per recuperar el control digital. Serveis oberts, propers i sostenibles, no un altre proveïdor més."
   },
   "brandName": "Kilòmetre 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -27,7 +27,7 @@
     "eyebrow": "Moviment digital comunitari",
     "titleLine1": "RECUPERA EL ",
     "titleGradient": "CONTROL DIGITAL.",
-    "tagline": "Un moviment social i tecnològic construït per i per a la comunitat — no un altre proveïdor més.",
+    "tagline": "Un moviment social i tecnològic construït per i per a la comunitat, no un altre proveïdor més.",
     "ctaPrimary": "Descobreix per què existeix",
     "ctaSecondary": "Uneix-te al moviment",
     "logoAlt": "Logo Kilòmetre 0 Digital",
@@ -79,7 +79,7 @@
       "Organitzacions",
       "Persones curioses"
     ],
-    "humanNote": "Darrere del projecte hi ha persones reals — no una corporació ni un call center anònim. Parles amb qui construeix el servei.",
+    "humanNote": "Darrere del projecte hi ha persones reals, no una corporació ni un call center anònim. Parles amb qui construeix el servei.",
     "ctaPrimary": "Conversar i participar",
     "ctaExplore": "Explorar el blog"
   },
@@ -115,7 +115,7 @@
     }
   },
   "doc": {
-    "metaTitle": "Blog — Kilòmetre 0 Digital",
+    "metaTitle": "Blog - Kilòmetre 0 Digital",
     "metaDescription": "Documentació, decisions i novetats del projecte KM0. Transparència des del dia zero.",
     "eyebrow": "Blog",
     "heading": "Documentació i novetats",
@@ -149,7 +149,7 @@
   "mission": {
     "eyebrow": "Cap on anem",
     "heading": "Retornar el control digital a la comunitat",
-    "body": "Persones, famílies, associacions, cooperatives, centres educatius i organitzacions — KM0 connecta serveis oberts, propers i sostenibles per a qui vulgui una alternativa real a Big Tech."
+    "body": "Persones, famílies, associacions, cooperatives, centres educatius i organitzacions; KM0 connecta serveis oberts, propers i sostenibles per a qui vulgui una alternativa real a Big Tech."
   },
   "merch": {
     "eyebrow": "Horitzó",
@@ -173,14 +173,14 @@
       {
         "id": "hosting",
         "question": "On està allotjat el servei?",
-        "answerHtml": "La nostra infraestructura funciona a Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a> — un proveïdor europeu que hem triat per la seva fiabilitat, preus transparents i per mantenir les teves dades dins la UE."
+        "answerHtml": "La nostra infraestructura funciona a Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, un proveïdor europeu que hem triat per la seva fiabilitat, preus transparents i per mantenir les teves dades dins la UE."
       }
     ]
   },
   "contact": {
     "eyebrow": "Participa",
     "heading": "Forma part del moviment",
-    "body": "Explora, pregunta, col·labora o simplement escolta. Construïm això junts — des de l'origen.",
+    "body": "Explora, pregunta, col·labora o simplement escolta. Construïm això junts, des de l'origen.",
     "email": "hello.yoel@amvara.de",
     "whatsappLabel": "Uneix-te al grup de WhatsApp",
     "whatsappQrAlt": "Codi QR per unir-se al grup de WhatsApp de km0",

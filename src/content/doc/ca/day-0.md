@@ -1,5 +1,5 @@
 ---
-title: "Dia 0 — Fonaments del servidor"
+title: "Dia 0 - Fonaments del servidor"
 description: "Debian, particions, Docker, Nginx i base reproducible: el dia dedicat a fer l'stack KM0 auditable i operable."
 pubDate: 2026-05-21
 locale: ca

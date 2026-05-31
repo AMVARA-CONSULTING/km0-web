@@ -1,5 +1,5 @@
 ---
-title: "Día 1 — OpenCloud, proxy y web del proyecto"
+title: "Día 1 - OpenCloud, proxy y web del proyecto"
 description: "OpenCloud en Docker Compose, Nginx con TLS en loopback, Fail2ban, subdominio cloud y la landing Astro KM0 publicada como segundo backend."
 pubDate: 2026-05-21
 locale: es
@@ -8,7 +8,7 @@ locale: es
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
   <p class="doc-lead">El día 1 convierte la base Debian en una plataforma completa: <strong>OpenCloud</strong> sobre Docker Compose con overlays oficiales, Nginx terminando TLS y encaminando solo al loopback, políticas de firewall coherentes y la landing Astro del proyecto publicada como segundo backend detrás del mismo frontal.</p>
-  <p class="doc-lead">También se introducen mejoras posteriores al primer corte — Fail2ban y el subdominio dedicado del cloud — porque forman parte del relato operativo real del despliegue.</p>
+  <p class="doc-lead">También se introducen mejoras posteriores al primer corte - Fail2ban y el subdominio dedicado del cloud - porque forman parte del relato operativo real del despliegue.</p>
 </section>
 
 <section class="doc-block">
@@ -46,10 +46,10 @@ Volúmenes Docker:
   <p class="doc-block-title">Puertos</p>
   <h2 class="doc-block-heading">Mapa de superficie expuesta</h2>
   <ul class="doc-list">
-    <li><strong>22 (sshd):</strong> administración SSH — Internet según política.</li>
-    <li><strong>80/443 (Nginx):</strong> HTTP/S público — redirección ACME y virtual hosts KM0 + OpenCloud.</li>
-    <li><strong>9200 (Docker → OpenCloud):</strong> solo <code>127.0.0.1</code> — backend HTTP que ve Nginx.</li>
-    <li><strong>9140–9300:</strong> microservicios internos del contenedor — no publicados en el host.</li>
+    <li><strong>22 (sshd):</strong> administración SSH - Internet según política.</li>
+    <li><strong>80/443 (Nginx):</strong> HTTP/S público - redirección ACME y virtual hosts KM0 + OpenCloud.</li>
+    <li><strong>9200 (Docker → OpenCloud):</strong> solo <code>127.0.0.1</code> - backend HTTP que ve Nginx.</li>
+    <li><strong>9140–9300:</strong> microservicios internos del contenedor, no publicados en el host.</li>
   </ul>
   <div class="doc-note">UFW refuerza la política permitiendo desde Internet solo lo necesario. Si no debe conocerlo el navegador externo, no escucha en todas las interfaces.</div>
 </section>
@@ -74,7 +74,7 @@ Volúmenes Docker:
 ├── opencloud-compose/     # clon upstream + overlays
 │   ├── docker-compose.yml
 │   ├── external-proxy/opencloud.yml
-│   └── .env                 # activo — fuera de git, chmod 600
+│   └── .env                 # activo - fuera de git, chmod 600
 ├── nginx/                   # plantillas TLS + proxy
 ├── scripts/backup-volumes.sh
 └── docs/runbook.md</pre></div>
@@ -99,7 +99,7 @@ Volúmenes Docker:
   <p class="doc-block-title">Web KM0</p>
   <h2 class="doc-block-heading">Flujo HTTPS del sitio corporativo</h2>
   <div class="doc-note"><pre>Internet :443 ─► Nginx host (TLS, km0digital.com)
-                     └──► http://127.0.0.1:9180  (km0-web — solo loopback)
+                     └──► http://127.0.0.1:9180  (km0-web - solo loopback)
                             Astro estático + nginx Alpine</pre></div>
   <ul class="doc-list">
     <li><strong>Stack:</strong> Astro 5 + Tailwind 3, salida estática.</li>
@@ -138,7 +138,7 @@ bash /opt/opencloud/scripts/backup-volumes.sh</pre></div>
   <p class="doc-block-title">Laboratorio vs producción</p>
   <h2 class="doc-block-heading">Fases del despliegue</h2>
   <ul class="doc-list">
-    <li><strong>TLS provisional:</strong> certificado autofirmado útil para validar proxy — alertas en navegador hasta Let's Encrypt con DNS estable.</li>
+    <li><strong>TLS provisional:</strong> certificado autofirmado útil para validar proxy - alertas en navegador hasta Let's Encrypt con DNS estable.</li>
     <li><strong>Dominio:</strong> pasar de IP cruda a FQDN mejora enlaces internos y cookies.</li>
     <li><strong>INSECURE relajado:</strong> solo coherente mientras los certificados internos no forman PKI confiable.</li>
     <li><strong>Backups:</strong> script manual hasta cron supervisado; vigilar <code>certbot.timer</code> en producción.</li>

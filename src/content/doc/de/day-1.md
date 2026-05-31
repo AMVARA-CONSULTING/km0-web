@@ -1,5 +1,5 @@
 ---
-title: "Tag 1 — OpenCloud, Proxy und Projekt-Website"
+title: "Tag 1 - OpenCloud, Proxy und Projekt-Website"
 description: "OpenCloud in Docker Compose, Nginx mit TLS auf Loopback, Fail2ban, Cloud-Subdomain und die Astro-KM0-Landing als zweites Backend."
 pubDate: 2026-05-21
 locale: de
@@ -8,7 +8,7 @@ locale: de
 <section class="doc-lead-block">
   <p class="doc-block-title">Einleitung</p>
   <p class="doc-lead">Tag 1 verwandelt die Debian-Basis in eine vollständige Plattform: <strong>OpenCloud</strong> auf Docker Compose mit offiziellen Overlays, Nginx mit TLS-Terminierung und Weiterleitung nur zum Loopback, konsistente Firewall-Richtlinien und die Astro-Landing des Projekts als zweites Backend hinter demselben Front.</p>
-  <p class="doc-lead">Außerdem werden Verbesserungen nach dem ersten Schnitt eingeführt — Fail2ban und die dedizierte Cloud-Subdomain —, weil sie Teil der realen Betriebsgeschichte des Deployments sind.</p>
+  <p class="doc-lead">Außerdem werden Verbesserungen nach dem ersten Schnitt eingeführt - Fail2ban und die dedizierte Cloud-Subdomain -, weil sie Teil der realen Betriebsgeschichte des Deployments sind.</p>
 </section>
 
 <section class="doc-block">
@@ -46,10 +46,10 @@ Docker-Volumes:
   <p class="doc-block-title">Ports</p>
   <h2 class="doc-block-heading">Karte der exponierten Oberfläche</h2>
   <ul class="doc-list">
-    <li><strong>22 (sshd):</strong> SSH-Administration — Internet je nach Richtlinie.</li>
-    <li><strong>80/443 (Nginx):</strong> öffentliches HTTP/S — ACME-Weiterleitung und Virtual Hosts KM0 + OpenCloud.</li>
-    <li><strong>9200 (Docker → OpenCloud):</strong> nur <code>127.0.0.1</code> — HTTP-Backend für Nginx.</li>
-    <li><strong>9140–9300:</strong> interne Microservices im Container — nicht auf dem Host veröffentlicht.</li>
+    <li><strong>22 (sshd):</strong> SSH-Administration - Internet je nach Richtlinie.</li>
+    <li><strong>80/443 (Nginx):</strong> öffentliches HTTP/S - ACME-Weiterleitung und Virtual Hosts KM0 + OpenCloud.</li>
+    <li><strong>9200 (Docker → OpenCloud):</strong> nur <code>127.0.0.1</code> - HTTP-Backend für Nginx.</li>
+    <li><strong>9140–9300:</strong> interne Microservices im Container, nicht auf dem Host veröffentlicht.</li>
   </ul>
   <div class="doc-note">UFW verstärkt die Richtlinie und erlaubt aus dem Internet nur das Nötige. Was der externe Browser nicht kennen soll, lauscht nicht auf allen Interfaces.</div>
 </section>
@@ -74,7 +74,7 @@ Docker-Volumes:
 ├── opencloud-compose/     # Upstream-Klon + Overlays
 │   ├── docker-compose.yml
 │   ├── external-proxy/opencloud.yml
-│   └── .env                 # aktiv — außerhalb von Git, chmod 600
+│   └── .env                 # aktiv - außerhalb von Git, chmod 600
 ├── nginx/                   # TLS- + Proxy-Vorlagen
 ├── scripts/backup-volumes.sh
 └── docs/runbook.md</pre></div>
@@ -99,7 +99,7 @@ Docker-Volumes:
   <p class="doc-block-title">KM0-Web</p>
   <h2 class="doc-block-heading">HTTPS-Flow der Unternehmenswebsite</h2>
   <div class="doc-note"><pre>Internet :443 ─► Nginx Host (TLS, km0digital.com)
-                     └──► http://127.0.0.1:9180  (km0-web — nur Loopback)
+                     └──► http://127.0.0.1:9180  (km0-web - nur Loopback)
                             statisches Astro + nginx Alpine</pre></div>
   <ul class="doc-list">
     <li><strong>Stack:</strong> Astro 5 + Tailwind 3, statische Ausgabe.</li>
@@ -138,7 +138,7 @@ bash /opt/opencloud/scripts/backup-volumes.sh</pre></div>
   <p class="doc-block-title">Labor vs. Produktion</p>
   <h2 class="doc-block-heading">Phasen des Deployments</h2>
   <ul class="doc-list">
-    <li><strong>Vorläufiges TLS:</strong> selbstsigniertes Zertifikat zum Validieren des Proxys — Browser-Warnungen bis Let's Encrypt mit stabilem DNS.</li>
+    <li><strong>Vorläufiges TLS:</strong> selbstsigniertes Zertifikat zum Validieren des Proxys - Browser-Warnungen bis Let's Encrypt mit stabilem DNS.</li>
     <li><strong>Domain:</strong> Wechsel von roher IP zu FQDN verbessert interne Links und Cookies.</li>
     <li><strong>INSECURE gelockert:</strong> nur sinnvoll, solange interne Zertifikate keine vertrauenswürdige PKI bilden.</li>
     <li><strong>Backups:</strong> manuelles Skript bis überwachter Cron; <code>certbot.timer</code> in Produktion im Blick behalten.</li>

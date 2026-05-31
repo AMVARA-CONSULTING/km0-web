@@ -1,5 +1,5 @@
 ---
-title: "Tag 2 — OpenCloud 7, Dex OIDC und vollständiges Backup"
+title: "Tag 2 - OpenCloud 7, Dex OIDC und vollständiges Backup"
 description: "Upgrade auf OpenCloud 7.0.0, Dex-OIDC-Broker mit Google und Apple, Nginx-Anpassungen, erstes vollständiges Backup und operative Dokumentation."
 pubDate: 2026-05-22
 locale: de
@@ -17,9 +17,9 @@ locale: de
   <ul class="doc-list">
     <li><strong>OpenCloud:</strong> <code>opencloudeu/opencloud-rolling:7.0.0</code> auf <code>127.0.0.1:9200</code>.</li>
     <li><strong>Dex (OIDC):</strong> <code>ghcr.io/dexidp/dex:v2.41.1</code> auf <code>127.0.0.1:5556</code>.</li>
-    <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> — TLS → <code>/dex/</code> + <code>/</code>.</li>
+    <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> - TLS → <code>/dex/</code> + <code>/</code>.</li>
     <li><strong>OC_DOMAIN:</strong> <code>cloud.km0digital.com</code> mit <code>INSECURE=false</code>.</li>
-    <li><strong>Dex-Issuer:</strong> <code>https://cloud.km0digital.com/dex</code> — Connectors Google + Apple.</li>
+    <li><strong>Dex-Issuer:</strong> <code>https://cloud.km0digital.com/dex</code> - Connectors Google + Apple.</li>
   </ul>
   <p>Übliche Checks: <code>docker compose ps</code>, <code>nginx -t</code> und HTTP-Header gegen die öffentliche Cloud-URL.</p>
 </section>
@@ -68,7 +68,7 @@ locale: de
     <li><strong><a href="https://cloud.km0digital.com/dex/">/dex/</a>:</strong> OIDC-Issuer / Dex-Login.</li>
     <li><strong><a href="https://cloud.km0digital.com/login.html">/login.html</a>:</strong> statischer Google-/Apple-Selector.</li>
   </ul>
-  <div class="doc-note">Redirect-URI in der Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Apple-Credentials unter <code>/opt/</code> — keine Secrets hier.</div>
+  <div class="doc-note">Redirect-URI in der Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Apple-Credentials unter <code>/opt/</code>, keine Secrets hier.</div>
 </section>
 
 <section class="doc-block doc-block-alt">
@@ -106,9 +106,9 @@ locale: de
   <p class="doc-block-title">Vorfälle</p>
   <h2 class="doc-block-heading">Dokumentierte Symptome und Abhilfe</h2>
   <ul class="doc-list">
-    <li><strong>GET .../photo/$value 404:</strong> kein Avatar hochgeladen — harmloses Konsolen-Rauschen.</li>
-    <li><strong>502 auf alte URLs /signin/:</strong> veraltete Sitzung vor dem Dex-Schnitt — Site-Daten löschen oder privates Fenster.</li>
-    <li><strong>access-denied nach Google-Login:</strong> Whitelist in <code>role_assignment</code> oder DNS — <code>driver: default</code> oder <code>extra_hosts</code> nutzen.</li>
+    <li><strong>GET .../photo/$value 404:</strong> kein Avatar hochgeladen - harmloses Konsolen-Rauschen.</li>
+    <li><strong>502 auf alte URLs /signin/:</strong> veraltete Sitzung vor dem Dex-Schnitt - Site-Daten löschen oder privates Fenster.</li>
+    <li><strong>access-denied nach Google-Login:</strong> Whitelist in <code>role_assignment</code> oder DNS - <code>driver: default</code> oder <code>extra_hosts</code> nutzen.</li>
     <li><strong>Dex in Neustart-Schleife:</strong> <code>docker logs</code> prüfen; Provider-JSON unter <code>/opt/</code> validieren.</li>
   </ul>
 </section>
@@ -117,7 +117,7 @@ locale: de
   <p class="doc-block-title">Recherche</p>
   <h2 class="doc-block-heading">Heute nicht deployt</h2>
   <ul class="doc-list">
-    <li><strong>Collabora / WOPI:</strong> Review von Office-Bearbeitung im Browser — vorerst nur Core; mögliches Addon später.</li>
+    <li><strong>Collabora / WOPI:</strong> Review von Office-Bearbeitung im Browser - vorerst nur Core; mögliches Addon später.</li>
     <li><strong>Apache HTTP Server:</strong> bestätigt ungenutzt (nur Nginx). Apache Tika in Upstream-Docs nicht deployt.</li>
     <li><strong>OpenCloud-Web-Branding:</strong> KM0-Overlay am 21. Mai zurückgenommen; KM0-Branding im Dex-Login bleibt.</li>
   </ul>

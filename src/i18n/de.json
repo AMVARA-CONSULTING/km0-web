@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kilometer 0 Digital",
-    "description": "KM0 Digital ist eine Gemeinschaftsbewegung, um digitale Kontrolle zurückzugewinnen. Offene, nahe und nachhaltige Services — kein weiterer Anbieter."
+    "description": "KM0 Digital ist eine Gemeinschaftsbewegung, um digitale Kontrolle zurückzugewinnen. Offene, nahe und nachhaltige Services, kein weiterer Anbieter."
   },
   "brandName": "Kilometer 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -27,7 +27,7 @@
     "eyebrow": "Gemeinschaftliche Digitalbewegung",
     "titleLine1": "DIGITALE ",
     "titleGradient": "KONTROLLE ZURÜCK.",
-    "tagline": "Eine soziale und technologische Bewegung, von und für die Gemeinschaft — kein weiterer Anbieter.",
+    "tagline": "Eine soziale und technologische Bewegung, von und für die Gemeinschaft, kein weiterer Anbieter.",
     "ctaPrimary": "Erfahren Sie, warum wir existieren",
     "ctaSecondary": "Der Bewegung beitreten",
     "logoAlt": "Kilometer 0 Digital Logo",
@@ -79,7 +79,7 @@
       "Organisationen",
       "Neugierige Menschen"
     ],
-    "humanNote": "Hinter dem Projekt stehen echte Menschen — keine Konzernzentrale und kein anonymes Callcenter. Sie sprechen mit den Menschen, die den Service bauen.",
+    "humanNote": "Hinter dem Projekt stehen echte Menschen, keine Konzernzentrale und kein anonymes Callcenter. Sie sprechen mit den Menschen, die den Service bauen.",
     "ctaPrimary": "Sprechen und mitmachen",
     "ctaExplore": "Den Blog erkunden"
   },
@@ -95,7 +95,7 @@
       {
         "id": "cloud",
         "title": "KM0 Cloud",
-        "desc": "Cloud-Speicher und Zusammenarbeit wie Ihr eigenes Laufwerk: Dateien teilen, synchronisieren und im Team arbeiten — mit dem Vertrauen eines Services, der Ihren Kontext versteht.",
+        "desc": "Cloud-Speicher und Zusammenarbeit wie Ihr eigenes Laufwerk: Dateien teilen, synchronisieren und im Team arbeiten - mit dem Vertrauen eines Services, der Ihren Kontext versteht.",
         "cta": "Cloud öffnen",
         "url": "https://cloud.km0digital.com"
       },
@@ -115,11 +115,11 @@
     }
   },
   "doc": {
-    "metaTitle": "Blog — Kilometer 0 Digital",
+    "metaTitle": "Blog - Kilometer 0 Digital",
     "metaDescription": "Dokumentation, Entscheidungen und Updates zum KM0-Projekt. Transparenz ab Tag null.",
     "eyebrow": "Blog",
     "heading": "Dokumentation und Updates",
-    "intro": "Hier teilen wir den Puls des Projekts: warum wir jede Entscheidung treffen, wie sich unsere Services entwickeln und was wir unterwegs lernen. Ein nahes technisches Tagebuch — kein leeres Marketing.",
+    "intro": "Hier teilen wir den Puls des Projekts: warum wir jede Entscheidung treffen, wie sich unsere Services entwickeln und was wir unterwegs lernen. Ein nahes technisches Tagebuch, kein leeres Marketing.",
     "readMore": "Beitrag lesen",
     "backToIndex": "Zurück zum Blog",
     "breadcrumbHome": "Blog"
@@ -149,7 +149,7 @@
   "mission": {
     "eyebrow": "Wohin wir gehen",
     "heading": "Digitale Kontrolle an die Gemeinschaft zurückgeben",
-    "body": "Menschen, Familien, Vereine, Genossenschaften, Bildungseinrichtungen und Organisationen — KM0 verbindet offene, nahe und nachhaltige Services für alle, die eine echte Alternative zu Big Tech wollen."
+    "body": "Menschen, Familien, Vereine, Genossenschaften, Bildungseinrichtungen und Organisationen; KM0 verbindet offene, nahe und nachhaltige Services für alle, die eine echte Alternative zu Big Tech wollen."
   },
   "merch": {
     "eyebrow": "Horizont",
@@ -173,14 +173,14 @@
       {
         "id": "hosting",
         "question": "Wo wird der Service gehostet?",
-        "answerHtml": "Unsere Infrastruktur läuft in Falkenstein, Deutschland, bei <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a> — einem europäischen Anbieter, den wir wegen Zuverlässigkeit, transparenter Preise und der Speicherung Ihrer Daten innerhalb der EU gewählt haben."
+        "answerHtml": "Unsere Infrastruktur läuft in Falkenstein, Deutschland, bei <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, einem europäischen Anbieter, den wir wegen Zuverlässigkeit, transparenter Preise und der Speicherung Ihrer Daten innerhalb der EU gewählt haben."
       }
     ]
   },
   "contact": {
     "eyebrow": "Mitmachen",
     "heading": "Werden Sie Teil der Bewegung",
-    "body": "Erkunden, fragen, mitarbeiten oder einfach zuhören. Wir bauen das gemeinsam — vom Ursprung aus.",
+    "body": "Erkunden, fragen, mitarbeiten oder einfach zuhören. Wir bauen das gemeinsam, vom Ursprung aus.",
     "email": "hello.yoel@amvara.de",
     "whatsappLabel": "Treten Sie unserer WhatsApp-Gruppe bei",
     "whatsappQrAlt": "QR-Code zum Beitritt zur km0-WhatsApp-Gruppe",

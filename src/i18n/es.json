@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kilómetro 0 Digital",
-    "description": "KM0 Digital es un movimiento comunitario para recuperar el control digital. Servicios abiertos, cercanos y sostenibles — no otro proveedor más."
+    "description": "KM0 Digital es un movimiento comunitario para recuperar el control digital. Servicios abiertos, cercanos y sostenibles, no otro proveedor más."
   },
   "brandName": "Kilómetro 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -27,7 +27,7 @@
     "eyebrow": "Movimiento digital comunitario",
     "titleLine1": "RECUPERA EL ",
     "titleGradient": "CONTROL DIGITAL.",
-    "tagline": "Un movimiento social y tecnológico construido por y para la comunidad — no otro proveedor más.",
+    "tagline": "Un movimiento social y tecnológico construido por y para la comunidad, no otro proveedor más.",
     "ctaPrimary": "Descubre por qué existe",
     "ctaSecondary": "Únete al movimiento",
     "logoAlt": "Logo Kilómetro 0 Digital",
@@ -79,7 +79,7 @@
       "Organizaciones",
       "Personas curiosas"
     ],
-    "humanNote": "Detrás del proyecto hay personas reales — no una corporación ni un call center anónimo. Hablas con quien construye el servicio.",
+    "humanNote": "Detrás del proyecto hay personas reales, no una corporación ni un call center anónimo. Hablas con quien construye el servicio.",
     "ctaPrimary": "Conversar y participar",
     "ctaExplore": "Explorar el blog"
   },
@@ -115,7 +115,7 @@
     }
   },
   "doc": {
-    "metaTitle": "Blog — Kilómetro 0 Digital",
+    "metaTitle": "Blog - Kilómetro 0 Digital",
     "metaDescription": "Documentación, decisiones y novedades del proyecto KM0. Transparencia desde el día cero.",
     "eyebrow": "Blog",
     "heading": "Documentación y novedades",
@@ -149,7 +149,7 @@
   "mission": {
     "eyebrow": "Hacia dónde vamos",
     "heading": "Devolver el control digital a la comunidad",
-    "body": "Personas, familias, asociaciones, cooperativas, centros educativos y organizaciones — KM0 conecta servicios abiertos, cercanos y sostenibles para quien quiera una alternativa real a Big Tech."
+    "body": "Personas, familias, asociaciones, cooperativas, centros educativos y organizaciones; KM0 conecta servicios abiertos, cercanos y sostenibles para quien quiera una alternativa real a Big Tech."
   },
   "merch": {
     "eyebrow": "Horizonte",
@@ -173,14 +173,14 @@
       {
         "id": "hosting",
         "question": "¿Dónde está alojado el servicio?",
-        "answerHtml": "Nuestra infraestructura se ejecuta en Falkenstein, Alemania, en servidores de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a> — un proveedor europeo que elegimos por su fiabilidad, precios transparentes y por mantener tus datos dentro de la UE."
+        "answerHtml": "Nuestra infraestructura se ejecuta en Falkenstein, Alemania, en servidores de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, un proveedor europeo que elegimos por su fiabilidad, precios transparentes y por mantener tus datos dentro de la UE."
       }
     ]
   },
   "contact": {
     "eyebrow": "Participa",
     "heading": "Forma parte del movimiento",
-    "body": "Explora, pregunta, colabora o simplemente escucha. Construimos esto juntos — desde el origen.",
+    "body": "Explora, pregunta, colabora o simplemente escucha. Construimos esto juntos, desde el origen.",
     "email": "hello.yoel@amvara.de",
     "whatsappLabel": "Únete al grupo de WhatsApp",
     "whatsappQrAlt": "Código QR para unirse al grupo de WhatsApp de km0",

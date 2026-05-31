@@ -1,5 +1,5 @@
 ---
-title: "Day 4 — Dex local LDAP login against OpenCloud IDM"
+title: "Day 4 - Dex local LDAP login against OpenCloud IDM"
 description: "Dex LDAP connector to OpenCloud's integrated IDM, LDAPS TLS certificate fix, and GitHub issue #1 closed with automated tests in PASS."
 pubDate: 2026-05-27
 locale: en
@@ -62,8 +62,8 @@ locale: en
   <p class="doc-block-title">Commits</p>
   <h2 class="doc-block-heading">Day window (CEST)</h2>
   <ul class="doc-list">
-    <li><code>cf5a561</code> (15:27) — <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
-    <li><code>0a042db</code> (15:39) — <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
+    <li><code>cf5a561</code> (15:27) - <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
+    <li><code>0a042db</code> (15:39) - <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
   </ul>
 </section>
 
@@ -71,12 +71,12 @@ locale: en
   <p class="doc-block-title">Autoagents</p>
   <h2 class="doc-block-heading">Closing checks</h2>
   <ul class="doc-list">
-    <li>IDM cert SAN includes <code>opencloud</code> — PASS.</li>
-    <li>Dex LDAP <code>host: opencloud:9235</code> — PASS.</li>
-    <li><code>curl</code> with <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> — PASS.</li>
-    <li>Wrong password → HTTP 401, LDAP bind, no x509 in logs — PASS.</li>
-    <li>Google connector smoke — PASS.</li>
-    <li>Manual login two distinct users → <code>/files</code> — NOT VERIFIED (operator).</li>
+    <li>IDM cert SAN includes <code>opencloud</code> - PASS.</li>
+    <li>Dex LDAP <code>host: opencloud:9235</code> - PASS.</li>
+    <li><code>curl</code> with <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> - PASS.</li>
+    <li>Wrong password → HTTP 401, LDAP bind, no x509 in logs - PASS.</li>
+    <li>Google connector smoke - PASS.</li>
+    <li>Manual login two distinct users → <code>/files</code> - NOT VERIFIED (operator).</li>
   </ul>
 </section>
 

@@ -1,5 +1,5 @@
 ---
-title: "Tag 0 — Server-Grundlagen"
+title: "Tag 0 - Server-Grundlagen"
 description: "Debian, Partitionierung, Docker, Nginx und eine reproduzierbare Basis, damit der KM0-Stack auditierbar und betriebsfähig bleibt."
 pubDate: 2026-05-21
 locale: de
@@ -28,13 +28,13 @@ locale: de
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Speicher und System</p>
   <h2 class="doc-block-heading">VPS-Bereitstellung und Partitionen</h2>
-  <p class="doc-block-intro"><strong>Debian</strong> wurde wegen vorhersehbarer Pakete und praxisnaher Dokumentation gewählt — ohne verpflichtende Control Panels. Der erste Schritt war die Prüfung des Speicherlayouts:</p>
+  <p class="doc-block-intro"><strong>Debian</strong> wurde wegen vorhersehbarer Pakete und praxisnaher Dokumentation gewählt - ohne verpflichtende Control Panels. Der erste Schritt war die Prüfung des Speicherlayouts:</p>
   <ul class="doc-list">
     <li>Projektdaten vom Root-Dateisystem trennen, wenn Backup auf Volume-Ebene nötig ist.</li>
     <li>Mounts bewusst definieren: <code>/var/lib/docker</code> kann je nach VPS-Größe OpenCloud-I/O konzentrieren.</li>
     <li>Konventionen dokumentieren, um persistente Mounts vom Betriebssystem zu unterscheiden.</li>
   </ul>
-  <div class="doc-note">Exakte Partitionierungspläne hängen vom Anbieter und der gebuchten Größe ab. Sie müssen im Projekt-Wiki oder Runbook stehen — nicht nur in diesem Blog — für die Disaster Recovery.</div>
+  <div class="doc-note">Exakte Partitionierungspläne hängen vom Anbieter und der gebuchten Größe ab. Sie müssen im Projekt-Wiki oder Runbook stehen, nicht nur in diesem Blog - für die Disaster Recovery.</div>
 </section>
 
 <section class="doc-block">

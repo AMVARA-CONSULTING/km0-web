@@ -1,5 +1,5 @@
 ---
-title: "Dia 2 — OpenCloud 7, Dex OIDC i còpia integral"
+title: "Dia 2 - OpenCloud 7, Dex OIDC i còpia integral"
 description: "Actualització a OpenCloud 7.0.0, broker OIDC Dex amb Google i Apple, ajustos Nginx, primera còpia integral i documentació operativa."
 pubDate: 2026-05-22
 locale: ca
@@ -17,9 +17,9 @@ locale: ca
   <ul class="doc-list">
     <li><strong>OpenCloud:</strong> <code>opencloudeu/opencloud-rolling:7.0.0</code> a <code>127.0.0.1:9200</code>.</li>
     <li><strong>Dex (OIDC):</strong> <code>ghcr.io/dexidp/dex:v2.41.1</code> a <code>127.0.0.1:5556</code>.</li>
-    <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> — TLS → <code>/dex/</code> + <code>/</code>.</li>
+    <li><strong>Nginx vhost:</strong> <code>/etc/nginx/sites-available/opencloud</code> - TLS → <code>/dex/</code> + <code>/</code>.</li>
     <li><strong>OC_DOMAIN:</strong> <code>cloud.km0digital.com</code> amb <code>INSECURE=false</code>.</li>
-    <li><strong>Emissor Dex:</strong> <code>https://cloud.km0digital.com/dex</code> — connectors Google + Apple.</li>
+    <li><strong>Emissor Dex:</strong> <code>https://cloud.km0digital.com/dex</code> - connectors Google + Apple.</li>
   </ul>
   <p>Comprovacions habituals: <code>docker compose ps</code>, <code>nginx -t</code> i capçaleres HTTP contra la URL pública del cloud.</p>
 </div>
@@ -68,7 +68,7 @@ locale: ca
     <li><strong><a href="https://cloud.km0digital.com/dex/">/dex/</a>:</strong> emissor OIDC / login Dex.</li>
     <li><strong><a href="https://cloud.km0digital.com/login.html">/login.html</a>:</strong> selector estàtic Google / Apple.</li>
   </ul>
-  <div class="doc-note">Redirect URI a Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Credencials Apple sota <code>/opt/</code> — sense detallar secrets aquí.</div>
+  <div class="doc-note">Redirect URI a Google Cloud Console: <code>https://cloud.km0digital.com/dex/callback</code>. Credencials Apple sota <code>/opt/</code> - sense detallar secrets aquí.</div>
 </div>
 
 <div class="doc-block doc-block-alt">
@@ -106,9 +106,9 @@ locale: ca
   <p class="doc-block-title">Incidències</p>
   <h2 class="doc-block-heading">Símptomes i remeis documentats</h2>
   <ul class="doc-list">
-    <li><strong>GET .../photo/$value 404:</strong> sense avatar pujat — soroll benign a la consola.</li>
-    <li><strong>502 en URLs antigues /signin/:</strong> sessió obsoleta abans del tall Dex — netejar dades del lloc o finestra privada.</li>
-    <li><strong>access-denied després del login Google:</strong> llista blanca a <code>role_assignment</code> o DNS — fer servir <code>driver: default</code> o <code>extra_hosts</code>.</li>
+    <li><strong>GET .../photo/$value 404:</strong> sense avatar pujat - soroll benign a la consola.</li>
+    <li><strong>502 en URLs antigues /signin/:</strong> sessió obsoleta abans del tall Dex - netejar dades del lloc o finestra privada.</li>
+    <li><strong>access-denied després del login Google:</strong> llista blanca a <code>role_assignment</code> o DNS - fer servir <code>driver: default</code> o <code>extra_hosts</code>.</li>
     <li><strong>Dex en bucle de reinici:</strong> revisar <code>docker logs</code>; validar JSON de proveïdors a <code>/opt/</code>.</li>
   </ul>
 </div>
@@ -117,7 +117,7 @@ locale: ca
   <p class="doc-block-title">Investigació</p>
   <h2 class="doc-block-heading">Sense desplegament avui</h2>
   <ul class="doc-list">
-    <li><strong>Collabora / WOPI:</strong> revisió d'edició Office al navegador — mantenir només core; possible addon futur.</li>
+    <li><strong>Collabora / WOPI:</strong> revisió d'edició Office al navegador - mantenir només core; possible addon futur.</li>
     <li><strong>Apache HTTP Server:</strong> confirmat que no s'utilitza (només Nginx). Apache Tika en docs upstream no desplegat.</li>
     <li><strong>Branding OpenCloud Web:</strong> overlay KM0 revertit el 21 de maig; branding KM0 al login Dex es manté.</li>
   </ul>

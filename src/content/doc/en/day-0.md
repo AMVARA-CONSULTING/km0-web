@@ -1,5 +1,5 @@
 ---
-title: "Day 0 — Server foundations"
+title: "Day 0 - Server foundations"
 description: "Debian, partitioning, Docker, Nginx, and a reproducible base so the KM0 stack stays auditable and operable."
 pubDate: 2026-05-21
 locale: en

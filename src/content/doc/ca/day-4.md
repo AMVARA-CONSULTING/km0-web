@@ -1,5 +1,5 @@
 ---
-title: "Dia 4 — Login local Dex LDAP contra IDM OpenCloud"
+title: "Dia 4 - Login local Dex LDAP contra IDM OpenCloud"
 description: "Connector LDAP de Dex cap a l'IDM integrat d'OpenCloud, correcció TLS del certificat LDAPS i tancament de la issue #1 amb proves automatitzades."
 pubDate: 2026-05-27
 locale: ca
@@ -62,8 +62,8 @@ locale: ca
   <p class="doc-block-title">Commits</p>
   <h2 class="doc-block-heading">Finestra del dia (CEST)</h2>
   <ul class="doc-list">
-    <li><code>cf5a561</code> (15:27) — <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
-    <li><code>0a042db</code> (15:39) — <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
+    <li><code>cf5a561</code> (15:27) - <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
+    <li><code>0a042db</code> (15:39) - <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
   </ul>
 </div>
 
@@ -71,12 +71,12 @@ locale: ca
   <p class="doc-block-title">Autoagents</p>
   <h2 class="doc-block-heading">Comprovacions de tancament</h2>
   <ul class="doc-list">
-    <li>SAN del cert IDM inclou <code>opencloud</code> — PASS.</li>
-    <li>Dex LDAP <code>host: opencloud:9235</code> — PASS.</li>
-    <li><code>curl</code> amb <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> — PASS.</li>
-    <li>Contrasenya incorrecta → HTTP 401, bind LDAP, sense x509 als logs — PASS.</li>
-    <li>Fum connector Google — PASS.</li>
-    <li>Login manual dos usuaris diferents → <code>/files</code> — NO VERIFICAT (operador).</li>
+    <li>SAN del cert IDM inclou <code>opencloud</code> - PASS.</li>
+    <li>Dex LDAP <code>host: opencloud:9235</code> - PASS.</li>
+    <li><code>curl</code> amb <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> - PASS.</li>
+    <li>Contrasenya incorrecta → HTTP 401, bind LDAP, sense x509 als logs - PASS.</li>
+    <li>Fum connector Google - PASS.</li>
+    <li>Login manual dos usuaris diferents → <code>/files</code> - NO VERIFICAT (operador).</li>
   </ul>
 </div>
 

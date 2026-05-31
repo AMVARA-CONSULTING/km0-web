@@ -20,7 +20,7 @@ const { Content } = await post.render();
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const postPath = docPostHref(locale, docSlug(post));
 const canonicalUrl = new URL(postPath, siteRoot).href;
-const pageTitle = `${post.data.title} — ${messages.brandNameShort}`;
+const pageTitle = `${post.data.title} - ${messages.brandNameShort}`;
 ---
 
 <Layout

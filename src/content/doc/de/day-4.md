@@ -1,5 +1,5 @@
 ---
-title: "Tag 4 — Dex-Lokal-Login per LDAP gegen OpenCloud-IDM"
+title: "Tag 4 - Dex-Lokal-Login per LDAP gegen OpenCloud-IDM"
 description: "Dex-LDAP-Connector zum integrierten OpenCloud-IDM, LDAPS-TLS-Zertifikatsfix und GitHub-Issue #1 mit automatisierten Tests in PASS geschlossen."
 pubDate: 2026-05-27
 locale: de
@@ -62,8 +62,8 @@ locale: de
   <p class="doc-block-title">Commits</p>
   <h2 class="doc-block-heading">Tagesfenster (CEST)</h2>
   <ul class="doc-list">
-    <li><code>cf5a561</code> (15:27) — <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
-    <li><code>0a042db</code> (15:39) — <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
+    <li><code>cf5a561</code> (15:27) - <code>feat(auth): Dex LDAP login against OpenCloud IDM for all users</code>.</li>
+    <li><code>0a042db</code> (15:39) - <code>fix(dex): regenerate IDM LDAP cert with opencloud SAN for Dex TLS</code>.</li>
   </ul>
 </section>
 
@@ -71,12 +71,12 @@ locale: de
   <p class="doc-block-title">Autoagents</p>
   <h2 class="doc-block-heading">Abschluss-Checks</h2>
   <ul class="doc-list">
-    <li>IDM-Zert-SAN enthält <code>opencloud</code> — PASS.</li>
-    <li>Dex LDAP <code>host: opencloud:9235</code> — PASS.</li>
-    <li><code>curl</code> mit <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> — PASS.</li>
-    <li>Falsches Passwort → HTTP 401, LDAP-Bind, kein x509 in Logs — PASS.</li>
-    <li>Google-Connector-Smoke — PASS.</li>
-    <li>Manueller Login zwei verschiedene Benutzer → <code>/files</code> — NICHT VERIFIZIERT (Operator).</li>
+    <li>IDM-Zert-SAN enthält <code>opencloud</code> - PASS.</li>
+    <li>Dex LDAP <code>host: opencloud:9235</code> - PASS.</li>
+    <li><code>curl</code> mit <code>connector_id=ldap</code> → <code>/dex/auth/ldap</code> - PASS.</li>
+    <li>Falsches Passwort → HTTP 401, LDAP-Bind, kein x509 in Logs - PASS.</li>
+    <li>Google-Connector-Smoke - PASS.</li>
+    <li>Manueller Login zwei verschiedene Benutzer → <code>/files</code> - NICHT VERIFIZIERT (Operator).</li>
   </ul>
 </section>
 
@@ -98,5 +98,5 @@ curl -sI https://cloud.km0digital.com/login.html</pre></div>
 <section class="doc-closing-block">
   <p class="doc-block-title">Nächster Schritt</p>
   <h2 class="doc-block-heading">Tag 5</h2>
-  <p class="doc-closing"><strong>Tag 5</strong> dokumentiert keine Deployments: er hält ein Visionstreffen in Masnou fest — warum wir glauben, dass nützliche Technologie heute schon ohne Big Tech angeboten werden kann. In der Zwischenzeit: die <a href="/de/#services">Services</a> erkunden oder den <a href="/de/doc/day-5/">Bericht zu Tag 5</a> lesen.</p>
+  <p class="doc-closing"><strong>Tag 5</strong> dokumentiert keine Deployments: er hält ein Visionstreffen in Masnou fest - warum wir glauben, dass nützliche Technologie heute schon ohne Big Tech angeboten werden kann. In der Zwischenzeit: die <a href="/de/#services">Services</a> erkunden oder den <a href="/de/doc/day-5/">Bericht zu Tag 5</a> lesen.</p>
 </section>

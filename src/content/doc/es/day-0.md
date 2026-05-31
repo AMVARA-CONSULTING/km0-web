@@ -1,5 +1,5 @@
 ---
-title: "Día 0 — Fundaciones del servidor"
+title: "Día 0 - Fundaciones del servidor"
 description: "Debian, particiones, Docker, Nginx y base reproducible: el día dedicado a que el stack KM0 sea auditable y operable."
 pubDate: 2026-05-21
 locale: es

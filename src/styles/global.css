@@ -33,6 +33,15 @@
     @apply px-6 py-24 md:px-12 md:py-32 lg:px-20;
   }
 
+  /* Landing: white / surface bands; hero and navy blocks keep their own bg */
+  main:has(#home) > section:not(.bg-navy):nth-child(odd of :not(.bg-navy)) {
+    @apply bg-white;
+  }
+
+  main:has(#home) > section:not(.bg-navy):nth-child(even of :not(.bg-navy)) {
+    @apply bg-surface;
+  }
+
   .heading-display {
     @apply text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl;
   }

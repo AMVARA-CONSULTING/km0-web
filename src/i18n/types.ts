@@ -26,7 +26,9 @@ export interface Messages {
   };
   nav: {
     home: string;
+    vision: string;
     values: string;
+    community: string;
     services: string;
     meaning: string;
     mission: string;
@@ -35,6 +37,31 @@ export interface Messages {
     contact: string;
     menuOpen: string;
     menuClose: string;
+  };
+  vision: {
+    eyebrow: string;
+    headingBefore: string;
+    headingAccent: string;
+    headingAfter: string;
+    intro: string;
+    usual: {
+      title: string;
+      items: string[];
+    };
+    km0: {
+      title: string;
+      items: string[];
+    };
+    blogCta: string;
+  };
+  community: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    audiences: string[];
+    humanNote: string;
+    ctaPrimary: string;
+    ctaExplore: string;
   };
   hero: {
     eyebrow: string;
@@ -61,6 +88,7 @@ export interface Messages {
     headingAfter: string;
     intro: string;
     slogan: string;
+    blogCta: string;
     items: {
       id: string;
       title: string;
@@ -121,6 +149,7 @@ export interface Messages {
   footer: {
     rights: string;
     github: string;
+    company: string;
     version: string;
   };
 }

@@ -14,10 +14,10 @@ const pathname = Astro.url.pathname;
 
 const nav = [
   { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
+  { id: 'vision', label: m.nav.vision, href: withHash(locale, 'vision') },
   { id: 'values', label: m.nav.values, href: withHash(locale, 'values') },
+  { id: 'community', label: m.nav.community, href: withHash(locale, 'community') },
   { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
-  { id: 'meaning', label: m.nav.meaning, href: withHash(locale, 'meaning') },
-  { id: 'mission', label: m.nav.mission, href: withHash(locale, 'mission') },
   { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
   { id: 'faq', label: m.nav.faq, href: withHash(locale, 'faq') },
   { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kilòmetre 0 Digital",
-    "description": "Origen local. Impacte digital. Connecta, transforma i impulsa des del punt d'origen."
+    "description": "KM0 Digital és un moviment comunitari per recuperar el control digital. Serveis oberts, propers i sostenibles — no un altre proveïdor més."
   },
   "brandName": "Kilòmetre 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -11,7 +11,9 @@
   },
   "nav": {
     "home": "Inici",
+    "vision": "Per què",
     "values": "Valors",
+    "community": "Comunitat",
     "services": "Serveis",
     "meaning": "Significat",
     "mission": "Missió",
@@ -22,30 +24,73 @@
     "menuClose": "Tancar menú"
   },
   "hero": {
-    "eyebrow": "Kilòmetre 0 Digital",
-    "titleLine1": "ORIGEN LOCAL.",
-    "titleGradient": "IMPACTE DIGITAL.",
-    "tagline": "CONNECTA. TRANSFORMA. IMPULSA.",
-    "ctaPrimary": "Descobreix-ne més",
-    "ctaSecondary": "Contactar",
+    "eyebrow": "Moviment digital comunitari",
+    "titleLine1": "RECUPERA EL ",
+    "titleGradient": "CONTROL DIGITAL.",
+    "tagline": "Un moviment social i tecnològic construït per i per a la comunitat — no un altre proveïdor més.",
+    "ctaPrimary": "Descobreix per què existeix",
+    "ctaSecondary": "Uneix-te al moviment",
     "logoAlt": "Logo Kilòmetre 0 Digital",
     "laptopAlt": "Kilòmetre 0 Digital en portàtil",
     "mobileAlt": "Kilòmetre 0 Digital al mòbil"
   },
+  "vision": {
+    "eyebrow": "Per què existeix",
+    "headingBefore": "Una alternativa ",
+    "headingAccent": "real",
+    "headingAfter": " al que és habitual",
+    "intro": "La tecnologia essencial no hauria de dependre d'un grapat de gegants llunyans. KM0 Digital proposa una altra forma.",
+    "usual": {
+      "title": "L'habitual",
+      "items": [
+        "Les teves dades com a producte",
+        "Suport anònim i llunyà",
+        "Preus que no reflecteixen el cost real",
+        "Dependència total d'uns pocs proveïdors"
+      ]
+    },
+    "km0": {
+      "title": "La proposta KM0",
+      "items": [
+        "Control i transparència sobre les teves dades",
+        "Persones reals, a prop teu",
+        "Cost honest i sostenible",
+        "Comunitat oberta a qui vulgui participar"
+      ]
+    },
+    "blogCta": "Llegeix la història completa al blog"
+  },
   "values": {
-    "eyebrow": "Els nostres valors",
-    "headingBefore": "Una marca ",
-    "headingAccent": "propera",
-    "headingAfter": " i digital",
-    "chips": ["Moderna", "Accessible", "Propera", "Digital"]
+    "eyebrow": "Principis",
+    "headingBefore": "Moviment ",
+    "headingAccent": "obert",
+    "headingAfter": " i proper",
+    "chips": ["Obert", "Transparent", "Comunitari", "Local"]
+  },
+  "community": {
+    "eyebrow": "Comunitat",
+    "heading": "Qualsevol pot participar",
+    "intro": "No és un club tancat ni un producte empaquetat. Si t'interessa la sobirania digital, hi ha un lloc per a tu.",
+    "audiences": [
+      "Famílies",
+      "Associacions",
+      "Cooperatives",
+      "Centres educatius",
+      "Organitzacions",
+      "Persones curioses"
+    ],
+    "humanNote": "Darrere del projecte hi ha persones reals — no una corporació ni un call center anònim. Parles amb qui construeix el servei.",
+    "ctaPrimary": "Conversar i participar",
+    "ctaExplore": "Explorar el blog"
   },
   "services": {
-    "eyebrow": "Serveis",
-    "headingBefore": "Tecnologia ",
-    "headingAccent": "propera",
-    "headingAfter": " i sota el teu control",
-    "intro": "Oferim eines digitals pensades per a persones i equips que volen treballar amb tranquil·litat: infraestructura local, tracte directe i sense dependre dels gegants estrangers per allò essencial.",
-    "slogan": "Les teves dades, el teu origen. Sense lligams amb hyperscalers.",
+    "eyebrow": "Primers passos",
+    "headingBefore": "Serveis que ",
+    "headingAccent": "demostren",
+    "headingAfter": " la visió",
+    "intro": "Cloud i correu són el començament, no la destinació. Eines tangibles per a qui ja vol actuar.",
+    "slogan": "Les teves dades, el teu origen. El moviment creix amb tu.",
+    "blogCta": "Segueix el diari del projecte",
     "items": [
       {
         "id": "cloud",
@@ -102,19 +147,29 @@
     ]
   },
   "mission": {
-    "eyebrow": "Missió",
-    "heading": "Naixem a l'origen",
-    "body": "Kilòmetre 0 Digital neix al punt d'origen i s'expandeix connectant persones, idees i oportunitats per construir un futur digital més accessible i innovador."
+    "eyebrow": "Cap on anem",
+    "heading": "Retornar el control digital a la comunitat",
+    "body": "Persones, famílies, associacions, cooperatives, centres educatius i organitzacions — KM0 connecta serveis oberts, propers i sostenibles per a qui vulgui una alternativa real a Big Tech."
   },
   "merch": {
-    "eyebrow": "Aplicacions",
-    "headingBefore": "Identitat a ",
-    "headingGradient": "cada pantalla"
+    "eyebrow": "Horitzó",
+    "headingBefore": "Això és només ",
+    "headingGradient": "el començament"
   },
   "faq": {
     "eyebrow": "FAQ",
     "heading": "Preguntes freqüents",
     "items": [
+      {
+        "id": "movement",
+        "question": "KM0 és només un altre proveïdor tecnològic?",
+        "answerHtml": "No. És un moviment comunitari amb serveis concrets. La visió és retornar el control digital a persones i organitzacions; Cloud i correu són els primers passos tangibles."
+      },
+      {
+        "id": "participate",
+        "question": "Qui pot participar?",
+        "answerHtml": "Qualsevol persona u organització interessada en alternatives obertes i properes: famílies, associacions, cooperatives, centres educatius i més. Escriu-nos o uneix-te al <a href=\"#contact\">grup de WhatsApp</a>."
+      },
       {
         "id": "hosting",
         "question": "On està allotjat el servei?",
@@ -123,9 +178,9 @@
     ]
   },
   "contact": {
-    "eyebrow": "Contacte",
-    "heading": "Parlem?",
-    "body": "Estem construint el futur digital des de l'origen. Escriu-nos per col·laborar o conèixer el projecte.",
+    "eyebrow": "Participa",
+    "heading": "Forma part del moviment",
+    "body": "Explora, pregunta, col·labora o simplement escolta. Construïm això junts — des de l'origen.",
     "email": "hello.yoel@amvara.de",
     "whatsappLabel": "Uneix-te al grup de WhatsApp",
     "whatsappQrAlt": "Codi QR per unir-se al grup de WhatsApp de km0",
@@ -134,6 +189,7 @@
   "footer": {
     "rights": "Tots els drets reservats.",
     "github": "GitHub",
+    "company": "AMVARA",
     "version": "Versió"
   }
 }

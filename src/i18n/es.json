@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kilómetro 0 Digital",
-    "description": "Origen local. Impacto digital. Conecta, transforma e impulsa desde el punto de origen."
+    "description": "KM0 Digital es un movimiento comunitario para recuperar el control digital. Servicios abiertos, cercanos y sostenibles — no otro proveedor más."
   },
   "brandName": "Kilómetro 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -11,7 +11,9 @@
   },
   "nav": {
     "home": "Inicio",
+    "vision": "Por qué",
     "values": "Valores",
+    "community": "Comunidad",
     "services": "Servicios",
     "meaning": "Significado",
     "mission": "Misión",
@@ -22,30 +24,73 @@
     "menuClose": "Cerrar menú"
   },
   "hero": {
-    "eyebrow": "Kilómetro 0 Digital",
-    "titleLine1": "ORIGEN LOCAL.",
-    "titleGradient": "IMPACTO DIGITAL.",
-    "tagline": "CONECTA. TRANSFORMA. IMPULSA.",
-    "ctaPrimary": "Descubre más",
-    "ctaSecondary": "Contactar",
+    "eyebrow": "Movimiento digital comunitario",
+    "titleLine1": "RECUPERA EL ",
+    "titleGradient": "CONTROL DIGITAL.",
+    "tagline": "Un movimiento social y tecnológico construido por y para la comunidad — no otro proveedor más.",
+    "ctaPrimary": "Descubre por qué existe",
+    "ctaSecondary": "Únete al movimiento",
     "logoAlt": "Logo Kilómetro 0 Digital",
     "laptopAlt": "Kilómetro 0 Digital en ordenador portátil",
     "mobileAlt": "Kilómetro 0 Digital en móvil"
   },
+  "vision": {
+    "eyebrow": "Por qué existe",
+    "headingBefore": "Una alternativa ",
+    "headingAccent": "real",
+    "headingAfter": " a lo de siempre",
+    "intro": "La tecnología esencial no debería depender de un puñado de gigantes lejanos. KM0 Digital propone otra forma.",
+    "usual": {
+      "title": "Lo habitual",
+      "items": [
+        "Tus datos como producto",
+        "Soporte anónimo y lejano",
+        "Precios que no reflejan el coste real",
+        "Dependencia total de unos pocos proveedores"
+      ]
+    },
+    "km0": {
+      "title": "La propuesta KM0",
+      "items": [
+        "Control y transparencia sobre tus datos",
+        "Personas reales, cerca de ti",
+        "Coste honesto y sostenible",
+        "Comunidad abierta a quien quiera participar"
+      ]
+    },
+    "blogCta": "Lee la historia completa en el blog"
+  },
   "values": {
-    "eyebrow": "Nuestros valores",
-    "headingBefore": "Una marca ",
-    "headingAccent": "cercana",
-    "headingAfter": " y digital",
-    "chips": ["Moderna", "Accesible", "Cercana", "Digital"]
+    "eyebrow": "Principios",
+    "headingBefore": "Movimiento ",
+    "headingAccent": "abierto",
+    "headingAfter": " y cercano",
+    "chips": ["Abierto", "Transparente", "Comunitario", "Local"]
+  },
+  "community": {
+    "eyebrow": "Comunidad",
+    "heading": "Cualquiera puede participar",
+    "intro": "No es un club cerrado ni un producto empaquetado. Si te interesa la soberanía digital, hay un lugar para ti.",
+    "audiences": [
+      "Familias",
+      "Asociaciones",
+      "Cooperativas",
+      "Centros educativos",
+      "Organizaciones",
+      "Personas curiosas"
+    ],
+    "humanNote": "Detrás del proyecto hay personas reales — no una corporación ni un call center anónimo. Hablas con quien construye el servicio.",
+    "ctaPrimary": "Conversar y participar",
+    "ctaExplore": "Explorar el blog"
   },
   "services": {
-    "eyebrow": "Servicios",
-    "headingBefore": "Tecnología ",
-    "headingAccent": "cercana",
-    "headingAfter": " y bajo tu control",
-    "intro": "Ofrecemos herramientas digitales pensadas para personas y equipos que quieren trabajar con tranquilidad: infraestructura local, trato directo y sin depender de los gigantes extranjeros para lo esencial.",
-    "slogan": "Tus datos, tu origen. Sin ataduras a hyperscalers.",
+    "eyebrow": "Primeros pasos",
+    "headingBefore": "Servicios que ",
+    "headingAccent": "demuestran",
+    "headingAfter": " la visión",
+    "intro": "Cloud y correo son el comienzo, no el destino. Herramientas tangibles para quien ya quiere actuar.",
+    "slogan": "Tus datos, tu origen. El movimiento crece contigo.",
+    "blogCta": "Sigue el diario del proyecto",
     "items": [
       {
         "id": "cloud",
@@ -102,19 +147,29 @@
     ]
   },
   "mission": {
-    "eyebrow": "Misión",
-    "heading": "Nacemos en el origen",
-    "body": "Kilómetro 0 Digital nace en el punto de origen y se expande conectando personas, ideas y oportunidades para construir un futuro digital más accesible e innovador."
+    "eyebrow": "Hacia dónde vamos",
+    "heading": "Devolver el control digital a la comunidad",
+    "body": "Personas, familias, asociaciones, cooperativas, centros educativos y organizaciones — KM0 conecta servicios abiertos, cercanos y sostenibles para quien quiera una alternativa real a Big Tech."
   },
   "merch": {
-    "eyebrow": "Aplicaciones",
-    "headingBefore": "Identidad en ",
-    "headingGradient": "cada pantalla"
+    "eyebrow": "Horizonte",
+    "headingBefore": "Esto es solo ",
+    "headingGradient": "el comienzo"
   },
   "faq": {
     "eyebrow": "FAQ",
     "heading": "Preguntas frecuentes",
     "items": [
+      {
+        "id": "movement",
+        "question": "¿KM0 es solo otro proveedor tecnológico?",
+        "answerHtml": "No. Es un movimiento comunitario con servicios concretos. La visión es devolver el control digital a personas y organizaciones; Cloud y correo son los primeros pasos tangibles."
+      },
+      {
+        "id": "participate",
+        "question": "¿Quién puede participar?",
+        "answerHtml": "Cualquier persona u organización interesada en alternativas abiertas y cercanas: familias, asociaciones, cooperativas, centros educativos y más. Escríbenos o únete al <a href=\"#contact\">grupo de WhatsApp</a>."
+      },
       {
         "id": "hosting",
         "question": "¿Dónde está alojado el servicio?",
@@ -123,9 +178,9 @@
     ]
   },
   "contact": {
-    "eyebrow": "Contacto",
-    "heading": "¿Hablamos?",
-    "body": "Estamos construyendo el futuro digital desde el origen. Escríbenos para colaborar o conocer el proyecto.",
+    "eyebrow": "Participa",
+    "heading": "Forma parte del movimiento",
+    "body": "Explora, pregunta, colabora o simplemente escucha. Construimos esto juntos — desde el origen.",
     "email": "hello.yoel@amvara.de",
     "whatsappLabel": "Únete al grupo de WhatsApp",
     "whatsappQrAlt": "Código QR para unirse al grupo de WhatsApp de km0",
@@ -134,6 +189,7 @@
   "footer": {
     "rights": "Todos los derechos reservados.",
     "github": "GitHub",
+    "company": "AMVARA",
     "version": "Versión"
   }
 }

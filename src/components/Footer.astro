@@ -1,7 +1,6 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
-import { withHash, localeHref } from '../i18n/paths';
 import { SITE_VERSION } from '../lib/site-version';
 
 interface Props {
@@ -15,9 +14,9 @@ const { locale, messages: m } = Astro.props;
 
 <footer class="border-t border-navy/10 bg-surface px-6 py-12 md:px-12">
   <div
-    class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row"
+    class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-6 md:grid-cols-3"
   >
-    <div class="flex items-center gap-3">
+    <div class="flex items-center justify-center gap-3 md:justify-start">
       <img
         src="/brand/logo.png"
         alt=""
@@ -40,17 +39,19 @@ const { locale, messages: m } = Astro.props;
         {m.footer.version}
         <span class="text-navy/60">{SITE_VERSION}</span>
       </p>
+      <a
+        href="https://amvara.de/#/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-navy/50 transition-colors hover:text-navy"
+      >{m.footer.company}</a>
     </div>
-    <nav class="flex flex-wrap justify-center gap-6 text-sm text-navy/50">
-      <a href={withHash(locale, 'home')} class="transition-colors hover:text-navy">{m.nav.home}</a>
-      <a href={withHash(locale, 'mission')} class="transition-colors hover:text-navy">{m.nav.mission}</a>
-      <a href={localeHref(locale, '/doc/')} class="transition-colors hover:text-navy">{m.nav.blog}</a>
-      <a href={withHash(locale, 'contact')} class="transition-colors hover:text-navy">{m.nav.contact}</a>
+    <nav class="flex justify-center md:justify-end">
       <a
         href="https://github.com/AMVARA-CONSULTING/km0-web"
         target="_blank"
         rel="noopener noreferrer"
-        class="transition-colors hover:text-navy"
+        class="text-sm text-navy/50 transition-colors hover:text-navy"
       >{m.footer.github}</a>
     </nav>
   </div>

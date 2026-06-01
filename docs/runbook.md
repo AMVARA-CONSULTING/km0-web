@@ -95,6 +95,21 @@ ss -tlnp | grep 9180
 
 ---
 
+## Dependencies (npm)
+
+Direct dependencies in **`package.json`** use exact semver (no `^` or `~`). Transitive dependencies are locked in **`package-lock.json`** with resolved URLs and integrity hashes. **`.npmrc`** sets `save-exact=true` and `package-lock=true`.
+
+| Context | Command |
+|---------|---------|
+| Local install | `npm ci` |
+| Docker build | `npm ci` (see `Dockerfile`) |
+| Add direct dep | `npm install name@x.y.z` |
+| Refresh lockfile after `package.json` edit | `npm install --package-lock-only` |
+
+Avoid `npm install` or `npm update` without a deliberate bump; that can rewrite transitive pins. After any dependency change: commit `package.json` and `package-lock.json`, then `docker compose build && docker compose up -d`.
+
+---
+
 ## Nginx (host reverse proxy)
 
 **Active site:** `/etc/nginx/sites-available/km0`  

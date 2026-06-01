@@ -15,7 +15,7 @@ locale: ca
   <p class="doc-block-title">Resum</p>
   <h2 class="doc-block-heading">Fites del dia</h2>
   <ul class="doc-list">
-    <li><strong>OpenCloud:</strong> primer commit Git d'actius KM0 (<code>km0-opencloud</code>); alineació de plantilles a <code>cloud.km0digital.com</code>; bucle autoagents; <code>redmine_sync.py</code> en arxivar <code>CLOSED-*</code>.</li>
+    <li><strong>OpenCloud:</strong> primer commit Git d'actius KM0 (<code>km0-opencloud</code>); alineació de plantilles a <code>cloud.km0digital.com</code>; Collabora Online via WOPI; bucle autoagents; <code>redmine_sync.py</code> en arxivar <code>CLOSED-*</code>.</li>
     <li><strong>Web corporativa:</strong> migració a km0digital.com; slugs de blog <code>day-*</code>; FAQ multilingüe; peu amb semver; modal email «properament»; menú hamburguesa mòbil; <code>switchLocaleHref</code>; versió 1.1.4.</li>
     <li><strong>Compartit:</strong> regles Cursor, <code>autoagents/SKILL.md</code>, <code>scripts/git-sync-main.sh</code>, <code>docs/agent-loop.md</code>.</li>
   </ul>
@@ -58,6 +58,17 @@ locale: ca
 </div>
 
 <div class="doc-block">
+  <p class="doc-block-title">OpenCloud</p>
+  <h2 class="doc-block-heading">Collabora Online (WOPI)</h2>
+  <p class="doc-block-intro">El dia 2 va mantenir el stack només amb core; durant el dia 3 es va connectar <strong>Collabora Online</strong> a OpenCloud mitjançant WOPI per obrir i editar documents Office al navegador a <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>.</p>
+  <ul class="doc-list">
+    <li><strong>Edició al navegador:</strong> gràcies a Collabora, els usuaris poden editar fitxers Office com <code>XLSX</code>, <code>PPT</code> i <code>DOCX</code> sense aplicacions d'escriptori.</li>
+    <li><strong>Coedició simultània:</strong> diversos usuaris poden treballar en el mateix document alhora; els canvis es sincronitzen en temps real a través del pont WOPI.</li>
+    <li><strong>Stack:</strong> contenidor Collabora a la xarxa Compose d'OpenCloud; descobriment WOPI i actualitzacions CSP a l'overlay external-proxy; Nginx encamina l'editor sota el vhost cloud.</li>
+  </ul>
+</div>
+
+<div class="doc-block doc-block-alt">
   <p class="doc-block-title">Web corporativa</p>
   <h2 class="doc-block-heading">Contingut, hostname i producte</h2>
   <ul class="doc-list">

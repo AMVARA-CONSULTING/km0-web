@@ -174,6 +174,21 @@
         "id": "hosting",
         "question": "Where is the service hosted?",
         "answerHtml": "Our infrastructure runs in Falkenstein, Germany, on <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, a European provider we chose for reliability, transparent pricing, and keeping your data within the EU."
+      },
+      {
+        "id": "iso27001",
+        "question": "Is the service certified to ISO 27001?",
+        "answerHtml": "No. KM0 Digital does not hold ISO 27001 certification today. We are a community-scale project with security practices documented in our blog (TLS, EU infrastructure, access controls). If you need a specific formal framework, <a href=\"#contact\">get in touch</a>."
+      },
+      {
+        "id": "data-security",
+        "question": "Is my data secure?",
+        "answerHtml": "We apply concrete measures: EU-based infrastructure (Germany), TLS-encrypted traffic, and we do not sell your data for advertising or model training. We document operations in the <a href=\"/en/doc/\">technical blog</a>. Like any online service, residual risk remains; for specific regulatory needs, <a href=\"#contact\">contact us</a>."
+      },
+      {
+        "id": "certification",
+        "question": "Is the service certified?",
+        "answerHtml": "We do not currently hold third-party audits (ISO 27001, SOC 2, etc.). We can explain architecture, controls, and EU hosting; documentation is in the <a href=\"/en/doc/\">blog</a>. For organisations with specific compliance requirements, <a href=\"#contact\">let us talk</a>."
       }
     ]
   },

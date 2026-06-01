@@ -174,6 +174,21 @@
         "id": "hosting",
         "question": "On està allotjat el servei?",
         "answerHtml": "La nostra infraestructura funciona a Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, un proveïdor europeu que hem triat per la seva fiabilitat, preus transparents i per mantenir les teves dades dins la UE."
+      },
+      {
+        "id": "iso27001",
+        "question": "El servei està certificat segons ISO 27001?",
+        "answerHtml": "No. KM0 Digital no disposa avui de certificació ISO 27001. Som un projecte comunitari amb pràctiques de seguretat documentades al blog (TLS, infraestructura a la UE, control d'accés). Si necessites un marc formal concret, <a href=\"#contact\">escriu-nos</a>."
+      },
+      {
+        "id": "data-security",
+        "question": "Les dades estan segures?",
+        "answerHtml": "Apliquem mesures concretes: infraestructura a la UE (Alemanya), trànsit xifrat amb TLS, i no venem les teves dades per a publicitat ni entrenament de models. Detallem l'operació al <a href=\"/ca/doc/\">blog tècnic</a>. Com qualsevol servei en línia, hi ha risc residual; per a requisits regulatoris específics, <a href=\"#contact\">contacta'ns</a>."
+      },
+      {
+        "id": "certification",
+        "question": "El servei està certificat?",
+        "answerHtml": "No comptem amb auditories de tercers (ISO 27001, SOC 2, etc.) en aquest moment. Sí que podem explicar arquitectura, controls i allotjament a la UE; la documentació és al <a href=\"/ca/doc/\">blog</a>. Per a organitzacions amb requisits de compliment concrets, <a href=\"#contact\">parlem</a>."
       }
     ]
   },

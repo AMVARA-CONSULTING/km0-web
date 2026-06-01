@@ -15,7 +15,7 @@ locale: es
   <p class="doc-block-title">Resumen</p>
   <h2 class="doc-block-heading">Hitos del día</h2>
   <ul class="doc-list">
-    <li><strong>OpenCloud:</strong> primer commit Git de activos KM0 (<code>km0-opencloud</code>); alineación de plantillas a <code>cloud.km0digital.com</code>; bucle autoagents; <code>redmine_sync.py</code> al archivar <code>CLOSED-*</code>.</li>
+    <li><strong>OpenCloud:</strong> primer commit Git de activos KM0 (<code>km0-opencloud</code>); alineación de plantillas a <code>cloud.km0digital.com</code>; Collabora Online vía WOPI; bucle autoagents; <code>redmine_sync.py</code> al archivar <code>CLOSED-*</code>.</li>
     <li><strong>Web corporativa:</strong> migración a km0digital.com; slugs de blog <code>day-*</code>; FAQ multidioma; pie con semver; modal email «próximamente»; menú hamburguesa móvil; <code>switchLocaleHref</code>; versión 1.1.4.</li>
     <li><strong>Compartido:</strong> reglas Cursor, <code>autoagents/SKILL.md</code>, <code>scripts/git-sync-main.sh</code>, <code>docs/agent-loop.md</code>.</li>
   </ul>
@@ -58,6 +58,17 @@ locale: es
 </section>
 
 <section class="doc-block">
+  <p class="doc-block-title">OpenCloud</p>
+  <h2 class="doc-block-heading">Collabora Online (WOPI)</h2>
+  <p class="doc-block-intro">El día 2 mantuvo el stack solo con core; durante el día 3 se conectó <strong>Collabora Online</strong> a OpenCloud mediante WOPI para abrir y editar documentos Office en el navegador en <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>.</p>
+  <ul class="doc-list">
+    <li><strong>Edición en navegador:</strong> gracias a Collabora, los usuarios pueden editar ficheros Office como <code>XLSX</code>, <code>PPT</code> y <code>DOCX</code> sin aplicaciones de escritorio.</li>
+    <li><strong>Coedición simultánea:</strong> varios usuarios pueden trabajar en el mismo documento a la vez; los cambios se sincronizan en tiempo real a través del puente WOPI.</li>
+    <li><strong>Stack:</strong> contenedor Collabora en la red Compose de OpenCloud; descubrimiento WOPI y actualizaciones CSP en el overlay external-proxy; Nginx enruta el editor bajo el vhost cloud.</li>
+  </ul>
+</section>
+
+<section class="doc-block doc-block-alt">
   <p class="doc-block-title">Web corporativa</p>
   <h2 class="doc-block-heading">Contenido, hostname y producto</h2>
   <ul class="doc-list">

@@ -15,7 +15,7 @@ locale: de
   <p class="doc-block-title">Zusammenfassung</p>
   <h2 class="doc-block-heading">Meilensteine des Tages</h2>
   <ul class="doc-list">
-    <li><strong>OpenCloud:</strong> erster Git-Commit der KM0-Assets (<code>km0-opencloud</code>); Vorlagen auf <code>cloud.km0digital.com</code> ausgerichtet; Autoagents-Schleife; <code>redmine_sync.py</code> beim Archivieren von <code>CLOSED-*</code>.</li>
+    <li><strong>OpenCloud:</strong> erster Git-Commit der KM0-Assets (<code>km0-opencloud</code>); Vorlagen auf <code>cloud.km0digital.com</code> ausgerichtet; Collabora Online via WOPI; Autoagents-Schleife; <code>redmine_sync.py</code> beim Archivieren von <code>CLOSED-*</code>.</li>
     <li><strong>Unternehmenswebsite:</strong> Migration zu km0digital.com; Blog-Slugs <code>day-*</code>; mehrsprachige FAQ; Footer-Semver; E-Mail-„Demnächst“-Modal; mobiles Hamburger-Menü; <code>switchLocaleHref</code>; Version 1.1.4.</li>
     <li><strong>Gemeinsam:</strong> Cursor-Regeln, <code>autoagents/SKILL.md</code>, <code>scripts/git-sync-main.sh</code>, <code>docs/agent-loop.md</code>.</li>
   </ul>
@@ -58,6 +58,17 @@ locale: de
 </section>
 
 <section class="doc-block">
+  <p class="doc-block-title">OpenCloud</p>
+  <h2 class="doc-block-heading">Collabora Online (WOPI)</h2>
+  <p class="doc-block-intro">Tag 2 hielt den Stack core-only; während Tag 3 wurde <strong>Collabora Online</strong> über WOPI an OpenCloud angebunden, damit Office-Dokumente im Browser unter <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> geöffnet und bearbeitet werden können.</p>
+  <ul class="doc-list">
+    <li><strong>Bearbeitung im Browser:</strong> dank Collabora können Nutzer Office-Dateien wie <code>XLSX</code>, <code>PPT</code> und <code>DOCX</code> ohne Desktop-Apps bearbeiten.</li>
+    <li><strong>Gleichzeitige Co-Bearbeitung:</strong> mehrere Nutzer können gleichzeitig am selben Dokument arbeiten; Änderungen synchronisieren sich in Echtzeit über die WOPI-Brücke.</li>
+    <li><strong>Stack:</strong> Collabora-Container im OpenCloud-Compose-Netzwerk; WOPI-Discovery und CSP-Updates im external-proxy-Overlay; Nginx leitet den Editor unter dem Cloud-Vhost.</li>
+  </ul>
+</section>
+
+<section class="doc-block doc-block-alt">
   <p class="doc-block-title">Unternehmenswebsite</p>
   <h2 class="doc-block-heading">Inhalt, Hostname und Produkt</h2>
   <ul class="doc-list">
@@ -69,7 +80,7 @@ locale: de
   </ul>
 </section>
 
-<section class="doc-block doc-block-alt">
+<section class="doc-block">
   <p class="doc-block-title">Autoagents</p>
   <h2 class="doc-block-heading">Abgeschlossene Tasks (km0-web)</h2>
   <ul class="doc-list">
@@ -81,7 +92,7 @@ locale: de
   <p>Site-Versionsfortschritt: Astro-5-Baseline auf :9180 → 1.1.3 (FAQ, Semver-Footer, Modal, mobile Nav, Locale) → 1.1.4 (README/Docs).</p>
 </section>
 
-<section class="doc-block">
+<section class="doc-block doc-block-alt">
   <p class="doc-block-title">Verifikation</p>
   <h2 class="doc-block-heading">Referenz-Checks</h2>
   <div class="doc-note"><pre>cd /opt/km0-web

@@ -117,6 +117,8 @@ curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/
 h2. Dependencies and security (2026-05-26)
 
 * Direct dependencies in @package.json@ are *pinned* to exact versions (no @^@, @~@, or @>@ ranges).
+* Transitive dependencies are pinned in @package-lock.json@ (resolved tarball URLs + integrity hashes). Root @.npmrc@ sets @save-exact=true@ and @package-lock=true@.
+* Always install with @npm ci@ (local dev and Docker build stage), not bare @npm install@ or @npm update@, unless deliberately bumping versions.
 * @package-lock.json@ is versioned in Git; the Docker build stage runs @npm ci@ for reproducible installs.
 * Audit date: *26 May 2026* (@npm audit@ in Node 22 Alpine).
 
@@ -137,7 +139,7 @@ h2. Dependencies and security (2026-05-26)
 h2. Risks / follow-ups
 
 * Keep @certbot.timer@ renewal healthy on the host for @km0digital.com@.
-* Re-run @npm audit@ periodically; bump pinned versions deliberately (edit @package.json@, regenerate lockfile, rebuild image).
+* Re-run @npm audit@ periodically; bump pinned versions deliberately (edit @package.json@, run @npm install --package-lock-only@, commit lockfile, rebuild image).
 * Regression on Spanish default landing: verify Astro @i18n.defaultLocale@ and @prefixDefaultLocale@.
 * Host nginx lives outside Git—always @nginx -t@ then @systemctl reload nginx@ after edits under @/etc/nginx/sites-available/@.
 

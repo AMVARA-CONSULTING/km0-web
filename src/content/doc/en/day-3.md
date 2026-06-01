@@ -15,7 +15,7 @@ locale: en
   <p class="doc-block-title">Summary</p>
   <h2 class="doc-block-heading">Day milestones</h2>
   <ul class="doc-list">
-    <li><strong>OpenCloud:</strong> first Git commit of KM0 assets (<code>km0-opencloud</code>); templates aligned to <code>cloud.km0digital.com</code>; autoagents loop; <code>redmine_sync.py</code> on <code>CLOSED-*</code> archive.</li>
+    <li><strong>OpenCloud:</strong> first Git commit of KM0 assets (<code>km0-opencloud</code>); templates aligned to <code>cloud.km0digital.com</code>; Collabora Online via WOPI; autoagents loop; <code>redmine_sync.py</code> on <code>CLOSED-*</code> archive.</li>
     <li><strong>Corporate site:</strong> migration to km0digital.com; blog slugs <code>day-*</code>; multilingual FAQ; footer semver; email “coming soon” modal; mobile hamburger menu; <code>switchLocaleHref</code>; version 1.1.4.</li>
     <li><strong>Shared:</strong> Cursor rules, <code>autoagents/SKILL.md</code>, <code>scripts/git-sync-main.sh</code>, <code>docs/agent-loop.md</code>.</li>
   </ul>
@@ -58,6 +58,17 @@ locale: en
 </section>
 
 <section class="doc-block">
+  <p class="doc-block-title">OpenCloud</p>
+  <h2 class="doc-block-heading">Collabora Online (WOPI)</h2>
+  <p class="doc-block-intro">Day 2 kept the stack core-only; during day 3, <strong>Collabora Online</strong> was wired to OpenCloud through WOPI so Office documents can be opened and edited in the browser at <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>.</p>
+  <ul class="doc-list">
+    <li><strong>In-browser editing:</strong> thanks to Collabora, users can edit Office files such as <code>XLSX</code>, <code>PPT</code>, and <code>DOCX</code> without desktop apps.</li>
+    <li><strong>Simultaneous co-editing:</strong> multiple users can work on the same document at the same time; changes sync in real time through the WOPI bridge.</li>
+    <li><strong>Stack:</strong> Collabora container on the OpenCloud Compose network; WOPI discovery and CSP updates in the external-proxy overlay; Nginx routes the editor under the cloud vhost.</li>
+  </ul>
+</section>
+
+<section class="doc-block doc-block-alt">
   <p class="doc-block-title">Corporate site</p>
   <h2 class="doc-block-heading">Content, hostname, and product</h2>
   <ul class="doc-list">
@@ -69,7 +80,7 @@ locale: en
   </ul>
 </section>
 
-<section class="doc-block doc-block-alt">
+<section class="doc-block">
   <p class="doc-block-title">Autoagents</p>
   <h2 class="doc-block-heading">Closed tasks (km0-web)</h2>
   <ul class="doc-list">
@@ -81,7 +92,7 @@ locale: en
   <p>Site version progression: Astro 5 baseline on :9180 → 1.1.3 (FAQ, semver footer, modal, mobile nav, locale) → 1.1.4 (README/docs).</p>
 </section>
 
-<section class="doc-block">
+<section class="doc-block doc-block-alt">
   <p class="doc-block-title">Verification</p>
   <h2 class="doc-block-heading">Reference checks</h2>
   <div class="doc-note"><pre>cd /opt/km0-web

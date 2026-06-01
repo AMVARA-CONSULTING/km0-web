@@ -52,6 +52,12 @@ locale: es
 </section>
 
 <section class="doc-block">
+  <p class="doc-block-title">Collabora</p>
+  <h2 class="doc-block-heading">Coedición tras login unificado</h2>
+  <p class="doc-block-intro">La integración Collabora documentada en el <a href="/doc/day-3/">día 3</a> habilita la edición Office en navegador para todos los usuarios autenticados. Con el conector Dex LDAP del día 4, cualquier usuario del IDM (mismo <code>uid</code> y contraseña que en Ajustes) puede iniciar sesión y abrir hojas de cálculo o presentaciones compartidas; varias personas pueden editar el mismo fichero <code>XLSX</code> o <code>PPT</code> a la vez.</p>
+</section>
+
+<section class="doc-block doc-block-alt">
   <p class="doc-block-title">TLS</p>
   <h2 class="doc-block-heading">Fix certificado IDM LDAPS</h2>
   <p class="doc-block-intro">Durante las pruebas, Dex alcanzaba <code>opencloud:9235</code> pero el <code>ldap.crt</code> autogenerado sólo incluía <code>localhost</code> en el SAN → error <em>TLS certificate is valid for localhost, not opencloud</em>.</p>

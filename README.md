@@ -83,11 +83,26 @@ curl -sI http://127.0.0.1:9180/
 
 ### Local development (Node on host)
 
+Use **`npm ci`** (not `npm install`) so installs match the committed **`package-lock.json`** exactly, including transitive dependencies.
+
 ```bash
-npm install
+npm ci
 npm run dev      # http://localhost:4321
 npm run build    # output in dist/
 ```
+
+### Dependencies
+
+Direct dependencies in **`package.json`** are pinned to exact versions (no `^` or `~`). Transitive dependencies are pinned in **`package-lock.json`** with integrity hashes. **`.npmrc`** sets `save-exact=true` for any new direct dependency.
+
+| Action | Command |
+|--------|---------|
+| Install (local or CI) | `npm ci` |
+| Docker build | `npm ci` in `Dockerfile` (already configured) |
+| Add a direct dependency | `npm install package@x.y.z` (exact pin enforced) |
+| Bump after editing `package.json` | `npm install --package-lock-only`, commit both files, rebuild image |
+
+Do not run bare `npm update` or `npm install` without a deliberate version bump; that can rewrite the lockfile.
 
 ## Editing content
 

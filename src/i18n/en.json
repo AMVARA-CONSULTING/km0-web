@@ -18,6 +18,7 @@
     "meaning": "Meaning",
     "mission": "Mission",
     "blog": "Blog",
+    "tutorials": "Tutorials",
     "faq": "FAQ",
     "contact": "Contact",
     "menuOpen": "Open menu",
@@ -91,6 +92,8 @@
     "intro": "Cloud and email are the beginning, not the destination. Tangible tools for those ready to act now.",
     "slogan": "Your data, your origin. The movement grows with you.",
     "blogCta": "Follow the project diary",
+    "tutorialsCta": "Browse KM0 Cloud tutorials",
+    "cloudTutorialCta": "Getting started in your browser",
     "items": [
       {
         "id": "cloud",
@@ -123,6 +126,16 @@
     "readMore": "Read post",
     "backToIndex": "Back to blog",
     "breadcrumbHome": "Blog"
+  },
+  "tutorials": {
+    "metaTitle": "Tutorials - Kilometer 0 Digital",
+    "metaDescription": "Step-by-step guides to get started with KM0 Cloud in your browser, on Android, and on iOS.",
+    "eyebrow": "Tutorials",
+    "heading": "KM0 Cloud guides",
+    "intro": "Clear instructions to access, configure, and sign in to KM0 Cloud from your browser or mobile apps.",
+    "readMore": "Open tutorial",
+    "backToIndex": "Back to tutorials",
+    "breadcrumbHome": "Tutorials"
   },
   "meaning": {
     "eyebrow": "Meaning",
@@ -178,17 +191,17 @@
       {
         "id": "iso27001",
         "question": "Is the service certified to ISO 27001?",
-        "answerHtml": "No. KM0 Digital does not hold ISO 27001 certification today. We are a community-scale project with security practices documented in our blog (TLS, EU infrastructure, access controls). If you need a specific formal framework, <a href=\"#contact\">get in touch</a>."
+        "answerHtml": "Yes. KM0 Digital is operated by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certified to ISO/IEC 27001:2022 by TÜV NORD CERT. KM0 and <code>cloud.km0digital.com</code> are included in the certificate scope as part of AMVARA's platform and associated cloud-native services. If you need the certificate, statement of applicability, or a security questionnaire, <a href=\"#contact\">contact us</a>."
       },
       {
         "id": "data-security",
         "question": "Is my data secure?",
-        "answerHtml": "We apply concrete measures: EU-based infrastructure (Germany), TLS-encrypted traffic, and we do not sell your data for advertising or model training. We document operations in the <a href=\"/en/doc/\">technical blog</a>. Like any online service, residual risk remains; for specific regulatory needs, <a href=\"#contact\">contact us</a>."
+        "answerHtml": "Yes, your data is secure. We use EU-based infrastructure (Germany), TLS-encrypted traffic, and we do not sell your data for advertising or model training. We document operations in the <a href=\"/en/doc/\">technical blog</a>. Like any online service, residual risk remains; for specific regulatory needs, <a href=\"#contact\">contact us</a>."
       },
       {
         "id": "certification",
         "question": "Is the service certified?",
-        "answerHtml": "We do not currently hold third-party audits (ISO 27001, SOC 2, etc.). We can explain architecture, controls, and EU hosting; documentation is in the <a href=\"/en/doc/\">blog</a>. For organisations with specific compliance requirements, <a href=\"#contact\">let us talk</a>."
+        "answerHtml": "Yes. KM0 Digital is a community project operated by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certified to ISO/IEC 27001:2022 (TÜV NORD CERT). The service does not hold certification under its own name, but it falls within AMVARA's certified scope as part of its platform and cloud services. We design, deploy, and maintain KM0 under those controls; technical operations are documented in the <a href=\"/en/doc/\">blog</a>. For specific compliance requirements, <a href=\"#contact\">get in touch</a>: we can provide relevant documentation."
       }
     ]
   },

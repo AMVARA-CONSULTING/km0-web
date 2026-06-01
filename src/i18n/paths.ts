@@ -33,6 +33,11 @@ export function docPostHref(locale: Locale, slug: string): string {
   return `${localeHref(locale, '/doc')}${slug}/`;
 }
 
+/** Tutorial post URL from slug (e.g. getting-started-web) */
+export function tutorialPostHref(locale: Locale, slug: string): string {
+  return `${localeHref(locale, '/tutorials')}${slug}/`;
+}
+
 /** Strip locale prefix from a pathname, leaving the locale-neutral path (e.g. /ca/doc/foo/ → /doc/foo/) */
 export function stripLocalePrefix(pathname: string, locale: Locale): string {
   const prefix = localePath(locale);

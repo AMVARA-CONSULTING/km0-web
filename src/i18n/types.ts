@@ -33,6 +33,7 @@ export interface Messages {
     meaning: string;
     mission: string;
     blog: string;
+    tutorials: string;
     faq: string;
     contact: string;
     menuOpen: string;
@@ -89,6 +90,8 @@ export interface Messages {
     intro: string;
     slogan: string;
     blogCta: string;
+    tutorialsCta: string;
+    cloudTutorialCta: string;
     items: {
       id: string;
       title: string;
@@ -104,6 +107,16 @@ export interface Messages {
     };
   };
   doc: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    readMore: string;
+    backToIndex: string;
+    breadcrumbHome: string;
+  };
+  tutorials: {
     metaTitle: string;
     metaDescription: string;
     eyebrow: string;

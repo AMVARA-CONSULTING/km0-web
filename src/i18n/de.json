@@ -18,6 +18,7 @@
     "meaning": "Bedeutung",
     "mission": "Mission",
     "blog": "Blog",
+    "tutorials": "Tutorials",
     "faq": "FAQ",
     "contact": "Kontakt",
     "menuOpen": "Menü öffnen",
@@ -91,6 +92,8 @@
     "intro": "Cloud und E-Mail sind der Anfang, nicht das Ziel. Greifbare Werkzeuge für alle, die jetzt handeln wollen.",
     "slogan": "Ihre Daten, Ihr Ursprung. Die Bewegung wächst mit Ihnen.",
     "blogCta": "Dem Projekttagebuch folgen",
+    "tutorialsCta": "KM0-Cloud-Tutorials ansehen",
+    "cloudTutorialCta": "Erste Schritte im Browser",
     "items": [
       {
         "id": "cloud",
@@ -123,6 +126,16 @@
     "readMore": "Beitrag lesen",
     "backToIndex": "Zurück zum Blog",
     "breadcrumbHome": "Blog"
+  },
+  "tutorials": {
+    "metaTitle": "Tutorials - Kilometer 0 Digital",
+    "metaDescription": "Schritt-für-Schritt-Anleitungen für KM0 Cloud im Browser, auf Android und iOS.",
+    "eyebrow": "Tutorials",
+    "heading": "KM0-Cloud-Anleitungen",
+    "intro": "Klare Anweisungen für Zugriff, Einrichtung und Anmeldung bei KM0 Cloud im Browser oder in den mobilen Apps.",
+    "readMore": "Tutorial öffnen",
+    "backToIndex": "Zurück zu den Tutorials",
+    "breadcrumbHome": "Tutorials"
   },
   "meaning": {
     "eyebrow": "Bedeutung",
@@ -178,17 +191,17 @@
       {
         "id": "iso27001",
         "question": "Ist der Service nach ISO 27001 zertifiziert?",
-        "answerHtml": "Nein. KM0 Digital verfügt derzeit nicht über eine ISO-27001-Zertifizierung. Wir sind ein gemeinschaftliches Projekt mit im Blog dokumentierten Sicherheitspraktiken (TLS, EU-Infrastruktur, Zugriffskontrollen). Wenn Sie einen konkreten formalen Rahmen benötigen, <a href=\"#contact\">schreiben Sie uns</a>."
+        "answerHtml": "Ja. KM0 Digital wird von <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> betrieben, zertifiziert nach ISO/IEC 27001:2022 durch TÜV NORD CERT. KM0 und <code>cloud.km0digital.com</code> sind im Geltungsbereich des Zertifikats als Plattform und cloud-native Dienste von AMVARA enthalten. Wenn Sie das Zertifikat, die Erklärung zur Anwendbarkeit oder einen Sicherheitsfragebogen benötigen, <a href=\"#contact\">kontaktieren Sie uns</a>."
       },
       {
         "id": "data-security",
         "question": "Sind meine Daten sicher?",
-        "answerHtml": "Wir setzen konkrete Maßnahmen um: EU-Infrastruktur (Deutschland), TLS-verschlüsselter Datenverkehr, und wir verkaufen Ihre Daten nicht für Werbung oder Modelltraining. Den Betrieb dokumentieren wir im <a href=\"/de/doc/\">technischen Blog</a>. Wie bei jedem Online-Dienst bleibt Restrisiko; bei spezifischen regulatorischen Anforderungen <a href=\"#contact\">kontaktieren Sie uns</a>."
+        "answerHtml": "Ja, Ihre Daten sind sicher. Wir nutzen EU-Infrastruktur (Deutschland), TLS-verschlüsselten Datenverkehr, und wir verkaufen Ihre Daten nicht für Werbung oder Modelltraining. Den Betrieb dokumentieren wir im <a href=\"/de/doc/\">technischen Blog</a>. Wie bei jedem Online-Dienst bleibt Restrisiko; bei spezifischen regulatorischen Anforderungen <a href=\"#contact\">kontaktieren Sie uns</a>."
       },
       {
         "id": "certification",
         "question": "Ist der Service zertifiziert?",
-        "answerHtml": "Wir haben derzeit keine Prüfungen durch Dritte (ISO 27001, SOC 2 usw.). Wir können Architektur, Kontrollen und EU-Hosting erläutern; die Dokumentation steht im <a href=\"/de/doc/\">Blog</a>. Für Organisationen mit konkreten Compliance-Anforderungen <a href=\"#contact\">sprechen wir gern</a>."
+        "answerHtml": "Ja. KM0 Digital ist ein Gemeinschaftsprojekt, das von <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> betrieben wird, zertifiziert nach ISO/IEC 27001:2022 (TÜV NORD CERT). Der Service trägt keine eigenständige Zertifizierung, fällt aber in den zertifizierten Geltungsbereich von AMVARA als Teil der Plattform und Cloud-Dienste. Wir entwickeln, betreiben und warten KM0 unter diesen Kontrollen; der technische Betrieb ist im <a href=\"/de/doc/\">Blog</a> dokumentiert. Bei konkreten Compliance-Anforderungen <a href=\"#contact\">schreiben Sie uns</a>: wir stellen die relevante Dokumentation bereit."
       }
     ]
   },

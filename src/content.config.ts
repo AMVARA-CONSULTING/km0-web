@@ -10,4 +10,15 @@ const doc = defineCollection({
   }),
 });
 
-export const collections = { doc };
+const tutorials = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    locale: z.enum(['es', 'ca', 'en', 'de']),
+    order: z.number(),
+    platform: z.enum(['web', 'android', 'ios']),
+  }),
+});
+
+export const collections = { doc, tutorials };

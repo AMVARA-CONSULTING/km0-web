@@ -1,0 +1,59 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref, tutorialPostHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+import { getCollection } from 'astro:content';
+import { tutorialSlug, compareTutorials } from '../lib/tutorial';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const tutorials = (await getCollection('tutorials', ({ data }) => data.locale === locale)).sort(
+  compareTutorials,
+);
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={messages.tutorials.metaTitle}
+  pageDescription={messages.tutorials.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <div class="doc-index mx-auto max-w-4xl text-justify">
+      <header class="doc-index-header mb-12">
+        <p class="doc-eyebrow">{messages.tutorials.eyebrow}</p>
+        <h1 class="heading-section text-navy">{messages.tutorials.heading}</h1>
+        <p class="doc-index-intro">{messages.tutorials.intro}</p>
+      </header>
+
+      <ul class="doc-post-list">
+        {
+          tutorials.map((tutorial) => (
+            <li class="doc-post-card">
+              <h2 class="doc-post-card-title">
+                <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>{tutorial.data.title}</a>
+              </h2>
+              <p class="doc-post-card-desc">{tutorial.data.description}</p>
+              <a href={tutorialPostHref(locale, tutorialSlug(tutorial))} class="doc-read-more">
+                {messages.tutorials.readMore}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

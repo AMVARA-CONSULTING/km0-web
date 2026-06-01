@@ -1,0 +1,17 @@
+---
+import TutorialPost from '../../../views/TutorialPost.astro';
+import { getCollection } from 'astro:content';
+import { tutorialSlug } from '../../../lib/tutorial';
+
+export async function getStaticPaths() {
+  const tutorials = await getCollection('tutorials', ({ data }) => data.locale === 'en');
+  return tutorials.map((tutorial) => ({
+    params: { slug: tutorialSlug(tutorial) },
+    props: { tutorial },
+  }));
+}
+
+const { tutorial } = Astro.props;
+---
+
+<TutorialPost locale="en" tutorial={tutorial} />

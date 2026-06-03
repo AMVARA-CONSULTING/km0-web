@@ -3,7 +3,7 @@
 
 - **What happened:** GitHub issue #6 requested a clickable WhatsApp group QR in the Contact section.
 - **What was done:** Added a WhatsApp QR block in `Contact.astro` with i18n labels (es/ca/en/de), asset `public/contact/whatsapp-group-qr.png`, and invite link to the group; footer version bumped to 1.1.5.
-- **What was tested:** Docker build, contact section on all locales, PNG asset (HTTP 200), invite link behavior, footer version, loopback and production spot checks — all PASS.
+- **What was tested:** Docker build, contact section on all locales, PNG asset (HTTP 200), invite link behavior, footer version, loopback and production spot checks, all PASS.
 - **Why closed:** All testing criteria passed.
 - **Closed at (UTC):** 2026-05-29 17:46
 ---
@@ -37,9 +37,9 @@ Añadir al apartado de Contacto, este QR con el link al clickar para que quien q
 
 ## Testing instructions
 1. `docker compose build && docker compose up -d`
-2. Open `http://127.0.0.1:9180/#contact` (and `/ca/`, `/en/`, `/de/#contact`) — confirm WhatsApp label and QR appear below the email button.
-3. Click the QR — should open the WhatsApp group invite in a new tab (`chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs`).
-4. `curl -sI http://127.0.0.1:9180/contact/whatsapp-group-qr.png` — expect `200` and `Content-Type: image/png`.
+2. Open `http://127.0.0.1:9180/#contact` (and `/ca/`, `/en/`, `/de/#contact`) - confirm WhatsApp label and QR appear below the email button.
+3. Click the QR, should open the WhatsApp group invite in a new tab (`chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs`).
+4. `curl -sI http://127.0.0.1:9180/contact/whatsapp-group-qr.png`, expect `200` and `Content-Type: image/png`.
 5. Footer shows version **1.1.5**.
 
 ## Test report

@@ -3,7 +3,7 @@
 
 - **What happened:** Clicking a language in the header reloaded the page and often sent users to the home page instead of the equivalent page in the target locale.
 - **What was done:** Added `switchLocaleHref` / `stripLocalePrefix` in `src/i18n/paths.ts`, wired the Header language switcher to locale-equivalent URLs, and added a client script to preserve URL hashes on landing pages.
-- **What was tested:** Blog post, blog index, and landing locale-switch hrefs; hash-preservation script in bundle; HTTP 200 on loopback and production paths — **PASS**.
+- **What was tested:** Blog post, blog index, and landing locale-switch hrefs; hash-preservation script in bundle; HTTP 200 on loopback and production paths - **PASS**.
 - **Why closed:** Tester report overall **PASS**; all acceptance criteria met.
 - **Closed at (UTC):** 2026-05-26 22:38
 ---
@@ -36,9 +36,9 @@ Changing the language reloads the entire page, and that's not okay.   Clicking o
 
 ## Testing instructions
 1. Rebuild and deploy: `docker compose build && docker compose up -d`
-2. **Blog post — stay on same article:** Open `/doc/day-0/`. In the language switcher, click **CA** → expect `/ca/doc/day-0/` (same slug, Catalan content). Repeat for **EN** (`/en/doc/day-0/`) and **DE** (`/de/doc/day-0/`).
-3. **Blog index — stay on index:** Open `/ca/doc/`. Switch to **ES** → expect `/doc/` (not `/`). Switch to **EN** → expect `/en/doc/`.
-4. **Landing — preserve section hash:** Open `/ca/#services`. Switch to **EN** → expect `/en/#services` (same section, English home).
+2. **Blog post, stay on same article:** Open `/doc/day-0/`. In the language switcher, click **CA** → expect `/ca/doc/day-0/` (same slug, Catalan content). Repeat for **EN** (`/en/doc/day-0/`) and **DE** (`/de/doc/day-0/`).
+3. **Blog index, stay on index:** Open `/ca/doc/`. Switch to **ES** → expect `/doc/` (not `/`). Switch to **EN** → expect `/en/doc/`.
+4. **Landing, preserve section hash:** Open `/ca/#services`. Switch to **EN** → expect `/en/#services` (same section, English home).
 5. **Landing home:** Open `/en/`. Switch to **ES** → expect `/` (Spanish default, unprefixed).
 6. Verify HTTP 200: `curl -sI http://127.0.0.1:9180/doc/day-0/ http://127.0.0.1:9180/ca/doc/day-0/ http://127.0.0.1:9180/en/doc/`
 7. Footer version bumped to **1.1.2**.

@@ -3,7 +3,7 @@
 #   ./autoagents/autoagents-loop.sh [COMMAND]
 #
 # Requires: cursor-agent on PATH, gh authenticated (see scripts/setup-autoagents-gh.sh).
-# No Ollama/llama.cpp — log triage uses heuristics only (AGENT_001_OLLAMA_LOG_TRIAGE defaults to 0).
+# No Ollama/llama.cpp - log triage uses heuristics only (AGENT_001_OLLAMA_LOG_TRIAGE defaults to 0).
 
 set -euo pipefail
 
@@ -12,7 +12,7 @@ TASKDIR="${SCRIPTDIR}/tasks"
 REPO_ROOT="$(cd "${SCRIPTDIR}/.." && pwd)"
 sleepminutes="${AGENT_LOOP_SLEEP_MINUTES:-5}"
 sleepseconds=$((sleepminutes * 60))
-# Runtime artifacts (preflight digest, gh stderr) stay inside the repo — not /tmp.
+# Runtime artifacts (preflight digest, gh stderr) stay inside the repo, not /tmp.
 AGENT_LOOP_TMP="${AGENT_LOOP_TMP:-${SCRIPTDIR}/.runtime}"
 GH_REPO="${AGENT_GH_REPO:-AMVARA-CONSULTING/km0-web}"
 GIT_BRANCH="${AGENT_GIT_BRANCH:-main}"
@@ -68,7 +68,7 @@ prepare_001_preflight_context() {
   local utc
   utc=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
   {
-    echo "autoagents 001 preflight — $utc (UTC)"
+    echo "autoagents 001 preflight - $utc (UTC)"
     echo "repo: $GH_REPO  branch: $GIT_BRANCH  tasks: $TASKDIR"
     echo ""
     echo "=== GitHub (open issues, limit 40) ==="
@@ -94,7 +94,7 @@ prepare_001_preflight_context() {
       G001_UNTRACKED_ISSUES=$untracked
     else
       {
-        echo "(gh issue list failed — see stderr below — trying REST fallback)"
+        echo "(gh issue list failed, see stderr below, trying REST fallback)"
         echo "=== gh issue list stderr ==="
         cat "$gh_list_err" 2>/dev/null || true
       } >>"$ctx"
@@ -122,7 +122,7 @@ prepare_001_preflight_context() {
         G001_UNTRACKED_ISSUES=$untracked2
       else
         {
-          echo "(gh api fallback also failed — stderr:"
+          echo "(gh api fallback also failed - stderr:"
           cat "$gh_api_err" 2>/dev/null || true
           echo ")"
           echo "Fix: ./scripts/setup-autoagents-gh.sh  or  export GH_TOKEN=<token with repo scope>"
@@ -134,7 +134,7 @@ prepare_001_preflight_context() {
       fi
     fi
   else
-    echo "(gh not on PATH — run scripts/setup-autoagents-gh.sh)" >>"$ctx"
+    echo "(gh not on PATH - run scripts/setup-autoagents-gh.sh)" >>"$ctx"
   fi
 
   {
@@ -176,7 +176,7 @@ prepare_001_preflight_context() {
       fi
     done
   else
-    echo "Docker not available — log pass skipped." >>"$ctx"
+    echo "Docker not available - log pass skipped." >>"$ctx"
   fi
 
   {
@@ -300,7 +300,7 @@ run_agent() {
   local desc="$1" cond="$2" prompt="$3" msg="$4"
   local p="${SCRIPTDIR}/${prompt}"
   if [[ ! -f "$p" ]]; then
-    echo "----- $desc (skip: missing prompt $prompt — see docs/agent-loop.md)"
+    echo "----- $desc (skip: missing prompt $prompt, see docs/agent-loop.md)"
     return 0
   fi
   if ! have_cursor_agent; then
@@ -325,7 +325,7 @@ ${msg}"
     local _ca_rc=$?
     set -e
     if ((_ca_rc != 0)); then
-      echo "----- $desc: cursor-agent exited ${_ca_rc} (continuing loop — non-fatal)" >&2
+      echo "----- $desc: cursor-agent exited ${_ca_rc} (continuing loop, non-fatal)" >&2
     fi
   else
     echo "----- $desc (skip: nothing to do)"
@@ -406,7 +406,7 @@ step_log_reviewer() {
     fi
     local msg
     msg="Run 001: Read the preflight digest first (absolute path): $ctx
-Then follow 001-gh-reviewer.md — (A) GitHub → up to 3 × FEAT-*.md. (B) Docker logs → NEW-*.md only for real standing incidents. gh comment/label. Task conventions: autoagents/TASKS-README.md. Do your job."
+Then follow 001-gh-reviewer.md - (A) GitHub → up to 3 × FEAT-*.md. (B) Docker logs → NEW-*.md only for real standing incidents. gh comment/label. Task conventions: autoagents/TASKS-README.md. Do your job."
     run_agent "log reviewer (001)" \
       "true" \
       "001-gh-reviewer.md" \

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Issue Checker Agent — creates FEAT task files from open GitHub issues.
+Issue Checker Agent: creates FEAT task files from open GitHub issues.
 Uses gh CLI; repo from AGENT_GH_REPO env (default AMVARA-CONSULTING/km0-web).
 After each new FEAT file, posts a GitHub comment and sets agent:planned (see lib/gh_issue_actions.py).
 """
@@ -162,14 +162,14 @@ def run_workflow() -> bool:
     for issue in issues:
         num = issue["number"]
         if has_task_file(num):
-            print(f"  skip #{num} — task already exists (queue or done/)")
+            print(f"  skip #{num}, task already exists (queue or done/)")
             continue
         details = fetch_issue_details(num)
         if not details:
             continue
         labels = [l.get("name", "") for l in details.get("labels", [])]
         if "agent:planned" in labels:
-            print(f"  skip #{num} — agent:planned")
+            print(f"  skip #{num}, agent:planned")
             continue
         path = create_task(details)
         bn = os.path.basename(path)

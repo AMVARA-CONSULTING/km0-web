@@ -3,9 +3,9 @@ description: Never use the em dash character (U+2014) in any project text
 alwaysApply: true
 ---
 
-# No em dash (—)
+# No em dash (U+2014)
 
-**Never** write the em dash character `—` (U+2014). Not in site copy, i18n, blog posts, comments, docs, rules, commit messages, or agent replies.
+**Never** write the em dash character U+2014 in any project text. Not in site copy, i18n, blog posts, comments, docs, rules, commit messages, or agent replies.
 
 ## Use instead
 
@@ -19,9 +19,9 @@ alwaysApply: true
 ## Examples
 
 ```text
-// BAD
-Open services — not another provider.
-Blog — Kilometer 0 Digital
+// BAD (uses U+2014 between clauses)
+Open services [em dash] not another provider.
+Blog [em dash] Kilometer 0 Digital
 
 // GOOD
 Open services, not another provider.

@@ -24,7 +24,7 @@ You commit **km0-web** changes on **`main`**. You do **not** edit application so
 ### Instructions
 
 1. Sync git.
-2. `git status` — if clean, stop.
+2. `git status`, if clean, stop.
 3. Review diff; verify footer version (**`package.json`**) incremented for each completed agent task; run **`./scripts/bump-patch-version.sh`** if missing.
 4. `git add` / `git commit` on **`main`**.
 5. `git pull --rebase --autostash origin main`; `git push origin main`.

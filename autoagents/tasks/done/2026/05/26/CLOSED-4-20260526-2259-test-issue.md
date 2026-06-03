@@ -3,7 +3,7 @@
 
 - **What happened:** GitHub issue #4 asked to trim README copy (remove KM0 parenthetical and the autoagents loop section).
 - **What was done:** README intro simplified; autoagents section removed; site version bumped 1.1.3 → 1.1.4.
-- **What was tested:** Tester PASS — README checks, Docker build 1.1.4, HTTP 200 on locale/doc paths, footer version, production spot check.
+- **What was tested:** Tester PASS, README checks, Docker build 1.1.4, HTTP 200 on locale/doc paths, footer version, production spot check.
 - **Why closed:** All testing criteria passed; task ready for archive.
 - **Closed at (UTC):** 2026-05-26 23:02
 ---
@@ -36,8 +36,8 @@ Remove the following from the README: * "(Kilometer / Kilòmetre / Kilómetro 0 
 
 ## Testing instructions
 1. Open `README.md` and confirm line 3 reads: `Public marketing landing for **KM0 Digital**.` (no parenthetical).
-2. Confirm there is no `## autoagents (Cursor agent loop)` section; file ends with `## License` → `Private project — © KM0 Digital.`
-3. Run `docker compose build && docker compose up -d` — build must succeed (version 1.1.4 in build output).
+2. Confirm there is no `## autoagents (Cursor agent loop)` section; file ends with `## License` → `Private project - © KM0 Digital.`
+3. Run `docker compose build && docker compose up -d`, build must succeed (version 1.1.4 in build output).
 4. Verify site still serves: `curl -sI http://127.0.0.1:9180/` and `/ca/`, `/en/`, `/de/`, `/doc/` all return HTTP 200.
 5. Optional: confirm footer shows `1.1.4` on any locale page.
 
@@ -48,7 +48,7 @@ Remove the following from the README: * "(Kilometer / Kilòmetre / Kilómetro 0 
 3. **What was tested:** README intro line and removal of autoagents section; Docker build with version 1.1.4; HTTP 200 on locale and doc paths; footer version on `/en/`.
 4. **Results:**
    - README line 3: `Public marketing landing for **KM0 Digital**.` (no parenthetical): **PASS**
-   - No `## autoagents (Cursor agent loop)`; file ends with `## License` → `Private project — © KM0 Digital.`: **PASS**
+   - No `## autoagents (Cursor agent loop)`; file ends with `## License` → `Private project - © KM0 Digital.`: **PASS**
    - `docker compose build` succeeded; build log shows `km0-web@1.1.4 build`: **PASS**
    - HTTP 200: `/`, `/ca/`, `/en/`, `/de/`, `/doc/`, `/en/doc/day-0/`: **PASS**
    - Footer **1.1.4** on loopback `/en/`: **PASS**

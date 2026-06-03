@@ -31,7 +31,7 @@ Add more FAQ entries to address common security and certification questions (ISO
 ## Testing instructions
 
 1. **Build:** `docker compose build && docker compose up -d` (or `npm run build` if Node is available).
-2. **HTTP smoke:** `curl -sI http://127.0.0.1:9180/` `/ca/` `/en/` `/de/` `/doc/` — expect `200 OK`.
+2. **HTTP smoke:** `curl -sI http://127.0.0.1:9180/` `/ca/` `/en/` `/de/` `/doc/`, expect `200 OK`.
 3. **FAQ content (all locales):** Open `/#faq` (or `/ca/#faq`, `/en/#faq`, `/de/#faq`). Confirm six accordion items; new ones cover ISO 27001 (answer: no), data security, and general certification.
 4. **Footer:** Confirm version **1.1.15** on Spanish (`Versión`), English (`Version`), Catalan (`Versió`), German (`Version`).
 5. **Links:** Blog links in new FAQs resolve (`/doc/`, `/ca/doc/`, `/en/doc/`, `/de/doc/`). Contact anchors scroll to `#contact`.

@@ -177,16 +177,16 @@ def post_task_completion_note(task_path: Path, issue_id: int | None = None) -> s
     Returns: "posted", "skipped", or "failed".
     """
     if not redmine_configured():
-        print("  Redmine skip — set REDMINE_API_KEY and REDMINE_ISSUE_ID in autoagents/.env", file=sys.stderr)
+        print("  Redmine skip, set REDMINE_API_KEY and REDMINE_ISSUE_ID in autoagents/.env", file=sys.stderr)
         return "failed"
 
     rid = issue_id if issue_id is not None else int(REDMINE_ISSUE_ID)
     if rid <= 0:
-        print("  Redmine skip — invalid REDMINE_ISSUE_ID", file=sys.stderr)
+        print("  Redmine skip, invalid REDMINE_ISSUE_ID", file=sys.stderr)
         return "failed"
 
     if issue_has_note_marker(rid, REDMINE_NOTE_MARKER, task_path.name):
-        print(f"  Redmine skip #{rid} — note already exists for {task_path.name}")
+        print(f"  Redmine skip #{rid}, note already exists for {task_path.name}")
         return "skipped"
 
     text = task_path.read_text(encoding="utf-8")
@@ -196,10 +196,10 @@ def post_task_completion_note(task_path: Path, issue_id: int | None = None) -> s
     try:
         add_redmine_note(REDMINE_BASE_URL, REDMINE_API_KEY, rid, note_body)
     except IssueNotFound:
-        print(f"  Redmine error — issue #{rid} not found", file=sys.stderr)
+        print(f"  Redmine error - issue #{rid} not found", file=sys.stderr)
         return "failed"
     except RedmineError as exc:
-        print(f"  Redmine error — {exc}", file=sys.stderr)
+        print(f"  Redmine error - {exc}", file=sys.stderr)
         return "failed"
 
     print(f"  Redmine note posted: #{rid} ({task_path.name})")
@@ -209,7 +209,7 @@ def post_task_completion_note(task_path: Path, issue_id: int | None = None) -> s
 def sync_redmine_closed_tasks(tasks_dir: Path) -> int:
     """Post Redmine notes for CLOSED-* files in tasks/ and tasks/done/."""
     if not redmine_configured():
-        print("Redmine not configured — skip closed-task notes", file=sys.stderr)
+        print("Redmine not configured, skip closed-task notes", file=sys.stderr)
         return 0
 
     posted = 0

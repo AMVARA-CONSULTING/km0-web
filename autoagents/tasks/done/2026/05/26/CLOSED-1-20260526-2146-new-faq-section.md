@@ -3,7 +3,7 @@
 
 - **What happened:** GitHub issue #1 requested a multilingual FAQ section on the landing page, seeded with a hosting-location Q&A.
 - **What was done:** Added `Faq.astro`, wired FAQ i18n in ca/en/de/es, and linked the section from `Landing.astro` and `Header.astro` nav (`#faq`).
-- **What was tested:** Tester verified Docker build, locale HTTP smoke (200), FAQ content and accordion in all four locales, section placement, and grep checks — all passed.
+- **What was tested:** Tester verified Docker build, locale HTTP smoke (200), FAQ content and accordion in all four locales, section placement, and grep checks, all passed.
 - **Why closed:** All acceptance and testing criteria passed.
 - **Closed at (UTC):** 2026-05-26 21:49
 ---
@@ -17,13 +17,13 @@
 - **Labels:** (none)
 
 ## Problem / goal
-Add a new FAQ section to the landing page that matches the existing clean visual style. Content must be available in all four site locales (ca, en, de, es). Seed the section with one Q&A about where the service is hosted (Falkenstein, Germany — Hetzner); polish the answer copy beyond the raw issue text.
+Add a new FAQ section to the landing page that matches the existing clean visual style. Content must be available in all four site locales (ca, en, de, es). Seed the section with one Q&A about where the service is hosted (Falkenstein, Germany, Hetzner); polish the answer copy beyond the raw issue text.
 
 ## High-level instructions for coder
 - Read full issue at https://github.com/AMVARA-CONSULTING/km0-web/issues/1
 - Add a new FAQ component (e.g. `src/components/Faq.astro`) following patterns used by existing sections (`Values`, `Services`, `Contact`): `section-pad`, `heading-section`, `data-reveal`, existing tokens from `src/styles/`.
 - Wire FAQ strings into all four locale files under `src/i18n/` (`ca.json`, `en.json`, `de.json`, `es.json`); extend `Messages` types in `src/i18n/types.ts` as needed.
-- Include the section on the landing page in `src/views/Landing.astro` (sensible placement — e.g. before Contact).
+- Include the section on the landing page in `src/views/Landing.astro` (sensible placement, e.g. before Contact).
 - Optional: add a nav anchor in `nav` i18n keys and `Header.astro` if it fits existing nav patterns.
 - First FAQ entry:
   - **Q:** Where is the service hosted?
@@ -67,7 +67,7 @@ Add a new FAQ section to the landing page that matches the existing clean visual
 
 ### Environment
 - **Branch:** `main`
-- **Build method:** `docker compose build && docker compose up -d` (npm not on host; Astro build ran inside Docker — 20 pages, no errors)
+- **Build method:** `docker compose build && docker compose up -d` (npm not on host; Astro build ran inside Docker - 20 pages, no errors)
 - **URLs:** `http://127.0.0.1:9180/` (local loopback)
 
 ### What was tested
@@ -79,7 +79,7 @@ All criteria from **Testing instructions** §1–7; optional production (§8) at
 |---|-----------|--------|----------|
 | 1 | Docker build completes without errors | **PASS** | Astro build: `20 page(s) built in 2.13s`, `[build] Complete!` |
 | 2 | Local deploy (`docker compose up -d`) | **PASS** | Container `km0-web` Up, port `127.0.0.1:9180->80/tcp` |
-| 3 | HTTP smoke — all locales 200 | **PASS** | `/`, `/ca/`, `/en/`, `/de/`, `/doc/`, `/en/doc/day-0/` → `HTTP/1.1 200 OK` |
+| 3 | HTTP smoke - all locales 200 | **PASS** | `/`, `/ca/`, `/en/`, `/de/`, `/doc/`, `/en/doc/day-0/` → `HTTP/1.1 200 OK` |
 | 4 | FAQ section all locales | **PASS** | `id="faq"` present; questions: ES “¿Dónde está alojado el servicio?”, CA “On està allotjat el servei?”, EN “Where is the service hosted?”, DE “Wo wird der Service gehostet?”; all mention Falkenstein + `hetzner.com` link |
 | 5 | Accordion behavior | **PASS** | `<details … open>` on first item; chevron SVG has `group-open:rotate-180`; native `<details>` toggle on summary click (browser-default) |
 | 6 | Placement after Merch, before Contact | **PASS** | HTML order: merch (“Identity on…”) pos 14761 < faq pos 16612 < contact pos 18116 |
@@ -108,4 +108,4 @@ All criteria from **Testing instructions** §1–7; optional production (§8) at
 ```
 
 ### GitHub labels
-Attempted `agent:testing` on issue #1 — failed (403: token lacks label write permission; labels `agent:testing` / `agent:untested` not present in repo).
+Attempted `agent:testing` on issue #1, failed (403: token lacks label write permission; labels `agent:testing` / `agent:untested` not present in repo).

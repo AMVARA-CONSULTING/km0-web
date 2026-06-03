@@ -3,7 +3,7 @@
 
 - **What happened:** The home page needed a strategic redesign so visitors understand KM0 Digital as a community movement, not only a tech provider.
 - **What was done:** Added `Vision.astro` and `Community.astro`, reordered the landing flow, refreshed movement-focused copy in es/ca/en/de, updated header nav (Por qué, Comunidad), and bumped site version to 1.1.8.
-- **What was tested:** Docker build/deploy, HTTP smoke, Spanish home content and section order, navigation, locales, footer version, blog links, KM0 Cloud/Email regressions, and production poll — all **PASS**.
+- **What was tested:** Docker build/deploy, HTTP smoke, Spanish home content and section order, navigation, locales, footer version, blog links, KM0 Cloud/Email regressions, and production poll - all **PASS**.
 - **Why closed:** All test criteria passed; home communicates the movement narrative with progressive disclosure and participation-oriented CTAs.
 - **Closed at (UTC):** 2026-05-31 13:04
 ---
@@ -42,7 +42,7 @@ Redesign the home page so visitors understand KM0 Digital as a community movemen
 
 ## Testing instructions
 
-1. **Build:** `docker compose build` — must complete without errors.
+1. **Build:** `docker compose build`, must complete without errors.
 2. **Deploy locally:** `docker compose up -d`
 3. **HTTP smoke (all 200):**
    - `curl -sI http://127.0.0.1:9180/`
@@ -76,7 +76,7 @@ Redesign the home page so visitors understand KM0 Digital as a community movemen
 ### Environment
 
 - **Branch:** `main` (synced via `./scripts/git-sync-main.sh`)
-- **Build:** `docker compose build && docker compose up -d` — exit 0, km0-web@1.1.8
+- **Build:** `docker compose build && docker compose up -d`, exit 0, km0-web@1.1.8
 - **URLs:** loopback locale paths + `https://km0digital.com/`
 
 ### What was tested
@@ -107,7 +107,7 @@ Build, HTTP smoke, Spanish home content/section order, navigation, locales, foot
 | KM0 Cloud external link | **PASS** | `href="https://cloud.km0digital.com"` |
 | KM0 Email coming-soon modal | **PASS** | `data-service-coming-soon` button + `#service-coming-soon-modal` in HTML |
 | hreflang alternates | **PASS** | es, ca, en, de + x-default on `/` |
-| Production ready | **PASS** | Polled `https://km0digital.com/` — HTTP 200 on attempt 1; body contains new hero copy and Versión 1.1.8 |
+| Production ready | **PASS** | Polled `https://km0digital.com/`, HTTP 200 on attempt 1; body contains new hero copy and Versión 1.1.8 |
 
 ### Overall: **PASS**
 

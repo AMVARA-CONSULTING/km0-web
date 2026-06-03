@@ -3,7 +3,7 @@
 
 - **What happened:** Footer navigation had expanded with duplicate internal links (Home, Mission, Blog, Contact), causing misalignment.
 - **What was done:** Removed duplicate internal nav from `Footer.astro`, kept only the GitHub external link, added an AMVARA company link in the center column, and switched to a balanced 3-column grid layout with i18n updates across all locales.
-- **What was tested:** Docker build/deploy, desktop/mobile footer layout, AMVARA and GitHub links, header regression, locale footers, and HTTP 200 smoke on all paths — all **PASS**.
+- **What was tested:** Docker build/deploy, desktop/mobile footer layout, AMVARA and GitHub links, header regression, locale footers, and HTTP 200 smoke on all paths - all **PASS**.
 - **Why closed:** All test criteria passed; footer shows brand | center meta + AMVARA | GitHub with no internal nav duplication.
 - **Closed at (UTC):** 2026-05-31 13:04
 ---
@@ -38,12 +38,12 @@ The elements in the website's footer are misaligned because a navigation element
 
 ## Testing instructions
 1. Rebuild and deploy: `docker compose build && docker compose up -d`
-2. **Footer layout (desktop ≥768px):** Open `/` — footer shows three balanced columns: brand logo/name (left), copyright + version + AMVARA link (center), GitHub link (right). No Home/Mission/Blog/Contact links in the footer.
-3. **Footer layout (mobile):** Narrow viewport — footer stacks vertically with centered text; AMVARA and GitHub links remain visible.
+2. **Footer layout (desktop ≥768px):** Open `/`, footer shows three balanced columns: brand logo/name (left), copyright + version + AMVARA link (center), GitHub link (right). No Home/Mission/Blog/Contact links in the footer.
+3. **Footer layout (mobile):** Narrow viewport, footer stacks vertically with centered text; AMVARA and GitHub links remain visible.
 4. **AMVARA link:** Click **AMVARA** in footer → opens `https://amvara.de/#/` in a new tab.
 5. **GitHub link:** Click **GitHub** → opens `https://github.com/AMVARA-CONSULTING/km0-web` in a new tab.
 6. **Header unchanged:** Confirm header still shows full nav (Home, Values, Services, etc.) on desktop and hamburger menu on mobile.
-7. **Locales:** Spot-check `/en/`, `/ca/`, `/de/` — footer shows AMVARA + GitHub only; version label localized (Version / Versió / Versión).
+7. **Locales:** Spot-check `/en/`, `/ca/`, `/de/`, footer shows AMVARA + GitHub only; version label localized (Version / Versió / Versión).
 8. Verify HTTP 200: `curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/en/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/de/ http://127.0.0.1:9180/doc/`
 9. Footer version bumped to **1.1.7**.
 
@@ -57,7 +57,7 @@ The elements in the website's footer are misaligned because a navigation element
 ### Environment
 
 - **Branch:** `main` (synced via `./scripts/git-sync-main.sh`)
-- **Build:** `docker compose build && docker compose up -d` — Astro 5.18.2 build completed without errors (32 pages, v1.1.8)
+- **Build:** `docker compose build && docker compose up -d`, Astro 5.18.2 build completed without errors (32 pages, v1.1.8)
 - **URLs:** `http://127.0.0.1:9180/`, locale paths, `https://km0digital.com/`
 
 ### What was tested

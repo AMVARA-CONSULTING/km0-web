@@ -160,7 +160,7 @@ def close_issue(num: int) -> bool:
 def notify_feat_planned(num: int, feat_basename: str) -> bool:
     marker = "agent 001"
     if issue_has_comment_marker(num, marker):
-        print(f"  skip GitHub notify #{num} — Agent 001 comment exists")
+        print(f"  skip GitHub notify #{num}, Agent 001 comment exists")
         return True
     body = (
         f"🤖 **Agent 001:** Added FEAT task for this issue.\n\n"
@@ -184,7 +184,7 @@ def extract_closing_summary(text: str, max_len: int = 3500) -> str:
 
 def notify_issue_closed(num: int, task_path: Path) -> bool:
     if not issue_is_open(num):
-        print(f"  skip close #{num} — already closed on GitHub")
+        print(f"  skip close #{num}, already closed on GitHub")
         return True
     text = task_path.read_text(encoding="utf-8")
     summary = extract_closing_summary(text)
@@ -194,7 +194,7 @@ def notify_issue_closed(num: int, task_path: Path) -> bool:
         + f"\n\nArchived task: `autoagents/tasks/{task_path.name}` (or `done/` after archive)."
     )
     if issue_has_comment_marker(num, "work completed and verified"):
-        print(f"  skip close comment #{num} — completion comment exists")
+        print(f"  skip close comment #{num}, completion comment exists")
     else:
         if not comment_issue(num, body):
             return False
@@ -204,7 +204,7 @@ def notify_issue_closed(num: int, task_path: Path) -> bool:
 def sync_feat_tasks_planned(tasks_dir: Path) -> int:
     """Comment + agent:planned for FEAT-* files missing GitHub sync."""
     if not gh_available():
-        print("gh not available — skip FEAT GitHub sync", file=sys.stderr)
+        print("gh not available, skip FEAT GitHub sync", file=sys.stderr)
         return 0
     ensure_agent_labels()
     synced = 0
@@ -223,7 +223,7 @@ def sync_feat_tasks_planned(tasks_dir: Path) -> int:
 def sync_closed_tasks(tasks_dir: Path) -> int:
     """Comment + close GitHub issues for CLOSED-* task files still in tasks/."""
     if not gh_available():
-        print("gh not available — skip CLOSED GitHub sync", file=sys.stderr)
+        print("gh not available, skip CLOSED GitHub sync", file=sys.stderr)
         return 0
     closed = 0
     for path in sorted(tasks_dir.glob("CLOSED-*.md")):

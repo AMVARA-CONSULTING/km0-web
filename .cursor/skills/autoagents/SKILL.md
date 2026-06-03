@@ -60,4 +60,4 @@ Footer displays **`package.json`** semver. Coders **must** run **`./scripts/bump
 
 ## Direct user chat
 
-Non-task IDE prompts follow **`.cursor/rules/direct-user-prompts.mdc`** — same discipline without task files.
+Non-task IDE prompts follow **`.cursor/rules/direct-user-prompts.mdc`**, same discipline without task files.

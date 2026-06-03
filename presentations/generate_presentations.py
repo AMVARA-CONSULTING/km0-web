@@ -97,7 +97,7 @@ CONTENT = {
                 "bullets": [
                     "Moviment social i tecnològic construït per i per a la comunitat",
                     "Alternativa real a la dependència de Big Tech",
-                    "Serveis oberts, propers i sostenibles — no un altre proveïdor més",
+                    "Serveis oberts, propers i sostenibles, no un altre proveïdor més",
                     "Persones reals darrere del projecte, no un call center anònim",
                 ],
             },
@@ -127,7 +127,7 @@ CONTENT = {
             },
             {
                 "type": "content",
-                "title": "KM0 Cloud — ja en producció",
+                "title": "KM0 Cloud, ja en producció",
                 "bullets": [
                     "Emmagatzematge i col·laboració al núvol com un drive propi",
                     "Comparteix fitxers, sincronitza i treballa en equip",
@@ -139,7 +139,7 @@ CONTENT = {
             },
             {
                 "type": "content",
-                "title": "OpenCloud — la plataforma oberta",
+                "title": "OpenCloud, la plataforma oberta",
                 "bullets": [
                     "Plataforma open source per a fitxers, compartició i col·laboració",
                     "Desenvolupada per OpenCloud GmbH (Heinlein Group)",
@@ -174,7 +174,7 @@ CONTENT = {
                 "title": "Confiança i seguretat",
                 "bullets": [
                     "Infraestructura a la UE (Falkenstein, Alemanya)",
-                    "Operat per AMVARA CONSULTING S.L. — certificat ISO/IEC 27001:2022",
+                    "Operat per AMVARA CONSULTING S.L., certificat ISO/IEC 27001:2022",
                     "Trànsit xifrat TLS · sense vendre dades per a publicitat",
                     "Blog tècnic públic: transparència des del dia zero",
                     "Backups documentats i runbook operatiu",
@@ -189,7 +189,7 @@ CONTENT = {
                     ("Dia 2", "Upgrade a OpenCloud 7 + Dex OIDC + backups"),
                     ("Dia 3", "Domini km0digital.com + Collabora + FAQ multilingüe"),
                     ("Dia 4", "Login LDAP local unificat amb IDM d'OpenCloud"),
-                    ("Dia 5", "Trobada de visió a Masnou — per què i per a qui"),
+                    ("Dia 5", "Trobada de visió a Masnou: per què i per a qui"),
                 ],
             },
             {
@@ -232,7 +232,7 @@ CONTENT = {
                 "bullets": [
                     "Movimiento social y tecnológico construido por y para la comunidad",
                     "Alternativa real a la dependencia de Big Tech",
-                    "Servicios abiertos, cercanos y sostenibles — no otro proveedor más",
+                    "Servicios abiertos, cercanos y sostenibles, no otro proveedor más",
                     "Personas reales detrás del proyecto, no un call center anónimo",
                 ],
             },
@@ -262,7 +262,7 @@ CONTENT = {
             },
             {
                 "type": "content",
-                "title": "KM0 Cloud — ya en producción",
+                "title": "KM0 Cloud, ya en producción",
                 "bullets": [
                     "Almacenamiento y colaboración en la nube como un drive propio",
                     "Comparte archivos, sincroniza y trabaja en equipo",
@@ -274,7 +274,7 @@ CONTENT = {
             },
             {
                 "type": "content",
-                "title": "OpenCloud — la plataforma abierta",
+                "title": "OpenCloud, la plataforma abierta",
                 "bullets": [
                     "Plataforma open source para archivos, compartición y colaboración",
                     "Desarrollada por OpenCloud GmbH (Heinlein Group)",
@@ -309,7 +309,7 @@ CONTENT = {
                 "title": "Confianza y seguridad",
                 "bullets": [
                     "Infraestructura en la UE (Falkenstein, Alemania)",
-                    "Operado por AMVARA CONSULTING S.L. — certificado ISO/IEC 27001:2022",
+                    "Operado por AMVARA CONSULTING S.L., certificado ISO/IEC 27001:2022",
                     "Tráfico cifrado TLS · sin vender datos para publicidad",
                     "Blog técnico público: transparencia desde el día cero",
                     "Backups documentados y runbook operativo",
@@ -324,7 +324,7 @@ CONTENT = {
                     ("Día 2", "Upgrade a OpenCloud 7 + Dex OIDC + backups"),
                     ("Día 3", "Dominio km0digital.com + Collabora + FAQ multilingüe"),
                     ("Día 4", "Login LDAP local unificado con IDM de OpenCloud"),
-                    ("Día 5", "Encuentro de visión en Masnou — por qué y para quién"),
+                    ("Día 5", "Encuentro de visión en Masnou: por qué y para quién"),
                 ],
             },
             {
@@ -367,7 +367,7 @@ CONTENT = {
                 "bullets": [
                     "A social and technological movement built by and for the community",
                     "A real alternative to Big Tech dependency",
-                    "Open, local, and sustainable services — not just another provider",
+                    "Open, local, and sustainable services, not just another provider",
                     "Real people behind the project, not an anonymous call centre",
                 ],
             },
@@ -397,7 +397,7 @@ CONTENT = {
             },
             {
                 "type": "content",
-                "title": "KM0 Cloud — live in production",
+                "title": "KM0 Cloud, live in production",
                 "bullets": [
                     "Cloud storage and collaboration like your own drive",
                     "Share files, sync, and work as a team",
@@ -409,7 +409,7 @@ CONTENT = {
             },
             {
                 "type": "content",
-                "title": "OpenCloud — the open platform",
+                "title": "OpenCloud, the open platform",
                 "bullets": [
                     "Open-source platform for files, sharing, and collaboration",
                     "Built by OpenCloud GmbH (Heinlein Group)",
@@ -444,7 +444,7 @@ CONTENT = {
                 "title": "Trust and security",
                 "bullets": [
                     "EU infrastructure (Falkenstein, Germany)",
-                    "Operated by AMVARA CONSULTING S.L. — ISO/IEC 27001:2022 certified",
+                    "Operated by AMVARA CONSULTING S.L., ISO/IEC 27001:2022 certified",
                     "TLS-encrypted traffic · no selling data for advertising",
                     "Public technical blog: transparency from day zero",
                     "Documented backups and operational runbook",
@@ -459,7 +459,7 @@ CONTENT = {
                     ("Day 2", "Upgrade to OpenCloud 7 + Dex OIDC + backups"),
                     ("Day 3", "km0digital.com domain + Collabora + multilingual FAQ"),
                     ("Day 4", "Unified local LDAP login with OpenCloud IDM"),
-                    ("Day 5", "Vision meeting in Masnou — why and for whom"),
+                    ("Day 5", "Vision meeting in Masnou: why and for whom"),
                 ],
             },
             {
@@ -468,7 +468,7 @@ CONTENT = {
                 "bullets": [
                     "Small teams with modern tools (including AI) can compete with large structures",
                     "Honest pricing based on real cost, not on monetising your data",
-                    "Human support and proximity — meet in person if needed",
+                    "Human support and proximity: meet in person if needed",
                     "Local = geographic (Barcelona/Masnou), operational, and already running",
                 ],
             },

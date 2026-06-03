@@ -13,7 +13,7 @@ Copy structure when creating FEAT files manually (001 agent usually creates thes
 <condensed from issue>
 
 ## High-level instructions for coder
-- <bullets — no code patches>
+- <bullets, no code patches>
 - Reference docs/runbook.md when ops-related
 
 ## Testing instructions

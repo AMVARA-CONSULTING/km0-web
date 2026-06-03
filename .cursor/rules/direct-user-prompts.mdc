@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Direct user prompts (IDE chat)
 
-When the user writes **directly** in Cursor chat — not a pre-built TASK/FEAT/TEST file or autoagents step message — apply the same discipline as **autoagents** coders and testers.
+When the user writes **directly** in Cursor chat, not a pre-built TASK/FEAT/TEST file or autoagents step message - apply the same discipline as **autoagents** coders and testers.
 
 ## Language
 
@@ -14,7 +14,7 @@ When the user writes **directly** in Cursor chat — not a pre-built TASK/FEAT/T
 - Chat replies, summaries, and explanations
 - New or updated docs (`.md`, `.red`, runbook notes, task files, comments)
 - Commit messages, PR descriptions, GitHub issue/comment text drafted by the agent
-- Redmine/Textile exports (`.red`) — always English
+- Redmine/Textile exports (`.red`), always English
 
 User messages may be in any language; respond in English by default.
 
@@ -30,7 +30,7 @@ Any change under `src/` or other built site paths **must** run **`./scripts/bump
 
 ## Implementation
 
-- **Minimal scope** — smallest correct diff; match existing Astro/i18n conventions.
+- **Minimal scope**, smallest correct diff; match existing Astro/i18n conventions.
 - **Paths:** `src/pages/`, `src/views/`, `src/components/`, `src/i18n/`, `src/content/doc/`, `astro.config.mjs`, `nginx/`, `docs/`.
 - **Never commit** `.env`, tokens, or secrets.
 - **No new host packages** unless the user explicitly asks; use `npm run build` and Docker per runbook.

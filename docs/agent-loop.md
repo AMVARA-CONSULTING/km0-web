@@ -1,4 +1,4 @@
-# autoagents loop — km0-web
+# autoagents loop - km0-web
 
 Orchestrated multi-agent workflow using **cursor-agent** and **GitHub Issues**. No Ollama or local LLM required.
 
@@ -7,7 +7,7 @@ Orchestrated multi-agent workflow using **cursor-agent** and **GitHub Issues**. 
 ```bash
 # 1. GitHub CLI (Luipy56)
 cp autoagents/.env.example autoagents/.env
-# Edit .env — set GH_TOKEN if gh is not logged in
+# Edit .env, set GH_TOKEN if gh is not logged in
 ./scripts/setup-autoagents-gh.sh
 
 # 2. Single step
@@ -52,8 +52,8 @@ Create labels in the repo if missing.
 
 ## Direct user prompts vs autoagents
 
-- **autoagents loop** — structured TASK/FEAT/TEST workflow driven by task files and GitHub.
-- **Direct IDE chat** — follow **`.cursor/rules/direct-user-prompts.mdc`** (same engineering discipline, no task file required).
+- **autoagents loop**, structured TASK/FEAT/TEST workflow driven by task files and GitHub.
+- **Direct IDE chat**, follow **`.cursor/rules/direct-user-prompts.mdc`** (same engineering discipline, no task file required).
 
 ## Environment
 
@@ -73,7 +73,7 @@ Preflight digest: `autoagents/.runtime/001-latest-context.txt`
 
 ## GitHub comments and close (deterministic)
 
-Shell/Python sync — do not rely on cursor-agent alone:
+Shell/Python sync - do not rely on cursor-agent alone:
 
 | When | Script |
 |------|--------|

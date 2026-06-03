@@ -10,7 +10,7 @@ When editing files under `autoagents/` or executing agent steps:
 
 ## Task filenames
 
-`<STATUS>-<issue>-<YYYYMMDD>-<HHMM>-<slug>.md` — see `autoagents/TASKS-README.md`.
+`<STATUS>-<issue>-<YYYYMMDD>-<HHMM>-<slug>.md`, see `autoagents/TASKS-README.md`.
 
 ## Before git-changing steps
 

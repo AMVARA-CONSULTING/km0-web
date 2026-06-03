@@ -1,12 +1,14 @@
 {
   "name": "km0-web",
   "type": "module",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check:no-em-dash": "./scripts/check-no-em-dash.sh",
+    "prebuild": "npm run check:no-em-dash"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",

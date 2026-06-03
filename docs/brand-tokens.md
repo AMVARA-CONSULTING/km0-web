@@ -1,4 +1,4 @@
-# Kilómetro 0 Digital — brand tokens
+# Kilómetro 0 Digital - brand tokens
 
 ## Colors
 

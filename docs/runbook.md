@@ -1,4 +1,4 @@
-# Operations Runbook — Kilómetro 0 Digital Web
+# Operations Runbook - Kilómetro 0 Digital Web
 
 **URL:** https://km0digital.com (`/` = Spanish default locale) · **Català:** `/ca/` · **English:** `/en/` · **Deutsch:** `/de/` · **Blog:** `/doc/` (nav label: “Blog”)
 

@@ -26,17 +26,17 @@ else
   else
     echo "gh is not authenticated."
     echo ""
-    echo "Option A — token file (recommended on server):"
+    echo "Option A - token file (recommended on server):"
     echo "  1. Create a fine-grained PAT at https://github.com/settings/tokens"
     echo "     Permissions: Issues (Read and write), Contents (Read), Metadata (Read)"
     echo "     Expiration: max 366 days (AMVARA-CONSULTING org forbids longer fine-grained PATs)"
     echo "     Repository: AMVARA-CONSULTING/km0-web"
-    echo "     (Comments, labels, and close require Issues write — not read-only)"
+    echo "     (Comments, labels, and close require Issues write, not read-only)"
     echo "  2. cp autoagents/.env.example autoagents/.env"
     echo "  3. Set GH_TOKEN=github_pat_... in autoagents/.env"
     echo "  4. Re-run: ./scripts/setup-autoagents-gh.sh"
     echo ""
-    echo "Option B — interactive login:"
+    echo "Option B - interactive login:"
     echo "  gh auth login --hostname github.com --git-protocol ssh --scopes repo,read:org"
     exit 1
   fi
@@ -74,24 +74,24 @@ echo ""
 echo "Testing issue write (comment permission) ..."
 PROBE_ISSUE="$(gh issue list --repo "$GH_REPO" --state open -L 1 --json number -q '.[0].number' 2>/dev/null || true)"
 if [[ -z "${PROBE_ISSUE:-}" ]]; then
-  echo "  (skip: no open issues to probe — create one issue and re-run to verify write access)"
+  echo "  (skip: no open issues to probe, create one issue and re-run to verify write access)"
 else
-  PROBE_BODY="🤖 autoagents setup probe — safe to delete ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+  PROBE_BODY="🤖 autoagents setup probe, safe to delete ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
   if gh api -X POST "repos/${GH_REPO}/issues/${PROBE_ISSUE}/comments" -f body="$PROBE_BODY" >/dev/null 2>&1; then
     echo "  OK: GH_TOKEN can comment on issues (#${PROBE_ISSUE})."
   else
     echo "" >&2
     echo "ERROR: GH_TOKEN cannot comment on issues (HTTP 403 / addComment)." >&2
-    echo "  Issue list works but write fails — permissions in the UI may already be correct." >&2
+    echo "  Issue list works but write fails, permissions in the UI may already be correct." >&2
     echo "" >&2
     echo "  Most likely: AMVARA-CONSULTING requires *approval* for fine-grained PATs." >&2
     echo "  Until approved, tokens can only READ public repos (not comment/label/close)." >&2
     echo "" >&2
-    echo "  Fix A — approve the token (org owner):" >&2
+    echo "  Fix A - approve the token (org owner):" >&2
     echo "    https://github.com/organizations/AMVARA-CONSULTING/settings/personal-access-token-requests" >&2
     echo "    → Pending requests → Approve the Luipy56 token" >&2
     echo "" >&2
-    echo "  Fix B — classic PAT (if org allows classic tokens):" >&2
+    echo "  Fix B - classic PAT (if org allows classic tokens):" >&2
     echo "    https://github.com/settings/tokens → Generate new token (classic) → scope: repo" >&2
     echo "" >&2
     echo "  Also verify fine-grained PAT:" >&2

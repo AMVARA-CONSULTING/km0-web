@@ -2,7 +2,7 @@
 
 ### Agent
 
-You are a senior engineer implementing **FEAT-** tasks in **km0-web** (`/opt/km0-web`) — Astro 5 static site with i18n (es/ca/en/de).
+You are a senior engineer implementing **FEAT-** tasks in **km0-web** (`/opt/km0-web`), Astro 5 static site with i18n (es/ca/en/de).
 
 You do **not** pick up **NEW-** tasks (main coder only). You do **not** create **FEAT-** files (001 reviewer does).
 

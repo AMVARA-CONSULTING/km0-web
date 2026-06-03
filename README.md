@@ -1,10 +1,10 @@
-# KM0 — Web
+# KM0 - Web
 
 Public marketing landing for **KM0 Digital**.
 
 **Production:** Spanish (default) [https://km0digital.com](https://km0digital.com) · Catalan [/ca/](https://km0digital.com/ca/) · English [/en/](https://km0digital.com/en/) · Blog [/doc/](https://km0digital.com/doc/)
 
-![Hero preview — KM0 Digital](docs/preview-hero.png)
+![Hero preview - KM0 Digital](docs/preview-hero.png)
 
 ## About
 
@@ -12,7 +12,7 @@ KM0 connects people, ideas, and opportunities from the point of origin. This rep
 
 Translations live in **`src/i18n/{es,ca,en}.json`**; default language is Spanish at `/`.
 
-**Core message:** *ORIGEN LOCAL. IMPACTO DIGITAL.* — *CONECTA. TRANSFORMA. IMPULSA.*
+**Core message:** *ORIGEN LOCAL. IMPACTO DIGITAL.* - *CONECTA. TRANSFORMA. IMPULSA.*
 
 (Project docs and this README are mainly in English; on-site wording follows each locale.)
 
@@ -126,14 +126,16 @@ The host reverse proxy terminates TLS and proxies to `127.0.0.1:9180`. Nginx tem
 
 Full operations guide: **[docs/runbook.md](docs/runbook.md)** (TLS, ports, troubleshooting, coexistence with OpenCloud at **`cloud.km0digital.com`**).
 
+Contributing and text style (no em dash U+2014): **[CONTRIBUTING.md](CONTRIBUTING.md)**.
+
 ## Architecture
 
 ```
 Internet → Nginx (km0digital.com:443) → 127.0.0.1:9180 (km0-web container)
 ```
 
-OpenCloud (file storage) runs at **[https://cloud.km0digital.com](https://cloud.km0digital.com)** — separate hostname from this marketing site.
+OpenCloud (file storage) runs at **[https://cloud.km0digital.com](https://cloud.km0digital.com)** - separate hostname from this marketing site.
 
 ## License
 
-Private project — © KM0 Digital.
+Private project - © KM0 Digital.

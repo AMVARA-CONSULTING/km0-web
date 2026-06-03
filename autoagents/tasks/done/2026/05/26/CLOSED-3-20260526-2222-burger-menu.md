@@ -3,7 +3,7 @@
 
 - **What happened:** The site had no mobile navigation menu, so small-screen users could not reach site sections.
 - **What was done:** Implemented a responsive hamburger toggle and collapsible mobile nav panel in `Header.astro` with accessibility attributes, scroll lock, and localized open/close labels across all four locales.
-- **What was tested:** Mobile/desktop markup, eight mobile nav links, localized aria-labels (ES/EN/CA/DE), HTTP 200 on loopback and production — **PASS**.
+- **What was tested:** Mobile/desktop markup, eight mobile nav links, localized aria-labels (ES/EN/CA/DE), HTTP 200 on loopback and production - **PASS**.
 - **Why closed:** Tester report overall **PASS**; all acceptance criteria met.
 - **Closed at (UTC):** 2026-05-26 22:38
 ---
@@ -43,7 +43,7 @@ Currently, the website does not have a hamburger menu for small screens, so user
 5. **Blog link:** Open menu → tap **Blog** → navigates to `/doc/`.
 6. **Close:** Re-open menu → press Escape or tap X → menu closes and body scroll restores.
 7. **Desktop (≥768px):** At wide viewport, hamburger button and mobile panel must not appear; horizontal nav links remain visible.
-8. **Locales:** Repeat open/close on `/en/` — button `aria-label` should read “Open menu” / “Close menu”. Spot-check `/ca/` and `/de/` for localized labels.
+8. **Locales:** Repeat open/close on `/en/`, button `aria-label` should read “Open menu” / “Close menu”. Spot-check `/ca/` and `/de/` for localized labels.
 9. Verify HTTP 200: `curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/en/ http://127.0.0.1:9180/doc/`
 10. Footer version bumped to **1.1.3**.
 

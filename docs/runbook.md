@@ -270,9 +270,18 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 │   ├── container.conf      # nginx inside container
 │   └── sites-available/km0 # host vhost template
 └── docs/
-    ├── runbook.md          # this file
-    └── brand-tokens.md     # colors, copy
+    ├── runbook.md                  # this file
+    ├── brand-tokens.md             # colors, copy
+    └── user-ideas-queue-plan.md    # user comment intake (queue + secret processor)
 ```
+
+---
+
+## Related design docs
+
+| Doc | Topic |
+|-----|--------|
+| [user-ideas-queue-plan.md](./user-ideas-queue-plan.md) | Public form → spool JSON → host-only secret script (not implemented) |
 
 ---
 

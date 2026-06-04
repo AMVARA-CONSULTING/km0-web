@@ -214,6 +214,20 @@
     "whatsappQrAlt": "QR-Code zum Beitritt zur km0-WhatsApp-Gruppe",
     "whatsappAria": "Link zur km0-WhatsApp-Gruppe öffnen"
   },
+  "ideas": {
+    "metaTitle": "Verbesserung vorschlagen oder Problem melden - Kilometer 0 Digital",
+    "metaDescription": "Ein Ort, um Verbesserungen, Ideen oder Probleme zu teilen. Das technische Team prüft und bearbeitet sie.",
+    "heading": "Verbesserung vorschlagen oder Problem melden",
+    "intro": "Ein Ort, um Verbesserungen, Ideen oder Probleme zu teilen. Das technische Team prüft und bearbeitet sie.",
+    "ideaLabel": "Ihre Nachricht",
+    "ideaPlaceholder": "Beschreiben Sie Ihre Idee oder das aufgetretene Problem…",
+    "nameLabel": "Name",
+    "namePlaceholder": "Name (optional)",
+    "submit": "Senden",
+    "success": "Danke. Ihr Feedback ist eingegangen.",
+    "error": "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+    "charCount": "{count} / 4000"
+  },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
     "github": "GitHub",

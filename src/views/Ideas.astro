@@ -1,0 +1,39 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import IdeasForm from '../components/IdeasForm.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/ideas/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={messages.ideas.metaTitle}
+  pageDescription={messages.ideas.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <div class="mx-auto max-w-2xl">
+      <header class="mb-10 text-center">
+        <h1 class="heading-section text-navy">{messages.ideas.heading}</h1>
+        <p class="doc-index-intro mt-6">{messages.ideas.intro}</p>
+      </header>
+      <IdeasForm locale={locale} messages={messages} />
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

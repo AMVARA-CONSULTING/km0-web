@@ -1,0 +1,81 @@
+---
+import type { Locale, Messages } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
+---
+
+<form
+  id="ideas-form"
+  class="ideas-form rounded-2xl border border-navy/10 bg-surface p-6 md:p-8"
+  novalidate
+  data-locale={locale}
+  data-char-count-template={m.ideas.charCount}
+>
+  <div id="ideas-fields" class="flex flex-col gap-6">
+    <div>
+      <label for="ideas-idea" class="mb-2 block text-sm font-medium text-navy/80">
+        {m.ideas.ideaLabel}
+      </label>
+      <textarea
+        id="ideas-idea"
+        name="idea"
+        required
+        maxlength="4000"
+        rows="8"
+        class="ideas-input w-full resize-y rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-navy shadow-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-navy/10"
+        placeholder={m.ideas.ideaPlaceholder}></textarea>
+      <p id="ideas-char-count" class="mt-2 text-right text-xs text-navy/50" aria-live="polite">
+        {m.ideas.charCount.replace('{count}', '0')}
+      </p>
+    </div>
+
+    <div>
+      <label for="ideas-name" class="mb-2 block text-sm font-medium text-navy/80">
+        {m.ideas.nameLabel}
+      </label>
+      <input
+        type="text"
+        id="ideas-name"
+        name="name"
+        maxlength="200"
+        autocomplete="name"
+        class="ideas-input w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-navy shadow-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-navy/10"
+        placeholder={m.ideas.namePlaceholder}
+      />
+    </div>
+
+    <div class="ideas-hp" aria-hidden="true">
+      <label for="ideas-website">Website</label>
+      <input type="text" id="ideas-website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <p id="ideas-error" class="hidden text-sm text-red-700" role="alert">{m.ideas.error}</p>
+
+    <button type="submit" class="btn-primary w-full sm:w-auto" data-ideas-submit>
+      {m.ideas.submit}
+    </button>
+  </div>
+
+  <p id="ideas-success" class="hidden text-center text-lg text-navy/80" role="status">
+    {m.ideas.success}
+  </p>
+</form>
+
+<script>
+  import '../scripts/ideas-form.ts';
+</script>
+
+<style>
+  .ideas-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+</style>

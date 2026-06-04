@@ -214,6 +214,20 @@
     "whatsappQrAlt": "Código QR para unirse al grupo de WhatsApp de km0",
     "whatsappAria": "Abrir enlace al grupo de WhatsApp de km0"
   },
+  "ideas": {
+    "metaTitle": "Enviar una mejora o reportar un problema - Kilómetro 0 Digital",
+    "metaDescription": "Comparte mejoras, ideas o problemas que hayas encontrado. El equipo técnico los revisará y los atenderá.",
+    "heading": "Envía una mejora o reporta un problema",
+    "intro": "Un espacio para compartir mejoras, ideas o problemas que hayas encontrado. El equipo técnico los revisará y los atenderá.",
+    "ideaLabel": "Tu mensaje",
+    "ideaPlaceholder": "Describe tu idea o el problema que encontraste…",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "nombre (opcional)",
+    "submit": "Enviar",
+    "success": "Gracias. Hemos recibido tu comentario.",
+    "error": "No se pudo enviar. Inténtalo de nuevo más tarde.",
+    "charCount": "{count} / 4000"
+  },
   "footer": {
     "rights": "Todos los derechos reservados.",
     "github": "GitHub",

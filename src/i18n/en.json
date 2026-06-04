@@ -214,6 +214,20 @@
     "whatsappQrAlt": "QR code to join the km0 WhatsApp group",
     "whatsappAria": "Open link to the km0 WhatsApp group"
   },
+  "ideas": {
+    "metaTitle": "Submit an improvement or report an issue - Kilometer 0 Digital",
+    "metaDescription": "A place to share improvements, ideas, or problems you have found. The technical team will review and address them.",
+    "heading": "Submit an improvement or report an issue",
+    "intro": "A place to share improvements, ideas, or problems you have found. The technical team will review and address them.",
+    "ideaLabel": "Your message",
+    "ideaPlaceholder": "Describe your idea or the issue you encountered…",
+    "nameLabel": "Name",
+    "namePlaceholder": "name (optional)",
+    "submit": "Send",
+    "success": "Thank you. Your feedback has been received.",
+    "error": "Could not send. Please try again later.",
+    "charCount": "{count} / 4000"
+  },
   "footer": {
     "rights": "All rights reserved.",
     "github": "GitHub",

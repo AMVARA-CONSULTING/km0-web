@@ -1,0 +1,15 @@
+[
+  {
+    "id": "ideas",
+    "execute-command": "/hooks/receive-idea.sh",
+    "command-working-directory": "/tmp",
+    "include-command-output-in-response": true,
+    "pass-arguments-to-command": [
+      { "source": "entire-payload" },
+      { "source": "header", "name": "User-Agent" },
+      { "source": "header", "name": "X-Real-IP" },
+      { "source": "header", "name": "X-Forwarded-For" }
+    ],
+    "http-methods": ["POST"]
+  }
+]

@@ -214,6 +214,20 @@
     "whatsappQrAlt": "Codi QR per unir-se al grup de WhatsApp de km0",
     "whatsappAria": "Obrir enllaç al grup de WhatsApp de km0"
   },
+  "ideas": {
+    "metaTitle": "Envia una millora o informa d'un problema - Kilòmetre 0 Digital",
+    "metaDescription": "Un espai per compartir millores, idees o problemes que hagis trobat. L'equip tècnic els revisarà i els atendrà.",
+    "heading": "Envia una millora o informa d'un problema",
+    "intro": "Un espai per compartir millores, idees o problemes que hagis trobat. L'equip tècnic els revisarà i els atendrà.",
+    "ideaLabel": "El teu missatge",
+    "ideaPlaceholder": "Descriu la teva idea o el problema que has trobat…",
+    "nameLabel": "Nom",
+    "namePlaceholder": "nom (opcional)",
+    "submit": "Enviar",
+    "success": "Gràcies. Hem rebut el teu comentari.",
+    "error": "No s'ha pogut enviar. Torna-ho a provar més tard.",
+    "charCount": "{count} / 4000"
+  },
   "footer": {
     "rights": "Tots els drets reservats.",
     "github": "GitHub",

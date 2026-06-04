@@ -159,6 +159,20 @@ export interface Messages {
     whatsappQrAlt: string;
     whatsappAria: string;
   };
+  ideas: {
+    metaTitle: string;
+    metaDescription: string;
+    heading: string;
+    intro: string;
+    ideaLabel: string;
+    ideaPlaceholder: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    submit: string;
+    success: string;
+    error: string;
+    charCount: string;
+  };
   footer: {
     rights: string;
     github: string;

@@ -40,6 +40,25 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 
 **Add a post:** create the `.md` in each locale (same filename slug, e.g. `day-0.md`), then `docker compose build && docker compose up -d`.
 
+### User ideas (`/ideas/`)
+
+| Path | View |
+|------|------|
+| `/ideas/`, `/ca/ideas/`, `/en/ideas/`, `/de/ideas/` | `src/views/Ideas.astro` |
+
+- Form POST: `/hooks/ideas` (proxied to `km0-ideas-receiver` on `:9181`)
+- Receiver script: `scripts/receive-idea.sh` (webhook hook in `hooks/hooks.json`)
+- Queue volume: Docker `km0-ideas-spool` → `/var/spool/km0-ideas/incoming` (production host path: `/var/spool/km0-ideas/incoming`)
+- Secret processor (Script 2): host-only, see [user-ideas-queue-plan.md](./user-ideas-queue-plan.md)
+
+```bash
+curl -sI http://127.0.0.1:9180/ideas/ http://127.0.0.1:9180/en/ideas/
+curl -s -X POST http://127.0.0.1:9180/hooks/ideas \
+  -H 'Content-Type: application/json' \
+  -d '{"idea":"Test feedback","locale":"en"}'
+docker compose exec km0-ideas-receiver ls -la /var/spool/km0-ideas/incoming/
+```
+
 ---
 
 ## Component inventory
@@ -49,6 +68,7 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 | Astro site | km0-web 1.1.0 | `/opt/km0-web/` |
 | Docker image | `km0-km0-web` | Built from `/opt/km0-web/Dockerfile` |
 | Container | `km0-web` | `127.0.0.1:9180→80` |
+| Ideas receiver | `km0-ideas-receiver` | `127.0.0.1:9181→9000` (webhook) |
 | Nginx vhost | `km0digital.com` | `/etc/nginx/sites-available/km0` |
 | TLS | Let's Encrypt | `/etc/letsencrypt/live/km0digital.com/` |
 | OpenCloud (separate) | `cloud.km0digital.com` → `:9200` | `/opt/opencloud/` |
@@ -281,7 +301,7 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 
 | Doc | Topic |
 |-----|--------|
-| [user-ideas-queue-plan.md](./user-ideas-queue-plan.md) | Public form → spool JSON → host-only secret script (not implemented) |
+| [user-ideas-queue-plan.md](./user-ideas-queue-plan.md) | Public form → spool JSON → host-only secret script |
 
 ---
 

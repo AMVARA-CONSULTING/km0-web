@@ -7,3 +7,32 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:9180:80"
+    networks:
+      - km0
+    depends_on:
+      - km0-ideas-receiver
+
+  km0-ideas-receiver:
+    build:
+      context: .
+      dockerfile: Dockerfile.receiver
+    container_name: km0-ideas-receiver
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:9181:9000"
+    environment:
+      KM0_IDEAS_QUEUE: /var/spool/km0-ideas/incoming
+    volumes:
+      - km0-ideas-spool:/var/spool/km0-ideas/incoming
+    command:
+      - -verbose
+      - -hooks=/hooks/hooks.json
+    networks:
+      - km0
+
+networks:
+  km0:
+    name: km0
+
+volumes:
+  km0-ideas-spool:

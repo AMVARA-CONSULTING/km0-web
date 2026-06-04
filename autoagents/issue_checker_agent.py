@@ -168,6 +168,9 @@ def run_workflow() -> bool:
         if not details:
             continue
         labels = [l.get("name", "") for l in details.get("labels", [])]
+        if "waiting for human validation" in labels:
+            print(f"  skip #{num}, waiting for human validation")
+            continue
         if "agent:planned" in labels:
             print(f"  skip #{num}, agent:planned")
             continue

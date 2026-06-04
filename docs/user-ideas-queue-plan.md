@@ -2,7 +2,7 @@
 
 Plan for collecting public comments from the static site without exposing the downstream secret script. The web only talks to a public receiver; the secret logic runs on the host with no HTTP endpoint.
 
-**Status:** design only (not implemented).  
+**Status:** receiver + public form implemented in repo; secret processor (Script 2) is host-only ops.
 **Related:** [runbook.md](./runbook.md) (deploy and nginx).
 
 ---

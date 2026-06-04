@@ -1,6 +1,6 @@
 ---
-title: "Dia 7 - De la petició de l'usuari a l'issue de GitHub, automatitzat"
-description: "Automatització de punta a punta: formularis /ideas/ i Admin Help encolen JSON, cursor-agent redacta issues estructurats, porta de validació humana i autoagents implementen."
+title: "Dia 7 - De la petició al ticket, automatitzat"
+description: "Automatització de punta a punta: el formulari d'idees i Admin Help converteixen peticions en tickets clars, amb revisió humana abans d'implementar."
 pubDate: 2026-06-04
 locale: ca
 ---
@@ -43,54 +43,48 @@ locale: ca
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">km0-web</p>
-  <h2 class="doc-block-heading">Idees públiques (<code>/ideas/</code>)</h2>
-  <p class="doc-block-intro"><strong>Host:</strong> VPS producció · <strong>Repo:</strong> <a href="https://github.com/AMVARA-CONSULTING/km0-web">AMVARA-CONSULTING/km0-web</a></p>
-  <p>La issue <a href="https://github.com/AMVARA-CONSULTING/km0-web/issues/14">#14</a> va lliurar només el Script 1 (formulari + webhook + encuat). El Script 2, les unitats systemd, el spool en host <code>/var/spool/km0-ideas/</code> i el bind mount Docker mai es van desplegar. JSON s'acumulava a <code>incoming/</code> sense consumidor.</p>
-  <h3 class="doc-block-heading">Què vam desplegar</h3>
+  <p class="doc-block-title">Per què encaixa</p>
+  <h2 class="doc-block-heading">Una solució pràctica per a equips petits</h2>
+  <p class="doc-block-intro">No buscàvem automatitzar per moda. Volíem que una petició útil no es perdés entre un xat, un correu i el cap de qui la rebia. El sistema converteix cada enviament en un ticket llegible, amb context i abast, en pocs segons.</p>
   <ul class="doc-list">
-    <li><strong>Script 2:</strong> <code>scripts/process-idea.sh</code>, <code>scripts/setup-ideas-processor.sh</code>, <code>scripts/autoissue.sh</code>.</li>
-    <li><strong>systemd:</strong> <code>deploy/systemd/km0-idea-processor.{path,service,timer}</code> (path en aparèixer JSON; timer fallback 24 h).</li>
-    <li><strong>Docker:</strong> bind mount <code>/var/spool/km0-ideas/incoming</code> a <code>docker-compose.yml</code>.</li>
-    <li><strong>Autoissue:</strong> prompt <code>autoissue/autoissue-agent.md</code>; <code>cursor-agent</code> escriu esborrany a <code>autoissue/drafts/</code>; parse frontmatter; <code>gh issue create --body-file</code>.</li>
-    <li><strong>Porta:</strong> etiqueta <code>waiting for human validation</code>; <code>issue_checker_agent.py</code> i <code>001-gh-reviewer.md</code> ometen issues etiquetats.</li>
+    <li><strong>Rapidesa:</strong> qui escriu no espera que algú trobi un forat per redactar la incidència.</li>
+    <li><strong>Qualitat:</strong> l'esborrany segueix sempre la mateixa estructura (què passa, per a qui, què s'espera).</li>
+    <li><strong>Control:</strong> res entra en desenvolupament sense passar per una persona de l'equip.</li>
+    <li><strong>Reutilitzable:</strong> el mateix patró serveix per a feedback públic i per a peticions internes.</li>
   </ul>
-  <div class="doc-note"><pre>Browser POST /hooks/ideas
-  → receive-idea.sh → JSON a incoming/
-  → systemd path trigger
-  → autoissue.sh → cursor-agent → esborrany .md
-  → gh issue create → arxiva JSON + esborrany a processed/</pre></div>
-  <p>Verificació: 10/10 PASS (formulari → cua, ~15 s E2E, Markdown net a <a href="https://github.com/AMVARA-CONSULTING/km0-web/issues/17">issue #17</a>, etiqueta aplicada, autoagents ignoren fins treure-la).</p>
+  <p>Per a KM0 encaixa especialment bé: rebem idees de gent no tècnica i les volem tractar amb el mateix rigor que un informe d'un administrador de botiga online.</p>
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">laravel-ecommerce</p>
-  <h2 class="doc-block-heading">Admin Help (staging)</h2>
-  <p class="doc-block-intro"><strong>Staging:</strong> <a href="https://stage-serra.ldeluipy.es">stage-serra.ldeluipy.es</a> · <strong>Branca:</strong> <code>autoagents</code> · <strong>Repo:</strong> <a href="https://github.com/Luipy56/laravel-ecommerce">Luipy56/laravel-ecommerce</a></p>
-  <p>Tres bloquejos resolts el mateix dia: CI en verd però <code>STAGE_DEPLOY_ENABLED=false</code> (contenidor vell, API 404); SSH de deploy trencat (<code>PROD_PORT=60022</code>); Admin Help endarrerit respecte km0 (scheduler 5 min, prompt JSON, sense porta humana).</p>
+  <p class="doc-block-title">On s'aplica</p>
+  <h2 class="doc-block-heading">Dues portes d'entrada, un recorregut</h2>
   <ul class="doc-list">
-    <li><strong>CI/CD:</strong> deploy staging activat via GitHub Actions (<code>stage.yml</code>); secrets SSH corregits; contenidor a <code>0.1.340+</code>.</li>
-    <li><strong>Autoissue alineat amb km0:</strong> <code>autoissue/admin-help-agent.md</code>, <code>AdminHelpIssueProcessor</code>, <code>ProcessAdminHelpIssueJob</code> al POST; fallback diari <code>admin-help:process</code> a les 03:00 UTC.</li>
-    <li><strong>Runtime:</strong> <code>docker-compose.stage.yml</code> munta <code>cursor-agent</code> i auth des de host; <code>GH_TOKEN</code> a <code>.env</code>.</li>
+    <li><strong>Qui fa servir KM0:</strong> el formulari <a href="/ca/ideas/">Idees</a> a km0digital.com. Suggeriments de producte, millores de la web o coses que trobes a faltar en usar el cloud.</li>
+    <li><strong>Qui opera un projecte intern:</strong> la pantalla Admin Help d'una botiga online en staging. Quan algú de l'equip veu una fallada o necessita un canvi i vol deixar-ho registrat amb traçabilitat.</li>
   </ul>
-  <p>Verificat: test E2E autoissue a <a href="https://github.com/Luipy56/laravel-ecommerce/issues/27">issue #27</a> en staging, confirmat per operador. Admin Help en viu a <code>/admin/help</code> (<a href="https://github.com/Luipy56/laravel-ecommerce/issues/26">#26</a>).</p>
+  <p>En ambdós casos el recorregut és el mateix: formulari → cua → ticket redactat → revisió humana → implementació. Canvia qui escriu i on, no la lògica.</p>
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Comparativa</p>
-  <h2 class="doc-block-heading">Dues audiències, un pipeline</h2>
-  <ul class="doc-list">
-    <li><strong>km0-web:</strong> usuari públic → <code>/ideas/</code> → spool en host → systemd path (+ timer 24 h) → exemple <a href="https://github.com/AMVARA-CONSULTING/km0-web/issues/17">#17</a>.</li>
-    <li><strong>laravel-ecommerce:</strong> admin intern → <code>/admin/help</code> → cua Laravel storage → queue job (+ cron diari) → exemple <a href="https://github.com/Luipy56/laravel-ecommerce/issues/27">#27</a>.</li>
-    <li><strong>Compartit:</strong> esborrany cursor-agent, <code>waiting for human validation</code>, autoagents després de treure l'etiqueta.</li>
-  </ul>
+  <p class="doc-block-title">Exemples</p>
+  <h2 class="doc-block-heading">Com es veu a la pràctica</h2>
+  <p class="doc-block-intro">Imagina que algú envia des de <a href="/ca/ideas/">Idees</a>: «M'agradaria un botó per compartir entrades del blog». En uns quinze segons el sistema genera un ticket titulat i ordenat: què demana la persona, en quin idioma ha escrit, quina part del lloc toca. Apareix marcat com a <em>pendent de validació humana</em>.</p>
+  <p>Algú de l'equip el llegeix. Si el text està bé, treu la marca i el ticket passa a la cua d'implementació automàtica. Si cal matisar («només en mòbil», «icona de WhatsApp»), s'edita el ticket abans d'aprovar-lo. Sense tornar a copiar el missatge original a mà.</p>
+  <p>Un altre cas: un administrador de la botiga en staging informa des d'Admin Help que un filtre de productes no desa bé. Mateixa mecànica: ticket clar, revisió, i només llavors entra en el flux de desenvolupament. L'objectiu és que ningú hagi d'endevinar què volia dir qui va escriure.</p>
 </section>
 
 <section class="doc-block doc-block-alt">
+  <p class="doc-block-title">Persones</p>
+  <h2 class="doc-block-heading">Què fa (i què no) l'automatització</h2>
+  <p class="doc-block-intro">La màquina redacta i classifica. La persona decideix. Els agents de desenvolupament no recullen tickets mentre segueixin marcats com a pendents de validació: així evitem implementar a cegues un missatge ambigu o una broma.</p>
+  <p>Per a qui envia una idea, el benefici és simple: escrius una vegada en llenguatge normal i l'equip rep alguna cosa accionable. Per a qui manté el servei, el benefici és deixar de ser el traductor permanent entre «missatge de WhatsApp» i «ticket ben escrit».</p>
+</section>
+
+<section class="doc-block">
   <p class="doc-block-title">Resultat</p>
   <h2 class="doc-block-heading">Què va aconseguir el dia 7</h2>
-  <p class="doc-block-intro">El pas manual entre «algú demana alguna cosa» i «hi ha un issue a GitHub que un desenvolupador o agent pot implementar» desapareix en producció (idees públiques km0) i staging (admin help ecommerce).</p>
-  <p>Push a <code>autoagents</code> a ecommerce actualitza staging en uns dos o tres minuts. Ambdós stacks comparteixen la mateixa porta: redactar el ticket automàticament, retenir validació humana, deixar que autoagents implementin quan s'aprova.</p>
+  <p class="doc-block-intro">El pas manual entre «algú demana alguna cosa» i «hi ha un ticket que es pot implementar» desapareix en producció (idees públiques de KM0) i a l'entorn de proves de l'ecommerce (Admin Help).</p>
+  <p>Avui el cicle complet funciona: petició, ticket redactat, validació humana i implementació assistida per agents. És la peça que faltava per tancar el cercle entre escoltar la comunitat i lliurar canvis amb criteri.</p>
 </section>
 
 <section class="doc-closing-block">

@@ -1,6 +1,6 @@
 ---
-title: "Day 7 - From user request to GitHub issue, automated"
-description: "End-to-end automation: public /ideas/ and admin Help forms enqueue JSON, cursor-agent drafts structured issues, human validation gate, then autoagents implement."
+title: "Day 7 - From request to ticket, automated"
+description: "End-to-end automation: the ideas form and Admin Help turn submissions into clear tickets, with human review before anything gets built."
 pubDate: 2026-06-04
 locale: en
 ---
@@ -43,54 +43,48 @@ locale: en
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">km0-web</p>
-  <h2 class="doc-block-heading">Public ideas (<code>/ideas/</code>)</h2>
-  <p class="doc-block-intro"><strong>Host:</strong> production VPS · <strong>Repo:</strong> <a href="https://github.com/AMVARA-CONSULTING/km0-web">AMVARA-CONSULTING/km0-web</a></p>
-  <p>Issue <a href="https://github.com/AMVARA-CONSULTING/km0-web/issues/14">#14</a> shipped Script 1 only (form + webhook + enqueue). Script 2, systemd units, host spool <code>/var/spool/km0-ideas/</code>, and the Docker bind mount were never deployed. JSON piled up in <code>incoming/</code> with no consumer.</p>
-  <h3 class="doc-block-heading">What we deployed</h3>
+  <p class="doc-block-title">Why it fits</p>
+  <h2 class="doc-block-heading">A practical pattern for small teams</h2>
+  <p class="doc-block-intro">We were not chasing automation for its own sake. We wanted useful requests to stop dying in a chat thread, an inbox, or someone's memory. The system turns each submission into a readable ticket, with context and scope, in seconds.</p>
   <ul class="doc-list">
-    <li><strong>Script 2:</strong> <code>scripts/process-idea.sh</code>, <code>scripts/setup-ideas-processor.sh</code>, <code>scripts/autoissue.sh</code>.</li>
-    <li><strong>systemd:</strong> <code>deploy/systemd/km0-idea-processor.{path,service,timer}</code> (path trigger on new JSON; 24 h timer fallback).</li>
-    <li><strong>Docker:</strong> bind mount <code>/var/spool/km0-ideas/incoming</code> in <code>docker-compose.yml</code>.</li>
-    <li><strong>Autoissue:</strong> <code>autoissue/autoissue-agent.md</code> prompt; <code>cursor-agent</code> writes draft under <code>autoissue/drafts/</code>; parse frontmatter; <code>gh issue create --body-file</code>.</li>
-    <li><strong>Gate:</strong> label <code>waiting for human validation</code>; <code>issue_checker_agent.py</code> and <code>001-gh-reviewer.md</code> skip labelled issues.</li>
+    <li><strong>Speed:</strong> the sender does not wait for someone to find time to write up the incident.</li>
+    <li><strong>Quality:</strong> every draft follows the same shape (what happens, for whom, what is expected).</li>
+    <li><strong>Control:</strong> nothing enters development until a person on the team approves it.</li>
+    <li><strong>Reusable:</strong> the same pattern works for public feedback and internal requests.</li>
   </ul>
-  <div class="doc-note"><pre>Browser POST /hooks/ideas
-  → receive-idea.sh → JSON in incoming/
-  → systemd path trigger
-  → autoissue.sh → cursor-agent → draft .md
-  → gh issue create → archive JSON + draft in processed/</pre></div>
-  <p>Verification: 10/10 PASS (form → queue, ~15 s E2E, clean Markdown on <a href="https://github.com/AMVARA-CONSULTING/km0-web/issues/17">issue #17</a>, label applied, autoagents ignore until removed).</p>
+  <p>For KM0 it is especially apt: we hear from non-technical people and want to treat their input with the same care as a report from an ecommerce admin.</p>
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">laravel-ecommerce</p>
-  <h2 class="doc-block-heading">Admin Help (staging)</h2>
-  <p class="doc-block-intro"><strong>Staging:</strong> <a href="https://stage-serra.ldeluipy.es">stage-serra.ldeluipy.es</a> · <strong>Branch:</strong> <code>autoagents</code> · <strong>Repo:</strong> <a href="https://github.com/Luipy56/laravel-ecommerce">Luipy56/laravel-ecommerce</a></p>
-  <p>Three blockers cleared the same day: CI was green but <code>STAGE_DEPLOY_ENABLED=false</code> (stale container, API 404); broken deploy SSH (<code>PROD_PORT=60022</code>); Admin Help lagged km0 (5 min scheduler, JSON prompt, no human gate).</p>
+  <p class="doc-block-title">Where it applies</p>
+  <h2 class="doc-block-heading">Two entry points, one journey</h2>
   <ul class="doc-list">
-    <li><strong>CI/CD:</strong> staging deploy enabled via GitHub Actions (<code>stage.yml</code>); SSH secrets fixed; container at <code>0.1.340+</code>.</li>
-    <li><strong>Autoissue aligned with km0:</strong> <code>autoissue/admin-help-agent.md</code>, <code>AdminHelpIssueProcessor</code>, <code>ProcessAdminHelpIssueJob</code> on POST; daily fallback <code>admin-help:process</code> at 03:00 UTC.</li>
-    <li><strong>Runtime:</strong> <code>docker-compose.stage.yml</code> mounts <code>cursor-agent</code> and auth from host; <code>GH_TOKEN</code> in <code>.env</code>.</li>
+    <li><strong>KM0 users:</strong> the <a href="/en/ideas/">Ideas</a> form on km0digital.com. Product suggestions, website improvements, or gaps someone notices while using the cloud.</li>
+    <li><strong>People running an internal project:</strong> the Admin Help screen on an online shop in staging. For when a team member spots a bug or needs a change and wants it logged with a clear trail.</li>
   </ul>
-  <p>Verified: <a href="https://github.com/Luipy56/laravel-ecommerce/issues/27">issue #27</a> E2E autoissue test on staging, confirmed by operator. Admin Help live at <code>/admin/help</code> (<a href="https://github.com/Luipy56/laravel-ecommerce/issues/26">#26</a>).</p>
+  <p>In both cases the journey is the same: form → queue → drafted ticket → human review → implementation. Only the writer and the surface change, not the logic.</p>
 </section>
 
 <section class="doc-block">
-  <p class="doc-block-title">Comparison</p>
-  <h2 class="doc-block-heading">Two audiences, one pipeline</h2>
-  <ul class="doc-list">
-    <li><strong>km0-web:</strong> public user → <code>/ideas/</code> → host spool → systemd path (+ 24 h timer) → <a href="https://github.com/AMVARA-CONSULTING/km0-web/issues/17">#17</a> example.</li>
-    <li><strong>laravel-ecommerce:</strong> internal admin → <code>/admin/help</code> → Laravel storage queue → queue job (+ daily cron) → <a href="https://github.com/Luipy56/laravel-ecommerce/issues/27">#27</a> example.</li>
-    <li><strong>Shared:</strong> cursor-agent draft, <code>waiting for human validation</code>, autoagents after label removal.</li>
-  </ul>
+  <p class="doc-block-title">Examples</p>
+  <h2 class="doc-block-heading">What it looks like in practice</h2>
+  <p class="doc-block-intro">Suppose someone submits via <a href="/en/ideas/">Ideas</a>: “I'd like a button to share blog posts.” Within about fifteen seconds the system produces a titled, structured ticket: what the person asked for, which language they used, which part of the site it touches. It is marked <em>waiting for human validation</em>.</p>
+  <p>Someone on the team reads it. If the wording is fine, they remove the mark and the ticket joins the automated implementation queue. If it needs nuance (“mobile only”, “WhatsApp icon”), they edit the ticket before approving. No copying the original message by hand.</p>
+  <p>Another case: a shop admin in staging reports through Admin Help that a product filter does not save correctly. Same mechanics: a clear ticket, a review step, then development. The goal is that nobody has to guess what the sender meant.</p>
 </section>
 
 <section class="doc-block doc-block-alt">
+  <p class="doc-block-title">People</p>
+  <h2 class="doc-block-heading">What automation does (and does not)</h2>
+  <p class="doc-block-intro">The machine drafts and classifies. A person decides. Development agents do not pick up tickets while they are still marked pending validation, so we avoid building on vague messages or noise.</p>
+  <p>For someone sending an idea, the benefit is simple: write once in plain language and the team receives something actionable. For whoever runs the service, the benefit is no longer being the permanent translator between “WhatsApp message” and “well-written ticket”.</p>
+</section>
+
+<section class="doc-block">
   <p class="doc-block-title">Outcome</p>
   <h2 class="doc-block-heading">What day 7 achieved</h2>
-  <p class="doc-block-intro">The manual step between “someone asks for something” and “there is a GitHub issue a developer or agent can implement” is gone in production (km0 public ideas) and staging (ecommerce admin help).</p>
-  <p>Push to <code>autoagents</code> on ecommerce updates staging in about two to three minutes. Both stacks share the same gate: draft the ticket automatically, hold for human validation, then let autoagents implement when approved.</p>
+  <p class="doc-block-intro">The manual step between “someone asks for something” and “there is a ticket that can be implemented” is gone in production (KM0 public ideas) and on the ecommerce staging environment (Admin Help).</p>
+  <p>The full cycle now works: request, drafted ticket, human validation, and agent-assisted implementation. It was the missing piece to close the loop between listening to the community and shipping changes with judgment.</p>
 </section>
 
 <section class="doc-closing-block">

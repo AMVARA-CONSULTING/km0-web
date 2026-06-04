@@ -33,6 +33,7 @@ export interface Messages {
     meaning: string;
     mission: string;
     blog: string;
+    ideas: string;
     tutorials: string;
     faq: string;
     contact: string;

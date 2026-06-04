@@ -1,13 +1,16 @@
 [Unit]
-Description=Process KM0 user idea queue (Script 2)
+Description=Process KM0 user idea queue (autoissue)
 After=network-online.target docker.service
 Wants=network-online.target
 
 [Service]
 Type=oneshot
+TimeoutStartSec=900
+Environment=PATH=/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 Environment=KM0_IDEAS_QUEUE_ROOT=/var/spool/km0-ideas
 Environment=KM0_IDEAS_ENV=/opt/km0-web/autoagents/.env
+Environment=KM0_WEB_ROOT=/opt/km0-web
 Environment=AGENT_GH_REPO=AMVARA-CONSULTING/km0-web
-ExecStart=/opt/km0-web/scripts/process-idea.sh
+ExecStart=/opt/km0-web/scripts/autoissue.sh
 User=root
 Group=root

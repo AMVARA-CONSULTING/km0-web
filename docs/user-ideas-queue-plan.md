@@ -2,7 +2,7 @@
 
 Plan for collecting public comments from the static site without exposing the downstream secret script. The web only talks to a public receiver; the secret logic runs on the host with no HTTP endpoint.
 
-**Status:** receiver, public form, and Script 2 processor implemented; host setup via `scripts/setup-ideas-processor.sh`.
+**Status:** receiver, public form, and **autoissue** processor (cursor-agent draft + `gh issue create`); host setup via `scripts/setup-ideas-processor.sh`.
 **Related:** [runbook.md](./runbook.md) (deploy and nginx).
 
 ---
@@ -14,8 +14,8 @@ Browser form (Astro)
   → POST /hooks/ideas (nginx, rate limited)
   → Public receiver (Script 1, in repo / Docker)
   → Atomic write to queue file (JSON)
-  → systemd path unit triggers secret processor (Script 2, host only)
-  → Script 2 consumes payload, runs business logic, removes or archives file
+  → systemd path unit triggers autoissue (host only)
+  → autoissue: cursor-agent drafts markdown from JSON, then gh issue create
 ```
 
 **Public cannot:** read Script 2, call it over HTTP, or see its path in responses or frontend assets.  
@@ -33,7 +33,9 @@ Browser form (Astro)
 | `/var/spool/km0-ideas/processing/` | Claimed jobs (Script 2 moves here first) | `km0-queue:km0-queue` | `750` |
 | `/var/spool/km0-ideas/processed/` | Successful runs (optional audit) | `km0-processor:km0-processor` | `750` |
 | `/var/spool/km0-ideas/failed/` | Validation or runtime errors | `km0-processor:km0-processor` | `750` |
-| `/opt/km0-web/scripts/process-idea.sh` | **Script 2 (processor)** | `root` | `755` |
+| `/opt/km0-web/scripts/autoissue.sh` | **Autoissue processor** | `root` | `755` |
+| `/opt/km0-web/autoissue/autoissue-agent.md` | cursor-agent prompt for issue drafts | `root` | `644` |
+| `/opt/km0-web/autoissue/drafts/` | Ephemeral drafts (gitignored) | `root` | `755` |
 | `/opt/km0-web/autoagents/.env` | `GH_TOKEN` for `gh issue create` (host only, not in Git) | `root` | `600` |
 | `/var/log/km0-ideas/` | Receiver and processor logs | `root:adm` | `750` |
 
@@ -120,17 +122,17 @@ mv "$tmp" "/var/spool/km0-ideas/incoming/${name}.json"
 
 ---
 
-## Script 2 - secret processor
+## Autoissue - queue processor
 
 **Responsibilities:**
 
 1. Triggered by systemd when a new file appears (no HTTP).
-2. **Claim** one or more jobs atomically, then process.
-3. Run secret workflow (write internal txt, `gh issue create`, notify, etc.).
-4. **Remove or archive** the queue file when done.
-5. On failure, move to `failed/` with a sidecar `.err` log.
+2. **Claim** jobs atomically (`incoming` → `processing`).
+3. Run **cursor-agent** with `autoissue/autoissue-agent.md` to write a draft `.md` from the queue JSON.
+4. Parse draft frontmatter (`title`) and body; **`gh issue create`** with label `waiting for human validation`.
+5. Archive JSON + draft under `processed/`; on failure move to `failed/` with `.err` sidecar.
 
-**Must not:** listen on a port or appear in Astro/nginx config. Lives in `scripts/process-idea.sh`; `GH_TOKEN` stays in host `.env` only.
+**Must not:** listen on a port or appear in Astro/nginx config. Uses `cursor-agent --yolo --print --trust` like autoagents; `GH_TOKEN` stays in host `.env` only.
 
 ### Concurrency-safe claim (recommended)
 
@@ -207,7 +209,7 @@ Description=Process KM0 user idea queue
 Type=oneshot
 User=km0-processor
 Group=km0-processor
-ExecStart=/opt/km0-web/scripts/process-idea.sh
+ExecStart=/opt/km0-web/scripts/autoissue.sh
 ```
 
 Enable both:
@@ -216,7 +218,7 @@ Enable both:
 systemctl enable --now km0-idea-processor.path
 ```
 
-**Fallback:** cron every minute running the same script if path units are unavailable.
+**Fallback:** timer every **24 hours** (`km0-idea-processor.timer`) running the same script if path units miss an event.
 
 ---
 

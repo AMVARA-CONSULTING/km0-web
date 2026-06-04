@@ -1,10 +1,10 @@
 [Unit]
-Description=Process KM0 user idea queue (fallback timer)
+Description=Process KM0 user idea queue (fallback timer, daily)
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=1min
-AccuracySec=30s
+OnBootSec=5min
+OnUnitActiveSec=24h
+AccuracySec=1h
 
 [Install]
 WantedBy=timers.target

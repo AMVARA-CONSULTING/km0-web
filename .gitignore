@@ -4,5 +4,7 @@ dist/
 .env
 autoagents/.env
 autoagents/.runtime/
+autoissue/drafts/*
+!autoissue/drafts/.gitkeep
 .DS_Store
 __pycache__/

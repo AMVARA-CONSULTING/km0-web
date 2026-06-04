@@ -14,7 +14,7 @@ chmod 775 "${SPOOL}" "${SPOOL}/incoming"
 chmod 750 "${SPOOL}/processing" "${SPOOL}/processed" "${SPOOL}/failed"
 chmod 755 /var/log/km0-ideas
 
-chmod +x "${ROOT}/scripts/process-idea.sh"
+chmod +x "${ROOT}/scripts/autoissue.sh" "${ROOT}/scripts/process-idea.sh"
 
 echo "Installing systemd units ..."
 install -m 644 "${SYSTEMD_SRC}/km0-idea-processor.service" "${SYSTEMD_DST}/"
@@ -26,6 +26,6 @@ systemctl enable km0-idea-processor.path km0-idea-processor.timer
 systemctl start km0-idea-processor.path km0-idea-processor.timer
 
 echo "Processor path unit enabled. Manual drain:"
-echo "  ${ROOT}/scripts/process-idea.sh"
+echo "  ${ROOT}/scripts/autoissue.sh"
 echo ""
 echo "Ensure docker-compose bind-mounts ${SPOOL}/incoming (not a named volume)."

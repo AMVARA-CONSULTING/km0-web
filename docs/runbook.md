@@ -49,14 +49,14 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 - Form POST: `/hooks/ideas` (proxied to `km0-ideas-receiver` on `:9181`)
 - Receiver script: `scripts/receive-idea.sh` (webhook hook in `hooks/hooks.json`)
 - Queue spool: host bind mount `/var/spool/km0-ideas/incoming` (shared with `km0-ideas-receiver` container)
-- Processor (Script 2): `scripts/process-idea.sh`, triggered by `km0-idea-processor.path` (see [user-ideas-queue-plan.md](./user-ideas-queue-plan.md))
+- Processor (autoissue): `scripts/autoissue.sh` + `autoissue/autoissue-agent.md` (cursor-agent drafts, then `gh issue create`), triggered by `km0-idea-processor.path` (see [user-ideas-queue-plan.md](./user-ideas-queue-plan.md))
 
 ```bash
 # First-time host setup (spool dirs + systemd)
 sudo ./scripts/setup-ideas-processor.sh
 
 # Manual drain / replay
-sudo ./scripts/process-idea.sh
+sudo ./scripts/autoissue.sh
 ls -la /var/spool/km0-ideas/{incoming,processed,failed}/
 ```
 

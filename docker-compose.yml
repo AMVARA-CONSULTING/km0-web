@@ -23,7 +23,7 @@ services:
     environment:
       KM0_IDEAS_QUEUE: /var/spool/km0-ideas/incoming
     volumes:
-      - km0-ideas-spool:/var/spool/km0-ideas/incoming
+      - /var/spool/km0-ideas/incoming:/var/spool/km0-ideas/incoming
     command:
       - -verbose
       - -hooks=/hooks/hooks.json
@@ -33,6 +33,3 @@ services:
 networks:
   km0:
     name: km0
-
-volumes:
-  km0-ideas-spool:

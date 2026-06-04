@@ -1,0 +1,13 @@
+[Unit]
+Description=Process KM0 user idea queue (Script 2)
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=KM0_IDEAS_QUEUE_ROOT=/var/spool/km0-ideas
+Environment=KM0_IDEAS_ENV=/opt/km0-web/autoagents/.env
+Environment=AGENT_GH_REPO=AMVARA-CONSULTING/km0-web
+ExecStart=/opt/km0-web/scripts/process-idea.sh
+User=root
+Group=root

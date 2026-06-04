@@ -1,0 +1,10 @@
+[Unit]
+Description=Process KM0 user idea queue (fallback timer)
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1min
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

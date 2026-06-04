@@ -2,7 +2,7 @@
 
 Plan for collecting public comments from the static site without exposing the downstream secret script. The web only talks to a public receiver; the secret logic runs on the host with no HTTP endpoint.
 
-**Status:** receiver + public form implemented in repo; secret processor (Script 2) is host-only ops.
+**Status:** receiver, public form, and Script 2 processor implemented; host setup via `scripts/setup-ideas-processor.sh`.
 **Related:** [runbook.md](./runbook.md) (deploy and nginx).
 
 ---
@@ -33,11 +33,17 @@ Browser form (Astro)
 | `/var/spool/km0-ideas/processing/` | Claimed jobs (Script 2 moves here first) | `km0-queue:km0-queue` | `750` |
 | `/var/spool/km0-ideas/processed/` | Successful runs (optional audit) | `km0-processor:km0-processor` | `750` |
 | `/var/spool/km0-ideas/failed/` | Validation or runtime errors | `km0-processor:km0-processor` | `750` |
-| `/opt/km0-private/bin/process-idea.sh` | **Script 2 (secret)** | `km0-processor:km0-processor` | `700` |
-| `/opt/km0-private/etc/` | Secret config (API keys, templates) | `km0-processor:km0-processor` | `700` |
+| `/opt/km0-web/scripts/process-idea.sh` | **Script 2 (processor)** | `root` | `755` |
+| `/opt/km0-web/autoagents/.env` | `GH_TOKEN` for `gh issue create` (host only, not in Git) | `root` | `600` |
 | `/var/log/km0-ideas/` | Receiver and processor logs | `root:adm` | `750` |
 
-Deploy Script 2 and systemd units via ops (Ansible, manual `scp`, or a private repo). **Never commit** `/opt/km0-private/` to `km0-web`.
+Install Script 2 and systemd units on the host:
+
+```bash
+sudo ./scripts/setup-ideas-processor.sh
+```
+
+**Never commit** `autoagents/.env` or tokens to `km0-web`.
 
 ### In this repo (public side)
 
@@ -124,7 +130,7 @@ mv "$tmp" "/var/spool/km0-ideas/incoming/${name}.json"
 4. **Remove or archive** the queue file when done.
 5. On failure, move to `failed/` with a sidecar `.err` log.
 
-**Must not:** listen on a port, live in `km0-web` Git, or appear in Astro/nginx config.
+**Must not:** listen on a port or appear in Astro/nginx config. Lives in `scripts/process-idea.sh`; `GH_TOKEN` stays in host `.env` only.
 
 ### Concurrency-safe claim (recommended)
 
@@ -182,7 +188,8 @@ Install under `/etc/systemd/system/` (templates in private ops repo, not `km0-we
 Description=Watch KM0 user idea queue
 
 [Path]
-PathChangedGlob=/var/spool/km0-ideas/incoming/*.json
+PathModified=/var/spool/km0-ideas/incoming
+PathExistsGlob=/var/spool/km0-ideas/incoming/*.json
 MakeDirectory=no
 
 [Install]
@@ -200,7 +207,7 @@ Description=Process KM0 user idea queue
 Type=oneshot
 User=km0-processor
 Group=km0-processor
-ExecStart=/opt/km0-private/bin/process-idea.sh
+ExecStart=/opt/km0-web/scripts/process-idea.sh
 ```
 
 Enable both:

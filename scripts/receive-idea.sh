@@ -13,7 +13,8 @@ respond_ok() {
 respond_err() {
   local code="${1:-invalid_input}"
   printf '{"ok":false,"error":"%s"}\n' "$code"
-  exit 1
+  # Exit 0 so adnanh/webhook returns JSON in the HTTP body (non-zero → 500).
+  exit 0
 }
 
 if [[ -z "$payload" ]]; then

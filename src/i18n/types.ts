@@ -158,6 +158,7 @@ export interface Messages {
     body: string;
     email: string;
     whatsappLabel: string;
+    whatsappHint: string;
     whatsappQrAlt: string;
     whatsappAria: string;
   };
@@ -188,7 +189,7 @@ export interface Messages {
   footer: {
     rights: string;
     github: string;
-    company: string;
     version: string;
+    poweredByHtml: string;
   };
 }

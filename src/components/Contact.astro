@@ -35,9 +35,12 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
         href={WHATSAPP_GROUP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block rounded-2xl border border-navy/10 bg-surface p-4 shadow-sm transition-shadow hover:shadow-md"
+        class="group inline-block rounded-2xl border border-navy/10 bg-surface p-4 shadow-sm transition-all hover:border-navy/25 hover:shadow-md"
         aria-label={m.contact.whatsappAria}
       >
+        <p class="mb-3 text-sm font-medium text-navy/50 transition-colors group-hover:text-navy/80">
+          {m.contact.whatsappHint}
+        </p>
         <img
           src="/contact/whatsapp-group-qr.png"
           alt={m.contact.whatsappQrAlt}

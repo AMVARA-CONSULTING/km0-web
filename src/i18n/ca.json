@@ -213,6 +213,7 @@
     "body": "Explora, pregunta, col·labora o simplement escolta. Construïm això junts, des de l'origen.",
     "email": "hello.yoel@amvara.de",
     "whatsappLabel": "Uneix-te al grup de WhatsApp",
+    "whatsappHint": "Fes clic per unir-te",
     "whatsappQrAlt": "Codi QR per unir-se al grup de WhatsApp de km0",
     "whatsappAria": "Obrir enllaç al grup de WhatsApp de km0"
   },
@@ -243,7 +244,7 @@
   "footer": {
     "rights": "Tots els drets reservats.",
     "github": "GitHub",
-    "company": "AMVARA",
-    "version": "Versió"
+    "version": "Versió",
+    "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>, developed by <a href=\"https://ldeluipy.es/\" target=\"_blank\" rel=\"noopener noreferrer\">LdeLuipy</a>"
   }
 }

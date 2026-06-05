@@ -1,0 +1,67 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import { fetchCloudUserCount } from '../lib/cloud-users';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const countResult = await fetchCloudUserCount();
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/cloud/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={messages.cloudUsers.metaTitle}
+  pageDescription={messages.cloudUsers.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <div class="mx-auto max-w-3xl text-center">
+      <header class="mb-12">
+        <p class="doc-eyebrow">{messages.cloudUsers.eyebrow}</p>
+        <h1 class="heading-section text-navy">{messages.cloudUsers.heading}</h1>
+        <p class="doc-index-intro mt-6">{messages.cloudUsers.intro}</p>
+      </header>
+
+      {
+        countResult.ok ? (
+          <div class="cloud-users-stat" aria-live="polite">
+            <p
+              class="cloud-users-count text-gradient tabular-nums"
+              aria-label={messages.cloudUsers.countAria.replace('{count}', String(countResult.count))}
+            >
+              {countResult.count.toLocaleString(locale === 'de' ? 'de-DE' : locale === 'en' ? 'en-GB' : locale === 'ca' ? 'ca-ES' : 'es-ES')}
+            </p>
+            <p class="mt-4 text-lg font-medium text-navy/80">{messages.cloudUsers.countLabel}</p>
+          </div>
+        ) : (
+          <p class="text-lg text-navy/60">{messages.cloudUsers.unavailable}</p>
+        )
+      }
+
+      <p class="mt-10 text-sm text-navy/50">{messages.cloudUsers.updatedNote}</p>
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>
+
+<style>
+  .cloud-users-count {
+    font-size: clamp(4rem, 18vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+</style>

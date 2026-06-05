@@ -2,6 +2,10 @@
 
 FROM node:22-alpine AS build
 WORKDIR /app
+ARG CLOUD_ADMIN_USER
+ARG CLOUD_APP_TOKEN
+ENV CLOUD_ADMIN_USER=$CLOUD_ADMIN_USER
+ENV CLOUD_APP_TOKEN=$CLOUD_APP_TOKEN
 COPY package.json package-lock.json .npmrc ./
 RUN npm ci
 COPY . .

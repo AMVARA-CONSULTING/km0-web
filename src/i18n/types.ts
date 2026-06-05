@@ -34,6 +34,7 @@ export interface Messages {
     mission: string;
     blog: string;
     ideas: string;
+    cloudUsers: string;
     tutorials: string;
     faq: string;
     contact: string;
@@ -173,6 +174,17 @@ export interface Messages {
     success: string;
     error: string;
     charCount: string;
+  };
+  cloudUsers: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    countLabel: string;
+    countAria: string;
+    unavailable: string;
+    updatedNote: string;
   };
   footer: {
     rights: string;

@@ -19,6 +19,7 @@
     "mission": "Mission",
     "blog": "Blog",
     "ideas": "Ideas",
+    "cloudUsers": "Cloud users",
     "tutorials": "Tutorials",
     "faq": "FAQ",
     "contact": "Contact",
@@ -228,6 +229,17 @@
     "success": "Thank you. Your feedback has been received.",
     "error": "Could not send. Please try again later.",
     "charCount": "{count} / 4000"
+  },
+  "cloudUsers": {
+    "metaTitle": "KM0 Cloud users - Kilometer 0 Digital",
+    "metaDescription": "Live count of registered users on KM0 Cloud (OpenCloud). Updated on each site deploy.",
+    "eyebrow": "KM0 Cloud",
+    "heading": "Number of cloud users",
+    "intro": "People who have joined KM0 Cloud, our community-hosted OpenCloud instance at cloud.km0digital.com.",
+    "countLabel": "registered cloud users",
+    "countAria": "{count} registered cloud users",
+    "unavailable": "User count is temporarily unavailable.",
+    "updatedNote": "This number is fetched when the site is built and redeployed, not in real time."
   },
   "footer": {
     "rights": "All rights reserved.",

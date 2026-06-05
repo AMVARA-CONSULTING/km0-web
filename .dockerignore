@@ -2,6 +2,7 @@ node_modules
 dist
 .astro
 .git
+.env
 docs
 *.md
 !README.md

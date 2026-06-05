@@ -68,6 +68,28 @@ curl -s -X POST http://127.0.0.1:9180/hooks/ideas \
 docker compose exec km0-ideas-receiver ls -la /var/spool/km0-ideas/incoming/
 ```
 
+### Cloud users (`/cloud/`)
+
+| Path | View |
+|------|------|
+| `/cloud/`, `/ca/cloud/`, `/en/cloud/`, `/de/cloud/` | `src/views/CloudUsers.astro` |
+
+- Build-time count from OpenCloud Graph API: `https://cloud.km0digital.com/graph/v1.0/users`
+- Credentials (never in frontend or git): `CLOUD_ADMIN_USER` and `CLOUD_APP_TOKEN` in repo-root `.env` (see `.env.example`)
+- Docker: `docker-compose.yml` passes those vars as build args; `.env` is excluded from the image via `.dockerignore`
+- **`CLOUD_APP_TOKEN` expires after 12 months**; renew in OpenCloud admin, update `.env`, then rebuild
+- Optional CI: store the same names as GitHub Actions secrets (`gh secret set CLOUD_ADMIN_USER`, `gh secret set CLOUD_APP_TOKEN`)
+
+```bash
+# Local check (requires .env)
+set -a && source .env && set +a
+curl -sS 'https://cloud.km0digital.com/graph/v1.0/users' \
+  -u "${CLOUD_ADMIN_USER}:${CLOUD_APP_TOKEN}" | jq '.value | length'
+
+curl -sI http://127.0.0.1:9180/cloud/ http://127.0.0.1:9180/en/cloud/
+curl -s http://127.0.0.1:9180/en/cloud/ | grep -o 'cloud-users-count'
+```
+
 ---
 
 ## Component inventory

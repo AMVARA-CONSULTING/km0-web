@@ -19,6 +19,7 @@
     "mission": "Missió",
     "blog": "Blog",
     "ideas": "Idees",
+    "cloudUsers": "Usuaris cloud",
     "tutorials": "Tutorials",
     "faq": "FAQ",
     "contact": "Contacte",
@@ -228,6 +229,17 @@
     "success": "Gràcies. Hem rebut el teu comentari.",
     "error": "No s'ha pogut enviar. Torna-ho a provar més tard.",
     "charCount": "{count} / 4000"
+  },
+  "cloudUsers": {
+    "metaTitle": "Usuaris KM0 Cloud - Kilòmetre 0 Digital",
+    "metaDescription": "Recompte d'usuaris registrats a KM0 Cloud (OpenCloud). S'actualitza en cada desplegament del lloc.",
+    "eyebrow": "KM0 Cloud",
+    "heading": "Nombre d'usuaris al núvol",
+    "intro": "Persones que s'han unit a KM0 Cloud, la nostra instància OpenCloud comunitària a cloud.km0digital.com.",
+    "countLabel": "usuaris registrats al núvol",
+    "countAria": "{count} usuaris registrats al núvol",
+    "unavailable": "El recompte no està disponible temporalment.",
+    "updatedNote": "Aquest nombre s'obté en construir i desplegar el lloc, no en temps real."
   },
   "footer": {
     "rights": "Tots els drets reservats.",

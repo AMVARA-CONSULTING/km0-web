@@ -19,6 +19,7 @@
     "mission": "Mission",
     "blog": "Blog",
     "ideas": "Ideen",
+    "cloudUsers": "Cloud-Nutzer",
     "tutorials": "Tutorials",
     "faq": "FAQ",
     "contact": "Kontakt",
@@ -228,6 +229,17 @@
     "success": "Danke. Ihr Feedback ist eingegangen.",
     "error": "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut.",
     "charCount": "{count} / 4000"
+  },
+  "cloudUsers": {
+    "metaTitle": "KM0 Cloud-Nutzer - Kilometer 0 Digital",
+    "metaDescription": "Anzahl registrierter Nutzer auf KM0 Cloud (OpenCloud). Wird bei jedem Site-Deploy aktualisiert.",
+    "eyebrow": "KM0 Cloud",
+    "heading": "Anzahl der Cloud-Nutzer",
+    "intro": "Menschen, die KM0 Cloud beigetreten sind, unsere community-gehostete OpenCloud-Instanz unter cloud.km0digital.com.",
+    "countLabel": "registrierte Cloud-Nutzer",
+    "countAria": "{count} registrierte Cloud-Nutzer",
+    "unavailable": "Die Nutzerzahl ist vorübergehend nicht verfügbar.",
+    "updatedNote": "Diese Zahl wird beim Erstellen und Deployen der Site abgerufen, nicht in Echtzeit."
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",

@@ -2,7 +2,11 @@ name: km0
 
 services:
   km0-web:
-    build: .
+    build:
+      context: .
+      args:
+        CLOUD_ADMIN_USER: ${CLOUD_ADMIN_USER}
+        CLOUD_APP_TOKEN: ${CLOUD_APP_TOKEN}
     container_name: km0-web
     restart: unless-stopped
     ports:

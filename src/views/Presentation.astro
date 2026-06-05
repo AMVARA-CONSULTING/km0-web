@@ -34,10 +34,10 @@ const canonicalUrl = new URL(localeHref(locale, '/presentacion/'), siteRoot).hre
         <div class="presentation-hero-inner">
           <figure class="presentation-logo">
             <img
-              src="/presentations/assets/km0-logo-hero.png"
+              src="/brand/logo.png"
               alt={messages.hero.logoAlt}
-              width="593"
-              height="664"
+              width="927"
+              height="1024"
               loading="eager"
               decoding="async"
             />
@@ -259,6 +259,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentacion/'), siteRoot).hre
     display: block;
     width: min(100%, 14rem);
     height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 32px rgb(0 0 0 / 0.35));
   }
 
   .presentation-eyebrow {

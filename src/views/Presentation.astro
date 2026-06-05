@@ -1,0 +1,586 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const p = messages.presentation;
+
+const pdfUrl = '/presentations/km0-digital-tecnologica-kilometro-cero.pdf';
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/presentacion/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={p.metaTitle}
+  pageDescription={p.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="presentation-main">
+    <article class="presentation-page">
+      <header class="presentation-hero">
+        <div class="presentation-hero-inner">
+          <figure class="presentation-logo">
+            <img
+              src="/presentations/assets/km0-logo-hero.png"
+              alt={messages.hero.logoAlt}
+              width="593"
+              height="664"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+          <div class="presentation-hero-copy">
+            <p class="presentation-eyebrow">{p.eyebrow}</p>
+            <h1>{p.title}</h1>
+            <p class="presentation-lead">{p.lead}</p>
+            <div class="presentation-download-wrap">
+              <a href={pdfUrl} download class="download-button">
+                {p.download}
+              </a>
+              <p class="presentation-download-hint">{p.downloadHint}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="presentation-section" aria-labelledby="presentation-why">
+        <div class="presentation-container">
+          <h2 id="presentation-why">{p.why.title}</h2>
+          <p class="presentation-prose">{p.why.body}</p>
+        </div>
+      </section>
+
+      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-compare">
+        <div class="presentation-container">
+          <h2 id="presentation-compare">{p.compare.title}</h2>
+          <div class="presentation-table-wrap">
+            <table class="presentation-table">
+              <thead>
+                <tr>
+                  <th scope="col">{p.compare.usualTitle}</th>
+                  <th scope="col">{p.compare.km0Title}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  p.compare.rows.map((row) => (
+                    <tr>
+                      <td>{row.usual}</td>
+                      <td>{row.km0}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" aria-labelledby="presentation-community">
+        <div class="presentation-container presentation-split">
+          <div class="presentation-split-copy">
+            <h2 id="presentation-community">{p.community.title}</h2>
+            <h3>{p.community.subtitle}</h3>
+            <p class="presentation-prose">{p.community.body}</p>
+          </div>
+          <figure class="presentation-figure">
+            <img
+              src="/presentations/assets/community-photo.png"
+              alt={p.community.imageAlt}
+              width="1024"
+              height="684"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-cloud">
+        <div class="presentation-container presentation-split presentation-split-reverse">
+          <div class="presentation-split-copy">
+            <h2 id="presentation-cloud">{p.cloud.title}</h2>
+            <p class="presentation-prose">{p.cloud.lead}</p>
+            <ul class="presentation-list">
+              {p.cloud.features.map((feature) => <li>{feature}</li>)}
+            </ul>
+          </div>
+          <figure class="presentation-figure">
+            <img
+              src="/presentations/assets/cloud-interface.png"
+              alt={p.cloud.imageAlt}
+              width="1024"
+              height="695"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="presentation-section" aria-labelledby="presentation-values">
+        <div class="presentation-container">
+          <h2 id="presentation-values">{p.values.title}</h2>
+          <div class="presentation-cards">
+            {
+              p.values.items.map((item) => (
+                <article class="presentation-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-privacy">
+        <div class="presentation-container presentation-privacy">
+          <h2 id="presentation-privacy">{p.privacy.title}</h2>
+          <p class="presentation-prose">{p.privacy.lead}</p>
+          <p class="presentation-stat" aria-label={p.privacy.highlight}>{p.privacy.highlight}</p>
+        </div>
+      </section>
+
+      <section class="presentation-section" aria-labelledby="presentation-security">
+        <div class="presentation-container">
+          <h2 id="presentation-security">{p.security.title}</h2>
+          <ol class="presentation-security-list">
+            {
+              p.security.items.map((item) => (
+                <li>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </section>
+
+      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-roadmap">
+        <div class="presentation-container">
+          <h2 id="presentation-roadmap">{p.roadmap.title}</h2>
+          <ol class="presentation-roadmap">
+            {
+              p.roadmap.steps.map((step) => (
+                <li>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </section>
+
+      <section class="presentation-section presentation-cta" aria-labelledby="presentation-cta">
+        <div class="presentation-container presentation-cta-inner">
+          <h2 id="presentation-cta">{p.cta.title}</h2>
+          <p class="presentation-prose">{p.cta.lead}</p>
+          <ul class="presentation-links">
+            <li>
+              <a href="https://km0digital.com/">{p.cta.website}</a>
+            </li>
+            <li>
+              <a href="https://cloud.km0digital.com/">{p.cta.cloud}</a>
+            </li>
+            <li>
+              <a href={`mailto:${p.cta.email}`}>{p.cta.email}</a>
+            </li>
+          </ul>
+          <a href={pdfUrl} download class="download-button">
+            {p.download}
+          </a>
+          <p class="presentation-download-hint">{p.downloadHint}</p>
+        </div>
+      </section>
+    </article>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>
+
+<style>
+  .presentation-main {
+    padding-top: 5.5rem;
+    background: #fff;
+  }
+
+  .presentation-page {
+    color: #0f172a;
+  }
+
+  .presentation-container {
+    width: min(100%, 72rem);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .presentation-hero {
+    background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    color: #fff;
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(3rem, 7vw, 5rem);
+  }
+
+  .presentation-hero-inner {
+    width: min(100%, 72rem);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .presentation-hero-inner {
+      grid-template-columns: minmax(9rem, 14rem) 1fr;
+    }
+  }
+
+  .presentation-logo {
+    margin: 0;
+    justify-self: center;
+  }
+
+  .presentation-logo img {
+    display: block;
+    width: min(100%, 14rem);
+    height: auto;
+  }
+
+  .presentation-eyebrow {
+    margin: 0 0 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.62);
+  }
+
+  .presentation-hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .presentation-lead {
+    margin: 1rem 0 0;
+    max-width: 42rem;
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    line-height: 1.6;
+    color: rgb(255 255 255 / 0.82);
+  }
+
+  .presentation-download-wrap {
+    margin-top: 1.75rem;
+  }
+
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 70%, #007bff 100%);
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .download-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgb(0 0 0 / 0.28);
+  }
+
+  .download-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .presentation-download-hint {
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 0.62);
+  }
+
+  .presentation-section {
+    padding: clamp(2.75rem, 6vw, 4.5rem) 0;
+  }
+
+  .presentation-section-alt {
+    background: #f8fafc;
+  }
+
+  .presentation-section h2 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: #0b1220;
+  }
+
+  .presentation-section h3 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.35;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .presentation-prose {
+    margin: 0;
+    max-width: 48rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #334155;
+  }
+
+  .presentation-table-wrap {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.05);
+  }
+
+  .presentation-table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+  }
+
+  .presentation-table th,
+  .presentation-table td {
+    padding: 1rem 1.125rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .presentation-table thead th {
+    background: #0b1220;
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .presentation-table thead th:first-child {
+    border-top-left-radius: 0.95rem;
+  }
+
+  .presentation-table thead th:last-child {
+    border-top-right-radius: 0.95rem;
+  }
+
+  .presentation-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .presentation-table tbody td:first-child {
+    color: #64748b;
+  }
+
+  .presentation-table tbody td:last-child {
+    color: #0f172a;
+    font-weight: 500;
+  }
+
+  .presentation-split {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .presentation-split {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .presentation-split-reverse .presentation-split-copy {
+      order: 2;
+    }
+
+    .presentation-split-reverse .presentation-figure {
+      order: 1;
+    }
+  }
+
+  .presentation-figure {
+    margin: 0;
+  }
+
+  .presentation-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 12px 32px rgb(15 23 42 / 0.08);
+  }
+
+  .presentation-list {
+    margin: 1.25rem 0 0;
+    padding-left: 1.25rem;
+    max-width: 42rem;
+    color: #334155;
+  }
+
+  .presentation-list li + li {
+    margin-top: 0.75rem;
+  }
+
+  .presentation-list li {
+    line-height: 1.65;
+  }
+
+  .presentation-cards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .presentation-cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .presentation-card {
+    padding: 1.25rem 1.375rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+  }
+
+  .presentation-card p {
+    margin: 0;
+    line-height: 1.65;
+    color: #475569;
+  }
+
+  .presentation-privacy {
+    text-align: center;
+  }
+
+  .presentation-privacy .presentation-prose {
+    margin-inline: auto;
+  }
+
+  .presentation-stat {
+    margin: 1.5rem 0 0;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(90deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 70%, #007bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .presentation-security-list,
+  .presentation-roadmap {
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .presentation-roadmap {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .presentation-security-list li,
+  .presentation-roadmap li {
+    padding: 1.25rem 1.375rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+  }
+
+  .presentation-security-list p,
+  .presentation-roadmap p {
+    margin: 0;
+    line-height: 1.65;
+    color: #475569;
+  }
+
+  .presentation-cta {
+    background: #0b1220;
+    color: #fff;
+  }
+
+  .presentation-cta-inner {
+    text-align: center;
+  }
+
+  .presentation-cta h2 {
+    color: #fff;
+  }
+
+  .presentation-cta .presentation-prose {
+    margin-inline: auto;
+    color: rgb(255 255 255 / 0.82);
+  }
+
+  .presentation-links {
+    margin: 1.5rem 0 1.75rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .presentation-links a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .presentation-links a:focus-visible,
+  .presentation-cta .download-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .presentation-cta .presentation-download-hint {
+    color: rgb(255 255 255 / 0.62);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .download-button {
+      transition: none;
+    }
+
+    .download-button:hover {
+      transform: none;
+    }
+  }
+</style>

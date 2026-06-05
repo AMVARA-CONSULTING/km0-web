@@ -36,6 +36,7 @@ export interface Messages {
     ideas: string;
     cloudUsers: string;
     tutorials: string;
+    presentation: string;
     faq: string;
     contact: string;
     menuOpen: string;
@@ -185,6 +186,61 @@ export interface Messages {
     countLabel: string;
     countAria: string;
     unavailable: string;
+  };
+  presentation: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    lead: string;
+    download: string;
+    downloadHint: string;
+    why: {
+      title: string;
+      body: string;
+    };
+    compare: {
+      title: string;
+      usualTitle: string;
+      km0Title: string;
+      rows: { usual: string; km0: string }[];
+    };
+    community: {
+      title: string;
+      subtitle: string;
+      body: string;
+      imageAlt: string;
+    };
+    cloud: {
+      title: string;
+      lead: string;
+      features: string[];
+      imageAlt: string;
+    };
+    values: {
+      title: string;
+      items: { title: string; body: string }[];
+    };
+    privacy: {
+      title: string;
+      lead: string;
+      highlight: string;
+    };
+    security: {
+      title: string;
+      items: { title: string; body: string }[];
+    };
+    roadmap: {
+      title: string;
+      steps: { title: string; body: string }[];
+    };
+    cta: {
+      title: string;
+      lead: string;
+      website: string;
+      cloud: string;
+      email: string;
+    };
   };
   footer: {
     rights: string;

@@ -21,6 +21,7 @@
     "ideas": "Ideas",
     "cloudUsers": "Usuarios",
     "tutorials": "Tutoriales",
+    "presentation": "Presentación",
     "faq": "FAQ",
     "contact": "Contacto",
     "menuOpen": "Abrir menú",
@@ -240,6 +241,121 @@
     "countLabel": "Usuarios registrados en la nube",
     "countAria": "{count} usuarios registrados en la nube",
     "unavailable": "El recuento no está disponible temporalmente."
+  },
+  "presentation": {
+    "metaTitle": "Presentación - Kilómetro 0 Digital",
+    "metaDescription": "Presentación de KM0 Digital: alternativa local, transparente y a precio justo para recuperar el control digital. Descarga el PDF original.",
+    "eyebrow": "Presentación",
+    "title": "Recupera tu control digital",
+    "lead": "La alternativa local, transparente y a precio justo construida por y para la comunidad.",
+    "download": "Descargar PDF",
+    "downloadHint": "Documento original (~618 KB)",
+    "why": {
+      "title": "¿Por qué existe KM0?",
+      "body": "Porque tu privacidad y tus archivos son tuyos. No somos una megacorporación lejana: somos tus vecinos tecnológicos."
+    },
+    "compare": {
+      "title": "La nube de siempre vs la propuesta KM0",
+      "usualTitle": "Las grandes empresas",
+      "km0Title": "La alternativa KM0",
+      "rows": [
+        {
+          "usual": "Tus datos personales son el producto",
+          "km0": "Cero venta de datos. Privacidad absoluta de serie"
+        },
+        {
+          "usual": "Soporte robótico, frío y a miles de kilómetros",
+          "km0": "Soporte local humano. Habla con personas reales"
+        },
+        {
+          "usual": "Precios abusivos sin justificación real de coste",
+          "km0": "Tarifas transparentes calculadas sobre coste real"
+        }
+      ]
+    },
+    "community": {
+      "title": "Tecnología hecha para las personas",
+      "subtitle": "Hecho por y para la comunidad",
+      "body": "KM0 Digital no es un producto corporativo cerrado. Es un movimiento cooperativo diseñado para familias, escuelas, particulares y comercios de proximidad. Nuestra misión es devolver a las personas el control digital, haciendo que la tecnología sea simple, accesible y fácil de gestionar.",
+      "imageAlt": "Personas colaborando con tecnología comunitaria"
+    },
+    "cloud": {
+      "title": "KM0 Cloud: tu espacio fácil y seguro",
+      "lead": "Exactamente igual de sencillo que las herramientas que ya usas, pero respetuoso con tu vida.",
+      "features": [
+        "Sincronización total: accede a tus fotos y archivos desde Android, iOS o tu navegador web",
+        "Colaboración en tiempo real: edita documentos Word, Excel, PowerPoint integrados sin salir de la nube",
+        "Compartir sin límites: comparte enlaces familiares o de trabajo de forma 100% segura"
+      ],
+      "imageAlt": "Interfaz de KM0 Cloud con archivos y colaboración"
+    },
+    "values": {
+      "title": "Los valores que nos guían",
+      "items": [
+        {
+          "title": "Cercano",
+          "body": "Sin contestadores infinitos ni tickets automáticos. Estamos en tu mismo territorio, listos para ayudarte de tú a tú."
+        },
+        {
+          "title": "Transparente",
+          "body": "Nuestras operaciones y tecnologías son abiertas y públicas. No escondemos cláusulas trampa en letra pequeña."
+        },
+        {
+          "title": "Sostenible",
+          "body": "Un modelo de negocio justo. Cobramos lo que cuesta mantener el servicio de forma limpia."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Un compromiso que se puede medir",
+      "lead": "Mientras que los grandes gigantes de la tecnología monetizan cada foto, archivo, correo enviado e interacción para venderte publicidad, en KM0 Digital tenemos prohibido por principios el uso comercial de tus datos.",
+      "highlight": "Cero datos compartidos"
+    },
+    "security": {
+      "title": "La tranquilidad de la máxima seguridad",
+      "items": [
+        {
+          "title": "Infraestructura 100% europea",
+          "body": "Tus archivos se almacenan dentro de la Unión Europea, protegidos por el marco legal más estricto del planeta en materia de privacidad (RGPD)."
+        },
+        {
+          "title": "Cifrado y auditoría profesional",
+          "body": "Tus transferencias viajan totalmente protegidas y encriptadas. La gestión interna sigue estándares ISO/IEC para garantizar una seguridad bancaria."
+        },
+        {
+          "title": "Software ético y libre",
+          "body": "No dependemos de licencias opacas ni de código cerrado. La plataforma es abierta, permitiendo verificar de verdad cómo se trata tu información."
+        }
+      ]
+    },
+    "roadmap": {
+      "title": "Nuestro camino: del inicio a la producción",
+      "steps": [
+        {
+          "title": "Paso 1: Cimientos",
+          "body": "Despliegue inicial de nuestros servidores ultra-seguros bajo nuestro control."
+        },
+        {
+          "title": "Paso 2: Lanzamiento",
+          "body": "KM0 Cloud entra en producción. Acceso total web y móviles."
+        },
+        {
+          "title": "Paso 3: Identidad",
+          "body": "Integración de acceso unificado seguro y local."
+        },
+        {
+          "title": "Paso 4: El futuro",
+          "body": "Dinos qué servicios necesitas y los implementaremos de inmediato."
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para el cambio?",
+      "lead": "Únete hoy al movimiento digital local y recupera la tranquilidad sobre tus datos personales.",
+      "website": "km0digital.com",
+      "cloud": "cloud.km0digital.com",
+      "email": "hello.yoel@amvara.de"
+    }
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

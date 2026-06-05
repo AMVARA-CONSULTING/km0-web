@@ -21,6 +21,7 @@
     "ideas": "Idees",
     "cloudUsers": "Usuaris",
     "tutorials": "Tutorials",
+    "presentation": "Presentació",
     "faq": "FAQ",
     "contact": "Contacte",
     "menuOpen": "Obrir menú",
@@ -240,6 +241,121 @@
     "countLabel": "Usuaris registrats al núvol",
     "countAria": "{count} usuaris registrats al núvol",
     "unavailable": "El recompte no està disponible temporalment."
+  },
+  "presentation": {
+    "metaTitle": "Presentació - Kilòmetre 0 Digital",
+    "metaDescription": "Presentació de KM0 Digital: alternativa local, transparent i a preu just per recuperar el control digital. Descarrega el PDF original.",
+    "eyebrow": "Presentació",
+    "title": "Recupera el teu control digital",
+    "lead": "L'alternativa local, transparent i a preu just construïda per i per a la comunitat.",
+    "download": "Descarregar PDF",
+    "downloadHint": "Document original (~618 KB)",
+    "why": {
+      "title": "Per què existeix KM0?",
+      "body": "Perquè la teva privadesa i els teus fitxers són teus. No som una megacorporació llunyana: som els teus veïns tecnològics."
+    },
+    "compare": {
+      "title": "El núvol de sempre vs la proposta KM0",
+      "usualTitle": "Les grans empreses",
+      "km0Title": "L'alternativa KM0",
+      "rows": [
+        {
+          "usual": "Les teves dades personals són el producte",
+          "km0": "Zero venda de dades. Privadesa absoluta de sèrie"
+        },
+        {
+          "usual": "Suport robòtic, fred i a milers de quilòmetres",
+          "km0": "Suport local humà. Parla amb persones reals"
+        },
+        {
+          "usual": "Preus abusius sense justificació real de cost",
+          "km0": "Tarifes transparents calculades sobre el cost real"
+        }
+      ]
+    },
+    "community": {
+      "title": "Tecnologia feta per a les persones",
+      "subtitle": "Fet per i per a la comunitat",
+      "body": "KM0 Digital no és un producte corporatiu tancat. És un moviment cooperatiu dissenyat per a famílies, escoles, particulars i comerços de proximitat. La nostra missió és retornar a les persones el control digital, fent que la tecnologia sigui simple, accessible i fàcil de gestionar.",
+      "imageAlt": "Persones col·laborant amb tecnologia comunitària"
+    },
+    "cloud": {
+      "title": "KM0 Cloud: el teu espai fàcil i segur",
+      "lead": "Exactament igual de senzill que les eines que ja fas servir, però respectuós amb la teva vida.",
+      "features": [
+        "Sincronització total: accedeix a les teves fotos i fitxers des d'Android, iOS o el teu navegador web",
+        "Col·laboració en temps real: edita documents Word, Excel, PowerPoint integrats sense sortir del núvol",
+        "Compartir sense límits: comparteix enllaços familiars o de feina de forma 100% segura"
+      ],
+      "imageAlt": "Interfície de KM0 Cloud amb fitxers i col·laboració"
+    },
+    "values": {
+      "title": "Els valors que ens guien",
+      "items": [
+        {
+          "title": "Proper",
+          "body": "Sense contestadors infinits ni tiquets automàtics. Som al teu mateix territori, preparats per ajudar-te de tu a tu."
+        },
+        {
+          "title": "Transparent",
+          "body": "Les nostres operacions i tecnologies són obertes i públiques. No amaguem clàusules trampa en lletra petita."
+        },
+        {
+          "title": "Sostenible",
+          "body": "Un model de negoci just. Cobrem el que costa mantenir el servei de forma neta."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Un compromís que es pot mesurar",
+      "lead": "Mentre que els grans gegants de la tecnologia monetitzen cada foto, fitxer, correu enviat i interacció per vendre't publicitat, a KM0 Digital tenim prohibit per principis l'ús comercial de les teves dades.",
+      "highlight": "Zero dades compartides"
+    },
+    "security": {
+      "title": "La tranquil·litat de la màxima seguretat",
+      "items": [
+        {
+          "title": "Infraestructura 100% europea",
+          "body": "Els teus fitxers s'emmagatzemen dins de la Unió Europea, protegits pel marc legal més estricte del planeta en matèria de privadesa (RGPD)."
+        },
+        {
+          "title": "Xifrat i auditoria professional",
+          "body": "Les teves transferències viatgen totalment protegides i xifrades. La gestió interna segueix estàndards ISO/IEC per garantir una seguretat bancària."
+        },
+        {
+          "title": "Programari ètic i lliure",
+          "body": "No depenem de llicències opaques ni de codi tancat. La plataforma és oberta, permetent verificar de veritat com es tracta la teva informació."
+        }
+      ]
+    },
+    "roadmap": {
+      "title": "El nostre camí: de l'inici a la producció",
+      "steps": [
+        {
+          "title": "Pas 1: Fonaments",
+          "body": "Desplegament inicial dels nostres servidors ultra-segurs sota el nostre control."
+        },
+        {
+          "title": "Pas 2: Llançament",
+          "body": "KM0 Cloud entra en producció. Accés total web i mòbils."
+        },
+        {
+          "title": "Pas 3: Identitat",
+          "body": "Integració d'accés unificat segur i local."
+        },
+        {
+          "title": "Pas 4: El futur",
+          "body": "Digues-nos quins serveis necessites i els implementarem de immediat."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Preparat per al canvi?",
+      "lead": "Uneix-te avui al moviment digital local i recupera la tranquil·litat sobre les teves dades personals.",
+      "website": "km0digital.com",
+      "cloud": "cloud.km0digital.com",
+      "email": "hello.yoel@amvara.de"
+    }
   },
   "footer": {
     "rights": "Tots els drets reservats.",

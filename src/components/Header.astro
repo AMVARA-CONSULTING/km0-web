@@ -13,16 +13,11 @@ const { locale, messages: m } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const nav = [
-  { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
-  { id: 'vision', label: m.nav.vision, href: withHash(locale, 'vision') },
-  { id: 'values', label: m.nav.values, href: withHash(locale, 'values') },
-  { id: 'community', label: m.nav.community, href: withHash(locale, 'community') },
   { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
   { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
   { id: 'cloudUsers', label: m.nav.cloudUsers, href: localeHref(locale, '/cloud/') },
   { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
   { id: 'ideas', label: m.nav.ideas, href: localeHref(locale, '/ideas/') },
-  { id: 'faq', label: m.nav.faq, href: withHash(locale, 'faq') },
   { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
 ] as const;
 
@@ -207,8 +202,10 @@ const langs: { code: Locale; href: string; label: string }[] = [
   }
 
   .mobile-nav[data-open='true'] {
-    max-height: 24rem;
+    max-height: calc(100dvh - 4.75rem);
+    overflow-y: auto;
     opacity: 1;
+    -webkit-overflow-scrolling: touch;
   }
 
   @media (prefers-reduced-motion: reduce) {

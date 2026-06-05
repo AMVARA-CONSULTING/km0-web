@@ -46,6 +46,7 @@ Uses **cursor-agent** with prompt file body + loop message (`--yolo --print --tr
 ## Scope
 
 - Edit product files only in coder/tester roles (`src/`, `astro.config.mjs`, `docs/`).
+- Routes, identifiers, and code comments: **English** (`.cursor/rules/english-code-routes.mdc`).
 - 001/030 touch only `autoagents/` task files.
 - Never commit `.env`, tokens, or secrets.
 

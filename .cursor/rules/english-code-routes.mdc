@@ -1,0 +1,43 @@
+---
+description: English-only code, comments, and URL routes (i18n for user-facing copy)
+alwaysApply: true
+---
+
+# English in code and routes
+
+**Code, code comments, and URL routes are always English.** User-facing text belongs in i18n locale files (`src/i18n/*.json`), not in paths or identifiers.
+
+## Routes and files
+
+- Page routes and filenames use English slugs: `/presentation/`, `src/pages/presentation.astro`.
+- Locale prefixes stay as configured (`/ca/`, `/en/`, `/de/`); the path segment after the prefix is still English.
+- Do not use Spanish or Catalan in URL segments, Astro page names, or `localeHref(..., '/.../')` paths.
+
+```text
+// BAD
+/presentacion/          src/pages/presentacion.astro
+localeHref(locale, '/presentacion/')
+
+// GOOD
+/presentation/          src/pages/presentation.astro
+localeHref(locale, '/presentation/')
+```
+
+## Code and comments
+
+- Variables, functions, components, types, CSS classes, and commit scopes: English.
+- Inline comments and JSDoc in source: English.
+- Agent/task docs and commit messages: English (see `direct-user-prompts.mdc`).
+
+## i18n (localized copy)
+
+- Headings, labels, body copy, meta titles: `src/i18n/es.json`, `ca.json`, `en.json`, `de.json`.
+- Navbar **labels** are localized; navbar **href paths** are not.
+
+## Examples
+
+| Layer | English | Localized (i18n only) |
+|-------|---------|------------------------|
+| Route | `/presentation/` | n/a |
+| Nav label key | `nav.presentation` | ES: "Presentación", EN: "Presentation" |
+| Page title | `messages.presentation.metaTitle` | per locale JSON |

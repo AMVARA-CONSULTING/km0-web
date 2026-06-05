@@ -15,8 +15,9 @@ When the user writes **directly** in Cursor chat, not a pre-built TASK/FEAT/TEST
 - New or updated docs (`.md`, `.red`, runbook notes, task files, comments)
 - Commit messages, PR descriptions, GitHub issue/comment text drafted by the agent
 - Redmine/Textile exports (`.red`), always English
+- **Code, code comments, and URL routes** (see `.cursor/rules/english-code-routes.mdc`)
 
-User messages may be in any language; respond in English by default.
+User messages may be in any language; respond in English by default. User-facing site copy lives in `src/i18n/*.json`, not in route slugs or source identifiers.
 
 ## Before changing the repo
 

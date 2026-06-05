@@ -1,6 +1,8 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
+import { formatDocDate } from '../lib/doc';
+import { REPO_CREATED_AT, REPO_URL } from '../lib/repo-created-at';
 import { SITE_VERSION } from '../lib/site-version';
 
 interface Props {
@@ -38,6 +40,16 @@ const { locale, messages: m } = Astro.props;
       >
         {m.footer.version}
         <span class="text-navy/60">{SITE_VERSION}</span>
+      </p>
+      <p class="text-xs text-navy/45">
+        {m.footer.repoSince}{' '}
+        <a
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-navy/60 underline decoration-navy/20 underline-offset-2 transition-colors hover:text-navy hover:decoration-navy/50"
+          title={REPO_URL}
+        >{formatDocDate(REPO_CREATED_AT, locale)}</a>
       </p>
       <p
         class="text-sm text-navy/50 [&_a]:font-semibold [&_a]:text-navy/70 [&_a]:underline [&_a]:decoration-navy/20 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-navy hover:[&_a]:decoration-navy/50"

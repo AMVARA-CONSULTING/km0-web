@@ -246,6 +246,7 @@ export interface Messages {
     rights: string;
     github: string;
     version: string;
+    repoSince: string;
     poweredByHtml: string;
   };
 }

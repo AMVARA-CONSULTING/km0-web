@@ -32,14 +32,14 @@ const canonicalUrl = new URL(localeHref(locale, '/cloud/'), siteRoot).href;
       <header class="mb-12">
         <p class="doc-eyebrow">{messages.cloudUsers.eyebrow}</p>
         <h1 class="heading-section text-navy">{messages.cloudUsers.heading}</h1>
-        <p class="doc-index-intro mt-6">{messages.cloudUsers.intro}</p>
+        <p class="doc-index-intro mt-6" set:html={messages.cloudUsers.intro} />
       </header>
 
       {
         countResult.ok ? (
           <div class="cloud-users-stat" aria-live="polite">
             <p
-              class="cloud-users-count text-gradient tabular-nums"
+              class="cloud-users-count cloud-users-count-gradient tabular-nums"
               aria-label={messages.cloudUsers.countAria.replace('{count}', String(countResult.count))}
             >
               {countResult.count.toLocaleString(locale === 'de' ? 'de-DE' : locale === 'en' ? 'en-GB' : locale === 'ca' ? 'ca-ES' : 'es-ES')}
@@ -51,7 +51,6 @@ const canonicalUrl = new URL(localeHref(locale, '/cloud/'), siteRoot).href;
         )
       }
 
-      <p class="mt-10 text-sm text-navy/50">{messages.cloudUsers.updatedNote}</p>
     </div>
   </main>
   <Footer locale={locale} messages={messages} />
@@ -63,5 +62,40 @@ const canonicalUrl = new URL(localeHref(locale, '/cloud/'), siteRoot).href;
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.04em;
+  }
+
+  .cloud-users-count-gradient {
+    background: linear-gradient(
+      90deg,
+      #ff5f2e 0%,
+      #e040a0 25%,
+      #7b3fe4 50%,
+      #007bff 75%,
+      #ff5f2e 100%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: cloud-users-gradient-flow 7s ease-in-out infinite;
+  }
+
+  @keyframes cloud-users-gradient-flow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cloud-users-count-gradient {
+      animation: none;
+      background-position: 0% 50%;
+    }
   }
 </style>

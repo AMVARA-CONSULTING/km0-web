@@ -184,7 +184,6 @@ export interface Messages {
     countLabel: string;
     countAria: string;
     unavailable: string;
-    updatedNote: string;
   };
   footer: {
     rights: string;

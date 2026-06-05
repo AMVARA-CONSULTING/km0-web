@@ -235,11 +235,10 @@
     "metaDescription": "Live count of registered users on KM0 Cloud (OpenCloud). Updated on each site deploy.",
     "eyebrow": "KM0 Cloud",
     "heading": "Number of cloud users",
-    "intro": "People who have joined KM0 Cloud, our community-hosted OpenCloud instance at cloud.km0digital.com.",
-    "countLabel": "registered cloud users",
+    "intro": "People who have joined KM0 Cloud, our community-hosted OpenCloud instance at <a href=\"https://cloud.km0digital.com/\">cloud.km0digital.com</a>.",
+    "countLabel": "Registered cloud users",
     "countAria": "{count} registered cloud users",
-    "unavailable": "User count is temporarily unavailable.",
-    "updatedNote": "This number is fetched when the site is built and redeployed, not in real time."
+    "unavailable": "User count is temporarily unavailable."
   },
   "footer": {
     "rights": "All rights reserved.",

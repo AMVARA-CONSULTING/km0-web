@@ -235,11 +235,10 @@
     "metaDescription": "Recuento de usuarios registrados en KM0 Cloud (OpenCloud). Se actualiza en cada despliegue del sitio.",
     "eyebrow": "KM0 Cloud",
     "heading": "Número de usuarios en la nube",
-    "intro": "Personas que se han unido a KM0 Cloud, nuestra instancia OpenCloud comunitaria en cloud.km0digital.com.",
-    "countLabel": "usuarios registrados en la nube",
+    "intro": "Personas que se han unido a KM0 Cloud, nuestra instancia OpenCloud comunitaria en <a href=\"https://cloud.km0digital.com/\">cloud.km0digital.com</a>.",
+    "countLabel": "Usuarios registrados en la nube",
     "countAria": "{count} usuarios registrados en la nube",
-    "unavailable": "El recuento no está disponible temporalmente.",
-    "updatedNote": "Este número se obtiene al construir y desplegar el sitio, no en tiempo real."
+    "unavailable": "El recuento no está disponible temporalmente."
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

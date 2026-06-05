@@ -24,7 +24,11 @@
   }
 
   body {
-    @apply bg-white font-sans text-navy antialiased;
+    @apply flex min-h-screen flex-col bg-white font-sans text-navy antialiased;
+  }
+
+  main {
+    @apply flex-1;
   }
 }
 
@@ -168,6 +172,10 @@
   .doc-index-intro {
     @apply mt-6 text-lg leading-relaxed text-navy/70 md:text-xl;
     text-align: justify;
+  }
+
+  .doc-index-intro a {
+    @apply font-medium text-navy underline decoration-navy/30 underline-offset-2 transition-colors hover:decoration-navy;
   }
 
   .doc-post-list {

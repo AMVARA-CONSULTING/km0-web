@@ -28,3 +28,5 @@
 
 2026-06-06T10:29:29Z UTC | 001 | FEAT: 0 | NEW: 0 | skip #22 (FEAT-22 exists, agent:planned + Agent 001 comment); skip #21 (waiting for human validation); Docker favicon 404 only, no NEW | G001_GH_OK=1 G001_UNTRACKED_ISSUES=1 G001_LOG_SIGNALS=1 | digest: /opt/km0-web/autoagents/.runtime/001-latest-context.txt
 
+2026-06-06T10:37:24Z UTC | 001 | FEAT: 0 | NEW: 0 | skip #21 (waiting for human validation; ideas/ca legal compliance question, pending human review, do not implement); Docker clean, no NEW | G001_GH_OK=1 G001_UNTRACKED_ISSUES=1 G001_LOG_SIGNALS=0 | digest: /opt/km0-web/autoagents/.runtime/001-latest-context.txt
+

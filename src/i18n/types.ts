@@ -242,9 +242,39 @@ export interface Messages {
       email: string;
     };
   };
+  legal: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    updated: string;
+    tocTitle: string;
+    sections: {
+      id: string;
+      title: string;
+      bodyHtml: string;
+    }[];
+  };
+  security: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    updated: string;
+    tocTitle: string;
+    sections: {
+      id: string;
+      title: string;
+      bodyHtml: string;
+    }[];
+  };
   footer: {
     rights: string;
     github: string;
+    legal: string;
+    security: string;
     version: string;
     repoSince: string;
     poweredByHtml: string;

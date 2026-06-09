@@ -1,0 +1,105 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const l = messages.legal;
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/legal/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={l.metaTitle}
+  pageDescription={l.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <article class="policy-page mx-auto max-w-3xl">
+      <header class="policy-header mb-10">
+        <p class="doc-eyebrow">{l.eyebrow}</p>
+        <h1 class="heading-section text-navy">{l.heading}</h1>
+        <p class="doc-index-intro">{l.intro}</p>
+        <p class="mt-4 text-sm text-navy/50">{l.updated}</p>
+      </header>
+
+      <nav class="policy-toc mb-12" aria-label={l.tocTitle}>
+        <p class="policy-toc-title">{l.tocTitle}</p>
+        <ol class="policy-toc-list">
+          {
+            l.sections.map((section) => (
+              <li>
+                <a href={`#${section.id}`}>{section.title}</a>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
+      <div class="doc-body">
+        {
+          l.sections.map((section) => (
+            <section id={section.id} class="doc-block scroll-mt-28">
+              <h2 class="doc-block-title">{section.title}</h2>
+              <div set:html={section.bodyHtml} />
+            </section>
+          ))
+        }
+      </div>
+    </article>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>
+
+<style>
+  .policy-toc {
+    border-radius: 1rem;
+    border: 1px solid rgb(15 23 42 / 0.1);
+    background: rgb(248 250 252);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .policy-toc-title {
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgb(15 23 42 / 0.55);
+  }
+
+  .policy-toc-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .policy-toc-list a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgb(15 23 42 / 0.75);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgb(15 23 42 / 0.2);
+    transition: color 0.2s;
+  }
+
+  .policy-toc-list a:hover {
+    color: rgb(15 23 42);
+    text-decoration-color: rgb(15 23 42 / 0.45);
+  }
+</style>

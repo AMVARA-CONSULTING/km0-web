@@ -4,6 +4,7 @@ import type { Messages } from '../i18n/types';
 import { formatDocDate } from '../lib/doc';
 import { REPO_CREATED_AT, REPO_URL } from '../lib/repo-created-at';
 import { SITE_VERSION } from '../lib/site-version';
+import { localeHref } from '../i18n/paths';
 
 interface Props {
   locale: Locale;
@@ -56,7 +57,19 @@ const { locale, messages: m } = Astro.props;
         set:html={m.footer.poweredByHtml}
       />
     </div>
-    <nav class="flex justify-center md:justify-end">
+    <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-end">
+      <a
+        href={localeHref(locale, '/legal/')}
+        class="text-sm text-navy/50 transition-colors hover:text-navy"
+      >
+        {m.footer.legal}
+      </a>
+      <a
+        href={localeHref(locale, '/security/')}
+        class="text-sm text-navy/50 transition-colors hover:text-navy"
+      >
+        {m.footer.security}
+      </a>
       <a
         href="https://github.com/AMVARA-CONSULTING/km0-web"
         target="_blank"

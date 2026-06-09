@@ -69,7 +69,12 @@
     "headingBefore": "Moviment ",
     "headingAccent": "obert",
     "headingAfter": " i proper",
-    "chips": ["Obert", "Transparent", "Comunitari", "Local"]
+    "chips": [
+      "Obert",
+      "Transparent",
+      "Comunitari",
+      "Local"
+    ]
   },
   "community": {
     "eyebrow": "Comunitat",
@@ -194,17 +199,17 @@
       {
         "id": "iso27001",
         "question": "El servei està certificat segons ISO 27001?",
-        "answerHtml": "Sí. KM0 Digital l'opera <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certificada segons ISO/IEC 27001:2022 per TÜV NORD CERT. KM0 i <code>cloud.km0digital.com</code> estan contemplats en l'àmbit del certificat com a plataforma i serveis cloud natius d'AMVARA. Si necessites el certificat, la declaració d'aplicabilitat o un qüestionari de seguretat, <a href=\"#contact\">contacta'ns</a>."
+        "answerHtml": "Sí. KM0 Digital està operat per <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certificada segons ISO/IEC 27001:2022 per TÜV NORD CERT. KM0 i <code>cloud.km0digital.com</code> estan inclosos en l'abast del certificat com a part de la plataforma d'AMVARA i serveis cloud natius associats. Consulta la nostra <a href=\"/ca/security/#iso27001\">pàgina de seguretat</a>. Si necessites el certificat, la declaració d'aplicabilitat o un qüestionari de seguretat, <a href=\"#contact\">contacta'ns</a>."
       },
       {
         "id": "data-security",
         "question": "Les dades estan segures?",
-        "answerHtml": "Sí, les teves dades estan segures. Fem servir infraestructura a la UE (Alemanya), trànsit xifrat amb TLS, i no venem les teves dades per a publicitat ni entrenament de models. Detallem l'operació al <a href=\"/ca/doc/\">blog tècnic</a>. Com qualsevol servei en línia, hi ha risc residual; per a requisits regulatoris específics, <a href=\"#contact\">contacta'ns</a>."
+        "answerHtml": "Sí, les teves dades estan segures. Fem servir infraestructura a la UE (Alemanya), trànsit xifrat amb TLS i no venem les teves dades per a publicitat ni entrenament de models. Documentem les operacions al <a href=\"/ca/doc/\">blog tècnic</a>. Consulta la nostra <a href=\"/ca/legal/\">política de privadesa</a> i <a href=\"/ca/security/\">pàgina de seguretat</a>. Com qualsevol servei en línia, queda un risc residual; per a necessitats regulatòries concretes, <a href=\"#contact\">contacta'ns</a>."
       },
       {
         "id": "certification",
         "question": "El servei està certificat?",
-        "answerHtml": "Sí. KM0 Digital és un projecte comunitari operat per <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certificada segons ISO/IEC 27001:2022 (TÜV NORD CERT). El servei no té certificació amb nom propi, però entra en l'àmbit certificat d'AMVARA com a part de la seva plataforma i serveis cloud. Dissenyem, despleguem i mantenim KM0 amb aquests controls; l'operació tècnica està documentada al <a href=\"/ca/doc/\">blog</a>. Per a requisits de compliment concrets, <a href=\"#contact\">escriu-nos</a>: facilitem la documentació pertinent."
+        "answerHtml": "Sí. KM0 Digital és un projecte comunitari operat per <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certificada segons ISO/IEC 27001:2022 (TÜV NORD CERT). El servei no té certificació a nom propi, però cau dins l'abast certificat d'AMVARA com a part de la seva plataforma i serveis cloud. Consulta la nostra <a href=\"/ca/security/#iso27001\">pàgina de seguretat</a> i <a href=\"/ca/legal/\">pàgina legal</a>. Dissenyem, despleguem i mantenim KM0 sota aquests controls; les operacions tècniques es documenten al <a href=\"/ca/doc/\">blog</a>. Per a requisits de compliment concrets, <a href=\"#contact\">escriu-nos</a>: podem facilitar documentació rellevant."
       }
     ]
   },
@@ -362,6 +367,65 @@
     "github": "GitHub",
     "version": "Versió",
     "repoSince": "Repositori des de",
-    "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>"
+    "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
+    "legal": "Legal",
+    "security": "Seguretat"
+  },
+  "legal": {
+    "metaTitle": "Avís legal i privadesa - Quilòmetre 0 Digital",
+    "metaDescription": "Avís legal, política de privadesa RGPD i informació sobre galetes de km0digital.com i KM0 Cloud. Operat per AMVARA CONSULTING S.L.",
+    "eyebrow": "Legal",
+    "heading": "Avís legal i privadesa",
+    "intro": "Aquesta pàgina recull l'avís legal, la política de privadesa i la informació sobre galetes del lloc web de Quilòmetre 0 Digital i de KM0 Cloud. Tot el contingut legal d'ambdues propietats es publica aquí a km0digital.com.",
+    "updated": "Darrera actualització: juny de 2026",
+    "tocTitle": "En aquesta pàgina",
+    "sections": [
+      {
+        "id": "notice",
+        "title": "Avís legal",
+        "bodyHtml": "<p><strong>Titular i operador del lloc web</strong></p><p>AMVARA CONSULTING S.L.<br>NIF/CIF: ES-B65707994<br>Gran Via de les Corts Catalanes 636, Princ. 1B<br>08007 Barcelona, Espanya<br>Lloc web: <a href=\"https://km0digital.com/\">https://km0digital.com/</a><br>Servei cloud: <a href=\"https://cloud.km0digital.com/\">https://cloud.km0digital.com/</a></p><p>El contingut d'aquest lloc web s'ofereix amb caràcter informatiu sobre Quilòmetre 0 Digital i serveis relacionats. No constitueix assessorament legal, financer, tècnic ni professional llevat d'indicació expressa.</p><p>AMVARA CONSULTING S.L. procura mantenir la informació actualitzada i exacta, però no garanteix la seva integritat ni idoneïtat per a un fi concret. L'ús d'aquest lloc és sota la vostra responsabilitat.</p><p>Els enllaços a llocs de tercers (inclosos WhatsApp, GitHub, KM0 Cloud i proveïdors externs) es faciliten per conveniència. No en som responsables del contingut, disponibilitat ni pràctiques de privadesa.</p><p>Textos, imatges, programari, disseny, logotips i marques d'aquest lloc estan protegits per la legislació de propietat intel·lectual aplicable. Queda prohibida la reproducció, distribució o transformació no autoritzada sense consentiment previ per escrit d'AMVARA CONSULTING S.L.</p><p>Consultes legals: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a></p>"
+      },
+      {
+        "id": "privacy",
+        "title": "Política de privadesa",
+        "bodyHtml": "<p><strong>Responsable del tractament:</strong> AMVARA CONSULTING S.L. (dades a dalt).<br><strong>Contacte de privadesa:</strong> <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a></p><p>Aquesta política descriu com tractem dades personals a <strong>km0digital.com</strong> (lloc de màrqueting) i <strong>cloud.km0digital.com</strong> (KM0 Cloud). Les pàgines legals d'ambdues propietats s'allotgen a km0digital.com.</p><p><strong>Lloc de màrqueting (km0digital.com)</strong></p><ul class=\"doc-list\"><li><strong>Formulari d'idees (<code>/ideas/</code>):</strong> missatge (obligatori), nom opcional, idioma, adreça IP i User-Agent. Les trameses passen per un spool al servidor durant uns minuts i després es destrueixen automàticament. El nom i el tema del missatge es conserven en un GitHub Issue del repositori del projecte per a la seva gestió.</li><li><strong>Secció de contacte:</strong> no s'emmagatzemen dades al lloc. Els enllaços de correu obren el client (<a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>).</li><li><strong>Enllaç al grup de WhatsApp:</strong> abandoneu el nostre lloc i accediu a un servei de tercers operat per Meta. S'apliquen les seves polítiques: <a href=\"https://www.whatsapp.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">Política de privadesa de WhatsApp</a>.</li><li><strong>Comptador d'usuaris cloud (<code>/cloud/</code>):</strong> no es recullen dades personals del visitant. El recompte s'obté en temps de compilació mitjançant l'API Graph d'OpenCloud amb credencials del servidor.</li><li><strong>Registres del servidor:</strong> IP, User-Agent, marques de temps i metadades de la petició en registres de nginx i de l'host per a seguretat i resolució d'incidències (normalment fins a 30 dies, o més si cal per investigar un incident).</li></ul><p><strong>Finalitats i bases legals</strong></p><ul class=\"doc-list\"><li>Operar el lloc web i els serveis KM0 Cloud (contracte i interès legítim).</li><li>Gestionar idees i sol·licituds de suport (interès legítim i, quan escaigui, consentiment).</li><li>Seguretat, prevenció d'abús i compliment legal (interès legítim i obligació legal).</li></ul><p><strong>Conservació</strong></p><ul class=\"doc-list\"><li>Fitxers spool d'idees: minuts, després destruïts.</li><li>GitHub Issues del pipeline d'idees: mentre l'issue estigui obert i després com a historial del projecte a GitHub fins a arxivar-se o eliminar-se segons les polítiques de GitHub.</li><li>Registres d'accés: període limitat segons el descrit.</li><li>Compte i fitxers a KM0 Cloud: durant la vida del compte i segons requisits de còpies de seguretat i obligacions legals; vegeu la secció KM0 Cloud.</li></ul><p><strong>Destinataris i encarregats (verificats)</strong></p><ul class=\"doc-list\"><li><strong>GitHub</strong> (seguiment d'issues del pipeline d'idees)</li><li><strong>Hetzner</strong> (hosting a la UE, Alemanya)</li><li><strong>Meta / WhatsApp</strong> (només enllaç opcional a la comunitat)</li><li><strong>Let's Encrypt</strong> (certificats TLS)</li><li><strong>Stack OpenCloud</strong> (infraestructura del producte KM0 Cloud)</li></ul><p>Les dades es tracten principalment a la Unió Europea. Quan un proveïdor tracta dades fora de la UE, apliquem les garanties exigides pel RGPD.</p><p><strong>Els vostres drets</strong></p><p>Segons el RGPD podeu sol·licitar accés, rectificació, supressió, limitació, oposició i portabilitat quan correspongui. Podeu retirar el consentiment en qualsevol moment si el tractament es basa en ell. Contacte: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>. Podeu presentar una reclamació davant l'AEPD: <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener noreferrer\">www.aepd.es</a>.</p><p><strong>Seguretat</strong></p><p>Apliquem mesures tècniques i organitzatives, inclosos HTTPS, controls d'accés i pràctiques alineades amb el sistema de gestió certificat ISO/IEC 27001:2022 d'AMVARA. Consulteu la nostra <a href=\"/ca/security/\">pàgina de seguretat</a>.</p><p>Podem actualitzar aquesta política periòdicament. Els canvis rellevants es reflectiran en aquesta pàgina amb data actualitzada.</p>"
+      },
+      {
+        "id": "cookies",
+        "title": "Galetes",
+        "bodyHtml": "<p><strong>Lloc de màrqueting (km0digital.com):</strong> avui no establim galetes a les pàgines de màrqueting. No fem servir analítica ni rastrejadors publicitaris en aquest lloc. No cal banner de galetes per al lloc de màrqueting en la seva forma actual.</p><p><strong>KM0 Cloud (cloud.km0digital.com):</strong> es poden establir galetes d'autenticació i sessió al domini cloud en iniciar sessió o usar el servei. Aquestes galetes no es carreguen a km0digital.com. Les galetes de sessió permeten l'accés segur al compte i als fitxers.</p><p>Si introduïssim galetes al lloc de màrqueting en el futur, actualitzarem aquesta secció i implementarem el consentiment que exigeixi la llei.</p>"
+      },
+      {
+        "id": "cloud",
+        "title": "KM0 Cloud",
+        "bodyHtml": "<p>KM0 Cloud (<a href=\"https://cloud.km0digital.com/\">cloud.km0digital.com</a>) és una instància comunitària OpenCloud operada per AMVARA CONSULTING S.L. La informació legal i de privadesa del servei cloud es publica en aquesta pàgina de km0digital.com.</p><p><strong>Dades que tractem</strong></p><ul class=\"doc-list\"><li><strong>Dades de compte:</strong> registre, nom d'usuari, correu i dades d'autenticació gestionades amb Dex, LDAP i components d'identitat relacionats.</li><li><strong>Fitxers i metadades:</strong> contingut pujat, noms, ajustos de compartició i metadades d'activitat emmagatzemats a OpenCloud.</li><li><strong>Galetes de sessió i autenticació:</strong> a <code>cloud.km0digital.com</code> per mantenir sessions segures (no al lloc de màrqueting).</li><li><strong>Registres operatius:</strong> accés i seguretat en infraestructura de la UE per a fiabilitat i incidents.</li></ul><p><strong>Allotjament i ubicació</strong></p><p>La infraestructura cloud és a la Unió Europea (Alemanya) a Hetzner. El trànsit es xifra amb TLS. Còpies de seguretat i detalls operatius es descriuen al nostre <a href=\"/ca/doc/\">blog tècnic</a> quan escaigui.</p><p><strong>Les vostres opcions</strong></p><p>Podeu accedir, corregir o eliminar les vostres dades cloud a través del servei quan estigui suportat, o escriure a <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a> per a sol·licituds de privadesa relacionades amb el compte KM0 Cloud.</p>"
+      }
+    ]
+  },
+  "security": {
+    "metaTitle": "Seguretat i divulgació responsable - Quilòmetre 0 Digital",
+    "metaDescription": "Pràctiques de seguretat, abast ISO 27001 i divulgació responsable de vulnerabilitats per a km0digital.com i KM0 Cloud.",
+    "eyebrow": "Seguretat",
+    "heading": "Seguretat i divulgació responsable",
+    "intro": "Com protegim km0digital.com, KM0 Cloud i infraestructura relacionada, i com informar vulnerabilitats de bona fe.",
+    "updated": "Darrera actualització: juny de 2026",
+    "tocTitle": "En aquesta pàgina",
+    "sections": [
+      {
+        "id": "practices",
+        "title": "Pràctiques de seguretat",
+        "bodyHtml": "<p>KM0 Digital està operat per <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> Apliquem pràctiques adequades per a un lloc públic de màrqueting i una plataforma cloud autogestionada:</p><ul class=\"doc-list\"><li><strong>Xifratge:</strong> HTTPS/TLS a km0digital.com i cloud.km0digital.com (certificats Let's Encrypt).</li><li><strong>Capçaleres HTTP de seguretat:</strong> incloses Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options, Referrer-Policy i Permissions-Policy quan estiguin configurades.</li><li><strong>Infraestructura a la UE:</strong> hosting a Alemanya (Hetzner) amb dades tractades principalment a la UE.</li><li><strong>Control d'accés:</strong> mínim privilegi per a accés operatiu; autenticació multifactor en sistemes interns quan escaigui.</li><li><strong>Desenvolupament:</strong> branca <code>main</code> protegida, revisió de codi, monitorització de dependències i operacions documentades al <a href=\"/ca/doc/\">blog tècnic</a>.</li><li><strong>Còpies de seguretat i monitorització:</strong> còpies operatives i registres per a fiabilitat i resposta a incidents.</li></ul><p>No afirmem compliment SOC 2, HIPAA, CCPA, programes de proves de penetració ni auditories de tercers llevat de verificació i publicació expressa.</p><p>Per a privadesa, consulteu la nostra <a href=\"/ca/legal/\">pàgina legal i de privadesa</a>.</p>"
+      },
+      {
+        "id": "iso27001",
+        "title": "ISO/IEC 27001:2022",
+        "bodyHtml": "<p>AMVARA CONSULTING S.L. està certificada segons <strong>ISO/IEC 27001:2022</strong> per TÜV NORD CERT. Quilòmetre 0 Digital i <code>cloud.km0digital.com</code> estan inclosos en l'abast del certificat d'AMVARA com a part de la seva plataforma i serveis cloud natius associats.</p><p>KM0 Digital no té certificació ISO 27001 a nom propi. Dissenyem, despleguem i mantenim KM0 sota el sistema de gestió de seguretat de la informació certificat d'AMVARA i seguim aquests controls en les nostres operacions.</p><p>Si necessiteu el certificat, la declaració d'aplicabilitat o un qüestionari de seguretat, contacteu amb <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>.</p>"
+      },
+      {
+        "id": "disclosure",
+        "title": "Divulgació responsable de vulnerabilitats",
+        "bodyHtml": "<p>Agraïm informes de bona fe sobre vulnerabilitats que afectin <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong> i infraestructura operada per AMVARA relacionada amb KM0.</p><p><strong>Si us plau:</strong></p><ul class=\"doc-list\"><li>Informeu vulnerabilitats amb promptitud a <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>.</li><li>Proporcioneu passos de reproducció i avaluació d'impacte.</li><li>Eviteu accedir, modificar, eliminar o exfiltrar dades que no siguin vostres.</li><li>Atureu les proves un cop confirmada la vulnerabilitat.</li><li>Permeteu un termini raonable per a la correcció abans de divulgació pública.</li></ul><p><strong>Eviteu:</strong></p><ul class=\"doc-list\"><li>Atacs de denegació de servei.</li><li>Enginyeria social, phishing, spam o atacs físics.</li><li>Accés o exfiltració de dades no autoritzats.</li><li>Escaneig automatitzat intrusiu en producció sense aprovació prèvia per escrit.</li><li>Moviment lateral, persistència o divulgació pública abans que puguem abordar el problema.</li></ul><p><strong>AMVARA:</strong></p><ul class=\"doc-list\"><li>Acusarà rebut d'informes vàlids.</li><li>Investigarà i comunicarà quan escaigui.</li><li>Corregirà segons gravetat i risc.</li><li>No emprendrà accions legals contra investigadors que segueixin aquesta política de bona fe.</li></ul><p>Contacte de seguretat: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>. Política llegible per màquina: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
+      }
+    ]
   }
 }

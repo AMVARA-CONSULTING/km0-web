@@ -59,6 +59,12 @@ const { locale, messages: m } = Astro.props;
     </div>
     <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-end">
       <a
+        href={localeHref(locale, '/pricing/')}
+        class="text-sm text-navy/50 transition-colors hover:text-navy"
+      >
+        {m.footer.pricing}
+      </a>
+      <a
         href={localeHref(locale, '/legal/')}
         class="text-sm text-navy/50 transition-colors hover:text-navy"
       >

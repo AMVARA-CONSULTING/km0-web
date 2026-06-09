@@ -37,6 +37,7 @@ export interface Messages {
     cloudUsers: string;
     tutorials: string;
     presentation: string;
+    pricing: string;
     faq: string;
     contact: string;
     menuOpen: string;
@@ -187,6 +188,32 @@ export interface Messages {
     countAria: string;
     unavailable: string;
   };
+  pricing: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    tableDisclaimer: string;
+    table: {
+      provider: string;
+      monthlyPrice: string;
+      storageGb: string;
+      monthlyTimesGb: string;
+    };
+    rows: {
+      provider: string;
+      monthlyPrice: string;
+      storageGb: string;
+      monthlyTimesGb: string;
+      highlight?: boolean;
+    }[];
+    custom: {
+      heading: string;
+      body: string;
+      cta: string;
+    };
+  };
   presentation: {
     metaTitle: string;
     metaDescription: string;
@@ -273,6 +300,7 @@ export interface Messages {
   footer: {
     rights: string;
     github: string;
+    pricing: string;
     legal: string;
     security: string;
     version: string;

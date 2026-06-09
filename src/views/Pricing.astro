@@ -1,0 +1,156 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const p = messages.pricing;
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={p.metaTitle}
+  pageDescription={p.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="section-pad bg-white pt-28">
+    <div class="mx-auto max-w-5xl">
+      <header class="mb-10 text-center">
+        <p class="doc-eyebrow">{p.eyebrow}</p>
+        <h1 class="heading-section text-navy">{p.heading}</h1>
+        <p class="doc-index-intro mx-auto mt-6 max-w-3xl">{p.intro}</p>
+      </header>
+
+      <section aria-labelledby="pricing-compare">
+        <h2 id="pricing-compare" class="sr-only">{p.heading}</h2>
+        <div class="pricing-table-wrap">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th scope="col">{p.table.provider}</th>
+                <th scope="col">{p.table.monthlyPrice}</th>
+                <th scope="col">{p.table.storageGb}</th>
+                <th scope="col">{p.table.monthlyTimesGb}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                p.rows.map((row) => (
+                  <tr class:list={row.highlight && 'pricing-table-row-highlight'}>
+                    <th scope="row">{row.provider}</th>
+                    <td>{row.monthlyPrice}</td>
+                    <td>{row.storageGb}</td>
+                    <td>{row.monthlyTimesGb}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="pricing-table-note">{p.tableDisclaimer}</p>
+      </section>
+
+      <section class="pricing-custom" aria-labelledby="pricing-custom">
+        <h2 id="pricing-custom" class="heading-section mb-4 text-center text-navy">
+          {p.custom.heading}
+        </h2>
+        <p class="doc-index-intro mx-auto mb-8 max-w-2xl text-center">{p.custom.body}</p>
+        <div class="text-center">
+          <a href={`mailto:${messages.contact.email}`} class="btn-primary">
+            {p.custom.cta}
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>
+
+<style>
+  .pricing-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgb(15 23 42 / 0.08);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.05);
+  }
+
+  .pricing-table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem 1.125rem;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid rgb(15 23 42 / 0.08);
+  }
+
+  .pricing-table thead th {
+    background: #0b1220;
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .pricing-table thead th:first-child {
+    border-top-left-radius: 0.95rem;
+  }
+
+  .pricing-table thead th:last-child {
+    border-top-right-radius: 0.95rem;
+  }
+
+  .pricing-table tbody tr:last-child th,
+  .pricing-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .pricing-table tbody th {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .pricing-table tbody td {
+    color: #334155;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pricing-table-row-highlight {
+    background: rgb(255 95 46 / 0.06);
+  }
+
+  .pricing-table-row-highlight th {
+    color: #c2410c;
+  }
+
+  .pricing-table-note {
+    margin: 1rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgb(15 23 42 / 0.55);
+    text-align: center;
+  }
+
+  .pricing-custom {
+    margin-top: clamp(3rem, 8vw, 5rem);
+    padding-top: clamp(2rem, 6vw, 3rem);
+    border-top: 1px solid rgb(15 23 42 / 0.08);
+  }
+</style>

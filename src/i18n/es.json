@@ -22,6 +22,7 @@
     "cloudUsers": "Usuarios",
     "tutorials": "Tutoriales",
     "presentation": "Presentación",
+    "pricing": "Precios",
     "faq": "FAQ",
     "contact": "Contacto",
     "menuOpen": "Abrir menú",
@@ -247,6 +248,64 @@
     "countAria": "{count} usuarios registrados en la nube",
     "unavailable": "El recuento no está disponible temporalmente."
   },
+  "pricing": {
+    "metaTitle": "Precios - Kilómetro 0 Digital",
+    "metaDescription": "Comparativa orientativa de almacenamiento en la nube: precio mensual, capacidad en GB y referencia mensual × GB. KM0 Digital y los principales competidores.",
+    "eyebrow": "Precios",
+    "heading": "Comparativa de almacenamiento en la nube",
+    "intro": "Referencia inicial para comparar ofertas conocidas. Los datos de KM0 y de terceros son provisionales hasta publicar tarifas definitivas.",
+    "tableDisclaimer": "Cifras orientativas de referencia. Los precios oficiales de cada proveedor pueden variar.",
+    "table": {
+      "provider": "Proveedor",
+      "monthlyPrice": "Precio mensual",
+      "storageGb": "Almacenamiento (GB)",
+      "monthlyTimesGb": "Mensual × GB (€)"
+    },
+    "rows": [
+      {
+        "provider": "KM0 Digital",
+        "monthlyPrice": "1,99 €",
+        "storageGb": "??",
+        "monthlyTimesGb": "n/a",
+        "highlight": true
+      },
+      {
+        "provider": "Google Drive",
+        "monthlyPrice": "≈2 €",
+        "storageGb": "100",
+        "monthlyTimesGb": "≈200 €"
+      },
+      {
+        "provider": "Dropbox",
+        "monthlyPrice": "≈12 €",
+        "storageGb": "2000",
+        "monthlyTimesGb": "≈24 000 €"
+      },
+      {
+        "provider": "Microsoft OneDrive",
+        "monthlyPrice": "≈2 €",
+        "storageGb": "100",
+        "monthlyTimesGb": "≈200 €"
+      },
+      {
+        "provider": "Apple iCloud",
+        "monthlyPrice": "≈3 €",
+        "storageGb": "200",
+        "monthlyTimesGb": "≈600 €"
+      },
+      {
+        "provider": "MEGA",
+        "monthlyPrice": "≈10 €",
+        "storageGb": "2000",
+        "monthlyTimesGb": "≈20 000 €"
+      }
+    ],
+    "custom": {
+      "heading": "¿Necesitas una propuesta a medida?",
+      "body": "Si tu organización necesita capacidad, soporte o condiciones específicas, escríbenos y prepararemos una propuesta personalizada.",
+      "cta": "Solicitar propuesta custom"
+    }
+  },
   "presentation": {
     "metaTitle": "Presentación - Kilómetro 0 Digital",
     "metaDescription": "Presentación de KM0 Digital: alternativa local, transparente y a precio justo para recuperar el control digital. Descarga el PDF original.",
@@ -368,6 +427,7 @@
     "version": "Versión",
     "repoSince": "Repositorio desde",
     "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
+    "pricing": "Precios",
     "legal": "Legal",
     "security": "Seguridad"
   },

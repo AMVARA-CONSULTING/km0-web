@@ -22,6 +22,7 @@
     "cloudUsers": "Nutzer",
     "tutorials": "Tutorials",
     "presentation": "Präsentation",
+    "pricing": "Preise",
     "faq": "FAQ",
     "contact": "Kontakt",
     "menuOpen": "Menü öffnen",
@@ -247,6 +248,64 @@
     "countAria": "{count} registrierte Cloud-Nutzer",
     "unavailable": "Die Nutzerzahl ist vorübergehend nicht verfügbar."
   },
+  "pricing": {
+    "metaTitle": "Preise - Kilometer 0 Digital",
+    "metaDescription": "Orientierende Cloud-Speicher-Vergleichstabelle: Monatspreis, Speicher in GB und Referenz Monat × GB. KM0 Digital und gängige Anbieter.",
+    "eyebrow": "Preise",
+    "heading": "Cloud-Speicher-Vergleich",
+    "intro": "Erste Referenz zum Vergleich bekannter Angebote. KM0- und Drittanbieter-Zahlen sind Platzhalter bis finale Tarife veröffentlicht sind.",
+    "tableDisclaimer": "Orientierende Referenzwerte. Offizielle Anbieterpreise können abweichen.",
+    "table": {
+      "provider": "Anbieter",
+      "monthlyPrice": "Monatspreis",
+      "storageGb": "Speicher (GB)",
+      "monthlyTimesGb": "Monat × GB (€)"
+    },
+    "rows": [
+      {
+        "provider": "KM0 Digital",
+        "monthlyPrice": "1,99 €",
+        "storageGb": "??",
+        "monthlyTimesGb": "n/a",
+        "highlight": true
+      },
+      {
+        "provider": "Google Drive",
+        "monthlyPrice": "≈2 €",
+        "storageGb": "100",
+        "monthlyTimesGb": "≈200 €"
+      },
+      {
+        "provider": "Dropbox",
+        "monthlyPrice": "≈12 €",
+        "storageGb": "2000",
+        "monthlyTimesGb": "≈24.000 €"
+      },
+      {
+        "provider": "Microsoft OneDrive",
+        "monthlyPrice": "≈2 €",
+        "storageGb": "100",
+        "monthlyTimesGb": "≈200 €"
+      },
+      {
+        "provider": "Apple iCloud",
+        "monthlyPrice": "≈3 €",
+        "storageGb": "200",
+        "monthlyTimesGb": "≈600 €"
+      },
+      {
+        "provider": "MEGA",
+        "monthlyPrice": "≈10 €",
+        "storageGb": "2000",
+        "monthlyTimesGb": "≈20.000 €"
+      }
+    ],
+    "custom": {
+      "heading": "Brauchen Sie ein individuelles Angebot?",
+      "body": "Wenn Ihre Organisation bestimmte Kapazität, Support oder Konditionen benötigt, schreiben Sie uns und wir erstellen ein individuelles Angebot.",
+      "cta": "Individuelles Angebot anfragen"
+    }
+  },
   "presentation": {
     "metaTitle": "Präsentation - Kilometer 0 Digital",
     "metaDescription": "Präsentation von KM0 Digital: eine lokale, transparente und faire Alternative, um digitale Kontrolle zurückzugewinnen. Original-PDF herunterladen.",
@@ -368,6 +427,7 @@
     "version": "Version",
     "repoSince": "Repository seit",
     "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
+    "pricing": "Preise",
     "legal": "Rechtliches",
     "security": "Sicherheit"
   },

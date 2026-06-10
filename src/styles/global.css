@@ -357,63 +357,63 @@
     text-wrap: pretty;
   }
 
-  .doc-body :global(.doc-lead-block) {
+  .doc-body .doc-lead-block {
     @apply rounded-2xl border border-navy/10 bg-surface px-6 py-8 md:px-10 md:py-10;
   }
 
-  .doc-body :global(.doc-lead) {
+  .doc-body .doc-lead {
     @apply mb-6 max-w-[68ch] text-xl leading-[1.75] text-navy/90 last:mb-0 md:text-2xl md:leading-[1.8];
   }
 
-  .doc-body :global(.doc-block) {
+  .doc-body .doc-block {
     @apply scroll-mt-28 rounded-2xl border border-navy/10 bg-white px-6 py-8 md:px-10 md:py-10;
   }
 
-  .doc-body :global(.doc-block-alt) {
+  .doc-body .doc-block-alt {
     @apply bg-surface;
   }
 
   /* Section label: solid type, accent rule, clear space before body content */
-  .doc-body :global(.doc-block-title) {
+  .doc-body .doc-block-title {
     @apply mb-0 mt-0 text-2xl font-bold tracking-tight text-navy md:text-[1.75rem];
   }
 
-  .doc-body :global(.doc-block-title)::after {
+  .doc-body .doc-block-title::after {
     content: '';
     @apply mb-7 mt-4 block h-0.5 w-14 rounded-full bg-brand-gradient;
   }
 
-  .doc-body :global(.doc-block-heading) {
+  .doc-body .doc-block-heading {
     @apply mb-6 mt-0 text-xl font-semibold leading-snug text-navy md:text-2xl;
   }
 
-  .doc-body :global(.doc-lead-block .doc-block-title) {
+  .doc-body .doc-lead-block .doc-block-title {
     @apply text-xl md:text-2xl;
   }
 
-  .doc-body :global(.doc-lead-block .doc-block-title)::after {
+  .doc-body .doc-lead-block .doc-block-title::after {
     @apply mb-6 mt-3 w-12;
   }
 
-  .doc-body :global(.doc-block-intro) {
+  .doc-body .doc-block-intro {
     @apply mb-8 max-w-[68ch] leading-[1.85] text-navy/80;
   }
 
-  .doc-body :global(.doc-block > p:last-child),
-  .doc-body :global(.doc-block > p:only-of-type) {
+  .doc-body .doc-block > p:last-child,
+  .doc-body .doc-block > p:only-of-type {
     @apply mb-0;
   }
 
-  .doc-body :global(.doc-block > p:not(.doc-block-title):not(.doc-block-intro)) {
+  .doc-body .doc-block > p:not(.doc-block-title):not(.doc-block-intro) {
     @apply mb-6 max-w-[68ch] leading-[1.85] text-pretty last:mb-0;
   }
 
   /* Definition-style lists: label column + description (Stripe / MDN pattern) */
-  .doc-body :global(ul.doc-list) {
+  .doc-body ul.doc-list {
     @apply mb-2 mt-2 max-w-[68ch] list-none space-y-0 p-0;
   }
 
-  .doc-body :global(ul.doc-list li) {
+  .doc-body ul.doc-list li {
     @apply border-b border-navy/10 py-4 leading-[1.85] last:border-b-0 md:py-[1.125rem];
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -421,158 +421,158 @@
   }
 
   @media (min-width: 640px) {
-    .doc-body :global(ul.doc-list li:has(> strong)) {
+    .doc-body ul.doc-list li:has(> strong) {
       grid-template-columns: minmax(7.5rem, 10.5rem) minmax(0, 1fr);
       align-items: baseline;
     }
   }
 
-  .doc-body :global(ul.doc-list li strong) {
+  .doc-body ul.doc-list li strong {
     @apply font-semibold text-navy;
   }
 
   /* Numbered tutorial steps reuse doc-list on ordered lists */
-  .doc-body :global(ol.doc-list) {
+  .doc-body ol.doc-list {
     @apply mb-2 mt-2 max-w-[68ch] list-decimal space-y-3 p-0 pl-6 md:pl-7;
   }
 
-  .doc-body :global(ol.doc-list li) {
+  .doc-body ol.doc-list li {
     @apply border-0 bg-transparent py-1 pl-2 leading-[1.85];
     display: list-item;
   }
 
-  .doc-body :global(ol.doc-list li::marker) {
+  .doc-body ol.doc-list li::marker {
     @apply font-semibold text-navy/70;
   }
 
-  .doc-body :global(ol.doc-steps) {
+  .doc-body ol.doc-steps {
     @apply mb-0 mt-2 max-w-[68ch] list-none space-y-4 p-0;
     counter-reset: doc-step;
   }
 
-  .doc-body :global(ol.doc-steps li) {
+  .doc-body ol.doc-steps li {
     @apply relative rounded-xl border border-navy/10 bg-surface px-6 py-5 pl-16 leading-[1.85] md:py-6;
     counter-increment: doc-step;
   }
 
-  .doc-body :global(ol.doc-steps li)::before {
+  .doc-body ol.doc-steps li::before {
     content: counter(doc-step);
     @apply absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white;
   }
 
-  .doc-body :global(ol.doc-steps li strong) {
+  .doc-body ol.doc-steps li strong {
     @apply font-semibold text-navy;
   }
 
-  .doc-body :global(.doc-subtitle) {
+  .doc-body .doc-subtitle {
     @apply mb-4 mt-8 max-w-[68ch] text-base font-semibold text-navy md:text-lg;
   }
 
-  .doc-body :global(.doc-callout) {
+  .doc-body .doc-callout {
     @apply relative mt-6 max-w-[68ch] overflow-hidden rounded-xl bg-white px-6 py-6 pl-8 leading-[1.85] md:px-8;
   }
 
-  .doc-body :global(.doc-callout)::before {
+  .doc-body .doc-callout::before {
     content: '';
     @apply absolute inset-y-0 left-0 w-1.5 bg-brand-gradient;
   }
 
-  .doc-body :global(.doc-callout-title) {
+  .doc-body .doc-callout-title {
     @apply mb-4 block text-sm font-semibold uppercase tracking-wider text-navy;
   }
 
-  .doc-body :global(.doc-callout p) {
+  .doc-body .doc-callout p {
     @apply mb-4 last:mb-0;
   }
 
-  .doc-body :global(.doc-note) {
+  .doc-body .doc-note {
     @apply mt-6 max-w-[68ch] overflow-hidden rounded-xl border border-navy/15 bg-surface p-0;
   }
 
-  .doc-body :global(.doc-note:not(:has(pre))) {
+  .doc-body .doc-note:not(:has(pre)) {
     @apply px-6 py-5 text-sm leading-[1.85] text-navy/75 md:px-7 md:py-6 md:text-base;
   }
 
-  .doc-body :global(pre) {
+  .doc-body pre {
     @apply my-6 max-w-[68ch] overflow-x-auto rounded-xl border border-navy/10 bg-navy px-5 py-4 text-sm leading-relaxed text-white;
   }
 
-  .doc-body :global(.doc-note pre) {
-    @apply m-0 max-w-none overflow-x-auto rounded-none border-0 px-5 py-5 font-mono text-[0.8125rem] leading-[1.7] text-white/95 md:px-6 md:py-6 md:text-sm;
+  .doc-body .doc-note pre {
+    @apply m-0 max-w-none overflow-x-auto rounded-none border-0 bg-navy px-5 py-5 font-mono text-[0.8125rem] leading-[1.7] text-white/95 md:px-6 md:py-6 md:text-sm;
   }
 
-  .doc-body :global(code) {
+  .doc-body code {
     @apply rounded-md bg-surface px-1.5 py-0.5 font-mono text-[0.92em] text-navy;
   }
 
-  .doc-body :global(pre code) {
+  .doc-body pre code {
     @apply bg-transparent p-0 text-inherit;
   }
 
-  .doc-body :global(blockquote) {
+  .doc-body blockquote {
     border-left-color: rgb(255 95 46 / 0.7);
     @apply my-6 max-w-[68ch] border-l-4 bg-surface px-5 py-4 italic text-navy/80;
   }
 
-  .doc-body :global(table) {
+  .doc-body table {
     @apply my-6 w-full max-w-none border-collapse overflow-hidden rounded-xl border border-navy/10 text-sm;
   }
 
-  .doc-body :global(th),
-  .doc-body :global(td) {
+  .doc-body th,
+  .doc-body td {
     @apply border border-navy/10 px-4 py-3 text-left align-top;
   }
 
-  .doc-body :global(th) {
+  .doc-body th {
     @apply bg-surface font-semibold text-navy;
   }
 
-  .doc-body :global(h2:not([class])) {
+  .doc-body h2:not([class]) {
     @apply mb-5 mt-10 max-w-[68ch] text-2xl font-bold text-navy;
   }
 
-  .doc-body :global(h3:not([class])) {
+  .doc-body h3:not([class]) {
     @apply mb-4 mt-8 max-w-[68ch] text-xl font-semibold text-navy;
   }
 
-  .doc-body :global(ul:not([class])),
-  .doc-body :global(ol:not([class])) {
+  .doc-body ul:not([class]),
+  .doc-body ol:not([class]) {
     @apply my-6 max-w-[68ch] space-y-2 pl-6;
   }
 
-  .doc-body :global(ul:not([class])) {
+  .doc-body ul:not([class]) {
     @apply list-disc;
   }
 
-  .doc-body :global(ol:not([class])) {
+  .doc-body ol:not([class]) {
     @apply list-decimal;
   }
 
-  .doc-body :global(hr) {
+  .doc-body hr {
     @apply my-10 border-navy/10;
   }
 
-  .doc-body :global(a) {
+  .doc-body a {
     @apply font-medium text-navy underline decoration-navy/30 underline-offset-4 transition-colors hover:decoration-navy;
   }
 
-  .doc-body :global(strong) {
+  .doc-body strong {
     @apply font-semibold text-navy;
   }
 
-  .doc-body :global(.doc-closing-block) {
+  .doc-body .doc-closing-block {
     @apply rounded-2xl border border-navy/10 bg-gradient-to-br from-surface to-white px-6 py-8 md:px-10 md:py-10;
   }
 
-  .doc-body :global(.doc-closing-block .doc-block-title)::after {
+  .doc-body .doc-closing-block .doc-block-title::after {
     @apply mb-5;
   }
 
-  .doc-body :global(.doc-closing) {
+  .doc-body .doc-closing {
     @apply m-0 max-w-[68ch] leading-[1.85];
   }
 
-  .doc-body :global(.doc-closing strong) {
+  .doc-body .doc-closing strong {
     @apply font-semibold text-navy;
   }
 }

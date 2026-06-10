@@ -253,6 +253,11 @@
     "metaDescription": "500 GB por 1,99 €/mes. Referencias orientativas de mercado, explicación de precio, confianza operativa y diferenciación KM0 Digital.",
     "eyebrow": "Precios",
     "heading": "Almacenamiento sencillo, estable y a buen precio",
+    "heroPrice": {
+      "display": "1,99 €",
+      "meta": "al mes · 500 GB",
+      "ariaLabel": "Precio: 1,99 euros al mes por 500 GB de almacenamiento"
+    },
     "intro": "KM0 Digital ofrece 500 GB por 1,99 €/mes para quienes buscan almacenamiento sencillo, estable y a buen precio.",
     "claim": "Hasta 5 veces más espacio que los planes básicos de otras empresas por un precio similar.",
     "compareHeading": "Referencias orientativas de mercado",

@@ -194,6 +194,11 @@ export interface Messages {
     eyebrow: string;
     heading: string;
     intro: string;
+    heroPrice: {
+      display: string;
+      meta: string;
+      ariaLabel: string;
+    };
     claim: string;
     compareHeading: string;
     compareIntro: string;

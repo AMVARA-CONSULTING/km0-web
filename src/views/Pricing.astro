@@ -31,6 +31,10 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
       <header class="mb-10 text-center">
         <p class="doc-eyebrow">{p.eyebrow}</p>
         <h1 class="heading-section text-navy">{p.heading}</h1>
+        <div class="pricing-hero-price" aria-label={p.heroPrice.ariaLabel}>
+          <p class="pricing-hero-amount pricing-hero-amount-gradient tabular-nums">{p.heroPrice.display}</p>
+          <p class="pricing-hero-meta">{p.heroPrice.meta}</p>
+        </div>
         <p class="doc-index-intro mx-auto mt-6 max-w-3xl">{p.intro}</p>
       </header>
 
@@ -120,6 +124,85 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 </Layout>
 
 <style>
+  .pricing-hero-price {
+    margin: clamp(1.75rem, 5vw, 2.75rem) auto 0;
+    max-width: 28rem;
+    padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.25rem, 4vw, 2rem);
+    border-radius: 1rem;
+    border: 1px solid rgb(15 23 42 / 0.1);
+    background: #fff;
+    box-shadow: 0 4px 16px rgb(15 23 42 / 0.04);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .pricing-hero-price:hover {
+    border-color: rgb(255 95 46 / 0.28);
+    box-shadow: 0 10px 28px rgb(15 23 42 / 0.08);
+    transform: translateY(-2px);
+  }
+
+  .pricing-hero-amount {
+    margin: 0;
+    font-size: clamp(4.5rem, 16vw, 7.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  .pricing-hero-amount-gradient {
+    background: linear-gradient(
+      105deg,
+      #c2410c 0%,
+      #ff5f2e 22%,
+      #e040a0 48%,
+      #ff5f2e 72%,
+      #ea580c 100%
+    );
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: pricing-hero-gradient-flow 6s ease-in-out infinite;
+  }
+
+  .pricing-hero-meta {
+    margin: 0.875rem 0 0;
+    font-size: clamp(1rem, 2.5vw, 1.1875rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: rgb(15 23 42 / 0.62);
+  }
+
+  @keyframes pricing-hero-gradient-flow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-hero-price {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .pricing-hero-price:hover {
+      transform: none;
+    }
+
+    .pricing-hero-amount-gradient {
+      animation: none;
+      background-position: 0% 50%;
+    }
+  }
+
   .pricing-claim {
     font-size: 1.0625rem;
     font-weight: 600;

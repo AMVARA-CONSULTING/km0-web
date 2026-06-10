@@ -253,6 +253,11 @@
     "metaDescription": "500 GB for €1.99/month. Indicative market references, pricing explanation, operational trust, and KM0 Digital differentiation.",
     "eyebrow": "Pricing",
     "heading": "Simple, stable storage at a fair price",
+    "heroPrice": {
+      "display": "€1.99",
+      "meta": "per month · 500 GB",
+      "ariaLabel": "Price: €1.99 per month for 500 GB of storage"
+    },
     "intro": "KM0 Digital offers 500 GB for €1.99/month for people who want straightforward, reliable storage at a fair price.",
     "claim": "Up to five times more space than basic plans from other companies at a similar price.",
     "compareHeading": "Indicative market references",

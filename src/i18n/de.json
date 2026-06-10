@@ -253,6 +253,11 @@
     "metaDescription": "500 GB für 1,99 €/Monat. Orientierende Marktreferenzen, Preiserklärung, Betriebsvertrauen und KM0-Differenzierung.",
     "eyebrow": "Preise",
     "heading": "Einfacher, stabiler Speicher zu einem fairen Preis",
+    "heroPrice": {
+      "display": "1,99 €",
+      "meta": "pro Monat · 500 GB",
+      "ariaLabel": "Preis: 1,99 Euro pro Monat für 500 GB Speicher"
+    },
     "intro": "KM0 Digital bietet 500 GB für 1,99 €/Monat für alle, die unkomplizierten, zuverlässigen Speicher zu einem fairen Preis suchen.",
     "claim": "Bis zu fünfmal mehr Speicher als die Basispläne anderer Anbieter zu einem ähnlichen Preis.",
     "compareHeading": "Orientierende Marktreferenzen",

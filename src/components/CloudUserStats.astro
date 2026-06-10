@@ -1,0 +1,94 @@
+---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+import { fetchCloudUserCount } from '../lib/cloud-users';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
+const countResult = await fetchCloudUserCount();
+
+const countLocale =
+  locale === 'de' ? 'de-DE' : locale === 'en' ? 'en-GB' : locale === 'ca' ? 'ca-ES' : 'es-ES';
+---
+
+<section id="cloud-users" class="section-pad bg-navy text-white" aria-labelledby="cloud-users-heading">
+  <div class="mx-auto max-w-6xl">
+    <p data-reveal class="mb-10 text-center text-sm font-medium uppercase tracking-[0.2em] text-white/50">
+      {m.cloudUsers.eyebrow}
+    </p>
+    <h2 id="cloud-users-heading" class="sr-only">{m.cloudUsers.countLabel}</h2>
+
+    <div class="mx-auto max-w-sm" data-reveal data-delay="80">
+      {
+        countResult.ok ? (
+          <article
+            class="cloud-user-stat-card rounded-2xl border border-white/10 bg-white p-10 text-center shadow-sm"
+            aria-live="polite"
+          >
+            <p
+              class="cloud-user-stat-count cloud-user-stat-count-gradient tabular-nums"
+              aria-label={m.cloudUsers.countAria.replace('{count}', String(countResult.count))}
+            >
+              {countResult.count.toLocaleString(countLocale)}
+            </p>
+            <p class="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-navy/50">
+              {m.cloudUsers.countLabel}
+            </p>
+          </article>
+        ) : (
+          <article class="cloud-user-stat-card rounded-2xl border border-white/10 bg-white/5 p-10 text-center">
+            <p class="text-base text-white/70">{m.cloudUsers.unavailable}</p>
+          </article>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .cloud-user-stat-count {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .cloud-user-stat-count-gradient {
+    background: linear-gradient(
+      90deg,
+      #ff5f2e 0%,
+      #e040a0 25%,
+      #7b3fe4 50%,
+      #007bff 75%,
+      #ff5f2e 100%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: cloud-user-stat-gradient-flow 7s ease-in-out infinite;
+  }
+
+  @keyframes cloud-user-stat-gradient-flow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cloud-user-stat-count-gradient {
+      animation: none;
+      background-position: 0% 50%;
+    }
+  }
+</style>

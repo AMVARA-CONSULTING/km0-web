@@ -29,3 +29,5 @@ Blog - Kilometer 0 Digital
 ```
 
 Before finishing any edit under `src/`, run a quick check: search for U+2014 (`grep $'\xe2\x80\x94' -r src/` or `rg $'\u2014' src/`) and confirm zero matches.
+
+Validation also runs automatically on `npm run dev`, `npm run build`, git pre-commit (after `./scripts/install-git-hooks.sh`), and GitHub Actions CI.

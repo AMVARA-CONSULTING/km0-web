@@ -19,7 +19,6 @@
     "mission": "Mission",
     "blog": "Blog",
     "ideas": "Ideen",
-    "cloudUsers": "Nutzer",
     "tutorials": "Tutorials",
     "presentation": "Präsentation",
     "pricing": "Preise",
@@ -101,8 +100,6 @@
     "headingAfter": " als je zuvor",
     "intro": "KM0 Cloud bietet Ihrem Unternehmen zuverlässige, sichere und lokal verwaltete Cloud-Infrastruktur mit transparenten Preisen und Experten-Support.",
     "slogan": "500 GB ab 1,99 €/Monat. Keine Überraschungsrechnungen, kein entferntes Callcenter.",
-    "blogCta": "Dem Projekttagebuch folgen",
-    "tutorialsCta": "KM0-Cloud-Tutorials ansehen",
     "cloudTutorialCta": "So legen Sie los",
     "cloudPricingCta": "Preise ansehen",
     "items": [
@@ -254,11 +251,7 @@
     "charCount": "{count} / 4000"
   },
   "cloudUsers": {
-    "metaTitle": "KM0 Cloud-Nutzer - Kilometer 0 Digital",
-    "metaDescription": "Anzahl registrierter Nutzer auf KM0 Cloud (OpenCloud). Wird bei jedem Site-Deploy aktualisiert.",
     "eyebrow": "KM0 Cloud",
-    "heading": "Anzahl der Cloud-Nutzer",
-    "intro": "Menschen, die KM0 Cloud beigetreten sind, unsere community-gehostete OpenCloud-Instanz unter <a href=\"https://cloud.km0digital.com/\">cloud.km0digital.com</a>.",
     "countLabel": "Registrierte Cloud-Nutzer",
     "countAria": "{count} registrierte Cloud-Nutzer",
     "unavailable": "Die Nutzerzahl ist vorübergehend nicht verfügbar."

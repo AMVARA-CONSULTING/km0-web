@@ -34,7 +34,6 @@ export interface Messages {
     mission: string;
     blog: string;
     ideas: string;
-    cloudUsers: string;
     tutorials: string;
     presentation: string;
     pricing: string;
@@ -94,8 +93,6 @@ export interface Messages {
     headingAfter: string;
     intro: string;
     slogan: string;
-    blogCta: string;
-    tutorialsCta: string;
     cloudTutorialCta: string;
     cloudPricingCta: string;
     items: {
@@ -196,11 +193,7 @@ export interface Messages {
     charCount: string;
   };
   cloudUsers: {
-    metaTitle: string;
-    metaDescription: string;
     eyebrow: string;
-    heading: string;
-    intro: string;
     countLabel: string;
     countAria: string;
     unavailable: string;

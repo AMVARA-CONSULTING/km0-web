@@ -17,15 +17,14 @@ Cursor agents and humans should follow **`.cursor/rules/no-em-dash.mdc`**.
 
 ## Validation
 
-Before opening a PR or finishing a coder task, run:
+The check runs in CI, before `npm run dev`, before `npm run build`, and in the **pre-commit** git hook (install with `./scripts/install-git-hooks.sh`; `npm install` runs this automatically when `.git/hooks` exists).
 
 ```bash
+./scripts/install-git-hooks.sh
 ./scripts/check-no-em-dash.sh
 # or
 npm run check:no-em-dash
 ```
-
-The check runs in CI and fails if U+2014 is detected.
 
 ## Development workflow
 

@@ -1,0 +1,5 @@
+#!/bin/sh
+# Block commits that reintroduce the em dash (U+2014).
+set -eu
+ROOT="$(git rev-parse --show-toplevel)"
+exec "$ROOT/scripts/check-no-em-dash.sh"

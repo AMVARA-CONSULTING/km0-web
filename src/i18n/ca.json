@@ -19,7 +19,6 @@
     "mission": "Missió",
     "blog": "Blog",
     "ideas": "Idees",
-    "cloudUsers": "Usuaris",
     "tutorials": "Tutorials",
     "presentation": "Presentació",
     "pricing": "Preus",
@@ -101,8 +100,6 @@
     "headingAfter": " que mai",
     "intro": "KM0 Cloud ofereix a la teva empresa infraestructura cloud fiable, segura i gestionada de forma propera, amb preus transparents i suport expert.",
     "slogan": "500 GB des de 1,99 €/mes. Sense factures sorpresa ni call centers llunyans.",
-    "blogCta": "Segueix el diari del projecte",
-    "tutorialsCta": "Consulta els tutorials de KM0 Cloud",
     "cloudTutorialCta": "Com començar a fer-lo servir",
     "cloudPricingCta": "Veure preus",
     "items": [
@@ -254,11 +251,7 @@
     "charCount": "{count} / 4000"
   },
   "cloudUsers": {
-    "metaTitle": "Usuaris KM0 Cloud - Kilòmetre 0 Digital",
-    "metaDescription": "Recompte d'usuaris registrats a KM0 Cloud (OpenCloud). S'actualitza en cada desplegament del lloc.",
     "eyebrow": "KM0 Cloud",
-    "heading": "Nombre d'usuaris al núvol",
-    "intro": "Persones que s'han unit a KM0 Cloud, la nostra instància OpenCloud comunitària a <a href=\"https://cloud.km0digital.com/\">cloud.km0digital.com</a>.",
     "countLabel": "Usuaris registrats al núvol",
     "countAria": "{count} usuaris registrats al núvol",
     "unavailable": "El recompte no està disponible temporalment."

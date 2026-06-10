@@ -19,7 +19,6 @@
     "mission": "Misión",
     "blog": "Blog",
     "ideas": "Ideas",
-    "cloudUsers": "Usuarios",
     "tutorials": "Tutoriales",
     "presentation": "Presentación",
     "pricing": "Precios",
@@ -101,8 +100,6 @@
     "headingAfter": " que nunca",
     "intro": "KM0 Cloud ofrece a tu empresa infraestructura cloud fiable, segura y gestionada de forma cercana, con precios transparentes y soporte experto.",
     "slogan": "500 GB desde 1,99 €/mes. Sin facturas sorpresa ni call centers lejanos.",
-    "blogCta": "Sigue el diario del proyecto",
-    "tutorialsCta": "Consulta los tutoriales de KM0 Cloud",
     "cloudTutorialCta": "Cómo empezar a usarlo",
     "cloudPricingCta": "Ver precios",
     "items": [
@@ -254,11 +251,7 @@
     "charCount": "{count} / 4000"
   },
   "cloudUsers": {
-    "metaTitle": "Usuarios KM0 Cloud - Kilómetro 0 Digital",
-    "metaDescription": "Recuento de usuarios registrados en KM0 Cloud (OpenCloud). Se actualiza en cada despliegue del sitio.",
     "eyebrow": "KM0 Cloud",
-    "heading": "Número de usuarios en la nube",
-    "intro": "Personas que se han unido a KM0 Cloud, nuestra instancia OpenCloud comunitaria en <a href=\"https://cloud.km0digital.com/\">cloud.km0digital.com</a>.",
     "countLabel": "Usuarios registrados en la nube",
     "countAria": "{count} usuarios registrados en la nube",
     "unavailable": "El recuento no está disponible temporalmente."

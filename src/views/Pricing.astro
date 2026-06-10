@@ -32,11 +32,10 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
         <p class="doc-eyebrow">{p.eyebrow}</p>
         <h1 class="heading-section text-navy">{p.heading}</h1>
         <p class="doc-index-intro mx-auto mt-6 max-w-3xl">{p.intro}</p>
-        <p class="pricing-claim mx-auto mt-6 max-w-3xl">{p.claim}</p>
       </header>
 
       <section class="pricing-compare" aria-labelledby="pricing-compare">
-        <h2 id="pricing-compare" class="heading-section mb-3 text-center text-navy">
+        <h2 id="pricing-compare" class="pricing-compare-heading mb-3 text-center text-navy">
           {p.compareHeading}
         </h2>
         <p class="doc-index-intro mx-auto mb-8 max-w-3xl text-center">{p.compareIntro}</p>
@@ -64,6 +63,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
             </tbody>
           </table>
         </div>
+        <p class="pricing-claim mx-auto mt-6 max-w-3xl text-center">{p.claim}</p>
         <p class="pricing-table-note">{p.tableDisclaimer}</p>
       </section>
 
@@ -129,6 +129,19 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-compare {
     margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .pricing-compare-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-compare-heading {
+      font-size: 1.5rem;
+    }
   }
 
   .pricing-table-wrap {

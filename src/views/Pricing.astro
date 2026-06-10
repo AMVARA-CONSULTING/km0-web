@@ -32,10 +32,14 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
         <p class="doc-eyebrow">{p.eyebrow}</p>
         <h1 class="heading-section text-navy">{p.heading}</h1>
         <p class="doc-index-intro mx-auto mt-6 max-w-3xl">{p.intro}</p>
+        <p class="pricing-claim mx-auto mt-6 max-w-3xl">{p.claim}</p>
       </header>
 
-      <section aria-labelledby="pricing-compare">
-        <h2 id="pricing-compare" class="sr-only">{p.heading}</h2>
+      <section class="pricing-compare" aria-labelledby="pricing-compare">
+        <h2 id="pricing-compare" class="heading-section mb-3 text-center text-navy">
+          {p.compareHeading}
+        </h2>
+        <p class="doc-index-intro mx-auto mb-8 max-w-3xl text-center">{p.compareIntro}</p>
         <div class="pricing-table-wrap">
           <table class="pricing-table">
             <thead>
@@ -43,7 +47,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
                 <th scope="col">{p.table.provider}</th>
                 <th scope="col">{p.table.monthlyPrice}</th>
                 <th scope="col">{p.table.storageGb}</th>
-                <th scope="col">{p.table.monthlyTimesGb}</th>
+                <th scope="col">{p.table.costPerTbMonth}</th>
               </tr>
             </thead>
             <tbody>
@@ -53,7 +57,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
                     <th scope="row">{row.provider}</th>
                     <td>{row.monthlyPrice}</td>
                     <td>{row.storageGb}</td>
-                    <td>{row.monthlyTimesGb}</td>
+                    <td>{row.costPerTbMonth}</td>
                   </tr>
                 ))
               }
@@ -61,6 +65,42 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
           </table>
         </div>
         <p class="pricing-table-note">{p.tableDisclaimer}</p>
+      </section>
+
+      <section class="pricing-why" aria-labelledby="pricing-why">
+        <h2 id="pricing-why" class="heading-section mb-4 text-center text-navy">
+          {p.whyPricing.heading}
+        </h2>
+        <p class="doc-index-intro mx-auto max-w-3xl text-center">{p.whyPricing.body}</p>
+      </section>
+
+      <section class="pricing-trust" aria-labelledby="pricing-trust">
+        <h2 id="pricing-trust" class="heading-section mb-8 text-center text-navy">
+          {p.trust.heading}
+        </h2>
+        <ul class="pricing-trust-grid">
+          {
+            p.trust.items.map((item) => (
+              <li class="pricing-trust-card">
+                <h3 class="pricing-trust-title">{item.title}</h3>
+                <p class="pricing-trust-desc">{item.desc}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="pricing-diff" aria-labelledby="pricing-diff">
+        <h2 id="pricing-diff" class="heading-section mb-8 text-center text-navy">
+          {p.differentiators.heading}
+        </h2>
+        <ul class="pricing-diff-list">
+          {
+            p.differentiators.items.map((item) => (
+              <li class="pricing-diff-item">{item}</li>
+            ))
+          }
+        </ul>
       </section>
 
       <section class="pricing-custom" aria-labelledby="pricing-custom">
@@ -80,6 +120,17 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 </Layout>
 
 <style>
+  .pricing-claim {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #c2410c;
+  }
+
+  .pricing-compare {
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
   .pricing-table-wrap {
     overflow-x: auto;
     border: 1px solid rgb(15 23 42 / 0.08);
@@ -148,8 +199,74 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     text-align: center;
   }
 
+  .pricing-why {
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: 1rem;
+    background: rgb(248 250 252);
+    border: 1px solid rgb(15 23 42 / 0.08);
+  }
+
+  .pricing-trust {
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .pricing-trust-grid {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  .pricing-trust-card {
+    padding: 1.25rem 1.375rem;
+    border-radius: 0.875rem;
+    border: 1px solid rgb(15 23 42 / 0.08);
+    background: #fff;
+    box-shadow: 0 4px 16px rgb(15 23 42 / 0.04);
+  }
+
+  .pricing-trust-title {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .pricing-trust-desc {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(15 23 42 / 0.7);
+  }
+
+  .pricing-diff {
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .pricing-diff-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pricing-diff-item {
+    padding: 0.625rem 1.125rem;
+    border-radius: 9999px;
+    background: rgb(255 95 46 / 0.08);
+    border: 1px solid rgb(255 95 46 / 0.18);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #9a3412;
+  }
+
   .pricing-custom {
-    margin-top: clamp(3rem, 8vw, 5rem);
     padding-top: clamp(2rem, 6vw, 3rem);
     border-top: 1px solid rgb(15 23 42 / 0.08);
   }

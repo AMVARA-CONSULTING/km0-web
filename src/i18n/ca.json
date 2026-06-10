@@ -250,56 +250,103 @@
   },
   "pricing": {
     "metaTitle": "Preus - Kilòmetre 0 Digital",
-    "metaDescription": "Comparativa orientativa d'emmagatzematge al núvol: preu mensual, capacitat en GB i referència mensual × GB. KM0 Digital i els principals competidors.",
+    "metaDescription": "500 GB per 1,99 €/mes. Referències orientatives de mercat, explicació del preu, confiança operativa i diferenciació KM0 Digital.",
     "eyebrow": "Preus",
-    "heading": "Comparativa d'emmagatzematge al núvol",
-    "intro": "Referència inicial per comparar ofertes conegudes. Les dades de KM0 i de tercers són provisionals fins publicar tarifes definitives.",
-    "tableDisclaimer": "Xifres orientatives de referència. Els preus oficials de cada proveïdor poden variar.",
+    "heading": "Emmagatzematge senzill, estable i a bon preu",
+    "intro": "KM0 Digital ofereix 500 GB per 1,99 €/mes per a qui busca emmagatzematge senzill, estable i a bon preu.",
+    "claim": "Fins a 5 vegades més espai que els plans bàsics de Google Drive i OneDrive per un preu similar.",
+    "compareHeading": "Referències orientatives de mercat",
+    "compareIntro": "La comparativa mostra referències orientatives de mercat amb plans públics equivalents. No és una equivalència exacta de serveis ni de funcionalitats.",
+    "tableDisclaimer": "Xifres orientatives basades en plans públics de referència. Els preus oficials de cada proveïdor poden variar segons regió, impostos i promocions.",
     "table": {
-      "provider": "Proveïdor",
+      "provider": "Referència",
       "monthlyPrice": "Preu mensual",
-      "storageGb": "Emmagatzematge (GB)",
-      "monthlyTimesGb": "Mensual × GB (€)"
+      "storageGb": "Emmagatzematge",
+      "costPerTbMonth": "Cost aprox. per TB/mes (€)"
     },
     "rows": [
       {
         "provider": "KM0 Digital",
         "monthlyPrice": "1,99 €",
-        "storageGb": "??",
-        "monthlyTimesGb": "n/a",
+        "storageGb": "500 GB",
+        "costPerTbMonth": "≈4,08 €",
         "highlight": true
       },
       {
-        "provider": "Google Drive",
+        "provider": "Google Drive (pla bàsic)",
         "monthlyPrice": "≈2 €",
-        "storageGb": "100",
-        "monthlyTimesGb": "≈200 €"
+        "storageGb": "100 GB",
+        "costPerTbMonth": "≈20 €"
       },
       {
-        "provider": "Dropbox",
-        "monthlyPrice": "≈12 €",
-        "storageGb": "2000",
-        "monthlyTimesGb": "≈24 000 €"
-      },
-      {
-        "provider": "Microsoft OneDrive",
+        "provider": "Microsoft OneDrive (pla bàsic)",
         "monthlyPrice": "≈2 €",
-        "storageGb": "100",
-        "monthlyTimesGb": "≈200 €"
+        "storageGb": "100 GB",
+        "costPerTbMonth": "≈20 €"
       },
       {
-        "provider": "Apple iCloud",
+        "provider": "Apple iCloud (pla intermedi)",
         "monthlyPrice": "≈3 €",
-        "storageGb": "200",
-        "monthlyTimesGb": "≈600 €"
+        "storageGb": "200 GB",
+        "costPerTbMonth": "≈15 €"
       },
       {
-        "provider": "MEGA",
+        "provider": "Dropbox (pla personal)",
+        "monthlyPrice": "≈12 €",
+        "storageGb": "2 TB",
+        "costPerTbMonth": "≈6 €"
+      },
+      {
+        "provider": "MEGA (pla Pro I)",
         "monthlyPrice": "≈10 €",
-        "storageGb": "2000",
-        "monthlyTimesGb": "≈20 000 €"
+        "storageGb": "2 TB",
+        "costPerTbMonth": "≈5 €"
       }
     ],
+    "whyPricing": {
+      "heading": "Per què el nostre preu és diferent?",
+      "body": "El nostre preu és possible gràcies a una infraestructura optimitzada i a un model centrat en l'eficiència operativa, no en maximitzar el marge per client. No necessitem marges d'ingressos tan alts: prou per mantenir la infraestructura de forma sostenible i oferir un servei fiable."
+    },
+    "trust": {
+      "heading": "Confiança i operació",
+      "items": [
+        {
+          "title": "Còpies de seguretat",
+          "desc": "Estratègia de còpies de seguretat i recuperació documentada per protegir les teves dades davant fallades o incidents."
+        },
+        {
+          "title": "Redundància",
+          "desc": "Infraestructura dissenyada amb redundància operativa per mantenir el servei estable i disponible."
+        },
+        {
+          "title": "Privadesa",
+          "desc": "No venem les teves dades per a publicitat ni entrenament de models. Política de privadesa clara i sense lletra petita."
+        },
+        {
+          "title": "Suport proper",
+          "desc": "Suport en espanyol amb persones reals, no un call center anònim a milers de quilòmetres."
+        },
+        {
+          "title": "Ubicació de dades",
+          "desc": "Infraestructura a la UE (Alemanya, Hetzner). Les teves dades es processen principalment dins d'Europa."
+        },
+        {
+          "title": "Seguretat i SLA",
+          "desc": "Operat sota controls ISO/IEC 27001:2022 per AMVARA CONSULTING S.L. Consulta la nostra pàgina de seguretat per a més detall."
+        }
+      ]
+    },
+    "differentiators": {
+      "heading": "Per què KM0",
+      "items": [
+        "Proximitat i suport en espanyol",
+        "Simplicitat sense ecosistema invasiu",
+        "Proveïdor local i europeu",
+        "Privadesa de sèrie",
+        "Web neta, sense lletra petita",
+        "Preu transparent i sostenible"
+      ]
+    },
     "custom": {
       "heading": "Necessites una proposta a mida?",
       "body": "Si la teva organització necessita capacitat, suport o condicions específiques, escriu-nos i prepararem una proposta personalitzada.",

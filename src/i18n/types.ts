@@ -194,20 +194,38 @@ export interface Messages {
     eyebrow: string;
     heading: string;
     intro: string;
+    claim: string;
+    compareHeading: string;
+    compareIntro: string;
     tableDisclaimer: string;
     table: {
       provider: string;
       monthlyPrice: string;
       storageGb: string;
-      monthlyTimesGb: string;
+      costPerTbMonth: string;
     };
     rows: {
       provider: string;
       monthlyPrice: string;
       storageGb: string;
-      monthlyTimesGb: string;
+      costPerTbMonth: string;
       highlight?: boolean;
     }[];
+    whyPricing: {
+      heading: string;
+      body: string;
+    };
+    trust: {
+      heading: string;
+      items: {
+        title: string;
+        desc: string;
+      }[];
+    };
+    differentiators: {
+      heading: string;
+      items: string[];
+    };
     custom: {
       heading: string;
       body: string;

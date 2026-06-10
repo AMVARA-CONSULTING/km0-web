@@ -250,56 +250,103 @@
   },
   "pricing": {
     "metaTitle": "Pricing - Kilometer 0 Digital",
-    "metaDescription": "Indicative cloud storage comparison: monthly price, storage in GB, and monthly × GB reference. KM0 Digital and major competitors.",
+    "metaDescription": "500 GB for €1.99/month. Indicative market references, pricing explanation, operational trust, and KM0 Digital differentiation.",
     "eyebrow": "Pricing",
-    "heading": "Cloud storage comparison",
-    "intro": "Initial reference to compare well-known offers. KM0 and third-party figures are placeholders until final tariffs are published.",
-    "tableDisclaimer": "Indicative reference figures. Official provider prices may differ.",
+    "heading": "Simple, stable storage at a fair price",
+    "intro": "KM0 Digital offers 500 GB for €1.99/month for people who want straightforward, reliable storage at a fair price.",
+    "claim": "Up to five times more space than basic Google Drive and OneDrive plans at a similar price.",
+    "compareHeading": "Indicative market references",
+    "compareIntro": "The table shows indicative market references based on comparable public plans. It is not an exact match of services or features.",
+    "tableDisclaimer": "Indicative figures based on public reference plans. Official provider prices may vary by region, taxes, and promotions.",
     "table": {
-      "provider": "Provider",
+      "provider": "Reference",
       "monthlyPrice": "Monthly price",
-      "storageGb": "Storage (GB)",
-      "monthlyTimesGb": "Monthly × GB (€)"
+      "storageGb": "Storage",
+      "costPerTbMonth": "Approx. cost per TB/month (€)"
     },
     "rows": [
       {
         "provider": "KM0 Digital",
         "monthlyPrice": "€1.99",
-        "storageGb": "??",
-        "monthlyTimesGb": "n/a",
+        "storageGb": "500 GB",
+        "costPerTbMonth": "≈€4.08",
         "highlight": true
       },
       {
-        "provider": "Google Drive",
+        "provider": "Google Drive (basic plan)",
         "monthlyPrice": "≈€2",
-        "storageGb": "100",
-        "monthlyTimesGb": "≈€200"
+        "storageGb": "100 GB",
+        "costPerTbMonth": "≈€20"
       },
       {
-        "provider": "Dropbox",
-        "monthlyPrice": "≈€12",
-        "storageGb": "2000",
-        "monthlyTimesGb": "≈€24,000"
-      },
-      {
-        "provider": "Microsoft OneDrive",
+        "provider": "Microsoft OneDrive (basic plan)",
         "monthlyPrice": "≈€2",
-        "storageGb": "100",
-        "monthlyTimesGb": "≈€200"
+        "storageGb": "100 GB",
+        "costPerTbMonth": "≈€20"
       },
       {
-        "provider": "Apple iCloud",
+        "provider": "Apple iCloud (mid-tier plan)",
         "monthlyPrice": "≈€3",
-        "storageGb": "200",
-        "monthlyTimesGb": "≈€600"
+        "storageGb": "200 GB",
+        "costPerTbMonth": "≈€15"
       },
       {
-        "provider": "MEGA",
+        "provider": "Dropbox (personal plan)",
+        "monthlyPrice": "≈€12",
+        "storageGb": "2 TB",
+        "costPerTbMonth": "≈€6"
+      },
+      {
+        "provider": "MEGA (Pro I plan)",
         "monthlyPrice": "≈€10",
-        "storageGb": "2000",
-        "monthlyTimesGb": "≈€20,000"
+        "storageGb": "2 TB",
+        "costPerTbMonth": "≈€5"
       }
     ],
+    "whyPricing": {
+      "heading": "Why is our price different?",
+      "body": "Our price is possible thanks to optimised infrastructure and a model focused on operational efficiency, not maximising margin per customer. We do not need the same revenue margins: enough to maintain infrastructure sustainably and deliver a reliable service."
+    },
+    "trust": {
+      "heading": "Trust and operations",
+      "items": [
+        {
+          "title": "Backups",
+          "desc": "Documented backup and recovery strategy to protect your data against failures or incidents."
+        },
+        {
+          "title": "Redundancy",
+          "desc": "Infrastructure designed with operational redundancy to keep the service stable and available."
+        },
+        {
+          "title": "Privacy",
+          "desc": "We do not sell your data for advertising or model training. Clear privacy policy without fine print."
+        },
+        {
+          "title": "Close support",
+          "desc": "Support in Spanish with real people, not an anonymous call centre thousands of miles away."
+        },
+        {
+          "title": "Data location",
+          "desc": "EU infrastructure (Germany, Hetzner). Your data is processed primarily within Europe."
+        },
+        {
+          "title": "Security and SLA",
+          "desc": "Operated under ISO/IEC 27001:2022 controls by AMVARA CONSULTING S.L. See our security page for details."
+        }
+      ]
+    },
+    "differentiators": {
+      "heading": "Why KM0",
+      "items": [
+        "Proximity and support in Spanish",
+        "Simplicity without an invasive ecosystem",
+        "Local European provider",
+        "Privacy by default",
+        "Clean site, no fine print",
+        "Transparent, sustainable pricing"
+      ]
+    },
     "custom": {
       "heading": "Need a tailored proposal?",
       "body": "If your organisation needs specific capacity, support, or terms, email us and we will prepare a custom quote.",

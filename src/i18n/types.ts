@@ -211,6 +211,7 @@ export interface Messages {
     eyebrow: string;
     heading: string;
     intro: string;
+    heroCta: string;
     heroPrice: {
       amount: string;
       period: string;

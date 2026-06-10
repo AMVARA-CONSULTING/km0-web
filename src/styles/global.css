@@ -212,7 +212,7 @@
   }
 
   .doc-post-card {
-    @apply rounded-2xl border border-navy/10 bg-surface p-6 shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-navy/20 hover:shadow-md md:p-8;
+    @apply rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-navy/20 hover:bg-white hover:shadow-md md:p-8;
   }
 
   .doc-post-card-meta {
@@ -240,15 +240,39 @@
   }
 
   .doc-toc-mobile {
-    @apply mb-6 rounded-2xl border border-navy/10 bg-white p-4;
+    @apply mb-6 overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm;
   }
 
   .doc-toc-mobile-summary {
-    @apply cursor-pointer list-none text-sm font-semibold text-navy;
+    @apply flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 text-sm font-semibold text-navy transition-colors hover:bg-surface;
   }
 
   .doc-toc-mobile-summary::-webkit-details-marker {
     display: none;
+  }
+
+  .doc-toc-mobile-summary::marker {
+    content: '';
+  }
+
+  .doc-toc-mobile-summary-label {
+    @apply flex items-center gap-2;
+  }
+
+  .doc-toc-mobile-chevron {
+    @apply h-5 w-5 shrink-0 text-navy/45 transition-transform duration-300 ease-apple;
+  }
+
+  .doc-toc-mobile[open] .doc-toc-mobile-chevron {
+    transform: rotate(180deg);
+  }
+
+  .doc-toc-mobile[open] .doc-toc-mobile-summary {
+    @apply border-b border-navy/10 bg-surface;
+  }
+
+  .doc-toc-mobile .doc-toc {
+    @apply px-4 pb-4 pt-3;
   }
 
   .doc-toc-heading {
@@ -281,7 +305,7 @@
   }
 
   .doc-article-nav-link {
-    @apply flex flex-col gap-2 rounded-2xl border border-navy/10 bg-surface px-5 py-4 transition-colors hover:border-navy/20 hover:bg-white;
+    @apply flex flex-col gap-2 rounded-2xl border border-navy/10 bg-surface px-5 py-4 shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-navy/20 hover:bg-surface hover:shadow-md;
   }
 
   .doc-article-nav-link--next {
@@ -313,7 +337,7 @@
   }
 
   .doc-related-card {
-    @apply rounded-2xl border border-navy/10 bg-surface p-5 transition-colors hover:border-navy/20 hover:bg-white;
+    @apply rounded-2xl border border-navy/10 bg-surface p-5 shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-navy/20 hover:bg-surface hover:shadow-md;
   }
 
   .doc-related-card-link {
@@ -330,6 +354,7 @@
 
   .doc-body {
     @apply flex max-w-none flex-col gap-10 pt-10 text-[1.0625rem] leading-[1.8] text-navy/85 md:gap-12 md:text-lg md:leading-[1.85];
+    text-wrap: pretty;
   }
 
   .doc-body :global(.doc-lead-block) {
@@ -337,7 +362,7 @@
   }
 
   .doc-body :global(.doc-lead) {
-    @apply mb-6 text-xl leading-[1.75] text-navy/90 last:mb-0 md:text-2xl md:leading-[1.8];
+    @apply mb-6 max-w-[68ch] text-xl leading-[1.75] text-navy/90 last:mb-0 md:text-2xl md:leading-[1.8];
   }
 
   .doc-body :global(.doc-block) {
@@ -348,17 +373,18 @@
     @apply bg-surface;
   }
 
+  /* Section label: solid type, accent rule, clear space before body content */
   .doc-body :global(.doc-block-title) {
-    @apply mb-1 text-2xl font-bold tracking-tight text-gradient md:text-3xl;
+    @apply mb-0 mt-0 text-2xl font-bold tracking-tight text-navy md:text-[1.75rem];
   }
 
   .doc-body :global(.doc-block-title)::after {
     content: '';
-    @apply mt-3 block h-1 w-16 rounded-full bg-brand-gradient;
+    @apply mb-7 mt-4 block h-0.5 w-14 rounded-full bg-brand-gradient;
   }
 
   .doc-body :global(.doc-block-heading) {
-    @apply mb-6 mt-4 text-lg font-semibold text-navy md:text-xl;
+    @apply mb-6 mt-0 text-xl font-semibold leading-snug text-navy md:text-2xl;
   }
 
   .doc-body :global(.doc-lead-block .doc-block-title) {
@@ -366,11 +392,11 @@
   }
 
   .doc-body :global(.doc-lead-block .doc-block-title)::after {
-    @apply mt-2 w-12;
+    @apply mb-6 mt-3 w-12;
   }
 
   .doc-body :global(.doc-block-intro) {
-    @apply mb-8 leading-[1.8] text-navy/80;
+    @apply mb-8 max-w-[68ch] leading-[1.85] text-navy/80;
   }
 
   .doc-body :global(.doc-block > p:last-child),
@@ -378,33 +404,54 @@
     @apply mb-0;
   }
 
-  .doc-body :global(.doc-block p) {
-    @apply mb-6 leading-[1.8] last:mb-0;
+  .doc-body :global(.doc-block > p:not(.doc-block-title):not(.doc-block-intro)) {
+    @apply mb-6 max-w-[68ch] leading-[1.85] text-pretty last:mb-0;
   }
 
+  /* Definition-style lists: label column + description (Stripe / MDN pattern) */
   .doc-body :global(ul.doc-list) {
-    @apply mb-0 list-none space-y-4 p-0;
+    @apply mb-2 mt-2 max-w-[68ch] list-none space-y-0 p-0;
   }
 
   .doc-body :global(ul.doc-list li) {
-    @apply rounded-xl border border-navy/10 bg-surface/80 px-5 py-4 leading-[1.8] md:px-6 md:py-5;
+    @apply border-b border-navy/10 py-4 leading-[1.85] last:border-b-0 md:py-[1.125rem];
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem 1.25rem;
   }
 
-  .doc-body :global(.doc-block-alt ul.doc-list li) {
-    @apply bg-white;
+  @media (min-width: 640px) {
+    .doc-body :global(ul.doc-list li:has(> strong)) {
+      grid-template-columns: minmax(7.5rem, 10.5rem) minmax(0, 1fr);
+      align-items: baseline;
+    }
   }
 
   .doc-body :global(ul.doc-list li strong) {
-    @apply bg-brand-gradient bg-clip-text font-semibold text-transparent;
+    @apply font-semibold text-navy;
+  }
+
+  /* Numbered tutorial steps reuse doc-list on ordered lists */
+  .doc-body :global(ol.doc-list) {
+    @apply mb-2 mt-2 max-w-[68ch] list-decimal space-y-3 p-0 pl-6 md:pl-7;
+  }
+
+  .doc-body :global(ol.doc-list li) {
+    @apply border-0 bg-transparent py-1 pl-2 leading-[1.85];
+    display: list-item;
+  }
+
+  .doc-body :global(ol.doc-list li::marker) {
+    @apply font-semibold text-navy/70;
   }
 
   .doc-body :global(ol.doc-steps) {
-    @apply mb-0 list-none space-y-5 p-0;
+    @apply mb-0 mt-2 max-w-[68ch] list-none space-y-4 p-0;
     counter-reset: doc-step;
   }
 
   .doc-body :global(ol.doc-steps li) {
-    @apply relative rounded-xl border border-navy/10 bg-surface px-6 py-5 pl-16 leading-[1.8] md:py-6;
+    @apply relative rounded-xl border border-navy/10 bg-surface px-6 py-5 pl-16 leading-[1.85] md:py-6;
     counter-increment: doc-step;
   }
 
@@ -418,11 +465,11 @@
   }
 
   .doc-body :global(.doc-subtitle) {
-    @apply mb-4 mt-8 text-base font-semibold text-navy md:text-lg;
+    @apply mb-4 mt-8 max-w-[68ch] text-base font-semibold text-navy md:text-lg;
   }
 
   .doc-body :global(.doc-callout) {
-    @apply relative mt-6 overflow-hidden rounded-xl bg-white px-6 py-6 pl-8 leading-[1.8] md:px-8;
+    @apply relative mt-6 max-w-[68ch] overflow-hidden rounded-xl bg-white px-6 py-6 pl-8 leading-[1.85] md:px-8;
   }
 
   .doc-body :global(.doc-callout)::before {
@@ -431,7 +478,7 @@
   }
 
   .doc-body :global(.doc-callout-title) {
-    @apply mb-4 block text-sm font-semibold uppercase tracking-wider text-gradient;
+    @apply mb-4 block text-sm font-semibold uppercase tracking-wider text-navy;
   }
 
   .doc-body :global(.doc-callout p) {
@@ -439,15 +486,23 @@
   }
 
   .doc-body :global(.doc-note) {
-    @apply mt-6 rounded-xl border border-dashed border-navy/20 bg-white px-6 py-5 text-sm leading-[1.8] text-navy/70 md:text-base;
+    @apply mt-6 max-w-[68ch] overflow-hidden rounded-xl border border-navy/15 bg-surface p-0;
+  }
+
+  .doc-body :global(.doc-note:not(:has(pre))) {
+    @apply px-6 py-5 text-sm leading-[1.85] text-navy/75 md:px-7 md:py-6 md:text-base;
+  }
+
+  .doc-body :global(pre) {
+    @apply my-6 max-w-[68ch] overflow-x-auto rounded-xl border border-navy/10 bg-navy px-5 py-4 text-sm leading-relaxed text-white;
+  }
+
+  .doc-body :global(.doc-note pre) {
+    @apply m-0 max-w-none overflow-x-auto rounded-none border-0 px-5 py-5 font-mono text-[0.8125rem] leading-[1.7] text-white/95 md:px-6 md:py-6 md:text-sm;
   }
 
   .doc-body :global(code) {
     @apply rounded-md bg-surface px-1.5 py-0.5 font-mono text-[0.92em] text-navy;
-  }
-
-  .doc-body :global(pre) {
-    @apply my-6 overflow-x-auto rounded-xl border border-navy/10 bg-navy px-5 py-4 text-sm leading-relaxed text-white;
   }
 
   .doc-body :global(pre code) {
@@ -456,11 +511,11 @@
 
   .doc-body :global(blockquote) {
     border-left-color: rgb(255 95 46 / 0.7);
-    @apply my-6 border-l-4 bg-surface px-5 py-4 italic text-navy/80;
+    @apply my-6 max-w-[68ch] border-l-4 bg-surface px-5 py-4 italic text-navy/80;
   }
 
   .doc-body :global(table) {
-    @apply my-6 w-full border-collapse overflow-hidden rounded-xl border border-navy/10 text-sm;
+    @apply my-6 w-full max-w-none border-collapse overflow-hidden rounded-xl border border-navy/10 text-sm;
   }
 
   .doc-body :global(th),
@@ -473,16 +528,16 @@
   }
 
   .doc-body :global(h2:not([class])) {
-    @apply mb-4 mt-10 text-2xl font-bold text-navy;
+    @apply mb-5 mt-10 max-w-[68ch] text-2xl font-bold text-navy;
   }
 
   .doc-body :global(h3:not([class])) {
-    @apply mb-3 mt-8 text-xl font-semibold text-navy;
+    @apply mb-4 mt-8 max-w-[68ch] text-xl font-semibold text-navy;
   }
 
   .doc-body :global(ul:not([class])),
   .doc-body :global(ol:not([class])) {
-    @apply my-6 space-y-2 pl-6;
+    @apply my-6 max-w-[68ch] space-y-2 pl-6;
   }
 
   .doc-body :global(ul:not([class])) {
@@ -509,15 +564,15 @@
     @apply rounded-2xl border border-navy/10 bg-gradient-to-br from-surface to-white px-6 py-8 md:px-10 md:py-10;
   }
 
-  .doc-body :global(.doc-closing-block .doc-block-title) {
-    @apply mb-3;
+  .doc-body :global(.doc-closing-block .doc-block-title)::after {
+    @apply mb-5;
   }
 
   .doc-body :global(.doc-closing) {
-    @apply m-0 leading-[1.8];
+    @apply m-0 max-w-[68ch] leading-[1.85];
   }
 
   .doc-body :global(.doc-closing strong) {
-    @apply bg-brand-gradient bg-clip-text font-semibold text-transparent;
+    @apply font-semibold text-navy;
   }
 }

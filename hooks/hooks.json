@@ -1,7 +1,7 @@
 [
   {
     "id": "ideas",
-    "execute-command": "/hooks/receive-idea.sh",
+    "execute-command": "/opt/km0-web/scripts/receive-idea.sh",
     "command-working-directory": "/tmp",
     "include-command-output-in-response": true,
     "pass-arguments-to-command": [

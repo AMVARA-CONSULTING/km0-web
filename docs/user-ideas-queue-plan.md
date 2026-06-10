@@ -2,7 +2,7 @@
 
 Plan for collecting public comments from the static site without exposing the downstream secret script. The web only talks to a public receiver; the secret logic runs on the host with no HTTP endpoint.
 
-**Status:** receiver, public form, and **autoissue** processor (cursor-agent draft + `gh issue create`); host setup via `scripts/setup-ideas-processor.sh`.
+**Status:** receiver on host (systemd webhook), public form, **autoissue** processor (cursor-agent draft + `gh issue create`); host setup via `scripts/setup-ideas-processor.sh`. Dev email via AutoMail on enqueue (`scripts/notify-idea-email.sh`, `AUTOMAIL_TOKEN` in repo-root `.env`).
 **Related:** [runbook.md](./runbook.md) (deploy and nginx).
 
 ---
@@ -12,8 +12,9 @@ Plan for collecting public comments from the static site without exposing the do
 ```text
 Browser form (Astro)
   → POST /hooks/ideas (nginx, rate limited)
-  → Public receiver (Script 1, in repo / Docker)
+  → Host webhook (Script 1, systemd km0-ideas-receiver.service)
   → Atomic write to queue file (JSON)
+  → notify-idea-email.sh (AutoMail, background, no cursor-agent)
   → systemd path unit triggers autoissue (host only)
   → autoissue: cursor-agent drafts markdown from JSON, then gh issue create
 ```
@@ -37,6 +38,7 @@ Browser form (Astro)
 | `/opt/km0-web/autoissue/autoissue-agent.md` | cursor-agent prompt for issue drafts | `root` | `644` |
 | `/opt/km0-web/autoissue/drafts/` | Ephemeral drafts (gitignored) | `root` | `755` |
 | `/opt/km0-web/autoagents/.env` | `GH_TOKEN` for `gh issue create` (host only, not in Git) | `root` | `600` |
+| `/opt/km0-web/.env` | `AUTOMAIL_TOKEN` for dev notification (host only, not in Git) | `root` | `600` |
 | `/var/log/km0-ideas/` | Receiver and processor logs | `root:adm` | `750` |
 
 Install Script 2 and systemd units on the host:
@@ -45,19 +47,20 @@ Install Script 2 and systemd units on the host:
 sudo ./scripts/setup-ideas-processor.sh
 ```
 
-**Never commit** `autoagents/.env` or tokens to `km0-web`.
+**Never commit** `autoagents/.env`, repo-root `.env`, or tokens to `km0-web`.
 
 ### In this repo (public side)
 
 | Path | Purpose |
 |------|---------|
 | `scripts/receive-idea.sh` | Validates payload, atomic enqueue (Script 1 logic) |
-| `hooks/hooks.json` | [webhook](https://github.com/adnanh/webhook) config (if used) |
-| `docker-compose.yml` | Add `km0-ideas-receiver` service (no secret mounts) |
+| `scripts/notify-idea-email.sh` | AutoMail dev notification on enqueue (background) |
+| `hooks/hooks.json` | [webhook](https://github.com/adnanh/webhook) config |
+| `deploy/systemd/km0-ideas-receiver.service` | Host webhook unit (`127.0.0.1:9181`) |
 | `nginx/` | Snippet for `/hooks/ideas` proxy and `limit_req` |
-| `src/components/` or `src/views/` | Public form UI (later implementation) |
+| `src/components/` or `src/views/` | Public form UI |
 
-Mount only `/var/spool/km0-ideas/incoming` into the receiver container (write-only from the container’s perspective).
+Production host nginx proxies `/hooks/ideas` to `127.0.0.1:9181` directly. For Docker-only dev, POST to `:9181` or ensure the container can reach the host webhook via `host.docker.internal` (see `extra_hosts` in `docker-compose.yml`).
 
 ---
 
@@ -103,7 +106,8 @@ Script 1 generates `id` and `receivedAt`. Do not trust client-supplied IDs.
 2. Reject spam: honeypot field, nginx rate limit, optional [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/).
 3. Validate and normalize fields (length, charset).
 4. Write queue file **atomically** (see below).
-5. Return generic JSON: `{"ok": true}` or `{"ok": false, "error": "invalid_input"}` with no internal paths.
+5. Fire-and-forget dev email via `notify-idea-email.sh` (AutoMail API; optional if `AUTOMAIL_TOKEN` unset).
+6. Return generic JSON: `{"ok": true}` or `{"ok": false, "error": "invalid_input"}` with no internal paths.
 
 **Must not:** invoke Script 2, mention `/opt/km0-private`, or log full payloads at info level in production.
 
@@ -118,7 +122,7 @@ mv "$tmp" "/var/spool/km0-ideas/incoming/${name}.json"
 
 `mv` on the same filesystem is atomic. Concurrent users get distinct filenames (`uuid`), so no write collision.
 
-**Recommended implementation:** [adnanh/webhook](https://github.com/adnanh/webhook) container calling `scripts/receive-idea.sh`, or a minimal sidecar. HMAC secret in env file on host (`/opt/km0-web/.env.receiver`, not in Git).
+**Recommended implementation:** [adnanh/webhook](https://github.com/adnanh/webhook) on the host (`km0-ideas-receiver.service`) calling `scripts/receive-idea.sh`. Secrets in repo-root `.env` (AutoMail) and `autoagents/.env` (GitHub, processor only).
 
 ---
 
@@ -224,13 +228,16 @@ systemctl enable --now km0-idea-processor.path
 
 ## Docker and nginx
 
-### docker-compose (receiver only)
+### Docker (static site only)
 
-- Service `km0-ideas-receiver`: image with webhook or minimal HTTP handler.
-- Publish `127.0.0.1:9181:8080` (internal only).
-- Volume: `/var/spool/km0-ideas/incoming:/var/spool/km0-ideas/incoming`.
-- No mount of `/opt/km0-private`.
-- Env: `WEBHOOK_SECRET`, max body size.
+- Service `km0-web`: Astro static site on `127.0.0.1:9180`.
+- No ideas receiver container; webhook runs on the host via systemd.
+
+### Host webhook
+
+- `km0-ideas-receiver.service`: adnanh/webhook on `127.0.0.1:9181`.
+- User `km0-receiver`; writes to `/var/spool/km0-ideas/incoming`.
+- Env: repo-root `.env` (`AUTOMAIL_TOKEN`, optional `AUTOMAIL_NOTIFY_TO`).
 
 ### Host nginx
 
@@ -274,11 +281,11 @@ systemctl enable --now km0-idea-processor.path
 
 ## Implementation phases
 
-1. **Ops:** Create users, spool dirs, systemd units; deploy Script 2 to `/opt/km0-private/` (manual test with `echo '{}' > incoming/test.json`).
-2. **Receiver:** Add webhook container, `receive-idea.sh`, compose port `9181`, nginx location.
+1. **Ops:** Create users, spool dirs, systemd units; run `sudo ./scripts/setup-ideas-processor.sh`.
+2. **Receiver:** Host webhook (`km0-ideas-receiver.service`), `receive-idea.sh`, nginx location on `:9181`.
 3. **Frontend:** Astro form, i18n strings, POST to `/hooks/ideas`, thank-you state.
 4. **Hardening:** Turnstile, monitoring on `failed/` count, log rotation.
-5. **Docs:** Add runbook section (enqueue verify, replay failed job, disable intake).
+5. **Docs:** Runbook section (enqueue verify, replay failed job, disable intake).
 
 ---
 

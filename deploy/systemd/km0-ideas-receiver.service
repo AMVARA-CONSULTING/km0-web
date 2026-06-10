@@ -1,0 +1,18 @@
+[Unit]
+Description=KM0 ideas webhook receiver (host)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=km0-receiver
+Group=km0-receiver
+Environment=KM0_WEB_ROOT=/opt/km0-web
+Environment=KM0_IDEAS_QUEUE=/var/spool/km0-ideas/incoming
+EnvironmentFile=-/opt/km0-web/.env
+ExecStart=/usr/local/bin/webhook -verbose -port 9181 -ip 127.0.0.1 -hooks=/opt/km0-web/hooks/hooks.json
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

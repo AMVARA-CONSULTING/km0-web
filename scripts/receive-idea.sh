@@ -2,7 +2,9 @@
 # Public receiver (Script 1): validate POST payload and enqueue JSON atomically.
 set -euo pipefail
 
+REPO_ROOT="${KM0_WEB_ROOT:-/opt/km0-web}"
 QUEUE="${KM0_IDEAS_QUEUE:-/var/spool/km0-ideas/incoming}"
+RECEIVER_LOG="${KM0_IDEAS_RECEIVER_LOG:-/var/log/km0-ideas/receiver.log}"
 payload="${1:-}"
 
 respond_ok() {
@@ -119,6 +121,10 @@ chmod 640 "$tmp" 2>/dev/null || true
 if ! mv "$tmp" "${QUEUE}/${filename}"; then
   rm -f "$tmp"
   respond_err "unavailable"
+fi
+
+if [[ -x "${REPO_ROOT}/scripts/notify-idea-email.sh" ]]; then
+  "${REPO_ROOT}/scripts/notify-idea-email.sh" "$idea" >>"$RECEIVER_LOG" 2>&1 &
 fi
 
 respond_ok

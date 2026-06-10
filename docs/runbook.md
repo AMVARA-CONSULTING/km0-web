@@ -46,14 +46,19 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 |------|------|
 | `/ideas/`, `/ca/ideas/`, `/en/ideas/`, `/de/ideas/` | `src/views/Ideas.astro` |
 
-- Form POST: `/hooks/ideas` (proxied to `km0-ideas-receiver` on `:9181`)
-- Receiver script: `scripts/receive-idea.sh` (webhook hook in `hooks/hooks.json`)
-- Queue spool: host bind mount `/var/spool/km0-ideas/incoming` (shared with `km0-ideas-receiver` container)
+- Form POST: `/hooks/ideas` (host nginx → webhook systemd on `:9181`)
+- Receiver: `scripts/receive-idea.sh` via [adnanh/webhook](https://github.com/adnanh/webhook) (`km0-ideas-receiver.service`)
+- Dev email: `scripts/notify-idea-email.sh` (AutoMail API, fire-and-forget on enqueue; `AUTOMAIL_TOKEN` in repo-root `.env`)
+- Queue spool: `/var/spool/km0-ideas/incoming` (host bind mount, no Docker sidecar)
 - Processor (autoissue): `scripts/autoissue.sh` + `autoissue/autoissue-agent.md` (cursor-agent drafts, then `gh issue create`), triggered by `km0-idea-processor.path` (see [user-ideas-queue-plan.md](./user-ideas-queue-plan.md))
 
 ```bash
-# First-time host setup (spool dirs + systemd)
+# First-time host setup (spool dirs + webhook + systemd)
 sudo ./scripts/setup-ideas-processor.sh
+
+# AutoMail (host only, add to repo-root .env, never commit):
+# AUTOMAIL_TOKEN=...
+# AUTOMAIL_NOTIFY_TO=yoelberjaga@gmail.com
 
 # Manual drain / replay
 sudo ./scripts/autoissue.sh
@@ -62,10 +67,11 @@ ls -la /var/spool/km0-ideas/{incoming,processed,failed}/
 
 ```bash
 curl -sI http://127.0.0.1:9180/ideas/ http://127.0.0.1:9180/en/ideas/
-curl -s -X POST http://127.0.0.1:9180/hooks/ideas \
+curl -s -X POST http://127.0.0.1:9181/hooks/ideas \
   -H 'Content-Type: application/json' \
   -d '{"idea":"Test feedback","locale":"en"}'
-docker compose exec km0-ideas-receiver ls -la /var/spool/km0-ideas/incoming/
+ls -la /var/spool/km0-ideas/incoming/
+systemctl status km0-ideas-receiver
 ```
 
 ### Cloud users (`/cloud/`)
@@ -99,7 +105,7 @@ curl -s http://127.0.0.1:9180/en/cloud/ | grep -o 'cloud-users-count'
 | Astro site | km0-web 1.1.0 | `/opt/km0-web/` |
 | Docker image | `km0-km0-web` | Built from `/opt/km0-web/Dockerfile` |
 | Container | `km0-web` | `127.0.0.1:9180→80` |
-| Ideas receiver | `km0-ideas-receiver` | `127.0.0.1:9181→9000` (webhook) |
+| Ideas receiver | `km0-ideas-receiver.service` (host webhook) | `127.0.0.1:9181` |
 | Nginx vhost | `km0digital.com` | `/etc/nginx/sites-available/km0` |
 | TLS | Let's Encrypt | `/etc/letsencrypt/live/km0digital.com/` |
 | OpenCloud (separate) | `cloud.km0digital.com` → `:9200` | `/opt/opencloud/` |

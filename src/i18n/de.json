@@ -256,7 +256,7 @@
     "intro": "KM0 Digital bietet 500 GB für 1,99 €/Monat für alle, die unkomplizierten, zuverlässigen Speicher zu einem fairen Preis suchen.",
     "claim": "Bis zu fünfmal mehr Speicher als die Basispläne anderer Anbieter zu einem ähnlichen Preis.",
     "compareHeading": "Orientierende Marktreferenzen",
-    "compareIntro": "Die Tabelle zeigt orientierende Marktreferenzen auf Basis vergleichbarer öffentlicher Tarife. Es ist keine exakte Gleichstellung von Diensten oder Funktionen.",
+    "compareIntro": "Die Tabelle zeigt orientierende Marktreferenzen auf Basis vergleichbarer öffentlicher Tarife.",
     "tableDisclaimer": "Orientierende Werte auf Basis öffentlicher Referenztarife. Offizielle Anbieterpreise können je nach Region, Steuern und Aktionen abweichen.",
     "table": {
       "provider": "Referenz",
@@ -269,7 +269,7 @@
         "provider": "KM0 Digital",
         "monthlyPrice": "1,99 €",
         "storageGb": "500 GB",
-        "costPerTbMonth": "≈4,08 €",
+        "costPerTbMonth": "≈3,98 €",
         "highlight": true
       },
       {
@@ -324,7 +324,7 @@
         },
         {
           "title": "Naher Support",
-          "desc": "Support auf Spanisch mit echten Menschen, kein anonymes Callcenter in weiter Ferne."
+          "desc": "Support auf Kastilisch und Katalanisch mit echten Menschen, kein anonymes Callcenter in weiter Ferne."
         },
         {
           "title": "Datenstandort",
@@ -339,7 +339,7 @@
     "differentiators": {
       "heading": "Warum KM0",
       "items": [
-        "Nähe und Support auf Spanisch",
+        "Nähe und Support",
         "Einfachheit ohne invasives Ökosystem",
         "Lokaler europäischer Anbieter",
         "Datenschutz von Anfang an",

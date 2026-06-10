@@ -239,6 +239,26 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     border: 1px solid rgb(15 23 42 / 0.08);
     background: #fff;
     box-shadow: 0 4px 16px rgb(15 23 42 / 0.04);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .pricing-trust-card:hover {
+    border-color: rgb(15 23 42 / 0.14);
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.08);
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-trust-card {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .pricing-trust-card:hover {
+      transform: none;
+    }
   }
 
   .pricing-trust-title {
@@ -277,6 +297,28 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     font-size: 0.9375rem;
     font-weight: 500;
     color: #9a3412;
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .pricing-diff-item:hover {
+    background: rgb(255 95 46 / 0.14);
+    border-color: rgb(255 95 46 / 0.28);
+    box-shadow: 0 6px 18px rgb(255 95 46 / 0.12);
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-diff-item {
+      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .pricing-diff-item:hover {
+      transform: none;
+    }
   }
 
   .pricing-custom {

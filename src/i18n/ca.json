@@ -142,7 +142,12 @@
     "intro": "Aquí publiquem el pols del projecte: per què prenem cada decisió, com evolucionen els nostres serveis i què aprenem pel camí. Un diari tècnic proper, sense màrqueting buit.",
     "readMore": "Llegir entrada",
     "backToIndex": "Tornar al blog",
-    "breadcrumbHome": "Blog"
+    "breadcrumbHome": "Blog",
+    "readingTime": "{minutes} min de lectura",
+    "tocTitle": "En aquesta pàgina",
+    "previousPost": "Entrada anterior",
+    "nextPost": "Entrada següent",
+    "relatedPosts": "Més del blog"
   },
   "tutorials": {
     "metaTitle": "Tutorials - Kilòmetre 0 Digital",
@@ -152,7 +157,12 @@
     "intro": "Instruccions clares per accedir, configurar i iniciar sessió a KM0 Cloud des del navegador o les aplicacions mòbils.",
     "readMore": "Obrir tutorial",
     "backToIndex": "Tornar als tutorials",
-    "breadcrumbHome": "Tutorials"
+    "breadcrumbHome": "Tutorials",
+    "readingTime": "{minutes} min de lectura",
+    "tocTitle": "En aquesta pàgina",
+    "previousTutorial": "Tutorial anterior",
+    "nextTutorial": "Tutorial següent",
+    "relatedTutorials": "Més tutorials"
   },
   "meaning": {
     "eyebrow": "Significat",

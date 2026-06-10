@@ -1,0 +1,185 @@
+---
+import type { TocEntry } from '../lib/reading';
+import { formatReadingTime } from '../lib/reading';
+
+interface NavLink {
+  href: string;
+  title: string;
+}
+
+interface RelatedLink {
+  href: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  breadcrumbHome: string;
+  breadcrumbHomeHref: string;
+  title: string;
+  description: string;
+  readingTimeLabel: string;
+  readingMinutes: number;
+  tocTitle: string;
+  toc: TocEntry[];
+  prevLabel: string;
+  nextLabel: string;
+  backHref: string;
+  backLabel: string;
+  relatedTitle?: string;
+  pubDate?: Date;
+  pubDateLabel?: string;
+  prev?: NavLink;
+  next?: NavLink;
+  related?: RelatedLink[];
+}
+
+const {
+  breadcrumbHome,
+  breadcrumbHomeHref,
+  title,
+  description,
+  readingTimeLabel,
+  readingMinutes,
+  tocTitle,
+  toc,
+  prevLabel,
+  nextLabel,
+  backHref,
+  backLabel,
+  relatedTitle,
+  pubDate,
+  pubDateLabel,
+  prev,
+  next,
+  related = [],
+} = Astro.props;
+
+const hasToc = toc.length >= 3;
+const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
+---
+
+<article class="doc-reading" data-doc-reading>
+  <nav class="doc-breadcrumb" aria-label="Breadcrumb">
+    <a href={breadcrumbHomeHref} class="doc-breadcrumb-link">{breadcrumbHome}</a>
+    <span class="doc-breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="doc-breadcrumb-current">{title}</span>
+  </nav>
+
+  {
+    hasToc && (
+      <details class="doc-toc-mobile lg:hidden">
+        <summary class="doc-toc-mobile-summary">{tocTitle}</summary>
+        <nav class="doc-toc" aria-label={tocTitle} data-doc-toc>
+          <ol class="doc-toc-list">
+            {toc.map((entry) => (
+              <li class:list={['doc-toc-item', entry.level === 3 && 'doc-toc-item--nested']}>
+                <a href={`#${entry.id}`} class="doc-toc-link" data-toc-link>
+                  {entry.text}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </details>
+    )
+  }
+
+  <div class:list={['doc-reading-grid', hasToc && 'doc-reading-grid--with-toc']}>
+    {
+      hasToc && (
+        <aside class="doc-toc-aside hidden lg:block" aria-label={tocTitle}>
+          <nav class="doc-toc doc-toc--sticky" data-doc-toc>
+            <p class="doc-toc-heading">{tocTitle}</p>
+            <ol class="doc-toc-list">
+              {toc.map((entry) => (
+                <li class:list={['doc-toc-item', entry.level === 3 && 'doc-toc-item--nested']}>
+                  <a href={`#${entry.id}`} class="doc-toc-link" data-toc-link>
+                    {entry.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </aside>
+      )
+    }
+
+    <div class="doc-article-shell">
+      <header class="doc-header">
+        <div class="doc-meta">
+          {pubDate && pubDateLabel && (
+            <time datetime={pubDate.toISOString()} class="doc-date">
+              {pubDateLabel}
+            </time>
+          )}
+          <span class="doc-reading-time">{readingTime}</span>
+        </div>
+        <h1 class="heading-section doc-title text-navy">{title}</h1>
+        <p class="doc-dek">{description}</p>
+      </header>
+
+      <div class="doc-body">
+        <slot />
+      </div>
+
+      {
+        (prev || next) && (
+          <nav class="doc-article-nav" aria-label="Article navigation">
+            {prev ? (
+              <a href={prev.href} class="doc-article-nav-link doc-article-nav-link--prev">
+                <span class="doc-article-nav-label">{prevLabel}</span>
+                <span class="doc-article-nav-title">{prev.title}</span>
+              </a>
+            ) : (
+              <span class="doc-article-nav-spacer" aria-hidden="true" />
+            )}
+            {next ? (
+              <a href={next.href} class="doc-article-nav-link doc-article-nav-link--next">
+                <span class="doc-article-nav-label">{nextLabel}</span>
+                <span class="doc-article-nav-title">{next.title}</span>
+              </a>
+            ) : (
+              <span class="doc-article-nav-spacer" aria-hidden="true" />
+            )}
+          </nav>
+        )
+      }
+
+      {
+        related.length > 0 && relatedTitle && (
+          <section class="doc-related" aria-labelledby="doc-related-heading">
+            <h2 id="doc-related-heading" class="doc-related-heading">
+              {relatedTitle}
+            </h2>
+            <ul class="doc-related-list">
+              {related.map((item) => (
+                <li class="doc-related-card">
+                  <a href={item.href} class="doc-related-card-link">
+                    <span class="doc-related-card-title">{item.title}</span>
+                    <span class="doc-related-card-desc">{item.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      <footer class="doc-footer">
+        <a href={backHref} class="doc-back">{backLabel}</a>
+      </footer>
+    </div>
+  </div>
+
+  {
+    hasToc &&
+      toc.map((entry) => (
+        <span data-toc-anchor={entry.id} hidden />
+      ))
+  }
+</article>
+
+<script>
+  import '../scripts/doc-reading.ts';
+</script>

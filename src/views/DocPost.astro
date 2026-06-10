@@ -1,12 +1,15 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import DocArticleChrome from '../components/DocArticleChrome.astro';
 import Layout from '../layouts/Layout.astro';
 import { getMessages } from '../i18n';
 import { localeHref, docPostHref } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import type { CollectionEntry } from 'astro:content';
-import { docSlug, formatDocDate } from '../lib/doc';
+import { getCollection } from 'astro:content';
+import { docSlug, formatDocDate, compareDocPosts } from '../lib/doc';
+import { extractDocToc, estimateReadingMinutes } from '../lib/reading';
 
 interface Props {
   locale: Locale;
@@ -16,6 +19,17 @@ interface Props {
 const { locale, post } = Astro.props;
 const messages = getMessages(locale);
 const { Content } = await post.render();
+
+const posts = (await getCollection('doc', ({ data }) => data.locale === locale)).sort(
+  compareDocPosts,
+);
+const postIndex = posts.findIndex((entry) => entry.id === post.id);
+const olderPost = postIndex < posts.length - 1 ? posts[postIndex + 1] : undefined;
+const newerPost = postIndex > 0 ? posts[postIndex - 1] : undefined;
+const relatedPosts = posts.filter((entry) => entry.id !== post.id).slice(0, 2);
+
+const toc = extractDocToc(post.body ?? '');
+const readingMinutes = estimateReadingMinutes(post.body ?? '', locale);
 
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const postPath = docPostHref(locale, docSlug(post));
@@ -31,34 +45,41 @@ const pageTitle = `${post.data.title} - ${messages.brandNameShort}`;
   pageDescription={post.data.description}
 >
   <Header locale={locale} messages={messages} />
-  <main class="section-pad bg-white pt-28">
-    <article class="doc-article mx-auto max-w-4xl">
-      <nav class="doc-breadcrumb mb-10" aria-label="Breadcrumb">
-        <a href={localeHref(locale, '/doc/')} class="doc-breadcrumb-link">
-          {messages.doc.breadcrumbHome}
-        </a>
-        <span class="doc-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="doc-breadcrumb-current">{post.data.title}</span>
-      </nav>
-
-      <header class="doc-header mb-12">
-        <time datetime={post.data.pubDate.toISOString()} class="doc-date">
-          {formatDocDate(post.data.pubDate, locale)}
-        </time>
-        <h1 class="heading-section doc-title text-navy">{post.data.title}</h1>
-        <p class="doc-dek text-justify">{post.data.description}</p>
-      </header>
-
-      <div class="doc-body">
-        <Content />
-      </div>
-
-      <footer class="doc-footer">
-        <a href={localeHref(locale, '/doc/')} class="doc-back">
-          {messages.doc.backToIndex}
-        </a>
-      </footer>
-    </article>
+  <main class="section-pad doc-reading-page pt-28">
+    <DocArticleChrome
+      breadcrumbHome={messages.doc.breadcrumbHome}
+      breadcrumbHomeHref={localeHref(locale, '/doc/')}
+      title={post.data.title}
+      description={post.data.description}
+      readingTimeLabel={messages.doc.readingTime}
+      readingMinutes={readingMinutes}
+      tocTitle={messages.doc.tocTitle}
+      toc={toc}
+      prevLabel={messages.doc.previousPost}
+      nextLabel={messages.doc.nextPost}
+      backHref={localeHref(locale, '/doc/')}
+      backLabel={messages.doc.backToIndex}
+      relatedTitle={messages.doc.relatedPosts}
+      pubDate={post.data.pubDate}
+      pubDateLabel={formatDocDate(post.data.pubDate, locale)}
+      prev={
+        olderPost
+          ? { href: docPostHref(locale, docSlug(olderPost)), title: olderPost.data.title }
+          : undefined
+      }
+      next={
+        newerPost
+          ? { href: docPostHref(locale, docSlug(newerPost)), title: newerPost.data.title }
+          : undefined
+      }
+      related={relatedPosts.map((entry) => ({
+        href: docPostHref(locale, docSlug(entry)),
+        title: entry.data.title,
+        description: entry.data.description,
+      }))}
+    >
+      <Content />
+    </DocArticleChrome>
   </main>
   <Footer locale={locale} messages={messages} />
 </Layout>

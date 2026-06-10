@@ -7,6 +7,7 @@ import { localeHref, tutorialPostHref } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import { getCollection } from 'astro:content';
 import { tutorialSlug, compareTutorials } from '../lib/tutorial';
+import { estimateReadingMinutes, formatReadingTime } from '../lib/reading';
 
 interface Props {
   locale: Locale;
@@ -30,9 +31,9 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
   pageDescription={messages.tutorials.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="section-pad bg-white pt-28">
-    <div class="doc-index mx-auto max-w-4xl text-justify">
-      <header class="doc-index-header mb-12">
+  <main class="section-pad doc-reading-page pt-28">
+    <div class="doc-index mx-auto max-w-3xl">
+      <header class="doc-index-header">
         <p class="doc-eyebrow">{messages.tutorials.eyebrow}</p>
         <h1 class="heading-section text-navy">{messages.tutorials.heading}</h1>
         <p class="doc-index-intro">{messages.tutorials.intro}</p>
@@ -40,17 +41,26 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
 
       <ul class="doc-post-list">
         {
-          tutorials.map((tutorial) => (
-            <li class="doc-post-card">
-              <h2 class="doc-post-card-title">
-                <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>{tutorial.data.title}</a>
-              </h2>
-              <p class="doc-post-card-desc">{tutorial.data.description}</p>
-              <a href={tutorialPostHref(locale, tutorialSlug(tutorial))} class="doc-read-more">
-                {messages.tutorials.readMore}
-              </a>
-            </li>
-          ))
+          tutorials.map((tutorial) => {
+            const readingMinutes = estimateReadingMinutes(tutorial.body ?? '', locale);
+            const readingTime = formatReadingTime(messages.tutorials.readingTime, readingMinutes);
+
+            return (
+              <li class="doc-post-card">
+                <div class="doc-post-card-meta">
+                  <span class="doc-platform-badge">{tutorial.data.platform}</span>
+                  <span class="doc-reading-time">{readingTime}</span>
+                </div>
+                <h2 class="doc-post-card-title">
+                  <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>{tutorial.data.title}</a>
+                </h2>
+                <p class="doc-post-card-desc">{tutorial.data.description}</p>
+                <a href={tutorialPostHref(locale, tutorialSlug(tutorial))} class="doc-read-more">
+                  {messages.tutorials.readMore}
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
     </div>

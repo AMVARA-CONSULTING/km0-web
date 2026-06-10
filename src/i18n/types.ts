@@ -127,6 +127,11 @@ export interface Messages {
     readMore: string;
     backToIndex: string;
     breadcrumbHome: string;
+    readingTime: string;
+    tocTitle: string;
+    previousPost: string;
+    nextPost: string;
+    relatedPosts: string;
   };
   tutorials: {
     metaTitle: string;
@@ -137,6 +142,11 @@ export interface Messages {
     readMore: string;
     backToIndex: string;
     breadcrumbHome: string;
+    readingTime: string;
+    tocTitle: string;
+    previousTutorial: string;
+    nextTutorial: string;
+    relatedTutorials: string;
   };
   meaning: {
     eyebrow: string;

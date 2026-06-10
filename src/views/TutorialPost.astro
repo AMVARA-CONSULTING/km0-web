@@ -1,12 +1,15 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import DocArticleChrome from '../components/DocArticleChrome.astro';
 import Layout from '../layouts/Layout.astro';
 import { getMessages } from '../i18n';
 import { localeHref, tutorialPostHref } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import type { CollectionEntry } from 'astro:content';
-import { tutorialSlug } from '../lib/tutorial';
+import { getCollection } from 'astro:content';
+import { tutorialSlug, compareTutorials } from '../lib/tutorial';
+import { extractDocToc, estimateReadingMinutes } from '../lib/reading';
 
 interface Props {
   locale: Locale;
@@ -16,6 +19,20 @@ interface Props {
 const { locale, tutorial } = Astro.props;
 const messages = getMessages(locale);
 const { Content } = await tutorial.render();
+
+const tutorials = (await getCollection('tutorials', ({ data }) => data.locale === locale)).sort(
+  compareTutorials,
+);
+const tutorialIndex = tutorials.findIndex((entry) => entry.id === tutorial.id);
+const previousTutorial = tutorialIndex > 0 ? tutorials[tutorialIndex - 1] : undefined;
+const nextTutorial =
+  tutorialIndex >= 0 && tutorialIndex < tutorials.length - 1
+    ? tutorials[tutorialIndex + 1]
+    : undefined;
+const relatedTutorials = tutorials.filter((entry) => entry.id !== tutorial.id).slice(0, 2);
+
+const toc = extractDocToc(tutorial.body ?? '');
+const readingMinutes = estimateReadingMinutes(tutorial.body ?? '', locale);
 
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const tutorialPath = tutorialPostHref(locale, tutorialSlug(tutorial));
@@ -31,31 +48,45 @@ const pageTitle = `${tutorial.data.title} - ${messages.brandNameShort}`;
   pageDescription={tutorial.data.description}
 >
   <Header locale={locale} messages={messages} />
-  <main class="section-pad bg-white pt-28">
-    <article class="doc-article mx-auto max-w-4xl">
-      <nav class="doc-breadcrumb mb-10" aria-label="Breadcrumb">
-        <a href={localeHref(locale, '/tutorials/')} class="doc-breadcrumb-link">
-          {messages.tutorials.breadcrumbHome}
-        </a>
-        <span class="doc-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="doc-breadcrumb-current">{tutorial.data.title}</span>
-      </nav>
-
-      <header class="doc-header mb-12">
-        <h1 class="heading-section doc-title text-navy">{tutorial.data.title}</h1>
-        <p class="doc-dek text-justify">{tutorial.data.description}</p>
-      </header>
-
-      <div class="doc-body">
-        <Content />
-      </div>
-
-      <footer class="doc-footer">
-        <a href={localeHref(locale, '/tutorials/')} class="doc-back">
-          {messages.tutorials.backToIndex}
-        </a>
-      </footer>
-    </article>
+  <main class="section-pad doc-reading-page pt-28">
+    <DocArticleChrome
+      breadcrumbHome={messages.tutorials.breadcrumbHome}
+      breadcrumbHomeHref={localeHref(locale, '/tutorials/')}
+      title={tutorial.data.title}
+      description={tutorial.data.description}
+      readingTimeLabel={messages.tutorials.readingTime}
+      readingMinutes={readingMinutes}
+      tocTitle={messages.tutorials.tocTitle}
+      toc={toc}
+      prevLabel={messages.tutorials.previousTutorial}
+      nextLabel={messages.tutorials.nextTutorial}
+      backHref={localeHref(locale, '/tutorials/')}
+      backLabel={messages.tutorials.backToIndex}
+      relatedTitle={messages.tutorials.relatedTutorials}
+      prev={
+        previousTutorial
+          ? {
+              href: tutorialPostHref(locale, tutorialSlug(previousTutorial)),
+              title: previousTutorial.data.title,
+            }
+          : undefined
+      }
+      next={
+        nextTutorial
+          ? {
+              href: tutorialPostHref(locale, tutorialSlug(nextTutorial)),
+              title: nextTutorial.data.title,
+            }
+          : undefined
+      }
+      related={relatedTutorials.map((entry) => ({
+        href: tutorialPostHref(locale, tutorialSlug(entry)),
+        title: entry.data.title,
+        description: entry.data.description,
+      }))}
+    >
+      <Content />
+    </DocArticleChrome>
   </main>
   <Footer locale={locale} messages={messages} />
 </Layout>

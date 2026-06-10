@@ -7,6 +7,7 @@ import { localeHref, docPostHref } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import { getCollection } from 'astro:content';
 import { docSlug, formatDocDate, compareDocPosts } from '../lib/doc';
+import { estimateReadingMinutes, formatReadingTime } from '../lib/reading';
 
 interface Props {
   locale: Locale;
@@ -30,9 +31,9 @@ const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
   pageDescription={messages.doc.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="section-pad bg-white pt-28">
-    <div class="doc-index mx-auto max-w-4xl text-justify">
-      <header class="doc-index-header mb-12">
+  <main class="section-pad doc-reading-page pt-28">
+    <div class="doc-index mx-auto max-w-3xl">
+      <header class="doc-index-header">
         <p class="doc-eyebrow">{messages.doc.eyebrow}</p>
         <h1 class="heading-section text-navy">{messages.doc.heading}</h1>
         <p class="doc-index-intro">{messages.doc.intro}</p>
@@ -40,20 +41,28 @@ const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
 
       <ul class="doc-post-list">
         {
-          posts.map((post) => (
-            <li class="doc-post-card">
-              <time datetime={post.data.pubDate.toISOString()} class="doc-date">
-                {formatDocDate(post.data.pubDate, locale)}
-              </time>
-              <h2 class="doc-post-card-title">
-                <a href={docPostHref(locale, docSlug(post))}>{post.data.title}</a>
-              </h2>
-              <p class="doc-post-card-desc">{post.data.description}</p>
-              <a href={docPostHref(locale, docSlug(post))} class="doc-read-more">
-                {messages.doc.readMore}
-              </a>
-            </li>
-          ))
+          posts.map((post) => {
+            const readingMinutes = estimateReadingMinutes(post.body ?? '', locale);
+            const readingTime = formatReadingTime(messages.doc.readingTime, readingMinutes);
+
+            return (
+              <li class="doc-post-card">
+                <div class="doc-post-card-meta">
+                  <time datetime={post.data.pubDate.toISOString()} class="doc-date">
+                    {formatDocDate(post.data.pubDate, locale)}
+                  </time>
+                  <span class="doc-reading-time">{readingTime}</span>
+                </div>
+                <h2 class="doc-post-card-title">
+                  <a href={docPostHref(locale, docSlug(post))}>{post.data.title}</a>
+                </h2>
+                <p class="doc-post-card-desc">{post.data.description}</p>
+                <a href={docPostHref(locale, docSlug(post))} class="doc-read-more">
+                  {messages.doc.readMore}
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
     </div>

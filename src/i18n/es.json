@@ -142,7 +142,12 @@
     "intro": "Aquí publicamos el pulso del proyecto: por qué tomamos cada decisión, cómo evolucionan nuestros servicios y qué aprendemos en el camino. Un diario técnico cercano, sin marketing vacío.",
     "readMore": "Leer entrada",
     "backToIndex": "Volver al blog",
-    "breadcrumbHome": "Blog"
+    "breadcrumbHome": "Blog",
+    "readingTime": "{minutes} min de lectura",
+    "tocTitle": "En esta página",
+    "previousPost": "Entrada anterior",
+    "nextPost": "Entrada siguiente",
+    "relatedPosts": "Más del blog"
   },
   "tutorials": {
     "metaTitle": "Tutoriales - Kilómetro 0 Digital",
@@ -152,7 +157,12 @@
     "intro": "Instrucciones claras para acceder, configurar e iniciar sesión en KM0 Cloud desde el navegador o las aplicaciones móviles.",
     "readMore": "Abrir tutorial",
     "backToIndex": "Volver a tutoriales",
-    "breadcrumbHome": "Tutoriales"
+    "breadcrumbHome": "Tutoriales",
+    "readingTime": "{minutes} min de lectura",
+    "tocTitle": "En esta página",
+    "previousTutorial": "Tutorial anterior",
+    "nextTutorial": "Tutorial siguiente",
+    "relatedTutorials": "Más tutoriales"
   },
   "meaning": {
     "eyebrow": "Significado",

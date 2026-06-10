@@ -35,6 +35,7 @@
     "tagline": "Un moviment social i tecnològic construït per i per a la comunitat, no un altre proveïdor més.",
     "ctaPrimary": "Descobreix per què existeix",
     "ctaSecondary": "Uneix-te al moviment",
+    "scrollToCloud": "Anar als serveis de KM0 Cloud",
     "logoAlt": "Logo Kilòmetre 0 Digital",
     "laptopAlt": "Kilòmetre 0 Digital en portàtil",
     "mobileAlt": "Kilòmetre 0 Digital al mòbil"
@@ -94,21 +95,28 @@
     "ctaExplore": "Explorar el blog"
   },
   "services": {
-    "eyebrow": "Primers passos",
-    "headingBefore": "Serveis que ",
-    "headingAccent": "demostren",
-    "headingAfter": " la visió",
-    "intro": "Cloud i correu són el començament, no la destinació. Eines tangibles per a qui ja vol actuar.",
-    "slogan": "Les teves dades, el teu origen. El moviment creix amb tu.",
+    "eyebrow": "KM0 Cloud",
+    "headingBefore": "El teu núvol empresarial, ",
+    "headingAccent": "més a prop",
+    "headingAfter": " que mai",
+    "intro": "KM0 Cloud ofereix a la teva empresa infraestructura cloud fiable, segura i gestionada de forma propera, amb preus transparents i suport expert.",
+    "slogan": "500 GB des de 1,99 €/mes. Sense factures sorpresa ni call centers llunyans.",
     "blogCta": "Segueix el diari del projecte",
     "tutorialsCta": "Consulta els tutorials de KM0 Cloud",
     "cloudTutorialCta": "Com començar a fer-lo servir",
+    "cloudPricingCta": "Veure preus",
     "items": [
       {
         "id": "cloud",
         "title": "KM0 Cloud",
-        "desc": "Emmagatzematge i col·laboració al núvol, com un drive propi: comparteix fitxers, sincronitza i treballa en equip amb la confiança d'un servei que coneix el teu context.",
-        "cta": "Obrir Cloud",
+        "badge": "Recomanat",
+        "priceFrom": "Des de 1,99 €/mes",
+        "priceAriaLabel": "Des de 1,99 euros al mes per 500 GB",
+        "subtitle": "Núvol local fiable per a equips que necessiten rendiment, seguretat i suport expert.",
+        "desc": "Comparteix fitxers, sincronitza dispositius i col·labora en temps real en infraestructura allotjada a la UE, amb operacions recolzades per ISO 27001 i suport humà quan ho necessitis.",
+        "cta": "Sol·licitar informació",
+        "ctaFragment": "contact",
+        "secondaryCta": "Obrir Cloud",
         "url": "https://cloud.km0digital.com"
       },
       {
@@ -254,8 +262,9 @@
     "eyebrow": "Preus",
     "heading": "Emmagatzematge senzill, estable i a bon preu",
     "heroPrice": {
-      "display": "1,99 €",
-      "meta": "al mes · 500 GB",
+      "amount": "1,99 €",
+      "period": "/mes",
+      "meta": "500 GB",
       "ariaLabel": "Preu: 1,99 euros al mes per 500 GB d'emmagatzematge"
     },
     "intro": "KM0 Digital ofereix 500 GB per 1,99 €/mes per a qui busca emmagatzematge senzill, estable i a bon preu.",

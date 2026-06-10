@@ -75,6 +75,7 @@ export interface Messages {
     tagline: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    scrollToCloud: string;
     logoAlt: string;
     laptopAlt: string;
     mobileAlt: string;
@@ -96,11 +97,18 @@ export interface Messages {
     blogCta: string;
     tutorialsCta: string;
     cloudTutorialCta: string;
+    cloudPricingCta: string;
     items: {
       id: string;
       title: string;
+      subtitle?: string;
+      badge?: string;
+      priceFrom?: string;
+      priceAriaLabel?: string;
       desc: string;
       cta: string;
+      ctaFragment?: string;
+      secondaryCta?: string;
       url: string;
       available?: boolean;
     }[];
@@ -195,7 +203,8 @@ export interface Messages {
     heading: string;
     intro: string;
     heroPrice: {
-      display: string;
+      amount: string;
+      period: string;
       meta: string;
       ariaLabel: string;
     };

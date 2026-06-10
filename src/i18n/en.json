@@ -35,6 +35,7 @@
     "tagline": "A social and technological movement built by and for the community, not just another provider.",
     "ctaPrimary": "Discover why we exist",
     "ctaSecondary": "Join the movement",
+    "scrollToCloud": "Scroll to KM0 Cloud services",
     "logoAlt": "Kilometer 0 Digital logo",
     "laptopAlt": "Kilometer 0 Digital on laptop",
     "mobileAlt": "Kilometer 0 Digital on mobile"
@@ -94,21 +95,28 @@
     "ctaExplore": "Explore the blog"
   },
   "services": {
-    "eyebrow": "First steps",
-    "headingBefore": "Services that ",
-    "headingAccent": "prove",
-    "headingAfter": " the vision",
-    "intro": "Cloud and email are the beginning, not the destination. Tangible tools for those ready to act now.",
-    "slogan": "Your data, your origin. The movement grows with you.",
+    "eyebrow": "KM0 Cloud",
+    "headingBefore": "Your business cloud, ",
+    "headingAccent": "closer",
+    "headingAfter": " than ever",
+    "intro": "KM0 Cloud gives your company reliable, secure, and locally managed cloud infrastructure with transparent pricing and expert support.",
+    "slogan": "500 GB from €1.99/month. No surprise bills, no distant call centres.",
     "blogCta": "Follow the project diary",
     "tutorialsCta": "Browse KM0 Cloud tutorials",
     "cloudTutorialCta": "How to get started",
+    "cloudPricingCta": "View pricing",
     "items": [
       {
         "id": "cloud",
         "title": "KM0 Cloud",
-        "desc": "Cloud storage and collaboration like your own drive: share files, sync, and work as a team with the confidence of a service that understands your context.",
-        "cta": "Open Cloud",
+        "badge": "Recommended",
+        "priceFrom": "From €1.99/month",
+        "priceAriaLabel": "Starting at €1.99 per month for 500 GB",
+        "subtitle": "Reliable local cloud for teams that need performance, security, and expert support.",
+        "desc": "Share files, sync devices, and collaborate in real time on EU-hosted infrastructure, with ISO 27001-backed operations and human support when you need it.",
+        "cta": "Request information",
+        "ctaFragment": "contact",
+        "secondaryCta": "Open Cloud",
         "url": "https://cloud.km0digital.com"
       },
       {
@@ -254,8 +262,9 @@
     "eyebrow": "Pricing",
     "heading": "Simple, stable storage at a fair price",
     "heroPrice": {
-      "display": "€1.99",
-      "meta": "per month · 500 GB",
+      "amount": "€1.99",
+      "period": "/month",
+      "meta": "500 GB",
       "ariaLabel": "Price: €1.99 per month for 500 GB of storage"
     },
     "intro": "KM0 Digital offers 500 GB for €1.99/month for people who want straightforward, reliable storage at a fair price.",

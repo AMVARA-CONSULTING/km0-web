@@ -55,11 +55,24 @@ const { locale, messages: m } = Astro.props;
     </div>
   </div>
 
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+  <a
+    href={withHash(locale, 'km0-cloud')}
+    class="hero-scroll-cta absolute bottom-8 left-1/2 -translate-x-1/2 text-white opacity-40 transition-opacity hover:opacity-70 focus-visible:opacity-70"
+    aria-label={m.hero.scrollToCloud}
+  >
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      aria-hidden="true"
+      class="hero-scroll-icon"
+    >
       <path d="M12 5v14M5 12l7 7 7-7" />
     </svg>
-  </div>
+  </a>
 </section>
 
 <style>
@@ -79,8 +92,37 @@ const { locale, messages: m } = Astro.props;
     }
   }
 
+  .hero-scroll-cta {
+    border-radius: 9999px;
+    padding: 0.5rem;
+  }
+
+  .hero-scroll-cta:focus-visible {
+    outline: 2px solid rgb(255 255 255 / 0.8);
+    outline-offset: 4px;
+  }
+
+  .hero-scroll-icon {
+    animation: hero-scroll-bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes hero-scroll-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(0.35rem);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .logo-pulse {
+      animation: none;
+    }
+
+    .hero-scroll-icon {
       animation: none;
     }
   }

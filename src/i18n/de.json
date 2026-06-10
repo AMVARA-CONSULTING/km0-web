@@ -109,13 +109,10 @@
       {
         "id": "cloud",
         "title": "KM0 Cloud",
-        "badge": "Empfohlen",
         "priceFrom": "Ab 1,99 €/Monat",
         "priceAriaLabel": "Ab 1,99 Euro pro Monat für 500 GB",
         "subtitle": "Zuverlässige lokale Cloud für Teams, die Leistung, Sicherheit und Experten-Support brauchen.",
         "desc": "Dateien teilen, Geräte synchronisieren und in Echtzeit zusammenarbeiten auf EU-Infrastruktur, mit ISO-27001-gestütztem Betrieb und menschlichem Support, wenn Sie ihn brauchen.",
-        "cta": "Information anfordern",
-        "ctaFragment": "contact",
         "secondaryCta": "Cloud öffnen",
         "url": "https://cloud.km0digital.com"
       },

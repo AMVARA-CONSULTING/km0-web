@@ -212,7 +212,7 @@
   }
 
   .doc-post-card {
-    @apply rounded-2xl border border-navy/10 bg-surface p-6 transition-colors hover:border-navy/20 hover:bg-white md:p-8;
+    @apply rounded-2xl border border-navy/10 bg-surface p-6 shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-navy/20 hover:shadow-md md:p-8;
   }
 
   .doc-post-card-meta {

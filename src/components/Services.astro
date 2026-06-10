@@ -13,8 +13,10 @@ const { locale, messages: m } = Astro.props;
 const hasComingSoon = m.services.items.some((item) => item.available === false);
 
 const icons: Record<string, string> = {
-  cloud: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-  email: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+  cloud:
+    'M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.32-2.127 4.5 4.5 0 018.59 2.75L18 19.5H6.75z',
+  email:
+    'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
 };
 ---
 
@@ -51,9 +53,6 @@ const icons: Record<string, string> = {
                 isCloud ? 'service-card-featured' : 'border-navy/10 bg-surface',
               ]}
             >
-              {isCloud && item.badge && (
-                <p class="service-card-badge mb-4 md:self-start">{item.badge}</p>
-              )}
               <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-navy">
                 <svg
                   class="h-7 w-7"
@@ -85,27 +84,36 @@ const icons: Record<string, string> = {
                   </svg>
                 </a>
               )}
-              <div class="service-card-actions">
-                {item.available === false ? (
-                  <button
-                    type="button"
-                    data-service-coming-soon
-                    class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start"
-                  >
-                    {item.cta}
-                  </button>
-                ) : item.ctaFragment ? (
-                  <a href={primaryHref} class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start">
-                    {item.cta}
-                  </a>
-                ) : (
+              <div class:list={['service-card-actions', isCloud && 'service-card-actions--paired']}>
+                {!isCloud &&
+                  (item.available === false ? (
+                    <button
+                      type="button"
+                      data-service-coming-soon
+                      class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start"
+                    >
+                      {item.cta}
+                    </button>
+                  ) : item.ctaFragment ? (
+                    <a href={primaryHref} class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start">
+                      {item.cta}
+                    </a>
+                  ) : (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start"
+                    >
+                      {item.cta}
+                    </a>
+                  ))}
+                {isCloud && (
                   <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start"
+                    href={localeHref(locale, '/pricing/')}
+                    class="service-card-secondary-cta inline-flex justify-center"
                   >
-                    {item.cta}
+                    {m.services.cloudPricingCta}
                   </a>
                 )}
                 {isCloud && item.secondaryCta && (
@@ -113,20 +121,9 @@ const icons: Record<string, string> = {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="service-card-secondary-cta inline-flex w-full justify-center md:w-auto md:self-start"
+                    class="btn-primary inline-flex justify-center"
                   >
                     {item.secondaryCta}
-                  </a>
-                )}
-                {isCloud && (
-                  <a
-                    href={localeHref(locale, '/pricing/')}
-                    class="service-card-pricing-link inline-flex items-center gap-2 text-sm font-medium text-navy transition-colors hover:text-navy/70 md:self-start"
-                  >
-                    {m.services.cloudPricingCta}
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
                   </a>
                 )}
               </div>
@@ -172,20 +169,6 @@ const icons: Record<string, string> = {
     box-shadow: 0 12px 32px rgb(255 95 46 / 0.1);
   }
 
-  .service-card-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.3rem 0.75rem;
-    border-radius: 9999px;
-    background: rgb(255 95 46 / 0.12);
-    border: 1px solid rgb(255 95 46 / 0.28);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9a3412;
-  }
-
   .service-card-price {
     margin: 0 0 0.75rem;
     font-size: 1.375rem;
@@ -209,9 +192,19 @@ const icons: Record<string, string> = {
     gap: 0.75rem;
   }
 
+  .service-card-actions--paired {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
   @media (min-width: 768px) {
     .service-card-actions {
       align-items: flex-start;
+    }
+
+    .service-card-actions--paired {
+      align-items: center;
     }
   }
 
@@ -220,6 +213,7 @@ const icons: Record<string, string> = {
     justify-content: center;
     border-radius: 9999px;
     border: 1px solid rgb(15 23 42 / 0.14);
+    background: #fff;
     padding: 0.75rem 2rem;
     font-size: 0.875rem;
     font-weight: 600;

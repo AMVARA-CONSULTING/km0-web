@@ -102,11 +102,10 @@ export interface Messages {
       id: string;
       title: string;
       subtitle?: string;
-      badge?: string;
       priceFrom?: string;
       priceAriaLabel?: string;
       desc: string;
-      cta: string;
+      cta?: string;
       ctaFragment?: string;
       secondaryCta?: string;
       url: string;

@@ -26,37 +26,43 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   pageDescription={p.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="section-pad bg-white pt-28">
-    <div class="mx-auto max-w-5xl">
-      <header class="mb-10 text-center">
-        <p class="doc-eyebrow">{p.eyebrow}</p>
-        <h1 class="heading-section text-navy">{p.heading}</h1>
-        <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel}>
-          <p class="pricing-hero-amount tabular-nums">
-            <span class="pricing-hero-amount-value pricing-hero-amount-gradient">{p.heroPrice.amount}</span><span
-              class="pricing-hero-amount-period pricing-hero-amount-gradient">{p.heroPrice.period}</span
+  <main class="pricing-page pt-28">
+    <section class="pricing-section pricing-section--hero bg-white" aria-labelledby="pricing-heading">
+      <div class="pricing-inner">
+        <header class="pricing-hero-header text-center">
+          <p class="doc-eyebrow">{p.eyebrow}</p>
+          <h1 id="pricing-heading" class="heading-section text-navy">{p.heading}</h1>
+          <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel}>
+            <p class="pricing-hero-amount tabular-nums">
+              <span class="pricing-hero-amount-value pricing-hero-amount-gradient">{p.heroPrice.amount}</span><span
+                class="pricing-hero-amount-period pricing-hero-amount-gradient">{p.heroPrice.period}</span
+              >
+            </p>
+            <p class="pricing-hero-meta">{p.heroPrice.meta}</p>
+          </div>
+          <p class="doc-index-intro mx-auto max-w-3xl">{p.intro}</p>
+          <div class="pricing-hero-cta">
+            <a
+              href="https://cloud.km0digital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
             >
-          </p>
-          <p class="pricing-hero-meta">{p.heroPrice.meta}</p>
-        </div>
-        <p class="doc-index-intro mx-auto mt-6 max-w-3xl">{p.intro}</p>
-        <div class="mt-8">
-          <a
-            href="https://cloud.km0digital.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary"
-          >
-            {p.heroCta}
-          </a>
-        </div>
-      </header>
+              {p.heroCta}
+            </a>
+          </div>
+        </header>
+      </div>
+    </section>
 
-      <section class="pricing-compare" aria-labelledby="pricing-compare">
-        <h2 id="pricing-compare" class="pricing-compare-heading mb-3 text-center text-navy">
-          {p.compareHeading}
-        </h2>
-        <p class="doc-index-intro mx-auto mb-8 max-w-3xl text-center">{p.compareIntro}</p>
+    <section class="pricing-section pricing-section--surface" aria-labelledby="pricing-compare">
+      <div class="pricing-inner">
+        <header class="pricing-section-header text-center">
+          <h2 id="pricing-compare" class="pricing-compare-heading text-navy">
+            {p.compareHeading}
+          </h2>
+          <p class="doc-index-intro mx-auto max-w-3xl">{p.compareIntro}</p>
+        </header>
         <div class="pricing-table-wrap">
           <table class="pricing-table">
             <thead>
@@ -81,21 +87,29 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
             </tbody>
           </table>
         </div>
-        <p class="pricing-claim mx-auto mt-6 max-w-3xl text-center">{p.claim}</p>
+        <p class="pricing-claim mx-auto max-w-3xl text-center">{p.claim}</p>
         <p class="pricing-table-note">{p.tableDisclaimer}</p>
-      </section>
+      </div>
+    </section>
 
-      <section class="pricing-why" aria-labelledby="pricing-why">
-        <h2 id="pricing-why" class="heading-section mb-4 text-center text-navy">
-          {p.whyPricing.heading}
-        </h2>
-        <p class="doc-index-intro mx-auto max-w-3xl text-center">{p.whyPricing.body}</p>
-      </section>
+    <section class="pricing-section bg-white" aria-labelledby="pricing-why">
+      <div class="pricing-inner">
+        <div class="pricing-why">
+          <h2 id="pricing-why" class="heading-section mb-6 text-center text-navy">
+            {p.whyPricing.heading}
+          </h2>
+          <p class="doc-index-intro mx-auto max-w-3xl text-center">{p.whyPricing.body}</p>
+        </div>
+      </div>
+    </section>
 
-      <section class="pricing-trust" aria-labelledby="pricing-trust">
-        <h2 id="pricing-trust" class="heading-section mb-8 text-center text-navy">
-          {p.trust.heading}
-        </h2>
+    <section class="pricing-section pricing-section--surface" aria-labelledby="pricing-trust">
+      <div class="pricing-inner">
+        <header class="pricing-section-header text-center">
+          <h2 id="pricing-trust" class="heading-section text-navy">
+            {p.trust.heading}
+          </h2>
+        </header>
         <ul class="pricing-trust-grid">
           {
             p.trust.items.map((item) => (
@@ -106,12 +120,16 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
             ))
           }
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section class="pricing-diff" aria-labelledby="pricing-diff">
-        <h2 id="pricing-diff" class="heading-section mb-8 text-center text-navy">
-          {p.differentiators.heading}
-        </h2>
+    <section class="pricing-section bg-white" aria-labelledby="pricing-diff">
+      <div class="pricing-inner">
+        <header class="pricing-section-header text-center">
+          <h2 id="pricing-diff" class="heading-section text-navy">
+            {p.differentiators.heading}
+          </h2>
+        </header>
         <ul class="pricing-diff-list">
           {
             p.differentiators.items.map((item) => (
@@ -119,27 +137,73 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
             ))
           }
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section class="pricing-custom" aria-labelledby="pricing-custom">
-        <h2 id="pricing-custom" class="heading-section mb-4 text-center text-navy">
-          {p.custom.heading}
-        </h2>
-        <p class="doc-index-intro mx-auto mb-8 max-w-2xl text-center">{p.custom.body}</p>
-        <div class="text-center">
+    <section class="pricing-section pricing-section--cta bg-surface" aria-labelledby="pricing-custom">
+      <div class="pricing-inner">
+        <header class="pricing-section-header text-center">
+          <h2 id="pricing-custom" class="heading-section text-navy">
+            {p.custom.heading}
+          </h2>
+          <p class="doc-index-intro mx-auto max-w-2xl">{p.custom.body}</p>
+        </header>
+        <div class="pricing-custom-cta text-center">
           <a href={`mailto:${messages.contact.email}`} class="btn-primary">
             {p.custom.cta}
           </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
   <Footer locale={locale} messages={messages} />
 </Layout>
 
 <style>
+  .pricing-page {
+    background: #fff;
+  }
+
+  .pricing-inner {
+    width: 100%;
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+
+  .pricing-section {
+    padding: clamp(3.5rem, 8vw, 5.5rem) clamp(1.5rem, 5vw, 5rem);
+  }
+
+  .pricing-section--hero {
+    padding-bottom: clamp(4rem, 9vw, 6rem);
+  }
+
+  .pricing-section--surface {
+    background: rgb(248 250 252);
+    border-block: 1px solid rgb(15 23 42 / 0.06);
+  }
+
+  .pricing-section--cta {
+    border-top: 1px solid rgb(15 23 42 / 0.08);
+  }
+
+  .pricing-section-header {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .pricing-hero-header {
+    display: grid;
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
   .pricing-hero-stat {
-    margin: clamp(1.75rem, 5vw, 2.75rem) auto 0;
+    margin: clamp(0.5rem, 2vw, 1rem) auto 0;
+  }
+
+  .pricing-hero-cta {
+    margin-top: clamp(1.5rem, 4vw, 2.5rem);
   }
 
   .pricing-hero-amount {
@@ -184,7 +248,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-hero-meta {
-    margin: 0.875rem 0 0;
+    margin: 1.125rem 0 0;
     font-size: clamp(1rem, 2.5vw, 1.1875rem);
     font-weight: 600;
     letter-spacing: 0.01em;
@@ -210,17 +274,15 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-claim {
+    margin: clamp(2rem, 5vw, 3rem) auto 0;
     font-size: 1.0625rem;
     font-weight: 600;
     line-height: 1.6;
     color: #c2410c;
   }
 
-  .pricing-compare {
-    margin-bottom: clamp(2.5rem, 6vw, 4rem);
-  }
-
   .pricing-compare-heading {
+    margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.35;
@@ -249,7 +311,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-table th,
   .pricing-table td {
-    padding: 1rem 1.125rem;
+    padding: 1.125rem 1.25rem;
     text-align: left;
     vertical-align: middle;
     border-bottom: 1px solid rgb(15 23 42 / 0.08);
@@ -294,7 +356,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-table-note {
-    margin: 1rem 0 0;
+    margin: 1.5rem 0 0;
     font-size: 0.875rem;
     line-height: 1.6;
     color: rgb(15 23 42 / 0.55);
@@ -302,20 +364,15 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-why {
-    margin-bottom: clamp(2.5rem, 6vw, 4rem);
-    padding: clamp(2rem, 5vw, 3rem);
-    border-radius: 1rem;
+    padding: clamp(2.25rem, 5vw, 3.5rem);
+    border-radius: 1.25rem;
     background: rgb(248 250 252);
     border: 1px solid rgb(15 23 42 / 0.08);
   }
 
-  .pricing-trust {
-    margin-bottom: clamp(2.5rem, 6vw, 4rem);
-  }
-
   .pricing-trust-grid {
     display: grid;
-    gap: 1rem;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -323,8 +380,8 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-trust-card {
-    padding: 1.25rem 1.375rem;
-    border-radius: 0.875rem;
+    padding: 1.5rem 1.625rem;
+    border-radius: 1rem;
     border: 1px solid rgb(15 23 42 / 0.08);
     background: #fff;
     box-shadow: 0 4px 16px rgb(15 23 42 / 0.04);
@@ -351,7 +408,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-trust-title {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.625rem;
     font-size: 1rem;
     font-weight: 600;
     color: #0f172a;
@@ -360,26 +417,22 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   .pricing-trust-desc {
     margin: 0;
     font-size: 0.9375rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: rgb(15 23 42 / 0.7);
-  }
-
-  .pricing-diff {
-    margin-bottom: clamp(2.5rem, 6vw, 4rem);
   }
 
   .pricing-diff-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem 1rem;
+    gap: 1rem 1.25rem;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
   .pricing-diff-item {
-    padding: 0.625rem 1.125rem;
+    padding: 0.75rem 1.375rem;
     border-radius: 9999px;
     background: rgb(255 95 46 / 0.08);
     border: 1px solid rgb(255 95 46 / 0.18);
@@ -410,8 +463,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     }
   }
 
-  .pricing-custom {
-    padding-top: clamp(2rem, 6vw, 3rem);
-    border-top: 1px solid rgb(15 23 42 / 0.08);
+  .pricing-custom-cta {
+    margin-top: clamp(2rem, 5vw, 2.75rem);
   }
 </style>

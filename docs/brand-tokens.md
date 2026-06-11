@@ -30,5 +30,6 @@ Catalan and English UI strings mirror this content in **`src/i18n/ca.json`** and
 | Asset | Path |
 |-------|------|
 | Main logo | `public/brand/logo.png` |
+| Email icon | `public/brand/logo-icon.png` |
 | Brand guide (reference) | `public/brand/brand-guide.png` |
 | Favicon | `public/favicon.svg` |

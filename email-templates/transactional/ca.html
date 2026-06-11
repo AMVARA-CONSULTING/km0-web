@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>KM0 Cloud  -  Notificació de compte</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body, table, td { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    @media only screen and (max-width: 620px) {
+      .wrapper { width: 100% !important; }
+      .card-pad { padding: 28px 20px !important; }
+      .btn { display: block !important; width: 100% !important; box-sizing: border-box; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#0B1220;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+    Acció requerida al teu compte KM0 Cloud.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#0B1220;">
+    <tr>
+      <td align="center" style="padding:40px 16px;">
+        <table role="presentation" class="wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;width:100%;">
+          <tr>
+            <td align="center" style="padding:0 0 24px;">
+              <img src="https://km0digital.com/brand/logo-icon.png" width="64" height="64" alt="KM0 Digital" style="display:block;border:0;">
+            </td>
+          </tr>
+          <tr>
+            <td class="card-pad" style="background-color:#121A2B;border:1px solid #1E293B;border-radius:20px;padding:40px 36px;box-shadow:0 24px 48px rgba(0,0,0,0.35);">
+              <p style="margin:0 0 12px;font-size:11px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#94A3B8;text-align:center;">Notificació de compte</p>
+              <h1 style="margin:0 0 8px;font-size:24px;font-weight:600;line-height:1.3;color:#E040A0;text-align:center;letter-spacing:-0.02em;">Nou inici de sessió detectat</h1>
+              <p style="margin:0 0 28px;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#64748B;text-align:center;">CONNECTA. TRANSFORMA. IMPULSA.</p>
+              <p style="margin:0 0 20px;font-size:15px;line-height:1.65;color:#CBD5E1;text-align:center;">Hola <strong style="color:#F5F5F7;">{{USER_NAME}}</strong>, hem detectat un accés al teu compte KM0 Cloud des d'un dispositiu nou.</p>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin:0 0 28px;background-color:#0B1220;border:1px solid #1E293B;border-radius:12px;">
+                <tr>
+                  <td style="padding:20px 24px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tr>
+                        <td style="padding:6px 0;font-size:13px;color:#64748B;width:120px;">Dispositiu</td>
+                        <td style="padding:6px 0;font-size:13px;color:#F5F5F7;font-weight:500;">{{DEVICE_NAME}}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:6px 0;font-size:13px;color:#64748B;">Ubicació</td>
+                        <td style="padding:6px 0;font-size:13px;color:#F5F5F7;font-weight:500;">{{LOCATION}}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:6px 0;font-size:13px;color:#64748B;">Data</td>
+                        <td style="padding:6px 0;font-size:13px;color:#F5F5F7;font-weight:500;">{{DATE_TIME}}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:6px 0;font-size:13px;color:#64748B;">IP</td>
+                        <td style="padding:6px 0;font-size:13px;color:#F5F5F7;font-weight:500;font-family:monospace;">{{IP_ADDRESS}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0 0 24px;font-size:14px;line-height:1.65;color:#94A3B8;text-align:center;">Si has estat tu, no cal que facis res. Si no reconeixes aquest accés, protegeix el teu compte immediatament.</p>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin:0 auto 16px;">
+                <tr>
+                  <td align="center" style="border-radius:9999px;background-color:#FFFFFF;">
+                    <a href="{{ACTION_URL}}" class="btn" target="_blank" style="display:inline-block;padding:13px 32px;font-size:15px;font-weight:600;color:#0B1220;text-decoration:none;border-radius:9999px;background-color:#FFFFFF;border:1px solid rgba(11,18,32,0.08);">Revisar l'activitat del compte</a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0;font-size:12px;line-height:1.6;color:#475569;text-align:center;">
+                Enllaç alternatiu: <a href="{{ACTION_URL}}" style="color:#7B3FE4;word-break:break-all;">{{ACTION_URL}}</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px 16px 0;">
+              <p style="margin:0;font-size:12px;line-height:1.6;color:#475569;text-align:center;">Aquest correu ha estat enviat per KM0 Cloud · <a href="https://cloud.km0digital.com" style="color:#7B3FE4;text-decoration:none;">cloud.km0digital.com</a><br>Necessites ajuda? <a href="mailto:hello.yoel@amvara.de" style="color:#7B3FE4;text-decoration:none;">hello.yoel@amvara.de</a></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

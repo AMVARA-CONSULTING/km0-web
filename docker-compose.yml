@@ -12,10 +12,15 @@ services:
     ports:
       - "127.0.0.1:9180:80"
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      # host-gateway resolves to docker0 (often down); km0 subnet gateway is fixed below.
+      - "host.docker.internal:172.21.0.1"
     networks:
       - km0
 
 networks:
   km0:
     name: km0
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1

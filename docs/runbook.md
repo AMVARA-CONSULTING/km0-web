@@ -175,13 +175,15 @@ Avoid `npm install` or `npm update` without a deliberate bump; that can rewrite 
 | Port | Behaviour |
 |------|-----------|
 | 80 | ACME challenge + redirect to HTTPS |
-| 443 | TLS termination → `proxy_pass http://127.0.0.1:9180` |
+| 443 | TLS termination → `proxy_pass http://127.0.0.1:9180` (except `POST /hooks/ideas` → `:9181`) |
 
 ### Reload after config change
 
 ```bash
-nginx -t
-systemctl reload nginx
+sudo ./scripts/deploy-host-nginx-km0.sh
+# or manually:
+cp /opt/km0-web/nginx/sites-available/km0 /etc/nginx/sites-available/km0
+nginx -t && systemctl reload nginx
 ```
 
 Enable site (if missing):

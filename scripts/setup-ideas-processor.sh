@@ -58,6 +58,25 @@ if [[ ! -x "$WEBHOOK_BIN" ]]; then
   install -m 755 "${build_dir}/webhook-linux-${webhook_arch}/webhook" "$WEBHOOK_BIN"
 fi
 
+if command -v ufw >/dev/null 2>&1 && ufw status | grep -q "Status: active"; then
+  if ! ufw status | grep -q "9181.*172.16.0.0/12"; then
+    echo "Allowing Docker bridge networks to reach webhook on :9181 ..."
+    ufw allow from 172.16.0.0/12 to any port 9181 proto tcp comment 'km0 ideas webhook (Docker)'
+  fi
+fi
+
+NGINX_SRC="${ROOT}/nginx/sites-available/km0"
+NGINX_DST="/etc/nginx/sites-available/km0"
+if [[ -f "$NGINX_SRC" ]] && [[ -d /etc/nginx/sites-available ]]; then
+  if ! cmp -s "$NGINX_SRC" "$NGINX_DST" 2>/dev/null; then
+    echo "Syncing host nginx vhost from repo ..."
+    install -m 644 "$NGINX_SRC" "$NGINX_DST"
+    ln -sf "$NGINX_DST" /etc/nginx/sites-enabled/km0
+    nginx -t
+    systemctl reload nginx
+  fi
+fi
+
 echo "Installing systemd units ..."
 install -m 644 "${SYSTEMD_SRC}/km0-ideas-receiver.service" "${SYSTEMD_DST}/"
 install -m 644 "${SYSTEMD_SRC}/km0-idea-processor.service" "${SYSTEMD_DST}/"

@@ -27,7 +27,7 @@ const { locale, messages: m } = Astro.props;
         alt={m.hero.logoAlt}
         width="512"
         height="512"
-        class="mx-auto h-auto w-full max-h-[min(46vh,24rem)] object-contain drop-shadow-2xl"
+        class="hero-logo-spin mx-auto h-auto w-full max-h-[min(46vh,24rem)] object-contain drop-shadow-2xl"
       />
     </div>
 
@@ -76,6 +76,11 @@ const { locale, messages: m } = Astro.props;
 </section>
 
 <style>
+  .hero-logo-spin {
+    transform-origin: center center;
+    will-change: transform;
+  }
+
   .logo-pulse {
     animation: pulse-soft 4s ease-in-out infinite;
   }
@@ -122,8 +127,39 @@ const { locale, messages: m } = Astro.props;
       animation: none;
     }
 
+    .hero-logo-spin {
+      will-change: auto;
+    }
+
     .hero-scroll-icon {
       animation: none;
     }
   }
 </style>
+
+<script>
+  const logo = document.querySelector<HTMLImageElement>('.hero-logo-spin');
+  if (logo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const CYCLE_MS = 60_000;
+    const SPIN_MS = 3_500;
+    const EASE_POWER = 7;
+
+    const spinEase = (progress: number) => {
+      const clamped = Math.min(Math.max(progress, 0), 1);
+      const rising = clamped ** (2 * EASE_POWER);
+      const falling = (1 - clamped) ** (2 * EASE_POWER);
+      return rising / (rising + falling);
+    };
+
+    const startedAt = performance.now();
+
+    const frame = (now: number) => {
+      const elapsed = (now - startedAt) % CYCLE_MS;
+      const angle = elapsed < SPIN_MS ? 360 * spinEase(elapsed / SPIN_MS) : 0;
+      logo.style.transform = `rotate(${angle}deg)`;
+      requestAnimationFrame(frame);
+    };
+
+    requestAnimationFrame(frame);
+  }
+</script>

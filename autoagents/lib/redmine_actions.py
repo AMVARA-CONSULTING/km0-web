@@ -16,7 +16,6 @@ import urllib.request
 from pathlib import Path
 
 from gh_issue_actions import (  # noqa: E402
-    TASK_ISSUE_RE,
     extract_closing_summary,
     issue_number_from_task_basename,
 )
@@ -204,27 +203,3 @@ def post_task_completion_note(task_path: Path, issue_id: int | None = None) -> s
 
     print(f"  Redmine note posted: #{rid} ({task_path.name})")
     return "posted"
-
-
-def sync_redmine_closed_tasks(tasks_dir: Path) -> int:
-    """Post Redmine notes for CLOSED-* files in tasks/ and tasks/done/."""
-    if not redmine_configured():
-        print("Redmine not configured, skip closed-task notes", file=sys.stderr)
-        return 0
-
-    posted = 0
-    seen: set[str] = set()
-
-    for pattern in ("CLOSED-*.md", "done/**/CLOSED-*.md"):
-        for path in sorted(tasks_dir.glob(pattern)):
-            key = path.name
-            if key in seen:
-                continue
-            seen.add(key)
-            if not TASK_ISSUE_RE.match(path.name):
-                continue
-            print(f"  Redmine sync: {path.relative_to(tasks_dir)}")
-            result = post_task_completion_note(path)
-            if result == "posted":
-                posted += 1
-    return posted

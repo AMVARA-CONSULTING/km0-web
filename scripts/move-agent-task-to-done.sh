@@ -33,5 +33,18 @@ dd="${datepart:6:2}"
 
 dest_dir="${REPO_ROOT}/autoagents/tasks/done/${yyyy}/${mm}/${dd}"
 mkdir -p "$dest_dir"
+
+ENV_FILE="${REPO_ROOT}/autoagents/.env"
+if [[ -f "$ENV_FILE" ]]; then
+  # shellcheck disable=SC1090
+  set -a && source "$ENV_FILE" && set +a
+fi
+
+if command -v python3 >/dev/null 2>&1 && [[ -f "${REPO_ROOT}/autoagents/redmine_sync.py" ]]; then
+  echo "Posting Redmine closing note..."
+  python3 "${REPO_ROOT}/autoagents/redmine_sync.py" note "$src" || \
+    echo "Warning: Redmine note sync failed (archive continues)." >&2
+fi
+
 mv "$src" "${dest_dir}/${bn}"
 echo "Moved to ${dest_dir}/${bn}"

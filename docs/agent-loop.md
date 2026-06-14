@@ -79,6 +79,7 @@ Shell/Python sync - do not rely on cursor-agent alone:
 |------|--------|
 | New FEAT from open issue | `issue_checker_agent.py` → comment + `agent:planned` |
 | FEAT without GitHub sync | `sync_github_from_tasks.py planned` |
-| CLOSED task in `tasks/` | `sync_github_from_tasks.py closed` → comment + close issue + Redmine note |
+| CLOSED task in `tasks/` | `sync_github_from_tasks.py closed` → comment + close issue |
+| CLOSED archived to `done/` | `move-agent-task-to-done.sh` → `redmine_sync.py note` (when Redmine configured) |
 
 Run `./scripts/setup-autoagents-gh.sh` once to create `agent:*` labels. Token needs **Issues: Read and write**.

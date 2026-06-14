@@ -41,6 +41,8 @@ On test failure: **testing → wip**, then **wip → untested** when ready.
 
 → **`autoagents/tasks/done/2026/05/26/CLOSED-12-20260526-1200-example.md`**
 
+When Redmine is configured (`REDMINE_API_KEY`, `REDMINE_ISSUE_ID` in `autoagents/.env`), the move script also posts an English Textile closing summary via `autoagents/redmine_sync.py`.
+
 ## Rules of thumb
 
 - **feat → wip** when feature coder starts.

@@ -12,8 +12,6 @@ from gh_issue_actions import (  # noqa: E402
     sync_closed_tasks,
     sync_feat_tasks_planned,
 )
-from redmine_actions import sync_redmine_closed_tasks  # noqa: E402
-
 TASKS_DIR = Path(SCRIPT_DIR) / "tasks"
 
 
@@ -24,16 +22,12 @@ def main() -> int:
         print("=== Sync FEAT → GitHub (agent:planned) ===")
         planned = sync_feat_tasks_planned(TASKS_DIR)
         print(f"Synced {planned} FEAT task(s)\n")
-    redmine = 0
     if mode in ("all", "closed"):
         print("=== Sync CLOSED → GitHub (comment + close) ===")
         closed = sync_closed_tasks(TASKS_DIR)
         retro = sync_closed_from_done(TASKS_DIR)
         print(f"Closed {closed} active + {retro} archived issue(s) on GitHub\n")
-        print("=== Sync CLOSED → Redmine (completion note) ===")
-        redmine = sync_redmine_closed_tasks(TASKS_DIR)
-        print(f"Posted {redmine} Redmine note(s)\n")
-    return 0 if (planned or closed or redmine or mode == "all") else 0
+    return 0 if (planned or closed or mode == "all") else 0
 
 
 if __name__ == "__main__":

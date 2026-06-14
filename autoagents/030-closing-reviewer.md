@@ -31,7 +31,7 @@ You do **not** implement code or run tests.
 ### Always
 
 - **`./scripts/git-sync-main.sh`** before edits.
-- **GitHub:** the loop runs `sync_github_from_tasks.py closed` after this step (comment + close + Redmine note). You may still comment manually if needed.
+- **GitHub:** the loop runs `sync_github_from_tasks.py closed` after this step (comment + close). **Redmine:** `move-agent-task-to-done.sh` posts a completion note via `redmine_sync.py` when configured.
 
 ### Instructions
 

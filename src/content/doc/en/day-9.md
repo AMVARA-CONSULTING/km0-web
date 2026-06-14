@@ -112,7 +112,7 @@ locale: en
 </section>
 
 <section class="doc-closing-block">
-  <p class="doc-block-title">Series</p>
-  <h2 class="doc-block-heading">Days 1–8</h2>
-  <p class="doc-closing"><a href="/en/doc/day-8/">Day 8</a> explains the strategy and agreed price; earlier days cover the technical stack. Try <a href="https://cloud.km0digital.com/">KM0 Cloud</a>, see <a href="/en/pricing/">pricing</a>, or send an idea via <a href="/en/ideas/">/ideas/</a>. Questions: <a href="/en/#contact">contact</a>.</p>
+  <p class="doc-block-title">Next step</p>
+  <h2 class="doc-block-heading">Day 11</h2>
+  <p class="doc-closing">We did not publish a day 10 entry (internal mail deployment). <a href="/en/doc/day-11/">Day 11</a> documents <strong>KM0 Mail</strong> in production: <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, DNS, deliverability, and partial OpenCloud integration. Meanwhile, try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> or see <a href="/en/pricing/">pricing</a>.</p>
 </section>

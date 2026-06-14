@@ -112,7 +112,7 @@ locale: ca
 </section>
 
 <section class="doc-closing-block">
-  <p class="doc-block-title">Sèrie</p>
-  <h2 class="doc-block-heading">Dies 1–8</h2>
-  <p class="doc-closing">El <a href="/ca/doc/day-8/">dia 8</a> explica l'estratègia i el preu acordat; els dies anteriors cobreixen el stack tècnic. Prova <a href="https://cloud.km0digital.com/">KM0 Cloud</a>, consulta <a href="/ca/pricing/">preus</a> o envia una idea a <a href="/ca/ideas/">/ideas/</a>. Dubtes: <a href="/ca/#contact">contacte</a>.</p>
+  <p class="doc-block-title">Següent pas</p>
+  <h2 class="doc-block-heading">Dia 11</h2>
+  <p class="doc-closing">No vam publicar entrada del dia 10 (desplegament intern de correu). El <a href="/ca/doc/day-11/">dia 11</a> documenta <strong>KM0 Mail</strong> en producció: <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, DNS, lliurabilitat i integració parcial amb OpenCloud. Mentrestant, prova <a href="https://cloud.km0digital.com/">KM0 Cloud</a> o consulta <a href="/ca/pricing/">preus</a>.</p>
 </section>

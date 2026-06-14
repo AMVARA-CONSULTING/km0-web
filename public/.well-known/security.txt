@@ -1,4 +1,5 @@
 Contact: mailto:hello.yoel@amvara.de
 Preferred-Languages: es, en, ca, de
 Policy: https://km0digital.com/security/
+Scope: km0digital.com, cloud.km0digital.com, mail.km0digital.com
 Expires: 2027-12-31T23:59:59.000Z

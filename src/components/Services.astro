@@ -39,18 +39,20 @@ const icons: Record<string, string> = {
       {
         m.services.items.map((item, i) => {
           const isCloud = item.id === 'cloud';
+          const isEmail = item.id === 'email';
+          const isFeatured = isCloud || (isEmail && item.available !== false);
           const primaryHref = item.ctaFragment
             ? withHash(locale, item.ctaFragment)
             : item.url;
 
           return (
             <article
-              id={isCloud ? 'km0-cloud' : undefined}
+              id={isCloud ? 'km0-cloud' : isEmail ? 'km0-email' : undefined}
               data-reveal
               data-delay={String(200 + i * 80)}
               class:list={[
                 'service-card flex flex-col rounded-2xl border p-8 shadow-sm',
-                isCloud ? 'service-card-featured' : 'border-navy/10 bg-surface',
+                isFeatured ? 'service-card-featured' : 'border-navy/10 bg-surface',
               ]}
             >
               <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-navy">

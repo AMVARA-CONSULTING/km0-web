@@ -31,5 +31,6 @@ Catalan and English UI strings mirror this content in **`src/i18n/ca.json`** and
 |-------|------|
 | Main logo | `public/brand/logo.png` |
 | Email icon | `public/brand/logo-icon.png` |
+| Social share preview (OG / Twitter) | `public/brand/og-preview.png` (1200×630) |
 | Brand guide (reference) | `public/brand/brand-guide.png` |
 | Favicon | `public/favicon.svg` |

@@ -332,6 +332,22 @@ export interface Messages {
       bodyHtml: string;
     }[];
   };
+  errors: {
+    notFound: {
+      metaTitle: string;
+      code: string;
+      heading: string;
+      description: string;
+      backHome: string;
+    };
+    forbidden: {
+      metaTitle: string;
+      code: string;
+      heading: string;
+      description: string;
+      backHome: string;
+    };
+  };
   footer: {
     rights: string;
     github: string;

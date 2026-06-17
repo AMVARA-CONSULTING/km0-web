@@ -555,5 +555,21 @@
         "bodyHtml": "<p>We welcome good-faith reports of security vulnerabilities affecting <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong>, and related AMVARA-operated KM0 mail infrastructure.</p><p><strong>Please do:</strong></p><ul class=\"doc-list\"><li>Report vulnerabilities promptly to <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>.</li><li>Provide clear reproduction steps and impact assessment.</li><li>Avoid accessing, modifying, deleting, or exfiltrating data that is not yours.</li><li>Stop testing once a vulnerability is confirmed.</li><li>Allow reasonable time for remediation before public disclosure.</li></ul><p><strong>Please do not:</strong></p><ul class=\"doc-list\"><li>Conduct denial-of-service attacks.</li><li>Use social engineering, phishing, spam, or physical attacks.</li><li>Perform unauthorised data access or exfiltration.</li><li>Run intrusive automated scanning of production without prior written approval.</li><li>Attempt lateral movement, persistence, or public disclosure before we have had time to address the issue.</li></ul><p><strong>AMVARA will:</strong></p><ul class=\"doc-list\"><li>Acknowledge valid reports.</li><li>Investigate and communicate when appropriate.</li><li>Remediate based on severity and risk.</li><li>Not pursue legal action against researchers who follow this policy in good faith.</li></ul><p>Security contact: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>. Machine-readable policy: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
       }
     ]
+  },
+  "errors": {
+    "notFound": {
+      "metaTitle": "Page not found - Kilometer 0 Digital",
+      "code": "404",
+      "heading": "Page not found",
+      "description": "The page you are looking for does not exist or has been moved.",
+      "backHome": "Back to home"
+    },
+    "forbidden": {
+      "metaTitle": "Access denied - Kilometer 0 Digital",
+      "code": "403",
+      "heading": "Access denied",
+      "description": "You do not have permission to access this resource.",
+      "backHome": "Back to home"
+    }
   }
 }

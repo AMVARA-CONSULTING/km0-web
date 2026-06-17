@@ -1,0 +1,66 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+
+type ErrorStatus = '404' | '403';
+
+interface Props {
+  locale: Locale;
+  status: ErrorStatus;
+}
+
+const { locale, status } = Astro.props;
+const messages = getMessages(locale);
+const errorContent =
+  status === '404' ? messages.errors.notFound : messages.errors.forbidden;
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/'), siteRoot).href;
+const homeHref = localeHref(locale, '/');
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={errorContent.metaTitle}
+  pageDescription={errorContent.description}
+>
+  <Header locale={locale} messages={messages} />
+  <main
+    class="relative flex flex-1 flex-col items-center justify-center overflow-hidden bg-navy px-6 pt-28 pb-24 text-center text-white"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(123,63,228,0.15)_0%,_transparent_70%)]"
+    >
+    </div>
+    <div class="relative z-10 mx-auto max-w-xl">
+      <div class="mx-auto mb-8 w-24 sm:w-28">
+        <img
+          src="/brand/logo.svg"
+          alt={messages.hero.logoAlt}
+          width="112"
+          height="112"
+          class="mx-auto h-auto w-full object-contain opacity-90"
+        />
+      </div>
+      <p class="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-white/50">
+        {errorContent.code}
+      </p>
+      <h1 class="heading-section mb-4 text-3xl md:text-4xl">
+        {errorContent.heading}
+      </h1>
+      <p class="mx-auto mt-6 max-w-md text-lg font-light text-white/70">
+        {errorContent.description}
+      </p>
+      <div class="mt-10">
+        <a href={homeHref} class="btn-primary">{errorContent.backHome}</a>
+      </div>
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

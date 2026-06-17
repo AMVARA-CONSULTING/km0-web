@@ -555,5 +555,21 @@
         "bodyHtml": "<p>Agraïm informes de bona fe sobre vulnerabilitats que afectin <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong> i infraestructura de correu KM0 operada per AMVARA.</p><p><strong>Si us plau:</strong></p><ul class=\"doc-list\"><li>Informeu vulnerabilitats amb promptitud a <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>.</li><li>Proporcioneu passos de reproducció i avaluació d'impacte.</li><li>Eviteu accedir, modificar, eliminar o exfiltrar dades que no siguin vostres.</li><li>Atureu les proves un cop confirmada la vulnerabilitat.</li><li>Permeteu un termini raonable per a la correcció abans de divulgació pública.</li></ul><p><strong>Eviteu:</strong></p><ul class=\"doc-list\"><li>Atacs de denegació de servei.</li><li>Enginyeria social, phishing, spam o atacs físics.</li><li>Accés o exfiltració de dades no autoritzats.</li><li>Escaneig automatitzat intrusiu en producció sense aprovació prèvia per escrit.</li><li>Moviment lateral, persistència o divulgació pública abans que puguem abordar el problema.</li></ul><p><strong>AMVARA:</strong></p><ul class=\"doc-list\"><li>Acusarà rebut d'informes vàlids.</li><li>Investigarà i comunicarà quan escaigui.</li><li>Corregirà segons gravetat i risc.</li><li>No emprendrà accions legals contra investigadors que segueixin aquesta política de bona fe.</li></ul><p>Contacte de seguretat: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>. Política llegible per màquina: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
       }
     ]
+  },
+  "errors": {
+    "notFound": {
+      "metaTitle": "Pàgina no trobada - Kilòmetre 0 Digital",
+      "code": "404",
+      "heading": "Pàgina no trobada",
+      "description": "La pàgina que cerques no existeix o s'ha mogut.",
+      "backHome": "Tornar a la pàgina principal"
+    },
+    "forbidden": {
+      "metaTitle": "Accés denegat - Kilòmetre 0 Digital",
+      "code": "403",
+      "heading": "Accés denegat",
+      "description": "No tens permís per accedir a aquest recurs.",
+      "backHome": "Tornar a la pàgina principal"
+    }
   }
 }

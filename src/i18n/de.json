@@ -555,5 +555,21 @@
         "bodyHtml": "<p>Wir begrüßen gutgläubige Meldungen zu Sicherheitslücken, die <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong> und die von AMVARA betriebene KM0-Infrastruktur betreffen.</p><p><strong>Bitte tun Sie:</strong></p><ul class=\"doc-list\"><li>Meldungen umgehend an <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a> senden.</li><li>Klare Reproduktionsschritte und Impact-Bewertung liefern.</li><li>Keinen Zugriff auf, keine Änderung, Löschung oder Exfiltration fremder Daten.</li><li>Tests stoppen, sobald eine Schwachstelle bestätigt ist.</li><li>Angemessene Zeit zur Behebung vor öffentlicher Offenlegung einräumen.</li></ul><p><strong>Bitte nicht:</strong></p><ul class=\"doc-list\"><li>Denial-of-Service-Angriffe.</li><li>Social Engineering, Phishing, Spam oder physische Angriffe.</li><li>Unbefugter Datenzugriff oder Exfiltration.</li><li>Intrusives automatisiertes Scannen der Produktion ohne vorherige schriftliche Genehmigung.</li><li>Lateral Movement, Persistenz oder öffentliche Offenlegung, bevor wir das Problem beheben konnten.</li></ul><p><strong>AMVARA wird:</strong></p><ul class=\"doc-list\"><li>Gültige Meldungen bestätigen.</li><li>Bei Bedarf untersuchen und kommunizieren.</li><li>Je nach Schwere und Risiko beheben.</li><li>Keine rechtlichen Schritte gegen Forscher einleiten, die diese Richtlinie in gutem Glauben befolgen.</li></ul><p>Sicherheitskontakt: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>. Maschinenlesbare Richtlinie: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
       }
     ]
+  },
+  "errors": {
+    "notFound": {
+      "metaTitle": "Seite nicht gefunden - Kilometer 0 Digital",
+      "code": "404",
+      "heading": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      "backHome": "Zur Startseite"
+    },
+    "forbidden": {
+      "metaTitle": "Zugriff verweigert - Kilometer 0 Digital",
+      "code": "403",
+      "heading": "Zugriff verweigert",
+      "description": "Sie haben keine Berechtigung, auf diese Ressource zuzugreifen.",
+      "backHome": "Zur Startseite"
+    }
   }
 }

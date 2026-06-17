@@ -555,5 +555,21 @@
         "bodyHtml": "<p>Agradecemos informes de buena fe sobre vulnerabilidades que afecten a <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong> e infraestructura de correo KM0 operada por AMVARA.</p><p><strong>Por favor:</strong></p><ul class=\"doc-list\"><li>Informe vulnerabilidades con prontitud a <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>.</li><li>Proporcione pasos de reproducción y evaluación de impacto.</li><li>Evite acceder, modificar, eliminar o exfiltrar datos que no sean suyos.</li><li>Detenga las pruebas una vez confirmada la vulnerabilidad.</li><li>Permita un plazo razonable para la corrección antes de divulgación pública.</li></ul><p><strong>Evite:</strong></p><ul class=\"doc-list\"><li>Ataques de denegación de servicio.</li><li>Ingeniería social, phishing, spam o ataques físicos.</li><li>Acceso o exfiltración de datos no autorizados.</li><li>Escaneo automatizado intrusivo en producción sin aprobación previa por escrito.</li><li>Movimiento lateral, persistencia o divulgación pública antes de que podamos abordar el problema.</li></ul><p><strong>AMVARA:</strong></p><ul class=\"doc-list\"><li>Acusará recibo de informes válidos.</li><li>Investigará y comunicará cuando proceda.</li><li>Corregirá según gravedad y riesgo.</li><li>No emprenderá acciones legales contra investigadores que sigan esta política de buena fe.</li></ul><p>Contacto de seguridad: <a href=\"mailto:hello.yoel@amvara.de\">hello.yoel@amvara.de</a>. Política legible por máquina: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
       }
     ]
+  },
+  "errors": {
+    "notFound": {
+      "metaTitle": "Página no encontrada - Kilómetro 0 Digital",
+      "code": "404",
+      "heading": "Página no encontrada",
+      "description": "La página que buscas no existe o ha sido movida.",
+      "backHome": "Volver a la página principal"
+    },
+    "forbidden": {
+      "metaTitle": "Acceso denegado - Kilómetro 0 Digital",
+      "code": "403",
+      "heading": "Acceso denegado",
+      "description": "No tienes permiso para acceder a este recurso.",
+      "backHome": "Volver a la página principal"
+    }
   }
 }

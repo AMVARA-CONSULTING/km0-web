@@ -3,6 +3,7 @@ import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
 import { localeBcp47 } from '../i18n/types';
 import { withHash, localeHref, switchLocaleHref } from '../i18n/paths';
+import ServicesLauncher from './ServicesLauncher.astro';
 
 interface Props {
   locale: Locale;
@@ -87,6 +88,7 @@ const langs: { code: Locale; href: string; label: string }[] = [
           ))
         }
       </div>
+      <ServicesLauncher messages={m} />
       <button
         type="button"
         class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 md:hidden"

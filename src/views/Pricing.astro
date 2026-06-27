@@ -33,12 +33,14 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
           <p class="doc-eyebrow">{p.eyebrow}</p>
           <h1 id="pricing-heading" class="heading-section text-navy">{p.heading}</h1>
           <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel}>
-            <p class="pricing-hero-amount tabular-nums">
-              <span class="pricing-hero-amount-value pricing-hero-amount-gradient">{p.heroPrice.amount}</span><span
-                class="pricing-hero-amount-period pricing-hero-amount-gradient">{p.heroPrice.period}</span
+            <p class="pricing-hero-capacity tabular-nums">
+              <span class="pricing-hero-capacity-value pricing-hero-capacity-gradient">{p.heroPrice.meta}</span>
+            </p>
+            <p class="pricing-hero-price tabular-nums">
+              <span class="pricing-hero-price-value">{p.heroPrice.amount}</span><span
+                class="pricing-hero-price-period">{p.heroPrice.period}</span
               >
             </p>
-            <p class="pricing-hero-meta">{p.heroPrice.meta}</p>
           </div>
           <p class="doc-index-intro mx-auto max-w-3xl">{p.intro}</p>
           <div class="pricing-hero-cta">
@@ -206,7 +208,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     margin-top: clamp(1.5rem, 4vw, 2.5rem);
   }
 
-  .pricing-hero-amount {
+  .pricing-hero-capacity {
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
@@ -216,21 +218,13 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     white-space: nowrap;
   }
 
-  .pricing-hero-amount-value {
+  .pricing-hero-capacity-value {
     font-size: clamp(4rem, 14vw, 7rem);
     font-weight: 800;
     letter-spacing: -0.05em;
   }
 
-  .pricing-hero-amount-period {
-    flex-shrink: 0;
-    font-size: clamp(1rem, 3.5vw, 1.5rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-left: 0.1em;
-  }
-
-  .pricing-hero-amount-gradient {
+  .pricing-hero-capacity-gradient {
     background: linear-gradient(
       105deg,
       #c2410c 0%,
@@ -247,12 +241,30 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     animation: pricing-hero-gradient-flow 6s ease-in-out infinite;
   }
 
-  .pricing-hero-meta {
+  .pricing-hero-price {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
     margin: 1.125rem 0 0;
-    font-size: clamp(1rem, 2.5vw, 1.1875rem);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .pricing-hero-price-value {
+    font-size: clamp(1.125rem, 3vw, 1.375rem);
     font-weight: 600;
     letter-spacing: 0.01em;
     color: rgb(15 23 42 / 0.62);
+  }
+
+  .pricing-hero-price-period {
+    flex-shrink: 0;
+    font-size: clamp(0.9375rem, 2.5vw, 1.125rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-left: 0.1em;
+    color: rgb(15 23 42 / 0.55);
   }
 
   @keyframes pricing-hero-gradient-flow {
@@ -267,7 +279,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .pricing-hero-amount-gradient {
+    .pricing-hero-capacity-gradient {
       animation: none;
       background-position: 0% 50%;
     }

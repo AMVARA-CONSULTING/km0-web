@@ -25,7 +25,10 @@
     "faq": "FAQ",
     "contact": "Contact",
     "menuOpen": "Open menu",
-    "menuClose": "Close menu"
+    "menuClose": "Close menu",
+    "servicesLauncherOpen": "Open KM0 services",
+    "servicesLauncherClose": "Close KM0 services",
+    "servicesLauncherTitle": "KM0 services"
   },
   "hero": {
     "eyebrow": "Community digital movement",
@@ -95,10 +98,10 @@
   },
   "services": {
     "eyebrow": "KM0 Cloud",
-    "headingBefore": "Your business cloud, ",
+    "headingBefore": "Your cloud, ",
     "headingAccent": "closer",
     "headingAfter": " than ever",
-    "intro": "KM0 Cloud gives your company reliable, secure, and locally managed cloud infrastructure with transparent pricing and expert support.",
+    "intro": "KM0 Cloud gives individuals, freelancers, and businesses of every size reliable, secure, and locally managed cloud infrastructure with transparent pricing and expert support.",
     "slogan": "500 GB from €1.99/month. No surprise bills, no distant call centres.",
     "cloudTutorialCta": "How to get started",
     "cloudPricingCta": "View pricing",
@@ -108,7 +111,7 @@
         "title": "KM0 Cloud",
         "priceFrom": "From €1.99/month",
         "priceAriaLabel": "Starting at €1.99 per month for 500 GB",
-        "subtitle": "Reliable local cloud for teams that need performance, security, and expert support.",
+        "subtitle": "For personal, professional, or team use: performance, security, and expert support.",
         "desc": "Share files, sync devices, and collaborate in real time on EU-hosted infrastructure, with ISO 27001-backed operations and human support when you need it.",
         "secondaryCta": "Open Cloud",
         "url": "https://cloud.km0digital.com"

@@ -25,7 +25,10 @@
     "faq": "FAQ",
     "contact": "Contacto",
     "menuOpen": "Abrir menú",
-    "menuClose": "Cerrar menú"
+    "menuClose": "Cerrar menú",
+    "servicesLauncherOpen": "Abrir servicios KM0",
+    "servicesLauncherClose": "Cerrar servicios KM0",
+    "servicesLauncherTitle": "Servicios KM0"
   },
   "hero": {
     "eyebrow": "Movimiento digital comunitario",
@@ -95,10 +98,10 @@
   },
   "services": {
     "eyebrow": "KM0 Cloud",
-    "headingBefore": "Tu nube empresarial, ",
+    "headingBefore": "Tu nube, ",
     "headingAccent": "más cerca",
     "headingAfter": " que nunca",
-    "intro": "KM0 Cloud ofrece a tu empresa infraestructura cloud fiable, segura y gestionada de forma cercana, con precios transparentes y soporte experto.",
+    "intro": "KM0 Cloud ofrece a particulares, autónomos y empresas de cualquier tamaño una infraestructura cloud fiable, segura y gestionada de forma cercana, con precios transparentes y soporte experto.",
     "slogan": "500 GB desde 1,99 €/mes. Sin facturas sorpresa ni call centers lejanos.",
     "cloudTutorialCta": "Cómo empezar a usarlo",
     "cloudPricingCta": "Ver precios",
@@ -108,7 +111,7 @@
         "title": "KM0 Cloud",
         "priceFrom": "Desde 1,99 €/mes",
         "priceAriaLabel": "Desde 1,99 euros al mes por 500 GB",
-        "subtitle": "Nube local fiable para equipos que necesitan rendimiento, seguridad y soporte experto.",
+        "subtitle": "Para uso personal, profesional o en equipo: rendimiento, seguridad y soporte experto.",
         "desc": "Comparte archivos, sincroniza dispositivos y colabora en tiempo real en infraestructura alojada en la UE, con operaciones respaldadas por ISO 27001 y soporte humano cuando lo necesites.",
         "secondaryCta": "Abrir Cloud",
         "url": "https://cloud.km0digital.com"

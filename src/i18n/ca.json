@@ -25,7 +25,10 @@
     "faq": "FAQ",
     "contact": "Contacte",
     "menuOpen": "Obrir menú",
-    "menuClose": "Tancar menú"
+    "menuClose": "Tancar menú",
+    "servicesLauncherOpen": "Obrir serveis KM0",
+    "servicesLauncherClose": "Tancar serveis KM0",
+    "servicesLauncherTitle": "Serveis KM0"
   },
   "hero": {
     "eyebrow": "Moviment digital comunitari",
@@ -95,10 +98,10 @@
   },
   "services": {
     "eyebrow": "KM0 Cloud",
-    "headingBefore": "El teu núvol empresarial, ",
+    "headingBefore": "El teu núvol, ",
     "headingAccent": "més a prop",
     "headingAfter": " que mai",
-    "intro": "KM0 Cloud ofereix a la teva empresa infraestructura cloud fiable, segura i gestionada de forma propera, amb preus transparents i suport expert.",
+    "intro": "KM0 Cloud ofereix a particulars, autònoms i empreses de qualsevol mida una infraestructura cloud fiable, segura i gestionada de forma propera, amb preus transparents i suport expert.",
     "slogan": "500 GB des de 1,99 €/mes. Sense factures sorpresa ni call centers llunyans.",
     "cloudTutorialCta": "Com començar a fer-lo servir",
     "cloudPricingCta": "Veure preus",
@@ -108,7 +111,7 @@
         "title": "KM0 Cloud",
         "priceFrom": "Des de 1,99 €/mes",
         "priceAriaLabel": "Des de 1,99 euros al mes per 500 GB",
-        "subtitle": "Núvol local fiable per a equips que necessiten rendiment, seguretat i suport expert.",
+        "subtitle": "Per a ús personal, professional o en equip: rendiment, seguretat i suport expert.",
         "desc": "Comparteix fitxers, sincronitza dispositius i col·labora en temps real en infraestructura allotjada a la UE, amb operacions recolzades per ISO 27001 i suport humà quan ho necessitis.",
         "secondaryCta": "Obrir Cloud",
         "url": "https://cloud.km0digital.com"

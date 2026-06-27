@@ -41,6 +41,9 @@ export interface Messages {
     contact: string;
     menuOpen: string;
     menuClose: string;
+    servicesLauncherOpen: string;
+    servicesLauncherClose: string;
+    servicesLauncherTitle: string;
   };
   vision: {
     eyebrow: string;

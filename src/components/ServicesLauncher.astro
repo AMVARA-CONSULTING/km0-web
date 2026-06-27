@@ -1,0 +1,132 @@
+---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  messages: Messages;
+}
+
+const { messages: m } = Astro.props;
+
+const icons: Record<string, string> = {
+  cloud:
+    'M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.32-2.127 4.5 4.5 0 018.59 2.75L18 19.5H6.75z',
+  email:
+    'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+};
+
+const launcherItems = m.services.items.filter(
+  (item): item is typeof item & { url: string } =>
+    Boolean(item.url) && item.available !== false,
+);
+---
+
+<div class="relative" data-services-launcher-root>
+  <button
+    type="button"
+    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10"
+    data-services-launcher-toggle
+    aria-expanded="false"
+    aria-controls="services-launcher-panel"
+    aria-haspopup="true"
+    aria-label={m.nav.servicesLauncherOpen}
+    data-label-open={m.nav.servicesLauncherOpen}
+    data-label-close={m.nav.servicesLauncherClose}
+  >
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <circle cx="5" cy="5" r="1.75"></circle>
+      <circle cx="12" cy="5" r="1.75"></circle>
+      <circle cx="19" cy="5" r="1.75"></circle>
+      <circle cx="5" cy="12" r="1.75"></circle>
+      <circle cx="12" cy="12" r="1.75"></circle>
+      <circle cx="19" cy="12" r="1.75"></circle>
+      <circle cx="5" cy="19" r="1.75"></circle>
+      <circle cx="12" cy="19" r="1.75"></circle>
+      <circle cx="19" cy="19" r="1.75"></circle>
+    </svg>
+  </button>
+  <div
+    id="services-launcher-panel"
+    class="services-launcher-panel absolute end-0 top-[calc(100%+0.5rem)] z-50 min-w-[14rem] rounded-2xl border border-white/10 bg-navy/95 p-3 shadow-xl backdrop-blur-md"
+    hidden
+    data-open="false"
+    role="menu"
+    aria-label={m.nav.servicesLauncherTitle}
+  >
+    <p class="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-white/50">
+      {m.nav.servicesLauncherTitle}
+    </p>
+    <ul class="grid grid-cols-2 gap-1">
+      {
+        launcherItems.map((item) => (
+          <li role="none">
+            <a
+              href={item.url}
+              role="menuitem"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-services-launcher-link
+              class="flex flex-col items-center gap-2 rounded-xl px-3 py-3 text-center text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white">
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d={icons[item.id] ?? icons.cloud}
+                  />
+                </svg>
+              </span>
+              <span>{item.title}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  function initServicesLauncher() {
+    document.querySelectorAll('[data-services-launcher-root]').forEach((root) => {
+      const toggle = root.querySelector<HTMLButtonElement>('[data-services-launcher-toggle]');
+      const panel = root.querySelector<HTMLElement>('#services-launcher-panel');
+      if (!toggle || !panel) return;
+
+      const openLabel = toggle.dataset.labelOpen ?? '';
+      const closeLabel = toggle.dataset.labelClose ?? '';
+
+      const setOpen = (open: boolean) => {
+        panel.hidden = !open;
+        panel.dataset.open = open ? 'true' : 'false';
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+      };
+
+      toggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        setOpen(panel.hidden);
+      });
+
+      panel.querySelectorAll('[data-services-launcher-link]').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!root.contains(event.target as Node)) setOpen(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !panel.hidden) setOpen(false);
+      });
+    });
+  }
+
+  initServicesLauncher();
+</script>

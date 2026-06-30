@@ -117,6 +117,6 @@ locale: es
 
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
-  <h2 class="doc-block-heading">Días 1–9</h2>
-  <p class="doc-closing">El <a href="/doc/day-9/">día 9</a> publicó precios, legal y registro; los días anteriores cubren el stack cloud. Prueba el <a href="https://mail.km0digital.com/">webmail</a>, lee el <a href="https://github.com/AMVARA-CONSULTING/km0-mail/blob/main/docs/runbook.md">runbook de km0-mail</a> y sigue con legal/servicios en próximas entregas. Dudas: <a href="/#contact">contacto</a>.</p>
+  <h2 class="doc-block-heading">Siguiente entrada</h2>
+  <p class="doc-closing">El <a href="/doc/day-12/">día 12</a> recoge la charla con cliente sobre UX; el <a href="/doc/day-13/">día 13</a> el meet 6: visibilidad, asociaciones (AMPAs, vecinos) y próximos pasos comerciales. Mientras tanto, prueba el <a href="https://mail.km0digital.com/">webmail</a> o consulta <a href="/pricing/">precios</a>. Dudas: <a href="/#contact">contacto</a>.</p>
 </section>

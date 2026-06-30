@@ -21,21 +21,44 @@ const {
 
 const ogImageUrl = new URL(image, site).href;
 const alt = imageAlt ?? title;
+const siteUrl = site.href;
 
-const schemaData = {
+const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebApplication',
+  '@type': 'Organization',
+  name: 'Kilometer 0 Digital',
+  alternateName: ['KM0 Digital', 'km0digital'],
+  url: siteUrl,
+  logo: new URL('/brand/logo.svg', site).href,
+  description,
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'km0digital',
+  alternateName: 'Kilometer 0 Digital',
+  url: siteUrl,
+  description,
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
   name: title,
   description,
   url: canonicalUrl,
-  operatingSystem: 'All',
-  applicationCategory: 'BusinessApplication',
+  isPartOf: { '@type': 'WebSite', url: siteUrl, name: 'km0digital' },
 };
 ---
 
 <link rel="canonical" href={canonicalUrl} />
 
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="application-name" content="km0digital" />
+
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="km0digital" />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -52,4 +75,6 @@ const schemaData = {
 <meta name="twitter:image" content={ogImageUrl} />
 <meta name="twitter:image:alt" content={alt} />
 
-<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />

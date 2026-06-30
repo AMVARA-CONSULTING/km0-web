@@ -17,7 +17,7 @@ const tutorials = defineCollection({
     description: z.string(),
     locale: z.enum(['es', 'ca', 'en', 'de']),
     order: z.number(),
-    platform: z.enum(['web', 'android', 'ios']),
+    platform: z.enum(['web', 'android', 'ios', 'macos']),
   }),
 });
 

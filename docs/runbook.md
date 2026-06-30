@@ -21,6 +21,25 @@
 - Locale switcher (CA | DE | EN | ES) and hash anchors `/#id` or `/ca/#id`: `src/components/Header.astro` and `src/i18n/paths.ts`.
 - Sitemap alternates: `@astrojs/sitemap` in `astro.config.mjs` (BCP-47 locale codes: `es`, `ca`, `en`, `de`).
 
+### SEO and search indexing
+
+- **robots.txt:** `public/robots.txt` (allows all crawlers, references sitemap).
+- **Sitemap:** built at `/sitemap-index.xml` via `@astrojs/sitemap`.
+- **Canonical / hreflang / JSON-LD:** `src/layouts/Layout.astro`, `src/components/SeoManager.astro`.
+- **Brand keyword:** home `meta.title` and `meta.description` in `src/i18n/*.json` include `km0digital`.
+
+**Operator tasks (production, manual):**
+
+1. [Google Search Console](https://search.google.com/search-console/about): verify `km0digital.com`, submit `https://km0digital.com/sitemap-index.xml`.
+2. [Bing Webmaster Tools](https://www.bing.com/webmasters/about): verify the domain and submit the same sitemap (helps non-Google search engines and regional filters).
+
+```bash
+curl -sI https://km0digital.com/robots.txt
+curl -s https://km0digital.com/robots.txt
+curl -sI https://km0digital.com/sitemap-index.xml
+curl -s https://km0digital.com/sitemap-index.xml | head -20
+```
+
 ```bash
 curl -sI http://127.0.0.1:9180/ http://127.0.0.1:9180/ca/ http://127.0.0.1:9180/en/
 curl -sI http://127.0.0.1:9180/doc/ http://127.0.0.1:9180/doc/day-0/

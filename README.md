@@ -10,6 +10,10 @@ Public marketing landing for **KM0 Digital**.
 
 KM0 connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site with informational sections, brand identity (orange → magenta → purple → blue gradient), and smooth scroll animations.
 
+**Privacy:** km0digital is built with a privacy-first mindset. We do not sell user data, build advertising profiles, or monetise files. See the landing page privacy section and `/legal/` for the full policy.
+
+**SEO:** `public/robots.txt`, `@astrojs/sitemap` (`/sitemap-index.xml`), canonical URLs, and `km0digital` in page metadata. Operators should submit the sitemap in Google Search Console and Bing Webmaster Tools (see `docs/runbook.md`).
+
 Translations live in **`src/i18n/{es,ca,en}.json`**; default language is Spanish at `/`.
 
 **Core message:** *ORIGEN LOCAL. IMPACTO DIGITAL.* - *CONECTA. TRANSFORMA. IMPULSA.*

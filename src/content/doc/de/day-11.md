@@ -117,6 +117,6 @@ locale: de
 
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
-  <h2 class="doc-block-heading">Tage 1–9</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-9/">Tag 9</a> erschienen Preise, Rechtliches und Registrierung; frühere Tage decken den Cloud-Stack ab. Testen Sie das <a href="https://mail.km0digital.com/">Webmail</a>, lesen Sie das <a href="https://github.com/AMVARA-CONSULTING/km0-mail/blob/main/docs/runbook.md">km0-mail-Runbook</a> und folgen Sie Rechtliches/Services in kommenden Releases. Fragen: <a href="/de/#contact">Kontakt</a>.</p>
+  <h2 class="doc-block-heading">Nächster Eintrag</h2>
+  <p class="doc-closing">Am <a href="/de/doc/day-12/">Tag 12</a> steht das Kundengespräch zur UX; am <a href="/de/doc/day-13/">Tag 13</a> Meet 6: Sichtbarkeit, Vereine (AMPAs, Nachbarn) und kommerzielle nächste Schritte. Testen Sie unterdessen das <a href="https://mail.km0digital.com/">Webmail</a> oder sehen Sie <a href="/de/pricing/">Preise</a>. Fragen: <a href="/de/#contact">Kontakt</a>.</p>
 </section>

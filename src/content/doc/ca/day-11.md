@@ -117,6 +117,6 @@ locale: ca
 
 <section class="doc-closing-block">
   <p class="doc-block-title">Sèrie</p>
-  <h2 class="doc-block-heading">Dies 1–9</h2>
-  <p class="doc-closing">El <a href="/ca/doc/day-9/">dia 9</a> va publicar preus, legal i registre; els dies anteriors cobreixen el stack cloud. Prova el <a href="https://mail.km0digital.com/">webmail</a>, llegeix el <a href="https://github.com/AMVARA-CONSULTING/km0-mail/blob/main/docs/runbook.md">runbook de km0-mail</a> i segueix amb legal/serveis en properes entregues. Dubtes: <a href="/ca/#contact">contacte</a>.</p>
+  <h2 class="doc-block-heading">Entrada següent</h2>
+  <p class="doc-closing">El <a href="/ca/doc/day-12/">dia 12</a> recull la xerrada amb client sobre UX; el <a href="/ca/doc/day-13/">dia 13</a> el meet 6: visibilitat, associacions (AMPAs, veïns) i propers passos comercials. Mentrestant, prova el <a href="https://mail.km0digital.com/">webmail</a> o consulta <a href="/ca/pricing/">preus</a>. Dubtes: <a href="/ca/#contact">contacte</a>.</p>
 </section>

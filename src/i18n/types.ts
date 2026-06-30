@@ -157,6 +157,11 @@ export interface Messages {
     heading: string;
     body: string;
   };
+  privacyTrust: {
+    eyebrow: string;
+    heading: string;
+    body: string;
+  };
   merch: {
     eyebrow: string;
     headingBefore: string;

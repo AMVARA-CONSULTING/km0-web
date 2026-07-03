@@ -95,5 +95,5 @@ locale: ca
 <section class="doc-closing-block">
   <p class="doc-block-title">Sèrie</p>
   <h2 class="doc-block-heading">Dies anteriors</h2>
-  <p class="doc-closing">El <a href="/ca/doc/day-11/">dia 11</a> va documentar KM0 Mail; el <a href="/ca/doc/day-12/">dia 12</a> la xerrada amb client sobre experiència d'usuari; el <a href="/ca/doc/day-9/">dia 9</a> va publicar preus i legal. Segueix la sèrie, prova el <a href="https://mail.km0digital.com/">webmail</a> i explica'ns per <a href="/ca/#contact">contacte</a> si coneixes una AMPA o associació que encaixi.</p>
+  <p class="doc-closing">El <a href="/ca/doc/day-11/">dia 11</a> va documentar KM0 Mail; el <a href="/ca/doc/day-12/">dia 12</a> la xerrada amb client sobre experiència d'usuari; el <a href="/ca/doc/day-9/">dia 9</a> va publicar preus i legal. El <a href="/ca/doc/day-14/">dia 14</a> resumeix el vídeo de Harari sobre IA i civilització. Segueix la sèrie, prova el <a href="https://mail.km0digital.com/">webmail</a> i explica'ns per <a href="/ca/#contact">contacte</a> si coneixes una AMPA o associació que encaixi.</p>
 </section>

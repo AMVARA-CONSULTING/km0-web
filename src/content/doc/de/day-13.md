@@ -95,5 +95,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Frühere Tage</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Mail dokumentiert; am <a href="/de/doc/day-12/">Tag 12</a> das Kundengespräch zur Nutzererfahrung; am <a href="/de/doc/day-9/">Tag 9</a> erschienen Preise und Rechtliches. Folgen Sie der Serie, testen Sie das <a href="https://mail.km0digital.com/">Webmail</a> und schreiben Sie uns über <a href="/de/#contact">Kontakt</a>, wenn Sie eine AMPA oder einen Verein kennen, der passen könnte.</p>
+  <p class="doc-closing">Am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Mail dokumentiert; am <a href="/de/doc/day-12/">Tag 12</a> das Kundengespräch zur Nutzererfahrung; am <a href="/de/doc/day-9/">Tag 9</a> erschienen Preise und Rechtliches. <a href="/de/doc/day-14/">Tag 14</a> fasst Hararis Video über KI und Zivilisation zusammen. Folgen Sie der Serie, testen Sie das <a href="https://mail.km0digital.com/">Webmail</a> und schreiben Sie uns über <a href="/de/#contact">Kontakt</a>, wenn Sie eine AMPA oder einen Verein kennen, der passen könnte.</p>
 </section>

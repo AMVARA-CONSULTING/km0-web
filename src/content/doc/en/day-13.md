@@ -95,5 +95,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Earlier days</h2>
-  <p class="doc-closing"><a href="/en/doc/day-11/">Day 11</a> documented KM0 Mail; <a href="/en/doc/day-12/">day 12</a> covers the client talk on user experience; <a href="/en/doc/day-9/">day 9</a> published pricing and legal. Follow the series, try the <a href="https://mail.km0digital.com/">webmail</a>, and tell us via <a href="/en/#contact">contact</a> if you know a PTA or association that might fit.</p>
+  <p class="doc-closing"><a href="/en/doc/day-11/">Day 11</a> documented KM0 Mail; <a href="/en/doc/day-12/">day 12</a> covers the client talk on user experience; <a href="/en/doc/day-9/">day 9</a> published pricing and legal. <a href="/en/doc/day-14/">Day 14</a> summarises Harari's video on AI and civilization. Follow the series, try the <a href="https://mail.km0digital.com/">webmail</a>, and tell us via <a href="/en/#contact">contact</a> if you know a PTA or association that might fit.</p>
 </section>

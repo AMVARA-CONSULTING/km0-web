@@ -95,5 +95,5 @@ locale: es
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Días anteriores</h2>
-  <p class="doc-closing">El <a href="/doc/day-13/">día 13</a> recogió el meet 6 sobre visibilidad y asociaciones; el <a href="/doc/day-12/">día 12</a> la charla con cliente sobre UX; el <a href="/doc/day-11/">día 11</a> documentó KM0 Mail. Mira el vídeo, comparte tu lectura y sigue la serie.</p>
+  <p class="doc-closing">El <a href="/doc/day-13/">día 13</a> recogió el meet 6 sobre visibilidad y asociaciones; el <a href="/doc/day-12/">día 12</a> la charla con cliente sobre UX; el <a href="/doc/day-11/">día 11</a> documentó KM0 Mail. El <a href="/doc/day-15/">día 15</a> explica el token Graph caducado de register-api y la renovación automática. Mira el vídeo, comparte tu lectura y sigue la serie.</p>
 </section>

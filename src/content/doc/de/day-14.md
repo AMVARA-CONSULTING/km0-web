@@ -95,5 +95,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Frühere Tage</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-13/">Tag 13</a> stand Meet 6 zu Sichtbarkeit und Vereinen; am <a href="/de/doc/day-12/">Tag 12</a> das Kundengespräch zur UX; am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Mail dokumentiert. Sehen Sie das Video, teilen Sie Ihre Lesart und folgen Sie der Serie.</p>
+  <p class="doc-closing">Am <a href="/de/doc/day-13/">Tag 13</a> stand Meet 6 zu Sichtbarkeit und Vereinen; am <a href="/de/doc/day-12/">Tag 12</a> das Kundengespräch zur UX; am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Mail dokumentiert. Am <a href="/de/doc/day-15/">Tag 15</a> erklären wir das abgelaufene register-api Graph-Token und die Auto-Erneuerung. Sehen Sie das Video, teilen Sie Ihre Lesart und folgen Sie der Serie.</p>
 </section>

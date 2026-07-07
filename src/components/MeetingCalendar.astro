@@ -308,7 +308,8 @@ const calendarPayload = JSON.stringify({
     gap: 0.25rem;
   }
 
-  .meeting-calendar-cell {
+  /* Day cells are rendered client-side; use :global so Astro scope attrs are not required. */
+  .meeting-calendar :global(.meeting-calendar-cell) {
     position: relative;
     display: flex;
     align-items: center;
@@ -322,7 +323,7 @@ const calendarPayload = JSON.stringify({
     cursor: default;
   }
 
-  .meeting-calendar-day-wrap {
+  .meeting-calendar :global(.meeting-calendar-day-wrap) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,7 +331,7 @@ const calendarPayload = JSON.stringify({
     pointer-events: none;
   }
 
-  .meeting-calendar-event-dot {
+  .meeting-calendar :global(.meeting-calendar-event-dot) {
     display: block;
     width: 0.375rem;
     height: 0.375rem;
@@ -339,7 +340,7 @@ const calendarPayload = JSON.stringify({
     box-shadow: 0 0 0 1px rgb(255 255 255 / 0.6);
   }
 
-  .meeting-calendar-cell-has-event {
+  .meeting-calendar :global(.meeting-calendar-cell-has-event) {
     cursor: pointer;
     border-color: rgb(123 63 228 / 0.35);
     background: linear-gradient(
@@ -352,18 +353,7 @@ const calendarPayload = JSON.stringify({
     font-weight: 700;
   }
 
-  .meeting-calendar-cell-has-event::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.35rem;
-    bottom: 0.35rem;
-    width: 3px;
-    border-radius: 9999px;
-    background: var(--gradient-brand);
-  }
-
-  .meeting-calendar-cell-has-event:hover {
+  .meeting-calendar :global(.meeting-calendar-cell-has-event:hover) {
     border-color: rgb(123 63 228 / 0.5);
     background: linear-gradient(
       135deg,
@@ -375,20 +365,20 @@ const calendarPayload = JSON.stringify({
     box-shadow: 0 4px 12px rgb(123 63 228 / 0.12);
   }
 
-  .meeting-calendar-cell-has-event:focus-visible {
+  .meeting-calendar :global(.meeting-calendar-cell-has-event:focus-visible) {
     outline: 2px solid #0b1220;
     outline-offset: 1px;
   }
 
-  .meeting-calendar-cell-muted {
+  .meeting-calendar :global(.meeting-calendar-cell-muted) {
     color: rgb(15 23 42 / 0.35);
   }
 
-  .meeting-calendar-cell-empty {
+  .meeting-calendar :global(.meeting-calendar-cell-empty) {
     min-height: 2.5rem;
   }
 
-  .meeting-calendar-day {
+  .meeting-calendar :global(.meeting-calendar-day) {
     pointer-events: none;
   }
 

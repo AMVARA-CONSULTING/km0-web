@@ -1,0 +1,427 @@
+---
+import { MEETING_EVENTS } from '../lib/meetings';
+import type { Locale, Messages } from '../i18n/types';
+import { localeBcp47 } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages } = Astro.props;
+const m = messages.meeting;
+
+const now = new Date();
+const initialYear = now.getFullYear();
+const initialMonth = now.getMonth();
+
+const calendarEvents = MEETING_EVENTS.map((event) => ({
+  id: event.id,
+  date: event.date,
+  time: event.time,
+  tag: event.tag,
+  mapsUrl: event.mapsUrl,
+  venueWebsite: event.venueWebsite ?? '',
+}));
+
+const eventCopy = Object.fromEntries(
+  MEETING_EVENTS.map((event) => [event.id, m.events[event.id]]),
+);
+
+const calendarPayload = JSON.stringify({
+  locale: localeBcp47[locale],
+  initialYear,
+  initialMonth,
+  events: calendarEvents,
+  eventCopy,
+  tags: m.tags,
+  labels: m.labels,
+  prevMonth: m.prevMonth,
+  nextMonth: m.nextMonth,
+  closeDetail: m.closeDetail,
+});
+---
+
+<div class="meeting-calendar" data-meeting-calendar data-payload={calendarPayload}>
+  <div class="meeting-calendar-toolbar">
+    <button type="button" class="meeting-calendar-nav" data-cal-prev aria-label={m.prevMonth}>
+      ‹
+    </button>
+    <h3 class="meeting-calendar-month" data-cal-title></h3>
+    <button type="button" class="meeting-calendar-nav" data-cal-next aria-label={m.nextMonth}>
+      ›
+    </button>
+  </div>
+  <div class="meeting-calendar-weekdays" data-cal-weekdays aria-hidden="true"></div>
+  <div class="meeting-calendar-grid" data-cal-grid role="grid" aria-label={m.calendarTitle}></div>
+  <div class="meeting-calendar-detail" data-cal-detail hidden>
+    <button type="button" class="meeting-calendar-detail-close" data-cal-close>
+      {m.closeDetail}
+    </button>
+    <div data-cal-detail-body></div>
+  </div>
+</div>
+
+<script>
+  interface CalendarEvent {
+    id: string;
+    date: string;
+    time: string;
+    tag: string;
+    mapsUrl: string;
+    venueWebsite: string;
+  }
+
+  interface EventCopy {
+    title: string;
+    location: string;
+    audience: string;
+    topic: string;
+  }
+
+  interface CalendarPayload {
+    locale: string;
+    initialYear: number;
+    initialMonth: number;
+    events: CalendarEvent[];
+    eventCopy: Record<string, EventCopy>;
+    tags: Record<string, string>;
+    labels: Record<string, string>;
+    prevMonth: string;
+    nextMonth: string;
+    closeDetail: string;
+  }
+
+  function parsePayload(root: HTMLElement): CalendarPayload {
+    const raw = root.dataset.payload;
+    if (!raw) throw new Error('Missing calendar payload');
+    return JSON.parse(raw) as CalendarPayload;
+  }
+
+  function isoFromParts(year: number, month: number, day: number): string {
+    return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  }
+
+  function initCalendar(root: HTMLElement) {
+    const payload = parsePayload(root);
+    const titleEl = root.querySelector<HTMLElement>('[data-cal-title]');
+    const weekdaysEl = root.querySelector<HTMLElement>('[data-cal-weekdays]');
+    const gridEl = root.querySelector<HTMLElement>('[data-cal-grid]');
+    const detailEl = root.querySelector<HTMLElement>('[data-cal-detail]');
+    const detailBody = root.querySelector<HTMLElement>('[data-cal-detail-body]');
+    const prevBtn = root.querySelector<HTMLButtonElement>('[data-cal-prev]');
+    const nextBtn = root.querySelector<HTMLButtonElement>('[data-cal-next]');
+    const closeBtn = root.querySelector<HTMLButtonElement>('[data-cal-close]');
+    if (!titleEl || !weekdaysEl || !gridEl || !detailEl || !detailBody || !prevBtn || !nextBtn || !closeBtn) {
+      return;
+    }
+
+    let viewYear = payload.initialYear;
+    let viewMonth = payload.initialMonth;
+
+    const monthFormatter = new Intl.DateTimeFormat(payload.locale, { month: 'long', year: 'numeric' });
+    const weekdayFormatter = new Intl.DateTimeFormat(payload.locale, { weekday: 'short' });
+
+    const eventsByDate = new Map<string, CalendarEvent[]>();
+    payload.events.forEach((event) => {
+      const list = eventsByDate.get(event.date) ?? [];
+      list.push(event);
+      eventsByDate.set(event.date, list);
+    });
+
+    const hideDetail = () => {
+      detailEl.hidden = true;
+      detailBody.innerHTML = '';
+    };
+
+    const showDetail = (events: CalendarEvent[]) => {
+      const parts = events
+        .map((event) => {
+          const copy = payload.eventCopy[event.id];
+          if (!copy) return '';
+          const websiteRow = event.venueWebsite
+            ? `<div><dt>${payload.labels.website}</dt><dd><a href="${event.venueWebsite}" target="_blank" rel="noopener noreferrer">${event.venueWebsite.replace(/^https?:\/\//, '')}</a></dd></div>`
+            : '';
+          return `
+            <article class="meeting-calendar-detail-item">
+              <p class="meeting-calendar-detail-tag">${payload.tags[event.tag] ?? event.tag}</p>
+              <h4>${copy.title}</h4>
+              <dl>
+                <div><dt>${payload.labels.time}</dt><dd>${event.time}</dd></div>
+                <div><dt>${payload.labels.where}</dt><dd><a href="${event.mapsUrl}" target="_blank" rel="noopener noreferrer">${copy.location}</a></dd></div>
+                ${websiteRow}
+                <div><dt>${payload.labels.audience}</dt><dd>${copy.audience}</dd></div>
+                <div><dt>${payload.labels.topic}</dt><dd>${copy.topic}</dd></div>
+              </dl>
+            </article>
+          `;
+        })
+        .join('');
+      detailBody.innerHTML = parts;
+      detailEl.hidden = false;
+    };
+
+    const renderWeekdays = () => {
+      const monday = new Date(2024, 0, 1);
+      weekdaysEl.innerHTML = Array.from({ length: 7 }, (_, index) => {
+        const day = new Date(monday);
+        day.setDate(monday.getDate() + index);
+        const label = weekdayFormatter.format(day);
+        return `<span>${label.replace('.', '')}</span>`;
+      }).join('');
+    };
+
+    const renderMonth = () => {
+      titleEl.textContent = monthFormatter.format(new Date(viewYear, viewMonth, 1));
+      gridEl.innerHTML = '';
+
+      const firstDay = new Date(viewYear, viewMonth, 1);
+      const startOffset = (firstDay.getDay() + 6) % 7;
+      const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+      for (let i = 0; i < startOffset; i += 1) {
+        const pad = document.createElement('div');
+        pad.className = 'meeting-calendar-cell meeting-calendar-cell-empty';
+        pad.setAttribute('aria-hidden', 'true');
+        gridEl.appendChild(pad);
+      }
+
+      for (let day = 1; day <= daysInMonth; day += 1) {
+        const iso = isoFromParts(viewYear, viewMonth, day);
+        const dayEvents = eventsByDate.get(iso) ?? [];
+        const cell = document.createElement('button');
+        cell.type = 'button';
+        cell.className = 'meeting-calendar-cell';
+        cell.dataset.date = iso;
+        cell.setAttribute('role', 'gridcell');
+        cell.innerHTML = `<span class="meeting-calendar-day">${day}</span>`;
+
+        if (dayEvents.length > 0) {
+          cell.classList.add('meeting-calendar-cell-has-event');
+          cell.setAttribute('aria-label', `${dayEvents.map((e) => payload.eventCopy[e.id]?.title ?? e.id).join(', ')}`);
+          cell.addEventListener('click', () => showDetail(dayEvents));
+        } else {
+          cell.disabled = true;
+          cell.classList.add('meeting-calendar-cell-muted');
+        }
+
+        gridEl.appendChild(cell);
+      }
+    };
+
+    prevBtn.addEventListener('click', () => {
+      viewMonth -= 1;
+      if (viewMonth < 0) {
+        viewMonth = 11;
+        viewYear -= 1;
+      }
+      hideDetail();
+      renderMonth();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      viewMonth += 1;
+      if (viewMonth > 11) {
+        viewMonth = 0;
+        viewYear += 1;
+      }
+      hideDetail();
+      renderMonth();
+    });
+
+    closeBtn.addEventListener('click', hideDetail);
+
+    renderWeekdays();
+    renderMonth();
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-meeting-calendar]').forEach(initCalendar);
+</script>
+
+<style>
+  .meeting-calendar {
+    padding: 1.25rem 1.375rem 1.5rem;
+    border: 1px solid rgb(15 23 42 / 0.1);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.05);
+  }
+
+  .meeting-calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .meeting-calendar-month {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0b1220;
+    text-transform: capitalize;
+  }
+
+  .meeting-calendar-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid rgb(15 23 42 / 0.12);
+    border-radius: 9999px;
+    background: #fff;
+    color: #0b1220;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .meeting-calendar-nav:hover {
+    background: #f5f5f7;
+    border-color: rgb(15 23 42 / 0.2);
+  }
+
+  .meeting-calendar-nav:focus-visible {
+    outline: 2px solid #0b1220;
+    outline-offset: 2px;
+  }
+
+  .meeting-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgb(15 23 42 / 0.5);
+    text-align: center;
+  }
+
+  .meeting-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+
+  .meeting-calendar-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.65rem;
+    background: transparent;
+    color: #0b1220;
+    font-size: 0.9375rem;
+    cursor: default;
+  }
+
+  .meeting-calendar-cell-has-event {
+    cursor: pointer;
+    border-color: rgb(123 63 228 / 0.25);
+    background: linear-gradient(180deg, rgb(255 95 46 / 0.08), rgb(123 63 228 / 0.08));
+    font-weight: 600;
+  }
+
+  .meeting-calendar-cell-has-event:hover {
+    border-color: rgb(123 63 228 / 0.45);
+    background: linear-gradient(180deg, rgb(255 95 46 / 0.14), rgb(123 63 228 / 0.14));
+  }
+
+  .meeting-calendar-cell-has-event:focus-visible {
+    outline: 2px solid #0b1220;
+    outline-offset: 1px;
+  }
+
+  .meeting-calendar-cell-muted {
+    color: rgb(15 23 42 / 0.35);
+  }
+
+  .meeting-calendar-cell-empty {
+    min-height: 2.5rem;
+  }
+
+  .meeting-calendar-day {
+    pointer-events: none;
+  }
+
+  .meeting-calendar-detail {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgb(15 23 42 / 0.1);
+  }
+
+  .meeting-calendar-detail-close {
+    margin-bottom: 0.875rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgb(15 23 42 / 0.12);
+    border-radius: 9999px;
+    background: #fff;
+    color: #0b1220;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .meeting-calendar-detail-close:hover {
+    background: #f5f5f7;
+  }
+
+  :global(.meeting-calendar-detail-item) {
+    padding: 0.25rem 0;
+  }
+
+  :global(.meeting-calendar-detail-item + .meeting-calendar-detail-item) {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(15 23 42 / 0.08);
+  }
+
+  :global(.meeting-calendar-detail-tag) {
+    margin: 0 0 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgb(15 23 42 / 0.55);
+  }
+
+  :global(.meeting-calendar-detail-item h4) {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0b1220;
+  }
+
+  :global(.meeting-calendar-detail-item dl) {
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  :global(.meeting-calendar-detail-item dt) {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgb(15 23 42 / 0.5);
+  }
+
+  :global(.meeting-calendar-detail-item dd) {
+    margin: 0.1rem 0 0;
+    line-height: 1.55;
+    color: #334155;
+  }
+
+  :global(.meeting-calendar-detail-item a) {
+    color: #0b1220;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+</style>

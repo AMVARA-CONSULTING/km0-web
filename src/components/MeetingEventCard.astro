@@ -1,0 +1,139 @@
+---
+import type { MeetingEventRecord } from '../lib/meetings';
+import type { Locale, Messages } from '../i18n/types';
+import { localeBcp47 } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+  event: MeetingEventRecord;
+}
+
+const { locale, messages, event } = Astro.props;
+const m = messages.meeting;
+const copy = m.events[event.id];
+
+function formatDate(isoDate: string): string {
+  const [y, mo, d] = isoDate.split('-').map(Number);
+  return new Intl.DateTimeFormat(localeBcp47[locale], { dateStyle: 'long' }).format(
+    new Date(y, mo - 1, d),
+  );
+}
+---
+
+<article class="meeting-event-card" data-meeting-event-id={event.id}>
+  <div class="meeting-event-card-meta">
+    <span class="meeting-event-tag">{m.tags[event.tag]}</span>
+    <time datetime={`${event.date}T${event.time}`}>{formatDate(event.date)}</time>
+  </div>
+  <h3 class="meeting-event-card-title">{copy.title}</h3>
+  <dl class="meeting-event-card-details">
+    <div>
+      <dt>{m.labels.time}</dt>
+      <dd>{event.time}</dd>
+    </div>
+    <div>
+      <dt>{m.labels.where}</dt>
+      <dd>
+        <a href={event.mapsUrl} target="_blank" rel="noopener noreferrer">{copy.location}</a>
+      </dd>
+    </div>
+    {
+      event.venueWebsite && (
+        <div>
+          <dt>{m.labels.website}</dt>
+          <dd>
+            <a href={event.venueWebsite} target="_blank" rel="noopener noreferrer">
+              {event.venueWebsite.replace(/^https?:\/\//, '')}
+            </a>
+          </dd>
+        </div>
+      )
+    }
+    <div>
+      <dt>{m.labels.audience}</dt>
+      <dd>{copy.audience}</dd>
+    </div>
+    <div>
+      <dt>{m.labels.topic}</dt>
+      <dd>{copy.topic}</dd>
+    </div>
+  </dl>
+</article>
+
+<style>
+  .meeting-event-card {
+    padding: 1.5rem 1.625rem;
+    border: 1px solid rgb(15 23 42 / 0.1);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.05);
+  }
+
+  .meeting-event-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.625rem 1rem;
+    margin-bottom: 0.875rem;
+    font-size: 0.875rem;
+    color: rgb(15 23 42 / 0.62);
+  }
+
+  .meeting-event-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, rgb(255 95 46 / 0.12), rgb(123 63 228 / 0.12));
+    color: #0b1220;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .meeting-event-card-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    line-height: 1.3;
+    font-weight: 700;
+    color: #0b1220;
+  }
+
+  .meeting-event-card-details {
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .meeting-event-card-details div {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .meeting-event-card-details dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgb(15 23 42 / 0.5);
+  }
+
+  .meeting-event-card-details dd {
+    margin: 0;
+    line-height: 1.55;
+    color: #334155;
+  }
+
+  .meeting-event-card-details a {
+    color: #0b1220;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .meeting-event-card-details a:hover {
+    color: rgb(15 23 42 / 0.72);
+  }
+</style>

@@ -19,6 +19,7 @@
     "mission": "Mission",
     "blog": "Blog",
     "ideas": "Ideas",
+    "meeting": "Meetings",
     "tutorials": "Tutorials",
     "presentation": "Presentation",
     "pricing": "Pricing",
@@ -263,6 +264,39 @@
     "success": "Thank you. Your feedback has been received.",
     "error": "Could not send. Please try again later.",
     "charCount": "{count} / 4000"
+  },
+  "meeting": {
+    "metaTitle": "Meetings - Kilometer 0 Digital",
+    "metaDescription": "Community meetups and events calendar for KM0 Digital. Join us in person.",
+    "eyebrow": "Community",
+    "heading": "Meetings",
+    "intro": "Informal spaces to meet, share ideas, and talk about community-driven technology. Check the calendar and join upcoming events.",
+    "calendarTitle": "Calendar",
+    "upcomingTitle": "Upcoming events",
+    "noUpcoming": "No events scheduled right now. Check back soon.",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "closeDetail": "Close",
+    "labels": {
+      "date": "Date",
+      "time": "Time",
+      "where": "Where",
+      "website": "Venue website",
+      "audience": "Who can attend",
+      "topic": "What we will talk about",
+      "tag": "Tag"
+    },
+    "tags": {
+      "informal": "Informal"
+    },
+    "events": {
+      "masnou-jul-2026": {
+        "title": "KM0 meetup in El Masnou",
+        "location": "Carrer de Barcelona, 1, El Masnou, Barcelona",
+        "audience": "Anyone",
+        "topic": "To be confirmed"
+      }
+    }
   },
   "cloudUsers": {
     "eyebrow": "KM0 Cloud",

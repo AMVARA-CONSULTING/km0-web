@@ -1,0 +1,106 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import MeetingCalendar from '../components/MeetingCalendar.astro';
+import MeetingEventCard from '../components/MeetingEventCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref } from '../i18n/paths';
+import { upcomingMeetingEvents } from '../lib/meetings';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const m = messages.meeting;
+const upcoming = upcomingMeetingEvents();
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={m.metaTitle}
+  pageDescription={m.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="meeting-page pt-28">
+    <section class="section-pad bg-white" aria-labelledby="meeting-heading">
+      <div class="mx-auto max-w-5xl px-6 md:px-12">
+        <header class="mb-12 text-center">
+          <p class="doc-eyebrow">{m.eyebrow}</p>
+          <h1 id="meeting-heading" class="heading-section text-navy">{m.heading}</h1>
+          <p class="doc-index-intro mx-auto">{m.intro}</p>
+        </header>
+
+        <div class="meeting-layout">
+          <section class="meeting-layout-calendar" aria-labelledby="meeting-calendar-heading">
+            <h2 id="meeting-calendar-heading" class="meeting-section-title">{m.calendarTitle}</h2>
+            <MeetingCalendar locale={locale} messages={messages} />
+          </section>
+
+          <section class="meeting-layout-upcoming" aria-labelledby="meeting-upcoming-heading">
+            <h2 id="meeting-upcoming-heading" class="meeting-section-title">{m.upcomingTitle}</h2>
+            {
+              upcoming.length > 0 ? (
+                <div class="meeting-event-list">
+                  {upcoming.map((event) => (
+                    <MeetingEventCard locale={locale} messages={messages} event={event} />
+                  ))}
+                </div>
+              ) : (
+                <p class="meeting-empty">{m.noUpcoming}</p>
+              )
+            }
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>
+
+<style>
+  .meeting-page {
+    background: #fff;
+  }
+
+  .meeting-layout {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 960px) {
+    .meeting-layout {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: start;
+    }
+  }
+
+  .meeting-section-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: #0b1220;
+  }
+
+  .meeting-event-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .meeting-empty {
+    margin: 0;
+    padding: 1.25rem 1.375rem;
+    border: 1px dashed rgb(15 23 42 / 0.15);
+    border-radius: 1rem;
+    color: rgb(15 23 42 / 0.62);
+    line-height: 1.6;
+  }
+</style>

@@ -34,6 +34,7 @@ export interface Messages {
     mission: string;
     blog: string;
     ideas: string;
+    meeting: string;
     tutorials: string;
     presentation: string;
     pricing: string;
@@ -256,6 +257,40 @@ export interface Messages {
       body: string;
       cta: string;
     };
+  };
+  meeting: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    calendarTitle: string;
+    upcomingTitle: string;
+    noUpcoming: string;
+    prevMonth: string;
+    nextMonth: string;
+    closeDetail: string;
+    labels: {
+      date: string;
+      time: string;
+      where: string;
+      website: string;
+      audience: string;
+      topic: string;
+      tag: string;
+    };
+    tags: {
+      informal: string;
+    };
+    events: Record<
+      string,
+      {
+        title: string;
+        location: string;
+        audience: string;
+        topic: string;
+      }
+    >;
   };
   presentation: {
     metaTitle: string;

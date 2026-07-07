@@ -194,13 +194,13 @@ const calendarPayload = JSON.stringify({
         cell.className = 'meeting-calendar-cell';
         cell.dataset.date = iso;
         cell.setAttribute('role', 'gridcell');
-        cell.innerHTML = `<span class="meeting-calendar-day">${day}</span>`;
-
         if (dayEvents.length > 0) {
+          cell.innerHTML = `<span class="meeting-calendar-day-wrap"><span class="meeting-calendar-day">${day}</span><span class="meeting-calendar-event-dot" aria-hidden="true"></span></span>`;
           cell.classList.add('meeting-calendar-cell-has-event');
           cell.setAttribute('aria-label', `${dayEvents.map((e) => payload.eventCopy[e.id]?.title ?? e.id).join(', ')}`);
           cell.addEventListener('click', () => showDetail(dayEvents));
         } else {
+          cell.innerHTML = `<span class="meeting-calendar-day">${day}</span>`;
           cell.disabled = true;
           cell.classList.add('meeting-calendar-cell-muted');
         }
@@ -309,10 +309,11 @@ const calendarPayload = JSON.stringify({
   }
 
   .meeting-calendar-cell {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.5rem;
+    min-height: 2.75rem;
     border: 1px solid transparent;
     border-radius: 0.65rem;
     background: transparent;
@@ -321,16 +322,57 @@ const calendarPayload = JSON.stringify({
     cursor: default;
   }
 
+  .meeting-calendar-day-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    pointer-events: none;
+  }
+
+  .meeting-calendar-event-dot {
+    display: block;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 9999px;
+    background: var(--gradient-brand);
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.6);
+  }
+
   .meeting-calendar-cell-has-event {
     cursor: pointer;
-    border-color: rgb(123 63 228 / 0.25);
-    background: linear-gradient(180deg, rgb(255 95 46 / 0.08), rgb(123 63 228 / 0.08));
-    font-weight: 600;
+    border-color: rgb(123 63 228 / 0.35);
+    background: linear-gradient(
+      135deg,
+      rgb(255 95 46 / 0.18) 0%,
+      rgb(224 64 160 / 0.12) 35%,
+      rgb(123 63 228 / 0.18) 65%,
+      rgb(0 123 255 / 0.1) 100%
+    );
+    font-weight: 700;
+  }
+
+  .meeting-calendar-cell-has-event::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    bottom: 0.35rem;
+    width: 3px;
+    border-radius: 9999px;
+    background: var(--gradient-brand);
   }
 
   .meeting-calendar-cell-has-event:hover {
-    border-color: rgb(123 63 228 / 0.45);
-    background: linear-gradient(180deg, rgb(255 95 46 / 0.14), rgb(123 63 228 / 0.14));
+    border-color: rgb(123 63 228 / 0.5);
+    background: linear-gradient(
+      135deg,
+      rgb(255 95 46 / 0.26) 0%,
+      rgb(224 64 160 / 0.18) 35%,
+      rgb(123 63 228 / 0.26) 65%,
+      rgb(0 123 255 / 0.14) 100%
+    );
+    box-shadow: 0 4px 12px rgb(123 63 228 / 0.12);
   }
 
   .meeting-calendar-cell-has-event:focus-visible {

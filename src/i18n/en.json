@@ -291,10 +291,10 @@
     },
     "events": {
       "masnou-jul-2026": {
-        "title": "KM0 meetup in El Masnou",
-        "location": "Carrer de Barcelona, 1, El Masnou, Barcelona",
+        "title": "KM0 meetup: AI, bureaucracy, and Palantir",
+        "location": "Bar Pekin (Palacio de Pekín), Passeig Prat de la Riba, 25, El Masnou, Barcelona",
         "audience": "Anyone",
-        "topic": "To be confirmed"
+        "topic": "AI in bureaucracy (Harari) and Palantir"
       }
     }
   },

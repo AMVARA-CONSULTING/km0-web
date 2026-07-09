@@ -93,5 +93,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Previous days</h2>
-  <p class="doc-closing"><a href="/en/doc/day-14/">Day 14</a> summarised Harari's video on AI and civilization; <a href="/en/doc/day-13/">day 13</a> covered meet 6 on visibility; <a href="/en/doc/day-11/">day 11</a> documented KM0 Mail. Follow the series and try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> whenever you like.</p>
+  <p class="doc-closing"><a href="/en/doc/day-14/">Day 14</a> summarised Harari's video on AI and civilization; <a href="/en/doc/day-13/">day 13</a> covered meet 6 on visibility; <a href="/en/doc/day-11/">day 11</a> documented KM0 Mail. <a href="/en/doc/day-16/">Day 16</a> announces the Masnou meetup on AI, bureaucracy, and Palantir. Follow the series and try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> whenever you like.</p>
 </section>

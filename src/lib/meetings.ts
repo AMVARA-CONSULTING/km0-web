@@ -18,6 +18,15 @@ export const MEETING_EVENTS: MeetingEventRecord[] = [
       'https://www.google.com/maps/search/?api=1&query=Passeig+Prat+de+la+Riba+25,+08320+El+Masnou,+Barcelona',
     tag: 'informal',
   },
+  {
+    id: 'cursor-masnou-jul24-2026',
+    date: '2026-07-24',
+    time: '18:30',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona',
+    venueWebsite: 'https://www.casinomasnou.com/',
+    tag: 'informal',
+  },
 ];
 
 export function parseMeetingDate(isoDate: string): Date {

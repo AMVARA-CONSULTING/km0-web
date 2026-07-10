@@ -56,7 +56,7 @@ function formatDate(isoDate: string): string {
     </div>
     <div>
       <dt>{m.labels.topic}</dt>
-      <dd>{copy.topic}</dd>
+      <dd set:html={copy.topic} />
     </div>
   </dl>
 </article>

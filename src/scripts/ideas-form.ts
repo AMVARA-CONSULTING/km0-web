@@ -1,4 +1,5 @@
 const MAX_IDEA_LENGTH = 4000;
+const VALID_SCOPES = new Set(['web', 'cloud', 'mail']);
 
 function initIdeasForm(): void {
   const form = document.getElementById('ideas-form') as HTMLFormElement | null;
@@ -31,12 +32,14 @@ function initIdeasForm(): void {
     submitBtn?.setAttribute('disabled', 'true');
 
     const idea = ideaInput.value.trim();
+    const scopeInput = form.querySelector<HTMLSelectElement>('#ideas-scope');
     const nameInput = form.querySelector<HTMLInputElement>('#ideas-name');
     const hpInput = form.querySelector<HTMLInputElement>('#ideas-website');
+    const scope = scopeInput?.value ?? 'web';
     const name = nameInput?.value.trim() ?? '';
     const website = hpInput?.value ?? '';
 
-    if (!idea || idea.length > MAX_IDEA_LENGTH) {
+    if (!VALID_SCOPES.has(scope) || !idea || idea.length > MAX_IDEA_LENGTH) {
       errorEl.classList.remove('hidden');
       submitBtn?.removeAttribute('disabled');
       return;
@@ -46,7 +49,7 @@ function initIdeasForm(): void {
       const response = await fetch('/hooks/ideas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idea, name, locale, website }),
+        body: JSON.stringify({ idea, name, locale, scope, website }),
       });
 
       const data = (await response.json()) as { ok?: boolean };

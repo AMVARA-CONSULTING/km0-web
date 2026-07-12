@@ -2,7 +2,8 @@
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
 import { localeBcp47 } from '../i18n/types';
-import { withHash, localeHref, switchLocaleHref } from '../i18n/paths';
+import { withHash, switchLocaleHref } from '../i18n/paths';
+import { headerNavLinks } from '../lib/site-nav';
 import ServicesLauncher from './ServicesLauncher.astro';
 
 interface Props {
@@ -13,16 +14,7 @@ interface Props {
 const { locale, messages: m } = Astro.props;
 const pathname = Astro.url.pathname;
 
-const nav = [
-  { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
-  { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
-  { id: 'presentation', label: m.nav.presentation, href: localeHref(locale, '/presentation/') },
-  { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
-  { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
-  { id: 'ideas', label: m.nav.ideas, href: localeHref(locale, '/ideas/') },
-  { id: 'meeting', label: m.nav.meeting, href: localeHref(locale, '/meeting/') },
-  { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
-] as const;
+const nav = headerNavLinks(locale, m);
 
 const langs: { code: Locale; href: string; label: string }[] = [
   { code: 'ca', href: switchLocaleHref(pathname, locale, 'ca'), label: 'CA' },

@@ -192,6 +192,13 @@ export interface Messages {
     metaDescription: string;
     heading: string;
     intro: string;
+    scopeLabel: string;
+    scopeHint: string;
+    scopeOptions: {
+      web: string;
+      cloud: string;
+      mail: string;
+    };
     ideaLabel: string;
     ideaPlaceholder: string;
     nameLabel: string;
@@ -400,5 +407,10 @@ export interface Messages {
     version: string;
     repoSince: string;
     poweredByHtml: string;
+    navAriaLabel: string;
+    exploreTitle: string;
+    aboutTitle: string;
+    legalTitle: string;
+    servicesTitle: string;
   };
 }

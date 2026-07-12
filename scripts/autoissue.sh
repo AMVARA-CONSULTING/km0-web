@@ -12,6 +12,14 @@ LOCK="/var/run/km0-idea-processor.lock"
 PROMPT="${REPO_ROOT}/autoissue/autoissue-agent.md"
 DRAFTS="${REPO_ROOT}/autoissue/drafts"
 
+repo_for_scope() {
+  case "${1:-web}" in
+    cloud) printf '%s\n' "AMVARA-CONSULTING/km0-opencloud" ;;
+    mail) printf '%s\n' "AMVARA-CONSULTING/km0-mail" ;;
+    *) printf '%s\n' "AMVARA-CONSULTING/km0-web" ;;
+  esac
+}
+
 mkdir -p "$QUEUE"/{incoming,processing,processed,failed} "$DRAFTS" "$(dirname "$LOG")"
 
 log() {
@@ -131,7 +139,7 @@ PY
 }
 
 process_one() {
-  local file="$1" base queue_id draft_path issue_num meta_path issue_url
+  local file="$1" base queue_id draft_path issue_num meta_path issue_url scope
 
   base="$(basename "$file")"
 
@@ -151,6 +159,13 @@ process_one() {
     return 1
   fi
 
+  scope="$(jq -r '.scope // "web"' "$file")"
+  case "$scope" in
+    web | cloud | mail) ;;
+    *) scope="web" ;;
+  esac
+  GH_REPO="$(repo_for_scope "$scope")"
+
   draft_path="${DRAFTS}/${queue_id}.md"
 
   if ! run_cursor_draft "$file" "$queue_id" "$draft_path"; then
@@ -167,12 +182,14 @@ process_one() {
     --argjson issue "$issue_num" \
     --arg url "$issue_url" \
     --arg id "$queue_id" \
+    --arg scope "$scope" \
+    --arg repo "$GH_REPO" \
     --arg draft "$draft_path" \
-    '{issue: $issue, issueUrl: $url, queueId: $id, draftPath: $draft, processedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))}' \
+    '{issue: $issue, issueUrl: $url, queueId: $id, scope: $scope, repo: $repo, draftPath: $draft, processedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))}' \
     > "$meta_path"
 
   mv "$draft_path" "$QUEUE/processed/${queue_id}.draft.md"
-  log "created issue #${issue_num} for ${base} (queue id ${queue_id})"
+  log "created issue #${issue_num} in ${GH_REPO} for ${base} (queue id ${queue_id}, scope ${scope})"
   return 0
 }
 

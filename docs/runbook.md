@@ -88,7 +88,7 @@ ls -la /var/spool/km0-ideas/{incoming,processed,failed}/
 curl -sI http://127.0.0.1:9180/ideas/ http://127.0.0.1:9180/en/ideas/
 curl -s -X POST http://127.0.0.1:9181/hooks/ideas \
   -H 'Content-Type: application/json' \
-  -d '{"idea":"Test feedback","locale":"en"}'
+  -d '{"idea":"Test feedback","locale":"en","scope":"web"}'
 ls -la /var/spool/km0-ideas/incoming/
 systemctl status km0-ideas-receiver
 ```

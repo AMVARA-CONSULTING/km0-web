@@ -36,6 +36,7 @@ fi
 idea="$(printf '%s' "$payload" | jq -r '.idea // empty')"
 name="$(printf '%s' "$payload" | jq -r '.name // empty')"
 locale="$(printf '%s' "$payload" | jq -r '.locale // empty')"
+scope="$(printf '%s' "$payload" | jq -r '.scope // empty')"
 user_agent="${2:-}"
 x_real_ip="${3:-}"
 x_forwarded_for="${4:-}"
@@ -63,6 +64,12 @@ case "$locale" in
   *) locale="es" ;;
 esac
 
+case "$scope" in
+  web | cloud | mail) ;;
+  '' | null) scope="web" ;;
+  *) respond_err "invalid_input" ;;
+esac
+
 remote_addr="$x_real_ip"
 if [[ -z "$remote_addr" && -n "$x_forwarded_for" && "$x_forwarded_for" != "null" ]]; then
   remote_addr="${x_forwarded_for%%,*}"
@@ -79,6 +86,7 @@ if [[ -n "$name" ]]; then
     --arg id "$uuid" \
     --arg receivedAt "$ts" \
     --arg locale "$locale" \
+    --arg scope "$scope" \
     --arg name "$name" \
     --arg idea "$idea" \
     --arg userAgent "$user_agent" \
@@ -87,6 +95,7 @@ if [[ -n "$name" ]]; then
       id: $id,
       receivedAt: $receivedAt,
       locale: $locale,
+      scope: $scope,
       name: $name,
       idea: $idea,
       meta: { userAgent: $userAgent, remoteAddr: $remoteAddr }
@@ -96,6 +105,7 @@ else
     --arg id "$uuid" \
     --arg receivedAt "$ts" \
     --arg locale "$locale" \
+    --arg scope "$scope" \
     --arg idea "$idea" \
     --arg userAgent "$user_agent" \
     --arg remoteAddr "$remote_addr" \
@@ -103,6 +113,7 @@ else
       id: $id,
       receivedAt: $receivedAt,
       locale: $locale,
+      scope: $scope,
       name: null,
       idea: $idea,
       meta: { userAgent: $userAgent, remoteAddr: $remoteAddr }

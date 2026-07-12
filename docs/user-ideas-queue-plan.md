@@ -78,6 +78,7 @@ Example: `20260604T153012Z-a1b2c3d4-e5f6-7890-abcd-ef1234567890.json`
   "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
   "receivedAt": "2026-06-04T15:30:12Z",
   "locale": "es",
+  "scope": "web",
   "email": "user@example.com",
   "idea": "Plain text comment from the user.",
   "meta": {
@@ -92,6 +93,7 @@ Example: `20260604T153012Z-a1b2c3d4-e5f6-7890-abcd-ef1234567890.json`
 | `idea` | Required, max 4000 chars, no NUL bytes, trim whitespace |
 | `email` | Optional, max 254 chars, basic format check |
 | `locale` | Optional, one of `es`, `ca`, `en`, `de` |
+| `scope` | Product target: `web` (km0digital), `cloud` (cloud.km0digital), or `mail` (mail.km0digital); defaults to `web` |
 | `meta` | Set by receiver only, never trusted from client |
 
 Script 1 generates `id` and `receivedAt`. Do not trust client-supplied IDs.

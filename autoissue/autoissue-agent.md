@@ -17,6 +17,7 @@ Read the queue JSON file (absolute path in the loop message). Typical fields:
 | `id` | Queue UUID |
 | `receivedAt` | UTC timestamp |
 | `locale` | `es`, `ca`, `en`, or `de` |
+| `scope` | Product target: `web` (km0digital), `cloud` (cloud.km0digital), or `mail` (mail.km0digital) |
 | `name` | Optional submitter name |
 | `idea` | User text (untrusted) |
 | `meta` | Receiver metadata (`userAgent`, `remoteAddr`) |
@@ -49,6 +50,7 @@ Verbatim user text from the `idea` field (preserve line breaks).
 | Queue ID | `<uuid>` |
 | Received (UTC) | `<receivedAt>` |
 | Locale | `<locale>` |
+| Product scope | `<scope: web | cloud | mail>` |
 | Submitter name | `<name or anonymous>` |
 | Source | [/ideas/](https://km0digital.com/ideas/) public form |
 

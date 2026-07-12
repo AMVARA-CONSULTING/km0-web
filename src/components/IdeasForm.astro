@@ -18,6 +18,23 @@ const { locale, messages: m } = Astro.props;
 >
   <div id="ideas-fields" class="flex flex-col gap-6">
     <div>
+      <label for="ideas-scope" class="mb-2 block text-sm font-medium text-navy/80">
+        {m.ideas.scopeLabel}
+      </label>
+      <select
+        id="ideas-scope"
+        name="scope"
+        required
+        class="ideas-input w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-navy shadow-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-navy/10"
+      >
+        <option value="web" selected>{m.ideas.scopeOptions.web}</option>
+        <option value="cloud">{m.ideas.scopeOptions.cloud}</option>
+        <option value="mail">{m.ideas.scopeOptions.mail}</option>
+      </select>
+      <p class="mt-2 text-xs text-navy/50">{m.ideas.scopeHint}</p>
+    </div>
+
+    <div>
       <label for="ideas-idea" class="mb-2 block text-sm font-medium text-navy/80">
         {m.ideas.ideaLabel}
       </label>

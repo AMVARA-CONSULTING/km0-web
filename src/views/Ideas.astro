@@ -29,11 +29,13 @@ const canonicalUrl = new URL(localeHref(locale, '/ideas/'), siteRoot).href;
   <main class="page-shell">
     <div class="section-pad !pt-10 md:!pt-14">
       <div class="page-inner !px-0">
-        <header class="page-masthead">
+        <header class="page-masthead" data-reveal>
           <h1 class="heading-section text-ink">{messages.ideas.heading}</h1>
           <p class="doc-index-intro">{messages.ideas.intro}</p>
         </header>
-        <IdeasForm locale={locale} messages={messages} />
+        <div data-reveal data-delay="80">
+          <IdeasForm locale={locale} messages={messages} />
+        </div>
       </div>
     </div>
   </main>

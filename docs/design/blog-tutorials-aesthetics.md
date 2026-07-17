@@ -6,7 +6,7 @@ KM0 `/doc/` and `/tutorials/` still feel dull after phase-1 chrome. Goal: pages 
 
 | Practice | Target | Sources |
 |----------|--------|---------|
-| Measure | ~60–70ch (`max-width: ~65ch`) | Baymard / Bringhurst; 2026 Webflow readability guides |
+| Measure | ~72–78ch for KM0 tech reading (`max-width: ~75ch`); classic prose often 60–70ch | Baymard / Bringhurst; code-friendly upper band |
 | Body size | 18–21px desktop; leading ~1.6–1.7 | NN/g + Practical Typography consensus |
 | Hierarchy | Modular scale (~1.25); more space **above** H2 than below | Designer Daily long-form typography |
 | Meta | Date / reading time quiet; never compete with title | Editorial sites, Remarque |
@@ -33,7 +33,7 @@ KM0 `/doc/` and `/tutorials/` still feel dull after phase-1 chrome. Goal: pages 
 ## Design direction for the FEAT
 
 1. **Index:** magazine masthead + title-first rows; latest post can be larger; Signal hover underline; no cards/shadows.
-2. **Article:** typography-first shell  -  large display title, quiet meta, body 18–21px / 1.65, ~65ch; TOC as whisper sidebar (no heavy borders).
+2. **Article:** typography-first shell  -  large display title, quiet meta, body 18–21px / 1.65, ~75ch; TOC as whisper sidebar with unmistakable link affordance (Signal + underline), no heavy borders.
 3. **Shared beauty system:** one `.doc-prose` scale for blog + tutorials (headings, lists, code, notes).
 4. **Anti-slop:** no purple, no Inter-only, no equal card grids, no glow, no zebra inside articles.
 5. **Content:** do not rewrite all historical days here; improve CSS compatibility for legacy kits + keep day-0 Markdown pilot looking best.
@@ -42,3 +42,9 @@ KM0 `/doc/` and `/tutorials/` still feel dull after phase-1 chrome. Goal: pages 
 
 - Full prose rewrite of day-1…N (separate epic).
 - Changing Cloud/Email apps.
+
+
+## Measure + TOC affordance (shipped)
+
+- **Wider technical reading:** article column + prose use **`max-w-[75ch]`** (target 72–78ch). Shell `max-w-7xl`; TOC layout middle track `48rem`. Do not use full viewport width for body text.
+- **TOC clickability (NN/G):** `.reading-toc-link` (and mobile summary) use Signal color + underline; hover / `:focus-visible` / `aria-current`. Sticky rail + `scroll-mt-28` on headings.

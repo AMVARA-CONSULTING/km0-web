@@ -9,7 +9,7 @@ const { messages: m } = Astro.props;
 ---
 
 <section id="faq" class="section-pad faq" aria-labelledby="faq-heading">
-  <div class="mx-auto max-w-3xl">
+  <div class="faq__shell mx-auto max-w-4xl">
     <header class="faq__header" data-reveal>
       <h2 id="faq-heading" class="heading-section text-navy">
         {m.faq.heading}
@@ -63,6 +63,7 @@ const { messages: m } = Astro.props;
 <style>
   .faq__header {
     margin-bottom: 2rem;
+    max-width: 36rem;
   }
 
   .faq__list {
@@ -80,11 +81,12 @@ const { messages: m } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.15rem 0;
+    padding: 1.25rem 0;
     text-align: left;
     font-family: theme('fontFamily.display');
-    font-size: 1.1rem;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
     font-weight: 600;
+    letter-spacing: -0.015em;
     color: var(--color-ink);
     background: transparent;
     border: 0;
@@ -111,7 +113,8 @@ const { messages: m } = Astro.props;
   }
 
   .faq-panel__content {
-    padding: 0 0 1.25rem;
+    padding: 0 0 1.35rem;
+    max-width: 40rem;
     font-size: 1rem;
     line-height: 1.65;
     color: color-mix(in srgb, var(--color-ink) 70%, transparent);

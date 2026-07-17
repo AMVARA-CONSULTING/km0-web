@@ -18,7 +18,7 @@ const { locale, messages: m } = Astro.props;
         {m.community.heading}
       </h2>
       <p class="community__intro">{m.community.intro}</p>
-      <a href={localeHref(locale, '/meeting/')} class="btn-primary community__cta">
+      <a href={localeHref(locale, '/meeting/')} class="community__cta">
         {m.nav.meeting}
       </a>
     </div>
@@ -28,16 +28,36 @@ const { locale, messages: m } = Astro.props;
 <style>
   .community__inner {
     max-width: 36rem;
+    border-left: 3px solid var(--color-signal);
+    padding-left: 1.5rem;
   }
 
   .community__intro {
-    margin: 1rem 0 1.75rem;
+    margin: 1rem 0 1.5rem;
     font-size: 1.125rem;
     line-height: 1.6;
     color: color-mix(in srgb, var(--color-ink) 70%, transparent);
   }
 
+  /* Quiet secondary action - Cloud stays the primary CTA language */
   .community__cta {
-    display: inline-flex;
+    display: inline-block;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: rgb(15 118 110 / 0.4);
+    text-underline-offset: 0.2em;
+  }
+
+  .community__cta:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .community__cta:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
   }
 </style>

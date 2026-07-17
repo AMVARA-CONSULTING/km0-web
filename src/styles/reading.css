@@ -117,7 +117,7 @@
 
   /* -- Article shell: book column + whisper TOC -- */
   .reading-shell {
-    @apply mx-auto w-full max-w-6xl;
+    @apply mx-auto w-full max-w-7xl;
   }
 
   .reading-crumb {
@@ -141,7 +141,7 @@
   }
 
   .reading-layout--toc {
-    @apply lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,42rem)_minmax(10rem,14rem)] lg:items-start lg:gap-x-10 xl:gap-x-14;
+    @apply lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,48rem)_minmax(10rem,15rem)] lg:items-start lg:gap-x-10 xl:gap-x-14;
   }
 
   /* Empty left rail keeps the column biased toward center-right on wide screens */
@@ -157,7 +157,7 @@
   }
 
   .reading-column {
-    @apply min-w-0 max-w-[65ch];
+    @apply min-w-0 max-w-[75ch];
   }
 
   .reading-layout--toc .reading-column {
@@ -186,7 +186,11 @@
   }
 
   .reading-toc-mobile-summary {
-    @apply flex cursor-pointer list-none items-center gap-2 py-2 font-sans text-sm font-medium text-ink/60 transition-colors hover:text-ink;
+    @apply flex min-h-11 cursor-pointer list-none items-center gap-2 py-3 font-sans text-sm font-medium text-signal underline decoration-signal/35 underline-offset-2 transition-colors hover:text-signal-hover hover:decoration-signal;
+  }
+
+  .reading-toc-mobile-summary:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-signal;
   }
 
   .reading-toc-mobile-summary::-webkit-details-marker {
@@ -230,20 +234,28 @@
   }
 
   .reading-toc-link {
-    @apply block py-1.5 font-sans text-[0.75rem] leading-snug text-ink/40 no-underline transition-colors duration-200 hover:text-ink;
+    @apply block py-2 font-sans text-[0.8125rem] leading-snug text-signal underline decoration-signal/40 underline-offset-[0.18em] transition-colors duration-200 hover:text-signal-hover hover:decoration-signal;
+  }
+
+  .reading-toc-link:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-signal;
   }
 
   .reading-toc-link[aria-current='location'] {
-    @apply font-medium text-signal;
+    @apply font-medium text-ink decoration-ink/50;
   }
 
   .reading-toc-mobile .reading-toc-list {
     @apply pb-2 pt-1;
   }
 
+  .reading-toc-mobile .reading-toc-link {
+    @apply py-2.5 text-sm;
+  }
+
   /* -- Prose scale -- */
   .reading-prose {
-    @apply max-w-[65ch] pt-2 font-body text-[1.125rem] leading-[1.65] text-ink/85 md:text-[1.1875rem] md:leading-[1.65];
+    @apply max-w-[75ch] pt-2 font-body text-[1.125rem] leading-[1.65] text-ink/85 md:text-[1.1875rem] md:leading-[1.65];
     text-wrap: pretty;
   }
 
@@ -252,7 +264,7 @@
   }
 
   .reading-prose > p {
-    @apply mb-6 max-w-[65ch] last:mb-0;
+    @apply mb-6 max-w-[75ch] last:mb-0;
   }
 
   .reading-prose h2:not([class]) {
@@ -265,7 +277,7 @@
 
   .reading-prose ul:not([class]),
   .reading-prose ol:not([class]) {
-    @apply my-6 max-w-[65ch] space-y-2.5 pl-6;
+    @apply my-6 max-w-[75ch] space-y-2.5 pl-6;
   }
 
   .reading-prose ul:not([class]) {
@@ -293,7 +305,7 @@
   }
 
   .reading-prose blockquote {
-    @apply my-8 max-w-[65ch] border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 font-body text-[1.05em] italic leading-[1.6] text-ink/70;
+    @apply my-8 max-w-[75ch] border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 font-body text-[1.05em] italic leading-[1.6] text-ink/70;
   }
 
   .reading-prose blockquote p {
@@ -301,7 +313,7 @@
   }
 
   .reading-prose pre {
-    @apply my-8 max-w-[65ch] overflow-x-auto rounded-none border-0 bg-ink px-5 py-4 font-mono text-[0.8125rem] leading-relaxed text-snow md:text-sm;
+    @apply my-8 max-w-[75ch] overflow-x-auto rounded-none border-0 bg-ink px-5 py-4 font-mono text-[0.8125rem] leading-relaxed text-snow md:text-sm;
   }
 
   .reading-prose code {
@@ -341,7 +353,7 @@
   }
 
   .reading-prose .doc-lead {
-    @apply mb-6 max-w-[65ch] text-xl leading-[1.6] text-ink/90 last:mb-0 md:text-[1.3125rem];
+    @apply mb-6 max-w-[75ch] text-xl leading-[1.6] text-ink/90 last:mb-0 md:text-[1.3125rem];
   }
 
   .reading-prose .doc-block-title {
@@ -357,7 +369,7 @@
   }
 
   .reading-prose .doc-block-intro {
-    @apply mb-5 max-w-[65ch] leading-[1.65] text-ink/75;
+    @apply mb-5 max-w-[75ch] leading-[1.65] text-ink/75;
   }
 
   .reading-prose .doc-block > p:last-child,
@@ -366,11 +378,11 @@
   }
 
   .reading-prose .doc-block > p:not(.doc-block-title):not(.doc-block-intro) {
-    @apply mb-5 max-w-[65ch] leading-[1.65] text-pretty last:mb-0;
+    @apply mb-5 max-w-[75ch] leading-[1.65] text-pretty last:mb-0;
   }
 
   .reading-prose ul.doc-list {
-    @apply mb-2 mt-2 max-w-[65ch] list-none space-y-0 p-0;
+    @apply mb-2 mt-2 max-w-[75ch] list-none space-y-0 p-0;
   }
 
   .reading-prose ul.doc-list li {
@@ -392,7 +404,7 @@
   }
 
   .reading-prose ol.doc-list {
-    @apply mb-2 mt-2 max-w-[65ch] list-decimal space-y-3 p-0 pl-6 md:pl-7;
+    @apply mb-2 mt-2 max-w-[75ch] list-decimal space-y-3 p-0 pl-6 md:pl-7;
   }
 
   .reading-prose ol.doc-list li {
@@ -405,7 +417,7 @@
   }
 
   .reading-prose ol.doc-steps {
-    @apply mb-0 mt-2 max-w-[65ch] list-decimal space-y-3 p-0 pl-6;
+    @apply mb-0 mt-2 max-w-[75ch] list-decimal space-y-3 p-0 pl-6;
   }
 
   .reading-prose ol.doc-steps li {
@@ -421,11 +433,11 @@
   }
 
   .reading-prose .doc-subtitle {
-    @apply mb-3 mt-8 max-w-[65ch] font-display text-base font-semibold text-ink md:text-lg;
+    @apply mb-3 mt-8 max-w-[75ch] font-display text-base font-semibold text-ink md:text-lg;
   }
 
   .reading-prose .doc-callout {
-    @apply relative mt-8 max-w-[65ch] border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 leading-[1.65];
+    @apply relative mt-8 max-w-[75ch] border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 leading-[1.65];
   }
 
   .reading-prose .doc-callout::before {
@@ -441,7 +453,7 @@
   }
 
   .reading-prose .doc-note {
-    @apply mt-6 max-w-[65ch] border-0 border-l-2 border-mist bg-transparent p-0;
+    @apply mt-6 max-w-[75ch] border-0 border-l-2 border-mist bg-transparent p-0;
   }
 
   .reading-prose .doc-note:not(:has(pre)) {
@@ -453,7 +465,7 @@
   }
 
   .reading-prose .doc-closing {
-    @apply m-0 max-w-[65ch] leading-[1.65];
+    @apply m-0 max-w-[75ch] leading-[1.65];
   }
 
   .reading-prose .doc-closing strong {

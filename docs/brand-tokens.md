@@ -24,6 +24,19 @@
 
 **Forbidden:** `#E040A0`, `#7B3FE4`, `#007BFF` brand chain; purple/indigo gradients; `bg-clip-text` rainbow headlines; terracotta-on-cream as the whole system.
 
+## Surfaces (opt-in only)
+
+Default page canvas is **Paper**. Elevations are explicit classes - never `nth-child` zebra.
+
+| Utility | Token | When |
+|---------|-------|------|
+| `.surface-paper` | `--surface-paper` | Rare explicit reset; body already Paper |
+| `.surface-snow` | `--surface-snow` | Intentional elevated band (Contact, compare tables) |
+| `.surface-ink` | `--surface-ink` | Earned proof / dark band only |
+| `.surface-band` | Mist hairlines | Optional edge on a Snow/Ink band |
+
+Spacing rhythm: `--space-section-y` / `--space-section-x` drive `.section-pad` and secondary page sections.
+
 ## Typography
 
 | Role | Face | Notes |
@@ -36,9 +49,20 @@
 
 ## Motion
 
-- Ease: `cubic-bezier(0.16, 1, 0.3, 1)`
-- Max 2–3 intentional moments per page
-- Always `prefers-reduced-motion`
+Orchestrated in `src/styles/tokens.css` + `src/scripts/scroll-reveal.ts` (Stirling paint #92).
+
+| Token | Role |
+|-------|------|
+| `--ease-out-expo` (`cubic-bezier(0.16, 1, 0.3, 1)`) | Shared ease (alias `--ease-apple`) |
+| `--duration-reveal` (700ms) | Scroll reveal entrance |
+| `--duration-chrome` (220ms) | Masthead compact / border |
+| `--reveal-distance` (1.25rem) | Reveal translateY |
+| `--reveal-stagger` (80ms) | Sibling auto-stagger when `data-delay` omitted |
+| `--masthead-offset` / `--masthead-offset-compact` | Sticky pin top under fixed nav |
+
+**Sitewide moments (cap):** (1) scroll reveals via `[data-reveal]` once, (2) masthead compact on scroll (solid Snow, hairline border, no glass blur), (3) home Offer sticky pin (heading + Cloud CTA while rows scroll on `lg+`). Reading TOC sticky stays as chrome, not a vanity animation.
+
+Always honor `prefers-reduced-motion`: reveals show immediately; chrome transitions off. Sticky layout may remain.
 
 ## Signature atmosphere: Origin field
 

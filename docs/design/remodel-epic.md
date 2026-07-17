@@ -51,7 +51,7 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 - Full rewrite of all historical blog days
 - Cloning Nous dark underground or Stirling Framer pixels
 
-## Phase 3  -  Reading surfaces
+## Phase 3 - Reading surfaces
 
 | Issue | Intent |
 |-------|--------|
@@ -61,10 +61,23 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 
 | Issue | Intent |
 |-------|--------|
-| [#88](https://github.com/AMVARA-CONSULTING/km0-web/issues/88) | Logo v2  -  kill webcam look (`docs/design/logo-brief-it-services.md`) |
+| [#88](https://github.com/AMVARA-CONSULTING/km0-web/issues/88) | Logo v2 - kill webcam look (`docs/design/logo-brief-it-services.md`) |
 
 ## Reading surfaces v2 (ground-up)
 
 | Issue | Intent |
 |-------|--------|
 | [#89](https://github.com/AMVARA-CONSULTING/km0-web/issues/89) | Blog + tutorials CSS/chrome from zero (`blog-tutorials-ground-up-v2.md`) |
+
+## Paint phase (Stirling-inspired)
+
+Spec: `docs/design/stirling-paint-phase.md` - https://stirling.com/
+
+| Order | Issue | Intent |
+|------:|-------|--------|
+| 1 | [#91](https://github.com/AMVARA-CONSULTING/km0-web/issues/91) | Professional surfaces, no zebra |
+| 2 | [#92](https://github.com/AMVARA-CONSULTING/km0-web/issues/92) | Motion: reveals + sticky-while-scroll |
+| 3 | [#93](https://github.com/AMVARA-CONSULTING/km0-web/issues/93) | Landing restyle |
+| 4 | [#94](https://github.com/AMVARA-CONSULTING/km0-web/issues/94) | Secondary pages paint |
+| 5 | [#95](https://github.com/AMVARA-CONSULTING/km0-web/issues/95) | Encode into doctrine/skills |
+

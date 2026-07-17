@@ -6,7 +6,7 @@ import { fetchCloudUserCount } from '../lib/cloud-users';
 interface Props {
   locale: Locale;
   messages: Messages;
-  /** `band` embeds under Offer; `section` is a standalone block (unused on home). */
+  /** `band` = intentional Ink proof on home; `section` = standalone dark block. */
   variant?: 'band' | 'section';
 }
 
@@ -16,6 +16,10 @@ const countResult = await fetchCloudUserCount();
 const countLocale =
   locale === 'de' ? 'de-DE' : locale === 'en' ? 'en-GB' : locale === 'ca' ? 'ca-ES' : 'es-ES';
 
+const cloudItem = m.services.items.find((item) => item.id === 'cloud');
+const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
+const cloudCta = cloudItem?.secondaryCta ?? m.hero.ctaPrimary;
+
 const isBand = variant === 'band';
 ---
 
@@ -23,30 +27,40 @@ const isBand = variant === 'band';
   isBand ? (
     <aside
       id="cloud-users"
-      class="cloud-user-proof"
+      class="section-pad cloud-proof surface-ink"
       aria-labelledby="cloud-users-heading"
-      data-reveal
-      data-delay="200"
     >
-      <h2 id="cloud-users-heading" class="sr-only">
-        {m.cloudUsers.countLabel}
-      </h2>
-      {countResult.ok ? (
-        <p class="cloud-user-proof__line" aria-live="polite">
-          <span
-            class="cloud-user-proof__count tabular-nums"
-            aria-label={m.cloudUsers.countAria.replace('{count}', String(countResult.count))}
-          >
-            {countResult.count.toLocaleString(countLocale)}
-          </span>
-          <span class="cloud-user-proof__label">{m.cloudUsers.countLabel}</span>
-        </p>
-      ) : (
-        <p class="cloud-user-proof__unavailable">{m.cloudUsers.unavailable}</p>
-      )}
+      <div class="cloud-proof__inner mx-auto max-w-6xl">
+        <div class="cloud-proof__stat" data-reveal>
+          <h2 id="cloud-users-heading" class="sr-only">
+            {m.cloudUsers.countLabel}
+          </h2>
+          {countResult.ok ? (
+            <p class="cloud-proof__line" aria-live="polite">
+              <span
+                class="cloud-proof__count tabular-nums"
+                aria-label={m.cloudUsers.countAria.replace('{count}', String(countResult.count))}
+              >
+                {countResult.count.toLocaleString(countLocale)}
+              </span>
+              <span class="cloud-proof__label">{m.cloudUsers.countLabel}</span>
+            </p>
+          ) : (
+            <p class="cloud-proof__unavailable">{m.cloudUsers.unavailable}</p>
+          )}
+        </div>
+        <a
+          href={cloudHref}
+          class="btn-primary cloud-proof__cta"
+          data-reveal
+          data-delay="100"
+        >
+          {cloudCta}
+        </a>
+      </div>
     </aside>
   ) : (
-    <section id="cloud-users" class="section-pad bg-navy text-white" aria-labelledby="cloud-users-heading">
+    <section id="cloud-users" class="section-pad surface-ink" aria-labelledby="cloud-users-heading">
       <div class="mx-auto max-w-6xl">
         <h2 id="cloud-users-heading" class="sr-only">
           {m.cloudUsers.countLabel}
@@ -73,13 +87,24 @@ const isBand = variant === 'band';
 }
 
 <style>
-  .cloud-user-proof {
-    margin-top: 3rem;
-    padding: 1.75rem 0 0;
-    border-top: 1px solid var(--color-mist);
+  /* Intentional Ink proof band (earned; not zebra). Sacred live counter + Cloud CTA. */
+  .cloud-proof {
+    color: var(--color-snow);
   }
 
-  .cloud-user-proof__line {
+  .cloud-proof__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.75rem 2.5rem;
+  }
+
+  .cloud-proof__stat {
+    min-width: 0;
+  }
+
+  .cloud-proof__line {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -87,29 +112,33 @@ const isBand = variant === 'band';
     margin: 0;
   }
 
-  .cloud-user-proof__count {
+  .cloud-proof__count {
     font-family: theme('fontFamily.display');
-    font-size: clamp(2.75rem, 8vw, 4rem);
+    font-size: clamp(2.75rem, 8vw, 4.25rem);
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.04em;
-    color: var(--color-signal);
+    color: var(--color-signal-hover);
   }
 
-  .cloud-user-proof__label {
-    max-width: 14rem;
+  .cloud-proof__label {
+    max-width: 12rem;
     font-family: theme('fontFamily.sans');
     font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+    color: rgb(238 240 242 / 0.55);
   }
 
-  .cloud-user-proof__unavailable {
+  .cloud-proof__unavailable {
     margin: 0;
     font-size: 0.95rem;
-    color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+    color: rgb(238 240 242 / 0.65);
+  }
+
+  .cloud-proof__cta {
+    flex-shrink: 0;
   }
 
   .cloud-user-stat-count {

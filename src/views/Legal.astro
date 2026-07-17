@@ -29,14 +29,14 @@ const canonicalUrl = new URL(localeHref(locale, '/legal/'), siteRoot).href;
   <main class="page-shell">
     <div class="section-pad !pt-10 md:!pt-14">
       <article class="page-inner !px-0">
-        <header class="page-masthead">
+        <header class="page-masthead" data-reveal>
           <p class="doc-kicker">{l.eyebrow}</p>
           <h1 class="heading-section text-ink">{l.heading}</h1>
           <p class="doc-index-intro">{l.intro}</p>
           <p class="mt-4 font-sans text-sm text-ink/50">{l.updated}</p>
         </header>
 
-        <nav class="page-toc" aria-label={l.tocTitle}>
+        <nav class="page-toc" aria-label={l.tocTitle} data-reveal data-delay="60">
           <p class="page-toc-title">{l.tocTitle}</p>
           <ol class="page-toc-list">
             {
@@ -49,7 +49,7 @@ const canonicalUrl = new URL(localeHref(locale, '/legal/'), siteRoot).href;
           </ol>
         </nav>
 
-        <div class="doc-body">
+        <div class="doc-body" data-reveal data-delay="100">
           {
             l.sections.map((section) => (
               <section id={section.id} class="doc-block scroll-mt-28">

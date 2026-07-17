@@ -34,11 +34,11 @@ const homeHref = localeHref(locale, '/');
   <main class="page-shell">
     <div class="section-pad !pt-10 md:!pt-14">
       <div class="page-inner !px-0">
-        <header class="page-masthead error-masthead">
+        <header class="page-masthead error-masthead" data-reveal>
           <p class="doc-kicker">{errorContent.code}</p>
           <h1 class="heading-section text-ink">{errorContent.heading}</h1>
           <p class="doc-index-intro">{errorContent.description}</p>
-          <div class="mt-8">
+          <div class="page-closer__actions">
             <a href={homeHref} class="btn-primary">{errorContent.backHome}</a>
           </div>
         </header>

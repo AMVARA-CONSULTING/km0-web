@@ -29,12 +29,12 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   <main class="page-shell pricing-page">
     <section class="pricing-section" aria-labelledby="pricing-heading">
       <div class="page-inner--wide">
-        <header class="page-masthead pricing-masthead">
+        <header class="page-masthead pricing-masthead" data-reveal>
           <div class="pricing-masthead-copy">
             <p class="doc-kicker">{p.eyebrow}</p>
             <h1 id="pricing-heading" class="heading-section text-ink">{p.heading}</h1>
             <p class="doc-index-intro">{p.intro}</p>
-            <div class="pricing-hero-cta">
+            <div class="page-closer__actions pricing-hero-cta">
               <a
                 href="https://cloud.km0digital.com/"
                 target="_blank"
@@ -45,7 +45,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
               </a>
             </div>
           </div>
-          <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel}>
+          <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel} data-reveal data-delay="100">
             <p class="pricing-hero-capacity tabular-nums">
               <span class="pricing-hero-capacity-value">{p.heroPrice.meta}</span>
             </p>
@@ -59,8 +59,8 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
       </div>
     </section>
 
-    <section class="pricing-section page-band" aria-labelledby="pricing-compare">
-      <div class="page-inner--wide">
+    <section class="pricing-section surface-snow surface-band" aria-labelledby="pricing-compare">
+      <div class="page-inner--wide" data-reveal>
         <header class="pricing-section-header">
           <h2 id="pricing-compare" class="pricing-compare-heading text-ink">
             {p.compareHeading}
@@ -97,14 +97,14 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     </section>
 
     <section class="pricing-section" aria-labelledby="pricing-why">
-      <div class="page-inner--wide">
+      <div class="page-inner--wide" data-reveal>
         <h2 id="pricing-why" class="heading-section mb-4 text-ink">{p.whyPricing.heading}</h2>
         <p class="doc-index-intro mt-0">{p.whyPricing.body}</p>
       </div>
     </section>
 
-    <section class="pricing-section page-band" aria-labelledby="pricing-ops">
-      <div class="page-inner--wide">
+    <section class="pricing-section" aria-labelledby="pricing-ops">
+      <div class="page-inner--wide" data-reveal>
         <h2 id="pricing-ops" class="heading-section mb-8 text-ink">{p.trust.heading}</h2>
         <ul class="pricing-ops-list">
           {
@@ -119,13 +119,24 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
       </div>
     </section>
 
-    <section class="pricing-section" aria-labelledby="pricing-custom">
-      <div class="page-inner--wide">
+    <section
+      class="page-closer pricing-section surface-snow surface-band"
+      aria-labelledby="pricing-custom"
+    >
+      <div class="page-inner--wide" data-reveal>
         <h2 id="pricing-custom" class="heading-section mb-4 text-ink">{p.custom.heading}</h2>
         <p class="doc-index-intro mt-0">{p.custom.body}</p>
-        <div class="pricing-custom-cta">
+        <div class="page-closer__actions">
           <a href={withHash(locale, 'contact')} class="btn-primary">
             {p.custom.cta}
+          </a>
+          <a
+            href="https://cloud.km0digital.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="page-closer__secondary"
+          >
+            {p.heroCta}
           </a>
         </div>
       </div>
@@ -136,7 +147,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
 <style>
   .pricing-section {
-    padding-block: clamp(2.5rem, 6vw, 4rem);
+    padding-block: var(--space-section-y);
   }
 
   .pricing-masthead {
@@ -159,7 +170,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-hero-cta {
-    margin-top: 1.75rem;
+    margin-top: 0.25rem;
   }
 
   .pricing-hero-stat {
@@ -324,9 +335,5 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     font-size: 0.9875rem;
     line-height: 1.65;
     color: var(--color-ink-muted);
-  }
-
-  .pricing-custom-cta {
-    margin-top: 1.75rem;
   }
 </style>

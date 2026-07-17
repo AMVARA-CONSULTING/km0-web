@@ -11,17 +11,25 @@ interface Props {
 
 const { locale, messages: m } = Astro.props;
 const hasComingSoon = m.services.items.some((item) => item.available === false);
+const cloudItem = m.services.items.find((item) => item.id === 'cloud');
+const pinCta = cloudItem?.secondaryCta ?? m.hero.ctaPrimary;
+const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 ---
 
 <section id="services" class="section-pad offer" aria-labelledby="services-heading">
-  <div class="mx-auto max-w-6xl">
-    <header class="offer__header" data-reveal>
-      <h2 id="services-heading" class="heading-section text-navy">
-        {m.services.headingBefore}<span class="text-gradient">{m.services.headingAccent}</span>{m.services.headingAfter}
-      </h2>
-      <p class="offer__intro">{m.services.intro}</p>
-      <p class="offer__slogan">{m.services.slogan}</p>
-    </header>
+  <div class="offer__layout mx-auto max-w-6xl">
+    <aside class="offer__pin" data-offer-pin>
+      <header class="offer__header" data-reveal>
+        <h2 id="services-heading" class="heading-section text-navy">
+          {m.services.headingBefore}<span class="text-gradient">{m.services.headingAccent}</span>{m.services.headingAfter}
+        </h2>
+        <p class="offer__intro">{m.services.intro}</p>
+        <p class="offer__slogan">{m.services.slogan}</p>
+      </header>
+      <a href={pinHref} class="btn-primary offer__pin-cta" data-reveal data-delay="100">
+        {pinCta}
+      </a>
+    </aside>
 
     <div class="offer__list">
       {
@@ -40,6 +48,7 @@ const hasComingSoon = m.services.items.some((item) => item.available === false);
               class="offer-row"
             >
               <div class="offer-row__lead">
+                <p class="offer-row__meta">{isCloud ? '01' : '02'}</p>
                 <h3 class="offer-row__title">{item.title}</h3>
                 {isCloud && item.priceFrom && (
                   <p class="offer-row__price" aria-label={item.priceAriaLabel}>
@@ -95,8 +104,6 @@ const hasComingSoon = m.services.items.some((item) => item.available === false);
         })
       }
     </div>
-
-    <slot />
   </div>
 </section>
 
@@ -107,9 +114,43 @@ const hasComingSoon = m.services.items.some((item) => item.available === false);
 </script>
 
 <style>
+  .offer__layout {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .offer__layout {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .offer__pin {
+      position: sticky;
+      top: var(--masthead-offset);
+      padding-bottom: 1rem;
+    }
+  }
+
+  :global(html[data-masthead='compact']) .offer__pin {
+    top: var(--masthead-offset-compact);
+  }
+
   .offer__header {
     max-width: 40rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
+  }
+
+  .offer__pin-cta {
+    display: none;
+    margin-top: 1.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    .offer__pin-cta {
+      display: inline-flex;
+    }
   }
 
   .offer__intro {
@@ -122,15 +163,22 @@ const hasComingSoon = m.services.items.some((item) => item.available === false);
   .offer__slogan {
     margin: 0.75rem 0 0;
     font-family: theme('fontFamily.sans');
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    color: var(--color-ink);
+    letter-spacing: 0.02em;
+    color: var(--color-signal);
   }
 
   .offer__list {
     display: grid;
     gap: 0;
     border-top: 1px solid var(--color-mist);
+  }
+
+  @media (max-width: 1023px) {
+    .offer__header {
+      margin-bottom: 2.5rem;
+    }
   }
 
   .offer-row {
@@ -147,6 +195,15 @@ const hasComingSoon = m.services.items.some((item) => item.available === false);
       align-items: start;
       padding: 2.5rem 0;
     }
+  }
+
+  .offer-row__meta {
+    margin: 0 0 0.5rem;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--color-signal);
   }
 
   .offer-row__title {

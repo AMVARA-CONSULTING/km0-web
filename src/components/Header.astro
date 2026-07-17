@@ -183,9 +183,13 @@ const langs: { code: Locale; href: string; label: string }[] = [
     inset-inline: 0;
     top: 0;
     z-index: 50;
-    background: color-mix(in srgb, var(--color-snow) 92%, transparent);
-    border-bottom: 1px solid var(--color-mist);
-    backdrop-filter: blur(8px);
+    background: var(--color-snow);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--duration-chrome) var(--ease-out-expo);
+  }
+
+  .masthead--compact {
+    border-bottom-color: var(--color-mist);
   }
 
   .masthead__bar {
@@ -196,6 +200,11 @@ const langs: { code: Locale; href: string; label: string }[] = [
     justify-content: space-between;
     gap: 1rem;
     padding: 0.85rem 1.5rem;
+    transition: padding var(--duration-chrome) var(--ease-out-expo);
+  }
+
+  .masthead--compact .masthead__bar {
+    padding-block: 0.55rem;
   }
 
   @media (min-width: 768px) {
@@ -218,6 +227,14 @@ const langs: { code: Locale; href: string; label: string }[] = [
     width: 2rem;
     flex-shrink: 0;
     object-fit: contain;
+    transition:
+      width var(--duration-chrome) var(--ease-out-expo),
+      height var(--duration-chrome) var(--ease-out-expo);
+  }
+
+  .masthead--compact .masthead__logo {
+    height: 1.75rem;
+    width: 1.75rem;
   }
 
   .masthead__wordmark {
@@ -390,6 +407,9 @@ const langs: { code: Locale; href: string; label: string }[] = [
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .masthead,
+    .masthead__bar,
+    .masthead__logo,
     .masthead__mobile {
       transition: none;
     }

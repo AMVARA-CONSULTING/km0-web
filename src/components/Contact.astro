@@ -10,18 +10,24 @@ const { messages: m } = Astro.props;
 const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
 ---
 
-<section id="contact" class="section-pad contact bg-snow km0-motif" aria-labelledby="contact-heading">
+<section
+  id="contact"
+  class="section-pad contact surface-snow surface-band km0-motif"
+  aria-labelledby="contact-heading"
+>
   <div class="mx-auto max-w-6xl">
-    <div class="contact__inner">
-      <header data-reveal>
-        <h2 id="contact-heading" class="heading-section text-navy">
-          {m.contact.heading}
-        </h2>
-        <p class="contact__body">{m.contact.body}</p>
-      </header>
-      <p data-reveal data-delay="80" class="contact__email">
-        {m.contact.email}
-      </p>
+    <div class="contact__grid">
+      <div class="contact__lead">
+        <header data-reveal>
+          <h2 id="contact-heading" class="heading-section text-navy">
+            {m.contact.heading}
+          </h2>
+          <p class="contact__body">{m.contact.body}</p>
+        </header>
+        <p data-reveal data-delay="80" class="contact__email">
+          {m.contact.email}
+        </p>
+      </div>
       <div data-reveal data-delay="160" class="contact__whatsapp">
         <p class="contact__whatsapp-label">{m.contact.whatsappLabel}</p>
         <a
@@ -47,7 +53,20 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
 </section>
 
 <style>
-  .contact__inner {
+  .contact__grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .contact__grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 3.5rem;
+    }
+  }
+
+  .contact__lead {
     max-width: 32rem;
   }
 
@@ -68,9 +87,15 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
   }
 
   .contact__whatsapp {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-mist);
+    padding-top: 0;
+  }
+
+  @media (max-width: 767px) {
+    .contact__whatsapp {
+      margin-top: 0.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-mist);
+    }
   }
 
   .contact__whatsapp-label {

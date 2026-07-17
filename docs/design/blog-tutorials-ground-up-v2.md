@@ -13,7 +13,7 @@ Rebuild blog (`/doc/`) and tutorials (`/tutorials/`) **from zero**:
 
 ## Quality bar (unchanged research)
 
-See `docs/design/blog-tutorials-aesthetics.md` for measure (~65ch), body 18–21px, leading ~1.65, Nous-like title energy, quiet meta, anti-slop.
+See `docs/design/blog-tutorials-aesthetics.md` for measure (~75ch), body 18–21px, leading ~1.65, Nous-like title energy, quiet meta, anti-slop.
 
 ## Hard fail if
 

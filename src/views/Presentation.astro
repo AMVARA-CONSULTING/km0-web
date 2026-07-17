@@ -30,20 +30,28 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
   <Header locale={locale} messages={messages} />
   <main class="page-shell presentation-main">
     <article class="presentation-page">
-      <header class="presentation-hero">
-        <div class="presentation-hero-inner">
+      <header class="presentation-hero km0-motif km0-motif--origin">
+        <div class="presentation-hero-inner" data-reveal>
           <div class="presentation-hero-copy">
             <p class="doc-kicker">{p.eyebrow}</p>
             <h1 class="heading-section text-ink">{p.title}</h1>
             <p class="doc-index-intro">{p.lead}</p>
-            <div class="presentation-download-wrap">
-              <a href={pdfUrl} download class="btn-primary">
+            <div class="page-closer__actions presentation-download-wrap">
+              <a
+                href="https://cloud.km0digital.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+              >
+                {messages.hero.ctaPrimary}
+              </a>
+              <a href={pdfUrl} download class="page-closer__secondary">
                 {p.download}
               </a>
-              <p class="presentation-download-hint">{p.downloadHint}</p>
             </div>
+            <p class="presentation-download-hint">{p.downloadHint}</p>
           </div>
-          <figure class="presentation-logo">
+          <figure class="presentation-logo" data-reveal data-delay="100">
             <img
               src="/brand/logo.svg"
               alt={messages.hero.logoAlt}
@@ -57,14 +65,14 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       </header>
 
       <section class="presentation-section" aria-labelledby="presentation-why">
-        <div class="presentation-container">
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-why" class="heading-section text-ink">{p.why.title}</h2>
           <p class="presentation-prose">{p.why.body}</p>
         </div>
       </section>
 
-      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-compare">
-        <div class="presentation-container">
+      <section class="presentation-section surface-snow surface-band" aria-labelledby="presentation-compare">
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-compare" class="heading-section text-ink">{p.compare.title}</h2>
           <div class="presentation-table-wrap">
             <table class="presentation-table">
@@ -90,7 +98,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       </section>
 
       <section class="presentation-section" aria-labelledby="presentation-community">
-        <div class="presentation-container presentation-split">
+        <div class="presentation-container presentation-split" data-reveal>
           <div class="presentation-split-copy">
             <h2 id="presentation-community" class="heading-section text-ink">{p.community.title}</h2>
             <h3 class="presentation-subhead">{p.community.subtitle}</h3>
@@ -109,8 +117,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
         </div>
       </section>
 
-      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-cloud">
-        <div class="presentation-container presentation-split presentation-split-reverse">
+      <section class="presentation-section" aria-labelledby="presentation-cloud">
+        <div class="presentation-container presentation-split presentation-split-reverse" data-reveal>
           <div class="presentation-split-copy">
             <h2 id="presentation-cloud" class="heading-section text-ink">{p.cloud.title}</h2>
             <p class="presentation-prose">{p.cloud.lead}</p>
@@ -132,7 +140,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       </section>
 
       <section class="presentation-section" aria-labelledby="presentation-values">
-        <div class="presentation-container">
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-values" class="heading-section text-ink">{p.values.title}</h2>
           <ul class="presentation-ops-list">
             {
@@ -147,8 +155,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
         </div>
       </section>
 
-      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-privacy">
-        <div class="presentation-container">
+      <section class="presentation-section" aria-labelledby="presentation-privacy">
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-privacy" class="heading-section text-ink">{p.privacy.title}</h2>
           <p class="presentation-prose">{p.privacy.lead}</p>
           <p class="presentation-highlight">{p.privacy.highlight}</p>
@@ -156,7 +164,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       </section>
 
       <section class="presentation-section" aria-labelledby="presentation-security">
-        <div class="presentation-container">
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-security" class="heading-section text-ink">{p.security.title}</h2>
           <ol class="presentation-ops-list presentation-ops-list--numbered">
             {
@@ -171,8 +179,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
         </div>
       </section>
 
-      <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-roadmap">
-        <div class="presentation-container">
+      <section class="presentation-section" aria-labelledby="presentation-roadmap">
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-roadmap" class="heading-section text-ink">{p.roadmap.title}</h2>
           <ol class="presentation-ops-list presentation-ops-list--numbered">
             {
@@ -187,24 +195,34 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
         </div>
       </section>
 
-      <section class="presentation-section presentation-cta" aria-labelledby="presentation-cta">
-        <div class="presentation-container">
+      <section
+        class="page-closer presentation-section surface-snow surface-band"
+        aria-labelledby="presentation-cta"
+      >
+        <div class="presentation-container" data-reveal>
           <h2 id="presentation-cta" class="heading-section text-ink">{p.cta.title}</h2>
           <p class="presentation-prose">{p.cta.lead}</p>
+          <div class="page-closer__actions">
+            <a
+              href="https://cloud.km0digital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+            >
+              {messages.hero.ctaPrimary}
+            </a>
+            <a href={pdfUrl} download class="page-closer__secondary">
+              {p.download}
+            </a>
+          </div>
           <ul class="presentation-links">
             <li>
-              <a href="https://km0digital.com/">{p.cta.website}</a>
-            </li>
-            <li>
-              <a href="https://cloud.km0digital.com/">{p.cta.cloud}</a>
+              <a href={localeHref(locale, '/')}>{p.cta.website}</a>
             </li>
             <li>
               <span>{p.cta.email}</span>
             </li>
           </ul>
-          <a href={pdfUrl} download class="btn-primary">
-            {p.download}
-          </a>
           <p class="presentation-download-hint">{p.downloadHint}</p>
         </div>
       </section>
@@ -214,10 +232,6 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
 </Layout>
 
 <style>
-  .presentation-main {
-    padding-top: 0;
-  }
-
   .presentation-page {
     color: var(--color-ink);
   }
@@ -229,11 +243,6 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
   }
 
   .presentation-hero {
-    background-color: var(--color-paper);
-    background-image:
-      linear-gradient(90deg, rgb(216 220 224 / 0.45) 1px, transparent 1px),
-      linear-gradient(rgb(216 220 224 / 0.35) 1px, transparent 1px);
-    background-size: 48px 48px;
     padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 4.5rem);
     border-bottom: 1px solid var(--color-mist);
   }
@@ -272,7 +281,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
   }
 
   .presentation-download-wrap {
-    margin-top: 1.75rem;
+    margin-top: 0.25rem;
   }
 
   .presentation-download-hint {
@@ -283,12 +292,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
   }
 
   .presentation-section {
-    padding: clamp(2.5rem, 6vw, 4rem) 0;
-  }
-
-  .presentation-section-alt {
-    background: var(--color-snow);
-    border-block: 1px solid var(--color-mist);
+    padding: var(--space-section-y) 0;
   }
 
   .presentation-subhead {
@@ -454,12 +458,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     color: var(--color-signal);
   }
 
-  .presentation-cta {
-    border-top: 1px solid var(--color-mist);
-  }
-
   .presentation-links {
-    margin: 1.25rem 0 1.5rem;
+    margin: 1.5rem 0 0;
     padding: 0;
     list-style: none;
     display: flex;

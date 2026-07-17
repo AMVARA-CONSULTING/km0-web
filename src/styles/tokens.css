@@ -13,9 +13,32 @@
   --color-surface: var(--color-paper);
   --color-white: var(--color-snow);
 
+  /*
+   * Professional surface system (Stirling paint #91).
+   * Default canvas is Paper. Snow / Ink are explicit opt-in only.
+   * Never alternate via nth-child.
+   */
+  --surface-paper: var(--color-paper);
+  --surface-snow: var(--color-snow);
+  --surface-ink: var(--color-ink);
+
+  /* Shared section rhythm - calmer professional scale */
+  --space-section-y: clamp(4rem, 7vw, 6.5rem);
+  --space-section-x: clamp(1.5rem, 4vw, 5rem);
+  --measure-band: 72rem;
+
+  /*
+   * Motion system (Stirling paint #92).
+   * Reveals + chrome only. Cap vanity animations sitewide.
+   */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-apple: var(--ease-out-expo);
-  --duration-reveal: 600ms;
+  --duration-reveal: 700ms;
+  --duration-chrome: 220ms;
+  --reveal-distance: 1.25rem;
+  --reveal-stagger: 80ms;
+  --masthead-offset: 4.75rem;
+  --masthead-offset-compact: 3.85rem;
 
   /* Signature atmosphere: Origin field (quiet civic grid + grain + milestone).
      Not orbs, not glow, not purple. See docs/brand-tokens.md */

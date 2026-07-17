@@ -33,19 +33,28 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
   <main class="page-shell meeting-page">
     <section class="section-pad !pt-10 md:!pt-14" aria-labelledby="meeting-heading">
       <div class="page-inner--wide !px-0">
-        <header class="page-masthead">
+        <header class="page-masthead" data-reveal>
           <p class="doc-kicker">{m.eyebrow}</p>
           <h1 id="meeting-heading" class="heading-section text-ink">{m.heading}</h1>
           <p class="doc-index-intro">{m.intro}</p>
         </header>
 
         <div class="meeting-layout">
-          <section class="meeting-layout-calendar" aria-labelledby="meeting-calendar-heading">
+          <section
+            class="meeting-layout-calendar"
+            aria-labelledby="meeting-calendar-heading"
+            data-reveal
+          >
             <h2 id="meeting-calendar-heading" class="meeting-section-title">{m.calendarTitle}</h2>
             <MeetingCalendar locale={locale} messages={messages} />
           </section>
 
-          <section class="meeting-layout-upcoming" aria-labelledby="meeting-upcoming-heading">
+          <section
+            class="meeting-layout-upcoming"
+            aria-labelledby="meeting-upcoming-heading"
+            data-reveal
+            data-delay="80"
+          >
             <h2 id="meeting-upcoming-heading" class="meeting-section-title">{m.upcomingTitle}</h2>
             {
               upcoming.length > 0 ? (

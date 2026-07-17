@@ -34,6 +34,7 @@ function bandHref(cta: Messages['vision']['bands'][number]['cta']): string {
           const href = bandHref(band.cta);
           const external = band.cta === 'cloud';
           const emphasis = i === 1;
+          const primary = band.cta === 'cloud';
 
           return (
             <article
@@ -49,7 +50,7 @@ function bandHref(cta: Messages['vision']['bands'][number]['cta']): string {
                 {external ? (
                   <a
                     href={href}
-                    class="why-band__cta"
+                    class:list={[primary ? 'btn-primary why-band__cta-btn' : 'why-band__cta']}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -116,21 +117,9 @@ function bandHref(cta: Messages['vision']['bands'][number]['cta']): string {
   /* Intentional full-bleed Snow band (not zebra): middle scale only */
   .why-band--emphasis {
     margin-inline: calc(50% - 50vw);
-    padding-inline: max(1.5rem, calc(50vw - 36rem + 1.5rem));
-    background-color: var(--color-snow);
+    padding-inline: max(var(--space-section-x), calc(50vw - 36rem + var(--space-section-x)));
+    background-color: var(--surface-snow);
     border-top-color: color-mix(in srgb, var(--color-mist) 80%, transparent);
-  }
-
-  @media (min-width: 768px) {
-    .why-band--emphasis {
-      padding-inline: max(3rem, calc(50vw - 36rem + 3rem));
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .why-band--emphasis {
-      padding-inline: max(5rem, calc(50vw - 36rem + 5rem));
-    }
   }
 
   .why-band__meta {
@@ -189,6 +178,10 @@ function bandHref(cta: Messages['vision']['bands'][number]['cta']): string {
 
   .why-band__cta:hover {
     color: var(--color-signal-hover);
+  }
+
+  .why-band__cta-btn {
+    margin-top: 1.25rem;
   }
 
   .why__more {

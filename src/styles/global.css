@@ -35,11 +35,35 @@
 
 @layer components {
   .section-pad {
-    @apply px-6 py-24 md:px-12 md:py-32 lg:px-20;
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+
+  /*
+   * Surface utilities - explicit opt-in only.
+   * Body/page-shell default to Paper. Do not stripe with nth-child.
+   */
+  .surface-paper {
+    background-color: var(--surface-paper);
+    color: var(--color-ink);
+  }
+
+  .surface-snow {
+    background-color: var(--surface-snow);
+    color: var(--color-ink);
+  }
+
+  .surface-ink {
+    background-color: var(--surface-ink);
+    color: var(--color-snow);
+  }
+
+  /* Optional hairlines when a Snow/Ink band needs a quiet edge */
+  .surface-band {
+    border-block: 1px solid var(--color-mist);
   }
 
   /* Landing rhythm: continuous Paper canvas. Intentional bands opt in
-     via explicit classes on the section (e.g. Contact closer bg-snow).
+     via surface-* classes (e.g. Contact closer surface-snow).
      No nth-child zebra. */
 
   /*
@@ -77,10 +101,18 @@
     mix-blend-mode: multiply;
   }
 
+  .surface-snow.km0-motif,
   .bg-snow.km0-motif {
-    background-color: var(--color-snow);
+    background-color: var(--surface-snow);
     --km0-motif-grid-line: color-mix(in srgb, var(--color-mist) 70%, transparent);
     --km0-motif-grain-opacity: 0.028;
+  }
+
+  .surface-ink.km0-motif {
+    background-color: var(--surface-ink);
+    --km0-motif-grid-line: color-mix(in srgb, var(--color-snow) 12%, transparent);
+    --km0-motif-grain-opacity: 0.035;
+    --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 35%, transparent);
   }
 
   /* Biased kilometer-zero cross + diamond. Geometry only, no soft orb. */
@@ -126,7 +158,7 @@
   }
 
   .heading-section {
-    @apply font-display text-3xl font-semibold tracking-tight md:text-4xl;
+    @apply font-display text-[1.75rem] font-semibold tracking-tight md:text-[2.125rem] lg:text-4xl;
   }
 
   /* Legacy class name: solid Signal accent (no purple gradient / bg-clip) */
@@ -139,11 +171,25 @@
   }
 
   .reveal {
-    @apply translate-y-6 opacity-0 transition-all duration-[600ms] ease-apple;
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-distance), 0);
+    transition:
+      opacity var(--duration-reveal) var(--ease-out-expo),
+      transform var(--duration-reveal) var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
   }
 
   .reveal.is-visible {
-    @apply translate-y-0 opacity-100;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 
   .chip {
@@ -195,7 +241,7 @@
     @apply w-full sm:w-auto;
   }
 
-  /* Secondary pages: shared editorial shell (matches blog/home tokens) */
+  /* Secondary pages: shared editorial shell (Stirling paint + home tokens) */
   .page-shell {
     @apply bg-paper pt-28;
   }
@@ -217,12 +263,49 @@
     @apply mb-3;
   }
 
+  /* Closer CTA band - opt-in Snow; pair with surface-band when edged */
+  .page-closer {
+    padding-block: var(--space-section-y);
+  }
+
+  .page-closer__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .page-closer__secondary {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .page-closer__secondary:hover {
+    color: var(--color-signal);
+  }
+
+  .page-closer__secondary:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  /* Legacy alias → prefer surface-snow (+ surface-band when edged) */
   .page-band {
-    @apply border-y border-mist bg-snow;
+    background-color: var(--surface-snow);
+    color: var(--color-ink);
+    border-block: 1px solid var(--color-mist);
   }
 
   .page-toc {
-    @apply mb-12 border border-mist bg-snow p-5 md:p-6;
+    margin-bottom: 2.5rem;
+    padding: 1.25rem 0;
+    border-block: 1px solid var(--color-mist);
+    background: transparent;
   }
 
   .page-toc-title {

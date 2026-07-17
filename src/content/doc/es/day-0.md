@@ -5,9 +5,9 @@ pubDate: 2026-05-21
 locale: es
 ---
 
-El día 0 es de **fundaciones**. Sin un sistema operativo y un entorno de trabajo reproducibles, cualquier stack posterior queda frágil y difícil de auditar.
+El día 0 deja las **fundaciones**: Debian reproducible, disco claro, herramientas listas para Docker y una consola documentada. Sin esa base, cualquier stack posterior queda frágil y difícil de auditar.
 
-Objetivo del día: Debian estable, disco ordenado, herramientas mínimas pero suficientes, y una consola que invite a documentar cada cambio.
+Objetivo del día: un VPS que cualquier compañero pueda auditar y reconstruir desde wiki y runbooks, no de memoria.
 
 ## Plan de arranque
 
@@ -65,4 +65,4 @@ Al terminar, el servidor debería ser:
 2. **Repetible:** pasos principales enlazados con wiki y runbooks
 3. **Listo** para Docker sin exponer servicios al público antes de tiempo
 
-El **día 1** materializa OpenCloud, el virtual host del proxy y la web KM0 con TLS. Mientras tanto, explora los [servicios](/#services) o [escríbenos](/#contact) si quieres colaborar.
+El **día 1** materializa OpenCloud, el virtual host del proxy y la web KM0 con TLS. Siguiente paso para quien lea: [servicios](/#services) o [contacto](/#contact).

@@ -30,13 +30,13 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
   pageDescription={m.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="meeting-page pt-28">
-    <section class="section-pad bg-white" aria-labelledby="meeting-heading">
-      <div class="mx-auto max-w-5xl px-6 md:px-12">
-        <header class="mb-12 text-center">
-          <p class="doc-eyebrow">{m.eyebrow}</p>
-          <h1 id="meeting-heading" class="heading-section text-navy">{m.heading}</h1>
-          <p class="doc-index-intro mx-auto">{m.intro}</p>
+  <main class="page-shell meeting-page">
+    <section class="section-pad !pt-10 md:!pt-14" aria-labelledby="meeting-heading">
+      <div class="page-inner--wide !px-0">
+        <header class="page-masthead">
+          <p class="doc-kicker">{m.eyebrow}</p>
+          <h1 id="meeting-heading" class="heading-section text-ink">{m.heading}</h1>
+          <p class="doc-index-intro">{m.intro}</p>
         </header>
 
         <div class="meeting-layout">
@@ -67,10 +67,6 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
 </Layout>
 
 <style>
-  .meeting-page {
-    background: #fff;
-  }
-
   .meeting-layout {
     display: grid;
     gap: 2.5rem;
@@ -80,14 +76,17 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
     .meeting-layout {
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       align-items: start;
+      gap: 3rem;
     }
   }
 
   .meeting-section-title {
     margin: 0 0 1rem;
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    font-weight: 700;
-    color: #0b1220;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
   }
 
   .meeting-event-list {
@@ -97,10 +96,10 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
 
   .meeting-empty {
     margin: 0;
-    padding: 1.25rem 1.375rem;
-    border: 1px dashed rgb(15 23 42 / 0.15);
-    border-radius: 1rem;
-    color: rgb(15 23 42 / 0.62);
+    padding: 1.25rem 0;
+    border-top: 1px dashed var(--color-mist);
+    border-bottom: 1px dashed var(--color-mist);
+    color: var(--color-ink-muted);
     line-height: 1.6;
   }
 </style>

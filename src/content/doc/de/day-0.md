@@ -5,9 +5,9 @@ pubDate: 2026-05-21
 locale: de
 ---
 
-Tag 0 gilt den **Grundlagen**. Ohne ein reproduzierbares Betriebssystem und eine funktionierende Arbeitsumgebung bleibt jeder spätere Stack fragil und schwer auditierbar.
+Tag 0 liefert die **Grundlagen**: reproduzierbares Debian, klares Disk-Layout, Docker-bereite Werkzeuge und eine dokumentierte Shell. Ohne diese Basis bleibt jeder spätere Stack fragil und schwer auditierbar.
 
-Ziel des Tages: stabiles Debian, geordnete Festplatte, minimale aber ausreichende Werkzeuge und eine Shell, die dazu einlädt, jede Änderung zu dokumentieren.
+Ziel des Tages: ein VPS, den jedes Teammitglied aus Wiki und Runbooks auditieren und neu aufbauen kann, nicht aus dem Gedächtnis.
 
 ## Bootstrap-Plan
 
@@ -65,4 +65,4 @@ Am Ende des Tages sollte der Server sein:
 2. **Wiederholbar:** Hauptschritte mit Wiki und Runbooks verknüpft
 3. **Bereit** für Docker, ohne Dienste zu früh öffentlich zu machen
 
-**Tag 1** bringt OpenCloud, den Proxy-VHost und die KM0-Website mit TLS. Bis dahin: [Dienste](/de/#services) ansehen oder [Kontakt](/de/#contact) aufnehmen, wenn ihr mitarbeiten wollt.
+**Tag 1** bringt OpenCloud, den Proxy-VHost und die KM0-Website mit TLS. Nächster Schritt für Leser: [Dienste](/de/#services) oder [Kontakt](/de/#contact).

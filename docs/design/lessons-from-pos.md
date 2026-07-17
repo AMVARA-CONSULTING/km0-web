@@ -25,6 +25,6 @@ The POS marketing landing still carries several **AI-median tells**: Inter-only,
 | Primary CTA | **Open KM0 Cloud** (product-led, self-serve) |
 | Secondary | Text link to Pricing (or Contact) - not a second equal button |
 | User counter | Keep; embed in Offer / proof band; distinctive typography, not stat-strip slop |
-| Blog | New chrome + **day-0 pilot** template; remaining days later |
+| Blog | New chrome + **day-0 pilot**; contract in `docs/design/blog-post-template.md`; remaining days later |
 
 See also: `docs/design/anti-slop-doctrine.md`, `docs/brand-tokens.md`.

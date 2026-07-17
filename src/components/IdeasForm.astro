@@ -11,31 +11,31 @@ const { locale, messages: m } = Astro.props;
 
 <form
   id="ideas-form"
-  class="ideas-form rounded-2xl border border-navy/10 bg-surface p-6 md:p-8"
+  class="ideas-form border border-mist bg-snow p-6 md:p-8"
   novalidate
   data-locale={locale}
   data-char-count-template={m.ideas.charCount}
 >
   <div id="ideas-fields" class="flex flex-col gap-6">
     <div>
-      <label for="ideas-scope" class="mb-2 block text-sm font-medium text-navy/80">
+      <label for="ideas-scope" class="mb-2 block font-sans text-sm font-medium text-ink/80">
         {m.ideas.scopeLabel}
       </label>
       <select
         id="ideas-scope"
         name="scope"
         required
-        class="ideas-input w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-navy shadow-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-navy/10"
+        class="ideas-input w-full rounded-md border border-mist bg-paper px-4 py-3 font-sans text-base text-ink transition-colors focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/20"
       >
         <option value="web" selected>{m.ideas.scopeOptions.web}</option>
         <option value="cloud">{m.ideas.scopeOptions.cloud}</option>
         <option value="mail">{m.ideas.scopeOptions.mail}</option>
       </select>
-      <p class="mt-2 text-xs text-navy/50">{m.ideas.scopeHint}</p>
+      <p class="mt-2 font-sans text-xs text-ink/50">{m.ideas.scopeHint}</p>
     </div>
 
     <div>
-      <label for="ideas-idea" class="mb-2 block text-sm font-medium text-navy/80">
+      <label for="ideas-idea" class="mb-2 block font-sans text-sm font-medium text-ink/80">
         {m.ideas.ideaLabel}
       </label>
       <textarea
@@ -44,15 +44,15 @@ const { locale, messages: m } = Astro.props;
         required
         maxlength="4000"
         rows="8"
-        class="ideas-input w-full resize-y rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-navy shadow-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-navy/10"
+        class="ideas-input w-full resize-y rounded-md border border-mist bg-paper px-4 py-3 font-body text-base text-ink transition-colors focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/20"
         placeholder={m.ideas.ideaPlaceholder}></textarea>
-      <p id="ideas-char-count" class="mt-2 text-right text-xs text-navy/50" aria-live="polite">
+      <p id="ideas-char-count" class="mt-2 text-right font-sans text-xs text-ink/50" aria-live="polite">
         {m.ideas.charCount.replace('{count}', '0')}
       </p>
     </div>
 
     <div>
-      <label for="ideas-name" class="mb-2 block text-sm font-medium text-navy/80">
+      <label for="ideas-name" class="mb-2 block font-sans text-sm font-medium text-ink/80">
         {m.ideas.nameLabel}
       </label>
       <input
@@ -61,7 +61,7 @@ const { locale, messages: m } = Astro.props;
         name="name"
         maxlength="200"
         autocomplete="name"
-        class="ideas-input w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-navy shadow-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-navy/10"
+        class="ideas-input w-full rounded-md border border-mist bg-paper px-4 py-3 font-sans text-base text-ink transition-colors focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/20"
         placeholder={m.ideas.namePlaceholder}
       />
     </div>
@@ -71,14 +71,14 @@ const { locale, messages: m } = Astro.props;
       <input type="text" id="ideas-website" name="website" tabindex="-1" autocomplete="off" />
     </div>
 
-    <p id="ideas-error" class="hidden text-sm text-red-700" role="alert">{m.ideas.error}</p>
+    <p id="ideas-error" class="hidden font-sans text-sm text-red-700" role="alert">{m.ideas.error}</p>
 
     <button type="submit" class="btn-primary w-full sm:w-auto" data-ideas-submit>
       {m.ideas.submit}
     </button>
   </div>
 
-  <p id="ideas-success" class="hidden text-center text-lg text-navy/80" role="status">
+  <p id="ideas-success" class="hidden text-center font-body text-lg text-ink/80" role="status">
     {m.ideas.success}
   </p>
 </form>

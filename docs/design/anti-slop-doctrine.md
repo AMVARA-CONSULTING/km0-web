@@ -67,10 +67,15 @@ KM0 is a **community digital-sovereignty movement** with real EU-hosted services
 
 Avoid sounding like a YC landing page or a Big Tech privacy whitepaper.
 
+## Blog / longform
+
+New and migrated `/doc/` posts follow **`docs/design/blog-post-template.md`** (Markdown-first, inverted pyramid, pilot `day-0`). Do not reintroduce nested HTML section kits or manifesto intros.
+
 ## Agent enforcement
 
 - Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md`
 - Skill: `.cursor/skills/km0-web-copy/SKILL.md`
 - Rules: `.cursor/rules/anti-slop-frontend.mdc`, `.cursor/rules/web-copy.mdc`
 - Tokens: `docs/brand-tokens.md` + `src/styles/tokens.css`
+- Blog prose contract: `docs/design/blog-post-template.md`
 - Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions

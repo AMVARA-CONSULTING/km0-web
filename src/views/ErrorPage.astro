@@ -31,34 +31,17 @@ const homeHref = localeHref(locale, '/');
   pageDescription={errorContent.description}
 >
   <Header locale={locale} messages={messages} />
-  <main
-    class="relative flex flex-1 flex-col items-center justify-center overflow-hidden bg-navy px-6 pt-28 pb-24 text-center text-white"
-  >
-    <div
-      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(15,118,110,0.18)_0%,_transparent_70%)]"
-    >
-    </div>
-    <div class="relative z-10 mx-auto max-w-xl">
-      <div class="mx-auto mb-8 w-24 sm:w-28">
-        <img
-          src="/brand/logo.svg"
-          alt={messages.hero.logoAlt}
-          width="112"
-          height="112"
-          class="mx-auto h-auto w-full object-contain opacity-90"
-        />
-      </div>
-      <p class="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-white/50">
-        {errorContent.code}
-      </p>
-      <h1 class="heading-section mb-4 text-3xl md:text-4xl">
-        {errorContent.heading}
-      </h1>
-      <p class="mx-auto mt-6 max-w-md text-lg font-light text-white/70">
-        {errorContent.description}
-      </p>
-      <div class="mt-10">
-        <a href={homeHref} class="btn-primary">{errorContent.backHome}</a>
+  <main class="page-shell">
+    <div class="section-pad !pt-10 md:!pt-14">
+      <div class="page-inner !px-0">
+        <header class="page-masthead error-masthead">
+          <p class="doc-kicker">{errorContent.code}</p>
+          <h1 class="heading-section text-ink">{errorContent.heading}</h1>
+          <p class="doc-index-intro">{errorContent.description}</p>
+          <div class="mt-8">
+            <a href={homeHref} class="btn-primary">{errorContent.backHome}</a>
+          </div>
+        </header>
       </div>
     </div>
   </main>

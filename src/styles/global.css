@@ -120,6 +120,48 @@
     @apply w-full sm:w-auto;
   }
 
+  /* Secondary pages: shared editorial shell (matches blog/home tokens) */
+  .page-shell {
+    @apply bg-paper pt-28;
+  }
+
+  .page-inner {
+    @apply mx-auto w-full max-w-3xl px-6 md:px-12;
+  }
+
+  .page-inner--wide {
+    @apply mx-auto w-full max-w-5xl px-6 md:px-12 lg:px-16;
+  }
+
+  .page-masthead {
+    @apply mb-10 border-b border-mist pb-8 md:mb-12;
+  }
+
+  .page-masthead .doc-kicker,
+  .page-masthead .doc-eyebrow {
+    @apply mb-3;
+  }
+
+  .page-band {
+    @apply border-y border-mist bg-snow;
+  }
+
+  .page-toc {
+    @apply mb-12 border border-mist bg-snow p-5 md:p-6;
+  }
+
+  .page-toc-title {
+    @apply mb-3 font-sans text-xs font-medium uppercase tracking-[0.12em] text-ink/45;
+  }
+
+  .page-toc-list {
+    @apply m-0 flex list-decimal flex-col gap-2 pl-5;
+  }
+
+  .page-toc-list a {
+    @apply font-sans text-sm font-medium text-ink/70 underline decoration-ink/20 underline-offset-[3px] transition-colors hover:text-ink hover:decoration-ink/45;
+  }
+
   /* Blog / tutorials: cool civic editorial reading system */
   .doc-reading-page {
     @apply bg-paper;

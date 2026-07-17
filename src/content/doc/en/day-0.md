@@ -5,9 +5,9 @@ pubDate: 2026-05-21
 locale: en
 ---
 
-Day 0 is about **foundations**. Without a reproducible operating system and working environment, later stacks stay fragile and hard to audit.
+Day 0 ships the **foundations**: reproducible Debian, a clear disk layout, Docker-ready tooling, and a documented shell. Without that base, later stacks stay fragile and hard to audit.
 
-Goal for the day: stable Debian, an orderly disk layout, minimal but sufficient tooling, and a shell that makes documenting every change the default.
+Goal for the day: a VPS any teammate can audit and rebuild from wiki and runbooks, not from memory.
 
 ## Bootstrap plan
 
@@ -65,4 +65,4 @@ By the end of the day, the server should be:
 2. **Repeatable:** main steps linked to wiki and runbooks
 3. **Ready** for Docker without exposing services publicly too early
 
-**Day 1** brings up OpenCloud, the proxy virtual host, and the KM0 site over TLS. Until then, explore [services](/en/#services) or [get in touch](/en/#contact) if you want to collaborate.
+**Day 1** brings up OpenCloud, the proxy virtual host, and the KM0 site over TLS. Next step for readers: [services](/en/#services) or [contact](/en/#contact).

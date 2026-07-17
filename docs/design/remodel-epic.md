@@ -20,12 +20,13 @@ Operator-created tasks in `autoagents/tasks/` (no GitHub issue yet). Run **in or
 - **IA map:** `docs/design/ia-map.md`
 - **POS lessons:** `docs/design/lessons-from-pos.md` (`/Repos/pos`)
 - **Blog prose history:** later epic
+- **Blog post template:** `docs/design/blog-post-template.md` (pilot `day-0`; other days deferred)
 
 ## Scope extras included across FEATs
 
 - Destroy AI/Tailwind-slop references in skills, rules, autoagents, brand docs
 - Psychological / NN/g writing standards
-- Blog chrome + pilot template
+- Blog chrome + pilot template (`docs/design/blog-post-template.md`)
 - IA: too many subsections/pages/nav peers
 
 ## Not in scope (unless product owner adds a FEAT)
@@ -33,4 +34,4 @@ Operator-created tasks in `autoagents/tasks/` (no GitHub issue yet). Run **in or
 - Rebuilding Cloud/Email product UIs outside km0-web
 - New backend services
 - Inventing fake testimonials or metrics
-- Full rewrite of all historical blog days
+- Full rewrite of all historical blog days (use the template when that epic opens)

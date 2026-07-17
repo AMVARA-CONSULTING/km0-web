@@ -28,10 +28,21 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
   pageDescription={p.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="presentation-main">
+  <main class="page-shell presentation-main">
     <article class="presentation-page">
       <header class="presentation-hero">
         <div class="presentation-hero-inner">
+          <div class="presentation-hero-copy">
+            <p class="doc-kicker">{p.eyebrow}</p>
+            <h1 class="heading-section text-ink">{p.title}</h1>
+            <p class="doc-index-intro">{p.lead}</p>
+            <div class="presentation-download-wrap">
+              <a href={pdfUrl} download class="btn-primary">
+                {p.download}
+              </a>
+              <p class="presentation-download-hint">{p.downloadHint}</p>
+            </div>
+          </div>
           <figure class="presentation-logo">
             <img
               src="/brand/logo.svg"
@@ -42,30 +53,19 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
               decoding="async"
             />
           </figure>
-          <div class="presentation-hero-copy">
-            <p class="presentation-eyebrow">{p.eyebrow}</p>
-            <h1>{p.title}</h1>
-            <p class="presentation-lead">{p.lead}</p>
-            <div class="presentation-download-wrap">
-              <a href={pdfUrl} download class="download-button">
-                {p.download}
-              </a>
-              <p class="presentation-download-hint">{p.downloadHint}</p>
-            </div>
-          </div>
         </div>
       </header>
 
       <section class="presentation-section" aria-labelledby="presentation-why">
         <div class="presentation-container">
-          <h2 id="presentation-why">{p.why.title}</h2>
+          <h2 id="presentation-why" class="heading-section text-ink">{p.why.title}</h2>
           <p class="presentation-prose">{p.why.body}</p>
         </div>
       </section>
 
       <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-compare">
         <div class="presentation-container">
-          <h2 id="presentation-compare">{p.compare.title}</h2>
+          <h2 id="presentation-compare" class="heading-section text-ink">{p.compare.title}</h2>
           <div class="presentation-table-wrap">
             <table class="presentation-table">
               <thead>
@@ -92,8 +92,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       <section class="presentation-section" aria-labelledby="presentation-community">
         <div class="presentation-container presentation-split">
           <div class="presentation-split-copy">
-            <h2 id="presentation-community">{p.community.title}</h2>
-            <h3>{p.community.subtitle}</h3>
+            <h2 id="presentation-community" class="heading-section text-ink">{p.community.title}</h2>
+            <h3 class="presentation-subhead">{p.community.subtitle}</h3>
             <p class="presentation-prose">{p.community.body}</p>
           </div>
           <figure class="presentation-figure">
@@ -112,7 +112,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-cloud">
         <div class="presentation-container presentation-split presentation-split-reverse">
           <div class="presentation-split-copy">
-            <h2 id="presentation-cloud">{p.cloud.title}</h2>
+            <h2 id="presentation-cloud" class="heading-section text-ink">{p.cloud.title}</h2>
             <p class="presentation-prose">{p.cloud.lead}</p>
             <ul class="presentation-list">
               {p.cloud.features.map((feature) => <li>{feature}</li>)}
@@ -133,35 +133,35 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
 
       <section class="presentation-section" aria-labelledby="presentation-values">
         <div class="presentation-container">
-          <h2 id="presentation-values">{p.values.title}</h2>
-          <div class="presentation-cards">
+          <h2 id="presentation-values" class="heading-section text-ink">{p.values.title}</h2>
+          <ul class="presentation-ops-list">
             {
               p.values.items.map((item) => (
-                <article class="presentation-card">
+                <li class="presentation-ops-item">
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
-                </article>
+                </li>
               ))
             }
-          </div>
+          </ul>
         </div>
       </section>
 
       <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-privacy">
-        <div class="presentation-container presentation-privacy">
-          <h2 id="presentation-privacy">{p.privacy.title}</h2>
+        <div class="presentation-container">
+          <h2 id="presentation-privacy" class="heading-section text-ink">{p.privacy.title}</h2>
           <p class="presentation-prose">{p.privacy.lead}</p>
-          <p class="presentation-stat" aria-label={p.privacy.highlight}>{p.privacy.highlight}</p>
+          <p class="presentation-highlight">{p.privacy.highlight}</p>
         </div>
       </section>
 
       <section class="presentation-section" aria-labelledby="presentation-security">
         <div class="presentation-container">
-          <h2 id="presentation-security">{p.security.title}</h2>
-          <ol class="presentation-security-list">
+          <h2 id="presentation-security" class="heading-section text-ink">{p.security.title}</h2>
+          <ol class="presentation-ops-list presentation-ops-list--numbered">
             {
               p.security.items.map((item) => (
-                <li>
+                <li class="presentation-ops-item">
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
                 </li>
@@ -173,11 +173,11 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
 
       <section class="presentation-section presentation-section-alt" aria-labelledby="presentation-roadmap">
         <div class="presentation-container">
-          <h2 id="presentation-roadmap">{p.roadmap.title}</h2>
-          <ol class="presentation-roadmap">
+          <h2 id="presentation-roadmap" class="heading-section text-ink">{p.roadmap.title}</h2>
+          <ol class="presentation-ops-list presentation-ops-list--numbered">
             {
               p.roadmap.steps.map((step) => (
-                <li>
+                <li class="presentation-ops-item">
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
                 </li>
@@ -188,8 +188,8 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
       </section>
 
       <section class="presentation-section presentation-cta" aria-labelledby="presentation-cta">
-        <div class="presentation-container presentation-cta-inner">
-          <h2 id="presentation-cta">{p.cta.title}</h2>
+        <div class="presentation-container">
+          <h2 id="presentation-cta" class="heading-section text-ink">{p.cta.title}</h2>
           <p class="presentation-prose">{p.cta.lead}</p>
           <ul class="presentation-links">
             <li>
@@ -202,7 +202,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
               <a href={`mailto:${p.cta.email}`}>{p.cta.email}</a>
             </li>
           </ul>
-          <a href={pdfUrl} download class="download-button">
+          <a href={pdfUrl} download class="btn-primary">
             {p.download}
           </a>
           <p class="presentation-download-hint">{p.downloadHint}</p>
@@ -215,139 +215,88 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
 
 <style>
   .presentation-main {
-    padding-top: 5.5rem;
-    background: #fff;
+    padding-top: 0;
   }
 
   .presentation-page {
-    color: #0f172a;
+    color: var(--color-ink);
   }
 
   .presentation-container {
-    width: min(100%, 72rem);
+    width: min(100%, 64rem);
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 4vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
   }
 
   .presentation-hero {
-    background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
-    color: #fff;
-    padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(3rem, 7vw, 5rem);
+    background-color: var(--color-paper);
+    background-image:
+      linear-gradient(90deg, rgb(216 220 224 / 0.45) 1px, transparent 1px),
+      linear-gradient(rgb(216 220 224 / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 4.5rem);
+    border-bottom: 1px solid var(--color-mist);
   }
 
   .presentation-hero-inner {
-    width: min(100%, 72rem);
+    width: min(100%, 64rem);
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 4vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
     display: grid;
-    gap: clamp(1.5rem, 4vw, 3rem);
+    gap: clamp(1.75rem, 4vw, 3rem);
     align-items: center;
   }
 
   @media (min-width: 768px) {
     .presentation-hero-inner {
-      grid-template-columns: minmax(9rem, 14rem) 1fr;
+      grid-template-columns: minmax(0, 1.2fr) minmax(8rem, 12rem);
     }
   }
 
   .presentation-logo {
     margin: 0;
-    justify-self: center;
+    justify-self: start;
+  }
+
+  @media (min-width: 768px) {
+    .presentation-logo {
+      justify-self: end;
+    }
   }
 
   .presentation-logo img {
     display: block;
-    width: min(100%, 14rem);
+    width: min(100%, 11rem);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 16px 32px rgb(0 0 0 / 0.35));
-  }
-
-  .presentation-eyebrow {
-    margin: 0 0 0.75rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgb(255 255 255 / 0.62);
-  }
-
-  .presentation-hero h1 {
-    margin: 0;
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    font-weight: 700;
-  }
-
-  .presentation-lead {
-    margin: 1rem 0 0;
-    max-width: 42rem;
-    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-    line-height: 1.6;
-    color: rgb(255 255 255 / 0.82);
   }
 
   .presentation-download-wrap {
     margin-top: 1.75rem;
   }
 
-  .download-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.75rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.375rem;
-    background: #0f766e;
-    color: #fff;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 10px 24px rgb(0 0 0 / 0.22);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  }
-
-  .download-button:hover {
-    transform: translateY(-1px);
-    background: #0d9488;
-    box-shadow: 0 14px 28px rgb(0 0 0 / 0.28);
-  }
-
-  .download-button:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 3px;
-  }
-
   .presentation-download-hint {
     margin: 0.75rem 0 0;
+    font-family: theme('fontFamily.sans');
     font-size: 0.875rem;
-    color: rgb(255 255 255 / 0.62);
+    color: var(--color-ink-muted);
   }
 
   .presentation-section {
-    padding: clamp(2.75rem, 6vw, 4.5rem) 0;
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
   }
 
   .presentation-section-alt {
-    background: #f5f5f7;
+    background: var(--color-snow);
+    border-block: 1px solid var(--color-mist);
   }
 
-  .presentation-section h2 {
-    margin: 0 0 1.25rem;
-    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    font-weight: 700;
-    color: #0b1220;
-  }
-
-  .presentation-section h3 {
-    margin: 0 0 0.75rem;
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
-    line-height: 1.35;
+  .presentation-subhead {
+    margin: 0.75rem 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 1rem;
     font-weight: 600;
-    color: #1e293b;
+    color: var(--color-ink);
   }
 
   .presentation-prose {
@@ -355,16 +304,14 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     max-width: 48rem;
     font-size: 1.0625rem;
     line-height: 1.7;
-    color: #334155;
+    color: var(--color-ink-muted);
   }
 
   .presentation-table-wrap {
     overflow-x: auto;
     margin-top: 1.5rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    background: #fff;
-    box-shadow: 0 8px 24px rgb(15 23 42 / 0.05);
+    border: 1px solid var(--color-mist);
+    background: var(--color-snow);
   }
 
   .presentation-table {
@@ -378,22 +325,15 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     padding: 1rem 1.125rem;
     text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--color-mist);
   }
 
   .presentation-table thead th {
-    background: #0b1220;
-    color: #fff;
-    font-size: 0.9375rem;
+    background: var(--color-ink);
+    color: var(--color-snow);
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
     font-weight: 600;
-  }
-
-  .presentation-table thead th:first-child {
-    border-top-left-radius: 0.95rem;
-  }
-
-  .presentation-table thead th:last-child {
-    border-top-right-radius: 0.95rem;
   }
 
   .presentation-table tbody tr:last-child td {
@@ -401,11 +341,11 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
   }
 
   .presentation-table tbody td:first-child {
-    color: #64748b;
+    color: var(--color-ink-muted);
   }
 
   .presentation-table tbody td:last-child {
-    color: #0f172a;
+    color: var(--color-ink);
     font-weight: 500;
   }
 
@@ -437,150 +377,106 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 1rem;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 12px 32px rgb(15 23 42 / 0.08);
+    border: 1px solid var(--color-mist);
   }
 
   .presentation-list {
     margin: 1.25rem 0 0;
     padding-left: 1.25rem;
     max-width: 42rem;
-    color: #334155;
+    color: var(--color-ink-muted);
   }
 
   .presentation-list li + li {
-    margin-top: 0.75rem;
+    margin-top: 0.65rem;
   }
 
   .presentation-list li {
     line-height: 1.65;
   }
 
-  .presentation-cards {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .presentation-cards {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  .presentation-card {
-    padding: 1.25rem 1.375rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    background: #fff;
-  }
-
-  .presentation-card p {
-    margin: 0;
-    line-height: 1.65;
-    color: #475569;
-  }
-
-  .presentation-privacy {
-    text-align: center;
-  }
-
-  .presentation-privacy .presentation-prose {
-    margin-inline: auto;
-  }
-
-  .presentation-stat {
-    margin: 1.5rem 0 0;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    line-height: 1.1;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: #0f766e;
-  }
-
-  .presentation-security-list,
-  .presentation-roadmap {
+  .presentation-ops-list {
     margin: 1.5rem 0 0;
     padding: 0;
     list-style: none;
     display: grid;
-    gap: 1rem;
+    gap: 0;
   }
 
-  @media (min-width: 768px) {
-    .presentation-roadmap {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  .presentation-ops-list--numbered {
+    list-style: none;
+    counter-reset: presentation-step;
   }
 
-  .presentation-security-list li,
-  .presentation-roadmap li {
-    padding: 1.25rem 1.375rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    background: #fff;
+  .presentation-ops-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-mist);
   }
 
-  .presentation-security-list p,
-  .presentation-roadmap p {
+  .presentation-ops-item:first-child {
+    padding-top: 0;
+  }
+
+  .presentation-ops-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .presentation-ops-list--numbered .presentation-ops-item {
+    counter-increment: presentation-step;
+  }
+
+  .presentation-ops-item h3 {
+    margin: 0 0 0.35rem;
+    font-family: theme('fontFamily.display');
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .presentation-ops-list--numbered .presentation-ops-item h3::before {
+    content: counter(presentation-step) '. ';
+    color: var(--color-signal);
+  }
+
+  .presentation-ops-item p {
     margin: 0;
+    max-width: 60ch;
     line-height: 1.65;
-    color: #475569;
+    color: var(--color-ink-muted);
+  }
+
+  .presentation-highlight {
+    margin: 1.25rem 0 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-signal);
   }
 
   .presentation-cta {
-    background: #0b1220;
-    color: #fff;
-  }
-
-  .presentation-cta-inner {
-    text-align: center;
-  }
-
-  .presentation-cta h2 {
-    color: #fff;
-  }
-
-  .presentation-cta .presentation-prose {
-    margin-inline: auto;
-    color: rgb(255 255 255 / 0.82);
+    border-top: 1px solid var(--color-mist);
   }
 
   .presentation-links {
-    margin: 1.5rem 0 1.75rem;
+    margin: 1.25rem 0 1.5rem;
     padding: 0;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.75rem 1.25rem;
   }
 
   .presentation-links a {
-    color: #fff;
+    color: var(--color-ink);
+    font-family: theme('fontFamily.sans');
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 0.18em;
   }
 
-  .presentation-links a:focus-visible,
-  .presentation-cta .download-button:focus-visible {
-    outline: 3px solid #fff;
+  .presentation-links a:focus-visible {
+    outline: 2px solid var(--color-signal);
     outline-offset: 3px;
-  }
-
-  .presentation-cta .presentation-download-hint {
-    color: rgb(255 255 255 / 0.62);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .download-button {
-      transition: none;
-    }
-
-    .download-button:hover {
-      transform: none;
-    }
   }
 </style>

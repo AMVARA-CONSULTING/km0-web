@@ -169,10 +169,10 @@
     "whatsappAria": "Abrir el grupo de WhatsApp de KM0"
   },
   "ideas": {
-    "metaTitle": "Enviar una mejora o reportar un problema - Kilómetro 0 Digital",
-    "metaDescription": "Comparte mejoras, ideas o problemas que hayas encontrado. El equipo técnico los revisará y los atenderá.",
-    "heading": "Envía una mejora o reporta un problema",
-    "intro": "Un espacio para compartir mejoras, ideas o problemas que hayas encontrado. El equipo técnico los revisará y los atenderá.",
+    "metaTitle": "Ideas y problemas - Kilómetro 0 Digital",
+    "metaDescription": "Envía una mejora o reporta un problema en km0digital, Cloud o Mail.",
+    "heading": "Enviar una idea o un problema",
+    "intro": "El equipo técnico lo revisa. Elige el producto y describe qué falta o qué falla.",
     "scopeLabel": "Producto",
     "scopeHint": "Si no estás seguro, elige km0digital.",
     "scopeOptions": {
@@ -194,7 +194,7 @@
     "metaDescription": "Calendario de encuentros y eventos de la comunidad KM0 Digital. Ven a conocernos en persona.",
     "eyebrow": "Comunidad",
     "heading": "Encuentros",
-    "intro": "Espacios informales para conocernos, compartir ideas y hablar de tecnología comunitaria. Consulta el calendario y apúntate a los próximos eventos.",
+    "intro": "Elige una fecha en el calendario o mira los próximos encuentros. Ven sin compromiso.",
     "calendarTitle": "Calendario",
     "upcomingTitle": "Próximos eventos",
     "noUpcoming": "No hay eventos programados por ahora. Vuelve pronto.",
@@ -244,8 +244,8 @@
       "meta": "500 GB",
       "ariaLabel": "Precio: 1,99 euros al mes por 500 GB de almacenamiento"
     },
-    "intro": "Precio público para almacenamiento en la UE. Abre Cloud o pide una propuesta a medida.",
-    "heroCta": "Empezar a usar ya",
+    "intro": "Precio público, almacenamiento en la UE. Abre Cloud o pide una propuesta a medida.",
+    "heroCta": "Abrir KM0 Cloud",
     "claim": "Hasta 5 veces más espacio que planes básicos de referencia a precio similar.",
     "compareHeading": "Referencias orientativas de mercado",
     "compareIntro": "La comparativa muestra referencias orientativas de mercado con planes públicos equivalentes.",
@@ -300,48 +300,30 @@
       "body": "Infraestructura ajustada y margen suficiente para operar, no para maximizar ingresos por cliente."
     },
     "trust": {
-      "heading": "Confianza y operación",
+      "heading": "Qué incluye el servicio",
       "items": [
         {
-          "title": "Copias de seguridad",
-          "desc": "Estrategia de copias de seguridad y recuperación documentada para proteger tus datos ante fallos o incidentes."
+          "title": "Datos en la UE",
+          "desc": "Hosting en Alemania (Hetzner). Tratamiento principalmente en Europa."
         },
         {
-          "title": "Redundancia",
-          "desc": "Infraestructura diseñada con redundancia operativa para mantener el servicio estable y disponible."
+          "title": "Copias y recuperación",
+          "desc": "Estrategia de copias documentada ante fallos o incidentes."
         },
         {
           "title": "Soporte cercano",
-          "desc": "Soporte en castellano y catalán con personas reales, no un call center anónimo a miles de kilómetros."
+          "desc": "Castellano y catalán, con personas reales."
         },
         {
-          "title": "Ubicación de datos",
-          "desc": "Infraestructura en la UE (Alemania, Hetzner). Tus datos se procesan principalmente dentro de Europa."
-        },
-        {
-          "title": "Seguridad y SLA",
-          "desc": "Operado bajo controles ISO/IEC 27001:2022 por AMVARA CONSULTING S.L. Consulta nuestra página de seguridad para más detalle."
-        },
-        {
-          "title": "Privacidad",
-          "desc": "No vendemos datos. Detalle en FAQ y en la página legal."
+          "title": "ISO y privacidad",
+          "desc": "Operado bajo ISO/IEC 27001:2022. No vendemos datos; detalle en Seguridad y Legal."
         }
       ]
     },
-    "differentiators": {
-      "heading": "Por qué KM0",
-      "items": [
-        "Cercanía y soporte",
-        "Simplicidad sin ecosistema invasivo",
-        "Proveedor local y europeo",
-        "Web limpia, sin letra pequeña",
-        "Precio transparente y sostenible"
-      ]
-    },
     "custom": {
-      "heading": "¿Necesitas una propuesta a medida?",
-      "body": "Si tu organización necesita capacidad, soporte o condiciones específicas, escríbenos y prepararemos una propuesta personalizada.",
-      "cta": "Solicitar propuesta custom"
+      "heading": "Propuesta a medida",
+      "body": "Si necesitas más capacidad, soporte o condiciones específicas, escríbenos.",
+      "cta": "Pedir propuesta"
     }
   },
   "presentation": {
@@ -349,7 +331,7 @@
     "metaDescription": "Presentación de KM0 Digital: cloud y correo en la UE. Descarga el PDF.",
     "eyebrow": "Presentación",
     "title": "Nube y correo en la UE",
-    "lead": "Servicios cercanos, precio público, datos en Europa. Descarga el PDF o vuelve al inicio.",
+    "lead": "Cloud y correo en la UE, precio público. Descarga el PDF o vuelve al inicio.",
     "download": "Descargar PDF",
     "downloadHint": "Documento original (~618 KB)",
     "why": {
@@ -357,102 +339,102 @@
       "body": "Porque quieres archivos y correo sin que tu perfil sea el producto. Somos el operador local."
     },
     "compare": {
-      "title": "La nube de siempre vs la propuesta KM0",
-      "usualTitle": "Las grandes empresas",
-      "km0Title": "La alternativa KM0",
+      "title": "Nube habitual vs KM0",
+      "usualTitle": "Grandes plataformas",
+      "km0Title": "KM0",
       "rows": [
         {
-          "usual": "Tus datos personales son el producto",
-          "km0": "Cero venta de datos. Privacidad absoluta de serie"
+          "usual": "Tu perfil es el producto",
+          "km0": "No vendemos datos"
         },
         {
-          "usual": "Soporte robótico, frío y a miles de kilómetros",
-          "km0": "Soporte local humano. Habla con personas reales"
+          "usual": "Soporte lejano o automatizado",
+          "km0": "Soporte local humano"
         },
         {
-          "usual": "Precios abusivos sin justificación real de coste",
-          "km0": "Tarifas transparentes calculadas sobre coste real"
+          "usual": "Precios opacos",
+          "km0": "Tarifa pública sobre coste real"
         }
       ]
     },
     "community": {
-      "title": "Tecnología hecha para las personas",
-      "subtitle": "Hecho por y para la comunidad",
-      "body": "KM0 Digital no es un producto corporativo cerrado. Es un movimiento cooperativo diseñado para familias, escuelas, particulares y comercios de proximidad. Nuestra misión es devolver a las personas el control digital, haciendo que la tecnología sea simple, accesible y fácil de gestionar.",
+      "title": "Hecho cerca de la gente",
+      "subtitle": "Familias, escuelas, comercios de proximidad",
+      "body": "Operador local: servicios útiles, sin convertir tu uso cotidiano en publicidad.",
       "imageAlt": "Personas colaborando con tecnología comunitaria"
     },
     "cloud": {
-      "title": "KM0 Cloud: tu espacio fácil y seguro",
-      "lead": "Exactamente igual de sencillo que las herramientas que ya usas, pero respetuoso con tu vida.",
+      "title": "KM0 Cloud",
+      "lead": "Archivos y colaboración desde el navegador o el móvil, con datos en la UE.",
       "features": [
-        "Sincronización total: accede a tus fotos y archivos desde Android, iOS o tu navegador web",
-        "Colaboración en tiempo real: edita documentos Word, Excel, PowerPoint integrados sin salir de la nube",
-        "Compartir sin límites: comparte enlaces familiares o de trabajo de forma 100% segura"
+        "Sincronización en Android, iOS y web",
+        "Edición de documentos en la nube",
+        "Enlaces para compartir con control de acceso"
       ],
       "imageAlt": "Interfaz de KM0 Cloud con archivos y colaboración"
     },
     "values": {
-      "title": "Los valores que nos guían",
+      "title": "Cómo operamos",
       "items": [
         {
           "title": "Cercano",
-          "body": "Sin contestadores infinitos ni tickets automáticos. Estamos en tu mismo territorio, listos para ayudarte de tú a tú."
+          "body": "Soporte en tu idioma, sin call center anónimo."
         },
         {
           "title": "Transparente",
-          "body": "Nuestras operaciones y tecnologías son abiertas y públicas. No escondemos cláusulas trampa en letra pequeña."
+          "body": "Precio y operaciones visibles; sin letra pequeña de producto."
         },
         {
           "title": "Sostenible",
-          "body": "Un modelo de negocio justo. Cobramos lo que cuesta mantener el servicio de forma limpia."
+          "body": "Cobramos lo necesario para mantener el servicio limpio."
         }
       ]
     },
     "privacy": {
-      "title": "Un compromiso que se puede medir",
-      "lead": "No usamos tus archivos ni correos para publicidad. Una sola vez: no vendemos datos.",
-      "highlight": "Cero datos compartidos"
+      "title": "Privacidad medible",
+      "lead": "No usamos archivos ni correos para publicidad. No vendemos datos.",
+      "highlight": "Cero venta de datos"
     },
     "security": {
-      "title": "La tranquilidad de la máxima seguridad",
+      "title": "Seguridad operativa",
       "items": [
         {
-          "title": "Infraestructura 100% europea",
-          "body": "Tus archivos se almacenan dentro de la Unión Europea, protegidos por el marco legal más estricto del planeta en materia de privacidad (RGPD)."
+          "title": "Infraestructura en la UE",
+          "body": "Datos alojados en la Unión Europea bajo RGPD."
         },
         {
-          "title": "Cifrado y auditoría profesional",
-          "body": "Tus transferencias viajan totalmente protegidas y encriptadas. La gestión interna sigue estándares ISO/IEC para garantizar una seguridad bancaria."
+          "title": "Cifrado en tránsito",
+          "body": "HTTPS/TLS en web y servicios; controles ISO/IEC 27001:2022."
         },
         {
-          "title": "Software ético y libre",
-          "body": "No dependemos de licencias opacas ni de código cerrado. La plataforma es abierta, permitiendo verificar de verdad cómo se trata tu información."
+          "title": "Software verificable",
+          "body": "Plataforma abierta donde tiene sentido auditar el tratamiento."
         }
       ]
     },
     "roadmap": {
-      "title": "Nuestro camino: del inicio a la producción",
+      "title": "Camino",
       "steps": [
         {
-          "title": "Paso 1: Cimientos",
-          "body": "Despliegue inicial de nuestros servidores ultra-seguros bajo nuestro control."
+          "title": "Cimientos",
+          "body": "Servidores bajo control propio."
         },
         {
-          "title": "Paso 2: Lanzamiento",
-          "body": "KM0 Cloud entra en producción. Acceso total web y móviles."
+          "title": "Lanzamiento",
+          "body": "KM0 Cloud en producción (web y móviles)."
         },
         {
-          "title": "Paso 3: Identidad",
-          "body": "Integración de acceso unificado seguro y local."
+          "title": "Identidad",
+          "body": "Acceso unificado local."
         },
         {
-          "title": "Paso 4: El futuro",
-          "body": "Dinos qué servicios necesitas y los implementaremos de inmediato."
+          "title": "Siguiente",
+          "body": "Priorizamos lo que la comunidad pide."
         }
       ]
     },
     "cta": {
-      "title": "¿Listo para el cambio?",
+      "title": "Siguiente paso",
       "lead": "Abre Cloud o escríbenos.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",

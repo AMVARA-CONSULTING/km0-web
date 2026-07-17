@@ -169,10 +169,10 @@
     "whatsappAria": "Obrir el grup de WhatsApp de KM0"
   },
   "ideas": {
-    "metaTitle": "Envia una millora o informa d'un problema - Kilòmetre 0 Digital",
-    "metaDescription": "Un espai per compartir millores, idees o problemes que hagis trobat. L'equip tècnic els revisarà i els atendrà.",
-    "heading": "Envia una millora o informa d'un problema",
-    "intro": "Un espai per compartir millores, idees o problemes que hagis trobat. L'equip tècnic els revisarà i els atendrà.",
+    "metaTitle": "Idees i problemes - Kilòmetre 0 Digital",
+    "metaDescription": "Envia una millora o reporta un problema a km0digital, Cloud o Mail.",
+    "heading": "Enviar una idea o un problema",
+    "intro": "L'equip tècnic ho revisa. Tria el producte i descriu què falta o què falla.",
     "scopeLabel": "Producte",
     "scopeHint": "Si no n'estàs segur, tria km0digital.",
     "scopeOptions": {
@@ -194,7 +194,7 @@
     "metaDescription": "Calendari de trobades i esdeveniments de la comunitat KM0 Digital. Vine a conèixer-nos en persona.",
     "eyebrow": "Comunitat",
     "heading": "Trobades",
-    "intro": "Espais informals per conèixer-nos, compartir idees i parlar de tecnologia comunitària. Consulta el calendari i apunta't als propers esdeveniments.",
+    "intro": "Tria una data al calendari o mira les properes trobades. Vine sense compromís.",
     "calendarTitle": "Calendari",
     "upcomingTitle": "Propers esdeveniments",
     "noUpcoming": "No hi ha esdeveniments programats ara mateix. Torna aviat.",
@@ -244,8 +244,8 @@
       "meta": "500 GB",
       "ariaLabel": "Preu: 1,99 euros al mes per 500 GB d'emmagatzematge"
     },
-    "intro": "Preu públic per a emmagatzematge a la UE. Obre Cloud o demana una proposta a mida.",
-    "heroCta": "Comença a fer-lo servir ja",
+    "intro": "Preu públic, emmagatzematge a la UE. Obre Cloud o demana una proposta a mida.",
+    "heroCta": "Obrir KM0 Cloud",
     "claim": "Fins a 5 vegades més espai que plans bàsics de referència a preu similar.",
     "compareHeading": "Referències orientatives de mercat",
     "compareIntro": "La comparativa mostra referències orientatives de mercat amb plans públics equivalents.",
@@ -300,53 +300,30 @@
       "body": "Infraestructura ajustada i marge suficient per operar, no per maximitzar ingressos per client."
     },
     "trust": {
-      "heading": "Confiança i operació",
+      "heading": "Què inclou el servei",
       "items": [
         {
-          "title": "Còpies de seguretat",
-          "desc": "Estratègia de còpies de seguretat i recuperació documentada per protegir les teves dades davant fallades o incidents."
+          "title": "Dades a la UE",
+          "desc": "Hosting a Alemanya (Hetzner). Tractament principalment a Europa."
         },
         {
-          "title": "Redundància",
-          "desc": "Infraestructura dissenyada amb redundància operativa per mantenir el servei estable i disponible."
-        },
-        {
-          "title": "Privadesa",
-          "desc": "No venem les teves dades per a publicitat ni entrenament de models. Política de privadesa clara i sense lletra petita."
+          "title": "Còpies i recuperació",
+          "desc": "Estratègia de còpies documentada davant fallades o incidents."
         },
         {
           "title": "Suport proper",
-          "desc": "Suport en castellà i català amb persones reals, no un call center anònim a milers de quilòmetres."
+          "desc": "Castellà i català, amb persones reals."
         },
         {
-          "title": "Ubicació de dades",
-          "desc": "Infraestructura a la UE (Alemanya, Hetzner). Les teves dades es processen principalment dins d'Europa."
-        },
-        {
-          "title": "Seguretat i SLA",
-          "desc": "Operat sota controls ISO/IEC 27001:2022 per AMVARA CONSULTING S.L. Consulta la nostra pàgina de seguretat per a més detall."
-        },
-        {
-          "title": "Privacitat",
-          "desc": "No venem dades. Detall a FAQ i a la pàgina legal."
+          "title": "ISO i privacitat",
+          "desc": "Operat sota ISO/IEC 27001:2022. No venem dades; detall a Seguretat i Legal."
         }
       ]
     },
-    "differentiators": {
-      "heading": "Per què KM0",
-      "items": [
-        "Proximitat i suport",
-        "Simplicitat sense ecosistema invasiu",
-        "Proveïdor local i europeu",
-        "Privadesa de sèrie",
-        "Web neta, sense lletra petita",
-        "Preu transparent i sostenible"
-      ]
-    },
     "custom": {
-      "heading": "Necessites una proposta a mida?",
-      "body": "Si la teva organització necessita capacitat, suport o condicions específiques, escriu-nos i prepararem una proposta personalitzada.",
-      "cta": "Sol·licitar proposta custom"
+      "heading": "Proposta a mida",
+      "body": "Si necessites més capacitat, suport o condicions específiques, escriu-nos.",
+      "cta": "Demanar proposta"
     }
   },
   "presentation": {
@@ -354,7 +331,7 @@
     "metaDescription": "Presentació de KM0 Digital: núvol i correu a la UE. Descarrega el PDF.",
     "eyebrow": "Presentació",
     "title": "Núvol i correu a la UE",
-    "lead": "Serveis propers, preu públic, dades a Europa. Descarrega el PDF o torna a l'inici.",
+    "lead": "Cloud i correu a la UE, preu públic. Descarrega el PDF o torna a l’inici.",
     "download": "Descarregar PDF",
     "downloadHint": "Document original (~618 KB)",
     "why": {
@@ -362,102 +339,102 @@
       "body": "Perquè vols fitxers i correu sense que el teu perfil sigui el producte. Som l'operador local."
     },
     "compare": {
-      "title": "El núvol de sempre vs la proposta KM0",
-      "usualTitle": "Les grans empreses",
-      "km0Title": "L'alternativa KM0",
+      "title": "Núvol habitual vs KM0",
+      "usualTitle": "Grans plataformes",
+      "km0Title": "KM0",
       "rows": [
         {
-          "usual": "Les teves dades personals són el producte",
-          "km0": "Zero venda de dades. Privadesa absoluta de sèrie"
+          "usual": "El teu perfil és el producte",
+          "km0": "No venem dades"
         },
         {
-          "usual": "Suport robòtic, fred i a milers de quilòmetres",
-          "km0": "Suport local humà. Parla amb persones reals"
+          "usual": "Suport llunyà o automatitzat",
+          "km0": "Suport local humà"
         },
         {
-          "usual": "Preus abusius sense justificació real de cost",
-          "km0": "Tarifes transparents calculades sobre el cost real"
+          "usual": "Preus opacs",
+          "km0": "Tarifa pública sobre cost real"
         }
       ]
     },
     "community": {
-      "title": "Tecnologia feta per a les persones",
-      "subtitle": "Fet per i per a la comunitat",
-      "body": "KM0 Digital no és un producte corporatiu tancat. És un moviment cooperatiu dissenyat per a famílies, escoles, particulars i comerços de proximitat. La nostra missió és retornar a les persones el control digital, fent que la tecnologia sigui simple, accessible i fàcil de gestionar.",
+      "title": "Fet a prop de la gent",
+      "subtitle": "Famílies, escoles, comerços de proximitat",
+      "body": "Operador local: serveis útils, sense convertir l’ús quotidià en publicitat.",
       "imageAlt": "Persones col·laborant amb tecnologia comunitària"
     },
     "cloud": {
-      "title": "KM0 Cloud: el teu espai fàcil i segur",
-      "lead": "Exactament igual de senzill que les eines que ja fas servir, però respectuós amb la teva vida.",
+      "title": "KM0 Cloud",
+      "lead": "Fitxers i col·laboració des del navegador o el mòbil, amb dades a la UE.",
       "features": [
-        "Sincronització total: accedeix a les teves fotos i fitxers des d'Android, iOS o el teu navegador web",
-        "Col·laboració en temps real: edita documents Word, Excel, PowerPoint integrats sense sortir del núvol",
-        "Compartir sense límits: comparteix enllaços familiars o de feina de forma 100% segura"
+        "Sincronització a Android, iOS i web",
+        "Edició de documents al núvol",
+        "Enllaços per compartir amb control d’accés"
       ],
       "imageAlt": "Interfície de KM0 Cloud amb fitxers i col·laboració"
     },
     "values": {
-      "title": "Els valors que ens guien",
+      "title": "Com operem",
       "items": [
         {
           "title": "Proper",
-          "body": "Sense contestadors infinits ni tiquets automàtics. Som al teu mateix territori, preparats per ajudar-te de tu a tu."
+          "body": "Suport en la teva llengua, sense call center anònim."
         },
         {
           "title": "Transparent",
-          "body": "Les nostres operacions i tecnologies són obertes i públiques. No amaguem clàusules trampa en lletra petita."
+          "body": "Preu i operacions visibles; sense lletra petita de producte."
         },
         {
           "title": "Sostenible",
-          "body": "Un model de negoci just. Cobrem el que costa mantenir el servei de forma neta."
+          "body": "Cobrem el necessari per mantenir el servei net."
         }
       ]
     },
     "privacy": {
-      "title": "Un compromís que es pot mesurar",
-      "lead": "No fem servir els teus fitxers ni correus per a publicitat. Una sola vegada: no venem dades.",
-      "highlight": "Zero dades compartides"
+      "title": "Privacitat mesurable",
+      "lead": "No fem servir fitxers ni correus per a publicitat. No venem dades.",
+      "highlight": "Zero venda de dades"
     },
     "security": {
-      "title": "La tranquil·litat de la màxima seguretat",
+      "title": "Seguretat operativa",
       "items": [
         {
-          "title": "Infraestructura 100% europea",
-          "body": "Els teus fitxers s'emmagatzemen dins de la Unió Europea, protegits pel marc legal més estricte del planeta en matèria de privadesa (RGPD)."
+          "title": "Infraestructura a la UE",
+          "body": "Dades allotjades a la Unió Europea sota RGPD."
         },
         {
-          "title": "Xifrat i auditoria professional",
-          "body": "Les teves transferències viatgen totalment protegides i xifrades. La gestió interna segueix estàndards ISO/IEC per garantir una seguretat bancària."
+          "title": "Xifratge en trànsit",
+          "body": "HTTPS/TLS al web i als serveis; controls ISO/IEC 27001:2022."
         },
         {
-          "title": "Programari ètic i lliure",
-          "body": "No depenem de llicències opaques ni de codi tancat. La plataforma és oberta, permetent verificar de veritat com es tracta la teva informació."
+          "title": "Programari verificable",
+          "body": "Plataforma oberta on té sentit auditar el tractament."
         }
       ]
     },
     "roadmap": {
-      "title": "El nostre camí: de l'inici a la producció",
+      "title": "Camí",
       "steps": [
         {
-          "title": "Pas 1: Fonaments",
-          "body": "Desplegament inicial dels nostres servidors ultra-segurs sota el nostre control."
+          "title": "Fonaments",
+          "body": "Servidors sota control propi."
         },
         {
-          "title": "Pas 2: Llançament",
-          "body": "KM0 Cloud entra en producció. Accés total web i mòbils."
+          "title": "Llançament",
+          "body": "KM0 Cloud en producció (web i mòbils)."
         },
         {
-          "title": "Pas 3: Identitat",
-          "body": "Integració d'accés unificat segur i local."
+          "title": "Identitat",
+          "body": "Accés unificat local."
         },
         {
-          "title": "Pas 4: El futur",
-          "body": "Digues-nos quins serveis necessites i els implementarem de immediat."
+          "title": "Següent",
+          "body": "Prioritzem el que la comunitat demana."
         }
       ]
     },
     "cta": {
-      "title": "Preparat per al canvi?",
+      "title": "Següent pas",
       "lead": "Obre Cloud o escriu-nos.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",

@@ -5,9 +5,9 @@ pubDate: 2026-05-21
 locale: ca
 ---
 
-El dia 0 és de **fonaments**. Sense un sistema operatiu i un entorn de treball reproducibles, qualsevol stack posterior queda fràgil i difícil d'auditar.
+El dia 0 deixa els **fonaments**: Debian reproducible, disc clar, eines a punt per a Docker i una consola documentada. Sense aquesta base, qualsevol stack posterior queda fràgil i difícil d'auditar.
 
-Objectiu del dia: Debian estable, disc ordenat, eines mínimes però suficients, i una consola que convidi a documentar cada canvi.
+Objectiu del dia: un VPS que qualsevol company pugui auditar i reconstruir des de wiki i runbooks, no de memòria.
 
 ## Pla d'arrencada
 
@@ -65,4 +65,4 @@ En acabar, el servidor hauria de ser:
 2. **Repetible:** passos principals enllaçats amb wiki i runbooks
 3. **Llest** per a Docker sense exposar serveis al públic abans d'hora
 
-El **dia 1** materialitza OpenCloud, el virtual host del proxy i la web KM0 amb TLS. Mentrestant, explora els [serveis](/ca/#services) o [escriu-nos](/ca/#contact) si vols col·laborar.
+El **dia 1** materialitza OpenCloud, el virtual host del proxy i la web KM0 amb TLS. Següent pas per a qui llegeixi: [serveis](/ca/#services) o [contacte](/ca/#contact).

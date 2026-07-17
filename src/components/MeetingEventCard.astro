@@ -63,11 +63,14 @@ function formatDate(isoDate: string): string {
 
 <style>
   .meeting-event-card {
-    padding: 1.5rem 1.625rem;
-    border: 1px solid rgb(15 23 42 / 0.1);
-    border-radius: 1rem;
-    background: #fff;
-    box-shadow: 0 8px 24px rgb(15 23 42 / 0.05);
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-mist);
+    background: transparent;
+  }
+
+  .meeting-event-card:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
   }
 
   .meeting-event-card-meta {
@@ -75,30 +78,27 @@ function formatDate(isoDate: string): string {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.625rem 1rem;
-    margin-bottom: 0.875rem;
+    margin-bottom: 0.75rem;
+    font-family: theme('fontFamily.sans');
     font-size: 0.875rem;
-    color: rgb(15 23 42 / 0.62);
+    color: var(--color-ink-muted);
   }
 
   .meeting-event-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.2rem 0.65rem;
-    border-radius: 9999px;
-    background: linear-gradient(90deg, rgb(15 118 110 / 0.12), rgb(13 148 136 / 0.12));
-    color: #0b1220;
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: var(--color-signal);
   }
 
   .meeting-event-card-title {
     margin: 0 0 1rem;
-    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
     line-height: 1.3;
-    font-weight: 700;
-    color: #0b1220;
+    font-weight: 600;
+    color: var(--color-ink);
   }
 
   .meeting-event-card-details {
@@ -113,27 +113,28 @@ function formatDate(isoDate: string): string {
   }
 
   .meeting-event-card-details dt {
+    font-family: theme('fontFamily.sans');
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgb(15 23 42 / 0.5);
+    color: var(--color-ink-muted);
   }
 
   .meeting-event-card-details dd {
     margin: 0;
     line-height: 1.55;
-    color: #334155;
+    color: var(--color-ink-muted);
   }
 
   .meeting-event-card-details a {
-    color: #0b1220;
+    color: var(--color-ink);
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 0.15em;
   }
 
   .meeting-event-card-details a:hover {
-    color: rgb(15 23 42 / 0.72);
+    color: var(--color-signal);
   }
 </style>

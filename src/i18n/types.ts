@@ -205,10 +205,6 @@ export interface Messages {
         desc: string;
       }[];
     };
-    differentiators: {
-      heading: string;
-      items: string[];
-    };
     custom: {
       heading: string;
       body: string;

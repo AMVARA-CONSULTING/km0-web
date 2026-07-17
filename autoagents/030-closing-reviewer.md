@@ -33,6 +33,7 @@ You do **not** implement code or run tests.
 - **`./scripts/git-sync-main.sh`** before edits.
 - **GitHub:** the loop runs `sync_github_from_tasks.py closed` after this step (comment + close). **Redmine:** `move-agent-task-to-done.sh` posts a completion note via `redmine_sync.py` when configured.
 - If the CLOSED task was UI/copy: skim the diff for **anti-slop regressions** (Inter-only, purple/indigo brand gradients, centered SaaS hero, icon-tile feature grids). If present, do **not** archive - leave a note in the summary and rename back toward WIP via human/operator.
+- If the CLOSED task is **craft parity** (`docs/design/craft-parity-phase.md`, Stirling/Satisfecho hard parity, optional dark theme): Test report must include **side-by-side parity claims** (Hard gate protocol). If the pass rests only on class names, section order, locales, or build green - **do not archive**; rename toward WIP and note “soft pass rejected”.
 
 ### Instructions
 

@@ -36,6 +36,15 @@ Adhere to **`autoagents/TASKS-README.md`**.
 5. **i18n:** confirm locale switcher paths and `hreflang` if SEO-related.
 6. Collect evidence from **`docker logs km0-web`** for the UTC window.
 
+### Craft / UI parity (mandatory when FEAT says so)
+
+If the task references **`docs/design/craft-parity-phase.md`**, Stirling, Satisfecho, dark theme, or “hard parity”:
+
+- **Class-only / section-order-only evidence = FAIL.** curl 200 + “no purple” is not enough.
+- Test report **must** include the **Hard gate protocol**: reference URL(s), KM0 URL(s), **3 parity claims** a non-dev would notice, **3 anti-slop claims**, and decisive viewport evidence.
+- Open [https://stirling.com/](https://stirling.com/) and/or [https://satisfecho.de/](https://satisfecho.de/) in the same session when the FEAT names them.
+- For optional dark theme: verify light default, toggle, `prefers-color-scheme`, persistence, and reading pages (`/doc/`, `/tutorials/`).
+
 ### Production verification
 
 Do **not** rely on fixed sleeps. Poll **`https://km0digital.com/`** (and affected paths) until **200** after deploy, or wait for explicit confirmation. Document **how** you knew the site was ready.

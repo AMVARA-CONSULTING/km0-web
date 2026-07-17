@@ -28,6 +28,7 @@ KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→b
 | **`docs/design/reference-study-stirling-satisfecho-nous.md`** | Steal structure from Stirling (scale bands, continuous canvas), Satisfecho (live product proof), Nous (memorable mark + no zebra). Not pixels or fonts. |
 | **`docs/design/remodel-epic.md`** | Phase 1 + phase 2 + paint phase issue map (#73–#95). Locked product decisions. |
 | **`docs/design/stirling-paint-phase.md`** | Paint-phase craft: surface utilities, sticky/reveal motion vocabulary, secondary page chrome. Steal scroll behavior from [Stirling](https://stirling.com/), not Framer pixels. |
+| **`docs/design/craft-parity-phase.md`** | **Hard** craft bar after paint: side-by-side parity with Stirling/Satisfecho, optional dark theme, live product proof, no class-only soft passes. |
 
 ### Writing / psychology of reading
 
@@ -52,7 +53,7 @@ If any of these ship, the task fails review:
 8. **`rounded-full` pill CTAs everywhere** as the only button shape.
 9. **Glassmorphic sticky AI-nav** (wordmark left, links center, CTA right, hairline border) without a genre-specific alternative.
 10. **Emoji as UI icons** or sparkle badges.
-11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; default dark-mode-first marketing pages.
+11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; **default dark-mode-first** marketing pages. **Optional** dark theme (user toggle + `prefers-color-scheme`, light Paper default) is allowed and expected in the craft-parity phase - see `docs/design/craft-parity-phase.md`. Forbidden in dark: purple glow, neon orbs, Nous underground as the only voice.
 12. **Zebra section rhythm** - automatic alternating Paper/Snow (or white/gray) bands via `nth-child` or equivalent (`main:has(#home) > section…` patterns). Default is continuous Paper; surfaces opt in explicitly (e.g. Contact `bg-snow`). Stirling / Nous pattern.
 13. **Generic map-pin as sole brand mark** (especially identical logo + favicon with huge empty padding, or purple-era gradient pins). Do not revert to a pin stem clone.
 

@@ -1,5 +1,10 @@
 # Stirling-inspired site paint (phase)
 
+**Status:** shipped #91–#94; agent doctrine encoded by #95.  
+Epic table: `docs/design/remodel-epic.md` (Paint phase).  
+Doctrine: `docs/design/anti-slop-doctrine.md` (Paint-phase locks).  
+Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md`.
+
 Reference: https://stirling.com/ (+ Features, Pricing, About, Contact). Steal **professional craft and scroll behavior**, not Framer pixels or their purple-free-but-SaaS-generic defaults that conflict with KM0 tokens.
 
 ## What Stirling does well
@@ -64,3 +69,13 @@ No zebra; no `mailto:`; Presentation hero uses Origin motif (not a one-off grid)
 - Cloning Stirling PDF product UI
 - Fake Fortune-500-style claims
 - Rewriting all blog day prose
+
+## Agent training
+
+Closing reviewers and coders treat paint-phase regressions as auto-fails:
+
+- Zebra / automatic Paper↔Snow stripes
+- Motion spam outside the reveal + masthead compact + Offer pin vocabulary
+- Secondary pages that invent chrome instead of `.page-shell` / `.page-masthead` / `.page-closer`
+
+Canonical locks live in `docs/design/anti-slop-doctrine.md` and the skill table.

@@ -9,7 +9,7 @@ description: >-
 
 # KM0 anti-slop design
 
-Read **`docs/design/anti-slop-doctrine.md`** first. Then **`docs/brand-tokens.md`**, **`docs/design/reference-study-stirling-satisfecho-nous.md`**, and **`docs/design/lessons-from-pos.md`**.
+Read **`docs/design/anti-slop-doctrine.md`** first. Then **`docs/brand-tokens.md`**, **`docs/design/reference-study-stirling-satisfecho-nous.md`**, **`docs/design/stirling-paint-phase.md`**, and **`docs/design/lessons-from-pos.md`**.
 
 ## When this skill applies
 
@@ -39,6 +39,20 @@ From the Stirling / Satisfecho / Nous study and remodel #80–#84:
 | Bands | Audience/scale argument when needed | Equal icon-tile feature grids |
 | Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2) | Glow orbs, purple bloom, zebra as “texture” |
 
+## Paint-phase locks (auto-fail if ignored)
+
+From `docs/design/stirling-paint-phase.md` and remodel #91–#94 (encoded #95):
+
+| Lock | Do | Do not |
+|------|----|--------|
+| Surfaces | `.surface-snow` / `.surface-ink` / `.surface-band` when a band is earned; `.page-shell` continuous Paper | Zebra via `nth-child` or decorative alternating backgrounds |
+| Reveal | `[data-reveal]` once via `scroll-reveal.ts`; expo ease; auto-stagger | Bounce, multi-lib animation kits, reveal on every tiny element |
+| Sticky | Masthead compact on scroll (Snow + hairline); Offer `offer__pin` on `lg+`; reading TOC sticky as chrome | Glassmorphic sticky AI-nav; extra sticky gadgets / progress bars |
+| Motion budget | ≤3 sitewide moments beyond quiet chrome; honor `prefers-reduced-motion` | Parallax spam, scroll toys, animation without a job |
+| Secondary chrome | `.page-masthead` + `.page-closer` shared patterns; light reveals | One-off page grids that fight Origin motif / tokens |
+
+Surface + motion token tables: `docs/brand-tokens.md` (Surfaces, Motion). CSS: `src/styles/tokens.css`, `src/styles/global.css`.
+
 ## Implementation rules
 
 - Prefer CSS variables in `tokens.css`; map sparingly into Tailwind `theme.extend`.
@@ -46,17 +60,19 @@ From the Stirling / Satisfecho / Nous study and remodel #80–#84:
 - First viewport: brand + one headline + one support line + one CTA group + one dominant visual. Nothing else.
 - No cards in the hero. No icon-tile feature grids. No fake stats.
 - Sections: one job each. Collapse redundant Vision/Mission/Values/Meaning/Privacy blocks when remodeling IA.
-- Motion: 2–3 intentional moments max; honor `prefers-reduced-motion`.
+- Motion: paint-phase vocabulary only (reveals + masthead compact + Offer pin); honor `prefers-reduced-motion`.
 - Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
 - Mark system: keep logo / favicon / apple-touch / OG aligned with `docs/brand-tokens.md` Assets. Favicon stays edge-to-edge.
+- Surfaces: continuous Paper; elevating a band means an explicit `.surface-*` (or documented Snow opt-in), never zebra.
 
 ## Self-audit before done
 
-Run mentally against the doctrine **Hard ban list** and **Phase-2 locks**. If any item matches, rewrite.
+Run mentally against the doctrine **Hard ban list**, **Phase-2 locks**, and **Paint-phase locks**. If any item matches, rewrite.
 
 ## References
 
 - Doctrine: `docs/design/anti-slop-doctrine.md`
+- Paint phase: `docs/design/stirling-paint-phase.md`
 - Phase-2 study: `docs/design/reference-study-stirling-satisfecho-nous.md`
 - Epic: `docs/design/remodel-epic.md`
 - Tokens: `docs/brand-tokens.md`

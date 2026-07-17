@@ -6,7 +6,7 @@
 
 LLMs converge on the same frontend because training data is saturated with Tailwind demos, shadcn starters, and “modern SaaS” boilerplates. That median look has a name: **AI slop**.
 
-KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero. Phase 1 exited that look (tokens, IA, landing, copy, blog chrome). Phase 2 locked rhythm, mark, hero proof, argument bands, and atmosphere so agents do not regress to zebra stripes or a generic map-pin favicon.
+KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero. Phase 1 exited that look (tokens, IA, landing, copy, blog chrome). Phase 2 locked rhythm, mark, hero proof, argument bands, and atmosphere so agents do not regress to zebra stripes or a generic map-pin favicon. The **paint phase** (#91–#95) locked Stirling-inspired surface utilities, scroll reveals, sticky chrome, and secondary page shells so zebra and motion spam do not return.
 
 ## Primary references (read before implementing)
 
@@ -26,7 +26,8 @@ KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→b
 | Source | Why it matters |
 |--------|----------------|
 | **`docs/design/reference-study-stirling-satisfecho-nous.md`** | Steal structure from Stirling (scale bands, continuous canvas), Satisfecho (live product proof), Nous (memorable mark + no zebra). Not pixels or fonts. |
-| **`docs/design/remodel-epic.md`** | Phase 1 + phase 2 issue map (#73–#85). Locked product decisions. |
+| **`docs/design/remodel-epic.md`** | Phase 1 + phase 2 + paint phase issue map (#73–#95). Locked product decisions. |
+| **`docs/design/stirling-paint-phase.md`** | Paint-phase craft: surface utilities, sticky/reveal motion vocabulary, secondary page chrome. Steal scroll behavior from [Stirling](https://stirling.com/), not Framer pixels. |
 
 ### Writing / psychology of reading
 
@@ -89,6 +90,29 @@ Locked **Origin stamp** (see `docs/brand-tokens.md` Assets):
 - **Origin field** only: `.km0-motif` / `.km0-motif--origin` (quiet grid + grain + optional biased kilometer-zero geometry).
 - Apply sparingly: hero + ≤2 bands. Never glow orbs, never purple bloom as brand atmosphere.
 
+## Paint-phase locks (do not regress)
+
+Shipped under remodel epic #91–#94; encoded by #95. Spec: `docs/design/stirling-paint-phase.md`. Tokens: `docs/brand-tokens.md` Surfaces + Motion.
+
+### Surfaces (#91)
+
+- Default canvas is continuous **Paper** (body / `.page-shell`). Elevations opt in: `.surface-snow`, `.surface-ink`, `.surface-band`.
+- Never reintroduce `nth-child` (or equivalent) Paper/Snow zebra. Intentional full-bleed bands only.
+- Section rhythm uses `--space-section-*` / `.section-pad`, not alternating backgrounds for decoration.
+
+### Motion (#92)
+
+- One orchestrated system: `src/styles/tokens.css` + `src/scripts/scroll-reveal.ts`.
+- Allowed sitewide moments (cap): (1) `[data-reveal]` / `.reveal` entrances once with expo ease, (2) masthead compact on scroll (solid Snow + hairline, no glass blur), (3) home Offer sticky pin (`offer__pin`) on `lg+`. Reading TOC sticky is chrome, not a vanity animation.
+- Do not add bounce, parallax spam, progress bars, or extra scroll toys unless a later FEAT asks.
+- Always honor `prefers-reduced-motion`: reveals visible immediately; chrome transitions off.
+
+### Landing + secondary chrome (#93 / #94)
+
+- Landing keeps product proof + scale/argument energy; no centered SaaS hero recipe, no icon-tile grids.
+- Secondary pages share `.page-shell`, `.page-masthead`, `.page-closer` (+ `__actions`); light `data-reveal` on mastheads/bands only.
+- Snow only where earned (Pricing/Presentation compare + closer; Ideas form). Presentation hero uses Origin motif, not a one-off grid.
+
 ## Positive rules (must do)
 
 1. **Commit a direction** before pixels: one sentence of vibe + one layout archetype + one type pair + one anchor hue + one accent (accent ≤ ~5% of surface). Cool civic editorial is locked in `docs/brand-tokens.md`.
@@ -97,9 +121,10 @@ Locked **Origin stamp** (see `docs/brand-tokens.md` Assets):
 4. **Type pairing:** display face ≠ body face (Bricolage + Source Serif 4). Extreme weight contrast beats timid 400/600.
 5. **One job per section:** one purpose, one headline, usually one short support line. No cards in the hero. Cards only when they contain an interaction.
 6. **Atmosphere without slop:** Origin field motif only; continuous Paper elsewhere. Gradients/patterns/imagery must show place, product, or community - not abstract purple blobs or glow orbs.
-7. **Motion with purpose:** 2–3 intentional moments; exponential ease-out; always respect `prefers-reduced-motion`.
+7. **Motion with purpose:** paint-phase vocabulary only (reveals + masthead compact + Offer pin); expo ease-out; always respect `prefers-reduced-motion`. No animation spam.
 8. **Voice:** concrete, local, honest. Prefer facts over slogans. LLMs must rewrite toward clarity, not toward more adjectives.
 9. **Mark system:** reuse the Origin stamp assets; do not invent a second logo language per page.
+10. **Surfaces:** continuous Paper; opt into `.surface-*` / intentional Snow-Ink bands. Never zebra.
 
 ## KM0-specific reading of the brand
 
@@ -117,11 +142,12 @@ New and migrated `/doc/` posts follow **`docs/design/blog-post-template.md`** (M
 
 ## Agent enforcement
 
-- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study on UI work)
+- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study and paint-phase spec on UI work)
 - Skill: `.cursor/skills/km0-web-copy/SKILL.md`
 - Rules: `.cursor/rules/anti-slop-frontend.mdc`, `.cursor/rules/web-copy.mdc`
 - Tokens: `docs/brand-tokens.md` + `src/styles/tokens.css`
 - Study: `docs/design/reference-study-stirling-satisfecho-nous.md`
+- Paint phase: `docs/design/stirling-paint-phase.md`
 - Epic: `docs/design/remodel-epic.md`
 - Blog prose contract: `docs/design/blog-post-template.md`
-- Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions (including zebra + pin-favicon rollbacks)
+- Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions (including zebra, pin-favicon rollbacks, and motion spam)

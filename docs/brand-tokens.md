@@ -26,7 +26,7 @@
 
 ## Surfaces (opt-in only)
 
-Default page canvas is **Paper**. Elevations are explicit classes - never `nth-child` zebra.
+Default page canvas is **Paper**. Elevations are explicit classes - never `nth-child` zebra. Paint-phase locks: `docs/design/anti-slop-doctrine.md` + `docs/design/stirling-paint-phase.md`.
 
 | Utility | Token | When |
 |---------|-------|------|
@@ -49,7 +49,7 @@ Spacing rhythm: `--space-section-y` / `--space-section-x` drive `.section-pad` a
 
 ## Motion
 
-Orchestrated in `src/styles/tokens.css` + `src/scripts/scroll-reveal.ts` (Stirling paint #92).
+Orchestrated in `src/styles/tokens.css` + `src/scripts/scroll-reveal.ts` (Stirling paint #92). Agent vocabulary: `docs/design/stirling-paint-phase.md` Motion; doctrine Paint-phase locks.
 
 | Token | Role |
 |-------|------|

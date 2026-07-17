@@ -25,7 +25,7 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 | 3 | [#82](https://github.com/AMVARA-CONSULTING/km0-web/issues/82) | `CLOSED-82-…-hero-product-proof-2` | Hero product proof 2.0 | closed |
 | 4 | [#83](https://github.com/AMVARA-CONSULTING/km0-web/issues/83) | `CLOSED-83-…-audience-scale-argument-bands` | Audience/scale argument bands | closed |
 | 5 | [#84](https://github.com/AMVARA-CONSULTING/km0-web/issues/84) | `CLOSED-84-…-km0-signature-atmosphere` | Signature atmosphere (anti-orb) | closed |
-| 6 | [#85](https://github.com/AMVARA-CONSULTING/km0-web/issues/85) | `…-encode-phase2-reference-study` | Encode study into doctrine/skills | this task |
+| 6 | [#85](https://github.com/AMVARA-CONSULTING/km0-web/issues/85) | `CLOSED-85-…-encode-phase2-reference-study` | Encode study into doctrine/skills | closed |
 
 **Actual run order:** 80 → 81 → 82 → 84 → 83 → 85 (encode last so doctrine matches shipped locks).
 
@@ -34,12 +34,15 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 - **Design:** cool civic editorial - `docs/brand-tokens.md`
 - **CTA primary:** Open KM0 Cloud; secondary text → Pricing
 - **User counter:** sacred; readapt, never remove
-- **No zebra:** continuous canvas + intentional bands only (phase 2 #80)
+- **No zebra:** continuous canvas + intentional bands only (phase 2 #80; paint #91)
 - **Mark:** Origin stamp; full-bleed favicon; no map-pin clone (phase 2 #81)
 - **Hero proof:** product-recognizable visual (phase 2 #82)
 - **Argument bands:** audience/scale, not icon tiles (phase 2 #83)
 - **Atmosphere:** Origin field `.km0-motif` only; no glow orbs (phase 2 #84)
-- **Agent training:** doctrine + skill point at the phase-2 study (phase 2 #85)
+- **Agent training:** doctrine + skill point at the phase-2 study (phase 2 #85) and paint-phase spec (#95)
+- **Surfaces:** `.surface-snow` / `.surface-ink` / `.surface-band` opt-in only (paint #91)
+- **Motion:** reveals + masthead compact + Offer sticky pin; no animation spam (paint #92)
+- **Secondary chrome:** `.page-shell` / `.page-masthead` / `.page-closer` (paint #94)
 - **IA map:** `docs/design/ia-map.md`
 - **POS lessons:** `docs/design/lessons-from-pos.md`
 - **Blog post template:** `docs/design/blog-post-template.md`
@@ -69,15 +72,19 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 |-------|--------|
 | [#89](https://github.com/AMVARA-CONSULTING/km0-web/issues/89) | Blog + tutorials CSS/chrome from zero (`blog-tutorials-ground-up-v2.md`) |
 
-## Paint phase (Stirling-inspired)
+## Paint phase (closed) - Stirling-inspired craft
 
-Spec: `docs/design/stirling-paint-phase.md` - https://stirling.com/
+Spec: **`docs/design/stirling-paint-phase.md`** - https://stirling.com/  
+Doctrine locks: **`docs/design/anti-slop-doctrine.md`** (Paint-phase locks)  
+Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`** (Paint-phase locks table)
 
-| Order | Issue | Intent |
-|------:|-------|--------|
-| 1 | [#91](https://github.com/AMVARA-CONSULTING/km0-web/issues/91) | Professional surfaces, no zebra |
-| 2 | [#92](https://github.com/AMVARA-CONSULTING/km0-web/issues/92) | Motion: reveals + sticky-while-scroll |
-| 3 | [#93](https://github.com/AMVARA-CONSULTING/km0-web/issues/93) | Landing restyle |
-| 4 | [#94](https://github.com/AMVARA-CONSULTING/km0-web/issues/94) | Secondary pages paint |
-| 5 | [#95](https://github.com/AMVARA-CONSULTING/km0-web/issues/95) | Encode into doctrine/skills |
+| Order | Issue | FEAT | Intent | Status |
+|------:|-------|------|--------|--------|
+| 1 | [#91](https://github.com/AMVARA-CONSULTING/km0-web/issues/91) | `CLOSED-91-…-stirling-surfaces-no-zebra` | Professional surfaces, no zebra | closed |
+| 2 | [#92](https://github.com/AMVARA-CONSULTING/km0-web/issues/92) | `CLOSED-92-…-stirling-motion-sticky-scroll` | Motion: reveals + sticky-while-scroll | closed |
+| 3 | [#93](https://github.com/AMVARA-CONSULTING/km0-web/issues/93) | `CLOSED-93-…-stirling-landing-repaint` | Landing restyle | closed |
+| 4 | [#94](https://github.com/AMVARA-CONSULTING/km0-web/issues/94) | `CLOSED-94-…-stirling-secondary-pages-paint` | Secondary pages paint | closed |
+| 5 | [#95](https://github.com/AMVARA-CONSULTING/km0-web/issues/95) | `…-encode-stirling-paint-doctrine` | Encode paint + motion into doctrine/skills | this task |
+
+**Actual run order:** 91 → 92 → 93 → 94 → 95 (encode last so doctrine matches shipped locks).
 

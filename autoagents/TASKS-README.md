@@ -50,3 +50,7 @@ When Redmine is configured (`REDMINE_API_KEY`, `REDMINE_ISSUE_ID` in `autoagents
 - **untested → testing** when tester starts.
 - **testing → closed** on pass; **testing → wip** on fail.
 - **closed → done/** after closing summary (move script).
+
+## Remodel epic (anti-slop)
+
+Operator FEATs for the brutal design/copy remodel are queued as **`FEAT-0-20260717-*.md`**. Order and scope: **`docs/design/remodel-epic.md`**. Doctrine: **`docs/design/anti-slop-doctrine.md`**. Run **in sequence**; skip GitHub issue sync while number is `none`.

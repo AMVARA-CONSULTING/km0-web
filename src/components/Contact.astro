@@ -10,46 +10,88 @@ const { messages: m } = Astro.props;
 const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
 ---
 
-<section id="contact" class="section-pad bg-white">
-  <div class="mx-auto max-w-2xl text-center">
-    <p data-reveal class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
-      {m.contact.eyebrow}
-    </p>
-    <h2 data-reveal data-delay="80" class="heading-section mb-8 text-navy">
-      {m.contact.heading}
-    </h2>
-    <p data-reveal data-delay="160" class="mb-10 text-lg text-navy/60">
-      {m.contact.body}
-    </p>
-    <a
-      data-reveal
-      data-delay="240"
-      href={`mailto:${m.contact.email}`}
-      class="btn-primary"
-    >
-      {m.contact.email}
-    </a>
-    <div data-reveal data-delay="320" class="mt-12 border-t border-navy/10 pt-10">
-      <p class="mb-4 text-sm font-medium text-navy/60">{m.contact.whatsappLabel}</p>
-      <a
-        href={WHATSAPP_GROUP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group inline-block rounded-2xl border border-navy/10 bg-surface p-4 shadow-sm transition-all hover:border-navy/25 hover:shadow-md"
-        aria-label={m.contact.whatsappAria}
-      >
-        <p class="mb-3 text-sm font-medium text-navy/50 transition-colors group-hover:text-navy/80">
-          {m.contact.whatsappHint}
-        </p>
-        <img
-          src="/contact/whatsapp-group-qr.png"
-          alt={m.contact.whatsappQrAlt}
-          width="200"
-          height="200"
-          class="mx-auto block"
-          loading="lazy"
-        />
+<section id="contact" class="section-pad contact" aria-labelledby="contact-heading">
+  <div class="mx-auto max-w-6xl">
+    <div class="contact__inner">
+      <header data-reveal>
+        <h2 id="contact-heading" class="heading-section text-navy">
+          {m.contact.heading}
+        </h2>
+        <p class="contact__body">{m.contact.body}</p>
+      </header>
+      <a data-reveal data-delay="80" href={`mailto:${m.contact.email}`} class="btn-primary">
+        {m.contact.email}
       </a>
+      <div data-reveal data-delay="160" class="contact__whatsapp">
+        <p class="contact__whatsapp-label">{m.contact.whatsappLabel}</p>
+        <a
+          href={WHATSAPP_GROUP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact__qr"
+          aria-label={m.contact.whatsappAria}
+        >
+          <p class="contact__qr-hint">{m.contact.whatsappHint}</p>
+          <img
+            src="/contact/whatsapp-group-qr.png"
+            alt={m.contact.whatsappQrAlt}
+            width="180"
+            height="180"
+            class="contact__qr-img"
+            loading="lazy"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .contact__inner {
+    max-width: 32rem;
+  }
+
+  .contact__body {
+    margin: 1rem 0 1.75rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--color-ink) 65%, transparent);
+  }
+
+  .contact__whatsapp {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-mist);
+  }
+
+  .contact__whatsapp-label {
+    margin: 0 0 0.75rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--color-ink) 60%, transparent);
+  }
+
+  .contact__qr {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .contact__qr:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
+  }
+
+  .contact__qr-hint {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    color: color-mix(in srgb, var(--color-ink) 50%, transparent);
+  }
+
+  .contact__qr-img {
+    display: block;
+    border: 1px solid var(--color-mist);
+    background: var(--color-snow);
+  }
+</style>

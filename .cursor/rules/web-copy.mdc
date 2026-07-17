@@ -1,0 +1,15 @@
+---
+description: Concise scannable objective copy for km0-web i18n and content.
+globs: src/i18n/**/*.json,src/content/**/*.{md,mdx},src/components/**/*.astro,src/views/**/*.astro
+alwaysApply: false
+---
+
+# Web copy
+
+Follow **`.cursor/skills/km0-web-copy/SKILL.md`**.
+
+- Scan-first, half the words, no marketese
+- One idea per paragraph; no repeated privacy/ISO sermons across sections
+- Meaningful headings; inverted pyramid
+- No U+2014 em dashes
+- Prefer deleting a redundant section over polishing it

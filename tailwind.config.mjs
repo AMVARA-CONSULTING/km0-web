@@ -4,18 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
+        ink: '#0B1220',
+        paper: '#EEF0F2',
+        snow: '#FFFFFF',
+        mist: '#D8DCE0',
+        signal: {
+          DEFAULT: '#0F766E',
+          hover: '#0D9488',
+        },
+        /* Legacy aliases - same hex as ink / paper */
         navy: '#0B1220',
-        surface: '#F5F5F7',
+        surface: '#EEF0F2',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-      },
-      backgroundImage: {
-        'brand-gradient':
-          'linear-gradient(135deg, #FF5F2E 0%, #E040A0 35%, #7B3FE4 65%, #007BFF 100%)',
+        display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        body: ['"Source Serif 4"', 'Georgia', 'serif'],
+        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
       },
       transitionTimingFunction: {
-        apple: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+        apple: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        outExpo: 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },

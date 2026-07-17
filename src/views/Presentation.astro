@@ -298,18 +298,19 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     justify-content: center;
     min-height: 2.75rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    background: linear-gradient(90deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 70%, #007bff 100%);
+    border-radius: 0.375rem;
+    background: #0f766e;
     color: #fff;
     font-size: 0.9375rem;
     font-weight: 600;
     text-decoration: none;
     box-shadow: 0 10px 24px rgb(0 0 0 / 0.22);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
 
   .download-button:hover {
     transform: translateY(-1px);
+    background: #0d9488;
     box-shadow: 0 14px 28px rgb(0 0 0 / 0.28);
   }
 
@@ -495,10 +496,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     line-height: 1.1;
     font-weight: 800;
     letter-spacing: -0.03em;
-    background: linear-gradient(90deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 70%, #007bff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #0f766e;
   }
 
   .presentation-security-list,

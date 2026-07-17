@@ -7,11 +7,6 @@ export const localeBcp47: Record<Locale, string> = {
   de: 'de',
 };
 
-export interface MeaningItemJSON {
-  title: string;
-  desc: string;
-}
-
 export interface Messages {
   meta: {
     title: string;
@@ -19,7 +14,7 @@ export interface Messages {
   };
   brandName: string;
   brandNameShort: string;
-  /** Wordmark: before the gradient “0” and after */
+  /** Wordmark: before the accent “0” and after */
   brandMark: {
     before: string;
     after: string;
@@ -27,11 +22,8 @@ export interface Messages {
   nav: {
     home: string;
     vision: string;
-    values: string;
     community: string;
     services: string;
-    meaning: string;
-    mission: string;
     blog: string;
     ideas: string;
     meeting: string;
@@ -47,7 +39,6 @@ export interface Messages {
     servicesLauncherTitle: string;
   };
   vision: {
-    eyebrow: string;
     headingBefore: string;
     headingAccent: string;
     headingAfter: string;
@@ -60,38 +51,20 @@ export interface Messages {
       title: string;
       items: string[];
     };
-    blogCta: string;
   };
   community: {
-    eyebrow: string;
     heading: string;
     intro: string;
-    audiences: string[];
-    humanNote: string;
-    ctaPrimary: string;
-    ctaExplore: string;
   };
   hero: {
-    eyebrow: string;
     titleLine1: string;
     titleGradient: string;
     tagline: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    scrollToCloud: string;
     logoAlt: string;
-    laptopAlt: string;
-    mobileAlt: string;
-  };
-  values: {
-    eyebrow: string;
-    headingBefore: string;
-    headingAccent: string;
-    headingAfter: string;
-    chips: string[];
   };
   services: {
-    eyebrow: string;
     headingBefore: string;
     headingAccent: string;
     headingAfter: string;
@@ -148,28 +121,7 @@ export interface Messages {
     nextTutorial: string;
     relatedTutorials: string;
   };
-  meaning: {
-    eyebrow: string;
-    heading: string;
-    items: MeaningItemJSON[];
-  };
-  mission: {
-    eyebrow: string;
-    heading: string;
-    body: string;
-  };
-  privacyTrust: {
-    eyebrow: string;
-    heading: string;
-    body: string;
-  };
-  merch: {
-    eyebrow: string;
-    headingBefore: string;
-    headingGradient: string;
-  };
   faq: {
-    eyebrow: string;
     heading: string;
     items: {
       id: string;
@@ -178,7 +130,6 @@ export interface Messages {
     }[];
   };
   contact: {
-    eyebrow: string;
     heading: string;
     body: string;
     email: string;
@@ -209,7 +160,6 @@ export interface Messages {
     charCount: string;
   };
   cloudUsers: {
-    eyebrow: string;
     countLabel: string;
     countAria: string;
     unavailable: string;

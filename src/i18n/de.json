@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "km0digital - Kilometer 0 Digital",
-    "description": "km0digital.com ist eine privacy-first Gemeinschaftsbewegung für digitale Souveränität. EU-gehostete Cloud- und Mail-Services. Wir verkaufen Ihre Daten nicht und erstellen keine Werbeprofile."
+    "title": "Kilometer 0 Digital - Cloud und E-Mail in der EU",
+    "description": "KM0 Cloud und KM0 Email gehostet in der EU. 500 GB ab 1,99 €/Monat. Wir verkaufen kein Profil."
   },
   "brandName": "Kilometer 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -12,11 +12,8 @@
   "nav": {
     "home": "Start",
     "vision": "Warum",
-    "values": "Werte",
     "community": "Gemeinschaft",
     "services": "Services",
-    "meaning": "Bedeutung",
-    "mission": "Mission",
     "blog": "Blog",
     "ideas": "Ideen",
     "meeting": "Treffen",
@@ -32,79 +29,48 @@
     "servicesLauncherTitle": "KM0-Services"
   },
   "hero": {
-    "eyebrow": "Gemeinschaftliche Digitalbewegung",
-    "titleLine1": "DIGITALE ",
-    "titleGradient": "KONTROLLE ZURÜCK.",
-    "tagline": "Eine soziale und technologische Bewegung, von und für die Gemeinschaft, kein weiterer Anbieter.",
-    "ctaPrimary": "Erfahren Sie, warum wir existieren",
-    "ctaSecondary": "Der Bewegung beitreten",
-    "scrollToCloud": "Zu den KM0-Cloud-Services scrollen",
-    "logoAlt": "Kilometer 0 Digital Logo",
-    "laptopAlt": "Kilometer 0 Digital auf dem Laptop",
-    "mobileAlt": "Kilometer 0 Digital auf dem Smartphone"
+    "titleLine1": "Cloud und E-Mail ",
+    "titleGradient": "in der EU.",
+    "tagline": "500 GB ab 1,99 €/Monat. Nah betrieben. Ohne Verkauf deines Profils.",
+    "ctaPrimary": "KM0 Cloud öffnen",
+    "ctaSecondary": "Preise",
+    "logoAlt": "Logo Kilometer 0 Digital"
   },
   "vision": {
-    "eyebrow": "Warum wir existieren",
-    "headingBefore": "Eine ",
-    "headingAccent": "echte",
-    "headingAfter": " Alternative zum Üblichen",
-    "intro": "Wesentliche Technologie sollte nicht von wenigen fernen Giganten abhängen. KM0 Digital schlägt einen anderen Weg vor.",
+    "headingBefore": "Warum ",
+    "headingAccent": "KM0",
+    "headingAfter": "",
+    "intro": "Weniger Slogans. Mehr Fakten: Dateien und Mail auf europäischen Servern, mit echten Menschen dahinter.",
     "usual": {
-      "title": "Das Übliche",
+      "title": "Der übliche Weg",
       "items": [
-        "Ihre Daten als Produkt",
-        "Anonymer, distanzierter Support",
-        "Preise, die die echten Kosten nicht widerspiegeln",
-        "Totale Abhängigkeit von wenigen Anbietern"
+        "Deine Daten finanzieren Werbung",
+        "Ferner oder automatisierter Support",
+        "Undurchsichtige Preise",
+        "Abhängigkeit von wenigen Riesen"
       ]
     },
     "km0": {
-      "title": "Der KM0-Vorschlag",
+      "title": "Mit KM0",
       "items": [
-        "Kontrolle und Transparenz über Ihre Daten",
-        "Echte Menschen in Ihrer Nähe",
-        "Ehrliche, nachhaltige Preise",
-        "Eine offene Gemeinschaft für alle Interessierten"
+        "Daten in der EU (Hetzner, Deutschland)",
+        "Echte Menschen, in deiner Sprache",
+        "Öffentlicher Preis: 500 GB = 1,99 €/Monat",
+        "Offene Treffen und technischer Blog"
       ]
-    },
-    "blogCta": "Die ganze Geschichte im Blog lesen"
-  },
-  "values": {
-    "eyebrow": "Prinzipien",
-    "headingBefore": "Eine ",
-    "headingAccent": "offene",
-    "headingAfter": " und nahe Bewegung",
-    "chips": [
-      "Offen",
-      "Transparent",
-      "Gemeinschaftlich",
-      "Lokal"
-    ]
+    }
   },
   "community": {
-    "eyebrow": "Gemeinschaft",
-    "heading": "Jeder kann mitmachen",
-    "intro": "Kein geschlossener Club und kein verpacktes Produkt. Wenn Ihnen digitale Souveränität wichtig ist, gibt es einen Platz für Sie.",
-    "audiences": [
-      "Familien",
-      "Vereine",
-      "Genossenschaften",
-      "Bildungseinrichtungen",
-      "Organisationen",
-      "Neugierige Menschen"
-    ],
-    "humanNote": "Hinter dem Projekt stehen echte Menschen, keine Konzernzentrale und kein anonymes Callcenter. Sie sprechen mit den Menschen, die den Service bauen.",
-    "ctaPrimary": "Sprechen und mitmachen",
-    "ctaExplore": "Den Blog erkunden"
+    "heading": "Treffen",
+    "intro": "Wir treffen uns persönlich zu Cloud, E-Mail und Werkzeugen. Kalender ansehen."
   },
   "services": {
-    "eyebrow": "KM0 Cloud",
-    "headingBefore": "Ihre Cloud, ",
-    "headingAccent": "näher",
-    "headingAfter": " als je zuvor",
-    "intro": "KM0 Cloud bietet Privatpersonen, Selbstständigen und Unternehmen jeder Größe zuverlässige, sichere und lokal verwaltete Cloud-Infrastruktur mit transparenten Preisen und Experten-Support.",
-    "slogan": "500 GB ab 1,99 €/Monat. Keine Überraschungsrechnungen, kein entferntes Callcenter.",
-    "cloudTutorialCta": "So legen Sie los",
+    "headingBefore": "Was wir ",
+    "headingAccent": "anbieten",
+    "headingAfter": "",
+    "intro": "Zwei Produkte: Cloud-Speicher und E-Mail @km0digital.com.",
+    "slogan": "Daten in Falkenstein (EU). Preis ohne Kleingedrucktes.",
+    "cloudTutorialCta": "Erste Schritte",
     "cloudPricingCta": "Preise ansehen",
     "items": [
       {
@@ -112,16 +78,16 @@
         "title": "KM0 Cloud",
         "priceFrom": "Ab 1,99 €/Monat",
         "priceAriaLabel": "Ab 1,99 Euro pro Monat für 500 GB",
-        "subtitle": "Für den privaten, beruflichen oder Team-Einsatz: Leistung, Sicherheit und Experten-Support.",
-        "desc": "Dateien teilen, Geräte synchronisieren und in Echtzeit zusammenarbeiten auf EU-Infrastruktur, mit ISO-27001-gestütztem Betrieb und menschlichem Support, wenn Sie ihn brauchen.",
+        "subtitle": "Dateien, Sync und Zusammenarbeit",
+        "desc": "500 GB auf Hetzner-Servern (Deutschland). Teilen, synchronisieren und in Echtzeit bearbeiten.",
         "secondaryCta": "Cloud öffnen",
         "url": "https://cloud.km0digital.com"
       },
       {
         "id": "email",
         "title": "KM0 Email",
-        "subtitle": "Professionelle E-Mail mit sicherem Webmail im KM0-Ökosystem.",
-        "desc": "Professionelle @km0digital.com-E-Mail, sicheres Webmail und menschlicher Support im selben KM0-Ökosystem.",
+        "subtitle": "E-Mail @km0digital.com mit Webmail",
+        "desc": "Professionelles Postfach im selben Ökosystem und am selben EU-Standort.",
         "cta": "E-Mail öffnen",
         "url": "https://mail.km0digital.com",
         "available": true
@@ -129,16 +95,16 @@
     ],
     "comingSoon": {
       "title": "KM0 Email",
-      "message": "Dieser Dienst ist noch nicht verfügbar, wird aber bald bereitstehen.",
+      "message": "Dieser Dienst ist noch nicht verfügbar.",
       "close": "Verstanden"
     }
   },
   "doc": {
     "metaTitle": "Blog - Kilometer 0 Digital",
-    "metaDescription": "Dokumentation, Entscheidungen und Updates zum KM0-Projekt. Transparenz ab Tag null.",
+    "metaDescription": "Technische Entscheidungen, Deployments und Änderungen des KM0-Projekts.",
     "eyebrow": "Blog",
-    "heading": "Dokumentation und Updates",
-    "intro": "Hier teilen wir den Puls des Projekts: warum wir jede Entscheidung treffen, wie sich unsere Services entwickeln und was wir unterwegs lernen. Ein nahes technisches Tagebuch, kein leeres Marketing.",
+    "heading": "Technischer Blog",
+    "intro": "Was sich ändert, warum und wie wir es betreiben. Ohne Fülltext.",
     "readMore": "Beitrag lesen",
     "backToIndex": "Zurück zum Blog",
     "breadcrumbHome": "Blog",
@@ -150,10 +116,10 @@
   },
   "tutorials": {
     "metaTitle": "Tutorials - Kilometer 0 Digital",
-    "metaDescription": "Schritt-für-Schritt-Anleitungen für KM0 Cloud im Browser, auf Android, iOS und macOS.",
+    "metaDescription": "Anleitungen für den Start mit KM0 Cloud im Browser, unter Android, iOS und macOS.",
     "eyebrow": "Tutorials",
     "heading": "KM0-Cloud-Anleitungen",
-    "intro": "Klare Anweisungen für Zugriff, Einrichtung und Anmeldung bei KM0 Cloud im Browser, in mobilen Apps oder als Web-App unter macOS.",
+    "intro": "Zugang und Einrichtung von KM0 Cloud im Browser, mobil oder als Web-App unter macOS.",
     "readMore": "Tutorial öffnen",
     "backToIndex": "Zurück zu den Tutorials",
     "breadcrumbHome": "Tutorials",
@@ -163,93 +129,44 @@
     "nextTutorial": "Nächstes Tutorial",
     "relatedTutorials": "Weitere Tutorials"
   },
-  "meaning": {
-    "eyebrow": "Bedeutung",
-    "heading": "Mehr als ein Logo",
-    "items": [
-      {
-        "title": "Ausgangspunkt",
-        "desc": "Die Markierung zeigt den Startpunkt: Kilometer Null, wo alles beginnt."
-      },
-      {
-        "title": "Reichweite",
-        "desc": "Signalfunken symbolisieren digitale Reichweite und wie sich Ideen verbreiten."
-      },
-      {
-        "title": "Netzwerk",
-        "desc": "Verbundene Knoten stehen für Menschen, Ideen und Chancen, die miteinander verknüpft sind."
-      },
-      {
-        "title": "Lokale Transformation",
-        "desc": "Wellen an der Basis evozieren lokale Wirkung mit globaler Resonanz."
-      }
-    ]
-  },
-  "mission": {
-    "eyebrow": "Wohin wir gehen",
-    "heading": "Digitale Kontrolle an die Gemeinschaft zurückgeben",
-    "body": "Menschen, Familien, Vereine, Genossenschaften, Bildungseinrichtungen und Organisationen; KM0 verbindet offene, nahe und nachhaltige Services für alle, die eine echte Alternative zu Big Tech wollen."
-  },
-  "privacyTrust": {
-    "eyebrow": "Datenschutz",
-    "heading": "Privacy-first von Anfang an",
-    "body": "km0digital ist kein Großkonzern, der Ihre Daten sammeln, profilieren oder verkaufen will. Wir verarbeiten nur die Mindestmenge an Daten, die nötig ist, damit der Service nützlich, zuverlässig und einfach bleibt. Keine Werbeprofile, kein Datenverkauf, keine versteckte Monetarisierung Ihrer Dateien."
-  },
-  "merch": {
-    "eyebrow": "Horizont",
-    "headingBefore": "Das ist erst ",
-    "headingGradient": "der Anfang"
-  },
   "faq": {
-    "eyebrow": "FAQ",
     "heading": "Häufige Fragen",
     "items": [
       {
         "id": "movement",
-        "question": "Ist KM0 nur ein weiterer Tech-Anbieter?",
-        "answerHtml": "Nein. Es ist eine Gemeinschaftsbewegung mit konkreten Services. Die Vision ist, digitale Kontrolle an Menschen und Organisationen zurückzugeben; Cloud und E-Mail sind die ersten greifbaren Schritte."
+        "question": "Was ist KM0?",
+        "answerHtml": "Ein Gemeinschaftsprojekt mit echten Diensten: <strong>KM0 Cloud</strong> und <strong>KM0 Email</strong>. Betrieben von AMVARA CONSULTING S.L."
       },
       {
         "id": "participate",
-        "question": "Wer kann mitmachen?",
-        "answerHtml": "Jede Person oder Organisation, die an offenen, nahen Alternativen interessiert ist: Familien, Vereine, Genossenschaften, Bildungseinrichtungen und mehr. Schreiben Sie uns oder treten Sie der <a href=\"#contact\">WhatsApp-Gruppe</a> bei."
+        "question": "Wie kann ich mitmachen?",
+        "answerHtml": "Dienste nutzen, zu einem <a href=\"#community\">Treffen</a> kommen, schreiben oder dem <a href=\"#contact\">WhatsApp</a> beitreten."
       },
       {
         "id": "hosting",
-        "question": "Wo wird der Service gehostet?",
-        "answerHtml": "Unsere Infrastruktur läuft in Falkenstein, Deutschland, bei <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, einem europäischen Anbieter, den wir wegen Zuverlässigkeit, transparenter Preise und der Speicherung Ihrer Daten innerhalb der EU gewählt haben."
+        "question": "Wo liegen die Daten?",
+        "answerHtml": "In Falkenstein, Deutschland, auf <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>-Servern. Innerhalb der EU."
       },
       {
         "id": "iso27001",
-        "question": "Ist der Service nach ISO 27001 zertifiziert?",
-        "answerHtml": "Ja. KM0 Digital wird von <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> betrieben, zertifiziert nach ISO/IEC 27001:2022 durch TÜV NORD CERT. KM0, <code>cloud.km0digital.com</code> und <code>mail.km0digital.com</code> sind im Zertifikatsumfang von AMVARA als Teil der Plattform und zugehöriger Dienste enthalten. Details auf unserer <a href=\"/de/security/#iso27001\">Sicherheitsseite</a>. Wenn Sie das Zertifikat, die Statement of Applicability oder einen Sicherheitsfragebogen benötigen, <a href=\"#contact\">kontaktieren Sie uns</a>."
-      },
-      {
-        "id": "data-security",
-        "question": "Sind meine Daten sicher?",
-        "answerHtml": "Ja, Ihre Daten sind sicher. Wir nutzen EU-Infrastruktur (Deutschland), TLS-verschlüsselten Datenverkehr und verkaufen Ihre Daten nicht für Werbung oder Modelltraining. Betrieb dokumentieren wir im <a href=\"/de/doc/\">technischen Blog</a>. Siehe unsere <a href=\"/de/legal/\">Datenschutzerklärung</a> und <a href=\"/de/security/\">Sicherheitsseite</a>. Wie bei jedem Online-Dienst bleibt ein Restrisiko; bei spezifischen regulatorischen Anforderungen <a href=\"#contact\">kontaktieren Sie uns</a>."
+        "question": "Gibt es eine ISO-27001-Zertifizierung?",
+        "answerHtml": "Ja. AMVARA CONSULTING S.L. ist nach ISO/IEC 27001:2022 von TÜV NORD CERT zertifiziert. KM0 Cloud und KM0 Email sind im Scope. Details unter <a href=\"/de/security/#iso27001\">Sicherheit</a>."
       },
       {
         "id": "data-privacy",
-        "question": "Sammelt KM0 meine Daten, um sie zu verkaufen oder mich zu profilieren?",
-        "answerHtml": "Nein. km0digital ist privacy-first aufgebaut. Wir sind kein Großkonzern, der Ihre Daten sammeln, Sie profilieren oder Ihre Informationen verkaufen will. Wir verarbeiten nur die Mindestmenge an Daten, die der Betrieb zuverlässig macht. Details in unserer <a href=\"/de/legal/\">Datenschutzerklärung</a> und auf der <a href=\"/de/security/\">Sicherheitsseite</a>."
-      },
-      {
-        "id": "certification",
-        "question": "Ist der Service zertifiziert?",
-        "answerHtml": "Ja. KM0 Digital ist ein Community-Projekt, betrieben von <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, zertifiziert nach ISO/IEC 27001:2022 (TÜV NORD CERT). Der Dienst trägt keine Zertifizierung unter eigenem Namen, fällt aber in den zertifizierten Geltungsbereich von AMVARA als Teil der Plattform und Cloud-Dienste. Siehe unsere <a href=\"/de/security/#iso27001\">Sicherheitsseite</a> und <a href=\"/de/legal/\">Rechtsseite</a>. Wir entwickeln, betreiben und warten KM0 unter diesen Kontrollen; technische Abläufe dokumentieren wir im <a href=\"/de/doc/\">Blog</a>. Bei konkreten Compliance-Anforderungen <a href=\"#contact\">melden Sie sich</a>: relevante Unterlagen stellen wir zur Verfügung."
+        "question": "Verkauft oder profiliert ihr meine Daten?",
+        "answerHtml": "Nein. Wir verkaufen keine Daten und profilieren nicht für Werbung. Wir verarbeiten nur, was der Betrieb braucht. Siehe <a href=\"/de/legal/\">Datenschutz</a>."
       }
     ]
   },
   "contact": {
-    "eyebrow": "Mitmachen",
-    "heading": "Werden Sie Teil der Bewegung",
-    "body": "Erkunden, fragen, mitarbeiten oder einfach zuhören. Wir bauen das gemeinsam, vom Ursprung aus.",
+    "heading": "Kontakt",
+    "body": "Schreib eine E-Mail oder tritt WhatsApp bei. Es antworten Menschen, kein Bot.",
     "email": "hello.yoel@amvara.de",
-    "whatsappLabel": "Treten Sie unserer WhatsApp-Gruppe bei",
-    "whatsappHint": "Zum Beitreten klicken",
-    "whatsappQrAlt": "QR-Code zum Beitritt zur km0-WhatsApp-Gruppe",
-    "whatsappAria": "Link zur km0-WhatsApp-Gruppe öffnen"
+    "whatsappLabel": "WhatsApp-Gruppe",
+    "whatsappHint": "Scannen oder tippen zum Beitreten",
+    "whatsappQrAlt": "QR-Code der KM0-WhatsApp-Gruppe",
+    "whatsappAria": "KM0-WhatsApp-Gruppe öffnen"
   },
   "ideas": {
     "metaTitle": "Verbesserung vorschlagen oder Problem melden - Kilometer 0 Digital",
@@ -312,25 +229,24 @@
     }
   },
   "cloudUsers": {
-    "eyebrow": "KM0 Cloud",
     "countLabel": "Registrierte Cloud-Nutzer",
     "countAria": "{count} registrierte Cloud-Nutzer",
-    "unavailable": "Die Nutzerzahl ist vorübergehend nicht verfügbar."
+    "unavailable": "Zähler derzeit nicht verfügbar."
   },
   "pricing": {
     "metaTitle": "Preise - Kilometer 0 Digital",
-    "metaDescription": "500 GB für 1,99 €/Monat. Orientierende Marktreferenzen, Preiserklärung, Betriebsvertrauen und KM0-Differenzierung.",
+    "metaDescription": "500 GB für 1,99 €/Monat. Orientierender Vergleich und Betriebsdetails.",
     "eyebrow": "Preise",
-    "heading": "Einfacher, stabiler Speicher zu einem fairen Preis",
+    "heading": "500 GB für 1,99 €/Monat",
     "heroPrice": {
       "amount": "1,99 €",
       "period": "/Monat",
       "meta": "500 GB",
       "ariaLabel": "Preis: 1,99 Euro pro Monat für 500 GB Speicher"
     },
-    "intro": "KM0 Digital bietet 500 GB für 1,99 €/Monat für alle, die unkomplizierten, zuverlässigen Speicher zu einem fairen Preis suchen.",
+    "intro": "Öffentlicher Preis für Speicher in der EU. Cloud öffnen oder individuelles Angebot anfragen.",
     "heroCta": "Jetzt loslegen",
-    "claim": "Bis zu fünfmal mehr Speicher als die Basispläne anderer Anbieter zu einem ähnlichen Preis.",
+    "claim": "Bis zu 5× mehr Speicher als typische Basispläne zu ähnlichem Preis.",
     "compareHeading": "Orientierende Marktreferenzen",
     "compareIntro": "Die Tabelle zeigt orientierende Marktreferenzen auf Basis vergleichbarer öffentlicher Tarife.",
     "tableDisclaimer": "Orientierende Werte auf Basis öffentlicher Referenztarife. Offizielle Anbieterpreise können je nach Region, Steuern und Aktionen abweichen.",
@@ -380,8 +296,8 @@
       }
     ],
     "whyPricing": {
-      "heading": "Warum ist unser Preis anders?",
-      "body": "Unser Preis ist möglich dank optimierter Infrastruktur und eines Modells, das auf operative Effizienz setzt, nicht auf maximale Marge pro Kunde. Wir brauchen nicht dieselben Umsatzmargen: genug, um die Infrastruktur nachhaltig zu betreiben und einen zuverlässigen Dienst zu liefern."
+      "heading": "Warum dieser Preis",
+      "body": "Schlanke Infrastruktur und genug Marge zum Betrieb, nicht zur Maximierung pro Kunde."
     },
     "trust": {
       "heading": "Vertrauen und Betrieb",
@@ -395,10 +311,6 @@
           "desc": "Infrastruktur mit operativer Redundanz, um den Dienst stabil und verfügbar zu halten."
         },
         {
-          "title": "Datenschutz",
-          "desc": "Wir verkaufen Ihre Daten nicht für Werbung oder Modelltraining. Klare Datenschutzrichtlinie ohne Kleingedrucktes."
-        },
-        {
           "title": "Naher Support",
           "desc": "Support auf Kastilisch und Katalanisch mit echten Menschen, kein anonymes Callcenter in weiter Ferne."
         },
@@ -409,6 +321,10 @@
         {
           "title": "Sicherheit und SLA",
           "desc": "Betrieb unter ISO/IEC 27001:2022-Kontrollen durch AMVARA CONSULTING S.L. Details auf unserer Sicherheitsseite."
+        },
+        {
+          "title": "Datenschutz",
+          "desc": "Wir verkaufen keine Daten. Details in FAQ und auf der Legal-Seite."
         }
       ]
     },
@@ -418,7 +334,6 @@
         "Nähe und Support",
         "Einfachheit ohne invasives Ökosystem",
         "Lokaler europäischer Anbieter",
-        "Datenschutz von Anfang an",
         "Aufgeräumte Website, kein Kleingedrucktes",
         "Transparente, nachhaltige Preise"
       ]
@@ -431,15 +346,15 @@
   },
   "presentation": {
     "metaTitle": "Präsentation - Kilometer 0 Digital",
-    "metaDescription": "Präsentation von KM0 Digital: eine lokale, transparente und faire Alternative, um digitale Kontrolle zurückzugewinnen. Original-PDF herunterladen.",
+    "metaDescription": "Präsentation von KM0 Digital: Cloud und E-Mail in der EU. PDF herunterladen.",
     "eyebrow": "Präsentation",
-    "title": "Gewinne deine digitale Kontrolle zurück",
-    "lead": "Die lokale, transparente und faire Alternative, gebaut von und für die Gemeinschaft.",
+    "title": "Cloud und E-Mail in der EU",
+    "lead": "Nahe Dienste, öffentlicher Preis, Daten in Europa. PDF laden oder zur Startseite.",
     "download": "PDF herunterladen",
     "downloadHint": "Originaldokument (~618 KB)",
     "why": {
       "title": "Warum gibt es KM0?",
-      "body": "Weil deine Privatsphäre und deine Dateien dir gehören. Wir sind kein entferntes Megakonzern: Wir sind deine Technologie-Nachbarn."
+      "body": "Weil du Dateien und Mail willst, ohne dass dein Profil das Produkt ist. Wir sind der lokale Betreiber."
     },
     "compare": {
       "title": "Die übliche Cloud vs der KM0-Vorschlag",
@@ -495,7 +410,7 @@
     },
     "privacy": {
       "title": "Ein messbares Versprechen",
-      "lead": "Während Tech-Giganten jedes Foto, jede Datei, jede E-Mail und jede Interaktion monetarisieren, um dir Werbung zu verkaufen, verbietet KM0 Digital aus Prinzip die kommerzielle Nutzung deiner Daten.",
+      "lead": "Wir nutzen deine Dateien und Mails nicht für Werbung. Einmal gesagt: wir verkaufen keine Daten.",
       "highlight": "Null geteilte Daten"
     },
     "security": {
@@ -538,7 +453,7 @@
     },
     "cta": {
       "title": "Bereit für den Wandel?",
-      "lead": "Schließe dich heute der lokalen digitalen Bewegung an und gewinne Ruhe über deine persönlichen Daten zurück.",
+      "lead": "Cloud öffnen oder uns schreiben.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",
       "email": "hello.yoel@amvara.de"

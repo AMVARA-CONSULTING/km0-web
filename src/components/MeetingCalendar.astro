@@ -336,33 +336,21 @@ const calendarPayload = JSON.stringify({
     width: 0.375rem;
     height: 0.375rem;
     border-radius: 9999px;
-    background: var(--gradient-brand);
+    background: var(--color-signal);
     box-shadow: 0 0 0 1px rgb(255 255 255 / 0.6);
   }
 
   .meeting-calendar :global(.meeting-calendar-cell-has-event) {
     cursor: pointer;
-    border-color: rgb(123 63 228 / 0.35);
-    background: linear-gradient(
-      135deg,
-      rgb(255 95 46 / 0.18) 0%,
-      rgb(224 64 160 / 0.12) 35%,
-      rgb(123 63 228 / 0.18) 65%,
-      rgb(0 123 255 / 0.1) 100%
-    );
+    border-color: rgb(15 118 110 / 0.4);
+    background: rgb(15 118 110 / 0.12);
     font-weight: 700;
   }
 
   .meeting-calendar :global(.meeting-calendar-cell-has-event:hover) {
-    border-color: rgb(123 63 228 / 0.5);
-    background: linear-gradient(
-      135deg,
-      rgb(255 95 46 / 0.26) 0%,
-      rgb(224 64 160 / 0.18) 35%,
-      rgb(123 63 228 / 0.26) 65%,
-      rgb(0 123 255 / 0.14) 100%
-    );
-    box-shadow: 0 4px 12px rgb(123 63 228 / 0.12);
+    border-color: rgb(15 118 110 / 0.55);
+    background: rgb(15 118 110 / 0.18);
+    box-shadow: 0 4px 12px rgb(15 118 110 / 0.12);
   }
 
   .meeting-calendar :global(.meeting-calendar-cell-has-event:focus-visible) {

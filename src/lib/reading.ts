@@ -16,7 +16,10 @@ export function slugifyHeading(text: string): string {
     .replace(/^-|-$/g, '');
 }
 
-/** Build a table of contents from doc-style HTML embedded in markdown bodies. */
+/**
+ * Build a TOC from legacy HTML doc kits and/or Markdown ATX headings.
+ * Prefer HTML kit titles when present so older day-* posts stay wired.
+ */
 export function extractDocToc(body: string): TocEntry[] {
   const entries: TocEntry[] = [];
   const usedIds = new Set<string>();
@@ -44,7 +47,28 @@ export function extractDocToc(body: string): TocEntry[] {
     addEntry(match[1], 3);
   }
 
+  if (entries.length > 0) return entries;
+
+  const mdRe = /^(#{2,3})\s+(.+?)\s*$/gm;
+  while ((match = mdRe.exec(body)) !== null) {
+    const level = match[1].length === 2 ? 2 : 3;
+    addEntry(match[2].replace(/\s+#+\s*$/, ''), level);
+  }
+
   return entries;
+}
+
+/** Map Astro MarkdownHeading[] into TOC entries (depth 2–3 only). */
+export function tocFromMarkdownHeadings(
+  headings: ReadonlyArray<{ depth: number; slug: string; text: string }>,
+): TocEntry[] {
+  return headings
+    .filter((h) => h.depth === 2 || h.depth === 3)
+    .map((h) => ({
+      id: h.slug,
+      text: h.text,
+      level: h.depth as 2 | 3,
+    }));
 }
 
 export function estimateReadingMinutes(body: string, locale: Locale): number {

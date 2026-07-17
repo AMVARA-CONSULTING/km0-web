@@ -6,89 +6,118 @@ import { fetchCloudUserCount } from '../lib/cloud-users';
 interface Props {
   locale: Locale;
   messages: Messages;
+  /** `band` embeds under Offer; `section` is a standalone block (unused on home). */
+  variant?: 'band' | 'section';
 }
 
-const { locale, messages: m } = Astro.props;
+const { locale, messages: m, variant = 'band' } = Astro.props;
 const countResult = await fetchCloudUserCount();
 
 const countLocale =
   locale === 'de' ? 'de-DE' : locale === 'en' ? 'en-GB' : locale === 'ca' ? 'ca-ES' : 'es-ES';
+
+const isBand = variant === 'band';
 ---
 
-<section id="cloud-users" class="section-pad bg-navy text-white" aria-labelledby="cloud-users-heading">
-  <div class="mx-auto max-w-6xl">
-    <p data-reveal class="mb-10 text-center text-sm font-medium uppercase tracking-[0.2em] text-white/50">
-      {m.cloudUsers.eyebrow}
-    </p>
-    <h2 id="cloud-users-heading" class="sr-only">{m.cloudUsers.countLabel}</h2>
-
-    <div class="mx-auto max-w-sm" data-reveal data-delay="80">
-      {
-        countResult.ok ? (
-          <article
-            class="cloud-user-stat-card rounded-2xl border border-white/10 bg-white p-10 text-center shadow-sm"
-            aria-live="polite"
+{
+  isBand ? (
+    <aside
+      id="cloud-users"
+      class="cloud-user-proof"
+      aria-labelledby="cloud-users-heading"
+      data-reveal
+      data-delay="200"
+    >
+      <h2 id="cloud-users-heading" class="sr-only">
+        {m.cloudUsers.countLabel}
+      </h2>
+      {countResult.ok ? (
+        <p class="cloud-user-proof__line" aria-live="polite">
+          <span
+            class="cloud-user-proof__count tabular-nums"
+            aria-label={m.cloudUsers.countAria.replace('{count}', String(countResult.count))}
           >
+            {countResult.count.toLocaleString(countLocale)}
+          </span>
+          <span class="cloud-user-proof__label">{m.cloudUsers.countLabel}</span>
+        </p>
+      ) : (
+        <p class="cloud-user-proof__unavailable">{m.cloudUsers.unavailable}</p>
+      )}
+    </aside>
+  ) : (
+    <section id="cloud-users" class="section-pad bg-navy text-white" aria-labelledby="cloud-users-heading">
+      <div class="mx-auto max-w-6xl">
+        <h2 id="cloud-users-heading" class="sr-only">
+          {m.cloudUsers.countLabel}
+        </h2>
+        <div class="mx-auto max-w-sm" data-reveal>
+          {countResult.ok ? (
             <p
-              class="cloud-user-stat-count cloud-user-stat-count-gradient tabular-nums"
+              class="cloud-user-stat-count tabular-nums text-center"
+              aria-live="polite"
               aria-label={m.cloudUsers.countAria.replace('{count}', String(countResult.count))}
             >
               {countResult.count.toLocaleString(countLocale)}
             </p>
-            <p class="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-navy/50">
-              {m.cloudUsers.countLabel}
-            </p>
-          </article>
-        ) : (
-          <article class="cloud-user-stat-card rounded-2xl border border-white/10 bg-white/5 p-10 text-center">
-            <p class="text-base text-white/70">{m.cloudUsers.unavailable}</p>
-          </article>
-        )
-      }
-    </div>
-  </div>
-</section>
+          ) : (
+            <p class="text-center text-base text-white/70">{m.cloudUsers.unavailable}</p>
+          )}
+          <p class="mt-3 text-center font-sans text-xs font-medium uppercase tracking-[0.12em] text-white/55">
+            {m.cloudUsers.countLabel}
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 <style>
+  .cloud-user-proof {
+    margin-top: 3rem;
+    padding: 1.75rem 0 0;
+    border-top: 1px solid var(--color-mist);
+  }
+
+  .cloud-user-proof__line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem 1.25rem;
+    margin: 0;
+  }
+
+  .cloud-user-proof__count {
+    font-family: theme('fontFamily.display');
+    font-size: clamp(2.75rem, 8vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--color-signal);
+  }
+
+  .cloud-user-proof__label {
+    max-width: 14rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  }
+
+  .cloud-user-proof__unavailable {
+    margin: 0;
+    font-size: 0.95rem;
+    color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  }
+
   .cloud-user-stat-count {
+    font-family: theme('fontFamily.display');
     font-size: clamp(3rem, 12vw, 4.5rem);
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.04em;
-  }
-
-  .cloud-user-stat-count-gradient {
-    background: linear-gradient(
-      90deg,
-      #ff5f2e 0%,
-      #e040a0 25%,
-      #7b3fe4 50%,
-      #007bff 75%,
-      #ff5f2e 100%
-    );
-    background-size: 250% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: cloud-user-stat-gradient-flow 7s ease-in-out infinite;
-  }
-
-  @keyframes cloud-user-stat-gradient-flow {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .cloud-user-stat-count-gradient {
-      animation: none;
-      background-position: 0% 50%;
-    }
+    color: #0f766e;
   }
 </style>

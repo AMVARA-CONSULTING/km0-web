@@ -225,20 +225,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-hero-capacity-gradient {
-    background: linear-gradient(
-      105deg,
-      #c2410c 0%,
-      #ff5f2e 22%,
-      #e040a0 48%,
-      #ff5f2e 72%,
-      #ea580c 100%
-    );
-    background-size: 220% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: pricing-hero-gradient-flow 6s ease-in-out infinite;
+    color: #0f766e;
   }
 
   .pricing-hero-price {
@@ -267,30 +254,12 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     color: rgb(15 23 42 / 0.55);
   }
 
-  @keyframes pricing-hero-gradient-flow {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pricing-hero-capacity-gradient {
-      animation: none;
-      background-position: 0% 50%;
-    }
-  }
-
   .pricing-claim {
     margin: clamp(2rem, 5vw, 3rem) auto 0;
     font-size: 1.0625rem;
     font-weight: 600;
     line-height: 1.6;
-    color: #c2410c;
+    color: #0f766e;
   }
 
   .pricing-compare-heading {
@@ -360,11 +329,11 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-table-row-highlight {
-    background: rgb(255 95 46 / 0.06);
+    background: rgb(15 118 110 / 0.06);
   }
 
   .pricing-table-row-highlight th {
-    color: #c2410c;
+    color: #0f766e;
   }
 
   .pricing-table-note {
@@ -446,11 +415,11 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   .pricing-diff-item {
     padding: 0.75rem 1.375rem;
     border-radius: 9999px;
-    background: rgb(255 95 46 / 0.08);
-    border: 1px solid rgb(255 95 46 / 0.18);
+    background: rgb(15 118 110 / 0.08);
+    border: 1px solid rgb(15 118 110 / 0.18);
     font-size: 0.9375rem;
     font-weight: 500;
-    color: #9a3412;
+    color: #0f766e;
     transition:
       background 0.25s ease,
       border-color 0.25s ease,
@@ -459,9 +428,9 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-diff-item:hover {
-    background: rgb(255 95 46 / 0.14);
-    border-color: rgb(255 95 46 / 0.28);
-    box-shadow: 0 6px 18px rgb(255 95 46 / 0.12);
+    background: rgb(15 118 110 / 0.14);
+    border-color: rgb(15 118 110 / 0.28);
+    box-shadow: 0 6px 18px rgb(15 118 110 / 0.12);
     transform: translateY(-2px);
   }
 

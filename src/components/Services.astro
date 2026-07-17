@@ -11,36 +11,23 @@ interface Props {
 
 const { locale, messages: m } = Astro.props;
 const hasComingSoon = m.services.items.some((item) => item.available === false);
-
-const icons: Record<string, string> = {
-  cloud:
-    'M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.32-2.127 4.5 4.5 0 018.59 2.75L18 19.5H6.75z',
-  email:
-    'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-};
 ---
 
-<section id="services" class="section-pad bg-white" aria-labelledby="services-heading">
-  <div class="mx-auto max-w-6xl text-center">
-    <p data-reveal class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
-      {m.services.eyebrow}
-    </p>
-    <h2 id="services-heading" data-reveal data-delay="80" class="heading-section mb-6 text-navy">
-      {m.services.headingBefore}<span class="text-gradient">{m.services.headingAccent}</span>{m.services.headingAfter}
-    </h2>
-    <p data-reveal data-delay="120" class="mx-auto mb-4 max-w-2xl text-lg text-navy/70">
-      {m.services.intro}
-    </p>
-    <p data-reveal data-delay="160" class="mb-14 text-base font-semibold text-navy">
-      {m.services.slogan}
-    </p>
+<section id="services" class="section-pad offer" aria-labelledby="services-heading">
+  <div class="mx-auto max-w-6xl">
+    <header class="offer__header" data-reveal>
+      <h2 id="services-heading" class="heading-section text-navy">
+        {m.services.headingBefore}<span class="text-gradient">{m.services.headingAccent}</span>{m.services.headingAfter}
+      </h2>
+      <p class="offer__intro">{m.services.intro}</p>
+      <p class="offer__slogan">{m.services.slogan}</p>
+    </header>
 
-    <div class="grid gap-8 md:grid-cols-2 md:text-left">
+    <div class="offer__list">
       {
         m.services.items.map((item, i) => {
           const isCloud = item.id === 'cloud';
           const isEmail = item.id === 'email';
-          const isFeatured = isCloud || (isEmail && item.available !== false);
           const primaryHref = item.ctaFragment
             ? withHash(locale, item.ctaFragment)
             : item.url;
@@ -49,89 +36,67 @@ const icons: Record<string, string> = {
             <article
               id={isCloud ? 'km0-cloud' : isEmail ? 'km0-email' : undefined}
               data-reveal
-              data-delay={String(200 + i * 80)}
-              class:list={[
-                'service-card flex flex-col rounded-2xl border p-8 shadow-sm',
-                isFeatured ? 'service-card-featured' : 'border-navy/10 bg-surface',
-              ]}
+              data-delay={String(80 + i * 80)}
+              class="offer-row"
             >
-              <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-navy">
-                <svg
-                  class="h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d={icons[item.id] ?? icons.cloud} />
-                </svg>
+              <div class="offer-row__lead">
+                <h3 class="offer-row__title">{item.title}</h3>
+                {isCloud && item.priceFrom && (
+                  <p class="offer-row__price" aria-label={item.priceAriaLabel}>
+                    {item.priceFrom}
+                  </p>
+                )}
+                {item.subtitle && <p class="offer-row__subtitle">{item.subtitle}</p>}
               </div>
-              <h3 class="mb-2 text-xl font-semibold text-navy md:text-2xl">{item.title}</h3>
-              {isCloud && item.priceFrom && (
-                <p class="service-card-price tabular-nums" aria-label={item.priceAriaLabel}>
-                  {item.priceFrom}
-                </p>
-              )}
-              {item.subtitle && <p class="service-card-subtitle">{item.subtitle}</p>}
-              <p class="mb-6 flex-grow text-navy/70">{item.desc}</p>
-              {isCloud && (
-                <a
-                  href={localeHref(locale, '/tutorials/getting-started-web/')}
-                  class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-navy transition-colors hover:text-navy/70 md:self-start"
-                >
-                  {m.services.cloudTutorialCta}
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              )}
-              <div class:list={['service-card-actions', isCloud && 'service-card-actions--paired']}>
-                {!isCloud &&
-                  (item.available === false ? (
-                    <button
-                      type="button"
-                      data-service-coming-soon
-                      class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start"
-                    >
-                      {item.cta}
-                    </button>
-                  ) : item.ctaFragment ? (
-                    <a href={primaryHref} class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start">
-                      {item.cta}
-                    </a>
-                  ) : (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="btn-primary inline-flex w-full justify-center md:w-auto md:self-start"
-                    >
-                      {item.cta}
-                    </a>
-                  ))}
+              <div class="offer-row__body">
+                <p class="offer-row__desc">{item.desc}</p>
                 {isCloud && (
                   <a
-                    href={localeHref(locale, '/pricing/')}
-                    class="service-card-secondary-cta inline-flex justify-center"
+                    href={localeHref(locale, '/tutorials/getting-started-web/')}
+                    class="offer-row__text-link"
                   >
-                    {m.services.cloudPricingCta}
+                    {m.services.cloudTutorialCta}
                   </a>
                 )}
-                {isCloud && item.secondaryCta && (
-                  <a
-                    href={item.url}
-                    class="btn-primary inline-flex justify-center"
-                  >
-                    {item.secondaryCta}
-                  </a>
-                )}
+                <div class:list={['offer-row__actions', isCloud && 'offer-row__actions--paired']}>
+                  {!isCloud &&
+                    (item.available === false ? (
+                      <button type="button" data-service-coming-soon class="btn-primary">
+                        {item.cta}
+                      </button>
+                    ) : item.ctaFragment ? (
+                      <a href={primaryHref} class="btn-primary">
+                        {item.cta}
+                      </a>
+                    ) : (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-primary"
+                      >
+                        {item.cta}
+                      </a>
+                    ))}
+                  {isCloud && (
+                    <a href={localeHref(locale, '/pricing/')} class="offer-row__text-link">
+                      {m.services.cloudPricingCta}
+                    </a>
+                  )}
+                  {isCloud && item.secondaryCta && (
+                    <a href={item.url} class="btn-primary">
+                      {item.secondaryCta}
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           );
         })
       }
     </div>
+
+    <slot />
   </div>
 </section>
 
@@ -142,74 +107,104 @@ const icons: Record<string, string> = {
 </script>
 
 <style>
-  .service-card-featured {
-    border-color: rgb(255 95 46 / 0.35);
-    background: linear-gradient(180deg, rgb(255 95 46 / 0.06) 0%, #fff 42%);
-    box-shadow: 0 12px 32px rgb(255 95 46 / 0.1);
+  .offer__header {
+    max-width: 40rem;
+    margin-bottom: 3rem;
   }
 
-  .service-card-price {
-    margin: 0 0 0.75rem;
-    font-size: 1.375rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #c2410c;
+  .offer__intro {
+    margin: 1rem 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--color-ink) 70%, transparent);
   }
 
-  .service-card-subtitle {
-    margin: 0 0 1rem;
-    font-size: 1rem;
+  .offer__slogan {
+    margin: 0.75rem 0 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
     font-weight: 600;
-    line-height: 1.5;
-    color: #0f172a;
+    color: var(--color-ink);
   }
 
-  .service-card-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
+  .offer__list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--color-mist);
   }
 
-  .service-card-actions--paired {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+  .offer-row {
+    display: grid;
+    gap: 1.25rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--color-mist);
   }
 
   @media (min-width: 768px) {
-    .service-card-actions {
-      align-items: flex-start;
-    }
-
-    .service-card-actions--paired {
-      align-items: center;
+    .offer-row {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: start;
+      padding: 2.5rem 0;
     }
   }
 
-  .service-card-secondary-cta {
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    border: 1px solid rgb(15 23 42 / 0.14);
-    background: #fff;
-    padding: 0.75rem 2rem;
-    font-size: 0.875rem;
+  .offer-row__title {
+    margin: 0;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .offer-row__price {
+    margin: 0.5rem 0 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-signal);
+  }
+
+  .offer-row__subtitle {
+    margin: 0.5rem 0 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
     font-weight: 600;
-    color: #0f172a;
-    transition:
-      border-color 0.25s ease,
-      background 0.25s ease,
-      color 0.25s ease;
+    color: var(--color-ink);
   }
 
-  .service-card-secondary-cta:hover {
-    border-color: rgb(15 23 42 / 0.28);
-    background: rgb(15 23 42 / 0.04);
+  .offer-row__desc {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--color-ink) 70%, transparent);
   }
 
-  .service-card-secondary-cta:focus-visible {
-    outline: 2px solid #0f172a;
-    outline-offset: 3px;
+  .offer-row__text-link {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: rgb(15 118 110 / 0.4);
+    text-underline-offset: 0.18em;
+  }
+
+  .offer-row__text-link:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .offer-row__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .offer-row__actions--paired {
+    flex-direction: row;
   }
 </style>

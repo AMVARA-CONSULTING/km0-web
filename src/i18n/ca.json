@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "km0digital - Kilòmetre 0 Digital",
-    "description": "km0digital.com és un moviment comunitari amb enfocament en la privadesa per recuperar el control digital. Serveis cloud i correu a la UE. No venem les teves dades ni et perfilarem per a publicitat."
+    "title": "Kilòmetre 0 Digital - núvol i correu a la UE",
+    "description": "KM0 Cloud i KM0 Email allotjats a la UE. 500 GB des d'1,99 €/mes. No venem el teu perfil."
   },
   "brandName": "Kilòmetre 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -12,11 +12,8 @@
   "nav": {
     "home": "Inici",
     "vision": "Per què",
-    "values": "Valors",
     "community": "Comunitat",
     "services": "Serveis",
-    "meaning": "Significat",
-    "mission": "Missió",
     "blog": "Blog",
     "ideas": "Idees",
     "meeting": "Trobades",
@@ -32,96 +29,65 @@
     "servicesLauncherTitle": "Serveis KM0"
   },
   "hero": {
-    "eyebrow": "Moviment digital comunitari",
-    "titleLine1": "RECUPERA EL ",
-    "titleGradient": "CONTROL DIGITAL.",
-    "tagline": "Un moviment social i tecnològic construït per i per a la comunitat, no un altre proveïdor més.",
-    "ctaPrimary": "Descobreix per què existeix",
-    "ctaSecondary": "Uneix-te al moviment",
-    "scrollToCloud": "Anar als serveis de KM0 Cloud",
-    "logoAlt": "Logo Kilòmetre 0 Digital",
-    "laptopAlt": "Kilòmetre 0 Digital en portàtil",
-    "mobileAlt": "Kilòmetre 0 Digital al mòbil"
+    "titleLine1": "Núvol i correu ",
+    "titleGradient": "a la UE.",
+    "tagline": "500 GB des d'1,99 €/mes. Operat a prop. Sense vendre el teu perfil.",
+    "ctaPrimary": "Obrir KM0 Cloud",
+    "ctaSecondary": "Veure preus",
+    "logoAlt": "Logo Kilòmetre 0 Digital"
   },
   "vision": {
-    "eyebrow": "Per què existeix",
-    "headingBefore": "Una alternativa ",
-    "headingAccent": "real",
-    "headingAfter": " al que és habitual",
-    "intro": "La tecnologia essencial no hauria de dependre d'un grapat de gegants llunyans. KM0 Digital proposa una altra forma.",
+    "headingBefore": "Per què ",
+    "headingAccent": "KM0",
+    "headingAfter": "",
+    "intro": "Menys eslògans. Més fets: fitxers i correu en servidors europeus, amb persones reals al darrere.",
     "usual": {
-      "title": "L'habitual",
+      "title": "El que és habitual",
       "items": [
-        "Les teves dades com a producte",
-        "Suport anònim i llunyà",
-        "Preus que no reflecteixen el cost real",
-        "Dependència total d'uns pocs proveïdors"
+        "Les teves dades financen publicitat",
+        "Suport llunyà o automatitzat",
+        "Preus difícils d'entendre",
+        "Dependència d'uns quants gegants"
       ]
     },
     "km0": {
-      "title": "La proposta KM0",
+      "title": "Amb KM0",
       "items": [
-        "Control i transparència sobre les teves dades",
-        "Persones reals, a prop teu",
-        "Cost honest i sostenible",
-        "Comunitat oberta a qui vulgui participar"
+        "Dades a la UE (Hetzner, Alemanya)",
+        "Persones reals, en la teva llengua",
+        "Preu públic: 500 GB = 1,99 €/mes",
+        "Trobades obertes i blog tècnic"
       ]
-    },
-    "blogCta": "Llegeix la història completa al blog"
-  },
-  "values": {
-    "eyebrow": "Principis",
-    "headingBefore": "Moviment ",
-    "headingAccent": "obert",
-    "headingAfter": " i proper",
-    "chips": [
-      "Obert",
-      "Transparent",
-      "Comunitari",
-      "Local"
-    ]
+    }
   },
   "community": {
-    "eyebrow": "Comunitat",
-    "heading": "Qualsevol pot participar",
-    "intro": "No és un club tancat ni un producte empaquetat. Si t'interessa la sobirania digital, hi ha un lloc per a tu.",
-    "audiences": [
-      "Famílies",
-      "Associacions",
-      "Cooperatives",
-      "Centres educatius",
-      "Organitzacions",
-      "Persones curioses"
-    ],
-    "humanNote": "Darrere del projecte hi ha persones reals, no una corporació ni un call center anònim. Parles amb qui construeix el servei.",
-    "ctaPrimary": "Conversar i participar",
-    "ctaExplore": "Explorar el blog"
+    "heading": "Trobades",
+    "intro": "Ens trobem en persona per parlar de núvol, correu i eines. Consulta l'agenda."
   },
   "services": {
-    "eyebrow": "KM0 Cloud",
-    "headingBefore": "El teu núvol, ",
-    "headingAccent": "més a prop",
-    "headingAfter": " que mai",
-    "intro": "KM0 Cloud ofereix a particulars, autònoms i empreses de qualsevol mida una infraestructura cloud fiable, segura i gestionada de forma propera, amb preus transparents i suport expert.",
-    "slogan": "500 GB des de 1,99 €/mes. Sense factures sorpresa ni call centers llunyans.",
-    "cloudTutorialCta": "Com començar a fer-lo servir",
+    "headingBefore": "Què ",
+    "headingAccent": "oferim",
+    "headingAfter": "",
+    "intro": "Dos productes: emmagatzematge al núvol i correu @km0digital.com.",
+    "slogan": "Dades a Falkenstein (UE). Preu sense lletra petita.",
+    "cloudTutorialCta": "Com començar",
     "cloudPricingCta": "Veure preus",
     "items": [
       {
         "id": "cloud",
         "title": "KM0 Cloud",
-        "priceFrom": "Des de 1,99 €/mes",
-        "priceAriaLabel": "Des de 1,99 euros al mes per 500 GB",
-        "subtitle": "Per a ús personal, professional o en equip: rendiment, seguretat i suport expert.",
-        "desc": "Comparteix fitxers, sincronitza dispositius i col·labora en temps real en infraestructura allotjada a la UE, amb operacions recolzades per ISO 27001 i suport humà quan ho necessitis.",
+        "priceFrom": "Des d'1,99 €/mes",
+        "priceAriaLabel": "Des d'1,99 euros al mes per 500 GB",
+        "subtitle": "Fitxers, sincronització i col·laboració",
+        "desc": "500 GB en servidors Hetzner (Alemanya). Comparteix, sincronitza i edita en temps real.",
         "secondaryCta": "Obrir Cloud",
         "url": "https://cloud.km0digital.com"
       },
       {
         "id": "email",
         "title": "KM0 Email",
-        "subtitle": "Correu professional amb webmail segur a l'ecosistema KM0.",
-        "desc": "Correu professional @km0digital.com, webmail segur i suport proper en el mateix ecosistema KM0.",
+        "subtitle": "Correu @km0digital.com amb webmail",
+        "desc": "Bústia professional al mateix ecosistema i la mateixa ubicació UE.",
         "cta": "Obrir Email",
         "url": "https://mail.km0digital.com",
         "available": true
@@ -129,16 +95,16 @@
     ],
     "comingSoon": {
       "title": "KM0 Email",
-      "message": "Aquest servei encara no està disponible, però aviat ho estarà.",
+      "message": "Aquest servei encara no està disponible.",
       "close": "Entesos"
     }
   },
   "doc": {
     "metaTitle": "Blog - Kilòmetre 0 Digital",
-    "metaDescription": "Documentació, decisions i novetats del projecte KM0. Transparència des del dia zero.",
+    "metaDescription": "Decisions tècniques, desplegaments i canvis del projecte KM0.",
     "eyebrow": "Blog",
-    "heading": "Documentació i novetats",
-    "intro": "Aquí publiquem el pols del projecte: per què prenem cada decisió, com evolucionen els nostres serveis i què aprenem pel camí. Un diari tècnic proper, sense màrqueting buit.",
+    "heading": "Blog tècnic",
+    "intro": "Què canvia, per què i com ho operem. Sense farciment.",
     "readMore": "Llegir entrada",
     "backToIndex": "Tornar al blog",
     "breadcrumbHome": "Blog",
@@ -150,10 +116,10 @@
   },
   "tutorials": {
     "metaTitle": "Tutorials - Kilòmetre 0 Digital",
-    "metaDescription": "Guies pas a pas per començar amb KM0 Cloud al navegador, Android, iOS i macOS.",
+    "metaDescription": "Guies per començar amb KM0 Cloud al navegador, Android, iOS i macOS.",
     "eyebrow": "Tutorials",
     "heading": "Guies de KM0 Cloud",
-    "intro": "Instruccions clares per accedir, configurar i iniciar sessió a KM0 Cloud des del navegador, apps mòbils o com a aplicació web a macOS.",
+    "intro": "Com accedir i configurar KM0 Cloud des del navegador, el mòbil o com a app web a macOS.",
     "readMore": "Obrir tutorial",
     "backToIndex": "Tornar als tutorials",
     "breadcrumbHome": "Tutorials",
@@ -163,93 +129,44 @@
     "nextTutorial": "Tutorial següent",
     "relatedTutorials": "Més tutorials"
   },
-  "meaning": {
-    "eyebrow": "Significat",
-    "heading": "Més que un logotip",
-    "items": [
-      {
-        "title": "Punt d'origen",
-        "desc": "El pin representa el punt de partida: el Kilòmetre 0 des del qual tot comença."
-      },
-      {
-        "title": "Difusió",
-        "desc": "Les onades de senyal simbolitzen la difusió digital i l'abast de les idees."
-      },
-      {
-        "title": "Xarxa",
-        "desc": "Els nodes connectats representen persones, idees i oportunitats unides."
-      },
-      {
-        "title": "Transformació local",
-        "desc": "Les onades a la base evoquen l'impacte local amb projecció global."
-      }
-    ]
-  },
-  "mission": {
-    "eyebrow": "Cap on anem",
-    "heading": "Retornar el control digital a la comunitat",
-    "body": "Persones, famílies, associacions, cooperatives, centres educatius i organitzacions; KM0 connecta serveis oberts, propers i sostenibles per a qui vulgui una alternativa real a Big Tech."
-  },
-  "privacyTrust": {
-    "eyebrow": "Privadesa",
-    "heading": "Dissenyat amb la privadesa en primer lloc",
-    "body": "km0digital no és una gran corporació que vulgui recopilar, perfilar o vendre les teves dades. Només volem la informació mínima necessària perquè el servei sigui útil, fiable i fàcil d'usar. Sense perfils publicitaris, sense venda de dades, sense monetitzar els teus fitxers en secret."
-  },
-  "merch": {
-    "eyebrow": "Horitzó",
-    "headingBefore": "Això és només ",
-    "headingGradient": "el començament"
-  },
   "faq": {
-    "eyebrow": "FAQ",
     "heading": "Preguntes freqüents",
     "items": [
       {
         "id": "movement",
-        "question": "KM0 és només un altre proveïdor tecnològic?",
-        "answerHtml": "No. És un moviment comunitari amb serveis concrets. La visió és retornar el control digital a persones i organitzacions; Cloud i correu són els primers passos tangibles."
+        "question": "Què és KM0?",
+        "answerHtml": "Un projecte comunitari amb serveis reals: <strong>KM0 Cloud</strong> i <strong>KM0 Email</strong>. Operat per AMVARA CONSULTING S.L."
       },
       {
         "id": "participate",
-        "question": "Qui pot participar?",
-        "answerHtml": "Qualsevol persona u organització interessada en alternatives obertes i properes: famílies, associacions, cooperatives, centres educatius i més. Escriu-nos o uneix-te al <a href=\"#contact\">grup de WhatsApp</a>."
+        "question": "Com puc participar?",
+        "answerHtml": "Fes servir els serveis, vine a una <a href=\"#community\">trobada</a>, escriu o uneix-te al <a href=\"#contact\">WhatsApp</a>."
       },
       {
         "id": "hosting",
-        "question": "On està allotjat el servei?",
-        "answerHtml": "La nostra infraestructura funciona a Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>, un proveïdor europeu que hem triat per la seva fiabilitat, preus transparents i per mantenir les teves dades dins la UE."
+        "question": "On són les dades?",
+        "answerHtml": "A Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>. Dins de la UE."
       },
       {
         "id": "iso27001",
-        "question": "El servei està certificat segons ISO 27001?",
-        "answerHtml": "Sí. KM0 Digital està operat per <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certificada segons ISO/IEC 27001:2022 per TÜV NORD CERT. KM0, <code>cloud.km0digital.com</code> i <code>mail.km0digital.com</code> estan inclosos en l'abast del certificat com a part de la plataforma d'AMVARA i serveis cloud natius associats. Consulta la nostra <a href=\"/ca/security/#iso27001\">pàgina de seguretat</a>. Si necessites el certificat, la declaració d'aplicabilitat o un qüestionari de seguretat, <a href=\"#contact\">contacta'ns</a>."
-      },
-      {
-        "id": "data-security",
-        "question": "Les dades estan segures?",
-        "answerHtml": "Sí, les teves dades estan segures. Fem servir infraestructura a la UE (Alemanya), trànsit xifrat amb TLS i no venem les teves dades per a publicitat ni entrenament de models. Documentem les operacions al <a href=\"/ca/doc/\">blog tècnic</a>. Consulta la nostra <a href=\"/ca/legal/\">política de privadesa</a> i <a href=\"/ca/security/\">pàgina de seguretat</a>. Com qualsevol servei en línia, queda un risc residual; per a necessitats regulatòries concretes, <a href=\"#contact\">contacta'ns</a>."
+        "question": "Hi ha certificació ISO 27001?",
+        "answerHtml": "Sí. AMVARA CONSULTING S.L. està certificada ISO/IEC 27001:2022 per TÜV NORD CERT. KM0 Cloud i KM0 Email són al seu abast. Detalls a <a href=\"/ca/security/#iso27001\">seguretat</a>."
       },
       {
         "id": "data-privacy",
-        "question": "KM0 recopila les meves dades per vendre-les o perfilar-me?",
-        "answerHtml": "No. km0digital està dissenyat amb la privadesa en primer lloc. No som una gran corporació interessada a recopilar les teves dades, perfilar-te o vendre la teva informació. Només tractem la informació mínima necessària perquè el servei funcioni de forma fiable. Consulta la nostra <a href=\"/ca/legal/\">política de privadesa</a> i la <a href=\"/ca/security/\">pàgina de seguretat</a>."
-      },
-      {
-        "id": "certification",
-        "question": "El servei està certificat?",
-        "answerHtml": "Sí. KM0 Digital és un projecte comunitari operat per <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a>, certificada segons ISO/IEC 27001:2022 (TÜV NORD CERT). El servei no té certificació a nom propi, però cau dins l'abast certificat d'AMVARA com a part de la seva plataforma i serveis cloud. Consulta la nostra <a href=\"/ca/security/#iso27001\">pàgina de seguretat</a> i <a href=\"/ca/legal/\">pàgina legal</a>. Dissenyem, despleguem i mantenim KM0 sota aquests controls; les operacions tècniques es documenten al <a href=\"/ca/doc/\">blog</a>. Per a requisits de compliment concrets, <a href=\"#contact\">escriu-nos</a>: podem facilitar documentació rellevant."
+        "question": "Veniu o perfilleu les meves dades?",
+        "answerHtml": "No. No venem dades ni perfillem per a publicitat. Només tractem el necessari per operar el servei. Vegeu <a href=\"/ca/legal/\">privacitat</a>."
       }
     ]
   },
   "contact": {
-    "eyebrow": "Participa",
-    "heading": "Forma part del moviment",
-    "body": "Explora, pregunta, col·labora o simplement escolta. Construïm això junts, des de l'origen.",
+    "heading": "Contacte",
+    "body": "Escriu un correu o uneix-te al WhatsApp. Responen persones, no un bot.",
     "email": "hello.yoel@amvara.de",
-    "whatsappLabel": "Uneix-te al grup de WhatsApp",
-    "whatsappHint": "Fes clic per unir-te",
-    "whatsappQrAlt": "Codi QR per unir-se al grup de WhatsApp de km0",
-    "whatsappAria": "Obrir enllaç al grup de WhatsApp de km0"
+    "whatsappLabel": "Grup de WhatsApp",
+    "whatsappHint": "Escaneja o prem per unir-te",
+    "whatsappQrAlt": "Codi QR del grup de WhatsApp de KM0",
+    "whatsappAria": "Obrir el grup de WhatsApp de KM0"
   },
   "ideas": {
     "metaTitle": "Envia una millora o informa d'un problema - Kilòmetre 0 Digital",
@@ -312,25 +229,24 @@
     }
   },
   "cloudUsers": {
-    "eyebrow": "KM0 Cloud",
     "countLabel": "Usuaris registrats al núvol",
     "countAria": "{count} usuaris registrats al núvol",
-    "unavailable": "El recompte no està disponible temporalment."
+    "unavailable": "Recompte no disponible ara."
   },
   "pricing": {
     "metaTitle": "Preus - Kilòmetre 0 Digital",
-    "metaDescription": "500 GB per 1,99 €/mes. Referències orientatives de mercat, explicació del preu, confiança operativa i diferenciació KM0 Digital.",
+    "metaDescription": "500 GB per 1,99 €/mes. Comparativa orientativa i detall operatiu.",
     "eyebrow": "Preus",
-    "heading": "Emmagatzematge senzill, estable i a bon preu",
+    "heading": "500 GB per 1,99 €/mes",
     "heroPrice": {
       "amount": "1,99 €",
       "period": "/mes",
       "meta": "500 GB",
       "ariaLabel": "Preu: 1,99 euros al mes per 500 GB d'emmagatzematge"
     },
-    "intro": "KM0 Digital ofereix 500 GB per 1,99 €/mes per a qui busca emmagatzematge senzill, estable i a bon preu.",
+    "intro": "Preu públic per a emmagatzematge a la UE. Obre Cloud o demana una proposta a mida.",
     "heroCta": "Comença a fer-lo servir ja",
-    "claim": "Fins a 5 vegades més espai que els plans bàsics d'altres empreses per un preu similar.",
+    "claim": "Fins a 5 vegades més espai que plans bàsics de referència a preu similar.",
     "compareHeading": "Referències orientatives de mercat",
     "compareIntro": "La comparativa mostra referències orientatives de mercat amb plans públics equivalents.",
     "tableDisclaimer": "Xifres orientatives basades en plans públics de referència. Els preus oficials de cada proveïdor poden variar segons regió, impostos i promocions.",
@@ -380,8 +296,8 @@
       }
     ],
     "whyPricing": {
-      "heading": "Per què el nostre preu és diferent?",
-      "body": "El nostre preu és possible gràcies a una infraestructura optimitzada i a un model centrat en l'eficiència operativa, no en maximitzar el marge per client. No necessitem marges d'ingressos tan alts: prou per mantenir la infraestructura de forma sostenible i oferir un servei fiable."
+      "heading": "Per què aquest preu",
+      "body": "Infraestructura ajustada i marge suficient per operar, no per maximitzar ingressos per client."
     },
     "trust": {
       "heading": "Confiança i operació",
@@ -409,6 +325,10 @@
         {
           "title": "Seguretat i SLA",
           "desc": "Operat sota controls ISO/IEC 27001:2022 per AMVARA CONSULTING S.L. Consulta la nostra pàgina de seguretat per a més detall."
+        },
+        {
+          "title": "Privacitat",
+          "desc": "No venem dades. Detall a FAQ i a la pàgina legal."
         }
       ]
     },
@@ -431,15 +351,15 @@
   },
   "presentation": {
     "metaTitle": "Presentació - Kilòmetre 0 Digital",
-    "metaDescription": "Presentació de KM0 Digital: alternativa local, transparent i a preu just per recuperar el control digital. Descarrega el PDF original.",
+    "metaDescription": "Presentació de KM0 Digital: núvol i correu a la UE. Descarrega el PDF.",
     "eyebrow": "Presentació",
-    "title": "Recupera el teu control digital",
-    "lead": "L'alternativa local, transparent i a preu just construïda per i per a la comunitat.",
+    "title": "Núvol i correu a la UE",
+    "lead": "Serveis propers, preu públic, dades a Europa. Descarrega el PDF o torna a l'inici.",
     "download": "Descarregar PDF",
     "downloadHint": "Document original (~618 KB)",
     "why": {
       "title": "Per què existeix KM0?",
-      "body": "Perquè la teva privadesa i els teus fitxers són teus. No som una megacorporació llunyana: som els teus veïns tecnològics."
+      "body": "Perquè vols fitxers i correu sense que el teu perfil sigui el producte. Som l'operador local."
     },
     "compare": {
       "title": "El núvol de sempre vs la proposta KM0",
@@ -495,7 +415,7 @@
     },
     "privacy": {
       "title": "Un compromís que es pot mesurar",
-      "lead": "Mentre que els grans gegants de la tecnologia monetitzen cada foto, fitxer, correu enviat i interacció per vendre't publicitat, a KM0 Digital tenim prohibit per principis l'ús comercial de les teves dades.",
+      "lead": "No fem servir els teus fitxers ni correus per a publicitat. Una sola vegada: no venem dades.",
       "highlight": "Zero dades compartides"
     },
     "security": {
@@ -538,7 +458,7 @@
     },
     "cta": {
       "title": "Preparat per al canvi?",
-      "lead": "Uneix-te avui al moviment digital local i recupera la tranquil·litat sobre les teves dades personals.",
+      "lead": "Obre Cloud o escriu-nos.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",
       "email": "hello.yoel@amvara.de"

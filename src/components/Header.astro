@@ -24,67 +24,60 @@ const langs: { code: Locale; href: string; label: string }[] = [
 ];
 ---
 
-<header
-  class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/80 backdrop-blur-md"
-  data-mobile-nav-root
->
-  <nav
-    class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-12"
-  >
-    <a href={withHash(locale, 'home')} class="flex min-w-0 items-center gap-3 text-white">
+<header class="masthead" data-mobile-nav-root>
+  <nav class="masthead__bar" aria-label="Primary">
+    <a href={withHash(locale, 'home')} class="masthead__brand">
       <img
         src="/brand/logo.svg"
         alt={m.hero.logoAlt}
-        width="44"
-        height="44"
-        class="h-10 w-10 shrink-0 object-contain sm:h-11 sm:w-11"
+        width="36"
+        height="36"
+        class="masthead__logo"
       />
-      <span class="hidden text-sm font-semibold tracking-wide sm:inline">
-        {m.brandMark.before}<span class="text-gradient font-bold">0</span>{m.brandMark.after}
+      <span class="masthead__wordmark">
+        {m.brandMark.before}<span class="masthead__zero">0</span>{m.brandMark.after}
       </span>
     </a>
-    <div class="flex items-center gap-3 md:gap-6">
-      <ul class="hidden gap-5 text-sm text-white/70 md:flex">
+
+    <div class="masthead__end">
+      <ul class="masthead__links">
         {
           nav.map((item) => (
             <li>
-              <a
-                href={item.href}
-                class="transition-colors duration-300 hover:text-white"
-              >
+              <a href={item.href} class="masthead__link">
                 {item.label}
               </a>
             </li>
           ))
         }
       </ul>
-      <div
-        class="flex shrink-0 items-center gap-1 rounded-full border border-white/15 bg-white/5 px-1 py-0.5 text-xs font-medium text-white/80"
-        role="navigation"
-        aria-label="Language"
-      >
+
+      <div class="masthead__langs" role="navigation" aria-label="Language">
         {
-          langs.map((lang) => (
-            <a
-              href={lang.href}
-              data-lang-switch
-              class:list={[
-                'rounded-full px-2 py-1 transition-colors',
-                locale === lang.code
-                  ? 'bg-white/15 text-white'
-                  : 'text-white/60 hover:text-white',
-              ]}
-              hreflang={localeBcp47[lang.code]}
-            >
-              {lang.label}
-            </a>
+          langs.map((lang, i) => (
+            <span class="masthead__lang-item">
+              {i > 0 && <span class="masthead__lang-sep" aria-hidden="true">/</span>}
+              <a
+                href={lang.href}
+                data-lang-switch
+                class:list={[
+                  'masthead__lang',
+                  locale === lang.code && 'masthead__lang--active',
+                ]}
+                hreflang={localeBcp47[lang.code]}
+              >
+                {lang.label}
+              </a>
+            </span>
           ))
         }
       </div>
+
       <ServicesLauncher messages={m} />
+
       <button
         type="button"
-        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 md:hidden"
+        class="masthead__menu-btn"
         data-mobile-menu-toggle
         aria-expanded="false"
         aria-controls="mobile-nav"
@@ -119,21 +112,18 @@ const langs: { code: Locale; href: string; label: string }[] = [
       </button>
     </div>
   </nav>
+
   <div
     id="mobile-nav"
-    class="mobile-nav border-b border-white/10 bg-navy/95 backdrop-blur-md md:hidden"
+    class="masthead__mobile"
     hidden
     data-open="false"
   >
-    <ul class="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4 text-base font-medium text-white/80">
+    <ul class="masthead__mobile-list">
       {
         nav.map((item) => (
           <li>
-            <a
-              href={item.href}
-              data-mobile-nav-link
-              class="block rounded-lg px-3 py-3 transition-colors hover:bg-white/5 hover:text-white"
-            >
+            <a href={item.href} data-mobile-nav-link class="masthead__mobile-link">
               {item.label}
             </a>
           </li>
@@ -188,24 +178,219 @@ const langs: { code: Locale; href: string; label: string }[] = [
 </script>
 
 <style>
-  .mobile-nav {
+  .masthead {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--color-snow) 92%, transparent);
+    border-bottom: 1px solid var(--color-mist);
+    backdrop-filter: blur(8px);
+  }
+
+  .masthead__bar {
+    margin: 0 auto;
+    display: flex;
+    max-width: 72rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .masthead__bar {
+      padding-inline: 3rem;
+    }
+  }
+
+  .masthead__brand {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .masthead__logo {
+    height: 2rem;
+    width: 2rem;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .masthead__wordmark {
+    display: none;
+    font-family: theme('fontFamily.display');
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 640px) {
+    .masthead__wordmark {
+      display: inline;
+    }
+  }
+
+  .masthead__zero {
+    color: var(--color-signal);
+  }
+
+  .masthead__end {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .masthead__end {
+      gap: 1.25rem;
+    }
+  }
+
+  .masthead__links {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1.15rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  @media (min-width: 900px) {
+    .masthead__links {
+      display: flex;
+    }
+  }
+
+  .masthead__link {
+    color: color-mix(in srgb, var(--color-ink) 72%, transparent);
+    text-decoration: none;
+    transition: color 0.25s var(--ease-out-expo);
+  }
+
+  .masthead__link:hover {
+    color: var(--color-ink);
+  }
+
+  .masthead__link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  .masthead__langs {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .masthead__lang-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .masthead__lang {
+    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
+    text-decoration: none;
+    transition: color 0.2s var(--ease-out-expo);
+  }
+
+  .masthead__lang:hover,
+  .masthead__lang--active {
+    color: var(--color-ink);
+  }
+
+  .masthead__lang--active {
+    text-decoration: underline;
+    text-decoration-color: var(--color-signal);
+    text-underline-offset: 0.2em;
+  }
+
+  .masthead__lang-sep {
+    color: var(--color-mist);
+  }
+
+  .masthead__menu-btn {
+    display: inline-flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-mist);
+    background: var(--color-snow);
+    color: var(--color-ink);
+    border-radius: 0.375rem;
+  }
+
+  @media (min-width: 900px) {
+    .masthead__menu-btn {
+      display: none;
+    }
+  }
+
+  .masthead__menu-btn:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+
+  .masthead__mobile {
+    display: block;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    border-bottom: 1px solid var(--color-mist);
+    background: var(--color-snow);
     transition:
-      max-height 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
-      opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+      max-height 0.35s var(--ease-out-expo),
+      opacity 0.25s var(--ease-out-expo);
   }
 
-  .mobile-nav[data-open='true'] {
+  @media (min-width: 900px) {
+    .masthead__mobile {
+      display: none;
+    }
+  }
+
+  .masthead__mobile[data-open='true'] {
     max-height: calc(100dvh - 4.75rem);
     overflow-y: auto;
     opacity: 1;
     -webkit-overflow-scrolling: touch;
   }
 
+  .masthead__mobile-list {
+    margin: 0 auto;
+    display: flex;
+    max-width: 72rem;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.75rem 1.5rem 1.25rem;
+    list-style: none;
+    font-family: theme('fontFamily.sans');
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .masthead__mobile-link {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    color: var(--color-ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-mist);
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .mobile-nav {
+    .masthead__mobile {
       transition: none;
     }
   }

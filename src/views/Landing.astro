@@ -1,15 +1,10 @@
 ---
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Vision from '../components/Vision.astro';
-import Mission from '../components/Mission.astro';
-import PrivacyTrust from '../components/PrivacyTrust.astro';
-import Values from '../components/Values.astro';
-import Community from '../components/Community.astro';
 import Services from '../components/Services.astro';
 import CloudUserStats from '../components/CloudUserStats.astro';
-import Meaning from '../components/Meaning.astro';
-import MerchShowcase from '../components/MerchShowcase.astro';
+import WhyKm0 from '../components/WhyKm0.astro';
+import Community from '../components/Community.astro';
 import Faq from '../components/Faq.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -34,15 +29,11 @@ const canonicalUrl =
   <Header locale={locale} messages={messages} />
   <main>
     <Hero locale={locale} messages={messages} />
-    <Vision locale={locale} messages={messages} />
-    <Services locale={locale} messages={messages} />
-    <CloudUserStats locale={locale} messages={messages} />
-    <Mission messages={messages} />
-    <PrivacyTrust messages={messages} />
-    <Values messages={messages} />
+    <Services locale={locale} messages={messages}>
+      <CloudUserStats locale={locale} messages={messages} variant="band" />
+    </Services>
+    <WhyKm0 locale={locale} messages={messages} />
     <Community locale={locale} messages={messages} />
-    <MerchShowcase messages={messages} />
-    <Meaning messages={messages} />
     <Faq messages={messages} />
     <Contact messages={messages} />
   </main>

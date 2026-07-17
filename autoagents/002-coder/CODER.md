@@ -23,6 +23,7 @@ Adhere to **`autoagents/TASKS-README.md`**.
 - **`./scripts/git-sync-main.sh`** before edits.
 - Branch **`main`**. No secrets in commits.
 - Minimal diff; match existing Astro/i18n conventions in **`docs/runbook.md`**.
+- If the task touches UI or copy: **`docs/design/anti-slop-doctrine.md`**, skills `km0-anti-slop-design` + `km0-web-copy`, and **`docs/brand-tokens.md`**. Do not regress to Inter-only + purple gradient SaaS patterns.
 
 ### Instructions
 

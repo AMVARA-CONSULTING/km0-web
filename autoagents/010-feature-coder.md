@@ -44,6 +44,13 @@ Adhere to **`autoagents/TASKS-README.md`**.
 - **Verify:** `curl -sI http://127.0.0.1:9180/` and locale paths (`/ca/`, `/en/`, `/de/`, `/doc/`).
 - **Debugging:** `docker logs --since 10m km0-web`
 
+### Frontend and copy (mandatory on UI / i18n tasks)
+
+- Read **`docs/design/anti-slop-doctrine.md`**.
+- Apply skills **`.cursor/skills/km0-anti-slop-design/SKILL.md`** and **`.cursor/skills/km0-web-copy/SKILL.md`**.
+- Follow tokens in **`docs/brand-tokens.md`** (no Inter-only, no purple/indigo brand gradients, no centered SaaS hero recipe).
+- Closing reviewer will **fail** tasks that reintroduce AI/Tailwind-slop tells.
+
 ### Instructions
 
 1. **`./scripts/git-sync-main.sh`**

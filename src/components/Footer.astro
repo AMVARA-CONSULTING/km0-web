@@ -16,21 +16,23 @@ const { locale, messages: m } = Astro.props;
 const footerColumns = footerNavColumns(locale, m);
 ---
 
-<footer class="border-t border-navy/10 bg-surface px-6 py-12 md:px-12">
+<footer class="site-footer border-t-2 border-ink bg-paper px-6 py-14 md:px-12">
   <div class="mx-auto max-w-6xl">
     <nav aria-label={m.footer.navAriaLabel}>
       <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4">
         {
           footerColumns.map((column) => (
             <div>
-              <h3 class="mb-3 text-sm font-semibold text-navy">{column.title}</h3>
+              <h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-ink/50">
+                {column.title}
+              </h3>
               <ul class="flex flex-col gap-2">
                 {
                   column.links.map((link) => (
                     <li>
                       <a
                         href={link.href}
-                        class="text-sm text-navy/55 transition-colors hover:text-navy"
+                        class="font-sans text-sm text-ink/60 transition-colors hover:text-signal"
                         {...(link.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
@@ -49,7 +51,7 @@ const footerColumns = footerNavColumns(locale, m);
   </div>
 
   <div
-    class="mx-auto mt-12 grid max-w-6xl grid-cols-1 items-center gap-6 border-t border-navy/10 pt-8 md:grid-cols-3"
+    class="mx-auto mt-12 grid max-w-6xl grid-cols-1 items-center gap-6 border-t border-mist pt-8 md:grid-cols-3"
   >
     <div class="flex items-center justify-center gap-3 md:justify-start">
       <img
@@ -59,33 +61,33 @@ const footerColumns = footerNavColumns(locale, m);
         height="40"
         class="h-10 w-10 object-contain"
       />
-      <span class="text-sm font-medium text-navy/80">
+      <span class="font-display text-sm font-semibold tracking-tight text-ink">
         {m.brandName}
       </span>
     </div>
     <div class="flex flex-col items-center gap-1 text-center">
-      <p class="text-sm text-navy/50">
+      <p class="font-sans text-sm text-ink/50">
         © {year} {m.brandName}. {m.footer.rights}
       </p>
       <p
-        class="text-xs font-medium tabular-nums tracking-wide text-navy/45"
+        class="font-sans text-xs font-medium tabular-nums tracking-wide text-ink/45"
         title={`${m.footer.version} ${SITE_VERSION}`}
       >
         {m.footer.version}
-        <span class="text-navy/60">{SITE_VERSION}</span>
+        <span class="text-ink/60">{SITE_VERSION}</span>
       </p>
-      <p class="text-xs text-navy/45">
+      <p class="font-sans text-xs text-ink/45">
         {m.footer.repoSince}{' '}
         <a
           href={REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="font-medium text-navy/60 underline decoration-navy/20 underline-offset-2 transition-colors hover:text-navy hover:decoration-navy/50"
+          class="font-medium text-ink/60 underline decoration-signal/30 underline-offset-2 transition-colors hover:text-signal"
           title={REPO_URL}
         >{formatDocDate(REPO_CREATED_AT, locale)}</a>
       </p>
       <p
-        class="text-sm text-navy/50 [&_a]:font-semibold [&_a]:text-navy/70 [&_a]:underline [&_a]:decoration-navy/20 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-navy hover:[&_a]:decoration-navy/50"
+        class="font-sans text-sm text-ink/50 [&_a]:font-semibold [&_a]:text-ink/70 [&_a]:underline [&_a]:decoration-signal/30 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-signal"
         set:html={m.footer.poweredByHtml}
       />
     </div>
@@ -94,7 +96,7 @@ const footerColumns = footerNavColumns(locale, m);
         href="https://github.com/AMVARA-CONSULTING/km0-web"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 text-sm text-navy/50 transition-colors hover:text-navy"
+        class="inline-flex items-center gap-1.5 font-sans text-sm text-ink/50 transition-colors hover:text-signal"
       >
         <svg
           class="h-4 w-4 shrink-0"

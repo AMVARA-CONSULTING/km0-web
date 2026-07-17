@@ -1,0 +1,25 @@
+---
+description: Forbid AI/Tailwind-slop frontend patterns on km0-web. Always apply for UI work.
+alwaysApply: true
+---
+
+# Anti-slop frontend (always)
+
+Before any UI change, follow **`.cursor/skills/km0-anti-slop-design/SKILL.md`** and **`docs/design/anti-slop-doctrine.md`**.
+
+## Auto-fail patterns
+
+- Inter/Roboto/Open Sans as sole UI font
+- Purple/indigo/violet brand gradients or gradient-clipped headlines
+- Centered SaaS hero recipe (eyebrow pill + H1 + dual pill CTAs)
+- Equal icon-tile feature cards / fake stat strips / glow-heavy decoration
+- Default “AI nav” without a genre-specific alternative
+
+## Required
+
+- Distinct display + body pairing from `docs/brand-tokens.md`
+- One anchor hue + restrained accent
+- Biased (not fully centered) compositions where the page genre allows
+- First viewport: brand, one headline, one support line, one CTA group, one dominant visual
+
+Tailwind is allowed as implementation detail. Tailwind’s **demo aesthetic** is not.

@@ -49,6 +49,12 @@ Create labels in the repo if missing.
 - Git sync: **`./scripts/git-sync-main.sh`**
 - Task docs: **`autoagents/TASKS-README.md`**
 - Cursor skill: **`.cursor/skills/autoagents/SKILL.md`**
+- Design doctrine: **`docs/design/anti-slop-doctrine.md`**
+- Brand tokens: **`docs/brand-tokens.md`**, runtime **`src/styles/tokens.css`**
+- Frontend skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
+- Copy skill: **`.cursor/skills/km0-web-copy/SKILL.md`**
+- Frontend rule: **`.cursor/rules/anti-slop-frontend.mdc`**
+- Copy rule: **`.cursor/rules/web-copy.mdc`**
 
 ## Direct user prompts vs autoagents
 

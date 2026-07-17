@@ -8,33 +8,32 @@ interface Props {
 const { messages: m } = Astro.props;
 ---
 
-<section id="faq" class="section-pad bg-surface">
+<section id="faq" class="section-pad faq" aria-labelledby="faq-heading">
   <div class="mx-auto max-w-3xl">
-    <p data-reveal class="mb-4 text-center text-sm font-medium uppercase tracking-[0.2em] text-navy/50">
-      {m.faq.eyebrow}
-    </p>
-    <h2 data-reveal data-delay="80" class="heading-section mb-12 text-center text-navy">
-      {m.faq.heading}
-    </h2>
+    <header class="faq__header" data-reveal>
+      <h2 id="faq-heading" class="heading-section text-navy">
+        {m.faq.heading}
+      </h2>
+    </header>
 
-    <div class="rounded-2xl border border-navy/10 bg-white shadow-sm" data-faq-accordion>
+    <div class="faq__list" data-faq-accordion>
       {
         m.faq.items.map((item, i) => (
           <div
             data-faq-item
             data-reveal
-            data-delay={String(160 + i * 80)}
-            class="faq-item border-b border-navy/10 last:border-b-0"
+            data-delay={String(80 + i * 60)}
+            class="faq-item"
             data-open={i === 0 ? 'true' : 'false'}
           >
             <button
               type="button"
-              class="faq-trigger flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-lg font-semibold text-navy transition-colors hover:text-navy/80"
+              class="faq-trigger"
               aria-expanded={i === 0 ? 'true' : 'false'}
             >
               <span>{item.question}</span>
               <svg
-                class="faq-chevron h-5 w-5 shrink-0 text-navy/40 transition-transform duration-300"
+                class="faq-chevron h-5 w-5 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -46,7 +45,7 @@ const { messages: m } = Astro.props;
             </button>
             <div class="faq-panel" data-faq-panel>
               <div
-                class="faq-panel__content px-6 pb-5 text-base leading-relaxed text-navy/70 [&_a]:font-medium [&_a]:text-navy [&_a]:underline [&_a]:decoration-navy/30 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:decoration-navy"
+                class="faq-panel__content [&_a]:font-medium [&_a]:text-signal [&_a]:underline [&_a]:underline-offset-2"
                 set:html={item.answerHtml}
               />
             </div>
@@ -62,10 +61,60 @@ const { messages: m } = Astro.props;
 </script>
 
 <style>
+  .faq__header {
+    margin-bottom: 2rem;
+  }
+
+  .faq__list {
+    border-top: 1px solid var(--color-mist);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-mist);
+  }
+
+  .faq-trigger {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 0;
+    text-align: left;
+    font-family: theme('fontFamily.display');
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    background: transparent;
+    border: 0;
+  }
+
+  .faq-trigger:hover {
+    color: var(--color-signal);
+  }
+
+  .faq-trigger:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
+  }
+
+  .faq-chevron {
+    color: color-mix(in srgb, var(--color-ink) 40%, transparent);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
   .faq-panel {
     height: 0;
     overflow: hidden;
-    transition: height 0.35s var(--ease-apple);
+    transition: height 0.35s var(--ease-out-expo);
+  }
+
+  .faq-panel__content {
+    padding: 0 0 1.25rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: color-mix(in srgb, var(--color-ink) 70%, transparent);
   }
 
   .faq-item[data-open='true'] .faq-chevron {

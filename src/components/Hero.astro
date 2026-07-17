@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
-import { withHash } from '../i18n/paths';
+import { localeHref } from '../i18n/paths';
 
 interface Props {
   locale: Locale;
@@ -9,157 +9,249 @@ interface Props {
 }
 
 const { locale, messages: m } = Astro.props;
+const cloudItem = m.services.items.find((item) => item.id === 'cloud');
+const emailItem = m.services.items.find((item) => item.id === 'email');
+const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 ---
 
-<section
-  id="home"
-  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy px-6 pt-24 text-center text-white"
->
-  <div
-    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(123,63,228,0.15)_0%,_transparent_70%)]"
-  >
-  </div>
-
-  <div data-reveal class="relative z-10 max-w-4xl">
-    <div class="logo-pulse mx-auto mb-12 w-48 sm:w-56 md:w-72 lg:w-80">
-      <img
-        src="/brand/logo.svg"
-        alt={m.hero.logoAlt}
-        width="512"
-        height="512"
-        class="hero-logo-spin mx-auto h-auto w-full max-h-[min(46vh,24rem)] object-contain drop-shadow-2xl"
-      />
+<section id="home" class="hero" aria-labelledby="hero-heading">
+  <div class="hero__grid">
+    <div class="hero__copy" data-reveal>
+      <p class="hero__brand">
+        {m.brandMark.before}<span class="hero__brand-zero">0</span>{m.brandMark.after}
+      </p>
+      <h1 id="hero-heading" class="hero__headline">
+        {m.hero.titleLine1}<span class="hero__headline-accent">{m.hero.titleGradient}</span>
+      </h1>
+      <p class="hero__support">{m.hero.tagline}</p>
+      <div class="hero__cta">
+        <a href={cloudHref} class="btn-primary">{m.hero.ctaPrimary}</a>
+        <a href={localeHref(locale, '/pricing/')} class="hero__link">
+          {m.hero.ctaSecondary}
+        </a>
+      </div>
     </div>
 
-    <p class="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/50">
-      {m.hero.eyebrow}
-    </p>
-
-    <h1 class="heading-display mb-6 leading-tight">
-      {m.hero.titleLine1}<br />
-      <span class="text-gradient">{m.hero.titleGradient}</span>
-    </h1>
-
-    <p class="mx-auto max-w-xl text-lg font-light tracking-wide text-white/70 md:text-xl">
-      {m.hero.tagline}
-    </p>
-
-    <div class="mt-12 flex flex-wrap justify-center gap-4">
-      <a href={withHash(locale, 'vision')} class="btn-primary">{m.hero.ctaPrimary}</a>
-      <a
-        href={withHash(locale, 'contact')}
-        class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-sm font-medium text-white transition-all duration-500 ease-apple hover:border-white/40 hover:bg-white/5"
-      >
-        {m.hero.ctaSecondary}
-      </a>
+    <div class="hero__visual" data-reveal data-delay="120" aria-hidden="true">
+      <div class="hero__proof">
+        <div class="hero__mark">
+          <img
+            src="/brand/logo.svg"
+            alt=""
+            width="160"
+            height="160"
+            class="hero__mark-img"
+          />
+        </div>
+        <ul class="hero__board">
+          {
+            cloudItem && (
+              <li class="hero__board-row">
+                <span class="hero__board-label">{cloudItem.title}</span>
+                {cloudItem.priceFrom && (
+                  <span class="hero__board-meta">{cloudItem.priceFrom}</span>
+                )}
+              </li>
+            )
+          }
+          {
+            emailItem && (
+              <li class="hero__board-row">
+                <span class="hero__board-label">{emailItem.title}</span>
+                <span class="hero__board-meta">
+                  {emailItem.available === false
+                    ? emailItem.cta
+                    : (emailItem.subtitle ?? emailItem.cta)}
+                </span>
+              </li>
+            )
+          }
+        </ul>
+      </div>
     </div>
   </div>
-
-  <a
-    href={withHash(locale, 'km0-cloud')}
-    class="hero-scroll-cta absolute bottom-8 left-1/2 -translate-x-1/2 text-white opacity-40 transition-opacity hover:opacity-70 focus-visible:opacity-70"
-    aria-label={m.hero.scrollToCloud}
-  >
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.5"
-      aria-hidden="true"
-      class="hero-scroll-icon"
-    >
-      <path d="M12 5v14M5 12l7 7 7-7" />
-    </svg>
-  </a>
 </section>
 
 <style>
-  .hero-logo-spin {
-    transform-origin: center center;
-    will-change: transform;
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-paper);
+    background-image:
+      linear-gradient(90deg, rgb(216 220 224 / 0.45) 1px, transparent 1px),
+      linear-gradient(rgb(216 220 224 / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: -1px -1px;
+    color: var(--color-ink);
+    padding: 7.5rem 1.5rem 4rem;
   }
 
-  .logo-pulse {
-    animation: pulse-soft 4s ease-in-out infinite;
-  }
-
-  @keyframes pulse-soft {
-    0%,
-    100% {
-      transform: scale(1);
-      filter: drop-shadow(0 0 20px rgba(123, 63, 228, 0.3));
-    }
-    50% {
-      transform: scale(1.02);
-      filter: drop-shadow(0 0 40px rgba(0, 123, 255, 0.4));
+  @media (min-width: 768px) {
+    .hero {
+      padding: 8.5rem 3rem 5rem;
     }
   }
 
-  .hero-scroll-cta {
-    border-radius: 9999px;
-    padding: 0.5rem;
+  @media (min-width: 1024px) {
+    .hero {
+      padding: 9rem 5rem 6rem;
+      min-height: min(100svh, 52rem);
+      display: flex;
+      align-items: center;
+    }
   }
 
-  .hero-scroll-cta:focus-visible {
-    outline: 2px solid rgb(255 255 255 / 0.8);
+  .hero__grid {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+    width: 100%;
+    max-width: 72rem;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .hero__grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 4rem;
+    }
+  }
+
+  .hero__brand {
+    margin: 0 0 1.25rem;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--color-ink);
+  }
+
+  .hero__brand-zero {
+    color: var(--color-signal);
+  }
+
+  .hero__headline {
+    margin: 0 0 1.25rem;
+    max-width: 18ch;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  .hero__headline-accent {
+    color: var(--color-signal);
+  }
+
+  .hero__support {
+    margin: 0;
+    max-width: 34rem;
+    font-family: theme('fontFamily.body');
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+  }
+
+  .hero__cta {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
+  .hero__link {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: rgb(15 118 110 / 0.45);
+    text-underline-offset: 0.2em;
+    transition: color 0.3s var(--ease-out-expo), text-decoration-color 0.3s var(--ease-out-expo);
+  }
+
+  .hero__link:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .hero__link:focus-visible {
+    outline: 2px solid var(--color-signal);
     outline-offset: 4px;
   }
 
-  .hero-scroll-icon {
-    animation: hero-scroll-bounce 2s ease-in-out infinite;
+  .hero__visual {
+    justify-self: stretch;
   }
 
-  @keyframes hero-scroll-bounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
+  .hero__proof {
+    position: relative;
+    display: grid;
+    gap: 1.75rem;
+    padding: 1.75rem;
+    background: var(--color-snow);
+    border: 1px solid var(--color-mist);
+    border-left: 4px solid var(--color-signal);
+    box-shadow: 8px 8px 0 rgb(11 18 32 / 0.06);
+  }
 
-    50% {
-      transform: translateY(0.35rem);
+  @media (min-width: 640px) {
+    .hero__proof {
+      padding: 2.25rem;
     }
+  }
+
+  .hero__mark {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero__mark-img {
+    width: clamp(5.5rem, 18vw, 8rem);
+    height: auto;
+    display: block;
+  }
+
+  .hero__board {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--color-mist);
+  }
+
+  .hero__board-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-mist);
+    font-family: theme('fontFamily.sans');
+  }
+
+  .hero__board-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .hero__board-meta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-signal);
+    letter-spacing: 0.01em;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .logo-pulse {
-      animation: none;
-    }
-
-    .hero-logo-spin {
-      will-change: auto;
-    }
-
-    .hero-scroll-icon {
-      animation: none;
+    .hero__proof {
+      box-shadow: none;
     }
   }
 </style>
-
-<script>
-  const logo = document.querySelector<HTMLImageElement>('.hero-logo-spin');
-  if (logo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const CYCLE_MS = 60_000;
-    const SPIN_MS = 3_500;
-    const EASE_POWER = 7;
-
-    const spinEase = (progress: number) => {
-      const clamped = Math.min(Math.max(progress, 0), 1);
-      const rising = clamped ** (2 * EASE_POWER);
-      const falling = (1 - clamped) ** (2 * EASE_POWER);
-      return rising / (rising + falling);
-    };
-
-    const startedAt = performance.now();
-
-    const frame = (now: number) => {
-      const elapsed = (now - startedAt) % CYCLE_MS;
-      const angle = elapsed < SPIN_MS ? 360 * spinEase(elapsed / SPIN_MS) : 0;
-      logo.style.transform = `rotate(${angle}deg)`;
-      requestAnimationFrame(frame);
-    };
-
-    requestAnimationFrame(frame);
-  }
-</script>

@@ -117,7 +117,7 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
       )
     }
 
-    <div class="doc-article-shell">
+    <div class="doc-article">
       <header class="doc-header">
         <div class="doc-meta">
           {pubDate && pubDateLabel && (
@@ -127,7 +127,7 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
           )}
           <span class="doc-reading-time">{readingTime}</span>
         </div>
-        <h1 class="heading-section doc-title text-navy">{title}</h1>
+        <h1 class="doc-title">{title}</h1>
         <p class="doc-dek">{description}</p>
       </header>
 
@@ -166,10 +166,10 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
             </h2>
             <ul class="doc-related-list">
               {related.map((item) => (
-                <li class="doc-related-card">
-                  <a href={item.href} class="doc-related-card-link">
-                    <span class="doc-related-card-title">{item.title}</span>
-                    <span class="doc-related-card-desc">{item.description}</span>
+                <li>
+                  <a href={item.href} class="doc-related-link">
+                    <span class="doc-related-link-title">{item.title}</span>
+                    <span class="doc-related-link-desc">{item.description}</span>
                   </a>
                 </li>
               ))}
@@ -183,13 +183,6 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
       </footer>
     </div>
   </div>
-
-  {
-    hasToc &&
-      toc.map((entry) => (
-        <span data-toc-anchor={entry.id} hidden />
-      ))
-  }
 </article>
 
 <script>

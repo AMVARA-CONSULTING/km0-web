@@ -32,10 +32,10 @@ const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
 >
   <Header locale={locale} messages={messages} />
   <main class="section-pad doc-reading-page pt-28">
-    <div class="doc-index mx-auto max-w-3xl">
+    <div class="doc-index">
       <header class="doc-index-header">
-        <p class="doc-eyebrow">{messages.doc.eyebrow}</p>
-        <h1 class="heading-section text-navy">{messages.doc.heading}</h1>
+        <p class="doc-kicker">{messages.doc.eyebrow}</p>
+        <h1 class="doc-index-title">{messages.doc.heading}</h1>
         <p class="doc-index-intro">{messages.doc.intro}</p>
       </header>
 
@@ -46,20 +46,19 @@ const canonicalUrl = new URL(localeHref(locale, '/doc/'), siteRoot).href;
             const readingTime = formatReadingTime(messages.doc.readingTime, readingMinutes);
 
             return (
-              <li class="doc-post-card">
-                <div class="doc-post-card-meta">
+              <li class="doc-post-row">
+                <div class="doc-post-row-meta">
                   <time datetime={post.data.pubDate.toISOString()} class="doc-date">
                     {formatDocDate(post.data.pubDate, locale)}
                   </time>
                   <span class="doc-reading-time">{readingTime}</span>
                 </div>
-                <h2 class="doc-post-card-title">
-                  <a href={docPostHref(locale, docSlug(post))}>{post.data.title}</a>
-                </h2>
-                <p class="doc-post-card-desc">{post.data.description}</p>
-                <a href={docPostHref(locale, docSlug(post))} class="doc-read-more">
-                  {messages.doc.readMore}
-                </a>
+                <div class="doc-post-row-body">
+                  <h2 class="doc-post-row-title">
+                    <a href={docPostHref(locale, docSlug(post))}>{post.data.title}</a>
+                  </h2>
+                  <p class="doc-post-row-desc">{post.data.description}</p>
+                </div>
               </li>
             );
           })

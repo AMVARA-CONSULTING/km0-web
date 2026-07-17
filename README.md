@@ -8,7 +8,7 @@ Public marketing landing for **KM0 Digital**.
 
 ## About
 
-KM0 connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site with informational sections, brand identity (orange → magenta → purple → blue gradient), and smooth scroll animations.
+KM0 connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site: cool civic editorial brand (Ink / Paper / Signal teal, Bricolage Grotesque + Source Serif 4 + IBM Plex Sans). See `docs/brand-tokens.md` and `docs/design/anti-slop-doctrine.md`.
 
 **Privacy:** km0digital is built with a privacy-first mindset. We do not sell user data, build advertising profiles, or monetise files. See the landing page privacy section and `/legal/` for the full policy.
 
@@ -114,7 +114,8 @@ Do not run bare `npm update` or `npm install` without a deliberate version bump;
 |--------|----------|
 | Translate text | **`src/i18n/es.json`**, **`ca.json`**, **`en.json`** |
 | Sections / markup | **`src/views/Landing.astro`** and **`src/components/*.astro`** |
-| Colors and brand | `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs` |
+| Colors and brand | `docs/brand-tokens.md`, `docs/design/anti-slop-doctrine.md`, `src/styles/tokens.css`, `tailwind.config.mjs` |
+| Design remodel epic | `docs/design/remodel-epic.md` |
 | Logo and images | `public/brand/` |
 | Domain / SEO | `astro.config.mjs` (`site`) |
 

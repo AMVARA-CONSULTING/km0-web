@@ -1,0 +1,76 @@
+# KM0 anti-slop design doctrine
+
+**Goal:** Stop agents (and humans) from shipping the statistical average of Tailwind SaaS templates. Every surface must feel intentional, local, and readable - never “another AI landing page.”
+
+## Why this exists
+
+LLMs converge on the same frontend because training data is saturated with Tailwind demos, shadcn starters, and “modern SaaS” boilerplates. That median look has a name: **AI slop**.
+
+KM0’s current brand tokens (`Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero) sit in the middle of that attractor. This remodel exits it on purpose.
+
+## Primary references (read before implementing)
+
+### Design / anti-slop
+
+| Source | Why it matters |
+|--------|----------------|
+| [Hallmark](https://www.usehallmark.com/) | Negative constraints + positive rules (type pair, bias layout, one accent, nav as genre signal). Study live examples such as [Wayfare](https://www.usehallmark.com/examples/wayfare/), [Mend Assembly](https://www.usehallmark.com/examples/custom-04/). |
+| [Why AI design looks generic (Superdesign)](https://www.superdesign.dev/blog/why-ai-design-looks-generic) | “Distributional convergence”: models pick the statistical center unless constrained. |
+| [Why your AI keeps building the same purple gradient website](https://prg.sh/ramblings/Why-Your-AI-Keeps-Building-the-Same-Purple-Gradient-Website) | Tailwind `indigo-500` history; Anthropic-style aesthetics prompt; constraint > vague taste. |
+| [AI design slop: 16 patterns](https://www.developersdigest.tech/blog/ai-design-slop-and-how-to-spot-it) | Detection checklist (Inter-everywhere, badge-above-H1, icon-tile cards, stat strips, glow, etc.). |
+| [anti-slop-templates](https://github.com/JasonColapietro/anti-slop-templates) | Committed systems beat “good taste” abstracts: pick one direction and apply everywhere. |
+| [MindStudio: design system for Claude](https://www.mindstudio.ai/blog/claude-design-avoid-ai-slop-design-system) | A markdown design system (fonts, hex roles, spacing, anti-examples) beats better one-off prompts. |
+
+### Writing / psychology of reading
+
+| Source | Why it matters |
+|--------|----------------|
+| [How users read on the web (NN/g)](https://www.nngroup.com/articles/how-users-read-on-the-web/) | Users scan; scannable + concise + objective writing raised usability up to **124%** combined. |
+| [Concise, scannable, objective (NN/g)](https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/) | Kill marketese; one idea per paragraph; inverted pyramid. |
+| [F-shaped pattern (NN/g)](https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content-discovered/) | Front-load meaning in first paragraphs and left-edge words of lines. |
+| [Be succinct (NN/g)](https://www.nngroup.com/articles/be-succinct-writing-for-the-web/) | Aim for ≤50% of print-style word count; meaningful (not cute) headings. |
+
+## Hard ban list (auto-fail)
+
+If any of these ship, the task fails review:
+
+1. **Inter / Roboto / Open Sans / Arial / system-ui alone** as the only typeface for display + body.
+2. **Purple / indigo / violet gradients** on heroes, buttons, or `bg-clip-text` headlines (including KM0’s old `#E040A0 → #7B3FE4 → #007BFF` chain).
+3. **Centered everything** hero (logo + eyebrow + H1 + dual CTAs + scroll chevron as the whole first viewport recipe).
+4. **Icon-in-rounded-square feature cards** in equal 3-column grids.
+5. **Eyebrow pill / badge** stacked above every H1.
+6. **Stat strip** of round fake numbers (“10K+”, “99.9%”) unless numbers are real and sourced.
+7. **Glow / bloom / multi-layer shadow** decoration as the main atmosphere.
+8. **`rounded-full` pill CTAs everywhere** as the only button shape.
+9. **Glassmorphic sticky AI-nav** (wordmark left, links center, CTA right, hairline border) without a genre-specific alternative.
+10. **Emoji as UI icons** or sparkle badges.
+11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; default dark-mode-first marketing pages.
+
+## Positive rules (must do)
+
+1. **Commit a direction** before pixels: one sentence of vibe + one layout archetype + one type pair + one anchor hue + one accent (accent ≤ ~5% of surface).
+2. **Brand first in the first viewport:** product name is hero-level, not nav chrome. One headline, one supporting sentence, one CTA group, one dominant visual plane.
+3. **Bias the layout:** asymmetry once is enough to signal intent.
+4. **Type pairing:** display face ≠ body face. Extreme weight contrast beats timid 400/600.
+5. **One job per section:** one purpose, one headline, usually one short support line. No cards in the hero. Cards only when they contain an interaction.
+6. **Atmosphere without slop:** gradients/patterns/imagery must show place, product, or community - not abstract purple blobs.
+7. **Motion with purpose:** 2–3 intentional moments; exponential ease-out; always respect `prefers-reduced-motion`.
+8. **Voice:** concrete, local, honest. Prefer facts over slogans. LLMs must rewrite toward clarity, not toward more adjectives.
+
+## KM0-specific reading of the brand
+
+KM0 is a **community digital-sovereignty movement** with real EU-hosted services (Cloud, Email), not a generic SaaS. Design and copy should feel:
+
+- **Local and civic** (near people, not venture-scale hype)
+- **Technical but human** (ops transparency without marketese)
+- **Trustworthy** (ISO context, EU hosting - stated once, not repeated in every block)
+
+Avoid sounding like a YC landing page or a Big Tech privacy whitepaper.
+
+## Agent enforcement
+
+- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md`
+- Skill: `.cursor/skills/km0-web-copy/SKILL.md`
+- Rules: `.cursor/rules/anti-slop-frontend.mdc`, `.cursor/rules/web-copy.mdc`
+- Tokens: `docs/brand-tokens.md` + `src/styles/tokens.css`
+- Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions

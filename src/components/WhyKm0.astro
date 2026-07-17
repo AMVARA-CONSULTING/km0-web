@@ -1,0 +1,139 @@
+---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+import { localeHref } from '../i18n/paths';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
+---
+
+<section id="why" class="section-pad why" aria-labelledby="why-heading">
+  <div class="mx-auto max-w-6xl">
+    <header class="why__header" data-reveal>
+      <h2 id="why-heading" class="heading-section text-navy">
+        {m.vision.headingBefore}<span class="text-gradient">{m.vision.headingAccent}</span>{m.vision.headingAfter}
+      </h2>
+      <p class="why__intro">{m.vision.intro}</p>
+    </header>
+
+    <div class="why__compare">
+      <div data-reveal data-delay="80" class="why__col why__col--usual">
+        <h3 class="why__col-title">{m.vision.usual.title}</h3>
+        <ul class="why__list">
+          {
+            m.vision.usual.items.map((item) => (
+              <li>{item}</li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div data-reveal data-delay="160" class="why__col why__col--km0">
+        <h3 class="why__col-title">{m.vision.km0.title}</h3>
+        <ul class="why__list">
+          {
+            m.vision.km0.items.map((item) => (
+              <li>{item}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <p data-reveal data-delay="240" class="why__more">
+      <a href={localeHref(locale, '/presentation/')} class="why__more-link">
+        {m.nav.presentation}
+      </a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .why__header {
+    max-width: 40rem;
+    margin-bottom: 3rem;
+  }
+
+  .why__intro {
+    margin: 1rem 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--color-ink) 70%, transparent);
+  }
+
+  .why__compare {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .why__compare {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .why__col {
+    padding-top: 1.25rem;
+    border-top: 3px solid var(--color-mist);
+  }
+
+  .why__col--km0 {
+    border-top-color: var(--color-signal);
+  }
+
+  .why__col-title {
+    margin: 0 0 1.25rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  }
+
+  .why__col--km0 .why__col-title {
+    color: var(--color-signal);
+  }
+
+  .why__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .why__list li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-mist);
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--color-ink) 78%, transparent);
+  }
+
+  .why__col--km0 .why__list li {
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  .why__more {
+    margin: 2.5rem 0 0;
+  }
+
+  .why__more-link {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: rgb(15 118 110 / 0.4);
+    text-underline-offset: 0.18em;
+  }
+
+  .why__more-link:hover {
+    color: var(--color-signal);
+  }
+</style>

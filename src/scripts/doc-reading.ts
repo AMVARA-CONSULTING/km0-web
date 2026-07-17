@@ -1,16 +1,29 @@
-/** Assign stable ids to doc headings and wire the table of contents. */
+/** Wire TOC highlight and assign ids for legacy HTML kit headings. */
 function initDocReading() {
   const article = document.querySelector<HTMLElement>('[data-doc-reading]');
   if (!article) return;
 
-  const tocNav = article.querySelector<HTMLElement>('[data-doc-toc]');
-  const tocEntries = article.querySelectorAll<HTMLElement>('[data-toc-anchor]');
-  const headingSelectors = '.doc-block-title, .doc-block-heading';
+  const tocNavs = article.querySelectorAll<HTMLElement>('[data-doc-toc]');
+  if (tocNavs.length === 0) return;
 
-  const headings = Array.from(article.querySelectorAll<HTMLElement>(headingSelectors));
-  headings.forEach((heading, index) => {
-    const entry = tocEntries[index];
-    const id = entry?.dataset.tocAnchor ?? `section-${index + 1}`;
+  const links = Array.from(
+    tocNavs[0].querySelectorAll<HTMLAnchorElement>('[data-toc-link]'),
+  );
+  if (links.length === 0) return;
+
+  const kitHeadings = Array.from(
+    article.querySelectorAll<HTMLElement>('.doc-block-title, .doc-block-heading'),
+  );
+
+  links.forEach((link, index) => {
+    const id = link.getAttribute('href')?.replace(/^#/, '');
+    if (!id) return;
+
+    const existing = article.querySelector<HTMLElement>(`#${CSS.escape(id)}`);
+    if (existing) return;
+
+    const heading = kitHeadings[index];
+    if (!heading) return;
     heading.id = id;
     const section = heading.closest('section');
     if (section && !section.id) {
@@ -18,23 +31,35 @@ function initDocReading() {
     }
   });
 
-  if (!tocNav || headings.length === 0) return;
+  const observed = links
+    .map((link) => {
+      const id = link.getAttribute('href')?.replace(/^#/, '');
+      return id ? article.querySelector<HTMLElement>(`#${CSS.escape(id)}`) : null;
+    })
+    .filter((el): el is HTMLElement => Boolean(el));
+
+  if (observed.length === 0) return;
+
+  const setActive = (id: string) => {
+    tocNavs.forEach((nav) => {
+      nav.querySelectorAll('[data-toc-link]').forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${id}`;
+        link.setAttribute('aria-current', isActive ? 'location' : 'false');
+      });
+    });
+  };
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        tocNav.querySelectorAll('[data-toc-link]').forEach((link) => {
-          const isActive = link.getAttribute('href') === `#${id}`;
-          link.setAttribute('aria-current', isActive ? 'location' : 'false');
-        });
+        setActive(entry.target.id);
       });
     },
     { rootMargin: '-20% 0px -70% 0px', threshold: 0 },
   );
 
-  headings.forEach((heading) => observer.observe(heading));
+  observed.forEach((heading) => observer.observe(heading));
 }
 
 if (document.readyState === 'loading') {

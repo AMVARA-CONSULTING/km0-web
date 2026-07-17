@@ -8,15 +8,14 @@ export type SiteNavLink = {
   external?: boolean;
 };
 
-/** Primary header navigation (pages and landing anchors). */
+/** Primary header navigation (≤7 items). Secondary routes live in the footer. */
 export function headerNavLinks(locale: Locale, m: Messages): SiteNavLink[] {
   return [
+    { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
     { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
-    { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
-    { id: 'presentation', label: m.nav.presentation, href: localeHref(locale, '/presentation/') },
     { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
     { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
-    { id: 'ideas', label: m.nav.ideas, href: localeHref(locale, '/ideas/') },
+    { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
     { id: 'meeting', label: m.nav.meeting, href: localeHref(locale, '/meeting/') },
     { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
   ];
@@ -45,33 +44,30 @@ export function footerNavColumns(locale: Locale, m: Messages): FooterNavColumn[]
       title: m.footer.exploreTitle,
       links: [
         { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
+        { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
         { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
-        { id: 'presentation', label: m.nav.presentation, href: localeHref(locale, '/presentation/') },
         { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
-        { id: 'ideas', label: m.nav.ideas, href: localeHref(locale, '/ideas/') },
         { id: 'meeting', label: m.nav.meeting, href: localeHref(locale, '/meeting/') },
+        { id: 'ideas', label: m.nav.ideas, href: localeHref(locale, '/ideas/') },
       ],
     },
     {
       id: 'about',
       title: m.footer.aboutTitle,
       links: [
-        { id: 'vision', label: m.nav.vision, href: withHash(locale, 'vision') },
-        { id: 'mission', label: m.nav.mission, href: withHash(locale, 'mission') },
-        { id: 'values', label: m.nav.values, href: withHash(locale, 'values') },
-        { id: 'community', label: m.nav.community, href: withHash(locale, 'community') },
-        { id: 'meaning', label: m.nav.meaning, href: withHash(locale, 'meaning') },
+        { id: 'why', label: m.nav.vision, href: withHash(locale, 'why') },
+        { id: 'presentation', label: m.nav.presentation, href: localeHref(locale, '/presentation/') },
         { id: 'faq', label: m.nav.faq, href: withHash(locale, 'faq') },
+        { id: 'community', label: m.nav.community, href: withHash(locale, 'community') },
+        { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
       ],
     },
     {
       id: 'legal',
       title: m.footer.legalTitle,
       links: [
-        { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
         { id: 'legal', label: m.footer.legal, href: localeHref(locale, '/legal/') },
         { id: 'security', label: m.footer.security, href: localeHref(locale, '/security/') },
-        { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
       ],
     },
     {

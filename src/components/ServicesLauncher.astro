@@ -23,7 +23,7 @@ const launcherItems = m.services.items.filter(
 <div class="relative" data-services-launcher-root>
   <button
     type="button"
-    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10"
+    class="launcher-toggle"
     data-services-launcher-toggle
     aria-expanded="false"
     aria-controls="services-launcher-panel"
@@ -46,13 +46,13 @@ const launcherItems = m.services.items.filter(
   </button>
   <div
     id="services-launcher-panel"
-    class="services-launcher-panel absolute end-0 top-[calc(100%+0.5rem)] z-50 min-w-[14rem] rounded-2xl border border-white/10 bg-navy/95 p-3 shadow-xl backdrop-blur-md"
+    class="launcher-panel absolute end-0 top-[calc(100%+0.5rem)] z-50 min-w-[14rem] p-3"
     hidden
     data-open="false"
     role="menu"
     aria-label={m.nav.servicesLauncherTitle}
   >
-    <p class="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-white/50">
+    <p class="mb-2 px-2 font-sans text-xs font-semibold uppercase tracking-wide text-ink/45">
       {m.nav.servicesLauncherTitle}
     </p>
     <ul class="grid grid-cols-2 gap-1">
@@ -65,9 +65,9 @@ const launcherItems = m.services.items.filter(
               target="_blank"
               rel="noopener noreferrer"
               data-services-launcher-link
-              class="flex flex-col items-center gap-2 rounded-xl px-3 py-3 text-center text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+              class="flex flex-col items-center gap-2 rounded-md px-3 py-3 text-center font-sans text-sm font-medium text-ink/80 transition-colors hover:bg-paper hover:text-ink"
             >
-              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white">
+              <span class="flex h-9 w-9 items-center justify-center rounded-md bg-paper text-signal">
                 <svg
                   class="h-5 w-5"
                   fill="none"
@@ -130,3 +130,35 @@ const launcherItems = m.services.items.filter(
 
   initServicesLauncher();
 </script>
+
+<style>
+  .launcher-toggle {
+    display: inline-flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-mist);
+    border-radius: 0.375rem;
+    background: var(--color-snow);
+    color: var(--color-ink);
+    transition: background-color 0.2s var(--ease-out-expo), border-color 0.2s var(--ease-out-expo);
+  }
+
+  .launcher-toggle:hover {
+    background: var(--color-paper);
+  }
+
+  .launcher-toggle:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+
+  .launcher-panel {
+    border: 1px solid var(--color-mist);
+    border-radius: 0.5rem;
+    background: var(--color-snow);
+    box-shadow: 0 12px 28px rgb(11 18 32 / 0.08);
+  }
+</style>

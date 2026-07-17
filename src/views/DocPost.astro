@@ -9,7 +9,11 @@ import type { Locale } from '../i18n/types';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import { docSlug, formatDocDate, compareDocPosts } from '../lib/doc';
-import { extractDocToc, estimateReadingMinutes } from '../lib/reading';
+import {
+  extractDocToc,
+  estimateReadingMinutes,
+  tocFromMarkdownHeadings,
+} from '../lib/reading';
 
 interface Props {
   locale: Locale;
@@ -18,7 +22,7 @@ interface Props {
 
 const { locale, post } = Astro.props;
 const messages = getMessages(locale);
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 
 const posts = (await getCollection('doc', ({ data }) => data.locale === locale)).sort(
   compareDocPosts,
@@ -28,7 +32,8 @@ const olderPost = postIndex < posts.length - 1 ? posts[postIndex + 1] : undefine
 const newerPost = postIndex > 0 ? posts[postIndex - 1] : undefined;
 const relatedPosts = posts.filter((entry) => entry.id !== post.id).slice(0, 2);
 
-const toc = extractDocToc(post.body ?? '');
+const mdToc = tocFromMarkdownHeadings(headings);
+const toc = mdToc.length > 0 ? mdToc : extractDocToc(post.body ?? '');
 const readingMinutes = estimateReadingMinutes(post.body ?? '', locale);
 
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');

@@ -34,31 +34,50 @@
     "tagline": "500 GB ab 1,99 €/Monat. Nah betrieben. Ohne Verkauf deines Profils.",
     "ctaPrimary": "KM0 Cloud öffnen",
     "ctaSecondary": "Preise",
-    "logoAlt": "Logo Kilometer 0 Digital"
+    "logoAlt": "Logo Kilometer 0 Digital",
+    "proof": {
+      "status": "EU · aktiv",
+      "planName": "500-GB-Plan",
+      "planMeta": "Hetzner · Falkenstein",
+      "files": [
+        { "name": "Dokumente", "meta": "Ordner", "kind": "folder" },
+        { "name": "Familienfotos", "meta": "Ordner", "kind": "folder" },
+        { "name": "sitzungsnotiz.pdf", "meta": "2,4 MB", "kind": "file" }
+      ],
+      "emailMeta": "@km0digital.com"
+    }
   },
   "vision": {
-    "headingBefore": "Warum ",
-    "headingAccent": "KM0",
+    "headingBefore": "Für wen ",
+    "headingAccent": "es ist",
     "headingAfter": "",
-    "intro": "Weniger Slogans. Mehr Fakten: Dateien und Mail auf europäischen Servern, mit echten Menschen dahinter.",
-    "usual": {
-      "title": "Der übliche Weg",
-      "items": [
-        "Deine Daten finanzieren Werbung",
-        "Ferner oder automatisierter Support",
-        "Undurchsichtige Preise",
-        "Abhängigkeit von wenigen Riesen"
-      ]
-    },
-    "km0": {
-      "title": "Mit KM0",
-      "items": [
-        "Daten in der EU (Hetzner, Deutschland)",
-        "Echte Menschen, in deiner Sprache",
-        "Öffentlicher Preis: 500 GB = 1,99 €/Monat",
-        "Offene Treffen und technischer Blog"
-      ]
-    }
+    "intro": "Person, Gemeinschaft oder Organisation. Dieselben Fakten: EU-Daten, öffentliche Preise, menschlicher Support.",
+    "bands": [
+      {
+        "meta": "01 · PERSON",
+        "title": "Du und dein Haushalt",
+        "body": "Dateien und Mail auf europäischen Servern. 500 GB ab 1,99 €/Monat. Dein Profil finanziert keine Werbung.",
+        "fact": "Hetzner · Falkenstein (EU)",
+        "ctaLabel": "KM0 Cloud öffnen",
+        "cta": "cloud"
+      },
+      {
+        "meta": "02 · GEMEINSCHAFT",
+        "title": "Familie, Coop oder Nachbarschaft",
+        "body": "Geteilte Ordner und offene Treffen. Wir sind nah und sprechen deine Sprache.",
+        "fact": "Lokale Treffen · menschlicher Support",
+        "ctaLabel": "Treffen ansehen",
+        "cta": "community"
+      },
+      {
+        "meta": "03 · ORGANISATION",
+        "title": "Verein oder KMU",
+        "body": "Mail @km0digital.com und Cloud mit veröffentlichten Preisen. EU-Daten, kein Enterprise-Kleingedrucktes.",
+        "fact": "Öffentliche Preise · kein Verkauf von Profilen",
+        "ctaLabel": "Preise ansehen",
+        "cta": "pricing"
+      }
+    ]
   },
   "community": {
     "heading": "Treffen",

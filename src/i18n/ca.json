@@ -34,31 +34,50 @@
     "tagline": "500 GB des d'1,99 €/mes. Operat a prop. Sense vendre el teu perfil.",
     "ctaPrimary": "Obrir KM0 Cloud",
     "ctaSecondary": "Veure preus",
-    "logoAlt": "Logo Kilòmetre 0 Digital"
+    "logoAlt": "Logo Kilòmetre 0 Digital",
+    "proof": {
+      "status": "UE · actiu",
+      "planName": "Pla 500 GB",
+      "planMeta": "Hetzner · Falkenstein",
+      "files": [
+        { "name": "Documents", "meta": "carpeta", "kind": "folder" },
+        { "name": "Fotos família", "meta": "carpeta", "kind": "folder" },
+        { "name": "acta-reunio.pdf", "meta": "2,4 MB", "kind": "file" }
+      ],
+      "emailMeta": "@km0digital.com"
+    }
   },
   "vision": {
-    "headingBefore": "Per què ",
-    "headingAccent": "KM0",
+    "headingBefore": "A qui ",
+    "headingAccent": "serveix",
     "headingAfter": "",
-    "intro": "Menys eslògans. Més fets: fitxers i correu en servidors europeus, amb persones reals al darrere.",
-    "usual": {
-      "title": "El que és habitual",
-      "items": [
-        "Les teves dades financen publicitat",
-        "Suport llunyà o automatitzat",
-        "Preus difícils d'entendre",
-        "Dependència d'uns quants gegants"
-      ]
-    },
-    "km0": {
-      "title": "Amb KM0",
-      "items": [
-        "Dades a la UE (Hetzner, Alemanya)",
-        "Persones reals, en la teva llengua",
-        "Preu públic: 500 GB = 1,99 €/mes",
-        "Trobades obertes i blog tècnic"
-      ]
-    }
+    "intro": "Persona, comunitat o organització. Els mateixos fets: dades a la UE, preu públic, suport humà.",
+    "bands": [
+      {
+        "meta": "01 · PERSONA",
+        "title": "Tu i casa teva",
+        "body": "Fitxers i correu en servidors europeus. 500 GB des d'1,99 €/mes. El teu perfil no finança publicitat.",
+        "fact": "Hetzner · Falkenstein (UE)",
+        "ctaLabel": "Obrir KM0 Cloud",
+        "cta": "cloud"
+      },
+      {
+        "meta": "02 · COMUNITAT",
+        "title": "Família, coop o barri",
+        "body": "Carpetes compartides i trobades obertes. Operem a prop i parlem en la teva llengua.",
+        "fact": "Trobades locals · suport humà",
+        "ctaLabel": "Veure trobades",
+        "cta": "community"
+      },
+      {
+        "meta": "03 · ORGANITZACIÓ",
+        "title": "Associació o PIME",
+        "body": "Correu @km0digital.com i cloud amb preu publicat. Dades a la UE, sense lletra petita d'enterprise.",
+        "fact": "Preus públics · sense venda de perfils",
+        "ctaLabel": "Veure preus",
+        "cta": "pricing"
+      }
+    ]
   },
   "community": {
     "heading": "Trobades",

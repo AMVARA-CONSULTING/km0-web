@@ -34,31 +34,50 @@
     "tagline": "500 GB from €1.99/month. Nearby operators. We do not sell your profile.",
     "ctaPrimary": "Open KM0 Cloud",
     "ctaSecondary": "Pricing",
-    "logoAlt": "Kilometer 0 Digital logo"
+    "logoAlt": "Kilometer 0 Digital logo",
+    "proof": {
+      "status": "EU · online",
+      "planName": "500 GB plan",
+      "planMeta": "Hetzner · Falkenstein",
+      "files": [
+        { "name": "Documents", "meta": "folder", "kind": "folder" },
+        { "name": "Family photos", "meta": "folder", "kind": "folder" },
+        { "name": "meeting-notes.pdf", "meta": "2.4 MB", "kind": "file" }
+      ],
+      "emailMeta": "@km0digital.com"
+    }
   },
   "vision": {
-    "headingBefore": "Why ",
-    "headingAccent": "KM0",
+    "headingBefore": "Who it ",
+    "headingAccent": "serves",
     "headingAfter": "",
-    "intro": "Fewer slogans. More facts: files and mail on European servers, with real people behind them.",
-    "usual": {
-      "title": "The usual way",
-      "items": [
-        "Your data funds advertising",
-        "Distant or automated support",
-        "Opaque pricing",
-        "Dependence on a few giants"
-      ]
-    },
-    "km0": {
-      "title": "With KM0",
-      "items": [
-        "Data in the EU (Hetzner, Germany)",
-        "Real people, in your language",
-        "Public price: 500 GB = €1.99/month",
-        "Open meetups and a technical blog"
-      ]
-    }
+    "intro": "Person, community, or organisation. Same facts: EU data, public pricing, human support.",
+    "bands": [
+      {
+        "meta": "01 · PERSON",
+        "title": "You and your household",
+        "body": "Files and mail on European servers. 500 GB from €1.99/month. Your profile does not fund ads.",
+        "fact": "Hetzner · Falkenstein (EU)",
+        "ctaLabel": "Open KM0 Cloud",
+        "cta": "cloud"
+      },
+      {
+        "meta": "02 · COMMUNITY",
+        "title": "Family, coop, or neighbourhood",
+        "body": "Shared folders and open meetups. We operate nearby and speak your language.",
+        "fact": "Local meetups · human support",
+        "ctaLabel": "See meetups",
+        "cta": "community"
+      },
+      {
+        "meta": "03 · ORGANISATION",
+        "title": "Association or SME",
+        "body": "@km0digital.com mail and cloud with published prices. EU data, no enterprise fine print.",
+        "fact": "Public pricing · no profile sales",
+        "ctaLabel": "See pricing",
+        "cta": "pricing"
+      }
+    ]
   },
   "community": {
     "heading": "Meetings",

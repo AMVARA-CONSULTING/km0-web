@@ -43,14 +43,16 @@ export interface Messages {
     headingAccent: string;
     headingAfter: string;
     intro: string;
-    usual: {
+    /** Stirling-style audience/scale argument bands (person / community / org). */
+    bands: {
+      meta: string;
       title: string;
-      items: string[];
-    };
-    km0: {
-      title: string;
-      items: string[];
-    };
+      body: string;
+      fact: string;
+      ctaLabel: string;
+      /** Resolved in WhyKm0: cloud | community | pricing */
+      cta: 'cloud' | 'community' | 'pricing';
+    }[];
   };
   community: {
     heading: string;
@@ -63,6 +65,14 @@ export interface Messages {
     ctaPrimary: string;
     ctaSecondary: string;
     logoAlt: string;
+    /** Decorative Cloud/Email product-proof panel (visual only) */
+    proof: {
+      status: string;
+      planName: string;
+      planMeta: string;
+      files: { name: string; meta: string; kind: 'folder' | 'file' }[];
+      emailMeta: string;
+    };
   };
   services: {
     headingBefore: string;

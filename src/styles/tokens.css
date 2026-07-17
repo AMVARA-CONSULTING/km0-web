@@ -16,4 +16,15 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-apple: var(--ease-out-expo);
   --duration-reveal: 600ms;
+
+  /* Signature atmosphere: Origin field (quiet civic grid + grain + milestone).
+     Not orbs, not glow, not purple. See docs/brand-tokens.md */
+  --km0-motif-grid-size: 3rem;
+  --km0-motif-grid-line: color-mix(in srgb, var(--color-mist) 55%, transparent);
+  --km0-motif-grain-opacity: 0.04;
+  --km0-motif-origin-x: 76%;
+  --km0-motif-origin-y: 28%;
+  --km0-motif-origin-size: min(18rem, 46vw);
+  --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 22%, transparent);
+  --km0-motif-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }

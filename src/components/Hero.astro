@@ -12,9 +12,10 @@ const { locale, messages: m } = Astro.props;
 const cloudItem = m.services.items.find((item) => item.id === 'cloud');
 const emailItem = m.services.items.find((item) => item.id === 'email');
 const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
+const proof = m.hero.proof;
 ---
 
-<section id="home" class="hero" aria-labelledby="hero-heading">
+<section id="home" class="hero km0-motif km0-motif--origin" aria-labelledby="hero-heading">
   <div class="hero__grid">
     <div class="hero__copy" data-reveal>
       <p class="hero__brand">
@@ -34,39 +35,53 @@ const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 
     <div class="hero__visual" data-reveal data-delay="120" aria-hidden="true">
       <div class="hero__proof">
-        <div class="hero__mark">
+        <div class="hero__proof-chrome">
           <img
             src="/brand/logo.svg"
             alt=""
-            width="160"
-            height="160"
-            class="hero__mark-img"
+            width="28"
+            height="28"
+            class="hero__proof-stamp"
           />
+          <span class="hero__proof-app">{cloudItem?.title ?? 'KM0 Cloud'}</span>
+          <span class="hero__proof-status">{proof.status}</span>
         </div>
-        <ul class="hero__board">
+
+        <div class="hero__proof-plan">
+          <div class="hero__proof-plan-row">
+            <span class="hero__proof-plan-name">{proof.planName}</span>
+            {
+              cloudItem?.priceFrom && (
+                <span class="hero__proof-plan-price">{cloudItem.priceFrom}</span>
+              )
+            }
+          </div>
+          <div class="hero__proof-meter">
+            <span class="hero__proof-meter-fill"></span>
+          </div>
+          <p class="hero__proof-plan-meta">{proof.planMeta}</p>
+        </div>
+
+        <ul class="hero__proof-files">
           {
-            cloudItem && (
-              <li class="hero__board-row">
-                <span class="hero__board-label">{cloudItem.title}</span>
-                {cloudItem.priceFrom && (
-                  <span class="hero__board-meta">{cloudItem.priceFrom}</span>
-                )}
+            proof.files.map((file) => (
+              <li class="hero__proof-file">
+                <span class="hero__proof-file-icon" data-kind={file.kind}></span>
+                <span class="hero__proof-file-name">{file.name}</span>
+                <span class="hero__proof-file-meta">{file.meta}</span>
               </li>
-            )
-          }
-          {
-            emailItem && (
-              <li class="hero__board-row">
-                <span class="hero__board-label">{emailItem.title}</span>
-                <span class="hero__board-meta">
-                  {emailItem.available === false
-                    ? emailItem.cta
-                    : (emailItem.subtitle ?? emailItem.cta)}
-                </span>
-              </li>
-            )
+            ))
           }
         </ul>
+
+        {
+          emailItem && (
+            <div class="hero__proof-email">
+              <span class="hero__proof-email-label">{emailItem.title}</span>
+              <span class="hero__proof-email-meta">{proof.emailMeta}</span>
+            </div>
+          )
+        }
       </div>
     </div>
   </div>
@@ -74,14 +89,6 @@ const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 
 <style>
   .hero {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--color-paper);
-    background-image:
-      linear-gradient(90deg, rgb(216 220 224 / 0.45) 1px, transparent 1px),
-      linear-gradient(rgb(216 220 224 / 0.35) 1px, transparent 1px);
-    background-size: 48px 48px;
-    background-position: -1px -1px;
     color: var(--color-ink);
     padding: 7.5rem 1.5rem 4rem;
   }
@@ -187,71 +194,228 @@ const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 
   .hero__visual {
     justify-self: stretch;
+    max-width: 28rem;
+    margin-inline: auto;
   }
 
-  .hero__proof {
-    position: relative;
-    display: grid;
-    gap: 1.75rem;
-    padding: 1.75rem;
-    background: var(--color-snow);
-    border: 1px solid var(--color-mist);
-    border-left: 4px solid var(--color-signal);
-    box-shadow: 8px 8px 0 rgb(11 18 32 / 0.06);
-  }
-
-  @media (min-width: 640px) {
-    .hero__proof {
-      padding: 2.25rem;
+  @media (min-width: 960px) {
+    .hero__visual {
+      max-width: none;
+      margin-inline: 0;
+      justify-self: end;
+      width: 100%;
     }
   }
 
-  .hero__mark {
+  /* Product UI crop (not a marketing card shrine) */
+  .hero__proof {
+    position: relative;
+    display: grid;
+    gap: 0;
+    background: var(--color-snow);
+    border: 1px solid var(--color-mist);
+    border-left: 3px solid var(--color-signal);
+    box-shadow: 6px 6px 0 rgb(11 18 32 / 0.05);
+    overflow: hidden;
+  }
+
+  .hero__proof-chrome {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    gap: 0.65rem;
+    padding: 0.7rem 0.9rem;
+    background: var(--color-paper);
+    border-bottom: 1px solid var(--color-mist);
   }
 
-  .hero__mark-img {
-    width: clamp(5.5rem, 18vw, 8rem);
-    height: auto;
+  .hero__proof-stamp {
+    width: 1.5rem;
+    height: 1.5rem;
     display: block;
+    flex-shrink: 0;
+    border-radius: 0.2rem;
   }
 
-  .hero__board {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--color-mist);
+  .hero__proof-app {
+    flex: 1;
+    min-width: 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
   }
 
-  .hero__board-row {
+  .hero__proof-status {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-signal);
+    white-space: nowrap;
+  }
+
+  .hero__proof-plan {
+    padding: 1rem 0.95rem 0.85rem;
+    border-bottom: 1px solid var(--color-mist);
+  }
+
+  .hero__proof-plan-row {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
-    gap: 0.5rem 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--color-mist);
-    font-family: theme('fontFamily.sans');
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.65rem;
   }
 
-  .hero__board-label {
-    font-size: 1rem;
+  .hero__proof-plan-name {
+    font-family: theme('fontFamily.display');
+    font-size: 1.05rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .hero__proof-plan-price {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-signal);
+  }
+
+  .hero__proof-meter {
+    height: 0.35rem;
+    background: var(--color-mist);
+    overflow: hidden;
+  }
+
+  .hero__proof-meter-fill {
+    display: block;
+    height: 100%;
+    width: 28%;
+    background: var(--color-signal);
+    transform-origin: left center;
+    animation: hero-meter 0.9s var(--ease-out-expo) 0.35s both;
+  }
+
+  .hero__proof-plan-meta {
+    margin: 0.55rem 0 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.6875rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  .hero__proof-files {
+    margin: 0;
+    padding: 0.35rem 0;
+    list-style: none;
+  }
+
+  .hero__proof-file {
+    display: grid;
+    grid-template-columns: 1.1rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.95rem;
+    font-family: theme('fontFamily.sans');
+    border-bottom: 1px solid rgb(216 220 224 / 0.55);
+  }
+
+  .hero__proof-file:last-child {
+    border-bottom: none;
+  }
+
+  .hero__proof-file-icon {
+    width: 0.85rem;
+    height: 0.7rem;
+    border: 1.5px solid var(--color-ink-muted);
+    border-radius: 0.1rem 0.1rem 0.05rem 0.05rem;
+    position: relative;
+    opacity: 0.7;
+  }
+
+  .hero__proof-file-icon::before {
+    content: '';
+    position: absolute;
+    top: -0.28rem;
+    left: 0;
+    width: 0.4rem;
+    height: 0.22rem;
+    border: 1.5px solid var(--color-ink-muted);
+    border-bottom: none;
+    border-radius: 0.08rem 0.08rem 0 0;
+  }
+
+  .hero__proof-file-icon[data-kind='file'] {
+    height: 0.9rem;
+    border-radius: 0.08rem;
+  }
+
+  .hero__proof-file-icon[data-kind='file']::before {
+    display: none;
+  }
+
+  .hero__proof-file-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hero__proof-file-meta {
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+    white-space: nowrap;
+  }
+
+  .hero__proof-email {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    padding: 0.8rem 0.95rem;
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-mist);
+  }
+
+  .hero__proof-email-label {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-ink);
   }
 
-  .hero__board-meta {
-    font-size: 0.875rem;
+  .hero__proof-email-meta {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
     font-weight: 500;
     color: var(--color-signal);
     letter-spacing: 0.01em;
   }
 
+  @keyframes hero-meter {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero__proof {
       box-shadow: none;
+    }
+
+    .hero__proof-meter-fill {
+      animation: none;
     }
   }
 </style>

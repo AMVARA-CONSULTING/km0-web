@@ -37,13 +37,87 @@
     @apply px-6 py-24 md:px-12 md:py-32 lg:px-20;
   }
 
-  /* Landing: quiet Paper / Snow bands; hero owns its own plane */
-  main:has(#home) > section:not(#home):nth-child(odd of :not(#home)) {
-    @apply bg-snow;
+  /* Landing rhythm: continuous Paper canvas. Intentional bands opt in
+     via explicit classes on the section (e.g. Contact closer bg-snow).
+     No nth-child zebra. */
+
+  /*
+   * KM0 signature atmosphere - Origin field
+   * Use sparingly: hero + at most two intentional bands.
+   * Static (no animation). Glow/orbs are not brand atmosphere.
+   */
+  .km0-motif {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: var(--color-paper);
+    background-image:
+      linear-gradient(90deg, var(--km0-motif-grid-line) 1px, transparent 1px),
+      linear-gradient(var(--km0-motif-grid-line) 1px, transparent 1px);
+    background-size: var(--km0-motif-grid-size) var(--km0-motif-grid-size);
+    background-position: -1px -1px;
   }
 
-  main:has(#home) > section:not(#home):nth-child(even of :not(#home)) {
-    @apply bg-paper;
+  .km0-motif > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .km0-motif::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: var(--km0-motif-grain-opacity);
+    background-image: var(--km0-motif-grain);
+    background-repeat: repeat;
+    background-size: 160px 160px;
+    mix-blend-mode: multiply;
+  }
+
+  .bg-snow.km0-motif {
+    background-color: var(--color-snow);
+    --km0-motif-grid-line: color-mix(in srgb, var(--color-mist) 70%, transparent);
+    --km0-motif-grain-opacity: 0.028;
+  }
+
+  /* Biased kilometer-zero cross + diamond. Geometry only, no soft orb. */
+  .km0-motif--origin::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    left: var(--km0-motif-origin-x);
+    top: var(--km0-motif-origin-y);
+    width: var(--km0-motif-origin-size);
+    height: var(--km0-motif-origin-size);
+    transform: translate(-50%, -50%);
+    background:
+      linear-gradient(
+        var(--km0-motif-origin-line),
+        var(--km0-motif-origin-line)
+      )
+        center / 1px 100% no-repeat,
+      linear-gradient(
+        var(--km0-motif-origin-line),
+        var(--km0-motif-origin-line)
+      )
+        center / 100% 1px no-repeat,
+      linear-gradient(
+        135deg,
+        transparent calc(50% - 0.7px),
+        var(--km0-motif-origin-line) calc(50% - 0.7px),
+        var(--km0-motif-origin-line) calc(50% + 0.7px),
+        transparent calc(50% + 0.7px)
+      ),
+      linear-gradient(
+        45deg,
+        transparent calc(50% - 0.7px),
+        var(--km0-motif-origin-line) calc(50% - 0.7px),
+        var(--km0-motif-origin-line) calc(50% + 0.7px),
+        transparent calc(50% + 0.7px)
+      );
   }
 
   .heading-display {

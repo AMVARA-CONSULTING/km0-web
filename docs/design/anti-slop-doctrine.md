@@ -40,11 +40,15 @@ If any of these ship, the task fails review:
 4. **Icon-in-rounded-square feature cards** in equal 3-column grids.
 5. **Eyebrow pill / badge** stacked above every H1.
 6. **Stat strip** of round fake numbers (“10K+”, “99.9%”) unless numbers are real and sourced.
-7. **Glow / bloom / multi-layer shadow** decoration as the main atmosphere.
+7. **Glow / bloom / multi-layer shadow** decoration as the main atmosphere (including soft radial “orbs” as brand motif). Use **Origin field** instead (`docs/brand-tokens.md`: `.km0-motif`).
 8. **`rounded-full` pill CTAs everywhere** as the only button shape.
 9. **Glassmorphic sticky AI-nav** (wordmark left, links center, CTA right, hairline border) without a genre-specific alternative.
 10. **Emoji as UI icons** or sparkle badges.
 11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; default dark-mode-first marketing pages.
+12. **Zebra section rhythm** - automatic alternating Paper/Snow (or white/gray) bands via `nth-child` or equivalent. Use a continuous canvas plus **intentional** full-bleed bands only (Stirling / Nous pattern).
+13. **Generic map-pin as sole brand mark** (especially identical logo + favicon with huge empty padding). Mark must read at 16×16 and pass a brand test without nav.
+
+Phase-2 study: `docs/design/reference-study-stirling-satisfecho-nous.md`. Epic queue: `docs/design/remodel-epic.md`.
 
 ## Positive rules (must do)
 
@@ -53,7 +57,7 @@ If any of these ship, the task fails review:
 3. **Bias the layout:** asymmetry once is enough to signal intent.
 4. **Type pairing:** display face ≠ body face. Extreme weight contrast beats timid 400/600.
 5. **One job per section:** one purpose, one headline, usually one short support line. No cards in the hero. Cards only when they contain an interaction.
-6. **Atmosphere without slop:** gradients/patterns/imagery must show place, product, or community - not abstract purple blobs.
+6. **Atmosphere without slop:** use the locked **Origin field** motif (quiet grid + grain + optional biased kilometer-zero geometry) sparingly - hero + ≤2 bands. Gradients/patterns/imagery must show place, product, or community - not abstract purple blobs or glow orbs.
 7. **Motion with purpose:** 2–3 intentional moments; exponential ease-out; always respect `prefers-reduced-motion`.
 8. **Voice:** concrete, local, honest. Prefer facts over slogans. LLMs must rewrite toward clarity, not toward more adjectives.
 

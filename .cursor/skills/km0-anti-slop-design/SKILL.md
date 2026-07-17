@@ -34,6 +34,7 @@ If you cannot fill those five lines from brand docs, **stop** and ask - do not i
 - No cards in the hero. No icon-tile feature grids. No fake stats.
 - Sections: one job each. Collapse redundant Vision/Mission/Values/Meaning/Privacy blocks when remodeling IA.
 - Motion: 2–3 intentional moments max; honor `prefers-reduced-motion`.
+- Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
 
 ## Self-audit before done
 

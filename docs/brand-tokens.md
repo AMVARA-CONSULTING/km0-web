@@ -40,6 +40,22 @@
 - Max 2–3 intentional moments per page
 - Always `prefers-reduced-motion`
 
+## Signature atmosphere: Origin field
+
+KM0’s quiet motif (phase 2 #84). Not POS orbs, not purple glow, not zebra stripes.
+
+| Piece | Token / class | Role |
+|-------|---------------|------|
+| Quiet civic grid | `--km0-motif-grid-*` + `.km0-motif` | Stone-cool paper that feels surveyed, not blank |
+| Paper grain | `--km0-motif-grain*` via `::after` | Print-stock texture; multiply, very low opacity |
+| Kilometer-zero geometry | `.km0-motif--origin` via `::before` | Biased cross + diamond (right/upper), Signal ink only |
+
+**Usage:** hero (`.km0-motif.km0-motif--origin`) plus at most two intentional bands (e.g. Why, Contact). Continuous Paper elsewhere. Motif is **static** (no animation to disable under `prefers-reduced-motion`).
+
+**Ban:** glow/bloom/soft radial orbs as brand atmosphere; repeating the motif on every section.
+
+CSS: `src/styles/tokens.css` + `.km0-motif` in `src/styles/global.css`.
+
 ## CTA canon (hero)
 
 - **Primary:** Open KM0 Cloud → `https://cloud.km0digital.com` (product-led)
@@ -56,9 +72,16 @@
 
 | Asset | Path |
 |-------|------|
-| Main logo | `public/brand/logo.png` / `logo.svg` |
-| Email icon | `public/brand/logo-icon.png` |
-| OG preview | `public/brand/og-preview.png` |
-| Favicon | `public/favicon.svg` |
+| Main logo (stamp) | `public/brand/logo.svg` / `logo.png` (512) |
+| Email / compact icon | `public/brand/logo-icon.png` (256) |
+| OG preview | `public/brand/og-preview.png` (1200×630) |
+| Favicon | `public/favicon.svg` (full-bleed) |
+| Apple touch | `public/apple-touch-icon.png` (180) |
 
-Refresh OG/favicon when Signal teal ships so shares do not still show purple gradient.
+### Mark: Origin stamp
+
+- **Motif:** Kilometer-zero plaque on a Signal field: geometric **0**, origin diamond, short milestone baseline. Not a map-pin clone.
+- **Colors:** Signal `#0F766E` field + Paper `#EEF0F2` figure. Works on Paper/Snow chrome; stamp carries its own field so it also reads on Ink.
+- **Favicon:** Same motif, **edge-to-edge** (no padding, no rounded crop) so tabs stay readable at 16×16.
+- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (Bricolage). OG card pairs the stamp with “Kilómetro 0 Digital”.
+- **Do not** reintroduce purple/magenta→blue gradient pins in SVG or raster exports.

@@ -34,31 +34,50 @@
     "tagline": "500 GB desde 1,99 €/mes. Operado cerca. Sin vender tu perfil.",
     "ctaPrimary": "Abrir KM0 Cloud",
     "ctaSecondary": "Ver precios",
-    "logoAlt": "Logo Kilómetro 0 Digital"
+    "logoAlt": "Logo Kilómetro 0 Digital",
+    "proof": {
+      "status": "UE · activo",
+      "planName": "Plan 500 GB",
+      "planMeta": "Hetzner · Falkenstein",
+      "files": [
+        { "name": "Documentos", "meta": "carpeta", "kind": "folder" },
+        { "name": "Fotos familia", "meta": "carpeta", "kind": "folder" },
+        { "name": "acta-reunion.pdf", "meta": "2,4 MB", "kind": "file" }
+      ],
+      "emailMeta": "@km0digital.com"
+    }
   },
   "vision": {
-    "headingBefore": "Por qué ",
-    "headingAccent": "KM0",
+    "headingBefore": "A quién ",
+    "headingAccent": "sirve",
     "headingAfter": "",
-    "intro": "Menos eslóganes. Más hechos: archivos y correo en servidores europeos, con personas reales detrás.",
-    "usual": {
-      "title": "Lo habitual",
-      "items": [
-        "Tus datos financian publicidad",
-        "Soporte lejano o automatizado",
-        "Precios difíciles de entender",
-        "Dependencia de unos pocos gigantes"
-      ]
-    },
-    "km0": {
-      "title": "Con KM0",
-      "items": [
-        "Datos en la UE (Hetzner, Alemania)",
-        "Personas reales, en tu idioma",
-        "Precio público: 500 GB = 1,99 €/mes",
-        "Encuentros abiertos y blog técnico"
-      ]
-    }
+    "intro": "Persona, comunidad u organización. Mismos hechos: datos en la UE, precio público, soporte humano.",
+    "bands": [
+      {
+        "meta": "01 · PERSONA",
+        "title": "Tú y tu casa",
+        "body": "Archivos y correo en servidores europeos. 500 GB desde 1,99 €/mes. Tu perfil no financia publicidad.",
+        "fact": "Hetzner · Falkenstein (UE)",
+        "ctaLabel": "Abrir KM0 Cloud",
+        "cta": "cloud"
+      },
+      {
+        "meta": "02 · COMUNIDAD",
+        "title": "Familia, coop o barrio",
+        "body": "Carpetas compartidas y encuentros abiertos. Operamos cerca y hablamos en tu idioma.",
+        "fact": "Encuentros locales · soporte humano",
+        "ctaLabel": "Ver encuentros",
+        "cta": "community"
+      },
+      {
+        "meta": "03 · ORGANIZACIÓN",
+        "title": "Asociación o PYME",
+        "body": "Correo @km0digital.com y cloud con precio publicado. Datos en la UE, sin letra pequeña de enterprise.",
+        "fact": "Precios públicos · sin venta de perfiles",
+        "ctaLabel": "Ver precios",
+        "cta": "pricing"
+      }
+    ]
   },
   "community": {
     "heading": "Encuentros",

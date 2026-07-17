@@ -12,28 +12,34 @@
 | 6 | [#78](https://github.com/AMVARA-CONSULTING/km0-web/issues/78) | Blog template doc; defer other days |
 | 7 | [#79](https://github.com/AMVARA-CONSULTING/km0-web/issues/79) | Secondary surfaces |
 
-## Phase 2 (queued) - Stirling / Satisfecho / Nous inspired
+## Phase 2 (closed) - Stirling / Satisfecho / Nous inspired
 
-Study: **`docs/design/reference-study-stirling-satisfecho-nous.md`**
+Study: **`docs/design/reference-study-stirling-satisfecho-nous.md`**  
+Doctrine locks: **`docs/design/anti-slop-doctrine.md`** (Hard ban #12–#13 + Phase-2 locks)  
+Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 
-| Order | Issue | FEAT | Intent |
-|------:|-------|------|--------|
-| 1 | [#80](https://github.com/AMVARA-CONSULTING/km0-web/issues/80) | `FEAT-80-…-kill-zebra-section-rhythm` | Kill automatic Snow/Paper zebra |
-| 2 | [#81](https://github.com/AMVARA-CONSULTING/km0-web/issues/81) | `FEAT-81-…-evolve-logo-favicon-og` | Logo + favicon + OG mark system (also covers idea #72) |
-| 3 | [#82](https://github.com/AMVARA-CONSULTING/km0-web/issues/82) | `FEAT-82-…-hero-product-proof-2` | Hero product proof 2.0 |
-| 4 | [#83](https://github.com/AMVARA-CONSULTING/km0-web/issues/83) | `FEAT-83-…-audience-scale-argument-bands` | Audience/scale argument bands |
-| 5 | [#84](https://github.com/AMVARA-CONSULTING/km0-web/issues/84) | `FEAT-84-…-km0-signature-atmosphere` | Signature atmosphere (anti-orb) |
-| 6 | [#85](https://github.com/AMVARA-CONSULTING/km0-web/issues/85) | `FEAT-85-…-encode-phase2-reference-study` | Encode study into doctrine/skills |
+| Order | Issue | FEAT | Intent | Status |
+|------:|-------|------|--------|--------|
+| 1 | [#80](https://github.com/AMVARA-CONSULTING/km0-web/issues/80) | `CLOSED-80-…-kill-zebra-section-rhythm` | Kill automatic Snow/Paper zebra | closed |
+| 2 | [#81](https://github.com/AMVARA-CONSULTING/km0-web/issues/81) | `CLOSED-81-…-evolve-logo-favicon-og` | Logo + favicon + OG mark system (also covers idea #72) | closed |
+| 3 | [#82](https://github.com/AMVARA-CONSULTING/km0-web/issues/82) | `CLOSED-82-…-hero-product-proof-2` | Hero product proof 2.0 | closed |
+| 4 | [#83](https://github.com/AMVARA-CONSULTING/km0-web/issues/83) | `CLOSED-83-…-audience-scale-argument-bands` | Audience/scale argument bands | closed |
+| 5 | [#84](https://github.com/AMVARA-CONSULTING/km0-web/issues/84) | `CLOSED-84-…-km0-signature-atmosphere` | Signature atmosphere (anti-orb) | closed |
+| 6 | [#85](https://github.com/AMVARA-CONSULTING/km0-web/issues/85) | `…-encode-phase2-reference-study` | Encode study into doctrine/skills | this task |
 
-**Suggested run order:** 80 → 81 → 82 → 84 → 83 → 85 (85 can parallel late; 83 after 80).
+**Actual run order:** 80 → 81 → 82 → 84 → 83 → 85 (encode last so doctrine matches shipped locks).
 
 ## Locked product decisions
 
 - **Design:** cool civic editorial - `docs/brand-tokens.md`
 - **CTA primary:** Open KM0 Cloud; secondary text → Pricing
 - **User counter:** sacred; readapt, never remove
-- **No zebra:** continuous canvas + intentional bands only (phase 2)
-- **Mark:** evolve beyond generic pin (phase 2 #81)
+- **No zebra:** continuous canvas + intentional bands only (phase 2 #80)
+- **Mark:** Origin stamp; full-bleed favicon; no map-pin clone (phase 2 #81)
+- **Hero proof:** product-recognizable visual (phase 2 #82)
+- **Argument bands:** audience/scale, not icon tiles (phase 2 #83)
+- **Atmosphere:** Origin field `.km0-motif` only; no glow orbs (phase 2 #84)
+- **Agent training:** doctrine + skill point at the phase-2 study (phase 2 #85)
 - **IA map:** `docs/design/ia-map.md`
 - **POS lessons:** `docs/design/lessons-from-pos.md`
 - **Blog post template:** `docs/design/blog-post-template.md`

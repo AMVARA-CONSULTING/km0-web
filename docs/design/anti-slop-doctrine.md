@@ -6,7 +6,7 @@
 
 LLMs converge on the same frontend because training data is saturated with Tailwind demos, shadcn starters, and “modern SaaS” boilerplates. That median look has a name: **AI slop**.
 
-KM0’s current brand tokens (`Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero) sit in the middle of that attractor. This remodel exits it on purpose.
+KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero. Phase 1 exited that look (tokens, IA, landing, copy, blog chrome). Phase 2 locked rhythm, mark, hero proof, argument bands, and atmosphere so agents do not regress to zebra stripes or a generic map-pin favicon.
 
 ## Primary references (read before implementing)
 
@@ -20,6 +20,13 @@ KM0’s current brand tokens (`Inter` + multi-stop orange→pink→purple→blue
 | [AI design slop: 16 patterns](https://www.developersdigest.tech/blog/ai-design-slop-and-how-to-spot-it) | Detection checklist (Inter-everywhere, badge-above-H1, icon-tile cards, stat strips, glow, etc.). |
 | [anti-slop-templates](https://github.com/JasonColapietro/anti-slop-templates) | Committed systems beat “good taste” abstracts: pick one direction and apply everywhere. |
 | [MindStudio: design system for Claude](https://www.mindstudio.ai/blog/claude-design-avoid-ai-slop-design-system) | A markdown design system (fonts, hex roles, spacing, anti-examples) beats better one-off prompts. |
+
+### Phase-2 structure study (mandatory for landing / chrome)
+
+| Source | Why it matters |
+|--------|----------------|
+| **`docs/design/reference-study-stirling-satisfecho-nous.md`** | Steal structure from Stirling (scale bands, continuous canvas), Satisfecho (live product proof), Nous (memorable mark + no zebra). Not pixels or fonts. |
+| **`docs/design/remodel-epic.md`** | Phase 1 + phase 2 issue map (#73–#85). Locked product decisions. |
 
 ### Writing / psychology of reading
 
@@ -45,21 +52,54 @@ If any of these ship, the task fails review:
 9. **Glassmorphic sticky AI-nav** (wordmark left, links center, CTA right, hairline border) without a genre-specific alternative.
 10. **Emoji as UI icons** or sparkle badges.
 11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; default dark-mode-first marketing pages.
-12. **Zebra section rhythm** - automatic alternating Paper/Snow (or white/gray) bands via `nth-child` or equivalent. Use a continuous canvas plus **intentional** full-bleed bands only (Stirling / Nous pattern).
-13. **Generic map-pin as sole brand mark** (especially identical logo + favicon with huge empty padding). Mark must read at 16×16 and pass a brand test without nav.
+12. **Zebra section rhythm** - automatic alternating Paper/Snow (or white/gray) bands via `nth-child` or equivalent (`main:has(#home) > section…` patterns). Default is continuous Paper; surfaces opt in explicitly (e.g. Contact `bg-snow`). Stirling / Nous pattern.
+13. **Generic map-pin as sole brand mark** (especially identical logo + favicon with huge empty padding, or purple-era gradient pins). Do not revert to a pin stem clone.
 
-Phase-2 study: `docs/design/reference-study-stirling-satisfecho-nous.md`. Epic queue: `docs/design/remodel-epic.md`.
+## Phase-2 locks (do not regress)
+
+Shipped under remodel epic #80–#84. Study: `docs/design/reference-study-stirling-satisfecho-nous.md`.
+
+### Kill zebra (#80)
+
+- Landing sections inherit body **Paper** unless a section opts into a surface class.
+- No mechanical odd/even banding in CSS. Intentional full-bleed bands only.
+- Proof/Ink moments stay earned (e.g. Cloud user counter), not striped decoration.
+
+### Mark / favicon / OG (#81)
+
+Locked **Origin stamp** (see `docs/brand-tokens.md` Assets):
+
+- Motif: Signal field + Paper geometric **0** + origin diamond + milestone baseline. Not a map pin.
+- Paths: `public/brand/logo.svg` (+ PNG), `public/favicon.svg` (**full-bleed**, minimal padding so 16×16 reads), `public/apple-touch-icon.png`, `public/brand/og-preview.png` (Paper + stamp + wordmark).
+- Colors: Signal `#0F766E` + Paper `#EEF0F2`. No purple/magenta→blue gradient exports.
+- Brand test: mark must read without nav chrome; tabs must stay legible.
+
+### Hero product proof (#82)
+
+- First viewport dominant visual is **usable product proof** (Cloud panel / real offer), not logo-only theater.
+- Primary CTA opens the product; secondary stays quieter (Pricing).
+
+### Audience / scale bands (#83)
+
+- Argue by audience scale (person / family-coop / org) where Offer/Why need structure - Stirling-style bands, not equal icon-tile grids.
+- Keep the Cloud user counter sacred; never invent fake stats.
+
+### Signature atmosphere (#84)
+
+- **Origin field** only: `.km0-motif` / `.km0-motif--origin` (quiet grid + grain + optional biased kilometer-zero geometry).
+- Apply sparingly: hero + ≤2 bands. Never glow orbs, never purple bloom as brand atmosphere.
 
 ## Positive rules (must do)
 
-1. **Commit a direction** before pixels: one sentence of vibe + one layout archetype + one type pair + one anchor hue + one accent (accent ≤ ~5% of surface).
-2. **Brand first in the first viewport:** product name is hero-level, not nav chrome. One headline, one supporting sentence, one CTA group, one dominant visual plane.
+1. **Commit a direction** before pixels: one sentence of vibe + one layout archetype + one type pair + one anchor hue + one accent (accent ≤ ~5% of surface). Cool civic editorial is locked in `docs/brand-tokens.md`.
+2. **Brand first in the first viewport:** product name is hero-level, not nav chrome. One headline, one supporting sentence, one CTA group, one dominant visual plane (prefer product proof over abstract art).
 3. **Bias the layout:** asymmetry once is enough to signal intent.
-4. **Type pairing:** display face ≠ body face. Extreme weight contrast beats timid 400/600.
+4. **Type pairing:** display face ≠ body face (Bricolage + Source Serif 4). Extreme weight contrast beats timid 400/600.
 5. **One job per section:** one purpose, one headline, usually one short support line. No cards in the hero. Cards only when they contain an interaction.
-6. **Atmosphere without slop:** use the locked **Origin field** motif (quiet grid + grain + optional biased kilometer-zero geometry) sparingly - hero + ≤2 bands. Gradients/patterns/imagery must show place, product, or community - not abstract purple blobs or glow orbs.
+6. **Atmosphere without slop:** Origin field motif only; continuous Paper elsewhere. Gradients/patterns/imagery must show place, product, or community - not abstract purple blobs or glow orbs.
 7. **Motion with purpose:** 2–3 intentional moments; exponential ease-out; always respect `prefers-reduced-motion`.
 8. **Voice:** concrete, local, honest. Prefer facts over slogans. LLMs must rewrite toward clarity, not toward more adjectives.
+9. **Mark system:** reuse the Origin stamp assets; do not invent a second logo language per page.
 
 ## KM0-specific reading of the brand
 
@@ -77,9 +117,11 @@ New and migrated `/doc/` posts follow **`docs/design/blog-post-template.md`** (M
 
 ## Agent enforcement
 
-- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md`
+- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study on UI work)
 - Skill: `.cursor/skills/km0-web-copy/SKILL.md`
 - Rules: `.cursor/rules/anti-slop-frontend.mdc`, `.cursor/rules/web-copy.mdc`
 - Tokens: `docs/brand-tokens.md` + `src/styles/tokens.css`
+- Study: `docs/design/reference-study-stirling-satisfecho-nous.md`
+- Epic: `docs/design/remodel-epic.md`
 - Blog prose contract: `docs/design/blog-post-template.md`
-- Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions
+- Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions (including zebra + pin-favicon rollbacks)

@@ -14,6 +14,8 @@ Before any UI change, follow **`.cursor/skills/km0-anti-slop-design/SKILL.md`** 
 - Centered SaaS hero recipe (eyebrow pill + H1 + dual pill CTAs)
 - Equal icon-tile feature cards / fake stat strips / glow-heavy decoration
 - Default “AI nav” without a genre-specific alternative
+- Zebra section rhythm (`nth-child` Paper/Snow alternation); continuous canvas + intentional bands only
+- Generic map-pin / padded favicon / purple gradient pin instead of the Origin stamp mark system
 
 ## Required
 
@@ -21,5 +23,6 @@ Before any UI change, follow **`.cursor/skills/km0-anti-slop-design/SKILL.md`** 
 - One anchor hue + restrained accent
 - Biased (not fully centered) compositions where the page genre allows
 - First viewport: brand, one headline, one support line, one CTA group, one dominant visual
+- Phase-2 study when touching landing/chrome: `docs/design/reference-study-stirling-satisfecho-nous.md`
 
 Tailwind is allowed as implementation detail. Tailwind’s **demo aesthetic** is not.

@@ -49,22 +49,24 @@ Sources reviewed 2026-07-17 (home + key subpages). Steal **structure and discipl
 - Allow one “terminal/civic” accent voice (meta labels, mono for data) without going full dark-mode AI lab.
 - Blog and longform keep calm measure; personality lives in mark + rhythm, not in more sections.
 
-## Anti-patterns still visible on KM0 after phase 1
+## Anti-patterns after phase 1 (resolved in phase 2)
 
-1. **Zebra:** `main:has(#home) > section…nth-child(odd/even)` forces Snow/Paper stripes (`src/styles/global.css`).
-2. **Logo/favicon:** same minimal pin in teal - weak brand test, weak tab icon (also user idea #72).
-3. **Hero proof** still logo-centric more than product-centric.
-4. **Section surfaces** lack intentional full-bleed moments (Stirling-style argument bands).
+These drove FEATs #80–#84; do **not** reintroduce them:
 
-## Phase-2 FEAT themes
+1. **Zebra:** `main:has(#home) > section…nth-child(odd/even)` Snow/Paper stripes → killed (#80). Continuous Paper + intentional opt-in surfaces.
+2. **Logo/favicon:** weak teal map-pin → Origin stamp + full-bleed favicon (#81; idea #72).
+3. **Hero proof** logo-centric → product-recognizable proof (#82).
+4. **Flat section surfaces** → audience/scale argument bands + Origin field atmosphere (#83, #84).
 
-| Theme | Issue focus |
-|-------|-------------|
-| Kill zebra | Explicit section surfaces; continuous Paper default |
-| Mark system | Logo + favicon + apple-touch + OG |
-| Hero proof 2.0 | Product-recognizable visual; Satisfecho energy |
-| Audience/scale bands | Stirling-style argument without fake stats |
-| Signature motif | Subtle KM0 atmosphere (not orbs, not purple) |
-| Doctrine update | Encode this study into agent training |
+## Phase-2 FEAT themes (closed)
 
-See `docs/design/remodel-epic.md` for the live queue.
+| Theme | Issue | Status |
+|-------|-------|--------|
+| Kill zebra | #80 | closed |
+| Mark system | #81 | closed |
+| Hero proof 2.0 | #82 | closed |
+| Audience/scale bands | #83 | closed |
+| Signature motif | #84 | closed |
+| Doctrine update | #85 | encode this study into agent training |
+
+Locks live in `docs/design/anti-slop-doctrine.md` and `.cursor/skills/km0-anti-slop-design/SKILL.md`. Epic: `docs/design/remodel-epic.md`.

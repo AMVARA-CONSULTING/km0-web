@@ -88,3 +88,19 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`** (Paint-phase locks tab
 
 **Actual run order:** 91 → 92 → 93 → 94 → 95 (encode last so doctrine matches shipped locks).
 
+## Craft parity phase (hard) - Stirling / Satisfecho must be visible
+
+Spec: **`docs/design/craft-parity-phase.md`**  
+Why: paint FEATs closed on class/order checks; live site still does not feel peer to [Stirling](https://stirling.com/) / [Satisfecho](https://satisfecho.de/). Soft “build green + no purple” passes are forbidden.
+
+| Order | Issue | Intent | Depends |
+|------:|-------|--------|---------|
+| 1 | (queued) | Optional dark theme (system + toggle; light default) | - |
+| 2 | (queued) | Landing Stirling **hard** visual parity | dark preferred first |
+| 3 | (queued) | Satisfecho **live** product proof in first viewport | landing |
+| 4 | (queued) | Pricing + secondary hard chrome | landing |
+| 5 | (queued) | Motion you can feel (sticky / pin / reveals) | landing |
+| 6 | (queued) | Encode craft-parity gates into doctrine + tester/closing | 1–5 |
+
+Fill issue numbers when GitHub issues are created. Run **in sequence**. Every FEAT must use the **Hard gate protocol** in the craft-parity spec (side-by-side claims mandatory).
+

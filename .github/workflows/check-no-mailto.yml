@@ -1,0 +1,15 @@
+name: check-no-mailto
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  no-mailto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail on mailto: in shipped paths
+        run: ./scripts/check-no-mailto.sh

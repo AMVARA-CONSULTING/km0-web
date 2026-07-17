@@ -199,7 +199,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
               <a href="https://cloud.km0digital.com/">{p.cta.cloud}</a>
             </li>
             <li>
-              <a href={`mailto:${p.cta.email}`}>{p.cta.email}</a>
+              <span>{p.cta.email}</span>
             </li>
           </ul>
           <a href={pdfUrl} download class="btn-primary">

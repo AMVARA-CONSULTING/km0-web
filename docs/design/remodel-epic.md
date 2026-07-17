@@ -50,3 +50,15 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 - Fake testimonials/metrics
 - Full rewrite of all historical blog days
 - Cloning Nous dark underground or Stirling Framer pixels
+
+## Phase 3  -  Reading surfaces
+
+| Issue | Intent |
+|-------|--------|
+| [#87](https://github.com/AMVARA-CONSULTING/km0-web/issues/87) | Blog + tutorials aesthetics overhaul (`docs/design/blog-tutorials-aesthetics.md`) |
+
+## Logo follow-up
+
+| Issue | Intent |
+|-------|--------|
+| [#88](https://github.com/AMVARA-CONSULTING/km0-web/issues/88) | Logo v2  -  kill webcam look (`docs/design/logo-brief-it-services.md`) |

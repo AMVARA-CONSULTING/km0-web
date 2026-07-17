@@ -1,16 +1,17 @@
 {
   "name": "km0-web",
   "type": "module",
-  "version": "1.1.113",
+  "version": "1.1.116",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "check:no-em-dash": "./scripts/check-no-em-dash.sh",
+    "check:no-mailto": "./scripts/check-no-mailto.sh",
     "prepare": "[ -x ./scripts/install-git-hooks.sh ] && ./scripts/install-git-hooks.sh || true",
-    "predev": "npm run check:no-em-dash",
-    "prebuild": "npm run check:no-em-dash"
+    "predev": "npm run check:no-em-dash && npm run check:no-mailto",
+    "prebuild": "npm run check:no-em-dash && npm run check:no-mailto"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",

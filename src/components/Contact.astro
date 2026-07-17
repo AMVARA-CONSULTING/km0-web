@@ -19,9 +19,9 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
         </h2>
         <p class="contact__body">{m.contact.body}</p>
       </header>
-      <a data-reveal data-delay="80" href={`mailto:${m.contact.email}`} class="btn-primary">
+      <p data-reveal data-delay="80" class="contact__email">
         {m.contact.email}
-      </a>
+      </p>
       <div data-reveal data-delay="160" class="contact__whatsapp">
         <p class="contact__whatsapp-label">{m.contact.whatsappLabel}</p>
         <a
@@ -56,6 +56,15 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
     font-size: 1.125rem;
     line-height: 1.6;
     color: color-mix(in srgb, var(--color-ink) 65%, transparent);
+  }
+
+  .contact__email {
+    margin: 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    word-break: break-all;
   }
 
   .contact__whatsapp {

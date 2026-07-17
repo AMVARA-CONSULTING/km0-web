@@ -15,15 +15,23 @@ Use one of these instead:
 
 Cursor agents and humans should follow **`.cursor/rules/no-em-dash.mdc`**.
 
+## Contact links: no mailto:
+
+Do **not** use the `mailto:` URI scheme in shipped content (`src/`, `public/`, `email-templates/`). Show email addresses as plain visible text, or link to an on-site contact section. For `security.txt`, use an `https:` Contact URI.
+
+Follow **`.cursor/rules/no-mailto.mdc`**.
+
 ## Validation
 
-The check runs in CI, before `npm run dev`, before `npm run build`, and in the **pre-commit** git hook (install with `./scripts/install-git-hooks.sh`; `npm install` runs this automatically when `.git/hooks` exists).
+Checks run in CI, before `npm run dev`, before `npm run build`, and in the **pre-commit** git hook (install with `./scripts/install-git-hooks.sh`; `npm install` runs this automatically when `.git/hooks` exists).
 
 ```bash
 ./scripts/install-git-hooks.sh
 ./scripts/check-no-em-dash.sh
+./scripts/check-no-mailto.sh
 # or
 npm run check:no-em-dash
+npm run check:no-mailto
 ```
 
 ## Development workflow

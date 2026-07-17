@@ -1,4 +1,4 @@
-Contact: mailto:hello.yoel@amvara.de
+Contact: https://km0digital.com/security/
 Preferred-Languages: es, en, ca, de
 Policy: https://km0digital.com/security/
 Scope: km0digital.com, cloud.km0digital.com, mail.km0digital.com

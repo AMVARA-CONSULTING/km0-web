@@ -3,7 +3,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import { getMessages } from '../i18n';
-import { localeHref } from '../i18n/paths';
+import { localeHref, withHash } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 
 interface Props {
@@ -124,7 +124,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
         <h2 id="pricing-custom" class="heading-section mb-4 text-ink">{p.custom.heading}</h2>
         <p class="doc-index-intro mt-0">{p.custom.body}</p>
         <div class="pricing-custom-cta">
-          <a href={`mailto:${messages.contact.email}`} class="btn-primary">
+          <a href={withHash(locale, 'contact')} class="btn-primary">
             {p.custom.cta}
           </a>
         </div>

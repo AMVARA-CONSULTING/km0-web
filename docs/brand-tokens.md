@@ -72,16 +72,20 @@ CSS: `src/styles/tokens.css` + `.km0-motif` in `src/styles/global.css`.
 
 | Asset | Path |
 |-------|------|
-| Main logo (stamp) | `public/brand/logo.svg` / `logo.png` (512) |
+| Main logo (plaque) | `public/brand/logo.svg` / `logo.png` (512) |
+| Mono silhouette | `public/brand/logo-mono.svg` (Ink field + white digit) |
 | Email / compact icon | `public/brand/logo-icon.png` (256) |
 | OG preview | `public/brand/og-preview.png` (1200×630) |
 | Favicon | `public/favicon.svg` (full-bleed) |
 | Apple touch | `public/apple-touch-icon.png` (180) |
 
-### Mark: Origin stamp
+### Mark: Digit-0 plaque (post-#81 / #88)
 
-- **Motif:** Kilometer-zero plaque on a Signal field: geometric **0**, origin diamond, short milestone baseline. Not a map-pin clone.
-- **Colors:** Signal `#0F766E` field + Paper `#EEF0F2` figure. Works on Paper/Snow chrome; stamp carries its own field so it also reads on Ink.
-- **Favicon:** Same motif, **edge-to-edge** (no padding, no rounded crop) so tabs stay readable at 16×16.
-- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (Bricolage). OG card pairs the stamp with “Kilómetro 0 Digital”.
-- **Do not** reintroduce purple/magenta→blue gradient pins in SVG or raster exports.
+- **Motif:** One focal idea: a **rectangular digit 0** (tall rounded-rect letterform with a single counter) on a Signal plaque. Kilómetro 0 without a gadget.
+- **Why it is not a webcam:** No concentric ellipses, no center diamond/iris, no nested “lens” rings. The figure is a typographic zero (straighter sides, one evenodd path), not a camera silhouette.
+- **Also not:** map-pin stem, purple gradient orb, monitor-on-stand (no baseline bar under the digit).
+- **Colors:** Signal `#0F766E` field + Paper `#EEF0F2` figure. Mono variant uses Ink `#0B1220` + white. Stamp carries its own field so it reads on Paper, Snow, and Ink chrome.
+- **Favicon:** Same digit motif, **edge-to-edge** square (no padding, no rounded crop) so tabs stay readable at 16×16.
+- **Responsive tiers:** `logo.svg` (rounded tile for header/hero/footer) → `favicon.svg` (full-bleed micro) → `logo-mono.svg` (silhouette) → PNG/OG rasters.
+- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (Bricolage). OG card pairs the plaque with “Kilómetro 0 Digital”.
+- **Do not** reintroduce concentric-lens stamps, map-pins, or purple/magenta→blue gradient marks.

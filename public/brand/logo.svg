@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="Kilometer 0 Digital">
-  <!-- Origin stamp: km-zero plaque on Signal (not a map pin) -->
+  <!-- Origin plaque: rectangular digit 0. Not a lens/webcam (no rings, no iris). Not a monitor (no stand bar). -->
   <rect width="32" height="32" rx="5" fill="#0F766E"/>
-  <ellipse cx="16" cy="13.1" rx="11" ry="9.5" fill="#EEF0F2"/>
-  <ellipse cx="16" cy="13.1" rx="6.2" ry="5.35" fill="#0F766E"/>
-  <path fill="#EEF0F2" d="M16 11.05 18.35 13.1 16 15.15 13.65 13.1Z"/>
-  <rect x="9.5" y="24.4" width="13" height="2.4" rx="1.2" fill="#EEF0F2"/>
+  <path fill="#EEF0F2" fill-rule="evenodd" d="M10.5 4.2h11c3.45 0 6 2.7 6 6.25v11.1c0 3.55-2.55 6.25-6 6.25h-11c-3.45 0-6-2.7-6-6.25v-11.1c0-3.55 2.55-6.25 6-6.25zm2 4.6c-1.65 0-2.7 1.2-2.7 2.7v9.9c0 1.5 1.05 2.7 2.7 2.7h7c1.65 0 2.7-1.2 2.7-2.7v-9.9c0-1.5-1.05-2.7-2.7-2.7h-7z"/>
 </svg>

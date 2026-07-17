@@ -69,7 +69,7 @@ Shipped under remodel epic #80–#84. Study: `docs/design/reference-study-stirli
 
 Locked **Origin stamp** (see `docs/brand-tokens.md` Assets):
 
-- Motif: Signal field + Paper geometric **0** + origin diamond + milestone baseline. Not a map pin.
+- Motif: Signal field + Paper rectangular digit **0** (lettermark plaque). Not a map pin, not a webcam/lens.
 - Paths: `public/brand/logo.svg` (+ PNG), `public/favicon.svg` (**full-bleed**, minimal padding so 16×16 reads), `public/apple-touch-icon.png`, `public/brand/og-preview.png` (Paper + stamp + wordmark).
 - Colors: Signal `#0F766E` + Paper `#EEF0F2`. No purple/magenta→blue gradient exports.
 - Brand test: mark must read without nav chrome; tabs must stay legible.

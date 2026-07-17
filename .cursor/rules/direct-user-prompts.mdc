@@ -39,6 +39,7 @@ Any change under `src/` or other built site paths **must** run **`./scripts/bump
 ## Verification
 
 - **Em dash:** `./scripts/check-no-em-dash.sh` (also runs on `npm run dev`, `npm run build`, pre-commit, and CI).
+- **No mailto:** `./scripts/check-no-mailto.sh` (same hooks; never emit `mailto:` in `src/`, `public/`, `email-templates/`).
 - **Build:** `npm run build` from repo root.
 - **Docker:** `docker compose build && docker compose up -d`; `docker logs km0-web`.
 - **HTTP:** `curl -sI http://127.0.0.1:9180/` and locale paths (`/ca/`, `/en/`, `/de/`, `/doc/`); production `https://km0digital.com/` when relevant.

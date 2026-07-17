@@ -1,0 +1,40 @@
+---
+description: Never use the mailto: URI scheme anywhere on the shipped site
+alwaysApply: true
+---
+
+# No mailto: links
+
+**Never** emit the `mailto:` URI scheme in km0-web shipped content. Not in Astro templates, i18n HTML strings, `public/` assets (including `security.txt`), or `email-templates/`.
+
+## Use instead
+
+| Context | Use |
+|---------|-----|
+| Contact / legal / security addresses | Plain visible email text (e.g. `legal@amvara.de`) |
+| Pricing or other CTAs that used mailto | Link to an on-site contact section (`withHash(locale, 'contact')`) or show the address as text |
+| `security.txt` Contact field | An `https:` URI (RFC 9116), not `mailto:` |
+
+Do not obfuscate addresses into unusable junk. Keep them readable and copyable.
+
+## Examples
+
+```text
+// BAD
+<a href="mailto:hello.yoel@amvara.de">hello.yoel@amvara.de</a>
+Contact: mailto:hello.yoel@amvara.de
+
+// GOOD
+hello.yoel@amvara.de
+Contact: https://km0digital.com/security/
+```
+
+## Validation
+
+```bash
+./scripts/check-no-mailto.sh
+# or
+npm run check:no-mailto
+```
+
+Runs on `npm run dev`, `npm run build`, pre-commit (with em-dash check), and CI.

@@ -1,5 +1,6 @@
 #!/bin/sh
-# Block commits that reintroduce the em dash (U+2014).
+# Block commits that reintroduce em dash (U+2014) or mailto: in shipped paths.
 set -eu
 ROOT="$(git rev-parse --show-toplevel)"
-exec "$ROOT/scripts/check-no-em-dash.sh"
+"$ROOT/scripts/check-no-em-dash.sh"
+exec "$ROOT/scripts/check-no-mailto.sh"

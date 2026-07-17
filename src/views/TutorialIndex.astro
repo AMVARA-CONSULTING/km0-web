@@ -31,7 +31,7 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
   pageDescription={messages.tutorials.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="section-pad doc-reading-page pt-28">
+  <main class="doc-reading-page">
     <div class="doc-index">
       <header class="doc-index-header">
         <p class="doc-kicker">{messages.tutorials.eyebrow}</p>
@@ -41,12 +41,12 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
 
       <ul class="doc-post-list">
         {
-          tutorials.map((tutorial) => {
+          tutorials.map((tutorial, index) => {
             const readingMinutes = estimateReadingMinutes(tutorial.body ?? '', locale);
             const readingTime = formatReadingTime(messages.tutorials.readingTime, readingMinutes);
 
             return (
-              <li class="doc-post-row">
+              <li class:list={['doc-post-row', index === 0 && 'doc-post-row--lead']}>
                 <div class="doc-post-row-meta">
                   <span class="doc-platform-badge">{tutorial.data.platform}</span>
                   <span class="doc-reading-time">{readingTime}</span>

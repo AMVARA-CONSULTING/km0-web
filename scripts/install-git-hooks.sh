@@ -1,5 +1,5 @@
 #!/bin/sh
-# Install repo git hooks (pre-commit runs check-no-em-dash.sh).
+# Install repo git hooks (pre-commit runs check-no-em-dash.sh and check-no-mailto.sh).
 set -eu
 
 ROOT="$(CDPATH= cd "$(dirname "$0")/.." && pwd)"
@@ -12,5 +12,7 @@ if [ ! -d "$ROOT/.git/hooks" ]; then
 fi
 
 cp "$HOOK_SRC" "$HOOK_DST"
-chmod +x "$HOOK_DST" "$HOOK_SRC" "$ROOT/scripts/check-no-em-dash.sh"
+chmod +x "$HOOK_DST" "$HOOK_SRC" \
+  "$ROOT/scripts/check-no-em-dash.sh" \
+  "$ROOT/scripts/check-no-mailto.sh"
 echo "install-git-hooks: installed pre-commit hook -> .git/hooks/pre-commit"

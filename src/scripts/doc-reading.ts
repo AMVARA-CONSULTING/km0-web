@@ -1,9 +1,9 @@
 /** Wire TOC highlight and assign ids for legacy HTML kit headings. */
 function initDocReading() {
-  const article = document.querySelector<HTMLElement>('[data-doc-reading]');
+  const article = document.querySelector<HTMLElement>('[data-reading]');
   if (!article) return;
 
-  const tocNavs = article.querySelectorAll<HTMLElement>('[data-doc-toc]');
+  const tocNavs = article.querySelectorAll<HTMLElement>('[data-reading-toc]');
   if (tocNavs.length === 0) return;
 
   const links = Array.from(

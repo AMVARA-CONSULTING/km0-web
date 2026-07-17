@@ -31,33 +31,31 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
   pageDescription={messages.tutorials.metaDescription}
 >
   <Header locale={locale} messages={messages} />
-  <main class="doc-reading-page">
-    <div class="doc-index">
-      <header class="doc-index-header">
-        <p class="doc-kicker">{messages.tutorials.eyebrow}</p>
-        <h1 class="doc-index-title">{messages.tutorials.heading}</h1>
-        <p class="doc-index-intro">{messages.tutorials.intro}</p>
+  <main class="reading-page">
+    <div class="reading-index">
+      <header class="reading-index-masthead">
+        <p class="reading-index-label">{messages.tutorials.eyebrow}</p>
+        <h1 class="reading-index-title">{messages.tutorials.heading}</h1>
+        <p class="reading-index-dek">{messages.tutorials.intro}</p>
       </header>
 
-      <ul class="doc-post-list">
+      <ul class="reading-catalog">
         {
           tutorials.map((tutorial, index) => {
             const readingMinutes = estimateReadingMinutes(tutorial.body ?? '', locale);
             const readingTime = formatReadingTime(messages.tutorials.readingTime, readingMinutes);
 
             return (
-              <li class:list={['doc-post-row', index === 0 && 'doc-post-row--lead']}>
-                <div class="doc-post-row-meta">
-                  <span class="doc-platform-badge">{tutorial.data.platform}</span>
-                  <span class="doc-reading-time">{readingTime}</span>
-                </div>
-                <div class="doc-post-row-body">
-                  <h2 class="doc-post-row-title">
-                    <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>
-                      {tutorial.data.title}
-                    </a>
-                  </h2>
-                  <p class="doc-post-row-desc">{tutorial.data.description}</p>
+              <li class:list={['reading-entry', index === 0 && 'reading-entry--feature']}>
+                <h2 class="reading-entry-title">
+                  <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>
+                    {tutorial.data.title}
+                  </a>
+                </h2>
+                <p class="reading-entry-dek">{tutorial.data.description}</p>
+                <div class="reading-entry-meta">
+                  <span class="reading-platform">{tutorial.data.platform}</span>
+                  <span>{readingTime}</span>
                 </div>
               </li>
             );

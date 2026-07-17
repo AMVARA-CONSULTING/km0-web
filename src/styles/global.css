@@ -1,4 +1,5 @@
 @import './tokens.css';
+@import './reading.css';
 
 @tailwind base;
 @tailwind components;
@@ -236,88 +237,14 @@
     @apply font-sans text-sm font-medium text-ink/70 underline decoration-ink/20 underline-offset-[3px] transition-colors hover:text-ink hover:decoration-ink/45;
   }
 
-  /* Blog / tutorials: cool civic editorial reading system
-     Targets: ~65ch measure, 18-21px body, magazine index, whisper TOC.
-     See docs/design/blog-tutorials-aesthetics.md */
-  .doc-reading-page {
-    @apply bg-paper px-6 pb-16 pt-28 md:px-12 md:pb-24 lg:px-20 lg:pb-28;
-  }
-
-  .doc-reading {
-    @apply mx-auto max-w-5xl;
-  }
-
-  .doc-reading-grid {
-    @apply mt-8;
-  }
-
-  .doc-reading-grid--with-toc {
-    @apply lg:grid lg:grid-cols-[11rem_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[12rem_minmax(0,1fr)] xl:gap-16;
-  }
-
-  .doc-article {
-    @apply max-w-[65ch];
-  }
-
-  .doc-kicker {
+  /*
+   * Shared page utilities (Legal, Security, Pricing, Presentation, etc.).
+   * Blog/tutorials use reading-* in reading.css - do not revive .doc-post-row /
+   * .doc-toc-* chrome here.
+   */
+  .doc-kicker,
+  .doc-eyebrow {
     @apply mb-4 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-ink/45;
-  }
-
-  .doc-breadcrumb {
-    @apply mb-8 flex flex-wrap items-center gap-2 font-sans text-sm text-ink/45;
-  }
-
-  .doc-breadcrumb-link {
-    @apply transition-colors hover:text-ink;
-  }
-
-  .doc-breadcrumb-sep {
-    @apply text-ink/25;
-  }
-
-  .doc-breadcrumb-current {
-    @apply max-w-[40ch] truncate text-ink/65;
-  }
-
-  .doc-meta {
-    @apply mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-sans text-[0.8125rem] text-ink/50;
-  }
-
-  .doc-date,
-  .doc-reading-time {
-    @apply tracking-normal;
-  }
-
-  .doc-header {
-    @apply border-b border-mist/80 pb-9;
-  }
-
-  .doc-title {
-    @apply mb-5 font-display text-4xl font-semibold leading-[1.12] tracking-tight text-ink text-balance md:text-5xl;
-  }
-
-  .doc-dek {
-    @apply max-w-[55ch] font-body text-lg leading-relaxed text-ink/65 md:text-xl md:leading-relaxed;
-  }
-
-  .doc-footer {
-    @apply mt-14 border-t border-mist pt-8;
-  }
-
-  .doc-back {
-    @apply font-sans text-sm font-medium text-signal transition-colors hover:text-signal-hover;
-  }
-
-  .doc-index {
-    @apply mx-auto max-w-3xl;
-  }
-
-  .doc-index-header {
-    @apply mb-12 max-w-[42rem] border-b border-mist pb-10 md:mb-16 md:pb-12;
-  }
-
-  .doc-index-title {
-    @apply font-display text-4xl font-semibold leading-[1.1] tracking-tight text-ink text-balance md:text-5xl lg:text-[3.5rem];
   }
 
   .doc-index-intro {
@@ -328,207 +255,7 @@
     @apply font-medium text-ink underline decoration-ink/25 underline-offset-2 transition-colors hover:decoration-ink;
   }
 
-  .doc-post-list {
-    @apply list-none space-y-0 p-0;
-  }
-
-  .doc-post-row {
-    @apply grid gap-2 border-b border-mist py-9 first:pt-0 md:grid-cols-[9.5rem_minmax(0,1fr)] md:gap-10 md:py-11;
-  }
-
-  .doc-post-row--lead {
-    @apply pb-12 md:pb-14;
-  }
-
-  .doc-post-row--lead .doc-post-row-title {
-    @apply text-2xl md:text-3xl lg:text-[2rem];
-  }
-
-  .doc-post-row--lead .doc-post-row-desc {
-    @apply text-base md:text-lg;
-  }
-
-  .doc-post-row-meta {
-    @apply flex flex-wrap items-baseline gap-x-3 gap-y-1 font-sans text-[0.8125rem] text-ink/50 md:flex-col md:items-start md:gap-1.5 md:pt-1.5;
-  }
-
-  .doc-post-row-body {
-    @apply min-w-0;
-  }
-
-  .doc-post-row-title {
-    @apply mb-2.5 font-display text-xl font-semibold tracking-tight md:text-2xl;
-  }
-
-  .doc-post-row-title a {
-    @apply text-ink underline decoration-transparent decoration-2 underline-offset-[0.2em] transition-[color,text-decoration-color] duration-300 ease-apple hover:text-signal hover:decoration-signal;
-  }
-
-  .doc-post-row-desc {
-    @apply max-w-[55ch] font-body text-[0.9375rem] leading-relaxed text-ink/65 md:text-base;
-  }
-
-  .doc-platform-badge {
-    @apply font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-ink/45;
-  }
-
-  /* Legacy index card class names: same editorial row look */
-  .doc-post-card {
-    @apply grid gap-2 border-b border-mist py-9 first:pt-0 md:grid-cols-[9.5rem_minmax(0,1fr)] md:gap-10 md:py-11;
-  }
-
-  .doc-post-card-meta {
-    @apply flex flex-wrap items-baseline gap-x-3 gap-y-1 font-sans text-[0.8125rem] text-ink/50 md:flex-col md:items-start md:gap-1.5;
-  }
-
-  .doc-post-card-title {
-    @apply mb-2.5 font-display text-xl font-semibold tracking-tight md:text-2xl;
-  }
-
-  .doc-post-card-title a {
-    @apply text-ink underline decoration-transparent decoration-2 underline-offset-[0.2em] transition-[color,text-decoration-color] duration-300 ease-apple hover:text-signal hover:decoration-signal;
-  }
-
-  .doc-post-card-desc {
-    @apply mb-0 max-w-[55ch] font-body text-[0.9375rem] leading-relaxed text-ink/65;
-  }
-
-  .doc-read-more {
-    @apply mt-3 inline-flex font-sans text-sm font-medium text-signal hover:text-signal-hover;
-  }
-
-  .doc-eyebrow {
-    @apply mb-4 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-ink/45;
-  }
-
-  /* TOC: whisper, not a bordered Snow card */
-  .doc-toc-mobile {
-    @apply mb-8 border-0 border-b border-mist bg-transparent;
-  }
-
-  .doc-toc-mobile-summary {
-    @apply flex cursor-pointer list-none items-center justify-between gap-3 px-0 py-3 font-sans text-sm font-medium text-ink/70 transition-colors hover:text-ink;
-  }
-
-  .doc-toc-mobile-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .doc-toc-mobile-summary::marker {
-    content: '';
-  }
-
-  .doc-toc-mobile-summary-label {
-    @apply flex items-center gap-2;
-  }
-
-  .doc-toc-mobile-chevron {
-    @apply h-4 w-4 shrink-0 text-ink/35 transition-transform duration-300 ease-apple;
-  }
-
-  .doc-toc-mobile[open] .doc-toc-mobile-chevron {
-    transform: rotate(180deg);
-  }
-
-  .doc-toc-mobile[open] .doc-toc-mobile-summary {
-    @apply border-0;
-  }
-
-  .doc-toc-mobile .doc-toc {
-    @apply px-0 pb-4 pt-1;
-  }
-
-  .doc-toc-heading {
-    @apply mb-3 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-ink/40;
-  }
-
-  .doc-toc--sticky {
-    @apply sticky top-28;
-  }
-
-  .doc-toc-list {
-    @apply list-none space-y-1 p-0;
-  }
-
-  .doc-toc-item--nested {
-    @apply pl-2.5;
-  }
-
-  .doc-toc-link {
-    @apply block border-l border-transparent py-1 pl-3 font-sans text-[0.8125rem] leading-snug text-ink/50 transition-colors hover:border-mist hover:text-ink;
-  }
-
-  .doc-toc-link[aria-current='location'] {
-    border-left-color: #0f766e;
-    @apply font-medium text-ink;
-  }
-
-  .doc-article-nav {
-    @apply mt-14 grid gap-6 border-t border-mist pt-9 sm:grid-cols-2;
-  }
-
-  .doc-article-nav-link {
-    @apply flex flex-col gap-1 transition-colors;
-  }
-
-  .doc-article-nav-link--next {
-    @apply sm:text-right;
-  }
-
-  .doc-article-nav-label {
-    @apply font-sans text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-ink/40;
-  }
-
-  .doc-article-nav-title {
-    @apply font-display text-base font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-[0.18em] transition-[color,text-decoration-color] duration-300 ease-apple hover:text-signal hover:decoration-signal;
-  }
-
-  .doc-article-nav-spacer {
-    @apply hidden sm:block;
-  }
-
-  .doc-related {
-    @apply mt-14 border-t border-mist pt-9;
-  }
-
-  .doc-related-heading {
-    @apply mb-6 font-display text-lg font-semibold text-ink;
-  }
-
-  .doc-related-list {
-    @apply grid list-none gap-6 p-0 sm:grid-cols-2;
-  }
-
-  .doc-related-link {
-    @apply flex flex-col gap-1.5;
-  }
-
-  .doc-related-link-title {
-    @apply font-display text-base font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-[0.18em] transition-[color,text-decoration-color] duration-300 ease-apple hover:text-signal hover:decoration-signal;
-  }
-
-  .doc-related-link-desc {
-    @apply font-body text-sm leading-relaxed text-ink/60;
-  }
-
-  /* Legacy related card names */
-  .doc-related-card {
-    @apply list-none;
-  }
-
-  .doc-related-card-link {
-    @apply flex flex-col gap-1.5;
-  }
-
-  .doc-related-card-title {
-    @apply font-display text-base font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-[0.18em] transition-[color,text-decoration-color] duration-300 ease-apple hover:text-signal hover:decoration-signal;
-  }
-
-  .doc-related-card-desc {
-    @apply font-body text-sm leading-relaxed text-ink/60;
-  }
-
-  /* Shared prose scale for blog + tutorials (~65ch, 18-21px, leading ~1.65) */
+  /* Prose for Legal / Security (and any non-reading page still on .doc-body) */
   .doc-body {
     @apply max-w-[65ch] pt-9 font-body text-[1.125rem] leading-[1.65] text-ink/85 md:text-[1.1875rem] md:leading-[1.65];
     text-wrap: pretty;
@@ -620,7 +347,6 @@
     @apply border-b-0;
   }
 
-  /* Compat: legacy HTML section kits in day-1..day-N (not rewritten in this task) */
   .doc-body .doc-lead-block,
   .doc-body .doc-block,
   .doc-body .doc-closing-block {

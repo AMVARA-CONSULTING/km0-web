@@ -62,3 +62,9 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 | Issue | Intent |
 |-------|--------|
 | [#88](https://github.com/AMVARA-CONSULTING/km0-web/issues/88) | Logo v2  -  kill webcam look (`docs/design/logo-brief-it-services.md`) |
+
+## Reading surfaces v2 (ground-up)
+
+| Issue | Intent |
+|-------|--------|
+| [#89](https://github.com/AMVARA-CONSULTING/km0-web/issues/89) | Blog + tutorials CSS/chrome from zero (`blog-tutorials-ground-up-v2.md`) |

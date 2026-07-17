@@ -1,0 +1,519 @@
+/*
+ * KM0 reading system (blog + tutorials) - greenfield.
+ * Spec: docs/design/blog-tutorials-ground-up-v2.md
+ *
+ * Vibe: Quiet civic book - typographic poster indexes, calm longform column.
+ * Layout: Asymmetric magazine masthead + title-led catalog; article = book
+ *         column with floating whisper TOC (no bordered box).
+ * Type: Display Bricolage / body Source Serif 4 / UI IBM Plex Sans.
+ * Anchor: Ink on continuous Paper; Signal teal accent only.
+ * Refuse: hairline meta|title rows, bordered TOC slabs, cards, purple, zebra.
+ */
+
+@layer components {
+  /* -- Page shell -- */
+  .reading-page {
+    @apply bg-paper px-6 pb-20 pt-28 md:px-10 md:pb-28 lg:px-16 lg:pb-32;
+  }
+
+  /* -- Index: typographic poster -- */
+  .reading-index {
+    @apply mx-auto w-full max-w-4xl;
+  }
+
+  .reading-index-masthead {
+    position: relative;
+    @apply mb-14 max-w-[40rem] pl-5 md:mb-20 md:pl-7;
+  }
+
+  .reading-index-masthead::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    bottom: 0.35rem;
+    width: 3px;
+    background: var(--color-signal);
+  }
+
+  .reading-index-label {
+    @apply mb-5 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-ink/45;
+  }
+
+  .reading-index-title {
+    @apply font-display text-[2.75rem] font-semibold leading-[0.98] tracking-tight text-ink text-balance md:text-6xl lg:text-[4.25rem];
+  }
+
+  .reading-index-dek {
+    @apply mt-6 max-w-[34rem] font-body text-lg leading-relaxed text-ink/65 md:text-xl md:leading-relaxed;
+  }
+
+  .reading-index-dek a {
+    @apply font-medium text-ink underline decoration-ink/25 underline-offset-2 transition-colors hover:decoration-ink;
+  }
+
+  .reading-catalog {
+    @apply m-0 list-none space-y-0 p-0;
+  }
+
+  /* Feature lead: oversized title, meta trails below (not a side column) */
+  .reading-entry {
+    @apply relative py-10 first:pt-0;
+  }
+
+  .reading-entry + .reading-entry {
+    @apply border-t-0;
+  }
+
+  .reading-entry + .reading-entry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 1px;
+    background: color-mix(in srgb, var(--color-ink) 18%, transparent);
+  }
+
+  .reading-entry--feature {
+    @apply pb-14 md:pb-16;
+  }
+
+  .reading-entry--feature::after {
+    content: none;
+  }
+
+  .reading-entry-title {
+    @apply mb-3 font-display text-[1.375rem] font-semibold leading-snug tracking-tight md:text-[1.625rem];
+  }
+
+  .reading-entry--feature .reading-entry-title {
+    @apply text-[1.875rem] leading-[1.15] md:text-[2.5rem] lg:text-[2.75rem];
+  }
+
+  .reading-entry-title a {
+    @apply text-ink no-underline transition-colors duration-300 ease-apple hover:text-signal;
+  }
+
+  .reading-entry-title a:focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-signal;
+  }
+
+  .reading-entry-dek {
+    @apply mb-4 max-w-[52ch] font-body text-base leading-relaxed text-ink/65 md:text-[1.0625rem];
+  }
+
+  .reading-entry--feature .reading-entry-dek {
+    @apply text-lg md:text-xl;
+  }
+
+  .reading-entry-meta {
+    @apply flex flex-wrap items-baseline gap-x-3 gap-y-1 font-sans text-[0.75rem] uppercase tracking-[0.1em] text-ink/45;
+  }
+
+  .reading-platform {
+    @apply font-sans text-[0.75rem] font-medium uppercase tracking-[0.12em] text-signal;
+  }
+
+  /* -- Article shell: book column + whisper TOC -- */
+  .reading-shell {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
+  .reading-crumb {
+    @apply mb-10 flex flex-wrap items-center gap-2 font-sans text-sm text-ink/45;
+  }
+
+  .reading-crumb-link {
+    @apply transition-colors hover:text-ink;
+  }
+
+  .reading-crumb-sep {
+    @apply text-ink/25;
+  }
+
+  .reading-crumb-current {
+    @apply max-w-[36ch] truncate text-ink/60;
+  }
+
+  .reading-layout {
+    @apply mt-2;
+  }
+
+  .reading-layout--toc {
+    @apply lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,42rem)_minmax(10rem,14rem)] lg:items-start lg:gap-x-10 xl:gap-x-14;
+  }
+
+  /* Empty left rail keeps the column biased toward center-right on wide screens */
+  .reading-layout--toc::before {
+    content: '';
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .reading-layout--toc::before {
+      display: block;
+    }
+  }
+
+  .reading-column {
+    @apply min-w-0 max-w-[65ch];
+  }
+
+  .reading-layout--toc .reading-column {
+    @apply lg:col-start-2;
+  }
+
+  .reading-lede {
+    @apply mb-0 pb-10;
+  }
+
+  .reading-meta {
+    @apply mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-sans text-[0.75rem] uppercase tracking-[0.1em] text-ink/45;
+  }
+
+  .reading-title {
+    @apply mb-5 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-ink text-balance md:text-5xl lg:text-[3.35rem];
+  }
+
+  .reading-dek {
+    @apply max-w-[48ch] font-body text-lg leading-relaxed text-ink/65 md:text-xl md:leading-relaxed;
+  }
+
+  /* Whisper TOC - floating type only, no box / border slab */
+  .reading-toc-mobile {
+    @apply mb-10 lg:hidden;
+  }
+
+  .reading-toc-mobile-summary {
+    @apply flex cursor-pointer list-none items-center gap-2 py-2 font-sans text-sm font-medium text-ink/60 transition-colors hover:text-ink;
+  }
+
+  .reading-toc-mobile-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .reading-toc-mobile-summary::marker {
+    content: '';
+  }
+
+  .reading-toc-mobile-chevron {
+    @apply h-3.5 w-3.5 shrink-0 text-ink/35 transition-transform duration-300 ease-apple;
+  }
+
+  .reading-toc-mobile[open] .reading-toc-mobile-chevron {
+    transform: rotate(180deg);
+  }
+
+  .reading-toc-rail {
+    @apply hidden lg:col-start-3 lg:block;
+  }
+
+  .reading-toc {
+    @apply font-sans;
+  }
+
+  .reading-toc--sticky {
+    @apply sticky top-28;
+  }
+
+  .reading-toc-label {
+    @apply mb-4 font-sans text-[0.625rem] font-medium uppercase tracking-[0.16em] text-ink/35;
+  }
+
+  .reading-toc-list {
+    @apply m-0 list-none space-y-0 p-0;
+  }
+
+  .reading-toc-item--nested {
+    @apply pl-3;
+  }
+
+  .reading-toc-link {
+    @apply block py-1.5 font-sans text-[0.75rem] leading-snug text-ink/40 no-underline transition-colors duration-200 hover:text-ink;
+  }
+
+  .reading-toc-link[aria-current='location'] {
+    @apply font-medium text-signal;
+  }
+
+  .reading-toc-mobile .reading-toc-list {
+    @apply pb-2 pt-1;
+  }
+
+  /* -- Prose scale -- */
+  .reading-prose {
+    @apply max-w-[65ch] pt-2 font-body text-[1.125rem] leading-[1.65] text-ink/85 md:text-[1.1875rem] md:leading-[1.65];
+    text-wrap: pretty;
+  }
+
+  .reading-prose > *:first-child {
+    @apply mt-0;
+  }
+
+  .reading-prose > p {
+    @apply mb-6 max-w-[65ch] last:mb-0;
+  }
+
+  .reading-prose h2:not([class]) {
+    @apply mb-4 mt-14 scroll-mt-28 font-display text-[1.625rem] font-semibold leading-snug tracking-tight text-ink md:mt-16 md:text-[1.75rem];
+  }
+
+  .reading-prose h3:not([class]) {
+    @apply mb-3 mt-10 scroll-mt-28 font-display text-xl font-semibold leading-snug text-ink;
+  }
+
+  .reading-prose ul:not([class]),
+  .reading-prose ol:not([class]) {
+    @apply my-6 max-w-[65ch] space-y-2.5 pl-6;
+  }
+
+  .reading-prose ul:not([class]) {
+    @apply list-disc;
+  }
+
+  .reading-prose ol:not([class]) {
+    @apply list-decimal;
+  }
+
+  .reading-prose li:not([class]) {
+    @apply pl-1;
+  }
+
+  .reading-prose hr {
+    @apply my-12 border-0 border-t border-mist;
+  }
+
+  .reading-prose a {
+    @apply font-medium text-ink underline decoration-ink/30 underline-offset-[0.18em] transition-colors hover:text-signal hover:decoration-signal;
+  }
+
+  .reading-prose strong {
+    @apply font-semibold text-ink;
+  }
+
+  .reading-prose blockquote {
+    @apply my-8 max-w-[65ch] border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 font-body text-[1.05em] italic leading-[1.6] text-ink/70;
+  }
+
+  .reading-prose blockquote p {
+    @apply mb-3 last:mb-0;
+  }
+
+  .reading-prose pre {
+    @apply my-8 max-w-[65ch] overflow-x-auto rounded-none border-0 bg-ink px-5 py-4 font-mono text-[0.8125rem] leading-relaxed text-snow md:text-sm;
+  }
+
+  .reading-prose code {
+    @apply rounded-sm bg-mist/50 px-1 py-0.5 font-mono text-[0.88em] text-ink;
+  }
+
+  .reading-prose pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .reading-prose table {
+    @apply my-8 w-full max-w-none border-collapse text-sm;
+  }
+
+  .reading-prose thead {
+    @apply border-b border-ink/20;
+  }
+
+  .reading-prose th,
+  .reading-prose td {
+    @apply border-0 border-b border-mist px-0 py-3 pr-4 text-left align-top;
+  }
+
+  .reading-prose th {
+    @apply bg-transparent font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.06em] text-ink/70;
+  }
+
+  .reading-prose tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Compat: legacy HTML section kits (day-1…N) under the new prose system */
+  .reading-prose .doc-lead-block,
+  .reading-prose .doc-block,
+  .reading-prose .doc-closing-block {
+    @apply mb-9 scroll-mt-28 border-0 bg-transparent p-0;
+  }
+
+  .reading-prose .doc-lead {
+    @apply mb-6 max-w-[65ch] text-xl leading-[1.6] text-ink/90 last:mb-0 md:text-[1.3125rem];
+  }
+
+  .reading-prose .doc-block-title {
+    @apply mb-2 mt-0 scroll-mt-28 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-ink/40;
+  }
+
+  .reading-prose .doc-block-title::after {
+    content: none;
+  }
+
+  .reading-prose .doc-block-heading {
+    @apply mb-4 mt-0 scroll-mt-28 font-display text-[1.625rem] font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem];
+  }
+
+  .reading-prose .doc-block-intro {
+    @apply mb-5 max-w-[65ch] leading-[1.65] text-ink/75;
+  }
+
+  .reading-prose .doc-block > p:last-child,
+  .reading-prose .doc-block > p:only-of-type {
+    @apply mb-0;
+  }
+
+  .reading-prose .doc-block > p:not(.doc-block-title):not(.doc-block-intro) {
+    @apply mb-5 max-w-[65ch] leading-[1.65] text-pretty last:mb-0;
+  }
+
+  .reading-prose ul.doc-list {
+    @apply mb-2 mt-2 max-w-[65ch] list-none space-y-0 p-0;
+  }
+
+  .reading-prose ul.doc-list li {
+    @apply border-b border-mist/70 py-3.5 leading-[1.65] last:border-b-0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .reading-prose ul.doc-list li:has(> strong) {
+      grid-template-columns: minmax(7.5rem, 10.5rem) minmax(0, 1fr);
+      align-items: baseline;
+    }
+  }
+
+  .reading-prose ul.doc-list li strong {
+    @apply font-semibold text-ink;
+  }
+
+  .reading-prose ol.doc-list {
+    @apply mb-2 mt-2 max-w-[65ch] list-decimal space-y-3 p-0 pl-6 md:pl-7;
+  }
+
+  .reading-prose ol.doc-list li {
+    @apply border-0 bg-transparent py-1 pl-2 leading-[1.65];
+    display: list-item;
+  }
+
+  .reading-prose ol.doc-list li::marker {
+    @apply font-semibold text-ink/55;
+  }
+
+  .reading-prose ol.doc-steps {
+    @apply mb-0 mt-2 max-w-[65ch] list-decimal space-y-3 p-0 pl-6;
+  }
+
+  .reading-prose ol.doc-steps li {
+    @apply relative border-0 bg-transparent px-0 py-1 pl-1 leading-[1.65];
+  }
+
+  .reading-prose ol.doc-steps li::before {
+    content: none;
+  }
+
+  .reading-prose ol.doc-steps li strong {
+    @apply font-semibold text-ink;
+  }
+
+  .reading-prose .doc-subtitle {
+    @apply mb-3 mt-8 max-w-[65ch] font-display text-base font-semibold text-ink md:text-lg;
+  }
+
+  .reading-prose .doc-callout {
+    @apply relative mt-8 max-w-[65ch] border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 leading-[1.65];
+  }
+
+  .reading-prose .doc-callout::before {
+    content: none;
+  }
+
+  .reading-prose .doc-callout-title {
+    @apply mb-3 block font-sans text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-ink/50;
+  }
+
+  .reading-prose .doc-callout p {
+    @apply mb-3 last:mb-0;
+  }
+
+  .reading-prose .doc-note {
+    @apply mt-6 max-w-[65ch] border-0 border-l-2 border-mist bg-transparent p-0;
+  }
+
+  .reading-prose .doc-note:not(:has(pre)) {
+    @apply pl-5 font-body text-[0.9375rem] leading-[1.65] text-ink/70 md:text-base;
+  }
+
+  .reading-prose .doc-note pre {
+    @apply m-0 max-w-none overflow-x-auto rounded-none border-0 bg-ink px-5 py-5 font-mono text-[0.8125rem] leading-[1.65] text-snow/95 md:px-6 md:py-6 md:text-sm;
+  }
+
+  .reading-prose .doc-closing {
+    @apply m-0 max-w-[65ch] leading-[1.65];
+  }
+
+  .reading-prose .doc-closing strong {
+    @apply font-semibold text-ink;
+  }
+
+  /* -- Pager / related / back -- */
+  .reading-pager {
+    @apply mt-16 grid gap-8 border-0 border-t border-mist/80 pt-10 sm:grid-cols-2;
+  }
+
+  .reading-pager-link {
+    @apply flex flex-col gap-1.5 transition-colors;
+  }
+
+  .reading-pager-link--next {
+    @apply sm:text-right;
+  }
+
+  .reading-pager-label {
+    @apply font-sans text-[0.625rem] font-medium uppercase tracking-[0.14em] text-ink/40;
+  }
+
+  .reading-pager-title {
+    @apply font-display text-base font-semibold text-ink no-underline transition-colors duration-300 ease-apple hover:text-signal;
+  }
+
+  .reading-pager-spacer {
+    @apply hidden sm:block;
+  }
+
+  .reading-more {
+    @apply mt-14 border-0 border-t border-mist/80 pt-10;
+  }
+
+  .reading-more-heading {
+    @apply mb-6 font-display text-lg font-semibold text-ink;
+  }
+
+  .reading-more-list {
+    @apply m-0 grid list-none gap-8 p-0 sm:grid-cols-2;
+  }
+
+  .reading-more-link {
+    @apply flex flex-col gap-1.5 no-underline;
+  }
+
+  .reading-more-link-title {
+    @apply font-display text-base font-semibold text-ink transition-colors duration-300 ease-apple hover:text-signal;
+  }
+
+  .reading-more-link-desc {
+    @apply font-body text-sm leading-relaxed text-ink/60;
+  }
+
+  .reading-foot {
+    @apply mt-14 pt-2;
+  }
+
+  .reading-back {
+    @apply font-sans text-sm font-medium text-signal transition-colors hover:text-signal-hover;
+  }
+}

@@ -29,6 +29,7 @@ interface Props {
   relatedTitle?: string;
   pubDate?: Date;
   pubDateLabel?: string;
+  platformLabel?: string;
   prev?: NavLink;
   next?: NavLink;
   related?: RelatedLink[];
@@ -50,6 +51,7 @@ const {
   relatedTitle,
   pubDate,
   pubDateLabel,
+  platformLabel,
   prev,
   next,
   related = [],
@@ -59,20 +61,20 @@ const hasToc = toc.length >= 3;
 const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
 ---
 
-<article class="doc-reading" data-doc-reading>
-  <nav class="doc-breadcrumb" aria-label="Breadcrumb">
-    <a href={breadcrumbHomeHref} class="doc-breadcrumb-link">{breadcrumbHome}</a>
-    <span class="doc-breadcrumb-sep" aria-hidden="true">/</span>
-    <span class="doc-breadcrumb-current">{title}</span>
+<article class="reading-shell" data-reading>
+  <nav class="reading-crumb" aria-label="Breadcrumb">
+    <a href={breadcrumbHomeHref} class="reading-crumb-link">{breadcrumbHome}</a>
+    <span class="reading-crumb-sep" aria-hidden="true">/</span>
+    <span class="reading-crumb-current">{title}</span>
   </nav>
 
   {
     hasToc && (
-      <details class="doc-toc-mobile lg:hidden">
-        <summary class="doc-toc-mobile-summary">
-          <span class="doc-toc-mobile-summary-label">{tocTitle}</span>
+      <details class="reading-toc-mobile">
+        <summary class="reading-toc-mobile-summary">
+          <span>{tocTitle}</span>
           <svg
-            class="doc-toc-mobile-chevron"
+            class="reading-toc-mobile-chevron"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -82,11 +84,11 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </summary>
-        <nav class="doc-toc" aria-label={tocTitle} data-doc-toc>
-          <ol class="doc-toc-list">
+        <nav class="reading-toc" aria-label={tocTitle} data-reading-toc>
+          <ol class="reading-toc-list">
             {toc.map((entry) => (
-              <li class:list={['doc-toc-item', entry.level === 3 && 'doc-toc-item--nested']}>
-                <a href={`#${entry.id}`} class="doc-toc-link" data-toc-link>
+              <li class:list={['reading-toc-item', entry.level === 3 && 'reading-toc-item--nested']}>
+                <a href={`#${entry.id}`} class="reading-toc-link" data-toc-link>
                   {entry.text}
                 </a>
               </li>
@@ -97,16 +99,81 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
     )
   }
 
-  <div class:list={['doc-reading-grid', hasToc && 'doc-reading-grid--with-toc']}>
+  <div class:list={['reading-layout', hasToc && 'reading-layout--toc']}>
+    <div class="reading-column">
+      <header class="reading-lede">
+        <div class="reading-meta">
+          {platformLabel && <span class="reading-platform">{platformLabel}</span>}
+          {pubDate && pubDateLabel && (
+            <time datetime={pubDate.toISOString()}>{pubDateLabel}</time>
+          )}
+          <span>{readingTime}</span>
+        </div>
+        <h1 class="reading-title">{title}</h1>
+        <p class="reading-dek">{description}</p>
+      </header>
+
+      <div class="reading-prose">
+        <slot />
+      </div>
+
+      {
+        (prev || next) && (
+          <nav class="reading-pager" aria-label="Article navigation">
+            {prev ? (
+              <a href={prev.href} class="reading-pager-link reading-pager-link--prev">
+                <span class="reading-pager-label">{prevLabel}</span>
+                <span class="reading-pager-title">{prev.title}</span>
+              </a>
+            ) : (
+              <span class="reading-pager-spacer" aria-hidden="true" />
+            )}
+            {next ? (
+              <a href={next.href} class="reading-pager-link reading-pager-link--next">
+                <span class="reading-pager-label">{nextLabel}</span>
+                <span class="reading-pager-title">{next.title}</span>
+              </a>
+            ) : (
+              <span class="reading-pager-spacer" aria-hidden="true" />
+            )}
+          </nav>
+        )
+      }
+
+      {
+        related.length > 0 && relatedTitle && (
+          <section class="reading-more" aria-labelledby="reading-more-heading">
+            <h2 id="reading-more-heading" class="reading-more-heading">
+              {relatedTitle}
+            </h2>
+            <ul class="reading-more-list">
+              {related.map((item) => (
+                <li>
+                  <a href={item.href} class="reading-more-link">
+                    <span class="reading-more-link-title">{item.title}</span>
+                    <span class="reading-more-link-desc">{item.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      <footer class="reading-foot">
+        <a href={backHref} class="reading-back">{backLabel}</a>
+      </footer>
+    </div>
+
     {
       hasToc && (
-        <aside class="doc-toc-aside hidden lg:block" aria-label={tocTitle}>
-          <nav class="doc-toc doc-toc--sticky" data-doc-toc>
-            <p class="doc-toc-heading">{tocTitle}</p>
-            <ol class="doc-toc-list">
+        <aside class="reading-toc-rail" aria-label={tocTitle}>
+          <nav class="reading-toc reading-toc--sticky" data-reading-toc>
+            <p class="reading-toc-label">{tocTitle}</p>
+            <ol class="reading-toc-list">
               {toc.map((entry) => (
-                <li class:list={['doc-toc-item', entry.level === 3 && 'doc-toc-item--nested']}>
-                  <a href={`#${entry.id}`} class="doc-toc-link" data-toc-link>
+                <li class:list={['reading-toc-item', entry.level === 3 && 'reading-toc-item--nested']}>
+                  <a href={`#${entry.id}`} class="reading-toc-link" data-toc-link>
                     {entry.text}
                   </a>
                 </li>
@@ -116,72 +183,6 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
         </aside>
       )
     }
-
-    <div class="doc-article">
-      <header class="doc-header">
-        <div class="doc-meta">
-          {pubDate && pubDateLabel && (
-            <time datetime={pubDate.toISOString()} class="doc-date">
-              {pubDateLabel}
-            </time>
-          )}
-          <span class="doc-reading-time">{readingTime}</span>
-        </div>
-        <h1 class="doc-title">{title}</h1>
-        <p class="doc-dek">{description}</p>
-      </header>
-
-      <div class="doc-body">
-        <slot />
-      </div>
-
-      {
-        (prev || next) && (
-          <nav class="doc-article-nav" aria-label="Article navigation">
-            {prev ? (
-              <a href={prev.href} class="doc-article-nav-link doc-article-nav-link--prev">
-                <span class="doc-article-nav-label">{prevLabel}</span>
-                <span class="doc-article-nav-title">{prev.title}</span>
-              </a>
-            ) : (
-              <span class="doc-article-nav-spacer" aria-hidden="true" />
-            )}
-            {next ? (
-              <a href={next.href} class="doc-article-nav-link doc-article-nav-link--next">
-                <span class="doc-article-nav-label">{nextLabel}</span>
-                <span class="doc-article-nav-title">{next.title}</span>
-              </a>
-            ) : (
-              <span class="doc-article-nav-spacer" aria-hidden="true" />
-            )}
-          </nav>
-        )
-      }
-
-      {
-        related.length > 0 && relatedTitle && (
-          <section class="doc-related" aria-labelledby="doc-related-heading">
-            <h2 id="doc-related-heading" class="doc-related-heading">
-              {relatedTitle}
-            </h2>
-            <ul class="doc-related-list">
-              {related.map((item) => (
-                <li>
-                  <a href={item.href} class="doc-related-link">
-                    <span class="doc-related-link-title">{item.title}</span>
-                    <span class="doc-related-link-desc">{item.description}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )
-      }
-
-      <footer class="doc-footer">
-        <a href={backHref} class="doc-back">{backLabel}</a>
-      </footer>
-    </div>
   </div>
 </article>
 

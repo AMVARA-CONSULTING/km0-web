@@ -79,7 +79,7 @@ KM0’s quiet motif (phase 2 #84, drift #105). Not POS orbs, not purple glow, no
 | Piece | Token / class | Role |
 |-------|---------------|------|
 | Quiet civic grid | `--km0-motif-grid-*` + `.km0-motif` | Stone-cool paper that feels surveyed, not blank |
-| SE grid drift | `--km0-motif-drift-duration` (32s) + `km0-motif-grid-se` | Ambient continuous slide down + slight right; human-visible in ~5–10s; seamless on cell size |
+| SE grid drift | `--km0-motif-drift-duration` (16s) + `km0-motif-grid-se` | Ambient continuous slide down + slight right; clearly felt in a few seconds; seamless on cell size |
 | Paper grain | `--km0-motif-grain*` via `::after` | Print-stock texture; multiply, very low opacity; stays static |
 | Kilometer-zero geometry | `.km0-motif--origin` via `::before` | Biased cross + diamond (right/upper), Signal ink only; stays static |
 

@@ -89,7 +89,7 @@ Locked **K0 lettermark** (see `docs/brand-tokens.md` Assets; brief `docs/design/
 ### Signature atmosphere (#84, drift #105)
 
 - **Origin field** only: `.km0-motif` / `.km0-motif--origin` (quiet grid + grain + optional biased kilometer-zero geometry).
-- Grid may use an **ambient SE drift** (down + slight right, `--km0-motif-drift-duration: 32s`); grain and origin geometry stay still. `prefers-reduced-motion: reduce` → static grid.
+- Grid may use an **ambient SE drift** (down + slight right, `--km0-motif-drift-duration: 16s`); grain and origin geometry stay still. `prefers-reduced-motion: reduce` → static grid.
 - Apply sparingly: hero + ≤2 bands. Never glow orbs, never purple bloom as brand atmosphere.
 
 ## Paint-phase locks (do not regress)

@@ -37,7 +37,7 @@ From the Stirling / Satisfecho / Nous study and remodel #80–#84:
 | Mark | Origin stamp (`public/brand/logo.svg`, full-bleed `favicon.svg`) | Generic map-pin, padded favicon, purple gradient pin |
 | Hero | Product-recognizable proof + quiet CTA hierarchy | Logo-only first viewport theater |
 | Bands | Audience/scale argument when needed | Equal icon-tile feature grids |
-| Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2); optional ambient SE grid drift (32s) | Glow orbs, purple bloom, zebra as “texture”, busy scrolling grids |
+| Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2); optional ambient SE grid drift (16s) | Glow orbs, purple bloom, zebra as “texture”, busy scrolling grids |
 
 ## Paint-phase locks (auto-fail if ignored)
 

@@ -1,15 +1,15 @@
 # Origin grid drift - visible SE (follow-up to #105)
 
-**Status:** craft locks shipped (SE + 32s).  
+**Status:** craft locks shipped (SE + 16s).  
 **Surface:** `.km0-motif` civic grid on hero (+ up to two bands).  
-**Supersedes craft bar of:** CLOSED `#105` / `CLOSED-105-…-origin-grid-ssw-drift` (shipped, but not felt).
+**Supersedes craft bar of:** CLOSED `#105` / `CLOSED-105-…-origin-grid-ssw-drift` (shipped, but not felt); prior SE retune at 32s (too slow on glance).
 
 ## Locked craft (ship)
 
 | Lock | Value |
 |------|-------|
 | Direction | Southeast: one cell east + two cells south (`km0-motif-grid-se`) |
-| Duration | `--km0-motif-drift-duration: 32s` (24–40s per-cell band) |
+| Duration | `--km0-motif-drift-duration: 16s` (14–18s band; not below 12s) |
 | Reduced motion | `prefers-reduced-motion: reduce` → `animation: none` |
 
 ## Diagnosis (why the owner does not see it)
@@ -29,7 +29,7 @@ Make the Origin grid drift **noticeable to a human in ~5–10 seconds** without 
 
 ## Recommended craft package
 
-1. **Retune speed** - Target roughly **one cell every 24–40s** (or equivalent perceived speed), not 108s. Still ambient; not a screensaver. Lock the chosen duration in `--km0-motif-drift-duration`.
+1. **Retune speed** - Target **`--km0-motif-drift-duration: 16s`** (14–18s band; not below 12s). Still ambient; not a screensaver. Faster than the prior 32s SE ship when felt on a normal glance.
 2. **Direction SE** - Keyframes: down + slight east (e.g. one cell right + two cells down, or 1:2 east:south). Rename keyframes if needed (`km0-motif-grid-se`) and update docs/skill strings that say SSW.
 3. **Visibility without tricks** - Prefer keeping tiled `background-position` if it reads; if still weak, move the grid onto a dedicated `::` layer with `transform: translate3d(…)` (compositor-friendly) while content / grain / origin mark stay fixed.
 4. **Reduced motion** - Unchanged: `prefers-reduced-motion: reduce` → fully static (pre-drift look).

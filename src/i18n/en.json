@@ -29,9 +29,9 @@
     "servicesLauncherTitle": "KM0 services"
   },
   "hero": {
-    "titleLine1": "Your data. ",
-    "titleGradient": "Your control.",
-    "tagline": "Cloud and email in the EU. 500 GB from €1.99/month. We do not sell your profile.",
+    "titleLine1": "Private cloud ",
+    "titleGradient": "and email.",
+    "tagline": "Hosted in the EU. 500 GB from €1.99/month. Public pricing, human support. We do not sell your profile.",
     "ctaPrimary": "Open KM0 Cloud",
     "ctaSecondary": "Pricing",
     "logoAlt": "Kilometer 0 Digital logo",
@@ -56,6 +56,28 @@
       "host": "cloud.km0digital.com"
     }
   },
+  "trust": {
+    "ariaLabel": "Hosting, operator, and security",
+    "items": [
+      {
+        "label": "Hosting",
+        "value": "Germany (Hetzner · Falkenstein)"
+      },
+      {
+        "label": "Operator",
+        "value": "AMVARA CONSULTING S.L."
+      },
+      {
+        "label": "Operations",
+        "value": "ISO/IEC 27001:2022"
+      },
+      {
+        "label": "Details",
+        "value": "Security",
+        "href": "security"
+      }
+    ]
+  },
   "vision": {
     "headingBefore": "Pick your ",
     "headingAccent": "scale",
@@ -71,10 +93,10 @@
         "cta": "cloud"
       },
       {
-        "meta": "Community · neighbourhood",
-        "title": "Share nearby, operate nearby",
-        "body": "Shared folders and open meetups. We operate nearby and speak your language.",
-        "fact": "Local meetups · human support",
+        "meta": "Team · nearby",
+        "title": "Shared folders, human support",
+        "body": "Collaborate on the same EU cloud. We reply in your language; meetups are optional.",
+        "fact": "Human support · local meetups",
         "ctaLabel": "Open KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "See meetups",
@@ -94,7 +116,7 @@
   },
   "community": {
     "heading": "Meetings",
-    "intro": "We meet in person to talk about cloud, email, and tools. See the schedule."
+    "intro": "Want to go deeper on cloud, email, and tools? We meet in person. See the schedule."
   },
   "services": {
     "headingBefore": "The ",
@@ -167,12 +189,12 @@
       {
         "id": "movement",
         "question": "What is KM0?",
-        "answerHtml": "A community project with real services: <strong>KM0 Cloud</strong> and <strong>KM0 Email</strong>. Operated by AMVARA CONSULTING S.L."
+        "answerHtml": "<strong>KM0 Cloud</strong> and <strong>KM0 Email</strong>: private cloud and email hosted in the EU. Operated by AMVARA CONSULTING S.L."
       },
       {
         "id": "participate",
-        "question": "How can I take part?",
-        "answerHtml": "Use the services, come to a <a href=\"#community\">meeting</a>, write to us, or join <a href=\"#contact\">WhatsApp</a>."
+        "question": "How do I start or get in touch?",
+        "answerHtml": "Open <strong>KM0 Cloud</strong>, check <a href=\"/en/pricing/\">pricing</a>, write to us, or join <a href=\"#contact\">WhatsApp</a>. <a href=\"#community\">Meetings</a> are optional."
       },
       {
         "id": "hosting",
@@ -199,6 +221,13 @@
     "whatsappHint": "Scan or tap to join",
     "whatsappQrAlt": "QR code for the KM0 WhatsApp group",
     "whatsappAria": "Open the KM0 WhatsApp group"
+  },
+  "purpose": {
+    "heading": "Mission and vision",
+    "missionLabel": "Mission",
+    "missionBody": "Connect 10,000,000 people by 2030.",
+    "visionLabel": "Vision",
+    "visionBody": "Honest, local infrastructure and personal support: an alternative to gated big tech that harvests user data."
   },
   "ideas": {
     "metaTitle": "Ideas and issues - Kilometer 0 Digital",

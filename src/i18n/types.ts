@@ -90,6 +90,16 @@ export interface Messages {
       host: string;
     };
   };
+  /** Landing trust facts under the hero (hosting, operator, ISO, security). */
+  trust: {
+    ariaLabel: string;
+    items: {
+      label: string;
+      value: string;
+      /** Optional on-site link target */
+      href?: 'security';
+    }[];
+  };
   services: {
     headingBefore: string;
     headingAccent: string;
@@ -163,6 +173,14 @@ export interface Messages {
     whatsappHint: string;
     whatsappQrAlt: string;
     whatsappAria: string;
+  };
+  /** Landing closer: mission goal + vision (above footer). Distinct from nav/vision scale bands. */
+  purpose: {
+    heading: string;
+    missionLabel: string;
+    missionBody: string;
+    visionLabel: string;
+    visionBody: string;
   };
   ideas: {
     metaTitle: string;

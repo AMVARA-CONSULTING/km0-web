@@ -1,0 +1,110 @@
+---
+import type { Locale } from '../i18n/types';
+import type { Messages } from '../i18n/types';
+import { localeHref } from '../i18n/paths';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
+
+function itemHref(href?: 'security'): string | undefined {
+  if (href === 'security') return localeHref(locale, '/security/');
+  return undefined;
+}
+---
+
+<section
+  id="trust"
+  class="trust"
+  aria-label={m.trust.ariaLabel}
+>
+  <ul class="trust__list" data-reveal>
+    {
+      m.trust.items.map((item) => {
+        const href = itemHref(item.href);
+        return (
+          <li class="trust__item">
+            <span class="trust__label">{item.label}</span>
+            {href ? (
+              <a href={href} class="trust__value trust__value--link">
+                {item.value}
+              </a>
+            ) : (
+              <span class="trust__value">{item.value}</span>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  .trust {
+    color: var(--color-ink);
+    padding: 0 var(--space-section-x) clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .trust__list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 1.15rem 0 0;
+    max-width: 72rem;
+    display: grid;
+    gap: 1rem 1.75rem;
+    border-top: 1px solid var(--color-mist);
+  }
+
+  @media (min-width: 720px) {
+    .trust__list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem 1.5rem;
+      padding-top: 1.35rem;
+    }
+  }
+
+  .trust__item {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .trust__label {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  }
+
+  .trust__value {
+    font-family: theme('fontFamily.body');
+    font-size: 0.9375rem;
+    line-height: 1.35;
+    color: var(--color-ink);
+  }
+
+  .trust__value--link {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 45%, transparent);
+    text-underline-offset: 0.18em;
+    transition:
+      color 0.3s var(--ease-out-expo),
+      text-decoration-color 0.3s var(--ease-out-expo);
+  }
+
+  .trust__value--link:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .trust__value--link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+</style>

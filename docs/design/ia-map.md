@@ -26,11 +26,11 @@ Canonical map after **FEAT-74** (IA restructure). Visual remodel and full copy r
 
 ## Primary nav (desktop + mobile)
 
-Home · Services · Pricing · Blog · Tutorials · Encuentros · Contact
+Home · Services · Pricing · Blog · Ideas · Encuentros · Contact
 
 ## Secondary (footer / overflow)
 
-Ideas · Presentation · FAQ · Legal · Security · product deep links (Cloud, Email)
+Tutorials · Presentation · FAQ · Legal · Security · product deep links (Cloud, Email)
 
 ## Stable routes (do not 404)
 

@@ -1,0 +1,87 @@
+---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  messages: Messages;
+}
+
+const { messages: m } = Astro.props;
+---
+
+<section
+  id="purpose"
+  class="section-pad purpose"
+  aria-labelledby="purpose-heading"
+>
+  <div class="mx-auto max-w-6xl">
+    <header data-reveal class="purpose__header">
+      <h2 id="purpose-heading" class="heading-section text-navy">
+        {m.purpose.heading}
+      </h2>
+    </header>
+    <div class="purpose__grid">
+      <article data-reveal data-delay="80" class="purpose__col">
+        <h3 class="purpose__label">{m.purpose.missionLabel}</h3>
+        <p class="purpose__body">{m.purpose.missionBody}</p>
+      </article>
+      <article data-reveal data-delay="160" class="purpose__col">
+        <h3 class="purpose__label">{m.purpose.visionLabel}</h3>
+        <p class="purpose__body">{m.purpose.visionBody}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .purpose__header {
+    max-width: 28rem;
+    margin-bottom: 2.25rem;
+    border-left: 3px solid var(--color-signal);
+    padding-left: 1.5rem;
+  }
+
+  .purpose__grid {
+    display: grid;
+    gap: 2.25rem 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .purpose__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      align-items: start;
+    }
+
+    .purpose__col + .purpose__col {
+      border-left: 1px solid var(--color-mist);
+      padding-left: 3rem;
+    }
+  }
+
+  .purpose__label {
+    margin: 0 0 0.75rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  }
+
+  .purpose__body {
+    margin: 0;
+    max-width: 36ch;
+    font-family: theme('fontFamily.serif');
+    font-size: clamp(1.125rem, 2.2vw, 1.35rem);
+    line-height: 1.45;
+    color: var(--color-ink);
+  }
+
+  .purpose__col:first-child .purpose__body {
+    max-width: 22ch;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+</style>

@@ -29,9 +29,9 @@
     "servicesLauncherTitle": "Serveis KM0"
   },
   "hero": {
-    "titleLine1": "Les teves dades. ",
-    "titleGradient": "El teu control.",
-    "tagline": "Núvol i correu a la UE. 500 GB des d'1,99 €/mes. Sense vendre el teu perfil.",
+    "titleLine1": "Núvol privat ",
+    "titleGradient": "i correu.",
+    "tagline": "Allotjats a la UE. 500 GB des d'1,99 €/mes. Preu públic, suport humà. No venem el teu perfil.",
     "ctaPrimary": "Obrir KM0 Cloud",
     "ctaSecondary": "Veure preus",
     "logoAlt": "Logo Kilòmetre 0 Digital",
@@ -56,6 +56,28 @@
       "host": "cloud.km0digital.com"
     }
   },
+  "trust": {
+    "ariaLabel": "Hosting, operador i seguretat",
+    "items": [
+      {
+        "label": "Hosting",
+        "value": "Alemanya (Hetzner · Falkenstein)"
+      },
+      {
+        "label": "Operador",
+        "value": "AMVARA CONSULTING S.L."
+      },
+      {
+        "label": "Operacions",
+        "value": "ISO/IEC 27001:2022"
+      },
+      {
+        "label": "Detall",
+        "value": "Seguretat",
+        "href": "security"
+      }
+    ]
+  },
   "vision": {
     "headingBefore": "Tria l'",
     "headingAccent": "escala",
@@ -71,10 +93,10 @@
         "cta": "cloud"
       },
       {
-        "meta": "Comunitat · barri",
-        "title": "Comparteix a prop, opera a prop",
-        "body": "Carpetes compartides i trobades obertes. Operem a prop i parlem en la teva llengua.",
-        "fact": "Trobades locals · suport humà",
+        "meta": "Equip · a prop",
+        "title": "Carpetes compartides, suport humà",
+        "body": "Col·labora al mateix núvol UE. Responem en la teva llengua; les trobades són opcionals.",
+        "fact": "Suport humà · trobades locals",
         "ctaLabel": "Obrir KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "Veure trobades",
@@ -94,7 +116,7 @@
   },
   "community": {
     "heading": "Trobades",
-    "intro": "Ens trobem en persona per parlar de núvol, correu i eines. Consulta l'agenda."
+    "intro": "Si vols aprofundir en núvol, correu i eines, ens trobem en persona. Consulta l'agenda."
   },
   "services": {
     "headingBefore": "Els ",
@@ -167,12 +189,12 @@
       {
         "id": "movement",
         "question": "Què és KM0?",
-        "answerHtml": "Un projecte comunitari amb serveis reals: <strong>KM0 Cloud</strong> i <strong>KM0 Email</strong>. Operat per AMVARA CONSULTING S.L."
+        "answerHtml": "<strong>KM0 Cloud</strong> i <strong>KM0 Email</strong>: núvol i correu privats allotjats a la UE. Operat per AMVARA CONSULTING S.L."
       },
       {
         "id": "participate",
-        "question": "Com puc participar?",
-        "answerHtml": "Fes servir els serveis, vine a una <a href=\"#community\">trobada</a>, escriu o uneix-te al <a href=\"#contact\">WhatsApp</a>."
+        "question": "Com començo o contacto?",
+        "answerHtml": "Obre <strong>KM0 Cloud</strong>, mira els <a href=\"/ca/pricing/\">preus</a>, escriu o uneix-te al <a href=\"#contact\">WhatsApp</a>. Les <a href=\"#community\">trobades</a> són opcionals."
       },
       {
         "id": "hosting",
@@ -199,6 +221,13 @@
     "whatsappHint": "Escaneja o prem per unir-te",
     "whatsappQrAlt": "Codi QR del grup de WhatsApp de KM0",
     "whatsappAria": "Obrir el grup de WhatsApp de KM0"
+  },
+  "purpose": {
+    "heading": "Missió i visió",
+    "missionLabel": "Missió",
+    "missionBody": "Connectar 10.000.000 de persones el 2030.",
+    "visionLabel": "Visió",
+    "visionBody": "Infraestructura local i honesta, amb suport personalitzat: una alternativa a les plataformes tancades que viuen de les teves dades."
   },
   "ideas": {
     "metaTitle": "Idees i problemes - Kilòmetre 0 Digital",

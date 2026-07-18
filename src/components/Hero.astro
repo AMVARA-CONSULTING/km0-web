@@ -54,14 +54,28 @@ const proof = m.hero.proof;
 
           <div class="hero__proof-plan">
             <div class="hero__proof-plan-row">
-              <span class="hero__proof-plan-name">{proof.planName}</span>
+              <span class="hero__proof-plan-name" aria-label={proof.planName}>
+                <span class="hero__proof-capacity" aria-hidden="true">
+                  <span
+                    class="hero__proof-capacity-value"
+                    data-hero-capacity
+                    data-target={proof.planCapacity}
+                  >{proof.planCapacity}</span>
+                  <span class="hero__proof-capacity-unit">{proof.planUnit}</span>
+                </span>
+                <span class="hero__proof-plan-label" aria-hidden="true">{proof.planLabel}</span>
+              </span>
               {
                 cloudItem?.priceFrom && (
                   <span class="hero__proof-plan-price">{cloudItem.priceFrom}</span>
                 )
               }
             </div>
-            <div class="hero__proof-meter">
+            <div
+              class="hero__proof-meter"
+              role="presentation"
+              aria-hidden="true"
+            >
               <span class="hero__proof-meter-fill"></span>
             </div>
             <p class="hero__proof-plan-meta">{proof.planMeta}</p>
@@ -95,14 +109,22 @@ const proof = m.hero.proof;
             class="hero__proof-qr"
             aria-label={proof.liveAria}
           >
-            <img
-              src="/brand/cloud-qr.png"
-              alt={proof.qrAlt}
-              width="132"
-              height="132"
-              class="hero__proof-qr-img"
-              decoding="async"
-            />
+            <span class="hero__proof-qr-corners" aria-hidden="true">
+              <span class="hero__proof-qr-corner" data-pos="tl"></span>
+              <span class="hero__proof-qr-corner" data-pos="tr"></span>
+              <span class="hero__proof-qr-corner" data-pos="bl"></span>
+              <span class="hero__proof-qr-corner" data-pos="br"></span>
+            </span>
+            <span class="hero__proof-qr-pad">
+              <img
+                src="/brand/cloud-qr.png"
+                alt={proof.qrAlt}
+                width="132"
+                height="132"
+                class="hero__proof-qr-img"
+                decoding="async"
+              />
+            </span>
           </a>
           <div class="hero__proof-live-copy">
             <p class="hero__proof-live-label">{proof.liveLabel}</p>
@@ -311,11 +333,56 @@ const proof = m.hero.proof;
   }
 
   .hero__proof-plan-name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.55rem;
+    min-width: 0;
+    color: var(--color-ink);
+  }
+
+  .hero__proof-capacity {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.2rem;
     font-family: theme('fontFamily.display');
-    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    color: var(--color-ink);
+    opacity: 0;
+    transform: translate3d(0, 0.4rem, 0);
+  }
+
+  .hero__proof-capacity-value {
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(1.85rem, 4.2vw, 2.35rem);
+  }
+
+  .hero__proof-capacity-unit {
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
     font-weight: 650;
     letter-spacing: -0.02em;
-    color: var(--color-ink);
+    color: var(--color-signal);
+  }
+
+  .hero__proof-plan-label {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: var(--color-ink-muted);
+    opacity: 0;
+    transform: translate3d(0, 0.25rem, 0);
+  }
+
+  .hero__visual.is-visible .hero__proof-capacity {
+    animation: hero-capacity-in var(--duration-hero-capacity) var(--ease-out-expo) both;
+  }
+
+  .hero__visual.is-visible .hero__proof-plan-label {
+    animation: hero-capacity-in var(--duration-hero-capacity) var(--ease-out-expo) 60ms both;
   }
 
   .hero__proof-plan-price {
@@ -326,7 +393,7 @@ const proof = m.hero.proof;
   }
 
   .hero__proof-meter {
-    height: 0.35rem;
+    height: 0.45rem;
     background: var(--color-mist);
     overflow: hidden;
   }
@@ -334,10 +401,14 @@ const proof = m.hero.proof;
   .hero__proof-meter-fill {
     display: block;
     height: 100%;
-    width: 28%;
+    width: calc(var(--hero-meter-fill) * 100%);
     background: var(--color-signal);
+    transform: scaleX(0);
     transform-origin: left center;
-    animation: hero-meter 0.9s var(--ease-out-expo) 0.35s both;
+  }
+
+  .hero__visual.is-visible .hero__proof-meter-fill {
+    animation: hero-meter var(--duration-hero-capacity) var(--ease-out-expo) 70ms both;
   }
 
   .hero__proof-plan-meta {
@@ -440,7 +511,7 @@ const proof = m.hero.proof;
     letter-spacing: 0.01em;
   }
 
-  /* Live product door: QR + same Cloud destination as primary CTA */
+  /* Live product door: QR framed like proof chrome (not a white sticker) */
   .hero__proof-live {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
@@ -452,16 +523,22 @@ const proof = m.hero.proof;
   }
 
   .hero__proof-qr {
+    position: relative;
     display: block;
     flex-shrink: 0;
-    padding: 0.35rem;
+    padding: 0.45rem;
     background: var(--color-snow);
     border: 1px solid var(--color-mist);
-    transition: border-color 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+    border-left: 2px solid var(--color-signal);
+    transition:
+      border-color 0.3s var(--ease-out-expo),
+      background-color 0.3s var(--ease-out-expo);
   }
 
   .hero__proof-qr:hover {
     border-color: color-mix(in srgb, var(--color-signal) 55%, var(--color-mist));
+    border-left-color: var(--color-signal);
+    background: color-mix(in srgb, var(--color-signal) 5%, var(--color-snow));
   }
 
   .hero__proof-qr:focus-visible {
@@ -469,10 +546,56 @@ const proof = m.hero.proof;
     outline-offset: 3px;
   }
 
+  .hero__proof-qr-corners {
+    position: absolute;
+    inset: 0.2rem;
+    pointer-events: none;
+  }
+
+  .hero__proof-qr-corner {
+    position: absolute;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-color: var(--color-signal);
+    border-style: solid;
+    opacity: 0.85;
+  }
+
+  .hero__proof-qr-corner[data-pos='tl'] {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+  }
+
+  .hero__proof-qr-corner[data-pos='tr'] {
+    top: 0;
+    right: 0;
+    border-width: 2px 2px 0 0;
+  }
+
+  .hero__proof-qr-corner[data-pos='bl'] {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 2px 2px;
+  }
+
+  .hero__proof-qr-corner[data-pos='br'] {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+  }
+
+  /* Ink quiet-zone pad: intentional scan field inside Snow/Signal chrome */
+  .hero__proof-qr-pad {
+    display: block;
+    padding: 0.28rem;
+    background: var(--color-ink);
+  }
+
   .hero__proof-qr-img {
     display: block;
-    width: 7.25rem;
-    height: 7.25rem;
+    width: 6.75rem;
+    height: 6.75rem;
   }
 
   .hero__proof-live-copy {
@@ -532,6 +655,17 @@ const proof = m.hero.proof;
     word-break: break-all;
   }
 
+  @keyframes hero-capacity-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0.4rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
   @keyframes hero-meter {
     from {
       transform: scaleX(0);
@@ -542,7 +676,15 @@ const proof = m.hero.proof;
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .hero__proof-capacity,
+    .hero__proof-plan-label {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+
     .hero__proof-meter-fill {
+      transform: scaleX(1);
       animation: none;
     }
   }
@@ -554,8 +696,12 @@ const proof = m.hero.proof;
     }
 
     .hero__proof-qr-img {
-      width: 6.5rem;
-      height: 6.5rem;
+      width: 6rem;
+      height: 6rem;
     }
   }
 </style>
+
+<script>
+  import '../scripts/hero-capacity.ts';
+</script>

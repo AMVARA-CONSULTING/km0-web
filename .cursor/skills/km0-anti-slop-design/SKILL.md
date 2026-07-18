@@ -37,7 +37,7 @@ From the Stirling / Satisfecho / Nous study and remodel #80–#84:
 | Mark | Origin stamp (`public/brand/logo.svg`, full-bleed `favicon.svg`) | Generic map-pin, padded favicon, purple gradient pin |
 | Hero | Product-recognizable proof + quiet CTA hierarchy | Logo-only first viewport theater |
 | Bands | Audience/scale argument when needed | Equal icon-tile feature grids |
-| Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2) | Glow orbs, purple bloom, zebra as “texture” |
+| Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2); optional subtle SSW grid drift | Glow orbs, purple bloom, zebra as “texture”, busy scrolling grids |
 
 ## Paint-phase locks (auto-fail if ignored)
 
@@ -60,7 +60,7 @@ From `docs/design/craft-parity-phase.md` and remodel #96–#100 (encoded #101). 
 | Lock | Do | Do not |
 |------|----|--------|
 | Hard gate protocol | Document reference URL(s), KM0 URL(s), 3 parity claims, 3 anti-slop claims, decisive viewport evidence | Close on class lists, section order, locales, or build green alone |
-| Optional dark (#96) | Semantic light/dark; system + toggle; persist; reading pages; Paper light default | Dark-first marketing; purple glow / neon orbs / Nous-only dark |
+| Dark only (supersedes #96) | Civic dark tokens in `:root`; no light scheme / toggle | Light theme reintroduction; purple glow / neon orbs / Nous-only dark |
 | Landing hard parity (#97) | Side-by-side vs stirling.com: promise loudness, scale bands, CTA rhythm, continuous canvas | Class rename / surface checklist as “Stirling energy” |
 | Live product proof (#98) | First viewport QR and/or deep link into real Cloud / public product | Static mock or logo card with no live path |
 | Pricing / secondary (#99) | Product-priced editorial chrome under KM0 tokens (Stirling pricing/about energy) | “Has `.page-masthead`” without peer chrome |
@@ -76,7 +76,7 @@ Before **UNTESTED-** on a craft FEAT: Testing instructions **must** include the 
 - No cards in the hero. No icon-tile feature grids. No fake stats.
 - Sections: one job each. Collapse redundant Vision/Mission/Values/Meaning/Privacy blocks when remodeling IA.
 - Motion: paint-phase vocabulary only (reveals + masthead compact + Offer pin); honor `prefers-reduced-motion`.
-- Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
+- Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); optional subtle SSW grid drift only; never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
 - Mark system: keep logo / favicon / apple-touch / OG aligned with `docs/brand-tokens.md` Assets. Favicon stays edge-to-edge.
 - Surfaces: continuous Paper; elevating a band means an explicit `.surface-*` (or documented Snow opt-in), never zebra.
 

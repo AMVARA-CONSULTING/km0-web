@@ -1,19 +1,20 @@
 :root {
   /*
-   * Cool civic editorial - docs/brand-tokens.md
+   * Cool civic editorial - dark only. docs/brand-tokens.md
    * RGB channels feed Tailwind opacity modifiers (text-ink/45, etc.).
-   * data-theme="dark" remaps the same roles - one brand, two schemes.
+   * Canvas is the navy Ink field; text lifts to cool Paper-light.
+   * No purple glow, no neon orbs, no light-scheme toggle.
    */
-  --rgb-ink: 11 18 32;
-  --rgb-paper: 238 240 242;
-  --rgb-snow: 255 255 255;
-  --rgb-signal: 15 118 110;
-  --rgb-signal-hover: 13 148 136;
-  --rgb-mist: 216 220 224;
-  --rgb-on-ink: 238 240 242;
-  --rgb-surface-ink: 11 18 32;
-  --rgb-surface-code: 11 18 32;
-  --rgb-on-code: 238 240 242;
+  --rgb-ink: 230 233 237;
+  --rgb-paper: 11 18 32;
+  --rgb-snow: 20 27 40;
+  --rgb-signal: 45 212 191;
+  --rgb-signal-hover: 94 234 212;
+  --rgb-mist: 42 51 68;
+  --rgb-on-ink: 230 233 237;
+  --rgb-surface-ink: 5 8 15;
+  --rgb-surface-code: 5 8 15;
+  --rgb-on-code: 230 233 237;
 
   --color-ink: rgb(var(--rgb-ink));
   --color-paper: rgb(var(--rgb-paper));
@@ -54,6 +55,9 @@
   --ease-apple: var(--ease-out-expo);
   --duration-reveal: 820ms;
   --duration-chrome: 280ms;
+  /* Hero 500 GB capacity moment (#104): once-only, compositor-friendly */
+  --duration-hero-capacity: 480ms;
+  --hero-meter-fill: 0.72;
   --reveal-distance: 2rem;
   --reveal-stagger: 90ms;
   --masthead-offset: 5.35rem;
@@ -65,37 +69,15 @@
      Not orbs, not glow, not purple. See docs/brand-tokens.md */
   --km0-motif-grid-size: 3rem;
   --km0-motif-grid-line: color-mix(in srgb, var(--color-mist) 55%, transparent);
-  --km0-motif-grain-opacity: 0.04;
-  --km0-motif-grain-blend: multiply;
+  --km0-motif-grain-opacity: 0.055;
+  --km0-motif-grain-blend: soft-light;
   --km0-motif-origin-x: 76%;
   --km0-motif-origin-y: 28%;
   --km0-motif-origin-size: min(18rem, 46vw);
-  --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 22%, transparent);
-  --km0-motif-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-
-  color-scheme: light;
-}
-
-/*
- * Civic dark scheme - same Ink/Paper/Snow/Signal roles, remapped.
- * Canvas reuses the navy Ink field; text lifts to cool Paper-light.
- * No purple glow, no neon orbs, not dark-first default.
- */
-html[data-theme='dark'] {
-  --rgb-ink: 230 233 237;
-  --rgb-paper: 11 18 32;
-  --rgb-snow: 20 27 40;
-  --rgb-signal: 45 212 191;
-  --rgb-signal-hover: 94 234 212;
-  --rgb-mist: 42 51 68;
-  --rgb-on-ink: 230 233 237;
-  --rgb-surface-ink: 5 8 15;
-  --rgb-surface-code: 5 8 15;
-  --rgb-on-code: 230 233 237;
-
-  --km0-motif-grain-opacity: 0.055;
-  --km0-motif-grain-blend: soft-light;
   --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 28%, transparent);
+  /* Subtle SSW drift: one cell west + two south per loop (seamless on grid size). */
+  --km0-motif-drift-duration: 108s;
+  --km0-motif-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 
   color-scheme: dark;
 }

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="Kilometer 0 Digital">
-  <!-- Mono silhouette: Ink field + white digit 0 -->
+  <!-- Mono: navy field + white K0 lettermark -->
   <rect width="32" height="32" rx="5" fill="#0B1220"/>
-  <path fill="#FFFFFF" fill-rule="evenodd" d="M10.5 4.2h11c3.45 0 6 2.7 6 6.25v11.1c0 3.55-2.55 6.25-6 6.25h-11c-3.45 0-6-2.7-6-6.25v-11.1c0-3.55 2.55-6.25 6-6.25zm2 4.6c-1.65 0-2.7 1.2-2.7 2.7v9.9c0 1.5 1.05 2.7 2.7 2.7h7c1.65 0 2.7-1.2 2.7-2.7v-9.9c0-1.5-1.05-2.7-2.7-2.7h-7z"/>
+  <rect x="2" y="3" width="6.5" height="26" fill="#FFFFFF"/>
+  <path fill="#FFFFFF" d="M7.5 15 15 3.5h3.2L10.2 16.2z"/>
+  <path fill="#FFFFFF" d="M7.5 17 10.2 15.8 18.2 28.5H15z"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M17.5 5.5h12.5v21H17.5v-21zm3.7 4.7h5.1v11.6h-5.1V10.2z"/>
 </svg>

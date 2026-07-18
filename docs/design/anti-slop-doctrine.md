@@ -53,7 +53,7 @@ If any of these ship, the task fails review:
 8. **`rounded-full` pill CTAs everywhere** as the only button shape.
 9. **Glassmorphic sticky AI-nav** (wordmark left, links center, CTA right, hairline border) without a genre-specific alternative.
 10. **Emoji as UI icons** or sparkle badges.
-11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; **default dark-mode-first** marketing pages. **Optional** dark theme (user toggle + `prefers-color-scheme`, light Paper default) is allowed and expected in the craft-parity phase - see `docs/design/craft-parity-phase.md`. Forbidden in dark: purple glow, neon orbs, Nous underground as the only voice.
+11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; purple-glow / neon-orb “AI dark lab” looks. **Locked scheme:** civic **dark only** (`docs/brand-tokens.md`) - no light theme, no theme toggle. Forbidden: Nous underground as the only voice; purple glow.
 12. **Zebra section rhythm** - automatic alternating Paper/Snow (or white/gray) bands via `nth-child` or equivalent (`main:has(#home) > section…` patterns). Default is continuous Paper; surfaces opt in explicitly (e.g. Contact `bg-snow`). Stirling / Nous pattern.
 13. **Generic map-pin as sole brand mark** (especially identical logo + favicon with huge empty padding, or purple-era gradient pins). Do not revert to a pin stem clone.
 
@@ -67,14 +67,14 @@ Shipped under remodel epic #80–#84. Study: `docs/design/reference-study-stirli
 - No mechanical odd/even banding in CSS. Intentional full-bleed bands only.
 - Proof/Ink moments stay earned (e.g. Cloud user counter), not striped decoration.
 
-### Mark / favicon / OG (#81)
+### Mark / favicon / OG (#81 → #103)
 
-Locked **Origin stamp** (see `docs/brand-tokens.md` Assets):
+Locked **K0 lettermark** (see `docs/brand-tokens.md` Assets; brief `docs/design/logo-brief-it-services.md`):
 
-- Motif: Signal field + Paper rectangular digit **0** (lettermark plaque). Not a map pin, not a webcam/lens.
-- Paths: `public/brand/logo.svg` (+ PNG), `public/favicon.svg` (**full-bleed**, minimal padding so 16×16 reads), `public/apple-touch-icon.png`, `public/brand/og-preview.png` (Paper + stamp + wordmark).
-- Colors: Signal `#0F766E` + Paper `#EEF0F2`. No purple/magenta→blue gradient exports.
-- Brand test: mark must read without nav chrome; tabs must stay legible.
+- Motif: Signal field + geometric **K0** monogram. Not a map pin, not a webcam/lens, not a hollow digit plaque that reads as an aperture (#88 failed).
+- Paths: `public/brand/logo.svg` (+ PNG), `public/favicon.svg` (**full-bleed**, minimal padding so 16×16 reads), `public/apple-touch-icon.png`, `public/brand/og-preview.png` (navy + stamp + wordmark).
+- Colors: stamp `#0F766E` + figure `#EEF0F2`. No purple/magenta→blue gradient exports.
+- Brand test: mark must read without nav chrome; tabs must stay legible at 16×16.
 
 ### Hero product proof (#82)
 
@@ -86,9 +86,10 @@ Locked **Origin stamp** (see `docs/brand-tokens.md` Assets):
 - Argue by audience scale (person / family-coop / org) where Offer/Why need structure - Stirling-style bands, not equal icon-tile grids.
 - Keep the Cloud user counter sacred; never invent fake stats.
 
-### Signature atmosphere (#84)
+### Signature atmosphere (#84, drift #105)
 
 - **Origin field** only: `.km0-motif` / `.km0-motif--origin` (quiet grid + grain + optional biased kilometer-zero geometry).
+- Grid may use a **very slight SSW drift** (down + slight left); grain and origin geometry stay still. `prefers-reduced-motion: reduce` → static grid.
 - Apply sparingly: hero + ≤2 bands. Never glow orbs, never purple bloom as brand atmosphere.
 
 ## Paint-phase locks (do not regress)
@@ -132,11 +133,11 @@ Coder Testing instructions **and** tester Test report must each document:
 
 Closing reviewer: if the Test report lacks side-by-side claims, **do not archive** - send back to WIP.
 
-### Optional dark theme (#96)
+### Color scheme (supersedes optional dark #96)
 
-- Semantic light/dark tokens; `prefers-color-scheme`; header toggle; persist; reading pages (`/doc/`, `/tutorials/`) included.
-- Default stays **Paper light**. Never ship dark-mode-first marketing.
-- Forbidden in dark: purple glow, neon orbs, Nous underground as the only voice.
+- **Dark only** - civic Ink/Paper/Snow/Signal remap lives in `:root` (`docs/brand-tokens.md`).
+- No light scheme, no header theme cycle, no `km0-theme` localStorage.
+- Forbidden: purple glow, neon orbs, Nous underground as the only voice.
 
 ### Landing Stirling hard parity (#97)
 
@@ -164,7 +165,7 @@ Reject and return to WIP when any of these is the only pass story:
 
 - “Class present” / “section order matches” / “curl 200” / “no purple” / “four locales” / “build green”
 - Missing Hard gate protocol fields in Testing instructions or Test report
-- Optional dark without user control, or dark as default
+- Light theme / theme toggle reintroduced without a product decision; purple-glow dark
 - Hero/proof with no path into a real product surface
 - Claiming Stirling/Satisfecho parity without naming the reference URL and three human-visible matches
 

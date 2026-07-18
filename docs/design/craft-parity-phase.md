@@ -26,7 +26,7 @@ That is **infrastructure**, not craft. A visitor opening KM0 next to Stirling or
 | **First viewport** | Brand + one promise + one support line + one CTA group + one dominant product proof - and the proof looks like the product, not a logo card |
 | **Argument bands** | Offer/Why still feel like equal feature strips instead of scale/job stories with one CTA each |
 | **Live proof** | Hero/proof is only a static mock with no path into a real product surface |
-| **Optional dark** | No user-controlled theme; or dark is purple-glow AI lab / pure Nous clone |
+| **Dark only** | Light theme / toggle returns; or dark is purple-glow AI lab / pure Nous clone |
 | **Motion** | Reveals exist in HTML but a human with motion enabled cannot notice sticky chrome or pin behavior |
 | **Soft evidence** | Pass rests only on “class present”, “four locales”, “build green” |
 
@@ -46,7 +46,7 @@ Closing reviewer: if Test report lacks side-by-side claims, **do not archive** -
 
 | Order | Theme | Intent |
 |------:|-------|--------|
-| 1 | Optional dark theme | Semantic light/dark tokens; `prefers-color-scheme`; header toggle; persist; reading pages included. Default stays Paper light. Ban: dark-mode-first marketing, purple glow. |
+| 1 | Dark theme (done → dark-only) | Originally optional; **product lock now: dark only** in `:root`. Ban: light toggle return, purple glow. |
 | 2 | Landing Stirling hard parity | Home must win a side-by-side with stirling.com structure (promise loudness, scale bands, CTA rhythm, continuous canvas). Not a class rename. |
 | 3 | Satisfecho live product proof | First viewport proof must *do* something (QR and/or deep link into real Cloud / public product surface). Static panel = fail. |
 | 4 | Pricing + secondary hard chrome | `/pricing/` and key secondary pages must feel product-priced and editorial-calm like Stirling pricing/about energy under KM0 tokens. |
@@ -55,9 +55,9 @@ Closing reviewer: if Test report lacks side-by-side claims, **do not archive** -
 
 ## KM0 constraints (still)
 
-- Tokens: Ink / Paper / Signal (plus dark semantic remap - not a second brand).
+- Tokens: Ink / Paper / Signal on **dark-only** canvas (`docs/brand-tokens.md`).
 - No `mailto:`; sacred Cloud user counter; no zebra; Origin motif only.
-- Do not clone Stirling Framer pixels, Satisfecho Inter/cream/orbs, or Nous underground as the default theme.
+- Do not clone Stirling Framer pixels, Satisfecho Inter/cream/orbs, or Nous underground as the only voice.
 - i18n: any new UI chrome strings in es/ca/en/de.
 
 ## Out of scope
@@ -65,7 +65,7 @@ Closing reviewer: if Test report lacks side-by-side claims, **do not archive** -
 - Rewriting all historical blog day prose
 - Fake Fortune-500 claims
 - Product UI inside Cloud/Email apps
-- Making dark the default
+- Reintroducing a light theme without a new product decision
 
 ## Agent training note
 
@@ -75,7 +75,7 @@ Auto-fail for craft FEATs:
 
 - Soft class-only / section-order / curl-200 / “no purple” / four-locales / build-green passes
 - Missing Hard gate fields (reference URL, KM0 URL, 3 parity claims, 3 anti-slop claims, decisive viewport)
-- Optional dark as default, or purple-glow / neon-orb dark
+- Light theme / theme toggle, or purple-glow / neon-orb dark
 - Hero/proof with no live path into a real product surface
 - Motion that exists only as HTML attributes a human cannot notice
 

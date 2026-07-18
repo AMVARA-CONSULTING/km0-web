@@ -69,8 +69,22 @@
   /*
    * KM0 signature atmosphere - Origin field
    * Use sparingly: hero + at most two intentional bands.
-   * Static (no animation). Glow/orbs are not brand atmosphere.
+   * Grid may drift SSW (ambient); grain + origin geometry stay still.
+   * Glow/orbs are not brand atmosphere.
    */
+  @keyframes km0-motif-grid-ssw {
+    from {
+      background-position: -1px -1px;
+    }
+
+    to {
+      /* One cell left + two cells down = south-southwest; multiples of tile size. */
+      background-position:
+        calc(-1px - var(--km0-motif-grid-size))
+        calc(-1px + (2 * var(--km0-motif-grid-size)));
+    }
+  }
+
   .km0-motif {
     position: relative;
     isolation: isolate;
@@ -81,6 +95,7 @@
       linear-gradient(var(--km0-motif-grid-line) 1px, transparent 1px);
     background-size: var(--km0-motif-grid-size) var(--km0-motif-grid-size);
     background-position: -1px -1px;
+    animation: km0-motif-grid-ssw var(--km0-motif-drift-duration) linear infinite;
   }
 
   .km0-motif > * {
@@ -99,6 +114,12 @@
     background-repeat: repeat;
     background-size: 160px 160px;
     mix-blend-mode: var(--km0-motif-grain-blend);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .km0-motif {
+      animation: none;
+    }
   }
 
   .surface-snow.km0-motif,

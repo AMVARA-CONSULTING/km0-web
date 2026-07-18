@@ -26,17 +26,7 @@
     "menuClose": "Menü schließen",
     "servicesLauncherOpen": "KM0-Services öffnen",
     "servicesLauncherClose": "KM0-Services schließen",
-    "servicesLauncherTitle": "KM0-Services",
-    "themeLabel": "Theme",
-    "themeLight": "Hell",
-    "themeDark": "Dunkel",
-    "themeSystem": "System",
-    "themeShortLight": "Hell",
-    "themeShortDark": "Dunkel",
-    "themeShortSystem": "Auto",
-    "themeSetLight": "Helles Theme verwenden",
-    "themeSetDark": "Dunkles Theme verwenden",
-    "themeSetSystem": "System-Theme verwenden"
+    "servicesLauncherTitle": "KM0-Services"
   },
   "hero": {
     "titleLine1": "Deine Daten. ",
@@ -48,6 +38,9 @@
     "proof": {
       "status": "EU · aktiv",
       "planName": "500-GB-Plan",
+      "planCapacity": "500",
+      "planUnit": "GB",
+      "planLabel": "Plan",
       "planMeta": "Hetzner · Falkenstein",
       "files": [
         { "name": "Dokumente", "meta": "Ordner", "kind": "folder" },

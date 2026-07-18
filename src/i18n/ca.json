@@ -26,17 +26,7 @@
     "menuClose": "Tancar menú",
     "servicesLauncherOpen": "Obrir serveis KM0",
     "servicesLauncherClose": "Tancar serveis KM0",
-    "servicesLauncherTitle": "Serveis KM0",
-    "themeLabel": "Tema",
-    "themeLight": "Clar",
-    "themeDark": "Fosc",
-    "themeSystem": "Sistema",
-    "themeShortLight": "Clar",
-    "themeShortDark": "Fosc",
-    "themeShortSystem": "Auto",
-    "themeSetLight": "Fer servir el tema clar",
-    "themeSetDark": "Fer servir el tema fosc",
-    "themeSetSystem": "Fer servir el tema del sistema"
+    "servicesLauncherTitle": "Serveis KM0"
   },
   "hero": {
     "titleLine1": "Les teves dades. ",
@@ -48,6 +38,9 @@
     "proof": {
       "status": "UE · actiu",
       "planName": "Pla 500 GB",
+      "planCapacity": "500",
+      "planUnit": "GB",
+      "planLabel": "Pla",
       "planMeta": "Hetzner · Falkenstein",
       "files": [
         { "name": "Documents", "meta": "carpeta", "kind": "folder" },

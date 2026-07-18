@@ -37,16 +37,6 @@ export interface Messages {
     servicesLauncherOpen: string;
     servicesLauncherClose: string;
     servicesLauncherTitle: string;
-    themeLabel: string;
-    themeLight: string;
-    themeDark: string;
-    themeSystem: string;
-    themeShortLight: string;
-    themeShortDark: string;
-    themeShortSystem: string;
-    themeSetLight: string;
-    themeSetDark: string;
-    themeSetSystem: string;
   };
   vision: {
     headingBefore: string;
@@ -81,7 +71,13 @@ export interface Messages {
     /** Cloud product-proof panel with live path (QR + deep link) */
     proof: {
       status: string;
+      /** Full plan string for AT (aria-label); visual uses capacity + unit + label */
       planName: string;
+      /** Numeric capacity for once-only readout (e.g. "500") */
+      planCapacity: string;
+      planUnit: string;
+      /** Quiet localized plan word beside the capacity readout */
+      planLabel: string;
       planMeta: string;
       files: { name: string; meta: string; kind: 'folder' | 'file' }[];
       emailMeta: string;

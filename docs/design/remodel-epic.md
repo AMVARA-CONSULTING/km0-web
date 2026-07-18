@@ -43,7 +43,7 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 - **Surfaces:** `.surface-snow` / `.surface-ink` / `.surface-band` opt-in only (paint #91)
 - **Motion:** reveals + masthead compact + Offer sticky pin; no animation spam (paint #92); craft #100 requires motion a human can feel
 - **Secondary chrome:** `.page-shell` / `.page-masthead` / `.page-closer` (paint #94); craft #99 requires peer pricing/secondary energy
-- **Optional dark:** system + toggle, light Paper default; no dark-first / purple-glow dark (craft #96)
+- **Dark only:** civic dark tokens in `:root`; no light theme / toggle (supersedes craft #96 optional dark)
 - **Live product proof:** first viewport must open a real product path (craft #98)
 - **Craft soft-close ban:** class-only / curl-200 / no-purple evidence without Hard gate protocol = fail (craft #101)
 - **IA map:** `docs/design/ia-map.md`
@@ -110,4 +110,13 @@ Why: paint FEATs closed on class/order checks; live site must feel peer to [Stir
 **Actual run order:** 96 → 97 → 98 → 99 → 100 → 101 (encode last so doctrine matches shipped locks).
 
 Every craft FEAT must use the **Hard gate protocol** in the craft-parity spec (side-by-side claims mandatory). Soft class-only passes = fail. Tester + closing: missing Hard gate fields → WIP, do not archive.
+
+## Follow-up craft FEATs (queued)
+
+| Issue | Intent |
+|-------|--------|
+| [#102](https://github.com/AMVARA-CONSULTING/km0-web/issues/102) | Cloud QR matches dark civic UI |
+| [#103](https://github.com/AMVARA-CONSULTING/km0-web/issues/103) | Logo redesign from zero |
+| [#104](https://github.com/AMVARA-CONSULTING/km0-web/issues/104) | Hero **500 GB** motion (`docs/design/hero-500gb-motion.md`) |
+| [#105](https://github.com/AMVARA-CONSULTING/km0-web/issues/105) | Origin grid subtle SSW drift (`.km0-motif`) |
 

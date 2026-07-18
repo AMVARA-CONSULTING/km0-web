@@ -53,4 +53,6 @@ When Redmine is configured (`REDMINE_API_KEY`, `REDMINE_ISSUE_ID` in `autoagents
 
 ## Remodel epic (anti-slop)
 
-Operator FEATs for the brutal design/copy remodel are queued as **`FEAT-0-20260717-*.md`**. Order and scope: **`docs/design/remodel-epic.md`**. Doctrine: **`docs/design/anti-slop-doctrine.md`**. Run **in sequence**; skip GitHub issue sync while number is `none`.
+Order and scope: **`docs/design/remodel-epic.md`**. Doctrine: **`docs/design/anti-slop-doctrine.md`**.
+
+**Craft parity (hard):** `#96`–`#101` + spec **`docs/design/craft-parity-phase.md`**. Run **in sequence**. Soft class-only / curl-200 passes are forbidden; tester + closing must enforce the Hard gate protocol (side-by-side vs Stirling/Satisfecho).

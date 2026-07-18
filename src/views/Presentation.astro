@@ -32,9 +32,9 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     <article class="presentation-page">
       <header class="presentation-hero km0-motif km0-motif--origin">
         <div class="presentation-hero-inner" data-reveal>
-          <div class="presentation-hero-copy">
+          <div class="presentation-hero-copy page-masthead presentation-masthead">
             <p class="doc-kicker">{p.eyebrow}</p>
-            <h1 class="heading-section text-ink">{p.title}</h1>
+            <h1 class="heading-page text-ink">{p.title}</h1>
             <p class="doc-index-intro">{p.lead}</p>
             <div class="page-closer__actions presentation-download-wrap">
               <a
@@ -49,7 +49,7 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
                 {p.download}
               </a>
             </div>
-            <p class="presentation-download-hint">{p.downloadHint}</p>
+            <p class="page-meta presentation-download-hint">{p.downloadHint}</p>
           </div>
           <figure class="presentation-logo" data-reveal data-delay="100">
             <img
@@ -284,11 +284,18 @@ const canonicalUrl = new URL(localeHref(locale, '/presentation/'), siteRoot).hre
     margin-top: 0.25rem;
   }
 
+  .presentation-masthead {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
   .presentation-download-hint {
-    margin: 0.75rem 0 0;
-    font-family: theme('fontFamily.sans');
-    font-size: 0.875rem;
-    color: var(--color-ink-muted);
+    margin-top: 0.75rem;
+  }
+
+  .presentation-masthead .heading-page {
+    max-width: 16ch;
   }
 
   .presentation-section {

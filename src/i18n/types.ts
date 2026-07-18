@@ -37,6 +37,16 @@ export interface Messages {
     servicesLauncherOpen: string;
     servicesLauncherClose: string;
     servicesLauncherTitle: string;
+    themeLabel: string;
+    themeLight: string;
+    themeDark: string;
+    themeSystem: string;
+    themeShortLight: string;
+    themeShortDark: string;
+    themeShortSystem: string;
+    themeSetLight: string;
+    themeSetDark: string;
+    themeSetSystem: string;
   };
   vision: {
     headingBefore: string;
@@ -49,9 +59,12 @@ export interface Messages {
       title: string;
       body: string;
       fact: string;
+      /** Primary CTA - Cloud on every band for CTA rhythm */
       ctaLabel: string;
-      /** Resolved in WhyKm0: cloud | community | pricing */
       cta: 'cloud' | 'community' | 'pricing';
+      /** Optional quieter secondary (meetups / pricing) */
+      secondaryCtaLabel?: string;
+      secondaryCta?: 'cloud' | 'community' | 'pricing';
     }[];
   };
   community: {
@@ -65,13 +78,20 @@ export interface Messages {
     ctaPrimary: string;
     ctaSecondary: string;
     logoAlt: string;
-    /** Decorative Cloud/Email product-proof panel (visual only) */
+    /** Cloud product-proof panel with live path (QR + deep link) */
     proof: {
       status: string;
       planName: string;
       planMeta: string;
       files: { name: string; meta: string; kind: 'folder' | 'file' }[];
       emailMeta: string;
+      /** Satisfecho-style live entry into real Cloud */
+      liveLabel: string;
+      liveHint: string;
+      liveCta: string;
+      liveAria: string;
+      qrAlt: string;
+      host: string;
     };
   };
   services: {
@@ -151,6 +171,7 @@ export interface Messages {
   ideas: {
     metaTitle: string;
     metaDescription: string;
+    eyebrow: string;
     heading: string;
     intro: string;
     scopeLabel: string;
@@ -187,6 +208,21 @@ export interface Messages {
       meta: string;
       ariaLabel: string;
     };
+    /** Stirling-style plan paths (Cloud lead / Email quiet / Custom). */
+    pathsHeading: string;
+    pathsIntro: string;
+    paths: {
+      id: 'cloud' | 'email' | 'custom';
+      meta: string;
+      title: string;
+      price: string;
+      priceNote: string;
+      body: string;
+      features: string[];
+      ctaLabel: string;
+      cta: 'cloud' | 'email' | 'contact';
+      lead?: boolean;
+    }[];
     claim: string;
     compareHeading: string;
     compareIntro: string;
@@ -233,6 +269,11 @@ export interface Messages {
     prevMonth: string;
     nextMonth: string;
     closeDetail: string;
+    closer: {
+      heading: string;
+      body: string;
+      ctaSecondary: string;
+    };
     labels: {
       date: string;
       time: string;

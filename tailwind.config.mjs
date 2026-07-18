@@ -4,17 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0B1220',
-        paper: '#EEF0F2',
-        snow: '#FFFFFF',
-        mist: '#D8DCE0',
+        /* CSS variables so light/dark schemes remap sitewide (opacity via /N) */
+        ink: 'rgb(var(--rgb-ink) / <alpha-value>)',
+        paper: 'rgb(var(--rgb-paper) / <alpha-value>)',
+        snow: 'rgb(var(--rgb-snow) / <alpha-value>)',
+        mist: 'rgb(var(--rgb-mist) / <alpha-value>)',
         signal: {
-          DEFAULT: '#0F766E',
-          hover: '#0D9488',
+          DEFAULT: 'rgb(var(--rgb-signal) / <alpha-value>)',
+          hover: 'rgb(var(--rgb-signal-hover) / <alpha-value>)',
         },
-        /* Legacy aliases - same hex as ink / paper */
-        navy: '#0B1220',
-        surface: '#EEF0F2',
+        /* Legacy aliases - same roles as ink / paper */
+        navy: 'rgb(var(--rgb-ink) / <alpha-value>)',
+        surface: 'rgb(var(--rgb-paper) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],

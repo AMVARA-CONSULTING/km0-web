@@ -1,12 +1,28 @@
 :root {
-  /* Cool civic editorial - docs/brand-tokens.md */
-  --color-ink: #0b1220;
-  --color-paper: #eef0f2;
-  --color-snow: #ffffff;
-  --color-signal: #0f766e;
-  --color-signal-hover: #0d9488;
-  --color-mist: #d8dce0;
+  /*
+   * Cool civic editorial - docs/brand-tokens.md
+   * RGB channels feed Tailwind opacity modifiers (text-ink/45, etc.).
+   * data-theme="dark" remaps the same roles - one brand, two schemes.
+   */
+  --rgb-ink: 11 18 32;
+  --rgb-paper: 238 240 242;
+  --rgb-snow: 255 255 255;
+  --rgb-signal: 15 118 110;
+  --rgb-signal-hover: 13 148 136;
+  --rgb-mist: 216 220 224;
+  --rgb-on-ink: 238 240 242;
+  --rgb-surface-ink: 11 18 32;
+  --rgb-surface-code: 11 18 32;
+  --rgb-on-code: 238 240 242;
+
+  --color-ink: rgb(var(--rgb-ink));
+  --color-paper: rgb(var(--rgb-paper));
+  --color-snow: rgb(var(--rgb-snow));
+  --color-signal: rgb(var(--rgb-signal));
+  --color-signal-hover: rgb(var(--rgb-signal-hover));
+  --color-mist: rgb(var(--rgb-mist));
   --color-ink-muted: color-mix(in srgb, var(--color-ink) 68%, transparent);
+  --color-on-ink: rgb(var(--rgb-on-ink));
 
   /* Legacy aliases used across components (navy / surface) */
   --color-navy: var(--color-ink);
@@ -20,7 +36,9 @@
    */
   --surface-paper: var(--color-paper);
   --surface-snow: var(--color-snow);
-  --surface-ink: var(--color-ink);
+  --surface-ink: rgb(var(--rgb-surface-ink));
+  --surface-code: rgb(var(--rgb-surface-code));
+  --color-on-code: rgb(var(--rgb-on-code));
 
   /* Shared section rhythm - calmer professional scale */
   --space-section-y: clamp(4rem, 7vw, 6.5rem);
@@ -28,26 +46,56 @@
   --measure-band: 72rem;
 
   /*
-   * Motion system (Stirling paint #92).
+   * Motion system (Stirling paint #92; craft feel #100).
    * Reveals + chrome only. Cap vanity animations sitewide.
+   * Distances/durations tuned so humans notice on lg+ with motion on.
    */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-apple: var(--ease-out-expo);
-  --duration-reveal: 700ms;
-  --duration-chrome: 220ms;
-  --reveal-distance: 1.25rem;
-  --reveal-stagger: 80ms;
-  --masthead-offset: 4.75rem;
-  --masthead-offset-compact: 3.85rem;
+  --duration-reveal: 820ms;
+  --duration-chrome: 280ms;
+  --reveal-distance: 2rem;
+  --reveal-stagger: 90ms;
+  --masthead-offset: 5.35rem;
+  --masthead-offset-compact: 3.65rem;
+  --masthead-elevate: 0 1px 0 color-mix(in srgb, var(--color-mist) 90%, transparent),
+    0 10px 28px color-mix(in srgb, var(--color-ink) 6%, transparent);
 
   /* Signature atmosphere: Origin field (quiet civic grid + grain + milestone).
      Not orbs, not glow, not purple. See docs/brand-tokens.md */
   --km0-motif-grid-size: 3rem;
   --km0-motif-grid-line: color-mix(in srgb, var(--color-mist) 55%, transparent);
   --km0-motif-grain-opacity: 0.04;
+  --km0-motif-grain-blend: multiply;
   --km0-motif-origin-x: 76%;
   --km0-motif-origin-y: 28%;
   --km0-motif-origin-size: min(18rem, 46vw);
   --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 22%, transparent);
   --km0-motif-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+
+  color-scheme: light;
+}
+
+/*
+ * Civic dark scheme - same Ink/Paper/Snow/Signal roles, remapped.
+ * Canvas reuses the navy Ink field; text lifts to cool Paper-light.
+ * No purple glow, no neon orbs, not dark-first default.
+ */
+html[data-theme='dark'] {
+  --rgb-ink: 230 233 237;
+  --rgb-paper: 11 18 32;
+  --rgb-snow: 20 27 40;
+  --rgb-signal: 45 212 191;
+  --rgb-signal-hover: 94 234 212;
+  --rgb-mist: 42 51 68;
+  --rgb-on-ink: 230 233 237;
+  --rgb-surface-ink: 5 8 15;
+  --rgb-surface-code: 5 8 15;
+  --rgb-on-code: 230 233 237;
+
+  --km0-motif-grain-opacity: 0.055;
+  --km0-motif-grain-blend: soft-light;
+  --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 28%, transparent);
+
+  color-scheme: dark;
 }

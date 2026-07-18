@@ -12,180 +12,260 @@ const { locale, messages: m } = Astro.props;
 
 const CLOUD_URL = 'https://cloud.km0digital.com';
 
-function bandHref(cta: Messages['vision']['bands'][number]['cta']): string {
+type BandCta = Messages['vision']['bands'][number]['cta'];
+
+function bandHref(cta: BandCta): string {
   if (cta === 'cloud') return CLOUD_URL;
   if (cta === 'community') return withHash(locale, 'community');
   return localeHref(locale, '/pricing/');
 }
+
+function isExternal(cta: BandCta): boolean {
+  return cta === 'cloud';
+}
 ---
 
-<section id="why" class="section-pad why km0-motif" aria-labelledby="why-heading">
-  <div class="mx-auto max-w-6xl">
-    <header class="why__header" data-reveal>
-      <h2 id="why-heading" class="heading-section text-navy">
-        {m.vision.headingBefore}<span class="text-gradient">{m.vision.headingAccent}</span>{m.vision.headingAfter}
-      </h2>
-      <p class="why__intro">{m.vision.intro}</p>
-    </header>
+<section id="why" class="why km0-motif" aria-labelledby="why-heading">
+  <header class="why__header" data-reveal>
+    <h2 id="why-heading" class="why__heading">
+      {m.vision.headingBefore}<span class="text-gradient">{m.vision.headingAccent}</span
+      >{m.vision.headingAfter}
+    </h2>
+    <p class="why__intro">{m.vision.intro}</p>
+  </header>
 
-    <div class="why__bands">
-      {
-        m.vision.bands.map((band, i) => {
-          const href = bandHref(band.cta);
-          const external = band.cta === 'cloud';
-          const emphasis = i === 1;
-          const primary = band.cta === 'cloud';
+  <div class="why__bands">
+    {
+      m.vision.bands.map((band, i) => {
+        const href = bandHref(band.cta);
+        const external = isExternal(band.cta);
+        const surface = i === 1 ? 'snow' : 'paper';
+        const secondary = band.secondaryCta
+          ? {
+              href: bandHref(band.secondaryCta),
+              external: isExternal(band.secondaryCta),
+              label: band.secondaryCtaLabel ?? '',
+            }
+          : null;
 
-          return (
-            <article
-              data-reveal
-              data-delay={String(80 + i * 80)}
-              class:list={['why-band', emphasis && 'why-band--emphasis']}
-            >
+        return (
+          <article
+            data-reveal
+            data-delay={String(60 + i * 70)}
+            class:list={[
+              'why-band',
+              surface === 'snow' && 'why-band--snow surface-snow',
+            ]}
+          >
+            <div class="why-band__inner">
               <p class="why-band__meta">{band.meta}</p>
-              <div class="why-band__copy">
-                <h3 class="why-band__title">{band.title}</h3>
-                <p class="why-band__body">{band.body}</p>
-                <p class="why-band__fact">{band.fact}</p>
+              <h3 class="why-band__title">{band.title}</h3>
+              <p class="why-band__body">{band.body}</p>
+              <p class="why-band__fact">{band.fact}</p>
+              <div class="why-band__actions">
                 {external ? (
                   <a
                     href={href}
-                    class:list={[primary ? 'btn-primary why-band__cta-btn' : 'why-band__cta']}
+                    class="btn-primary why-band__cta-btn"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {band.ctaLabel}
                   </a>
                 ) : (
-                  <a href={href} class="why-band__cta">
+                  <a href={href} class="btn-primary why-band__cta-btn">
                     {band.ctaLabel}
                   </a>
                 )}
+                {secondary &&
+                  secondary.label &&
+                  (secondary.external ? (
+                    <a
+                      href={secondary.href}
+                      class="why-band__secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {secondary.label}
+                    </a>
+                  ) : (
+                    <a href={secondary.href} class="why-band__secondary">
+                      {secondary.label}
+                    </a>
+                  ))}
               </div>
-            </article>
-          );
-        })
-      }
-    </div>
-
-    <p data-reveal data-delay="320" class="why__more">
-      <a href={localeHref(locale, '/presentation/')} class="why__more-link">
-        {m.nav.presentation}
-      </a>
-    </p>
+            </div>
+          </article>
+        );
+      })
+    }
   </div>
+
+  <p data-reveal data-delay="280" class="why__more">
+    <a href={localeHref(locale, '/presentation/')} class="why__more-link">
+      {m.nav.presentation}
+    </a>
+  </p>
 </section>
 
 <style>
+  .why {
+    color: var(--color-ink);
+  }
+
   .why__header {
     max-width: 40rem;
-    margin-bottom: 2.5rem;
+    margin: 0 auto;
+    padding: var(--space-section-y) var(--space-section-x) 0;
+  }
+
+  .why__heading {
+    margin: 0;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 650;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--color-ink);
   }
 
   .why__intro {
-    margin: 1rem 0 0;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: color-mix(in srgb, var(--color-ink) 70%, transparent);
+    margin: 0.85rem 0 0;
+    max-width: 34rem;
+    font-family: theme('fontFamily.body');
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
   }
 
   .why__bands {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    margin-top: clamp(2rem, 4vw, 3rem);
   }
 
+  /* Full-width scale stories (Stirling volume energy, KM0 tokens) */
   .why-band {
-    display: grid;
-    gap: 0.75rem 2.5rem;
-    padding: 1.75rem 0;
+    padding: clamp(3.25rem, 7vw, 5.5rem) var(--space-section-x);
     border-top: 1px solid var(--color-mist);
   }
 
-  .why-band:last-child {
+  .why-band:last-of-type {
     border-bottom: 1px solid var(--color-mist);
   }
 
-  @media (min-width: 768px) {
-    .why-band {
-      grid-template-columns: 11rem minmax(0, 1fr);
+  .why-band--snow {
+    background-color: var(--surface-snow);
+  }
+
+  .why-band__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 960px) {
+    .why-band__inner {
+      /* Bias copy left like Stirling story bands */
+      display: grid;
+      grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+      column-gap: 3rem;
+      row-gap: 0.35rem;
       align-items: start;
-      padding: 2.25rem 0;
+    }
+
+    .why-band__meta {
+      grid-column: 1;
+      grid-row: 1;
+      padding-top: 0.35rem;
+    }
+
+    .why-band__title {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .why-band__body,
+    .why-band__fact,
+    .why-band__actions {
+      grid-column: 2;
     }
   }
 
-  /* Intentional full-bleed Snow band (not zebra): middle scale only */
-  .why-band--emphasis {
-    margin-inline: calc(50% - 50vw);
-    padding-inline: max(var(--space-section-x), calc(50vw - 36rem + var(--space-section-x)));
-    background-color: var(--surface-snow);
-    border-top-color: color-mix(in srgb, var(--color-mist) 80%, transparent);
-  }
-
   .why-band__meta {
-    margin: 0;
+    margin: 0 0 1rem;
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-signal);
     line-height: 1.4;
   }
 
-  .why-band__copy {
-    min-width: 0;
-    max-width: 38rem;
-  }
-
   .why-band__title {
     margin: 0;
+    max-width: 18ch;
     font-family: theme('fontFamily.display');
-    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-size: clamp(2rem, 4.5vw, 3.35rem);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
     color: var(--color-ink);
   }
 
   .why-band__body {
-    margin: 0.75rem 0 0;
-    font-size: 1.05rem;
-    line-height: 1.55;
+    margin: 1.25rem 0 0;
+    max-width: 36rem;
+    font-family: theme('fontFamily.body');
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.5;
     color: color-mix(in srgb, var(--color-ink) 78%, transparent);
   }
 
   .why-band__fact {
-    margin: 0.85rem 0 0;
+    margin: 1rem 0 0;
     font-family: theme('fontFamily.sans');
     font-size: 0.8125rem;
-    font-weight: 500;
+    font-weight: 550;
     letter-spacing: 0.04em;
-    color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+    color: var(--color-ink-muted);
   }
 
-  .why-band__cta {
-    display: inline-block;
-    margin-top: 1.1rem;
-    font-family: theme('fontFamily.sans');
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-signal);
-    text-decoration: underline;
-    text-decoration-color: rgb(15 118 110 / 0.35);
-    text-underline-offset: 0.2em;
-  }
-
-  .why-band__cta:hover {
-    color: var(--color-signal-hover);
+  .why-band__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1.5rem;
+    margin-top: 1.75rem;
   }
 
   .why-band__cta-btn {
-    margin-top: 1.25rem;
+    margin: 0;
+  }
+
+  .why-band__secondary {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 40%, transparent);
+    text-underline-offset: 0.2em;
+  }
+
+  .why-band__secondary:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
   }
 
   .why__more {
-    margin: 2.5rem 0 0;
+    margin: 0;
+    padding: 2rem var(--space-section-x) var(--space-section-y);
+    max-width: 72rem;
+    margin-inline: auto;
   }
 
   .why__more-link {
@@ -194,7 +274,7 @@ function bandHref(cta: Messages['vision']['bands'][number]['cta']): string {
     font-weight: 500;
     color: var(--color-ink);
     text-decoration: underline;
-    text-decoration-color: rgb(15 118 110 / 0.4);
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 40%, transparent);
     text-underline-offset: 0.18em;
   }
 

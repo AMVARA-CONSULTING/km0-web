@@ -19,16 +19,18 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 <section id="services" class="section-pad offer" aria-labelledby="services-heading">
   <div class="offer__layout mx-auto max-w-6xl">
     <aside class="offer__pin" data-offer-pin>
-      <header class="offer__header" data-reveal>
-        <h2 id="services-heading" class="heading-section text-navy">
-          {m.services.headingBefore}<span class="text-gradient">{m.services.headingAccent}</span>{m.services.headingAfter}
-        </h2>
-        <p class="offer__intro">{m.services.intro}</p>
-        <p class="offer__slogan">{m.services.slogan}</p>
-      </header>
-      <a href={pinHref} class="btn-primary offer__pin-cta" data-reveal data-delay="100">
-        {pinCta}
-      </a>
+      <div class="offer__pin-surface">
+        <header class="offer__header" data-reveal>
+          <h2 id="services-heading" class="heading-section text-navy">
+            {m.services.headingBefore}<span class="text-gradient">{m.services.headingAccent}</span>{m.services.headingAfter}
+          </h2>
+          <p class="offer__intro">{m.services.intro}</p>
+          <p class="offer__slogan">{m.services.slogan}</p>
+        </header>
+        <a href={pinHref} class="btn-primary offer__pin-cta" data-reveal data-delay="100">
+          {pinCta}
+        </a>
+      </div>
     </aside>
 
     <div class="offer__list">
@@ -45,7 +47,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
               id={isCloud ? 'km0-cloud' : isEmail ? 'km0-email' : undefined}
               data-reveal
               data-delay={String(80 + i * 80)}
-              class="offer-row"
+              class:list={['offer-row', isCloud && 'offer-row--lead', isEmail && 'offer-row--quiet']}
             >
               <div class="offer-row__lead">
                 <p class="offer-row__meta">{isCloud ? '01' : '02'}</p>
@@ -129,12 +131,39 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
     .offer__pin {
       position: sticky;
       top: var(--masthead-offset);
-      padding-bottom: 1rem;
+      align-self: start;
+      z-index: 2;
+    }
+
+    .offer__list {
+      /* Tall enough that the pin stays stuck while both rows scroll past */
+      min-height: 42rem;
     }
   }
 
   :global(html[data-masthead='compact']) .offer__pin {
     top: var(--masthead-offset-compact);
+  }
+
+  .offer__pin-surface {
+    max-width: 40rem;
+    padding: 0;
+    border-left: 2px solid transparent;
+    transition:
+      background-color var(--duration-chrome) var(--ease-out-expo),
+      border-color var(--duration-chrome) var(--ease-out-expo),
+      box-shadow var(--duration-chrome) var(--ease-out-expo),
+      padding var(--duration-chrome) var(--ease-out-expo);
+  }
+
+  /* Stuck = Signal edge + Snow panel so the pin reads as chrome, not a CSS relic */
+  @media (min-width: 1024px) {
+    .offer__pin--stuck .offer__pin-surface {
+      padding: 1.25rem 1.35rem 1.4rem;
+      background: var(--color-snow);
+      border-left-color: var(--color-signal);
+      box-shadow: 0 12px 32px color-mix(in srgb, var(--color-ink) 7%, transparent);
+    }
   }
 
   .offer__header {
@@ -150,6 +179,16 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   @media (min-width: 1024px) {
     .offer__pin-cta {
       display: inline-flex;
+    }
+
+    .offer__pin--stuck .offer__pin-cta {
+      margin-top: 1.35rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .offer__pin-surface {
+      transition: none;
     }
   }
 
@@ -188,12 +227,30 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
     border-bottom: 1px solid var(--color-mist);
   }
 
+  /* Cloud leads; Email stays quieter companion (not equal feature strips) */
+  .offer-row--lead {
+    padding-block: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .offer-row--quiet {
+    opacity: 0.96;
+  }
+
+  .offer-row--quiet .offer-row__title {
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+    font-weight: 600;
+  }
+
   @media (min-width: 768px) {
     .offer-row {
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       gap: 2.5rem;
       align-items: start;
       padding: 2.5rem 0;
+    }
+
+    .offer-row--lead {
+      padding-block: clamp(2.75rem, 4vw, 3.75rem);
     }
   }
 
@@ -209,9 +266,9 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer-row__title {
     margin: 0;
     font-family: theme('fontFamily.display');
-    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     color: var(--color-ink);
   }
 
@@ -244,7 +301,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
     font-weight: 500;
     color: var(--color-ink);
     text-decoration: underline;
-    text-decoration-color: rgb(15 118 110 / 0.4);
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 40%, transparent);
     text-underline-offset: 0.18em;
   }
 

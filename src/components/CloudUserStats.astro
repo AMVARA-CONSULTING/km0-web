@@ -89,7 +89,7 @@ const isBand = variant === 'band';
 <style>
   /* Intentional Ink proof band (earned; not zebra). Sacred live counter + Cloud CTA. */
   .cloud-proof {
-    color: var(--color-snow);
+    color: var(--color-on-ink);
   }
 
   .cloud-proof__inner {
@@ -128,13 +128,13 @@ const isBand = variant === 'band';
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgb(238 240 242 / 0.55);
+    color: color-mix(in srgb, var(--color-on-ink) 55%, transparent);
   }
 
   .cloud-proof__unavailable {
     margin: 0;
     font-size: 0.95rem;
-    color: rgb(238 240 242 / 0.65);
+    color: color-mix(in srgb, var(--color-on-ink) 65%, transparent);
   }
 
   .cloud-proof__cta {

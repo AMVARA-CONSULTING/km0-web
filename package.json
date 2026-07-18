@@ -1,7 +1,7 @@
 {
   "name": "km0-web",
   "type": "module",
-  "version": "1.1.123",
+  "version": "1.1.128",
   "private": true,
   "scripts": {
     "dev": "astro dev",

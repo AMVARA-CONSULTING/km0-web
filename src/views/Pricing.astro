@@ -14,6 +14,12 @@ const { locale } = Astro.props;
 const messages = getMessages(locale);
 const p = messages.pricing;
 
+const pathHref = (cta: 'cloud' | 'email' | 'contact') => {
+  if (cta === 'cloud') return 'https://cloud.km0digital.com/';
+  if (cta === 'email') return 'https://mail.km0digital.com/';
+  return withHash(locale, 'contact');
+};
+
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 ---
@@ -32,7 +38,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
         <header class="page-masthead pricing-masthead" data-reveal>
           <div class="pricing-masthead-copy">
             <p class="doc-kicker">{p.eyebrow}</p>
-            <h1 id="pricing-heading" class="heading-section text-ink">{p.heading}</h1>
+            <h1 id="pricing-heading" class="heading-page text-ink">{p.heading}</h1>
             <p class="doc-index-intro">{p.intro}</p>
             <div class="page-closer__actions pricing-hero-cta">
               <a
@@ -59,13 +65,71 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
       </div>
     </section>
 
+    <section class="pricing-section" aria-labelledby="pricing-paths">
+      <div class="page-inner--wide" data-reveal>
+        <header class="pricing-section-header">
+          <h2 id="pricing-paths" class="pricing-band-heading text-ink">{p.pathsHeading}</h2>
+          <p class="doc-index-intro pricing-band-intro">{p.pathsIntro}</p>
+        </header>
+        <div class="pricing-paths" role="list">
+          {
+            p.paths.map((path) => {
+              const href = pathHref(path.cta);
+              const external = path.cta === 'cloud' || path.cta === 'email';
+              return (
+                <article
+                  class:list={['pricing-path', path.lead && 'pricing-path--lead']}
+                  role="listitem"
+                  data-reveal
+                >
+                  <p class="pricing-path__meta">{path.meta}</p>
+                  <h3 class="pricing-path__title">{path.title}</h3>
+                  <p class="pricing-path__price tabular-nums">
+                    <span class="pricing-path__price-value">{path.price}</span>
+                    <span class="pricing-path__price-note">{path.priceNote}</span>
+                  </p>
+                  <p class="pricing-path__body">{path.body}</p>
+                  <ul class="pricing-path__features">
+                    {path.features.map((feature) => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                  <div class="pricing-path__cta">
+                    {path.lead ? (
+                      <a
+                        href={href}
+                        target={external ? '_blank' : undefined}
+                        rel={external ? 'noopener noreferrer' : undefined}
+                        class="btn-primary"
+                      >
+                        {path.ctaLabel}
+                      </a>
+                    ) : (
+                      <a
+                        href={href}
+                        target={external ? '_blank' : undefined}
+                        rel={external ? 'noopener noreferrer' : undefined}
+                        class="page-closer__secondary"
+                      >
+                        {path.ctaLabel}
+                      </a>
+                    )}
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+
     <section class="pricing-section surface-snow surface-band" aria-labelledby="pricing-compare">
       <div class="page-inner--wide" data-reveal>
         <header class="pricing-section-header">
-          <h2 id="pricing-compare" class="pricing-compare-heading text-ink">
+          <h2 id="pricing-compare" class="pricing-band-heading text-ink">
             {p.compareHeading}
           </h2>
-          <p class="doc-index-intro">{p.compareIntro}</p>
+          <p class="doc-index-intro pricing-band-intro">{p.compareIntro}</p>
         </header>
         <div class="pricing-table-wrap">
           <table class="pricing-table">
@@ -97,25 +161,24 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     </section>
 
     <section class="pricing-section" aria-labelledby="pricing-why">
-      <div class="page-inner--wide" data-reveal>
-        <h2 id="pricing-why" class="heading-section mb-4 text-ink">{p.whyPricing.heading}</h2>
-        <p class="doc-index-intro mt-0">{p.whyPricing.body}</p>
-      </div>
-    </section>
-
-    <section class="pricing-section" aria-labelledby="pricing-ops">
-      <div class="page-inner--wide" data-reveal>
-        <h2 id="pricing-ops" class="heading-section mb-8 text-ink">{p.trust.heading}</h2>
-        <ul class="pricing-ops-list">
-          {
-            p.trust.items.map((item) => (
-              <li class="pricing-ops-item">
-                <h3 class="pricing-ops-title">{item.title}</h3>
-                <p class="pricing-ops-desc">{item.desc}</p>
-              </li>
-            ))
-          }
-        </ul>
+      <div class="page-inner--wide pricing-why-grid" data-reveal>
+        <div>
+          <h2 id="pricing-why" class="pricing-band-heading text-ink">{p.whyPricing.heading}</h2>
+          <p class="doc-index-intro pricing-band-intro">{p.whyPricing.body}</p>
+        </div>
+        <div aria-labelledby="pricing-ops">
+          <h2 id="pricing-ops" class="pricing-band-heading text-ink">{p.trust.heading}</h2>
+          <ul class="pricing-ops-list">
+            {
+              p.trust.items.map((item) => (
+                <li class="pricing-ops-item">
+                  <h3 class="pricing-ops-title">{item.title}</h3>
+                  <p class="pricing-ops-desc">{item.desc}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -124,19 +187,19 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
       aria-labelledby="pricing-custom"
     >
       <div class="page-inner--wide" data-reveal>
-        <h2 id="pricing-custom" class="heading-section mb-4 text-ink">{p.custom.heading}</h2>
-        <p class="doc-index-intro mt-0">{p.custom.body}</p>
+        <h2 id="pricing-custom" class="pricing-band-heading text-ink">{p.custom.heading}</h2>
+        <p class="doc-index-intro pricing-band-intro">{p.custom.body}</p>
         <div class="page-closer__actions">
-          <a href={withHash(locale, 'contact')} class="btn-primary">
-            {p.custom.cta}
-          </a>
           <a
             href="https://cloud.km0digital.com/"
             target="_blank"
             rel="noopener noreferrer"
-            class="page-closer__secondary"
+            class="btn-primary"
           >
             {p.heroCta}
+          </a>
+          <a href={withHash(locale, 'contact')} class="page-closer__secondary">
+            {p.custom.cta}
           </a>
         </div>
       </div>
@@ -167,6 +230,10 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-masthead-copy {
     min-width: 0;
+  }
+
+  .pricing-masthead-copy .heading-page {
+    max-width: 12ch;
   }
 
   .pricing-hero-cta {
@@ -222,18 +289,155 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
   }
 
-  .pricing-compare-heading {
+  .pricing-band-heading {
     margin: 0;
     font-family: theme('fontFamily.display');
-    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-size: clamp(1.45rem, 3.2vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .pricing-band-intro {
+    margin-top: 0;
+  }
+
+  /* Editorial plan paths - Cloud lead, not equal icon cards */
+  .pricing-paths {
+    display: grid;
+    gap: 0;
+    border-block: 1px solid var(--color-mist);
+  }
+
+  @media (min-width: 960px) {
+    .pricing-paths {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
+      border-inline: 1px solid var(--color-mist);
+      border-block: 1px solid var(--color-mist);
+    }
+  }
+
+  .pricing-path {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border-bottom: 1px solid var(--color-mist);
+    background: transparent;
+  }
+
+  .pricing-path:last-child {
+    border-bottom: 0;
+  }
+
+  @media (min-width: 960px) {
+    .pricing-path {
+      border-bottom: 0;
+      border-right: 1px solid var(--color-mist);
+      min-height: 100%;
+    }
+
+    .pricing-path:last-child {
+      border-right: 0;
+    }
+  }
+
+  .pricing-path--lead {
+    background: var(--surface-snow);
+  }
+
+  .pricing-path__meta {
+    margin: 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  .pricing-path--lead .pricing-path__meta {
+    color: var(--color-signal);
+  }
+
+  .pricing-path__title {
+    margin: 0;
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.35rem, 2.5vw, 1.65rem);
     font-weight: 600;
     letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .pricing-path__price {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
+  }
+
+  .pricing-path__price-value {
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-ink);
+  }
+
+  .pricing-path--lead .pricing-path__price-value {
+    color: var(--color-signal);
+  }
+
+  .pricing-path__price-note {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-ink-muted);
+  }
+
+  .pricing-path__body {
+    margin: 0;
+    max-width: 36ch;
+    font-size: 0.9875rem;
+    line-height: 1.6;
+    color: var(--color-ink-muted);
+  }
+
+  .pricing-path__features {
+    margin: 0.25rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+    flex: 1;
+  }
+
+  .pricing-path__features li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--color-ink);
+  }
+
+  .pricing-path__features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.35rem;
+    height: 0.35rem;
+    background: var(--color-signal);
+  }
+
+  .pricing-path__cta {
+    margin-top: 0.75rem;
   }
 
   .pricing-table-wrap {
     overflow-x: auto;
     border: 1px solid var(--color-mist);
-    background: var(--color-snow);
+    background: var(--surface-paper);
   }
 
   .pricing-table {
@@ -251,8 +455,8 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-table thead th {
-    background: var(--color-ink);
-    color: var(--color-snow);
+    background: var(--surface-ink);
+    color: var(--color-on-ink);
     font-family: theme('fontFamily.sans');
     font-size: 0.875rem;
     font-weight: 600;
@@ -274,7 +478,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-table-row-highlight {
-    background: color-mix(in srgb, var(--color-signal) 8%, transparent);
+    background: color-mix(in srgb, var(--color-signal) 10%, transparent);
   }
 
   .pricing-table-row-highlight th {
@@ -299,11 +503,23 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     color: var(--color-ink-muted);
   }
 
+  .pricing-why-grid {
+    display: grid;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  @media (min-width: 900px) {
+    .pricing-why-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: start;
+    }
+  }
+
   .pricing-ops-list {
     display: grid;
     gap: 0;
     list-style: none;
-    margin: 0;
+    margin: 1.25rem 0 0;
     padding: 0;
   }
 

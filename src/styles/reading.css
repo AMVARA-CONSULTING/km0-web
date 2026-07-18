@@ -308,7 +308,9 @@
   }
 
   .reading-prose pre {
-    @apply my-8 max-w-none overflow-x-auto rounded-none border-0 bg-ink px-5 py-4 font-mono text-[0.8125rem] leading-relaxed text-snow md:text-sm;
+    @apply my-8 max-w-none overflow-x-auto rounded-none border-0 px-5 py-4 font-mono text-[0.8125rem] leading-relaxed md:text-sm;
+    background-color: var(--surface-code);
+    color: var(--color-on-code);
   }
 
   .reading-prose code {
@@ -456,7 +458,9 @@
   }
 
   .reading-prose .doc-note pre {
-    @apply m-0 max-w-none overflow-x-auto rounded-none border-0 bg-ink px-5 py-5 font-mono text-[0.8125rem] leading-[1.65] text-snow/95 md:px-6 md:py-6 md:text-sm;
+    @apply m-0 max-w-none overflow-x-auto rounded-none border-0 px-5 py-5 font-mono text-[0.8125rem] leading-[1.65] md:px-6 md:py-6 md:text-sm;
+    background-color: var(--surface-code);
+    color: color-mix(in srgb, var(--color-on-code) 95%, transparent);
   }
 
   .reading-prose .doc-closing {

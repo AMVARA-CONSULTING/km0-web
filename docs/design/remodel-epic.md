@@ -93,14 +93,14 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`** (Paint-phase locks tab
 Spec: **`docs/design/craft-parity-phase.md`**  
 Why: paint FEATs closed on class/order checks; live site still does not feel peer to [Stirling](https://stirling.com/) / [Satisfecho](https://satisfecho.de/). Soft “build green + no purple” passes are forbidden.
 
-| Order | Issue | Intent | Depends |
-|------:|-------|--------|---------|
-| 1 | (queued) | Optional dark theme (system + toggle; light default) | - |
-| 2 | (queued) | Landing Stirling **hard** visual parity | dark preferred first |
-| 3 | (queued) | Satisfecho **live** product proof in first viewport | landing |
-| 4 | (queued) | Pricing + secondary hard chrome | landing |
-| 5 | (queued) | Motion you can feel (sticky / pin / reveals) | landing |
-| 6 | (queued) | Encode craft-parity gates into doctrine + tester/closing | 1–5 |
+| Order | Issue | FEAT slug intent | Depends |
+|------:|-------|------------------|---------|
+| 1 | [#96](https://github.com/AMVARA-CONSULTING/km0-web/issues/96) | Optional dark theme (system + toggle; light default) | - |
+| 2 | [#97](https://github.com/AMVARA-CONSULTING/km0-web/issues/97) | Landing Stirling **hard** visual parity | #96 preferred |
+| 3 | [#98](https://github.com/AMVARA-CONSULTING/km0-web/issues/98) | Satisfecho **live** product proof in first viewport | #97 |
+| 4 | [#99](https://github.com/AMVARA-CONSULTING/km0-web/issues/99) | Pricing + secondary hard chrome | #97 |
+| 5 | [#100](https://github.com/AMVARA-CONSULTING/km0-web/issues/100) | Motion you can feel (sticky / pin / reveals) | #97 |
+| 6 | [#101](https://github.com/AMVARA-CONSULTING/km0-web/issues/101) | Encode craft-parity gates into doctrine + tester/closing | #96–#100 |
 
-Fill issue numbers when GitHub issues are created. Run **in sequence**. Every FEAT must use the **Hard gate protocol** in the craft-parity spec (side-by-side claims mandatory).
+Run **in sequence**. Every FEAT must use the **Hard gate protocol** in the craft-parity spec (side-by-side claims mandatory). Soft class-only passes = fail.
 

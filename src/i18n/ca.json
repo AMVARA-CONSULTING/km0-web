@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Kilòmetre 0 Digital - núvol i correu a la UE",
+    "title": "Kilòmetre 0 Digital - les teves dades, el teu control",
     "description": "KM0 Cloud i KM0 Email allotjats a la UE. 500 GB des d'1,99 €/mes. No venem el teu perfil."
   },
   "brandName": "Kilòmetre 0 Digital",
@@ -26,12 +26,22 @@
     "menuClose": "Tancar menú",
     "servicesLauncherOpen": "Obrir serveis KM0",
     "servicesLauncherClose": "Tancar serveis KM0",
-    "servicesLauncherTitle": "Serveis KM0"
+    "servicesLauncherTitle": "Serveis KM0",
+    "themeLabel": "Tema",
+    "themeLight": "Clar",
+    "themeDark": "Fosc",
+    "themeSystem": "Sistema",
+    "themeShortLight": "Clar",
+    "themeShortDark": "Fosc",
+    "themeShortSystem": "Auto",
+    "themeSetLight": "Fer servir el tema clar",
+    "themeSetDark": "Fer servir el tema fosc",
+    "themeSetSystem": "Fer servir el tema del sistema"
   },
   "hero": {
-    "titleLine1": "Núvol i correu ",
-    "titleGradient": "a la UE.",
-    "tagline": "500 GB des d'1,99 €/mes. Operat a prop. Sense vendre el teu perfil.",
+    "titleLine1": "Les teves dades. ",
+    "titleGradient": "El teu control.",
+    "tagline": "Núvol i correu a la UE. 500 GB des d'1,99 €/mes. Sense vendre el teu perfil.",
     "ctaPrimary": "Obrir KM0 Cloud",
     "ctaSecondary": "Veure preus",
     "logoAlt": "Logo Kilòmetre 0 Digital",
@@ -44,38 +54,48 @@
         { "name": "Fotos família", "meta": "carpeta", "kind": "folder" },
         { "name": "acta-reunio.pdf", "meta": "2,4 MB", "kind": "file" }
       ],
-      "emailMeta": "@km0digital.com"
+      "emailMeta": "@km0digital.com",
+      "liveLabel": "Cloud en viu",
+      "liveHint": "Escaneja amb el mòbil o obre'l en aquest navegador.",
+      "liveCta": "Obrir KM0 Cloud",
+      "liveAria": "Obrir KM0 Cloud (inici de sessió real del producte)",
+      "qrAlt": "Codi QR que obre KM0 Cloud a cloud.km0digital.com",
+      "host": "cloud.km0digital.com"
     }
   },
   "vision": {
-    "headingBefore": "A qui ",
-    "headingAccent": "serveix",
+    "headingBefore": "Tria l'",
+    "headingAccent": "escala",
     "headingAfter": "",
-    "intro": "Persona, comunitat o organització. Els mateixos fets: dades a la UE, preu públic, suport humà.",
+    "intro": "El mateix núvol, el mateix correu, els mateixos fets. Només canvia la mida de l'equip.",
     "bands": [
       {
-        "meta": "01 · PERSONA",
-        "title": "Tu i casa teva",
+        "meta": "Persona · casa",
+        "title": "Comença a casa, sense Big Tech",
         "body": "Fitxers i correu en servidors europeus. 500 GB des d'1,99 €/mes. El teu perfil no finança publicitat.",
         "fact": "Hetzner · Falkenstein (UE)",
         "ctaLabel": "Obrir KM0 Cloud",
         "cta": "cloud"
       },
       {
-        "meta": "02 · COMUNITAT",
-        "title": "Família, coop o barri",
+        "meta": "Comunitat · barri",
+        "title": "Comparteix a prop, opera a prop",
         "body": "Carpetes compartides i trobades obertes. Operem a prop i parlem en la teva llengua.",
         "fact": "Trobades locals · suport humà",
-        "ctaLabel": "Veure trobades",
-        "cta": "community"
+        "ctaLabel": "Obrir KM0 Cloud",
+        "cta": "cloud",
+        "secondaryCtaLabel": "Veure trobades",
+        "secondaryCta": "community"
       },
       {
-        "meta": "03 · ORGANITZACIÓ",
-        "title": "Associació o PIME",
+        "meta": "Organització · PIME",
+        "title": "Equips amb preu a la vista",
         "body": "Correu @km0digital.com i cloud amb preu publicat. Dades a la UE, sense lletra petita d'enterprise.",
         "fact": "Preus públics · sense venda de perfils",
-        "ctaLabel": "Veure preus",
-        "cta": "pricing"
+        "ctaLabel": "Obrir KM0 Cloud",
+        "cta": "cloud",
+        "secondaryCtaLabel": "Veure preus",
+        "secondaryCta": "pricing"
       }
     ]
   },
@@ -84,11 +104,11 @@
     "intro": "Ens trobem en persona per parlar de núvol, correu i eines. Consulta l'agenda."
   },
   "services": {
-    "headingBefore": "Què ",
-    "headingAccent": "oferim",
+    "headingBefore": "Els ",
+    "headingAccent": "productes",
     "headingAfter": "",
-    "intro": "Dos productes: emmagatzematge al núvol i correu @km0digital.com.",
-    "slogan": "Dades a Falkenstein (UE). Preu sense lletra petita.",
+    "intro": "KM0 Cloud lidera. KM0 Email l'acompanya a la mateixa UE.",
+    "slogan": "Dades a Falkenstein. Preu sense lletra petita.",
     "cloudTutorialCta": "Com començar",
     "cloudPricingCta": "Veure preus",
     "items": [
@@ -190,6 +210,7 @@
   "ideas": {
     "metaTitle": "Idees i problemes - Kilòmetre 0 Digital",
     "metaDescription": "Envia una millora o reporta un problema a km0digital, Cloud o Mail.",
+    "eyebrow": "Feedback",
     "heading": "Enviar una idea o un problema",
     "intro": "L'equip tècnic ho revisa. Tria el producte i descriu què falta o què falla.",
     "scopeLabel": "Producte",
@@ -220,6 +241,11 @@
     "prevMonth": "Mes anterior",
     "nextMonth": "Mes següent",
     "closeDetail": "Tancar",
+    "closer": {
+      "heading": "Cloud segueix obert entre trobades",
+      "body": "Fes servir el producte ara, o vine a la propera taula.",
+      "ctaSecondary": "Tornar a l'inici"
+    },
     "labels": {
       "date": "Data",
       "time": "Hora",
@@ -254,20 +280,70 @@
   },
   "pricing": {
     "metaTitle": "Preus - Kilòmetre 0 Digital",
-    "metaDescription": "500 GB per 1,99 €/mes. Comparativa orientativa i detall operatiu.",
+    "metaDescription": "500 GB per 1,99 €/mes. Camins públics per a Cloud, Email i propostes a mida.",
     "eyebrow": "Preus",
-    "heading": "500 GB per 1,99 €/mes",
+    "heading": "Un preu públic.",
     "heroPrice": {
       "amount": "1,99 €",
       "period": "/mes",
       "meta": "500 GB",
       "ariaLabel": "Preu: 1,99 euros al mes per 500 GB d'emmagatzematge"
     },
-    "intro": "Preu públic, emmagatzematge a la UE. Obre Cloud o demana una proposta a mida.",
+    "intro": "Emmagatzematge a la UE, sense lletra petita. Obre Cloud, suma Email o demana un camí a mida.",
     "heroCta": "Obrir KM0 Cloud",
+    "pathsHeading": "Tria un camí",
+    "pathsIntro": "La mateixa infraestructura, tres entrades. Cloud lidera; Email acompanya; a mida és per a equips que necessiten més.",
+    "paths": [
+      {
+        "id": "cloud",
+        "meta": "Autoservei",
+        "title": "KM0 Cloud",
+        "price": "1,99 €",
+        "priceNote": "/mes · 500 GB",
+        "body": "Fitxers, sync i compartir a Hetzner (Falkenstein). Comença sense trucada comercial.",
+        "features": [
+          "500 GB a la UE",
+          "Sense teatre de targeta per mirar",
+          "Preu públic, sense venda de perfils"
+        ],
+        "ctaLabel": "Obrir KM0 Cloud",
+        "cta": "cloud",
+        "lead": true
+      },
+      {
+        "id": "email",
+        "meta": "Acompanyant",
+        "title": "KM0 Email",
+        "price": "Amb l'stack",
+        "priceNote": "@km0digital.com",
+        "body": "Bústia professional al mateix ecosistema UE que Cloud.",
+        "features": [
+          "Webmail a la mateixa regió",
+          "Mateix operador, mateixa postura de privacitat",
+          "Combina'l amb Cloud quan calgui"
+        ],
+        "ctaLabel": "Obrir KM0 Email",
+        "cta": "email"
+      },
+      {
+        "id": "custom",
+        "meta": "Organització",
+        "title": "Camí a mida",
+        "price": "Sota petició",
+        "priceNote": "capacitat · condicions · suport",
+        "body": "Més emmagatzematge, suport nominat o condicions concretes per a un equip o comunitat.",
+        "features": [
+          "Capacitat per damunt del pla públic",
+          "Suport humà en la teva llengua",
+          "Condicions per escrit, no enterrades"
+        ],
+        "ctaLabel": "Demanar proposta",
+        "cta": "contact"
+      }
+    ],
     "claim": "Fins a 5 vegades més espai que plans bàsics de referència a preu similar.",
-    "compareHeading": "Referències orientatives de mercat",
-    "compareIntro": "La comparativa mostra referències orientatives de mercat amb plans públics equivalents.",
+    "compareHeading": "Comparativa calmada",
+    "compareIntro": "Només plans públics orientatius. Serveix per llegir el cost per TB, no com a marcador de vendes.",
     "tableDisclaimer": "Xifres orientatives basades en plans públics de referència. Els preus oficials de cada proveïdor poden variar segons regió, impostos i promocions.",
     "table": {
       "provider": "Referència",
@@ -340,8 +416,8 @@
       ]
     },
     "custom": {
-      "heading": "Proposta a mida",
-      "body": "Si necessites més capacitat, suport o condicions específiques, escriu-nos.",
+      "heading": "Necessites un altre camí?",
+      "body": "Obre Cloud ara, o escriu per a capacitat, suport o condicions concretes.",
       "cta": "Demanar proposta"
     }
   },

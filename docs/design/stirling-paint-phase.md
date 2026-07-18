@@ -28,12 +28,12 @@ Reference: https://stirling.com/ (+ Features, Pricing, About, Contact). Steal **
 
 ## Motion vocabulary (phase goal)
 
-1. **Scroll reveal** - staggered entrance for section blocks (`[data-reveal]` / `.reveal`; expo ease, once, auto-stagger).
-2. **Sticky while scrolling** - Masthead compact state on scroll (solid Snow + hairline); home Offer sticky pin (`offer__pin`) for heading + Cloud CTA while rows scroll (`lg+`); reading TOC sticky unchanged.
+1. **Scroll reveal** - staggered entrance for section blocks (`[data-reveal]` hidden until `.is-visible`; expo ease, once, auto-stagger). Distance/duration must be human-noticeable (#100).
+2. **Sticky while scrolling** - Masthead compact within ~1 scroll (solid Snow + hairline + soft elevate, no glass); home Offer sticky pin (`offer__pin`) for heading + Cloud CTA while rows scroll (`lg+`), with a visible stuck surface (`offer__pin--stuck`); reading TOC sticky unchanged.
 3. **Scroll-linked polish** - keep tasteful (2–4 sitewide motions max beyond reveals); no extra progress bars unless a later FEAT asks.
 4. **No animation spam** - one orchestrated system in `tokens.css` + `scroll-reveal.ts`.
 
-Shipped in #92. Token table: `docs/brand-tokens.md` Motion.
+Shipped in #92; craft feel hardened in #100. Token table: `docs/brand-tokens.md` Motion.
 
 ## Surfaces
 

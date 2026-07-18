@@ -48,6 +48,26 @@ const description = pageDescription ?? m.meta.description;
     <link rel="alternate" hreflang="x-default" href={hrefs.es} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script is:inline>
+      (function () {
+        try {
+          var key = 'km0-theme';
+          var raw = localStorage.getItem(key);
+          var pref = raw === 'light' || raw === 'dark' || raw === 'system' ? raw : 'system';
+          var dark =
+            pref === 'dark' ||
+            (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var theme = dark ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.dataset.themePref = pref;
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+          document.documentElement.dataset.themePref = 'system';
+          document.documentElement.style.colorScheme = 'light';
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -59,6 +79,7 @@ const description = pageDescription ?? m.meta.description;
   <body>
     <slot />
     <script>
+      import '../scripts/theme.ts';
       import '../scripts/scroll-reveal.ts';
     </script>
   </body>

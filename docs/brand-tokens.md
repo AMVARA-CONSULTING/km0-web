@@ -24,6 +24,24 @@
 
 **Forbidden:** `#E040A0`, `#7B3FE4`, `#007BFF` brand chain; purple/indigo gradients; `bg-clip-text` rainbow headlines; terracotta-on-cream as the whole system.
 
+## Color schemes (light default + optional dark)
+
+One brand, two schemes. Light Paper remains the default for light OS preference and until the visitor overrides. Control: header Theme cycle (System → Light → Dark), persisted in `localStorage` key `km0-theme`. Boot script sets `html[data-theme="light|dark"]` before paint (`src/layouts/Layout.astro` + `src/scripts/theme.ts`).
+
+| Role | Light | Dark (civic) |
+|------|-------|--------------|
+| Ink (text) | `#0B1220` | `#E6E9ED` |
+| Paper (canvas) | `#EEF0F2` | `#0B1220` (former Ink field) |
+| Snow (elevated) | `#FFFFFF` | `#141B28` |
+| Signal | `#0F766E` | `#2DD4BF` (same teal family, lifted for contrast) |
+| Mist | `#D8DCE0` | `#2A3344` |
+| Surface ink (proof) | `#0B1220` + on-ink Paper-light | `#05080F` + on-ink `#E6E9ED` |
+| Code surface | same as surface ink / on-ink | same pairing |
+
+**Forbidden in dark:** purple glow, neon orbs, dark-mode-first marketing (no forcing dark on light-OS visitors), Nous underground as the only voice.
+
+CSS: `src/styles/tokens.css` (`html[data-theme='dark']`). Tailwind colors map to `rgb(var(--rgb-*) / <alpha-value>)` so utilities follow the scheme.
+
 ## Surfaces (opt-in only)
 
 Default page canvas is **Paper**. Elevations are explicit classes - never `nth-child` zebra. Paint-phase locks: `docs/design/anti-slop-doctrine.md` + `docs/design/stirling-paint-phase.md`.
@@ -54,13 +72,14 @@ Orchestrated in `src/styles/tokens.css` + `src/scripts/scroll-reveal.ts` (Stirli
 | Token | Role |
 |-------|------|
 | `--ease-out-expo` (`cubic-bezier(0.16, 1, 0.3, 1)`) | Shared ease (alias `--ease-apple`) |
-| `--duration-reveal` (700ms) | Scroll reveal entrance |
-| `--duration-chrome` (220ms) | Masthead compact / border |
-| `--reveal-distance` (1.25rem) | Reveal translateY |
-| `--reveal-stagger` (80ms) | Sibling auto-stagger when `data-delay` omitted |
+| `--duration-reveal` (820ms) | Scroll reveal entrance (noticeable once) |
+| `--duration-chrome` (280ms) | Masthead compact / border / elevate |
+| `--reveal-distance` (2rem) | Reveal translateY |
+| `--reveal-stagger` (90ms) | Sibling auto-stagger when `data-delay` omitted |
 | `--masthead-offset` / `--masthead-offset-compact` | Sticky pin top under fixed nav |
+| `--masthead-elevate` | Compact masthead hairline + soft lift (no glass) |
 
-**Sitewide moments (cap):** (1) scroll reveals via `[data-reveal]` once, (2) masthead compact on scroll (solid Snow, hairline border, no glass blur), (3) home Offer sticky pin (heading + Cloud CTA while rows scroll on `lg+`). Reading TOC sticky stays as chrome, not a vanity animation.
+**Sitewide moments (cap):** (1) scroll reveals via `[data-reveal]` once (CSS-hidden until `.is-visible`), (2) masthead compact on scroll (solid Snow, hairline + elevate, no glass blur), (3) home Offer sticky pin (heading + Cloud CTA while rows scroll on `lg+`; stuck surface is visible). Reading TOC sticky stays as chrome, not a vanity animation.
 
 Always honor `prefers-reduced-motion`: reveals show immediately; chrome transitions off. Sticky layout may remain.
 

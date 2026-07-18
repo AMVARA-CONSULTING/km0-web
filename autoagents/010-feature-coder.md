@@ -51,6 +51,14 @@ Adhere to **`autoagents/TASKS-README.md`**.
 - Follow tokens in **`docs/brand-tokens.md`** (no Inter-only, no purple/indigo brand gradients, no centered SaaS hero recipe).
 - Closing reviewer will **fail** tasks that reintroduce AI/Tailwind-slop tells.
 
+### Craft parity FEATs (Stirling / Satisfecho / optional dark)
+
+If the FEAT cites **`docs/design/craft-parity-phase.md`** or “HARD” parity:
+
+- Soft class-only shipping is a **fail**. Implement until a human side-by-side with the named reference would notice the match.
+- Before **UNTESTED-**, Testing instructions **must** include the Hard gate protocol (reference URL, KM0 URL, 3 parity claims, 3 anti-slop claims, decisive viewport). See the craft-parity spec.
+- Run craft FEATs **in issue order** when several are queued (dark → landing → live proof → pricing → motion → encode).
+
 ### Instructions
 
 1. **`./scripts/git-sync-main.sh`**

@@ -20,6 +20,7 @@ const upcoming = upcomingMeetingEvents();
 
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');
 const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
+const homeHref = localeHref(locale, '/');
 ---
 
 <Layout
@@ -35,7 +36,7 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
       <div class="page-inner--wide !px-0">
         <header class="page-masthead" data-reveal>
           <p class="doc-kicker">{m.eyebrow}</p>
-          <h1 id="meeting-heading" class="heading-section text-ink">{m.heading}</h1>
+          <h1 id="meeting-heading" class="heading-page text-ink">{m.heading}</h1>
           <p class="doc-index-intro">{m.intro}</p>
         </header>
 
@@ -68,6 +69,27 @@ const canonicalUrl = new URL(localeHref(locale, '/meeting/'), siteRoot).href;
               )
             }
           </section>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="page-closer surface-snow surface-band"
+      aria-labelledby="meeting-closer"
+    >
+      <div class="page-inner--wide" data-reveal>
+        <h2 id="meeting-closer" class="heading-section text-ink">{m.closer.heading}</h2>
+        <p class="doc-index-intro mt-0">{m.closer.body}</p>
+        <div class="page-closer__actions">
+          <a
+            href="https://cloud.km0digital.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            {messages.hero.ctaPrimary}
+          </a>
+          <a href={homeHref} class="page-closer__secondary">{m.closer.ctaSecondary}</a>
         </div>
       </div>
     </section>

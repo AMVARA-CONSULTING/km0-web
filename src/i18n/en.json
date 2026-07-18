@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Kilometer 0 Digital - EU cloud and email",
+    "title": "Kilometer 0 Digital - your data, your control",
     "description": "KM0 Cloud and KM0 Email hosted in the EU. 500 GB from €1.99/month. We do not sell your profile."
   },
   "brandName": "Kilometer 0 Digital",
@@ -26,12 +26,22 @@
     "menuClose": "Close menu",
     "servicesLauncherOpen": "Open KM0 services",
     "servicesLauncherClose": "Close KM0 services",
-    "servicesLauncherTitle": "KM0 services"
+    "servicesLauncherTitle": "KM0 services",
+    "themeLabel": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "themeShortLight": "Light",
+    "themeShortDark": "Dark",
+    "themeShortSystem": "Auto",
+    "themeSetLight": "Use light theme",
+    "themeSetDark": "Use dark theme",
+    "themeSetSystem": "Use system theme"
   },
   "hero": {
-    "titleLine1": "Cloud and email ",
-    "titleGradient": "in the EU.",
-    "tagline": "500 GB from €1.99/month. Nearby operators. We do not sell your profile.",
+    "titleLine1": "Your data. ",
+    "titleGradient": "Your control.",
+    "tagline": "Cloud and email in the EU. 500 GB from €1.99/month. We do not sell your profile.",
     "ctaPrimary": "Open KM0 Cloud",
     "ctaSecondary": "Pricing",
     "logoAlt": "Kilometer 0 Digital logo",
@@ -44,38 +54,48 @@
         { "name": "Family photos", "meta": "folder", "kind": "folder" },
         { "name": "meeting-notes.pdf", "meta": "2.4 MB", "kind": "file" }
       ],
-      "emailMeta": "@km0digital.com"
+      "emailMeta": "@km0digital.com",
+      "liveLabel": "Live Cloud",
+      "liveHint": "Scan with your phone, or open in this browser.",
+      "liveCta": "Open KM0 Cloud",
+      "liveAria": "Open KM0 Cloud (real product login)",
+      "qrAlt": "QR code that opens KM0 Cloud at cloud.km0digital.com",
+      "host": "cloud.km0digital.com"
     }
   },
   "vision": {
-    "headingBefore": "Who it ",
-    "headingAccent": "serves",
+    "headingBefore": "Pick your ",
+    "headingAccent": "scale",
     "headingAfter": "",
-    "intro": "Person, community, or organisation. Same facts: EU data, public pricing, human support.",
+    "intro": "Same cloud, same mail, same facts. Only the size of the team changes.",
     "bands": [
       {
-        "meta": "01 · PERSON",
-        "title": "You and your household",
+        "meta": "Person · home",
+        "title": "Start at home, without Big Tech",
         "body": "Files and mail on European servers. 500 GB from €1.99/month. Your profile does not fund ads.",
         "fact": "Hetzner · Falkenstein (EU)",
         "ctaLabel": "Open KM0 Cloud",
         "cta": "cloud"
       },
       {
-        "meta": "02 · COMMUNITY",
-        "title": "Family, coop, or neighbourhood",
+        "meta": "Community · neighbourhood",
+        "title": "Share nearby, operate nearby",
         "body": "Shared folders and open meetups. We operate nearby and speak your language.",
         "fact": "Local meetups · human support",
-        "ctaLabel": "See meetups",
-        "cta": "community"
+        "ctaLabel": "Open KM0 Cloud",
+        "cta": "cloud",
+        "secondaryCtaLabel": "See meetups",
+        "secondaryCta": "community"
       },
       {
-        "meta": "03 · ORGANISATION",
-        "title": "Association or SME",
+        "meta": "Organisation · SME",
+        "title": "Teams with prices in the open",
         "body": "@km0digital.com mail and cloud with published prices. EU data, no enterprise fine print.",
         "fact": "Public pricing · no profile sales",
-        "ctaLabel": "See pricing",
-        "cta": "pricing"
+        "ctaLabel": "Open KM0 Cloud",
+        "cta": "cloud",
+        "secondaryCtaLabel": "See pricing",
+        "secondaryCta": "pricing"
       }
     ]
   },
@@ -84,11 +104,11 @@
     "intro": "We meet in person to talk about cloud, email, and tools. See the schedule."
   },
   "services": {
-    "headingBefore": "What we ",
-    "headingAccent": "offer",
+    "headingBefore": "The ",
+    "headingAccent": "products",
     "headingAfter": "",
-    "intro": "Two products: cloud storage and @km0digital.com email.",
-    "slogan": "Data in Falkenstein (EU). Price without fine print.",
+    "intro": "KM0 Cloud leads. KM0 Email rides with it in the same EU stack.",
+    "slogan": "Data in Falkenstein. Price without fine print.",
     "cloudTutorialCta": "How to get started",
     "cloudPricingCta": "View pricing",
     "items": [
@@ -190,6 +210,7 @@
   "ideas": {
     "metaTitle": "Ideas and issues - Kilometer 0 Digital",
     "metaDescription": "Send an improvement or report a problem on km0digital, Cloud, or Mail.",
+    "eyebrow": "Feedback",
     "heading": "Send an idea or a problem",
     "intro": "The technical team reviews it. Choose the product and say what is missing or broken.",
     "scopeLabel": "Product",
@@ -220,6 +241,11 @@
     "prevMonth": "Previous month",
     "nextMonth": "Next month",
     "closeDetail": "Close",
+    "closer": {
+      "heading": "Cloud stays open between meetups",
+      "body": "Use the product now, or come to the next table talk.",
+      "ctaSecondary": "Back to home"
+    },
     "labels": {
       "date": "Date",
       "time": "Time",
@@ -254,20 +280,70 @@
   },
   "pricing": {
     "metaTitle": "Pricing - Kilometer 0 Digital",
-    "metaDescription": "500 GB for €1.99/month. Indicative comparison and operational detail.",
+    "metaDescription": "500 GB for €1.99/month. Public paths for Cloud, Email, and custom proposals.",
     "eyebrow": "Pricing",
-    "heading": "500 GB for €1.99/month",
+    "heading": "One public price.",
     "heroPrice": {
       "amount": "€1.99",
       "period": "/month",
       "meta": "500 GB",
       "ariaLabel": "Price: €1.99 per month for 500 GB of storage"
     },
-    "intro": "Public price, EU storage. Open Cloud or ask for a custom proposal.",
+    "intro": "EU storage, no fine print. Open Cloud, add Email, or ask for a custom path.",
     "heroCta": "Open KM0 Cloud",
+    "pathsHeading": "Choose a path",
+    "pathsIntro": "Same stack, three ways in. Cloud leads; Email rides with it; custom is for teams that need more.",
+    "paths": [
+      {
+        "id": "cloud",
+        "meta": "Self-serve",
+        "title": "KM0 Cloud",
+        "price": "€1.99",
+        "priceNote": "/month · 500 GB",
+        "body": "Files, sync, and share on Hetzner in Falkenstein. Start without a sales call.",
+        "features": [
+          "500 GB EU storage",
+          "No credit card theatre to browse",
+          "Public price, no profile sales"
+        ],
+        "ctaLabel": "Open KM0 Cloud",
+        "cta": "cloud",
+        "lead": true
+      },
+      {
+        "id": "email",
+        "meta": "Companion",
+        "title": "KM0 Email",
+        "price": "With the stack",
+        "priceNote": "@km0digital.com",
+        "body": "Professional mailbox in the same EU ecosystem as Cloud.",
+        "features": [
+          "Webmail in the same region",
+          "Same operator, same privacy stance",
+          "Pair with Cloud when you need both"
+        ],
+        "ctaLabel": "Open KM0 Email",
+        "cta": "email"
+      },
+      {
+        "id": "custom",
+        "meta": "Organisation",
+        "title": "Custom path",
+        "price": "On request",
+        "priceNote": "capacity · terms · support",
+        "body": "More storage, named support, or specific terms for a team or community.",
+        "features": [
+          "Capacity beyond the public plan",
+          "Human support in your language",
+          "Terms written down, not buried"
+        ],
+        "ctaLabel": "Request a proposal",
+        "cta": "contact"
+      }
+    ],
     "claim": "Up to 5× more space than basic reference plans at a similar price.",
-    "compareHeading": "Indicative market references",
-    "compareIntro": "The table shows indicative market references based on comparable public plans.",
+    "compareHeading": "Calm market compare",
+    "compareIntro": "Indicative public plans only. Use it to read cost per TB, not as a sales scoreboard.",
     "tableDisclaimer": "Indicative figures based on public reference plans. Official provider prices may vary by region, taxes, and promotions.",
     "table": {
       "provider": "Reference",
@@ -340,8 +416,8 @@
       ]
     },
     "custom": {
-      "heading": "Custom proposal",
-      "body": "Need more capacity, support, or specific terms? Write to us.",
+      "heading": "Need a different path?",
+      "body": "Open Cloud now, or write for capacity, support, or specific terms.",
       "cta": "Request a proposal"
     }
   },

@@ -36,7 +36,7 @@ const homeHref = localeHref(locale, '/');
       <div class="page-inner !px-0">
         <header class="page-masthead error-masthead" data-reveal>
           <p class="doc-kicker">{errorContent.code}</p>
-          <h1 class="heading-section text-ink">{errorContent.heading}</h1>
+          <h1 class="heading-page text-ink">{errorContent.heading}</h1>
           <p class="doc-index-intro">{errorContent.description}</p>
           <div class="page-closer__actions">
             <a href={homeHref} class="btn-primary">{errorContent.backHome}</a>
@@ -47,3 +47,13 @@ const homeHref = localeHref(locale, '/');
   </main>
   <Footer locale={locale} messages={messages} />
 </Layout>
+
+<style>
+  .error-masthead {
+    max-width: 36rem;
+  }
+
+  .error-masthead .heading-page {
+    max-width: 18ch;
+  }
+</style>

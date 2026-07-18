@@ -7,15 +7,13 @@ locale: de
 
 Es gab ein **professionelles Treffen** mit dem klaren Ziel, über **Stil und Marke** von Kilometer 0 Digital zu sprechen. Wir begannen dort und, wie es am Tisch oft geht, **schweiften ab**. Eine Schlussfolgerung verwässerte sich nicht: die Marke, die wir damals hatten, **hatte keine Seele**. Farben, Typo, Logo, visueller Ton und das restliche System brauchten eine volle Revision, kein Favicon-Politur.
 
-Dieser Tag ist das Gerüst jener Sitzung. Exakte Daten, Teilnehmende und Screenshots später ergänzen; das Kernargument steht.
-
 ## Absicht versus Verlauf
 
 - **Plan:** visuelle Identität und Stilregeln prüfen, damit Cloud, Email und die Website dasselbe sagen.
 - **Realität:** das Gespräch sprang zu Produkt, Community und Betrieb.
 - **Anker, der blieb:** ohne Seele in der Marke klang der Rest (Nähe, EU, öffentlicher Preis) wie eine generische Vorlage.
 
-> **Noch zu ergänzen:** genaues Datum und Ort; Namen oder Rollen der Person mit dem „keine Seele“-Diagnose (mit Erlaubnis); zwei bis drei abgelehnte visuelle Beispiele (Screenshot oder Beschreibung).
+Wir erfinden hier keine Straße und keine Uhrzeit: Diagnose und Revisions-Agenda zählen.
 
 ## Was „keine Seele“ hier bedeutete
 
@@ -45,10 +43,8 @@ Teile dieser Arbeit sind später auf der öffentlichen Site gelandet (Tokens, K0
 
 Nebenthemen kamen vor (Produkt, Treffen, Prioritäten). Kein Bedarf, einen dreistündigen Branding-Workshop vorzutäuschen. Wichtig ist: im Rauschen wurde die **Marke diagnostiziert** und priorisiert.
 
-> **Noch zu ergänzen:** eine kurze Vignette pro lohnender Abschweifung (max. drei), oder Abschnitt streichen, wenn sie nichts beitragen.
-
 ## Abschluss
 
-Erledigt, wenn Absicht, „keine Seele“-Diagnose und Revisionsliste stehen. [Tag 17](/de/doc/day-17/) schloss Palantir/Harari im Casino; dieser Tag öffnet den Identitätsfaden.
+Absicht, „keine Seele“-Diagnose und Revisionsliste: das hält dieser Tag fest. [Tag 17](/de/doc/day-17/) schloss Palantir/Harari im Casino; dieser Tag öffnet den Identitätsfaden.
 
 Nächster Schritt für Leserinnen und Leser: die Live-Site ansehen ([Start](/de/), [Preise](/de/pricing/)) und mit damals vergleichen, oder zum nächsten [Treffen](/de/meeting/) kommen.

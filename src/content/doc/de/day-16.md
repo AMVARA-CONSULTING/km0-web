@@ -57,5 +57,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Frühere Tage</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-15/">Tag 15</a> dokumentierten wir das abgelaufene register-api Graph-Token; am <a href="/de/doc/day-14/">Tag 14</a> fassten wir Harari über KI und Zivilisation zusammen; am <a href="/de/doc/day-13/">Tag 13</a> das Meet 6. Bis zum 10. Juli in El Masnou.</p>
+  <p class="doc-closing">Am <a href="/de/doc/day-15/">Tag 15</a> dokumentierten wir das abgelaufene register-api Graph-Token; am <a href="/de/doc/day-14/">Tag 14</a> fassten wir Harari über KI und Zivilisation zusammen; am <a href="/de/doc/day-13/">Tag 13</a> das Meet 6. Bis zum 10. Juli in El Masnou; die Nachlese ist <a href="/de/doc/day-17/">Tag 17</a>.</p>
 </section>

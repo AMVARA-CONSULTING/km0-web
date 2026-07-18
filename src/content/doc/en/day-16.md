@@ -57,5 +57,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Previous days</h2>
-  <p class="doc-closing"><a href="/en/doc/day-15/">Day 15</a> documented the expired register-api Graph token; <a href="/en/doc/day-14/">day 14</a> summarised Harari on AI and civilisation; <a href="/en/doc/day-13/">day 13</a> covered meet 6. See you on 10 July in Masnou.</p>
+  <p class="doc-closing"><a href="/en/doc/day-15/">Day 15</a> documented the expired register-api Graph token; <a href="/en/doc/day-14/">day 14</a> summarised Harari on AI and civilisation; <a href="/en/doc/day-13/">day 13</a> covered meet 6. See you on 10 July in Masnou; the recap is <a href="/en/doc/day-17/">day 17</a>.</p>
 </section>

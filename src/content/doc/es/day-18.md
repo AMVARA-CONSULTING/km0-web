@@ -7,15 +7,13 @@ locale: es
 
 Hubo una **quedada profesional** con la intención explícita de hablar de **estilos y marca** del proyecto Kilómetro 0 Digital. Empezamos por ahí y, como suele pasar en mesa, **nos desviamos** a varios temas. Aun así, una conclusión no se diluyó: la marca que teníamos entonces **no tenía alma**. Había que revisar colores, tipografías, logo, tono visual y el resto del sistema, no maquillar un favicon.
 
-Este día es el esqueleto de esa sesión. Amplía fechas exactas, asistentes y capturas cuando puedas; el argumento central ya está.
-
 ## Intención frente a lo que pasó
 
 - **Plan:** revisar identidad visual y criterios de estilo para que Cloud, Email y la web digan lo mismo.
 - **Realidad:** la conversación saltó a producto, comunidad y operaciones.
 - **Ancla que quedó:** sin alma en la marca, el resto del discurso (cercanía, UE, precio público) sonaba a plantilla genérica.
 
-> **Pendiente de ampliar:** fecha y lugar exactos de la sesión; nombres o roles de quien aportó el diagnóstico “sin alma” (con permiso); 2–3 ejemplos visuales de lo que se rechazó (captura o descripción).
+No fijamos aquí calle ni hora: lo que importa es el diagnóstico y la agenda de revisión.
 
 ## Qué significa “sin alma” aquí
 
@@ -45,10 +43,8 @@ Parte de ese trabajo ya se ha ejecutado después en la web pública (tokens, mar
 
 También salieron temas laterales (producto, encuentros, prioridades). No hace falta fingir que fue un workshop de branding de tres horas. Sí hace falta registrar que, entre el ruido, **la marca quedó diagnosticada** y priorizada.
 
-> **Pendiente:** una viñeta corta por desvío que merezca quedar (máximo tres), o borrar esta sección si no aportan.
-
 ## Cierre
 
-Hecho cuando quede escrito: intención de la quedada, diagnóstico “sin alma”, y la lista de qué revisar. El [día 17](/doc/day-17/) cerró Palantir/Harari en el Casino; este día abre el hilo de identidad.
+Intención de la quedada, diagnóstico “sin alma”, y lista de qué revisar: eso es lo que deja escrito este día. El [día 17](/doc/day-17/) cerró Palantir/Harari en el Casino; este día abre el hilo de identidad.
 
 Siguiente paso para quien lea: mirar la web actual ([inicio](/), [precios](/pricing/)) y contrastar con lo que había entonces; o venir al próximo [encuentro](/meeting/).

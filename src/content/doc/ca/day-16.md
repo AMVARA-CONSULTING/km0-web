@@ -57,5 +57,5 @@ locale: ca
 <section class="doc-closing-block">
   <p class="doc-block-title">Sèrie</p>
   <h2 class="doc-block-heading">Dies anteriors</h2>
-  <p class="doc-closing">El <a href="/ca/doc/day-15/">dia 15</a> va documentar el token Graph caducat de register-api; el <a href="/ca/doc/day-14/">dia 14</a> va resumir Harari sobre IA i civilització; el <a href="/ca/doc/day-13/">dia 13</a> va recollir el meet 6. Ens veiem el 10 de juliol a El Masnou.</p>
+  <p class="doc-closing">El <a href="/ca/doc/day-15/">dia 15</a> va documentar el token Graph caducat de register-api; el <a href="/ca/doc/day-14/">dia 14</a> va resumir Harari sobre IA i civilització; el <a href="/ca/doc/day-13/">dia 13</a> va recollir el meet 6. Ens veiem el 10 de juliol a El Masnou; la crònica és al <a href="/ca/doc/day-17/">dia 17</a>.</p>
 </section>

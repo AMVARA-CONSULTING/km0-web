@@ -15,7 +15,7 @@ It was not a product pitch. It was an informal table: concrete risks, respect fo
 - **Place:** Casino del Masnou, Carrer de Barcelona, 1, 08320 El Masnou, Barcelona. [Map](https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona).
 - **Venue site:** [casinomasnou.com](https://www.casinomasnou.com/).
 - **Axes:** Palantir (data infiltration / mapping) + AI that outwrites humans and “hacks” bureaucratic gaps.
-- **Author note:** fix time or attendance if memory is wrong. Day 16 announced Bar Pekin; the meetup landed at the Casino.
+- **Venue note:** day 16 announced Bar Pekin; the meetup took place at the Casino.
 
 ## Palantir: danger and competence
 
@@ -26,8 +26,6 @@ We talked about Palantir as a **pattern**, not a meme:
 - **Database mapping:** what it does **very well** is joining silos, modelling entities and relationships, and making a map visible that nobody held in their head before. That is operational power; it is also concentrated power.
 
 The table question was not “is it legal?” but “**who controls the map when a third party owns the map?**”. For KM0 the contrast is local: Cloud and mail in the EU, public price, no selling the profile as the product.
-
-> **To expand:** one concrete example named at the table (sector, data type, or news item) and a quoted line from someone other than the host.
 
 ## Harari again: AI already writes better
 
@@ -50,6 +48,6 @@ If bureaucracy is a word game, whoever masters the language of the game has the 
 
 ## Close
 
-Done when this day makes clear: **where** we met, **what** was said about Palantir (risk + competence), and **what** was said about AI/Harari (writing + bureaucratic gaps).
+This day makes clear **where** we met, **what** was said about Palantir (risk + competence), and **what** was said about AI/Harari (writing + bureaucratic gaps).
 
-Next: [day 18](/en/doc/day-18/) covers a professional session on KM0 **brand and style** (and why the brand then had no soul). Add quotes, photos, or names when you can; the spine already reads.
+Next: [day 18](/en/doc/day-18/) covers a professional session on KM0 **brand and style** (and why the brand then had no soul).

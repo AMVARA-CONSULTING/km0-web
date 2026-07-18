@@ -15,7 +15,8 @@ export const MEETING_EVENTS: MeetingEventRecord[] = [
     date: '2026-07-10',
     time: '18:30',
     mapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=Passeig+Prat+de+la+Riba+25,+08320+El+Masnou,+Barcelona',
+      'https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona',
+    venueWebsite: 'https://www.casinomasnou.com/',
     tag: 'informal',
   },
   {

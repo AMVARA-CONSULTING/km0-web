@@ -7,15 +7,13 @@ locale: ca
 
 Hi va haver una **quedada professional** amb la intenció explícita de parlar d'**estils i marca** del projecte Kilómetro 0 Digital. Vam començar per aquí i, com sol passar a taula, **ens vam desviar** cap a diversos temes. Tot i així, una conclusió no es va diluir: la marca que teníem aleshores **no tenia ànima**. Calia revisar colors, tipografies, logo, to visual i la resta del sistema, no maquillar un favicon.
 
-Aquest dia és l'esquelet d'aquella sessió. Amplia dates exactes, assistents i captures quan puguis; l'argument central ja hi és.
-
 ## Intenció davant del que va passar
 
 - **Pla:** revisar identitat visual i criteris d'estil perquè Cloud, Email i la web diguin el mateix.
 - **Realitat:** la conversa va saltar a producte, comunitat i operacions.
 - **Àncora que va quedar:** sense ànima a la marca, la resta del discurs (proximitat, UE, preu públic) sonava a plantilla genèrica.
 
-> **Pendent d'ampliar:** data i lloc exactes de la sessió; noms o rols de qui va aportar el diagnòstic “sense ànima” (amb permís); 2–3 exemples visuals del que es va rebutjar (captura o descripció).
+No fixem aquí carrer ni hora: el que importa és el diagnòstic i l'agenda de revisió.
 
 ## Què vol dir “sense ànima” aquí
 
@@ -45,10 +43,8 @@ Part d'aquest treball ja s'ha executat després a la web pública (tokens, marca
 
 També van sortir temes laterals (producte, trobades, prioritats). No cal fingir que va ser un workshop de branding de tres hores. Sí cal registrar que, entre el soroll, **la marca va quedar diagnosticada** i prioritzada.
 
-> **Pendent:** una vinyeta curta per desviament que mereixi quedar (màxim tres), o esborrar aquesta secció si no aporten.
-
 ## Tancament
 
-Fet quan quedi escrit: intenció de la quedada, diagnòstic “sense ànima”, i la llista del que cal revisar. El [dia 17](/ca/doc/day-17/) va tancar Palantir/Harari al Casino; aquest dia obre el fil d'identitat.
+Intenció de la quedada, diagnòstic “sense ànima”, i llista del que cal revisar: això és el que deixa escrit aquest dia. El [dia 17](/ca/doc/day-17/) va tancar Palantir/Harari al Casino; aquest dia obre el fil d'identitat.
 
 Pas següent per a qui llegeixi: mirar la web actual ([inici](/ca/), [preus](/ca/pricing/)) i contrastar-la amb el que hi havia aleshores; o venir a la propera [trobada](/ca/meeting/).

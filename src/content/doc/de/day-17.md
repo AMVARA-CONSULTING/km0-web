@@ -15,7 +15,7 @@ Es war kein Produktvortrag. Es war ein informeller Tisch: konkrete Risiken, Resp
 - **Ort:** Casino del Masnou, Carrer de Barcelona, 1, 08320 El Masnou, Barcelona. [Karte](https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona).
 - **Website:** [casinomasnou.com](https://www.casinomasnou.com/).
 - **Achsen:** Palantir (Dateninfiltration / Mapping) + KI, die Menschen beim Schreiben überholt und bürokratische Lücken „hackt“.
-- **Hinweis für Autor:** Zeit oder Teilnehmerzahl korrigieren, falls die Erinnerung falsch ist. Tag 16 kündigte Bar Pekin an; das Treffen fand im Casino statt.
+- **Ortshinweis:** Tag 16 kündigte Bar Pekin an; das Treffen fand im Casino statt.
 
 ## Palantir: Gefahr und Kompetenz
 
@@ -26,8 +26,6 @@ Wir sprachen über Palantir als **Muster**, nicht als Meme:
 - **Datenbank-Mapping:** was es **sehr gut** kann, ist Silos verbinden, Entitäten und Beziehungen modellieren und eine Karte sichtbar machen, die zuvor niemand im Kopf hatte. Das ist operative Macht; auch Machtkonzentration.
 
 Die Frage am Tisch war nicht „ist es legal?“, sondern „**wer kontrolliert die Karte, wenn ein Dritter die Karte besitzt?**“. Für KM0 ist der Kontrast lokal: Cloud und Mail in der EU, öffentlicher Preis, ohne das Profil als Produkt zu verkaufen.
-
-> **Noch zu ergänzen:** ein konkretes Beispiel vom Tisch (Branche, Datentyp oder Nachricht) und ein Zitat von jemand anderem als dem Gastgeber.
 
 ## Wieder Harari: KI schreibt schon besser
 
@@ -50,6 +48,6 @@ Wenn Bürokratie ein Wortspiel ist, hat den Vorteil, wer die Sprache des Spiels 
 
 ## Abschluss
 
-Erledigt, wenn klar ist: **wo** wir uns trafen, **was** über Palantir gesagt wurde (Risiko + Kompetenz), und **was** über KI/Harari (Schreiben + bürokratische Lücken).
+Klar ist **wo** wir uns trafen, **was** über Palantir gesagt wurde (Risiko + Kompetenz), und **was** über KI/Harari (Schreiben + bürokratische Lücken).
 
-Als Nächstes: [Tag 18](/de/doc/day-18/) zu einem professionellen Treffen über **Marke und Stil** von KM0 (und warum die damalige Marke keine Seele hatte). Zitate, Fotos oder Namen ergänzen; das Gerüst trägt schon.
+Als Nächstes: [Tag 18](/de/doc/day-18/) zu einem professionellen Treffen über **Marke und Stil** von KM0 (und warum die damalige Marke keine Seele hatte).

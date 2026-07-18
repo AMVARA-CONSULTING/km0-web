@@ -15,7 +15,7 @@ No va ser una xerrada de producte. Va ser una taula informal: riscos concrets, r
 - **Lloc:** Casino del Masnou, Carrer de Barcelona, 1, 08320 El Masnou, Barcelona. [Mapa](https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona).
 - **Web del local:** [casinomasnou.com](https://www.casinomasnou.com/).
 - **Eixos:** Palantir (infiltració de dades / mapatge) + IA que supera la redacció humana i “hackeja” forats burocràtics.
-- **Nota d'autor:** si l'hora o l'aforament difereixen del recordat, corregeix aquí. El dia 16 va anunciar Bar Pekin; la trobada es va tancar al Casino.
+- **Nota de seu:** el dia 16 va anunciar Bar Pekin; la trobada es va celebrar al Casino.
 
 ## Palantir: perill i competència
 
@@ -26,8 +26,6 @@ Vam parlar de Palantir no com a meme, sinó com a **patró**:
 - **Mapatge de bases de dades:** el que fa **molt bé** és unir sitges, modelar entitats i relacions, i fer visible un mapa que abans ningú no tenia al cap. Això és potència operativa; també és concentració de poder.
 
 La pregunta a la taula no va ser “és legal?” sinó “**qui controla el mapa quan el mapa el té un tercer?**”. Per a KM0 el contrast és local: núvol i correu a la UE, amb preu públic, sense vendre el perfil com a producte.
-
-> **Pendent d'ampliar:** un exemple concret citat a la taula (sector, tipus de dada o notícia) i una frase textual d'algú que no sigui l'amfitrió.
 
 ## Harari una altra vegada: la IA ja redacta millor
 
@@ -50,6 +48,6 @@ Si la burocràcia és un joc de paraules, qui domina el llenguatge del joc té a
 
 ## Tancament
 
-Fet quan aquest dia deixi clar: **on** ens vam veure, **què** es va dir de Palantir (risc + competència), i **què** es va dir d'IA/Harari (redacció + forats burocràtics).
+Va quedar clar **on** ens vam veure, **què** es va dir de Palantir (risc + competència), i **què** es va dir d'IA/Harari (redacció + forats burocràtics).
 
-Entrada següent: el [dia 18](/ca/doc/day-18/) recull una quedada professional sobre **marca i estil** de KM0 (i per què la marca d'aleshores no tenia ànima). Amplia citacions, fotos o noms si vols; l'estructura ja aguanta la lectura.
+Entrada següent: el [dia 18](/ca/doc/day-18/) recull una quedada professional sobre **marca i estil** de KM0 (i per què la marca d'aleshores no tenia ànima).

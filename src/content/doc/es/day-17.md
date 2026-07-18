@@ -15,7 +15,7 @@ No fue una charla de producto. Fue una mesa informal: riesgos concretos, un resp
 - **Lugar:** Casino del Masnou, Carrer de Barcelona, 1, 08320 El Masnou, Barcelona. [Mapa](https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona).
 - **Web del local:** [casinomasnou.com](https://www.casinomasnou.com/).
 - **Ejes:** Palantir (infiltración de datos / mapeo) + IA que supera la redacción humana y “hackea” huecos burocráticos.
-- **Nota de autor:** si la hora o el aforo difieren de lo recordado, corrige aquí. El día 16 anunció Bar Pekin; el encuentro se cerró en el Casino.
+- **Nota de sede:** el día 16 anunció Bar Pekin; el encuentro se celebró en el Casino.
 
 ## Palantir: peligro y competencia
 
@@ -26,8 +26,6 @@ Hablamos de Palantir no como meme, sino como **patrón**:
 - **Mapeo de bases de datos:** lo que hace **muy bien** es unir silos, modelar entidades y relaciones, y hacer visible un mapa que antes nadie tenía en la cabeza. Eso es potencia operativa; también es concentración de poder.
 
 La pregunta en la mesa no fue “¿es legal?” sino “**¿quién controla el mapa cuando el mapa lo tiene un tercero?**”. Para KM0 el contraste es local: Cloud y correo en la UE, con precio público, sin vender el perfil como producto.
-
-> **Pendiente de ampliar:** un ejemplo concreto citado en la mesa (sector, tipo de dato, o noticia) y una frase textual de alguien que no sea el anfitrión.
 
 ## Harari otra vez: la IA ya redacta mejor
 
@@ -50,6 +48,6 @@ Si la burocracia es un juego de palabras, quien domina el lenguaje del juego tie
 
 ## Cierre
 
-Hecho cuando este día deje claro: **dónde** nos vimos, **qué** se dijo de Palantir (riesgo + competencia), y **qué** se dijo de IA/Harari (redacción + huecos burocráticos).
+Quedó claro **dónde** nos vimos, **qué** se dijo de Palantir (riesgo + competencia), y **qué** se dijo de IA/Harari (redacción + huecos burocráticos).
 
-Siguiente entrada: el [día 18](/doc/day-18/) recoge una quedada profesional sobre **marca y estilo** de KM0 (y por qué la marca de entonces no tenía alma). Amplía citas, fotos o nombres si quieres; la estructura ya aguanta la lectura.
+Siguiente entrada: el [día 18](/doc/day-18/) recoge una quedada profesional sobre **marca y estilo** de KM0 (y por qué la marca de entonces no tenía alma).

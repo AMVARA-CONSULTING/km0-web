@@ -7,15 +7,13 @@ locale: en
 
 We held a **professional meetup** with the explicit intent to talk about **styles and brand** for Kilometer 0 Digital. We started there and, as tables do, **wandered** into other topics. One conclusion did not wash away: the brand we had then **had no soul**. Colours, type, logo, visual tone, and the rest of the system needed a full revision, not a favicon polish.
 
-This day is the skeleton of that session. Add exact dates, attendees, and screenshots when you can; the core argument is already here.
-
 ## Intent versus what happened
 
 - **Plan:** review visual identity and style rules so Cloud, Email, and the marketing site say the same thing.
 - **Reality:** the talk jumped to product, community, and ops.
 - **Anchor that stayed:** without a soul in the brand, the rest of the pitch (local, EU, public price) sounded like a generic template.
 
-> **To expand:** exact date and place; names or roles of who voiced “no soul” (with permission); two or three rejected visual examples (screenshot or description).
+We do not invent a street or clock time here: the diagnosis and the revision agenda are what matter.
 
 ## What “no soul” meant here
 
@@ -45,10 +43,8 @@ Some of that work has already shipped later on the public site (tokens, K0 mark,
 
 Side topics appeared (product, meetups, priorities). No need to pretend it was a three-hour branding workshop. Do record that, through the noise, **the brand was diagnosed** and prioritised.
 
-> **To expand:** one short vignette per digression worth keeping (max three), or delete this section if they add nothing.
-
 ## Close
 
-Done when the post states: meetup intent, “no soul” diagnosis, and the revision list. [Day 17](/en/doc/day-17/) closed Palantir/Harari at the Casino; this day opens the identity thread.
+Meetup intent, “no soul” diagnosis, and the revision list: that is what this day leaves on the page. [Day 17](/en/doc/day-17/) closed Palantir/Harari at the Casino; this day opens the identity thread.
 
 Next step for readers: look at the live site ([home](/en/), [pricing](/en/pricing/)) against what existed then, or come to the next [meetup](/en/meeting/).

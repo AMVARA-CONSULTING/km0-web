@@ -1,3 +1,13 @@
+---
+## Closing summary (TOP)
+
+- **What happened:** Hero Origin grid drift shipped in #105 was too slow (108s) and compass-wrong (SSW), so humans could not name southeast motion on a normal glance.
+- **What was done:** Retuned to `km0-motif-grid-se` at 32s (~1.5 px/s east + ~3 px/s south), kept grain/origin/content static and reduced-motion off, updated craft docs/skill, shipped footer **1.1.135**.
+- **What was tested:** Hard gate PASS with naked-eye SE narration in ~8s, reduced-motion static, anti-slop (no glow/parallax/busy), HTTP 200 four locales, CSS markers, footer/prod match.
+- **Why closed:** All acceptance criteria and full Hard gate protocol passed (not soft instrument-only).
+- **Closed at (UTC):** 2026-07-18 07:47
+---
+
 # CLOSED-Task: Origin grid SE drift must be human-visible
 
 ## Origin

@@ -18,6 +18,7 @@ const countLocale =
 
 const cloudItem = m.services.items.find((item) => item.id === 'cloud');
 const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
+const registerHref = 'https://auth.km0digital.com/register?service=cloud';
 const cloudCta = cloudItem?.secondaryCta ?? m.hero.ctaPrimary;
 
 const isBand = variant === 'band';
@@ -55,14 +56,14 @@ const formattedCount = countResult.ok
             <p class="cloud-proof__unavailable">{m.cloudUsers.unavailable}</p>
           )}
         </div>
-        <a
-          href={cloudHref}
-          class="btn-primary cloud-proof__cta"
-          data-reveal
-          data-delay="100"
-        >
-          {cloudCta}
-        </a>
+        <div class="cloud-proof__actions" data-reveal data-delay="100">
+          <a href={cloudHref} class="btn-primary cloud-proof__cta">
+            {cloudCta}
+          </a>
+          <a href={registerHref} class="cloud-proof__register">
+            {m.cloudUsers.registerCta}
+          </a>
+        </div>
       </div>
     </aside>
   ) : (
@@ -161,9 +162,38 @@ const formattedCount = countResult.ok
     color: color-mix(in srgb, var(--color-on-ink) 65%, transparent);
   }
 
-  .cloud-proof__cta {
+  .cloud-proof__actions {
     flex-shrink: 0;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .cloud-proof__cta {
+    flex-shrink: 0;
+  }
+
+  .cloud-proof__register {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: color-mix(in srgb, var(--color-on-ink) 72%, transparent);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-signal-hover) 45%, transparent);
+    text-underline-offset: 0.18em;
+    transition: color 0.3s var(--ease-out-expo), text-decoration-color 0.3s var(--ease-out-expo);
+  }
+
+  .cloud-proof__register:hover {
+    color: var(--color-signal-hover);
+    text-decoration-color: var(--color-signal-hover);
+  }
+
+  .cloud-proof__register:focus-visible {
+    outline: 2px solid var(--color-signal-hover);
+    outline-offset: 3px;
   }
 
   /* Mobile: deliberate stack, count first, CTA second (no ragged wrap). */
@@ -179,7 +209,7 @@ const formattedCount = countResult.ok
       flex: none;
     }
 
-    .cloud-proof__cta {
+    .cloud-proof__actions {
       align-self: flex-start;
     }
   }

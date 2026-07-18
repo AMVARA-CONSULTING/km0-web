@@ -52,6 +52,8 @@
       "liveHint": "Escaneja amb el mòbil o obre'l en aquest navegador.",
       "liveCta": "Obrir KM0 Cloud",
       "liveAria": "Obrir KM0 Cloud (inici de sessió real del producte)",
+      "registerCta": "Crear compte",
+      "registerAria": "Crear un compte a KM0 Cloud",
       "qrAlt": "Codi QR que obre KM0 Cloud a cloud.km0digital.com",
       "host": "cloud.km0digital.com"
     }
@@ -116,7 +118,9 @@
   },
   "community": {
     "heading": "Trobades",
-    "intro": "Si vols aprofundir en núvol, correu i eines, ens trobem en persona. Consulta l'agenda."
+    "intro": "Ens trobem en persona. També WhatsApp i Idees.",
+    "whatsappLink": "WhatsApp",
+    "ideasLink": "Idees"
   },
   "services": {
     "headingBefore": "Els ",
@@ -298,7 +302,8 @@
   "cloudUsers": {
     "countLabel": "Usuaris registrats al núvol",
     "countAria": "{count} usuaris registrats al núvol",
-    "unavailable": "Recompte no disponible ara."
+    "unavailable": "Recompte no disponible ara.",
+    "registerCta": "Crear compte"
   },
   "pricing": {
     "metaTitle": "Preus - Kilòmetre 0 Digital",

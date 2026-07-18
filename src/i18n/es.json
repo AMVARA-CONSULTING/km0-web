@@ -52,6 +52,8 @@
       "liveHint": "Escanea con el móvil o ábrelo en este navegador.",
       "liveCta": "Abrir KM0 Cloud",
       "liveAria": "Abrir KM0 Cloud (inicio de sesión real del producto)",
+      "registerCta": "Crear cuenta",
+      "registerAria": "Crear cuenta en KM0 Cloud",
       "qrAlt": "Código QR que abre KM0 Cloud en cloud.km0digital.com",
       "host": "cloud.km0digital.com"
     }
@@ -116,7 +118,9 @@
   },
   "community": {
     "heading": "Encuentros",
-    "intro": "Si quieres profundizar en cloud, correo y herramientas, quedamos en persona. Consulta la agenda."
+    "intro": "Quedamos en persona. También WhatsApp e Ideas.",
+    "whatsappLink": "WhatsApp",
+    "ideasLink": "Ideas"
   },
   "services": {
     "headingBefore": "Los ",
@@ -298,7 +302,8 @@
   "cloudUsers": {
     "countLabel": "Usuarios registrados en la nube",
     "countAria": "{count} usuarios registrados en la nube",
-    "unavailable": "Recuento no disponible ahora."
+    "unavailable": "Recuento no disponible ahora.",
+    "registerCta": "Crear cuenta"
   },
   "pricing": {
     "metaTitle": "Precios - Kilómetro 0 Digital",

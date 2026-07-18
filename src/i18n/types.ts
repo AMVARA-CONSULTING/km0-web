@@ -60,6 +60,10 @@ export interface Messages {
   community: {
     heading: string;
     intro: string;
+    /** Quiet secondary: WhatsApp group (same URL as Contact) */
+    whatsappLink: string;
+    /** Quiet secondary: Ideas form */
+    ideasLink: string;
   };
   hero: {
     titleLine1: string;
@@ -86,6 +90,9 @@ export interface Messages {
       liveHint: string;
       liveCta: string;
       liveAria: string;
+      /** Secondary text link to auth hub register */
+      registerCta: string;
+      registerAria: string;
       qrAlt: string;
       host: string;
     };
@@ -208,6 +215,8 @@ export interface Messages {
     countLabel: string;
     countAria: string;
     unavailable: string;
+    /** Secondary text under Open Cloud CTA */
+    registerCta: string;
   };
   pricing: {
     metaTitle: string;

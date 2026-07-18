@@ -12,6 +12,8 @@ const { locale, messages: m } = Astro.props;
 const cloudItem = m.services.items.find((item) => item.id === 'cloud');
 const emailItem = m.services.items.find((item) => item.id === 'email');
 const cloudHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
+/** Auth hub register (same door login pages link to). */
+const registerHref = 'https://auth.km0digital.com/register?service=cloud';
 const proof = m.hero.proof;
 ---
 
@@ -130,6 +132,13 @@ const proof = m.hero.proof;
             <p class="hero__proof-live-label">{proof.liveLabel}</p>
             <p class="hero__proof-live-hint">{proof.liveHint}</p>
             <a href={cloudHref} class="hero__proof-live-cta">{proof.liveCta}</a>
+            <a
+              href={registerHref}
+              class="hero__proof-register"
+              aria-label={proof.registerAria}
+            >
+              {proof.registerCta}
+            </a>
             <p class="hero__proof-host">{proof.host}</p>
           </div>
         </div>
@@ -641,6 +650,29 @@ const proof = m.hero.proof;
   }
 
   .hero__proof-live-cta:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  /* Quieter than live CTA: create-account door, not a second primary pill */
+  .hero__proof-register {
+    justify-self: start;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-ink-muted);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 35%, transparent);
+    text-underline-offset: 0.18em;
+    transition: color 0.3s var(--ease-out-expo), text-decoration-color 0.3s var(--ease-out-expo);
+  }
+
+  .hero__proof-register:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .hero__proof-register:focus-visible {
     outline: 2px solid var(--color-signal);
     outline-offset: 3px;
   }

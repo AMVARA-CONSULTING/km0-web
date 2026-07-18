@@ -52,6 +52,8 @@
       "liveHint": "Mit dem Handy scannen oder hier im Browser öffnen.",
       "liveCta": "KM0 Cloud öffnen",
       "liveAria": "KM0 Cloud öffnen (echter Produkt-Login)",
+      "registerCta": "Konto erstellen",
+      "registerAria": "KM0-Cloud-Konto erstellen",
       "qrAlt": "QR-Code, der KM0 Cloud unter cloud.km0digital.com öffnet",
       "host": "cloud.km0digital.com"
     }
@@ -116,7 +118,9 @@
   },
   "community": {
     "heading": "Treffen",
-    "intro": "Willst du Cloud, E-Mail und Werkzeuge vertiefen? Wir treffen uns persönlich. Kalender ansehen."
+    "intro": "Wir treffen uns persönlich. WhatsApp und Ideen auch hier.",
+    "whatsappLink": "WhatsApp",
+    "ideasLink": "Ideen"
   },
   "services": {
     "headingBefore": "Die ",
@@ -298,7 +302,8 @@
   "cloudUsers": {
     "countLabel": "Registrierte Cloud-Nutzer",
     "countAria": "{count} registrierte Cloud-Nutzer",
-    "unavailable": "Zähler derzeit nicht verfügbar."
+    "unavailable": "Zähler derzeit nicht verfügbar.",
+    "registerCta": "Konto erstellen"
   },
   "pricing": {
     "metaTitle": "Preise - Kilometer 0 Digital",

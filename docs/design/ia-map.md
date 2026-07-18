@@ -1,6 +1,6 @@
 # Information architecture map
 
-Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landing conversion gather: Purpose off home; Community before FAQ).
+Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landing conversion gather), then **NEW-0** (boss mandate: Mission and Vision restored as home closer after Contact).
 
 ## Landing (`/`, `/ca/`, `/en/`, `/de/`)
 
@@ -15,17 +15,24 @@ Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landin
 | 7 | Community / Encuentros | Short teaser (`#community`) → Meetings, WhatsApp, Ideas |
 | 8 | FAQ | Deduped: movement, participate, hosting, one ISO, one privacy (`#faq`) |
 | 9 | Contact | Email + WhatsApp QR (`#contact`) |
-| 10 | Footer | Secondary routes + legal |
+| 10 | Purpose | Mission + Vision closer (`#purpose`); 10M/2030 framed as goal, not a live KPI |
+| 11 | Footer | Secondary routes + legal |
 
 ### Removed from home
 
 | Former section | Disposition |
 |----------------|-------------|
-| Vision / Mission / Values / PrivacyTrust | Merged into **Why KM0** |
+| Vision / Mission / Values / PrivacyTrust (old multi-block) | Merged into **Why KM0**; Mission/Vision statements restored as single **Purpose** closer (boss mandate 2026-07-18) |
 | Meaning (logo symbolism) | Off home; use `/presentation/` |
 | MerchShowcase / Horizonte | Removed (no product URL) |
-| Purpose (mission/vision + vanity goal) | Off home; do not restore invented “10M by 2030” without a sourced metric |
 | Standalone CloudUserStats section | Kept as intentional Ink band after Why |
+
+### Purpose policy
+
+- **On home** after Contact (stakeholder exception to conversion “Purpose off home”).
+- Keep `id="purpose"` and `purpose.*` i18n keys.
+- Mission number (10.000.000 / 2030) stays as a **declared goal** (“Goal: …” / “Objetivo: …” / etc.).
+- **Ban:** fake KPI strip, count-up animation to 10M, “Trusted by 10M” framing.
 
 ## Primary nav (desktop + mobile)
 
@@ -41,4 +48,4 @@ Tutorials · Presentation · FAQ · Legal · Security · product deep links (Clo
 
 ## Anchor redirects note
 
-Old hashes `#vision`, `#mission`, `#values`, `#meaning`, `#privacy-trust`, `#purpose` no longer exist on home. Prefer `#why`, `#services`, `#community`, `#faq`, `#contact`, `#cloud-users`.
+Old hashes `#vision`, `#mission`, `#values`, `#meaning`, `#privacy-trust` no longer exist as standalone sections. Prefer `#why`, `#services`, `#community`, `#faq`, `#contact`, `#cloud-users`, `#purpose`.

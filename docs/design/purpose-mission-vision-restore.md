@@ -1,8 +1,8 @@
 # Mission and vision block - restore with craft
 
-**Status:** brief for NEW task (2026-07-18).  
+**Status:** implemented (WIP → UNTESTED, 2026-07-18).  
 **Skills:** `km0-anti-slop-design`, `km0-web-copy`, Hallmark (honest framing, no fake KPI strip, editorial structure).  
-**Stakeholder:** Boss **requires** Mission and Vision on the marketing home. The conversion FEAT removed `#purpose`; this FEAT restores it on purpose.
+**Stakeholder:** Boss **requires** Mission and Vision on the marketing home. The conversion FEAT removed `#purpose`; this task restores it on purpose.
 
 ## Context
 - CLOSED `landing-conversion-gather` dropped Purpose from `Landing.astro` to tighten the join funnel.

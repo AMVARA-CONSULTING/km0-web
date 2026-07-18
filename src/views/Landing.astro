@@ -8,6 +8,7 @@ import WhyKm0 from '../components/WhyKm0.astro';
 import Community from '../components/Community.astro';
 import Faq from '../components/Faq.astro';
 import Contact from '../components/Contact.astro';
+import Purpose from '../components/Purpose.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 import { getMessages } from '../i18n';
@@ -37,6 +38,7 @@ const canonicalUrl =
     <Community locale={locale} messages={messages} />
     <Faq messages={messages} />
     <Contact messages={messages} />
+    <Purpose messages={messages} />
   </main>
   <Footer locale={locale} messages={messages} />
 </Layout>

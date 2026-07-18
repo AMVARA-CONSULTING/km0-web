@@ -38,14 +38,25 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
           aria-label={m.contact.whatsappAria}
         >
           <p class="contact__qr-hint">{m.contact.whatsappHint}</p>
-          <img
-            src="/contact/whatsapp-group-qr.png"
-            alt={m.contact.whatsappQrAlt}
-            width="180"
-            height="180"
-            class="contact__qr-img"
-            loading="lazy"
-          />
+          <span class="contact__qr-frame">
+            <span class="contact__qr-corners" aria-hidden="true">
+              <span class="contact__qr-corner" data-pos="tl"></span>
+              <span class="contact__qr-corner" data-pos="tr"></span>
+              <span class="contact__qr-corner" data-pos="bl"></span>
+              <span class="contact__qr-corner" data-pos="br"></span>
+            </span>
+            <span class="contact__qr-pad">
+              <img
+                src="/contact/whatsapp-group-qr.png"
+                alt={m.contact.whatsappQrAlt}
+                width="180"
+                height="180"
+                class="contact__qr-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+          </span>
         </a>
       </div>
     </div>
@@ -123,9 +134,73 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
     color: color-mix(in srgb, var(--color-ink) 50%, transparent);
   }
 
+  /* Civic QR chrome: peers hero Cloud QR (Snow/Mist/Signal + Ink pad), Contact scale */
+  .contact__qr-frame {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem;
+    background: var(--color-snow);
+    border: 1px solid var(--color-mist);
+    border-left: 2px solid var(--color-signal);
+    transition:
+      border-color 0.3s var(--ease-out-expo),
+      background-color 0.3s var(--ease-out-expo);
+  }
+
+  .contact__qr:hover .contact__qr-frame {
+    border-color: color-mix(in srgb, var(--color-signal) 55%, var(--color-mist));
+    border-left-color: var(--color-signal);
+    background: color-mix(in srgb, var(--color-signal) 5%, var(--color-snow));
+  }
+
+  .contact__qr-corners {
+    position: absolute;
+    inset: 0.25rem;
+    pointer-events: none;
+  }
+
+  .contact__qr-corner {
+    position: absolute;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-color: var(--color-signal);
+    border-style: solid;
+    opacity: 0.85;
+  }
+
+  .contact__qr-corner[data-pos='tl'] {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+  }
+
+  .contact__qr-corner[data-pos='tr'] {
+    top: 0;
+    right: 0;
+    border-width: 2px 2px 0 0;
+  }
+
+  .contact__qr-corner[data-pos='bl'] {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 2px 2px;
+  }
+
+  .contact__qr-corner[data-pos='br'] {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+  }
+
+  .contact__qr-pad {
+    display: block;
+    padding: 0.35rem;
+    background: var(--color-ink);
+  }
+
   .contact__qr-img {
     display: block;
-    border: 1px solid var(--color-mist);
-    background: var(--color-snow);
+    width: 11.25rem;
+    height: 11.25rem;
   }
 </style>

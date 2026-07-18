@@ -109,6 +109,7 @@ CSS: `src/styles/tokens.css` + `.km0-motif` in `src/styles/global.css`.
 | Mono silhouette | `public/brand/logo-mono.svg` (navy field + white K0) |
 | Email / compact icon | `public/brand/logo-icon.png` (256) |
 | Cloud live QR | `public/brand/cloud-qr.png` (Paper modules on Ink quiet zone; Hero frames in Snow + Signal) |
+| WhatsApp group QR | `public/contact/whatsapp-group-qr.png` (same Paper-on-Ink recipe; Contact frames in Snow + Signal) |
 | OG preview | `public/brand/og-preview.png` (1200×630) |
 | Favicon | `public/favicon.svg` (full-bleed K0) |
 | Apple touch | `public/apple-touch-icon.png` (180) |
@@ -119,6 +120,12 @@ CSS: `src/styles/tokens.css` + `.km0-motif` in `src/styles/global.css`.
 - **Payload:** `https://cloud.km0digital.com` (same as primary CTA; do not change without operator approval).
 - **Artwork:** Paper `#0B1220` modules on Ink `#E6E9ED` quiet zone (high contrast, scannable). Not a stock black/white sticker.
 - **Chrome:** `Hero.astro` live strip frames the pad in Snow + Mist with a Signal left edge and Signal corner ticks, matching the product-proof panel. No purple glow, no neon.
+
+### WhatsApp group QR (Contact band)
+
+- **Payload:** `https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs` (locked invite; do not change without operator approval).
+- **Artwork:** Same civic recipe as Cloud QR: Paper `#0B1220` modules on Ink `#E6E9ED` quiet zone. Not a stock black/white sticker; not a WhatsApp-green marketing tile.
+- **Chrome:** `Contact.astro` frames the pad in Snow + Mist with a Signal left edge and Signal corner ticks (Contact-column scale; peers hero QR language without cloning the full proof card). Focus ring uses Signal.
 
 ### Mark: K0 lettermark (#103)
 

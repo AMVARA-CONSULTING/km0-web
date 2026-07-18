@@ -75,8 +75,9 @@
   --km0-motif-origin-y: 28%;
   --km0-motif-origin-size: min(18rem, 46vw);
   --km0-motif-origin-line: color-mix(in srgb, var(--color-signal) 28%, transparent);
-  /* Subtle SSW drift: one cell west + two south per loop (seamless on grid size). */
-  --km0-motif-drift-duration: 108s;
+  /* Ambient SE drift: one cell east + two south per loop (seamless on grid size).
+     ~32s loop ≈ human-visible in 5–10s; not busy. */
+  --km0-motif-drift-duration: 32s;
   --km0-motif-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 
   color-scheme: dark;

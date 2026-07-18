@@ -1,8 +1,16 @@
 # Origin grid drift - visible SE (follow-up to #105)
 
-**Status:** brief for NEW task (2026-07-18).  
+**Status:** craft locks shipped (SE + 32s).  
 **Surface:** `.km0-motif` civic grid on hero (+ up to two bands).  
 **Supersedes craft bar of:** CLOSED `#105` / `CLOSED-105-…-origin-grid-ssw-drift` (shipped, but not felt).
+
+## Locked craft (ship)
+
+| Lock | Value |
+|------|-------|
+| Direction | Southeast: one cell east + two cells south (`km0-motif-grid-se`) |
+| Duration | `--km0-motif-drift-duration: 32s` (24–40s per-cell band) |
+| Reduced motion | `prefers-reduced-motion: reduce` → `animation: none` |
 
 ## Diagnosis (why the owner does not see it)
 

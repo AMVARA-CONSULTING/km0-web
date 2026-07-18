@@ -69,18 +69,18 @@
   /*
    * KM0 signature atmosphere - Origin field
    * Use sparingly: hero + at most two intentional bands.
-   * Grid may drift SSW (ambient); grain + origin geometry stay still.
+   * Grid may drift SE (ambient, human-visible); grain + origin stay still.
    * Glow/orbs are not brand atmosphere.
    */
-  @keyframes km0-motif-grid-ssw {
+  @keyframes km0-motif-grid-se {
     from {
       background-position: -1px -1px;
     }
 
     to {
-      /* One cell left + two cells down = south-southwest; multiples of tile size. */
+      /* One cell east + two cells south = southeast; multiples of tile size. */
       background-position:
-        calc(-1px - var(--km0-motif-grid-size))
+        calc(-1px + var(--km0-motif-grid-size))
         calc(-1px + (2 * var(--km0-motif-grid-size)));
     }
   }
@@ -95,7 +95,7 @@
       linear-gradient(var(--km0-motif-grid-line) 1px, transparent 1px);
     background-size: var(--km0-motif-grid-size) var(--km0-motif-grid-size);
     background-position: -1px -1px;
-    animation: km0-motif-grid-ssw var(--km0-motif-drift-duration) linear infinite;
+    animation: km0-motif-grid-se var(--km0-motif-drift-duration) linear infinite;
   }
 
   .km0-motif > * {

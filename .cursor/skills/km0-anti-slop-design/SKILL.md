@@ -37,7 +37,7 @@ From the Stirling / Satisfecho / Nous study and remodel #80–#84:
 | Mark | Origin stamp (`public/brand/logo.svg`, full-bleed `favicon.svg`) | Generic map-pin, padded favicon, purple gradient pin |
 | Hero | Product-recognizable proof + quiet CTA hierarchy | Logo-only first viewport theater |
 | Bands | Audience/scale argument when needed | Equal icon-tile feature grids |
-| Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2); optional subtle SSW grid drift | Glow orbs, purple bloom, zebra as “texture”, busy scrolling grids |
+| Atmosphere | `.km0-motif` / `--origin` sparingly (hero + ≤2); optional ambient SE grid drift (32s) | Glow orbs, purple bloom, zebra as “texture”, busy scrolling grids |
 
 ## Paint-phase locks (auto-fail if ignored)
 
@@ -76,7 +76,7 @@ Before **UNTESTED-** on a craft FEAT: Testing instructions **must** include the 
 - No cards in the hero. No icon-tile feature grids. No fake stats.
 - Sections: one job each. Collapse redundant Vision/Mission/Values/Meaning/Privacy blocks when remodeling IA.
 - Motion: paint-phase vocabulary only (reveals + masthead compact + Offer pin); honor `prefers-reduced-motion`.
-- Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); optional subtle SSW grid drift only; never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
+- Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); optional ambient SE grid drift only; never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
 - Mark system: keep logo / favicon / apple-touch / OG aligned with `docs/brand-tokens.md` Assets. Favicon stays edge-to-edge.
 - Surfaces: continuous Paper; elevating a band means an explicit `.surface-*` (or documented Snow opt-in), never zebra.
 

@@ -1,6 +1,6 @@
 /**
- * 500 GB capacity moment (#104 home + pricing masthead): once-only count-up
- * synced to reveal. Meter fill is CSS on `.is-visible`. Honors prefers-reduced-motion.
+ * Once-only count-up synced to reveal (500 GB capacity + live cloud users).
+ * Meter fill is CSS on `.is-visible`. Honors prefers-reduced-motion.
  */
 
 function prefersReducedMotion(): boolean {
@@ -27,23 +27,30 @@ function parseDurationMs(raw: string, fallback: number): number {
   return Number.isFinite(n) ? n : fallback;
 }
 
-function settleValue(el: HTMLElement, target: number): void {
-  el.textContent = String(target);
+type FormatFn = (n: number) => string;
+
+function settleValue(el: HTMLElement, target: number, format: FormatFn = String): void {
+  el.textContent = format(target);
   el.dataset.settled = 'true';
 }
 
-function runCountUp(el: HTMLElement, target: number, durationMs: number): void {
+function runCountUp(
+  el: HTMLElement,
+  target: number,
+  durationMs: number,
+  format: FormatFn = String
+): void {
   const start = performance.now();
-  el.textContent = '0';
+  el.textContent = format(0);
 
   const tick = (now: number) => {
     const t = Math.min(1, (now - start) / durationMs);
     const value = Math.round(easeOutExpo(t) * target);
-    el.textContent = String(value);
+    el.textContent = format(value);
     if (t < 1) {
       requestAnimationFrame(tick);
     } else {
-      settleValue(el, target);
+      settleValue(el, target, format);
     }
   };
 
@@ -65,14 +72,18 @@ function whenVisible(host: HTMLElement, onVisible: () => void): void {
   observer.observe(host, { attributes: true, attributeFilter: ['class'] });
 }
 
-function initCapacityReadout(host: HTMLElement | null, valueEl: HTMLElement | null): void {
+function initCapacityReadout(
+  host: HTMLElement | null,
+  valueEl: HTMLElement | null,
+  format: FormatFn = String
+): void {
   if (!host || !valueEl) return;
 
   const target = Number.parseInt(valueEl.dataset.target || valueEl.textContent || '500', 10);
   if (!Number.isFinite(target) || target <= 0) return;
 
   if (prefersReducedMotion()) {
-    settleValue(valueEl, target);
+    settleValue(valueEl, target, format);
     return;
   }
 
@@ -83,7 +94,21 @@ function initCapacityReadout(host: HTMLElement | null, valueEl: HTMLElement | nu
 
   whenVisible(host, () => {
     if (valueEl.dataset.settled === 'true') return;
-    runCountUp(valueEl, target, durationMs);
+    runCountUp(valueEl, target, durationMs, format);
+  });
+}
+
+function localeFormat(el: HTMLElement): FormatFn {
+  const locale = el.dataset.locale || undefined;
+  return (n) => n.toLocaleString(locale);
+}
+
+function initCloudUserCounts(): void {
+  document.querySelectorAll<HTMLElement>('[data-cloud-user-count]').forEach((valueEl) => {
+    const host =
+      valueEl.closest<HTMLElement>('[data-reveal]') ??
+      valueEl.closest<HTMLElement>('.cloud-proof__stat');
+    initCapacityReadout(host, valueEl, localeFormat(valueEl));
   });
 }
 
@@ -96,6 +121,7 @@ function initHeroCapacity(): void {
     document.querySelector<HTMLElement>('.pricing-hero-stat[data-reveal]'),
     document.querySelector<HTMLElement>('[data-pricing-capacity]')
   );
+  initCloudUserCounts();
 }
 
 initHeroCapacity();

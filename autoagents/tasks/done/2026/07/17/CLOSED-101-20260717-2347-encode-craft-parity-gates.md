@@ -1,3 +1,13 @@
+---
+## Closing summary (TOP)
+
+- **What happened:** Encode FEAT wired Hard gate protocol and soft-close bans into doctrine, skill, epic, rules, and agent prompts; CLOSED after docs Hard gate PASS.
+- **What was done:** Added Craft-parity locks across anti-slop doctrine/skill/rule, refreshed remodel epic #96–#101, sharpened coder/tester/closing prompts; no product UI churn (bump N/A).
+- **What was tested:** Grep/read verification of locks and Hard gate fields in doctrine/skill/epic/prompts; em-dash OK; HTTP smoke 200; encode Hard gate (Stirling/Satisfecho named; docs parity claims).
+- **Why closed:** Documentation and agent gates match craft-parity bar; soft class-only / curl-only / missing-field closes explicitly rejected; craft FEATs #96–#100 complete before encode.
+- **Closed at (UTC):** 2026-07-18 00:52
+---
+
 # FEAT-Task: Encode craft-parity hard gates into doctrine + agents
 
 ## GitHub Issue
@@ -73,3 +83,49 @@ This FEAT encodes gates rather than shipping UI. Side-by-side claims below verif
 - docs/design/remodel-epic.md
 - docs/design/anti-slop-doctrine.md
 - .cursor/skills/km0-anti-slop-design/SKILL.md
+
+## Test report
+
+1. **Date/time (UTC):** start 2026-07-18 00:51:27 UTC; end 2026-07-18 00:51:33 UTC. Log window: `docker logs --since 2026-07-18T00:51:27Z km0-web`.
+2. **Environment:** branch `main` (synced); docs/agent/skill verification on working tree; HTTP smoke against already-running `http://127.0.0.1:9180/` (no rebuild; docs-only task). Reference sites opened: https://stirling.com/ (session for #100) and https://satisfecho.de/ (this task).
+3. **What was tested:** Testing instructions 1–11 + encode Hard gate (docs alignment). Dependency: #96 closed; #97–#99 archived under `done/2026/07/17/`; #100 `CLOSED-100-…` in `tasks/` (just verified PASS).
+4. **Results:**
+
+| Criterion | Result | Evidence |
+|-----------|--------|----------|
+| 1. Doctrine links craft-parity | PASS | Primary references row `craft-parity-phase.md`; section **Craft-parity locks**; Soft-evidence auto-fails; Agent enforcement cites Hard gate |
+| 2. Locks cover #96–#100 + encode | PASS | Hard gate (5 fields); Optional dark; Landing Stirling; Satisfecho live proof; Pricing + secondary; Motion; Soft-evidence (class-only / curl / missing fields / dark-first / no live path) |
+| 3. Skill Craft-parity locks table | PASS | Opens `craft-parity-phase.md`; table rows Hard gate, Optional dark, Landing, Live proof, Pricing/secondary, Motion |
+| 4. Epic craft table | PASS | Heading **Craft parity phase (hard)**; rows #96–#101 with issue links; #96 `closed`; #95 paint `closed`; #101 this task; locked decisions: optional dark, live proof, craft soft-close ban |
+| 5. Craft spec cross-links | PASS | Status banner → doctrine + skill + epic; Agent training auto-fail list present |
+| 6. `anti-slop-frontend.mdc` | PASS | Craft soft-close / dark-first / static-proof auto-fails; Hard gate required for craft FEATs |
+| 7. Tokens pointer | PASS | Color schemes → craft-parity / doctrine locks |
+| 8. Agent prompts | PASS | `010` / `020` / `030` name Hard gate; reject class-only; dark-first; static proof; HTML-only motion; missing fields → WIP / do not archive |
+| 9. Em dash | PASS | `./scripts/check-no-em-dash.sh` OK |
+| 10. HTTP smoke | PASS | `/` `/ca/` `/en/` `/de/` `/doc/` → 200 |
+| 11. Bump N/A | PASS | No `package.json` change for this task (docs + `.cursor/` + `autoagents/` only) |
+| Encode precedes unfinished craft? | PASS | #97–#99 done/; #100 CLOSED; #96 closed per epic |
+
+### Hard gate protocol (encode / docs)
+
+| Field | Evidence |
+|-------|----------|
+| Reference URL(s) | https://stirling.com/ and https://satisfecho.de/ named in craft-parity + doctrine locks; both opened this tester session |
+| KM0 URL(s) | Smoke `http://127.0.0.1:9180/`; doctrine under test `docs/design/anti-slop-doctrine.md` Craft-parity locks |
+| Parity 1 | Hard gate fields present in doctrine, skill table, and tester/closing prompts |
+| Parity 2 | Optional dark / live proof / motion soft-fails named as auto-fails |
+| Parity 3 | Remodel epic lists #96–#101 with encode last |
+| Anti-slop 1 | No product UI churn this task; no new Inter-only or purple guidance |
+| Anti-slop 2 | Soft class-only / curl-200 / four-locales passes explicitly rejected in Soft-evidence |
+| Anti-slop 3 | Dark-first marketing and purple-glow dark remain forbidden |
+| Decisive viewport | Grep/read paths for items 1–8; HTTP smoke item 10 (gate **text** existence, not UI redesign) |
+
+5. **Overall: PASS**
+6. **URLs:** http://127.0.0.1:9180/ , /ca/, /en/, /de/, /doc/; https://stirling.com/; https://satisfecho.de/; N/A production redeploy (docs-only)
+7. **Log excerpts:**
+```
+172.21.0.1 - - [18/Jul/2026:00:51:29 +0000] "HEAD / HTTP/1.1" 200
+172.21.0.1 - - [18/Jul/2026:00:51:29 +0000] "HEAD /en/ HTTP/1.1" 200
+172.21.0.1 - - [18/Jul/2026:00:51:29 +0000] "HEAD /doc/ HTTP/1.1" 200
+```
+

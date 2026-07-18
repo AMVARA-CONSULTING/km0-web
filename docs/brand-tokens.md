@@ -40,6 +40,8 @@ One brand, two schemes. Light Paper remains the default for light OS preference 
 
 **Forbidden in dark:** purple glow, neon orbs, dark-mode-first marketing (no forcing dark on light-OS visitors), Nous underground as the only voice.
 
+Craft-parity locks (optional dark + soft-close ban): `docs/design/anti-slop-doctrine.md` + `docs/design/craft-parity-phase.md`.
+
 CSS: `src/styles/tokens.css` (`html[data-theme='dark']`). Tailwind colors map to `rgb(var(--rgb-*) / <alpha-value>)` so utilities follow the scheme.
 
 ## Surfaces (opt-in only)

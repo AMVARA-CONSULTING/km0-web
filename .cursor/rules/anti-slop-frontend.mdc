@@ -17,6 +17,9 @@ Before any UI change, follow **`.cursor/skills/km0-anti-slop-design/SKILL.md`** 
 - Zebra section rhythm (`nth-child` Paper/Snow alternation); continuous canvas + intentional bands only
 - Generic map-pin / padded favicon / purple gradient pin instead of the Origin stamp mark system
 - Motion spam outside paint-phase vocabulary (reveals + masthead compact + Offer sticky pin); ignore `prefers-reduced-motion`
+- Craft soft-close: class-only / curl-200 / “no purple” evidence without Hard gate side-by-side claims (`docs/design/craft-parity-phase.md`)
+- Dark-mode-first marketing, or optional dark that is purple-glow / neon-orb / Nous-only
+- First viewport “product proof” that is only a static mock with no live product path
 
 ## Required
 
@@ -26,5 +29,6 @@ Before any UI change, follow **`.cursor/skills/km0-anti-slop-design/SKILL.md`** 
 - First viewport: brand, one headline, one support line, one CTA group, one dominant visual
 - Phase-2 study when touching landing/chrome: `docs/design/reference-study-stirling-satisfecho-nous.md`
 - Paint-phase surfaces/motion when touching chrome: `docs/design/stirling-paint-phase.md` (`.surface-*`, `[data-reveal]`, sticky rules)
+- Craft / HARD parity FEATs: Hard gate protocol in Testing instructions (`docs/design/craft-parity-phase.md`)
 
 Tailwind is allowed as implementation detail. Tailwind’s **demo aesthetic** is not.

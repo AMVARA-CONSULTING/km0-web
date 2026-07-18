@@ -9,7 +9,7 @@ description: >-
 
 # KM0 anti-slop design
 
-Read **`docs/design/anti-slop-doctrine.md`** first. Then **`docs/brand-tokens.md`**, **`docs/design/reference-study-stirling-satisfecho-nous.md`**, **`docs/design/stirling-paint-phase.md`**, and **`docs/design/lessons-from-pos.md`**.
+Read **`docs/design/anti-slop-doctrine.md`** first. Then **`docs/brand-tokens.md`**, **`docs/design/reference-study-stirling-satisfecho-nous.md`**, **`docs/design/stirling-paint-phase.md`**, **`docs/design/craft-parity-phase.md`** (when the FEAT cites craft / HARD parity), and **`docs/design/lessons-from-pos.md`**.
 
 ## When this skill applies
 
@@ -53,6 +53,21 @@ From `docs/design/stirling-paint-phase.md` and remodel #91–#94 (encoded #95):
 
 Surface + motion token tables: `docs/brand-tokens.md` (Surfaces, Motion). CSS: `src/styles/tokens.css`, `src/styles/global.css`.
 
+## Craft-parity locks (auto-fail if ignored)
+
+From `docs/design/craft-parity-phase.md` and remodel #96–#100 (encoded #101). Soft class-only / curl-200 / “no purple” passes are **FAIL**.
+
+| Lock | Do | Do not |
+|------|----|--------|
+| Hard gate protocol | Document reference URL(s), KM0 URL(s), 3 parity claims, 3 anti-slop claims, decisive viewport evidence | Close on class lists, section order, locales, or build green alone |
+| Optional dark (#96) | Semantic light/dark; system + toggle; persist; reading pages; Paper light default | Dark-first marketing; purple glow / neon orbs / Nous-only dark |
+| Landing hard parity (#97) | Side-by-side vs stirling.com: promise loudness, scale bands, CTA rhythm, continuous canvas | Class rename / surface checklist as “Stirling energy” |
+| Live product proof (#98) | First viewport QR and/or deep link into real Cloud / public product | Static mock or logo card with no live path |
+| Pricing / secondary (#99) | Product-priced editorial chrome under KM0 tokens (Stirling pricing/about energy) | “Has `.page-masthead`” without peer chrome |
+| Motion you can feel (#100) | Sticky masthead + Offer pin + reveals obvious on `lg+`; honor reduced motion | HTML reveals a human cannot notice; animation spam |
+
+Before **UNTESTED-** on a craft FEAT: Testing instructions **must** include the Hard gate protocol. Tester and closing reviewer reject soft evidence.
+
 ## Implementation rules
 
 - Prefer CSS variables in `tokens.css`; map sparingly into Tailwind `theme.extend`.
@@ -67,12 +82,13 @@ Surface + motion token tables: `docs/brand-tokens.md` (Surfaces, Motion). CSS: `
 
 ## Self-audit before done
 
-Run mentally against the doctrine **Hard ban list**, **Phase-2 locks**, and **Paint-phase locks**. If any item matches, rewrite.
+Run mentally against the doctrine **Hard ban list**, **Phase-2 locks**, **Paint-phase locks**, and **Craft-parity locks** (when the FEAT is craft / HARD). If any item matches, rewrite.
 
 ## References
 
 - Doctrine: `docs/design/anti-slop-doctrine.md`
 - Paint phase: `docs/design/stirling-paint-phase.md`
+- Craft parity: `docs/design/craft-parity-phase.md`
 - Phase-2 study: `docs/design/reference-study-stirling-satisfecho-nous.md`
 - Epic: `docs/design/remodel-epic.md`
 - Tokens: `docs/brand-tokens.md`

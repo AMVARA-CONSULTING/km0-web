@@ -6,7 +6,7 @@
 
 LLMs converge on the same frontend because training data is saturated with Tailwind demos, shadcn starters, and “modern SaaS” boilerplates. That median look has a name: **AI slop**.
 
-KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero. Phase 1 exited that look (tokens, IA, landing, copy, blog chrome). Phase 2 locked rhythm, mark, hero proof, argument bands, and atmosphere so agents do not regress to zebra stripes or a generic map-pin favicon. The **paint phase** (#91–#95) locked Stirling-inspired surface utilities, scroll reveals, sticky chrome, and secondary page shells so zebra and motion spam do not return.
+KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→blue gradient + centered dark hero. Phase 1 exited that look (tokens, IA, landing, copy, blog chrome). Phase 2 locked rhythm, mark, hero proof, argument bands, and atmosphere so agents do not regress to zebra stripes or a generic map-pin favicon. The **paint phase** (#91–#95) locked Stirling-inspired surface utilities, scroll reveals, sticky chrome, and secondary page shells so zebra and motion spam do not return. The **craft-parity phase** (#96–#101) raises the bar from class/order checks to side-by-side peer craft with Stirling / Satisfecho (optional dark, live product proof, motion you can feel; soft class-only closes forbidden).
 
 ## Primary references (read before implementing)
 
@@ -26,7 +26,7 @@ KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→b
 | Source | Why it matters |
 |--------|----------------|
 | **`docs/design/reference-study-stirling-satisfecho-nous.md`** | Steal structure from Stirling (scale bands, continuous canvas), Satisfecho (live product proof), Nous (memorable mark + no zebra). Not pixels or fonts. |
-| **`docs/design/remodel-epic.md`** | Phase 1 + phase 2 + paint phase issue map (#73–#95). Locked product decisions. |
+| **`docs/design/remodel-epic.md`** | Phase 1 + phase 2 + paint + craft-parity issue map (#73–#101). Locked product decisions. |
 | **`docs/design/stirling-paint-phase.md`** | Paint-phase craft: surface utilities, sticky/reveal motion vocabulary, secondary page chrome. Steal scroll behavior from [Stirling](https://stirling.com/), not Framer pixels. |
 | **`docs/design/craft-parity-phase.md`** | **Hard** craft bar after paint: side-by-side parity with Stirling/Satisfecho, optional dark theme, live product proof, no class-only soft passes. |
 
@@ -114,6 +114,60 @@ Shipped under remodel epic #91–#94; encoded by #95. Spec: `docs/design/stirlin
 - Secondary pages share `.page-shell`, `.page-masthead`, `.page-closer` (+ `__actions`); light `data-reveal` on mastheads/bands only.
 - Snow only where earned (Pricing/Presentation compare + closer; Ideas form). Presentation hero uses Origin motif, not a one-off grid.
 
+## Craft-parity locks (do not soft-close)
+
+Shipped under remodel epic #96–#100; encoded by #101. Spec: `docs/design/craft-parity-phase.md`.
+
+These locks **add** to paint-phase rules. A FEAT that cites craft parity, Stirling/Satisfecho hard parity, optional dark, or live product proof **fails** if evidence is only class names, section order, four locales, or build green.
+
+### Hard gate protocol (every craft FEAT)
+
+Coder Testing instructions **and** tester Test report must each document:
+
+1. **Reference URL(s)** opened in the same session (Stirling and/or Satisfecho page named).
+2. **KM0 URL(s)** compared (`127.0.0.1:9180` after rebuild; production when relevant).
+3. **Three parity claims** - concrete matches a non-dev would notice (not “has `data-reveal`”).
+4. **Three anti-slop claims** - what was refused (no icon tiles, no zebra, no purple, no dark-first default, etc.).
+5. **Decisive viewport evidence** - path + what to look at (screenshot path and/or HTML excerpt). Class lists alone = **FAIL**.
+
+Closing reviewer: if the Test report lacks side-by-side claims, **do not archive** - send back to WIP.
+
+### Optional dark theme (#96)
+
+- Semantic light/dark tokens; `prefers-color-scheme`; header toggle; persist; reading pages (`/doc/`, `/tutorials/`) included.
+- Default stays **Paper light**. Never ship dark-mode-first marketing.
+- Forbidden in dark: purple glow, neon orbs, Nous underground as the only voice.
+
+### Landing Stirling hard parity (#97)
+
+- Home must win a human side-by-side with [stirling.com](https://stirling.com/) on promise loudness, scale bands, CTA rhythm, continuous canvas.
+- Not a class rename or surface-utility checklist.
+
+### Satisfecho live product proof (#98)
+
+- First viewport proof must **do** something: QR and/or deep link into a real Cloud / public product surface.
+- Static mock / logo card with no live path = **FAIL**.
+
+### Pricing + secondary hard chrome (#99)
+
+- `/pricing/` and key secondary pages must feel product-priced and editorial-calm (Stirling pricing/about energy) under KM0 tokens.
+- Soft “uses `.page-masthead`” without peer chrome energy = **FAIL**.
+
+### Motion you can feel (#100)
+
+- Sticky masthead + Offer pin + reveals must be obvious on `lg+` with motion on; `prefers-reduced-motion` still respected.
+- Reveals present in HTML that a human cannot notice = **FAIL**. Cap animation spam.
+
+### Soft-evidence auto-fails (encode #101)
+
+Reject and return to WIP when any of these is the only pass story:
+
+- “Class present” / “section order matches” / “curl 200” / “no purple” / “four locales” / “build green”
+- Missing Hard gate protocol fields in Testing instructions or Test report
+- Optional dark without user control, or dark as default
+- Hero/proof with no path into a real product surface
+- Claiming Stirling/Satisfecho parity without naming the reference URL and three human-visible matches
+
 ## Positive rules (must do)
 
 1. **Commit a direction** before pixels: one sentence of vibe + one layout archetype + one type pair + one anchor hue + one accent (accent ≤ ~5% of surface). Cool civic editorial is locked in `docs/brand-tokens.md`.
@@ -143,12 +197,13 @@ New and migrated `/doc/` posts follow **`docs/design/blog-post-template.md`** (M
 
 ## Agent enforcement
 
-- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study and paint-phase spec on UI work)
+- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study, paint-phase spec, and craft-parity spec on UI / craft work)
 - Skill: `.cursor/skills/km0-web-copy/SKILL.md`
 - Rules: `.cursor/rules/anti-slop-frontend.mdc`, `.cursor/rules/web-copy.mdc`
 - Tokens: `docs/brand-tokens.md` + `src/styles/tokens.css`
 - Study: `docs/design/reference-study-stirling-satisfecho-nous.md`
 - Paint phase: `docs/design/stirling-paint-phase.md`
+- Craft parity: `docs/design/craft-parity-phase.md` (Hard gate protocol; soft class-only passes forbidden)
 - Epic: `docs/design/remodel-epic.md`
 - Blog prose contract: `docs/design/blog-post-template.md`
-- Autoagents: `010-feature-coder.md`, `002-coder/CODER.md`, `030-closing-reviewer.md` must refuse slop regressions (including zebra, pin-favicon rollbacks, and motion spam)
+- Autoagents: `010-feature-coder.md`, `020-test.md`, `030-closing-reviewer.md`, `002-coder/CODER.md` must refuse slop regressions **and** craft soft-closes (class-only / no side-by-side claims)

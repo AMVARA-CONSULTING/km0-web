@@ -56,8 +56,9 @@ Adhere to **`autoagents/TASKS-README.md`**.
 If the FEAT cites **`docs/design/craft-parity-phase.md`** or “HARD” parity:
 
 - Soft class-only shipping is a **fail**. Implement until a human side-by-side with the named reference would notice the match.
-- Before **UNTESTED-**, Testing instructions **must** include the Hard gate protocol (reference URL, KM0 URL, 3 parity claims, 3 anti-slop claims, decisive viewport). See the craft-parity spec.
+- Before **UNTESTED-**, Testing instructions **must** include the Hard gate protocol (reference URL, KM0 URL, 3 parity claims, 3 anti-slop claims, decisive viewport). See the craft-parity spec and doctrine **Craft-parity locks**.
 - Run craft FEATs **in issue order** when several are queued (dark → landing → live proof → pricing → motion → encode).
+- **Explicit auto-fails** (do not hand off as UNTESTED): dark-first default; purple-glow dark; static hero/proof with no live product path; HTML-only motion a human cannot feel; Testing instructions that only list classes / curl / locales.
 
 ### Instructions
 

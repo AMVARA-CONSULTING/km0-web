@@ -39,10 +39,13 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 - **Hero proof:** product-recognizable visual (phase 2 #82)
 - **Argument bands:** audience/scale, not icon tiles (phase 2 #83)
 - **Atmosphere:** Origin field `.km0-motif` only; no glow orbs (phase 2 #84)
-- **Agent training:** doctrine + skill point at the phase-2 study (phase 2 #85) and paint-phase spec (#95)
+- **Agent training:** doctrine + skill point at the phase-2 study (phase 2 #85), paint-phase spec (#95), and craft-parity Hard gate (#101)
 - **Surfaces:** `.surface-snow` / `.surface-ink` / `.surface-band` opt-in only (paint #91)
-- **Motion:** reveals + masthead compact + Offer sticky pin; no animation spam (paint #92)
-- **Secondary chrome:** `.page-shell` / `.page-masthead` / `.page-closer` (paint #94)
+- **Motion:** reveals + masthead compact + Offer sticky pin; no animation spam (paint #92); craft #100 requires motion a human can feel
+- **Secondary chrome:** `.page-shell` / `.page-masthead` / `.page-closer` (paint #94); craft #99 requires peer pricing/secondary energy
+- **Optional dark:** system + toggle, light Paper default; no dark-first / purple-glow dark (craft #96)
+- **Live product proof:** first viewport must open a real product path (craft #98)
+- **Craft soft-close ban:** class-only / curl-200 / no-purple evidence without Hard gate protocol = fail (craft #101)
 - **IA map:** `docs/design/ia-map.md`
 - **POS lessons:** `docs/design/lessons-from-pos.md`
 - **Blog post template:** `docs/design/blog-post-template.md`
@@ -84,23 +87,27 @@ Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`** (Paint-phase locks tab
 | 2 | [#92](https://github.com/AMVARA-CONSULTING/km0-web/issues/92) | `CLOSED-92-…-stirling-motion-sticky-scroll` | Motion: reveals + sticky-while-scroll | closed |
 | 3 | [#93](https://github.com/AMVARA-CONSULTING/km0-web/issues/93) | `CLOSED-93-…-stirling-landing-repaint` | Landing restyle | closed |
 | 4 | [#94](https://github.com/AMVARA-CONSULTING/km0-web/issues/94) | `CLOSED-94-…-stirling-secondary-pages-paint` | Secondary pages paint | closed |
-| 5 | [#95](https://github.com/AMVARA-CONSULTING/km0-web/issues/95) | `…-encode-stirling-paint-doctrine` | Encode paint + motion into doctrine/skills | this task |
+| 5 | [#95](https://github.com/AMVARA-CONSULTING/km0-web/issues/95) | `CLOSED-95-…-encode-stirling-paint-doctrine` | Encode paint + motion into doctrine/skills | closed |
 
 **Actual run order:** 91 → 92 → 93 → 94 → 95 (encode last so doctrine matches shipped locks).
 
 ## Craft parity phase (hard) - Stirling / Satisfecho must be visible
 
 Spec: **`docs/design/craft-parity-phase.md`**  
-Why: paint FEATs closed on class/order checks; live site still does not feel peer to [Stirling](https://stirling.com/) / [Satisfecho](https://satisfecho.de/). Soft “build green + no purple” passes are forbidden.
+Doctrine locks: **`docs/design/anti-slop-doctrine.md`** (Craft-parity locks)  
+Skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`** (Craft-parity locks table)  
+Why: paint FEATs closed on class/order checks; live site must feel peer to [Stirling](https://stirling.com/) / [Satisfecho](https://satisfecho.de/). Soft “build green + no purple” passes are forbidden.
 
-| Order | Issue | FEAT slug intent | Depends |
-|------:|-------|------------------|---------|
-| 1 | [#96](https://github.com/AMVARA-CONSULTING/km0-web/issues/96) | Optional dark theme (system + toggle; light default) | - |
-| 2 | [#97](https://github.com/AMVARA-CONSULTING/km0-web/issues/97) | Landing Stirling **hard** visual parity | #96 preferred |
-| 3 | [#98](https://github.com/AMVARA-CONSULTING/km0-web/issues/98) | Satisfecho **live** product proof in first viewport | #97 |
-| 4 | [#99](https://github.com/AMVARA-CONSULTING/km0-web/issues/99) | Pricing + secondary hard chrome | #97 |
-| 5 | [#100](https://github.com/AMVARA-CONSULTING/km0-web/issues/100) | Motion you can feel (sticky / pin / reveals) | #97 |
-| 6 | [#101](https://github.com/AMVARA-CONSULTING/km0-web/issues/101) | Encode craft-parity gates into doctrine + tester/closing | #96–#100 |
+| Order | Issue | FEAT | Intent | Status |
+|------:|-------|------|--------|--------|
+| 1 | [#96](https://github.com/AMVARA-CONSULTING/km0-web/issues/96) | `CLOSED-96-…-optional-dark-theme` | Optional dark theme (system + toggle; light default) | closed |
+| 2 | [#97](https://github.com/AMVARA-CONSULTING/km0-web/issues/97) | `UNTESTED-97-…-landing-stirling-hard-parity` | Landing Stirling **hard** visual parity | coder shipped |
+| 3 | [#98](https://github.com/AMVARA-CONSULTING/km0-web/issues/98) | `UNTESTED-98-…-satisfecho-live-product-proof` | Satisfecho **live** product proof in first viewport | coder shipped |
+| 4 | [#99](https://github.com/AMVARA-CONSULTING/km0-web/issues/99) | `UNTESTED-99-…-pricing-secondary-hard-chrome` | Pricing + secondary hard chrome | coder shipped |
+| 5 | [#100](https://github.com/AMVARA-CONSULTING/km0-web/issues/100) | `UNTESTED-100-…-motion-you-can-feel` | Motion you can feel (sticky / pin / reveals) | coder shipped |
+| 6 | [#101](https://github.com/AMVARA-CONSULTING/km0-web/issues/101) | `…-encode-craft-parity-gates` | Encode craft-parity gates into doctrine + tester/closing | this task |
 
-Run **in sequence**. Every FEAT must use the **Hard gate protocol** in the craft-parity spec (side-by-side claims mandatory). Soft class-only passes = fail.
+**Actual run order:** 96 → 97 → 98 → 99 → 100 → 101 (encode last so doctrine matches shipped locks).
+
+Every craft FEAT must use the **Hard gate protocol** in the craft-parity spec (side-by-side claims mandatory). Soft class-only passes = fail. Tester + closing: missing Hard gate fields → WIP, do not archive.
 

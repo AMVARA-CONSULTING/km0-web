@@ -40,10 +40,13 @@ Adhere to **`autoagents/TASKS-README.md`**.
 
 If the task references **`docs/design/craft-parity-phase.md`**, Stirling, Satisfecho, dark theme, or “hard parity”:
 
-- **Class-only / section-order-only evidence = FAIL.** curl 200 + “no purple” is not enough.
-- Test report **must** include the **Hard gate protocol**: reference URL(s), KM0 URL(s), **3 parity claims** a non-dev would notice, **3 anti-slop claims**, and decisive viewport evidence.
+- **Class-only / section-order-only evidence = FAIL.** curl 200 + “no purple” + four locales + build green is not enough.
+- Test report **must** include the **Hard gate protocol**: reference URL(s), KM0 URL(s), **3 parity claims** a non-dev would notice, **3 anti-slop claims**, and decisive viewport evidence. Missing any field → **FAIL** → WIP.
 - Open [https://stirling.com/](https://stirling.com/) and/or [https://satisfecho.de/](https://satisfecho.de/) in the same session when the FEAT names them.
-- For optional dark theme: verify light default, toggle, `prefers-color-scheme`, persistence, and reading pages (`/doc/`, `/tutorials/`).
+- For optional dark theme: verify light default, toggle, `prefers-color-scheme`, persistence, and reading pages (`/doc/`, `/tutorials/`). Dark-first or purple-glow dark → **FAIL**.
+- For live product proof: confirm QR/deep link opens a real Cloud / public product surface. Static mock only → **FAIL**.
+- For motion FEATs: confirm sticky masthead / Offer pin / reveals are human-noticeable on `lg+` with motion on; reduced-motion still respected. HTML attrs alone → **FAIL**.
+- Doctrine pointer: `docs/design/anti-slop-doctrine.md` → **Craft-parity locks** / Soft-evidence auto-fails.
 
 ### Production verification
 

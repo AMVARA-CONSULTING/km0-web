@@ -1,10 +1,11 @@
 # Craft parity phase (hard)
 
-**Status:** queued after paint #91–#95.  
-**Why:** Paint FEATs closed on class-name / section-order checks. The live site still does not read as peer craft to [Stirling](https://stirling.com/) or [Satisfecho](https://satisfecho.de/). This phase forbids soft passes.
+**Status:** implementation FEATs #96–#100 shipped to tester queue; encode #101 locks doctrine/skills/agents.  
+**Why:** Paint FEATs closed on class-name / section-order checks. The live site must read as peer craft to [Stirling](https://stirling.com/) or [Satisfecho](https://satisfecho.de/). This phase forbids soft passes.
 
 Epic table: `docs/design/remodel-epic.md` (Craft parity).  
-Doctrine: `docs/design/anti-slop-doctrine.md` (Craft-parity locks, after encode FEAT).  
+Doctrine: `docs/design/anti-slop-doctrine.md` (Craft-parity locks).  
+Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (Craft-parity locks table).  
 References: `docs/design/reference-study-stirling-satisfecho-nous.md`, `docs/design/stirling-paint-phase.md`, `docs/design/lessons-from-pos.md`.
 
 ## Problem statement
@@ -68,4 +69,14 @@ Closing reviewer: if Test report lacks side-by-side claims, **do not archive** -
 
 ## Agent training note
 
-Paint-phase locks remain. Craft-parity **adds** the hard gate protocol. “Looks professional” without side-by-side evidence is not enough to close.
+Paint-phase locks remain. Craft-parity **adds** the Hard gate protocol (encoded in doctrine + skill + `010-feature-coder.md` / `020-test.md` / `030-closing-reviewer.md`).
+
+Auto-fail for craft FEATs:
+
+- Soft class-only / section-order / curl-200 / “no purple” / four-locales / build-green passes
+- Missing Hard gate fields (reference URL, KM0 URL, 3 parity claims, 3 anti-slop claims, decisive viewport)
+- Optional dark as default, or purple-glow / neon-orb dark
+- Hero/proof with no live path into a real product surface
+- Motion that exists only as HTML attributes a human cannot notice
+
+“Looks professional” without side-by-side evidence is not enough to close.

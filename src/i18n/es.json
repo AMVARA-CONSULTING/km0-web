@@ -279,7 +279,9 @@
     "heroPrice": {
       "amount": "1,99 €",
       "period": "/mes",
-      "meta": "500 GB",
+      "capacity": "500",
+      "unit": "GB",
+      "hostMeta": "Hetzner · Falkenstein",
       "ariaLabel": "Precio: 1,99 euros al mes por 500 GB de almacenamiento"
     },
     "intro": "Almacenamiento en la UE, sin letra pequeña. Abre Cloud, suma Email o pide un camino a medida.",

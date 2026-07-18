@@ -1,6 +1,6 @@
 /**
- * Hero 500 GB capacity moment (#104): once-only count-up synced to proof reveal.
- * Meter fill is CSS on `.hero__visual.is-visible`. Honors prefers-reduced-motion.
+ * 500 GB capacity moment (#104 home + pricing masthead): once-only count-up
+ * synced to reveal. Meter fill is CSS on `.is-visible`. Honors prefers-reduced-motion.
  */
 
 function prefersReducedMotion(): boolean {
@@ -65,9 +65,7 @@ function whenVisible(host: HTMLElement, onVisible: () => void): void {
   observer.observe(host, { attributes: true, attributeFilter: ['class'] });
 }
 
-function initHeroCapacity(): void {
-  const host = document.querySelector<HTMLElement>('.hero__visual[data-reveal]');
-  const valueEl = document.querySelector<HTMLElement>('[data-hero-capacity]');
+function initCapacityReadout(host: HTMLElement | null, valueEl: HTMLElement | null): void {
   if (!host || !valueEl) return;
 
   const target = Number.parseInt(valueEl.dataset.target || valueEl.textContent || '500', 10);
@@ -87,6 +85,17 @@ function initHeroCapacity(): void {
     if (valueEl.dataset.settled === 'true') return;
     runCountUp(valueEl, target, durationMs);
   });
+}
+
+function initHeroCapacity(): void {
+  initCapacityReadout(
+    document.querySelector<HTMLElement>('.hero__visual[data-reveal]'),
+    document.querySelector<HTMLElement>('[data-hero-capacity]')
+  );
+  initCapacityReadout(
+    document.querySelector<HTMLElement>('.pricing-hero-stat[data-reveal]'),
+    document.querySelector<HTMLElement>('[data-pricing-capacity]')
+  );
 }
 
 initHeroCapacity();

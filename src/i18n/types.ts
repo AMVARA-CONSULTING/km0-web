@@ -201,7 +201,11 @@ export interface Messages {
     heroPrice: {
       amount: string;
       period: string;
-      meta: string;
+      /** Display digits only (e.g. "500"); unit is separate. */
+      capacity: string;
+      unit: string;
+      /** Quiet host line under the capacity meter (e.g. Hetzner · Falkenstein). */
+      hostMeta: string;
       ariaLabel: string;
     };
     /** Stirling-style plan paths (Cloud lead / Email quiet / Custom). */

@@ -52,9 +52,18 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
             </div>
           </div>
           <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel} data-reveal data-delay="100">
-            <p class="pricing-hero-capacity tabular-nums">
-              <span class="pricing-hero-capacity-value">{p.heroPrice.meta}</span>
+            <p class="pricing-hero-capacity tabular-nums" aria-hidden="true">
+              <span
+                class="pricing-hero-capacity-value"
+                data-pricing-capacity
+                data-target={p.heroPrice.capacity}
+              >{p.heroPrice.capacity}</span>
+              <span class="pricing-hero-capacity-unit">{p.heroPrice.unit}</span>
             </p>
+            <div class="pricing-hero-meter" role="presentation" aria-hidden="true">
+              <span class="pricing-hero-meter-fill"></span>
+            </div>
+            <p class="pricing-hero-host-meta">{p.heroPrice.hostMeta}</p>
             <p class="pricing-hero-price tabular-nums">
               <span class="pricing-hero-price-value">{p.heroPrice.amount}</span><span
                 class="pricing-hero-price-period">{p.heroPrice.period}</span
@@ -242,30 +251,95 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-hero-stat {
     justify-self: start;
+    display: grid;
+    gap: 0.55rem;
+    justify-items: start;
+    max-width: 16rem;
   }
 
   @media (min-width: 900px) {
     .pricing-hero-stat {
       justify-self: end;
+      justify-items: end;
       text-align: right;
     }
   }
 
   .pricing-hero-capacity {
     margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.2em;
     line-height: 1;
+    color: var(--color-ink);
+    opacity: 0;
+    transform: translate3d(0, 0.4rem, 0);
   }
 
   .pricing-hero-capacity-value {
     font-family: theme('fontFamily.display');
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(4rem, 12vw, 6.25rem);
     font-weight: 700;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.055em;
+    color: var(--color-ink);
+  }
+
+  .pricing-hero-capacity-unit {
+    font-family: theme('fontFamily.display');
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
     color: var(--color-signal);
   }
 
+  .pricing-hero-stat.is-visible .pricing-hero-capacity {
+    animation: pricing-capacity-in var(--duration-hero-capacity) var(--ease-out-expo) both;
+  }
+
+  .pricing-hero-meter {
+    width: min(100%, 11rem);
+    height: 0.45rem;
+    background: var(--color-mist);
+    overflow: hidden;
+  }
+
+  .pricing-hero-meter-fill {
+    display: block;
+    height: 100%;
+    width: calc(var(--hero-meter-fill) * 100%);
+    background: var(--color-signal);
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  @media (min-width: 900px) {
+    .pricing-hero-meter-fill {
+      transform-origin: right center;
+    }
+  }
+
+  .pricing-hero-stat.is-visible .pricing-hero-meter-fill {
+    animation: pricing-meter var(--duration-hero-capacity) var(--ease-out-expo) 70ms both;
+  }
+
+  .pricing-hero-host-meta {
+    margin: 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.6875rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    opacity: 0;
+    transform: translate3d(0, 0.25rem, 0);
+  }
+
+  .pricing-hero-stat.is-visible .pricing-hero-host-meta {
+    animation: pricing-capacity-in var(--duration-hero-capacity) var(--ease-out-expo) 60ms both;
+  }
+
   .pricing-hero-price {
-    margin: 0.75rem 0 0;
+    margin: 0.2rem 0 0;
     line-height: 1.2;
   }
 
@@ -281,6 +355,40 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     font-weight: 600;
     margin-left: 0.1em;
     color: var(--color-ink-muted);
+  }
+
+  @keyframes pricing-capacity-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0.4rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes pricing-meter {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-hero-capacity,
+    .pricing-hero-host-meta {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+
+    .pricing-hero-meter-fill {
+      transform: scaleX(1);
+      animation: none;
+    }
   }
 
   .pricing-section-header {
@@ -553,3 +661,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
     color: var(--color-ink-muted);
   }
 </style>
+
+<script>
+  import '../scripts/hero-capacity.ts';
+</script>

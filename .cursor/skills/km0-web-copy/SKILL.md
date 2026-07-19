@@ -32,6 +32,8 @@ Readers **scan**. They punish repetition and hype. LLMs must write **clearer and
 - **Say it once.** Privacy / ISO / “no vendemos datos” must not reappear in Vision + Mission + PrivacyTrust + FAQ + Services with the same sentence shape.
 - **Respect the reader.** No guilt trips, no fake urgency, no empty “únete al movimiento” without a next action.
 - **Local and specific.** Names, places, numbers that exist beat universal fluff.
+- **Honest proof (Hallmark-adapted).** Never invent metrics (“10× faster”, “50,000+ teams”, “99.9%”) for proof bars or trust strips. Use sourced numbers, the live Cloud counter, or omit the slot. Declared goals must read as goals, not live KPIs (`docs/design/hallmark-adaptations.md`).
+- **Clickable labels stay short.** Nav, footer, breadcrumb, and CTA strings should stay one line at ~375 px; shorten copy before shrinking type.
 - Follow project **`no-em-dash`** rule (no U+2014).
 
 ### Psychology (use lightly, never manipulatively)

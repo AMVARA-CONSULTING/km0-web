@@ -14,7 +14,7 @@ KM0’s **legacy** attractor was `Inter` + multi-stop orange→pink→purple→b
 
 | Source | Why it matters |
 |--------|----------------|
-| [Hallmark](https://www.usehallmark.com/) | Negative constraints + positive rules (type pair, bias layout, one accent, nav as genre signal). Study live examples such as [Wayfare](https://www.usehallmark.com/examples/wayfare/), [Mend Assembly](https://www.usehallmark.com/examples/custom-04/). |
+| [Hallmark](https://www.usehallmark.com/) + [Nutlope/hallmark skill](https://github.com/Nutlope/hallmark/blob/main/skills/hallmark/SKILL.md) | Negative constraints + positive rules (type pair, bias layout, one accent, nav as genre signal). **KM0 adaptation (not full theme catalog):** `docs/design/hallmark-adaptations.md`. Live examples: [Wayfare](https://www.usehallmark.com/examples/wayfare/), [Mend Assembly](https://www.usehallmark.com/examples/custom-04/). |
 | [Why AI design looks generic (Superdesign)](https://www.superdesign.dev/blog/why-ai-design-looks-generic) | “Distributional convergence”: models pick the statistical center unless constrained. |
 | [Why your AI keeps building the same purple gradient website](https://prg.sh/ramblings/Why-Your-AI-Keeps-Building-the-Same-Purple-Gradient-Website) | Tailwind `indigo-500` history; Anthropic-style aesthetics prompt; constraint > vague taste. |
 | [AI design slop: 16 patterns](https://www.developersdigest.tech/blog/ai-design-slop-and-how-to-spot-it) | Detection checklist (Inter-everywhere, badge-above-H1, icon-tile cards, stat strips, glow, etc.). |
@@ -56,6 +56,20 @@ If any of these ship, the task fails review:
 11. **Secondary AI attractors** also banned by project rules: warm-cream + terracotta + default serif stack; broadsheet hairline zero-radius newspaper pastiche; purple-glow / neon-orb “AI dark lab” looks. **Locked scheme:** civic **dark only** (`docs/brand-tokens.md`) - no light theme, no theme toggle. Forbidden: Nous underground as the only voice; purple glow.
 12. **Zebra section rhythm** - automatic alternating Paper/Snow (or white/gray) bands via `nth-child` or equivalent (`main:has(#home) > section…` patterns). Default is continuous Paper; surfaces opt in explicitly (e.g. Contact `bg-snow`). Stirling / Nous pattern.
 13. **Generic map-pin as sole brand mark** (especially identical logo + favicon with huge empty padding, or purple-era gradient pins). Do not revert to a pin stem clone.
+14. **Italic display / section headers** (Hallmark typography purity). Headings stay roman; italic only inside body paragraphs.
+15. **Re-drawn OS/UI chrome** around screenshots (fake browser traffic lights, phone notches, IDE tabs, code-window dots). Quiet `<figure>` or typographic frames only.
+16. **Mid-render token improvisation** - one-off hex / OKLCH / `font-family` that bypasses `tokens.css` / brand tokens.
+17. **Invented metrics** in proof bars or “trusted by” strips when the brief did not supply a sourced number (live Cloud counter and explicitly declared goals framed as goals are allowed product locks).
+18. **Microinteraction median tells:** `transition-all`, universal `hover:scale-105`, bounce/overshoot on ordinary buttons, multi-effect hover stacks outside paint-phase vocabulary.
+
+## Hallmark-adapted locks (do not soft-skip)
+
+Encoded from Nutlope/hallmark into agents (#108). Spec: **`docs/design/hallmark-adaptations.md`**. Does **not** replace craft-parity Hard gate or paint-phase locks.
+
+- **Pre-emit self-critique:** On UI work, score Philosophy / Hierarchy / Execution / Specificity / Restraint / Variety (1-5); revise if any axis is below 3; record one line in the task Implementation summary.
+- **Structural fingerprint:** Refuse hero → 3 icon-feature cards → dual pill CTAs → generic footer as the default page rhythm. Secondary pages share KM0 tokens, not that SaaS stack.
+- **Clickable one-liners:** Nav, footer, breadcrumb, and CTA labels must not wrap to two lines at common mobile widths (~375-414 px).
+- **No Hallmark theme catalog / npm install:** Stay on locked civic tokens; study upstream skill docs only.
 
 ## Phase-2 locks (do not regress)
 
@@ -198,13 +212,14 @@ New and migrated `/doc/` posts follow **`docs/design/blog-post-template.md`** (M
 
 ## Agent enforcement
 
-- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study, paint-phase spec, and craft-parity spec on UI / craft work)
+- Skill: `.cursor/skills/km0-anti-slop-design/SKILL.md` (must open the phase-2 study, paint-phase spec, craft-parity spec, and Hallmark adaptations on UI / craft work)
 - Skill: `.cursor/skills/km0-web-copy/SKILL.md`
 - Rules: `.cursor/rules/anti-slop-frontend.mdc`, `.cursor/rules/web-copy.mdc`
 - Tokens: `docs/brand-tokens.md` + `src/styles/tokens.css`
 - Study: `docs/design/reference-study-stirling-satisfecho-nous.md`
 - Paint phase: `docs/design/stirling-paint-phase.md`
 - Craft parity: `docs/design/craft-parity-phase.md` (Hard gate protocol; soft class-only passes forbidden)
+- Hallmark adaptations: `docs/design/hallmark-adaptations.md` (Nutlope skill → KM0 agents; no theme catalog)
 - Epic: `docs/design/remodel-epic.md`
 - Blog prose contract: `docs/design/blog-post-template.md`
 - Autoagents: `010-feature-coder.md`, `020-test.md`, `030-closing-reviewer.md`, `002-coder/CODER.md` must refuse slop regressions **and** craft soft-closes (class-only / no side-by-side claims)

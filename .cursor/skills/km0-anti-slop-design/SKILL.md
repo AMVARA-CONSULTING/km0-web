@@ -9,7 +9,7 @@ description: >-
 
 # KM0 anti-slop design
 
-Read **`docs/design/anti-slop-doctrine.md`** first. Then **`docs/brand-tokens.md`**, **`docs/design/reference-study-stirling-satisfecho-nous.md`**, **`docs/design/stirling-paint-phase.md`**, **`docs/design/craft-parity-phase.md`** (when the FEAT cites craft / HARD parity), and **`docs/design/lessons-from-pos.md`**.
+Read **`docs/design/anti-slop-doctrine.md`** first. Then **`docs/brand-tokens.md`**, **`docs/design/hallmark-adaptations.md`**, **`docs/design/reference-study-stirling-satisfecho-nous.md`**, **`docs/design/stirling-paint-phase.md`**, **`docs/design/craft-parity-phase.md`** (when the FEAT cites craft / HARD parity), and **`docs/design/lessons-from-pos.md`**.
 
 ## When this skill applies
 
@@ -26,6 +26,10 @@ Before writing UI code, state in 5 lines:
 5. **What you refuse** (2–3 slop tells you will not ship)
 
 If you cannot fill those five lines from brand docs, **stop** and ask - do not invent another purple gradient.
+
+## Pre-emit self-critique (Hallmark-adapted)
+
+After the five-line pre-flight, score the planned output **1-5** on **P**hilosophy, **H**ierarchy, **E**xecution, **S**pecificity, **R**estraint, **V**ariety (see `docs/design/hallmark-adaptations.md`). Any axis below **3** → revise before shipping. Record one line in the task Implementation summary (`Pre-emit: P# H# E# S# R# V#`). Do **not** put Hallmark stamp comments in production CSS. Variety means avoiding the generic AI section fingerprint **inside** locked KM0 tokens - never rotate a theme catalog.
 
 ## Phase-2 locks (auto-fail if ignored)
 
@@ -68,12 +72,26 @@ From `docs/design/craft-parity-phase.md` and remodel #96–#100 (encoded #101). 
 
 Before **UNTESTED-** on a craft FEAT: Testing instructions **must** include the Hard gate protocol. Tester and closing reviewer reject soft evidence.
 
+## Hallmark-adapted locks (auto-fail if ignored)
+
+From `docs/design/hallmark-adaptations.md` and Nutlope/hallmark references (encoded #108):
+
+| Lock | Do | Do not |
+|------|----|--------|
+| Tokens | Named vars from `tokens.css` / brand-tokens | One-off hex / font-family mid-component |
+| Type | Roman headings; italic only in body | Italic display / section headers |
+| Chrome | Real screenshots in quiet figures | Fake browser / phone / IDE / code-window chrome |
+| Proof | Sourced or live numbers only | Invented “10× / 50k teams / 99.9%” strips |
+| Motion tells | Paint-phase vocabulary | `transition-all`, universal `scale-105`, bounce UI |
+| Structure | Page-genre rhythm under KM0 system | Hero → 3 icon cards → dual pills fingerprint |
+| Labels | One-line clickable nav/CTA/footer text at ~375 px | Two-line button / nav labels |
+
 ## Implementation rules
 
 - Prefer CSS variables in `tokens.css`; map sparingly into Tailwind `theme.extend`.
 - Tailwind is a **tool**, not an aesthetic. Utility classes that recreate shadcn/Tailwind-UI demos are a smell.
 - First viewport: brand + one headline + one support line + one CTA group + one dominant visual. Nothing else.
-- No cards in the hero. No icon-tile feature grids. No fake stats.
+- No cards in the hero. No icon-tile feature grids. No fake stats. No card-in-card or decorative side-stripe cards.
 - Sections: one job each. Collapse redundant Vision/Mission/Values/Meaning/Privacy blocks when remodeling IA.
 - Motion: paint-phase vocabulary only (reveals + masthead compact + Offer pin); honor `prefers-reduced-motion`.
 - Atmosphere: reuse **Origin field** (`.km0-motif` / `.km0-motif--origin`); optional ambient SE grid drift only; never invent glow orbs as brand atmosphere. Hero + ≤2 bands.
@@ -82,16 +100,18 @@ Before **UNTESTED-** on a craft FEAT: Testing instructions **must** include the 
 
 ## Self-audit before done
 
-Run mentally against the doctrine **Hard ban list**, **Phase-2 locks**, **Paint-phase locks**, and **Craft-parity locks** (when the FEAT is craft / HARD). If any item matches, rewrite.
+Run mentally against the doctrine **Hard ban list**, **Hallmark-adapted locks**, **Phase-2 locks**, **Paint-phase locks**, and **Craft-parity locks** (when the FEAT is craft / HARD). Confirm pre-emit scores are all ≥ 3. If any item matches a ban, rewrite.
 
 ## References
 
 - Doctrine: `docs/design/anti-slop-doctrine.md`
+- Hallmark adaptations: `docs/design/hallmark-adaptations.md`
 - Paint phase: `docs/design/stirling-paint-phase.md`
 - Craft parity: `docs/design/craft-parity-phase.md`
 - Phase-2 study: `docs/design/reference-study-stirling-satisfecho-nous.md`
 - Epic: `docs/design/remodel-epic.md`
 - Tokens: `docs/brand-tokens.md`
-- Hallmark: https://www.usehallmark.com/
+- Hallmark live: https://www.usehallmark.com/
+- Hallmark skill (study only): https://github.com/Nutlope/hallmark/blob/main/skills/hallmark/SKILL.md
 - Purple gradient essay: https://prg.sh/ramblings/Why-Your-AI-Keeps-Building-the-Same-Purple-Gradient-Website
 - NN/g reading: https://www.nngroup.com/articles/how-users-read-on-the-web/

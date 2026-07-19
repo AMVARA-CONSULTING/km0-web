@@ -36,6 +36,10 @@ Adhere to **`autoagents/TASKS-README.md`**.
 5. **i18n:** confirm locale switcher paths and `hreflang` if SEO-related.
 6. Collect evidence from **`docker logs km0-web`** for the UTC window.
 
+### Hallmark / anti-slop skim (UI tasks)
+
+When Testing instructions mention UI, chrome, or Hallmark adaptations: confirm no new italic display headers, fake browser/phone chrome, invented metric strips, or `transition-all` / universal `scale-105` in the ship diff. Pre-emit scores should appear in the coder Implementation summary when the task required them (`docs/design/hallmark-adaptations.md`).
+
 ### Craft / UI parity (mandatory when FEAT says so)
 
 If the task references **`docs/design/craft-parity-phase.md`**, Stirling, Satisfecho, dark theme, or “hard parity”:

@@ -46,9 +46,10 @@ Adhere to **`autoagents/TASKS-README.md`**.
 
 ### Frontend and copy (mandatory on UI / i18n tasks)
 
-- Read **`docs/design/anti-slop-doctrine.md`**.
+- Read **`docs/design/anti-slop-doctrine.md`** and **`docs/design/hallmark-adaptations.md`**.
 - Apply skills **`.cursor/skills/km0-anti-slop-design/SKILL.md`** and **`.cursor/skills/km0-web-copy/SKILL.md`**.
 - Follow tokens in **`docs/brand-tokens.md`** (no Inter-only, no purple/indigo brand gradients, no centered SaaS hero recipe).
+- On UI work: run **pre-emit self-critique** (P/H/E/S/R/V); record scores in Implementation summary; refuse invented metrics, italic headers, fake browser chrome, mid-render token hex, `transition-all` / universal `scale-105`.
 - Closing reviewer will **fail** tasks that reintroduce AI/Tailwind-slop tells.
 
 ### Craft parity FEATs (Stirling / Satisfecho / optional dark)

@@ -50,6 +50,7 @@ Create labels in the repo if missing.
 - Task docs: **`autoagents/TASKS-README.md`**
 - Cursor skill: **`.cursor/skills/autoagents/SKILL.md`**
 - Design doctrine: **`docs/design/anti-slop-doctrine.md`**
+- Hallmark → KM0 agents: **`docs/design/hallmark-adaptations.md`**
 - Brand tokens: **`docs/brand-tokens.md`**, runtime **`src/styles/tokens.css`**
 - Frontend skill: **`.cursor/skills/km0-anti-slop-design/SKILL.md`**
 - Copy skill: **`.cursor/skills/km0-web-copy/SKILL.md`**

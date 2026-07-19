@@ -27,7 +27,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
           <p class="offer__intro">{m.services.intro}</p>
           <p class="offer__slogan">{m.services.slogan}</p>
         </header>
-        <a href={pinHref} class="btn-primary offer__pin-cta" data-reveal data-delay="100">
+        <a href={pinHref} class="offer__pin-link offer__pin-cta" data-reveal data-delay="100">
           {pinCta}
         </a>
       </div>
@@ -95,7 +95,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
                     </a>
                   )}
                   {isCloud && item.secondaryCta && (
-                    <a href={item.url} class="btn-primary">
+                    <a href={item.url} class="offer-row__text-link">
                       {item.secondaryCta}
                     </a>
                   )}
@@ -169,6 +169,28 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer__header {
     max-width: 40rem;
     margin-bottom: 0;
+  }
+
+  /* Quiet Cloud reaffirm in pin; hero + Why hold the loud Open Cloud primaries */
+  .offer__pin-link {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 45%, transparent);
+    text-underline-offset: 0.2em;
+    transition: color 0.3s var(--ease-out-expo), text-decoration-color 0.3s var(--ease-out-expo);
+  }
+
+  .offer__pin-link:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .offer__pin-link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
   }
 
   .offer__pin-cta {

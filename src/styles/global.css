@@ -188,7 +188,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-signal px-8 py-3 font-sans text-sm font-medium text-white transition-colors duration-300 ease-apple hover:bg-signal-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
+    @apply inline-flex items-center justify-center rounded-md bg-signal px-8 py-3 font-sans text-sm font-bold text-white transition-colors duration-300 ease-apple hover:bg-signal-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
   }
 
   /*

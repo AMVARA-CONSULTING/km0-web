@@ -40,6 +40,7 @@ Make the landing a clearer **user-gathering funnel** while staying civic / anti-
 
 ## Locked product rules
 - Primary CTA remains **Open KM0 Cloud** (not dual equal pills).  
+- **Open Cloud primary cadence:** once early (hero CTA row) + at most **one** mid-page reaffirm as `btn-primary`. Do not repeat the same Open Cloud / Abrir Cloud label as a loud primary in Offer pin, Offer Cloud row, every Why band, and Cloud users. Later sections use quieter text links or section-job CTAs (pricing, community, register).  
 - Sacred live user counter stays; no fake “10K users” / conversion % invented.  
 - Remove or relocate **Purpose** off the home main flow (prefer delete from `Landing.astro`; content can live on `/presentation/` if needed).  
 - Restore IA order closer to the map: Hero → (tight trust) → Offer/Services → Why → **Cloud users** → **Community** → FAQ → Contact.  

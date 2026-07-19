@@ -105,6 +105,8 @@ export interface Messages {
       value: string;
       /** Optional on-site link target */
       href?: 'security';
+      /** Optional absolute external URL (operator site, etc.) */
+      externalHref?: string;
     }[];
   };
   services: {

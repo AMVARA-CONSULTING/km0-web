@@ -10,8 +10,17 @@ interface Props {
 
 const { locale, messages: m } = Astro.props;
 
-function itemHref(href?: 'security'): string | undefined {
-  if (href === 'security') return localeHref(locale, '/security/');
+type TrustLink =
+  | { href: string; external: false }
+  | { href: string; external: true };
+
+function resolveTrustLink(item: Messages['trust']['items'][number]): TrustLink | undefined {
+  if (item.externalHref) {
+    return { href: item.externalHref, external: true };
+  }
+  if (item.href === 'security') {
+    return { href: localeHref(locale, '/security/'), external: false };
+  }
   return undefined;
 }
 ---
@@ -24,14 +33,25 @@ function itemHref(href?: 'security'): string | undefined {
   <ul class="trust__list" data-reveal>
     {
       m.trust.items.map((item) => {
-        const href = itemHref(item.href);
+        const link = resolveTrustLink(item);
         return (
           <li class="trust__item">
             <span class="trust__label">{item.label}</span>
-            {href ? (
-              <a href={href} class="trust__value trust__value--link">
-                {item.value}
-              </a>
+            {link ? (
+              link.external ? (
+                <a
+                  href={link.href}
+                  class="trust__value trust__value--link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <a href={link.href} class="trust__value trust__value--link">
+                  {item.value}
+                </a>
+              )
             ) : (
               <span class="trust__value">{item.value}</span>
             )}

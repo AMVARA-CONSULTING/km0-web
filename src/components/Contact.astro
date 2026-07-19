@@ -202,5 +202,9 @@ const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/DtU6nBk2KxXJhmZbW94nFs';
     display: block;
     width: 11.25rem;
     height: 11.25rem;
+    /* Nearest-neighbor when scaled so QR modules stay sharp */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
   }
 </style>

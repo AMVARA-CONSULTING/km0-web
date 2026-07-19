@@ -605,6 +605,10 @@ const proof = m.hero.proof;
     display: block;
     width: 6.75rem;
     height: 6.75rem;
+    /* Nearest-neighbor when scaled so QR modules stay sharp */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
   }
 
   .hero__proof-live-copy {

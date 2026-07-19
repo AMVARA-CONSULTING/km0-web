@@ -50,8 +50,8 @@
       "emailMeta": "@km0digital.com",
       "liveLabel": "Cloud en viu",
       "liveHint": "Escaneja amb el mòbil o obre'l en aquest navegador.",
-      "liveCta": "Obrir KM0 Cloud",
-      "liveAria": "Obrir KM0 Cloud (inici de sessió real del producte)",
+      "liveCta": "Entrar",
+      "liveAria": "Entrar a KM0 Cloud (inici de sessió real del producte)",
       "registerCta": "Crear compte",
       "registerAria": "Crear un compte a KM0 Cloud",
       "qrAlt": "Codi QR que obre KM0 Cloud a cloud.km0digital.com",
@@ -67,7 +67,8 @@
       },
       {
         "label": "Operador",
-        "value": "AMVARA CONSULTING S.L."
+        "value": "AMVARA CONSULTING S.L.",
+        "externalHref": "https://amvara.de"
       },
       {
         "label": "Operacions",
@@ -92,27 +93,29 @@
         "body": "Fitxers i correu en servidors europeus. 500 GB des d'1,99 €/mes. El teu perfil no finança publicitat.",
         "fact": "Hetzner · Falkenstein (UE)",
         "ctaLabel": "Obrir KM0 Cloud",
-        "cta": "cloud"
+        "cta": "cloud",
+        "secondaryCtaLabel": "Veure preus",
+        "secondaryCta": "pricing"
       },
       {
         "meta": "Equip · a prop",
         "title": "Carpetes compartides, suport humà",
         "body": "Col·labora al mateix núvol UE. Responem en la teva llengua; les trobades són opcionals.",
         "fact": "Suport humà · trobades locals",
-        "ctaLabel": "Obrir KM0 Cloud",
-        "cta": "cloud",
-        "secondaryCtaLabel": "Veure trobades",
-        "secondaryCta": "community"
+        "ctaLabel": "Veure trobades",
+        "cta": "community",
+        "secondaryCtaLabel": "Obrir Cloud",
+        "secondaryCta": "cloud"
       },
       {
         "meta": "Organització · PIME",
         "title": "Equips amb preu a la vista",
         "body": "Correu @km0digital.com i cloud amb preu publicat. Dades a la UE, sense lletra petita d'enterprise.",
         "fact": "Preus públics · sense venda de perfils",
-        "ctaLabel": "Obrir KM0 Cloud",
-        "cta": "cloud",
-        "secondaryCtaLabel": "Veure preus",
-        "secondaryCta": "pricing"
+        "ctaLabel": "Veure preus",
+        "cta": "pricing",
+        "secondaryCtaLabel": "Obrir Cloud",
+        "secondaryCta": "cloud"
       }
     ]
   },
@@ -570,7 +573,7 @@
     "github": "GitHub",
     "version": "Versió",
     "repoSince": "Repositori des de",
-    "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
+    "poweredByHtml": "Powered by <a href=\"https://amvara.de\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
     "pricing": "Preus",
     "legal": "Legal",
     "security": "Seguretat",

@@ -50,8 +50,8 @@
       "emailMeta": "@km0digital.com",
       "liveLabel": "Live-Cloud",
       "liveHint": "Mit dem Handy scannen oder hier im Browser öffnen.",
-      "liveCta": "KM0 Cloud öffnen",
-      "liveAria": "KM0 Cloud öffnen (echter Produkt-Login)",
+      "liveCta": "Anmelden",
+      "liveAria": "Bei KM0 Cloud anmelden (echter Produkt-Login)",
       "registerCta": "Konto erstellen",
       "registerAria": "KM0-Cloud-Konto erstellen",
       "qrAlt": "QR-Code, der KM0 Cloud unter cloud.km0digital.com öffnet",
@@ -67,7 +67,8 @@
       },
       {
         "label": "Betreiber",
-        "value": "AMVARA CONSULTING S.L."
+        "value": "AMVARA CONSULTING S.L.",
+        "externalHref": "https://amvara.de"
       },
       {
         "label": "Betrieb",
@@ -92,27 +93,29 @@
         "body": "Dateien und Mail auf europäischen Servern. 500 GB ab 1,99 €/Monat. Dein Profil finanziert keine Werbung.",
         "fact": "Hetzner · Falkenstein (EU)",
         "ctaLabel": "KM0 Cloud öffnen",
-        "cta": "cloud"
+        "cta": "cloud",
+        "secondaryCtaLabel": "Preise ansehen",
+        "secondaryCta": "pricing"
       },
       {
         "meta": "Team · nah",
         "title": "Geteilte Ordner, menschlicher Support",
         "body": "Zusammenarbeit in derselben EU-Cloud. Wir antworten in deiner Sprache; Treffen sind optional.",
         "fact": "Menschlicher Support · lokale Treffen",
-        "ctaLabel": "KM0 Cloud öffnen",
-        "cta": "cloud",
-        "secondaryCtaLabel": "Treffen ansehen",
-        "secondaryCta": "community"
+        "ctaLabel": "Treffen ansehen",
+        "cta": "community",
+        "secondaryCtaLabel": "Cloud öffnen",
+        "secondaryCta": "cloud"
       },
       {
         "meta": "Organisation · KMU",
         "title": "Teams mit offenen Preisen",
         "body": "Mail @km0digital.com und Cloud mit veröffentlichten Preisen. EU-Daten, kein Enterprise-Kleingedrucktes.",
         "fact": "Öffentliche Preise · kein Verkauf von Profilen",
-        "ctaLabel": "KM0 Cloud öffnen",
-        "cta": "cloud",
-        "secondaryCtaLabel": "Preise ansehen",
-        "secondaryCta": "pricing"
+        "ctaLabel": "Preise ansehen",
+        "cta": "pricing",
+        "secondaryCtaLabel": "Cloud öffnen",
+        "secondaryCta": "cloud"
       }
     ]
   },
@@ -570,7 +573,7 @@
     "github": "GitHub",
     "version": "Version",
     "repoSince": "Repository seit",
-    "poweredByHtml": "Powered by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
+    "poweredByHtml": "Powered by <a href=\"https://amvara.de\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
     "pricing": "Preise",
     "legal": "Rechtliches",
     "security": "Sicherheit",

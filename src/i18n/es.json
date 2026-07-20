@@ -85,37 +85,37 @@
     "headingBefore": "Elige tu ",
     "headingAccent": "escala",
     "headingAfter": "",
-    "intro": "Misma nube, mismo correo, mismos hechos. Cambia el tamaño del equipo.",
+    "intro": "Tres usos habituales. Misma nube y correo en la UE.",
     "bands": [
       {
-        "meta": "Persona · casa",
-        "title": "Empieza en casa, sin Big Tech",
-        "body": "Archivos y correo en servidores europeos. 500 GB desde 1,99 €/mes. Tu perfil no financia publicidad.",
-        "fact": "Hetzner · Falkenstein (UE)",
+        "meta": "Persona · familia",
+        "title": "Fotos en casa, sin Gmail obligatorio",
+        "body": "Cada persona sincroniza fotos desde el móvil. Carpetas compartidas y enlaces seguros entre familia o amigos. Correo @km0digital.com, opcional.",
+        "fact": "Cloud · iPhone y Android · 500 GB desde 1,99 €/mes",
         "ctaLabel": "Abrir KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "Ver precios",
         "secondaryCta": "pricing"
       },
       {
-        "meta": "Equipo · cerca",
-        "title": "Carpetas compartidas, soporte humano",
-        "body": "Colabora en la misma nube UE. Respondemos en tu idioma; los encuentros son opcionales.",
-        "fact": "Soporte humano · encuentros locales",
-        "ctaLabel": "Ver encuentros",
-        "cta": "community",
-        "secondaryCtaLabel": "Abrir Cloud",
-        "secondaryCta": "cloud"
-      },
-      {
-        "meta": "Organización · PYME",
-        "title": "Equipos con precio a la vista",
-        "body": "Correo @km0digital.com y cloud con precio publicado. Datos en la UE, sin letra pequeña de enterprise.",
-        "fact": "Precios públicos · sin venta de perfiles",
+        "meta": "PYME · ~10 cuentas",
+        "title": "Correo del equipo y cloud compartido",
+        "body": "Unas diez cuentas de correo y almacenamiento en la UE. Te ayudamos a migrar. Si también mueves web o DNS, lo planificamos contigo.",
+        "fact": "Mail + Cloud · migración con soporte humano",
         "ctaLabel": "Ver precios",
         "cta": "pricing",
-        "secondaryCtaLabel": "Abrir Cloud",
-        "secondaryCta": "cloud"
+        "secondaryCtaLabel": "Escribirnos",
+        "secondaryCta": "contact"
+      },
+      {
+        "meta": "Organización · más grande",
+        "title": "Planificar, operar, archivos grandes",
+        "body": "Más de diez cuentas, operaciones o un intercambio de archivos voluminosos. Lo diseñamos juntos.",
+        "fact": "Contacto · propuesta a medida",
+        "ctaLabel": "Hablar con nosotros",
+        "cta": "contact",
+        "secondaryCtaLabel": "Ver precios",
+        "secondaryCta": "pricing"
       }
     ]
   },

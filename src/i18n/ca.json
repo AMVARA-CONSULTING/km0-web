@@ -85,37 +85,37 @@
     "headingBefore": "Tria l'",
     "headingAccent": "escala",
     "headingAfter": "",
-    "intro": "El mateix núvol, el mateix correu, els mateixos fets. Només canvia la mida de l'equip.",
+    "intro": "Tres usos habituals. El mateix núvol i correu a la UE.",
     "bands": [
       {
-        "meta": "Persona · casa",
-        "title": "Comença a casa, sense Big Tech",
-        "body": "Fitxers i correu en servidors europeus. 500 GB des d'1,99 €/mes. El teu perfil no finança publicitat.",
-        "fact": "Hetzner · Falkenstein (UE)",
+        "meta": "Persona · família",
+        "title": "Fotos a casa, sense Gmail obligatori",
+        "body": "Cada persona sincronitza fotos des del mòbil. Carpetes compartides i enllaços segurs amb família o amics. Correu @km0digital.com, opcional.",
+        "fact": "Cloud · iPhone i Android · 500 GB des d'1,99 €/mes",
         "ctaLabel": "Obrir KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "Veure preus",
         "secondaryCta": "pricing"
       },
       {
-        "meta": "Equip · a prop",
-        "title": "Carpetes compartides, suport humà",
-        "body": "Col·labora al mateix núvol UE. Responem en la teva llengua; les trobades són opcionals.",
-        "fact": "Suport humà · trobades locals",
-        "ctaLabel": "Veure trobades",
-        "cta": "community",
-        "secondaryCtaLabel": "Obrir Cloud",
-        "secondaryCta": "cloud"
-      },
-      {
-        "meta": "Organització · PIME",
-        "title": "Equips amb preu a la vista",
-        "body": "Correu @km0digital.com i cloud amb preu publicat. Dades a la UE, sense lletra petita d'enterprise.",
-        "fact": "Preus públics · sense venda de perfils",
+        "meta": "PIME · ~10 comptes",
+        "title": "Correu de l'equip i cloud compartit",
+        "body": "Unes deu comptes de correu i emmagatzematge a la UE. T'ajudem a migrar. Si també moves web o DNS, ho planifiquem amb tu.",
+        "fact": "Mail + Cloud · migració amb suport humà",
         "ctaLabel": "Veure preus",
         "cta": "pricing",
-        "secondaryCtaLabel": "Obrir Cloud",
-        "secondaryCta": "cloud"
+        "secondaryCtaLabel": "Escriure'ns",
+        "secondaryCta": "contact"
+      },
+      {
+        "meta": "Organització · més gran",
+        "title": "Planificar, operar, fitxers grans",
+        "body": "Més de deu comptes, operacions o un intercanvi de fitxers voluminosos. Ho dissenyem junts.",
+        "fact": "Contacte · proposta a mida",
+        "ctaLabel": "Parlar amb nosaltres",
+        "cta": "contact",
+        "secondaryCtaLabel": "Veure preus",
+        "secondaryCta": "pricing"
       }
     ]
   },

@@ -85,37 +85,37 @@
     "headingBefore": "Pick your ",
     "headingAccent": "scale",
     "headingAfter": "",
-    "intro": "Same cloud, same mail, same facts. Only the size of the team changes.",
+    "intro": "Three common setups. Same EU cloud and mail.",
     "bands": [
       {
-        "meta": "Person · home",
-        "title": "Start at home, without Big Tech",
-        "body": "Files and mail on European servers. 500 GB from €1.99/month. Your profile does not fund ads.",
-        "fact": "Hetzner · Falkenstein (EU)",
+        "meta": "Person · family",
+        "title": "Home photos, Gmail optional",
+        "body": "Each person syncs photos from their phone. Shared folders and secure links with family or friends. Optional @km0digital.com mail.",
+        "fact": "Cloud · iPhone and Android · 500 GB from €1.99/month",
         "ctaLabel": "Open KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "See pricing",
         "secondaryCta": "pricing"
       },
       {
-        "meta": "Team · nearby",
-        "title": "Shared folders, human support",
-        "body": "Collaborate on the same EU cloud. We reply in your language; meetups are optional.",
-        "fact": "Human support · local meetups",
-        "ctaLabel": "See meetups",
-        "cta": "community",
-        "secondaryCtaLabel": "Open Cloud",
-        "secondaryCta": "cloud"
-      },
-      {
-        "meta": "Organisation · SME",
-        "title": "Teams with prices in the open",
-        "body": "@km0digital.com mail and cloud with published prices. EU data, no enterprise fine print.",
-        "fact": "Public pricing · no profile sales",
+        "meta": "SMB · ~10 accounts",
+        "title": "Team mail and shared cloud",
+        "body": "About ten mailboxes and EU storage. We help you migrate. If you also move a site or DNS, we plan it with you.",
+        "fact": "Mail + Cloud · human-assisted migration",
         "ctaLabel": "See pricing",
         "cta": "pricing",
-        "secondaryCtaLabel": "Open Cloud",
-        "secondaryCta": "cloud"
+        "secondaryCtaLabel": "Write to us",
+        "secondaryCta": "contact"
+      },
+      {
+        "meta": "Organisation · larger",
+        "title": "Plan, operate, large file exchange",
+        "body": "More than ten accounts, day-to-day ops, or a large file exchange. We design it with you.",
+        "fact": "Contact · tailored proposal",
+        "ctaLabel": "Talk to us",
+        "cta": "contact",
+        "secondaryCtaLabel": "See pricing",
+        "secondaryCta": "pricing"
       }
     ]
   },

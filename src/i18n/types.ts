@@ -49,12 +49,12 @@ export interface Messages {
       title: string;
       body: string;
       fact: string;
-      /** Primary CTA - Cloud on every band for CTA rhythm */
+      /** Primary CTA - Cloud, pricing, contact, or community */
       ctaLabel: string;
-      cta: 'cloud' | 'community' | 'pricing';
-      /** Optional quieter secondary (meetups / pricing) */
+      cta: 'cloud' | 'community' | 'pricing' | 'contact';
+      /** Optional quieter secondary (meetups / pricing / contact) */
       secondaryCtaLabel?: string;
-      secondaryCta?: 'cloud' | 'community' | 'pricing';
+      secondaryCta?: 'cloud' | 'community' | 'pricing' | 'contact';
     }[];
   };
   community: {

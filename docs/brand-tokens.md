@@ -101,6 +101,21 @@ CSS: `src/styles/tokens.css` + `.km0-motif` in `src/styles/global.css`.
 - **Promise:** Servicios digitales cercanos, datos en la UE, sin vender tu perfil.
 - Prefer one concrete line over stacked slogan walls.
 
+## Brand string canon (#115)
+
+One short brand in user-facing prose: **KM0**. Do not mix rival spellings.
+
+| Form | Use | Do not |
+|------|-----|--------|
+| **KM0** | Short brand, products, CTAs, FAQ, ideas labels | `K0`, `Kmo`, `kmo`, `km0` as a word brand |
+| **KM0 Digital** | Short org name (meta, titles with `brandNameShort`) | Alternating with random casing |
+| **Kilómetro 0 Digital** (ES) / **Kilòmetre 0 Digital** (CA) / **Kilometer 0 Digital** (EN/DE) | Full wordmark (`brandName`, `brandMark`) | Inventing a fourth display name |
+| **KM0 Cloud**, **KM0 Email**, **KM0 Web** | Product names (identical across locales) | `KM0 Mail` (legacy; use **KM0 Email**), bare `km0digital` as a product nickname |
+| **K0** | Geometric **lettermark** only (logo, favicon, SVG comments, design docs) | Writing “K0” in marketing sentences as if it were the brand string |
+| **km0digital.com**, `cloud.` / `mail.`, `@km0digital.com`, repo/CSS ids (`km0-web`, `.km0-motif`) | Domains and technical identifiers (lowercase) | Using the domain stem as UI product copy |
+
+**Rule of thumb:** if a visitor reads it in the UI, it is **KM0** (or the localized full name). If it is a host, path, class, or repo, lowercase `km0*` is fine.
+
 ## Assets
 
 | Asset | Path |

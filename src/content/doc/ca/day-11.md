@@ -1,5 +1,5 @@
 ---
-title: "Dia 11 - KM0 Mail en producció"
+title: "Dia 11 - KM0 Email en producció"
 description: "Correu @km0digital.com amb Postfix, Dovecot, Rspamd i Roundcube a mail.km0digital.com; DNS MX/SPF/DKIM/DMARC, relay OpenCloud i plans de fase 1b."
 pubDate: 2026-06-14
 locale: ca
@@ -7,7 +7,7 @@ locale: ca
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
-  <p class="doc-lead">El <a href="/ca/doc/day-9/">dia 9</a> va tancar preus, legal, registre OpenCloud i conversió. <strong>No vam publicar entrada del dia 10</strong> (desplegament intern de correu sense article). El 14 de juny de 2026 vam activar <strong>KM0 Mail</strong>: bústies <code>@km0digital.com</code>, webmail a <a href="https://mail.km0digital.com/">mail.km0digital.com</a> i relay SMTP per a notificacions d'OpenCloud.</p>
+  <p class="doc-lead">El <a href="/ca/doc/day-9/">dia 9</a> va tancar preus, legal, registre OpenCloud i conversió. <strong>No vam publicar entrada del dia 10</strong> (desplegament intern de correu sense article). El 14 de juny de 2026 vam activar <strong>KM0 Email</strong>: bústies <code>@km0digital.com</code>, webmail a <a href="https://mail.km0digital.com/">mail.km0digital.com</a> i relay SMTP per a notificacions d'OpenCloud.</p>
   <p class="doc-lead">KM0 deixa de dependre de Gmail o APIs externes per al correu operatiu del domini i obre la porta a verificació de registre, avisos d'idees i màrqueting sobre la mateixa infraestructura.</p>
 </section>
 
@@ -25,7 +25,7 @@ locale: ca
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">KM0 Mail</p>
+  <p class="doc-block-title">KM0 Email</p>
   <h2 class="doc-block-heading">Arquitectura i flux</h2>
   <div class="doc-note"><pre>Internet (MX @ → mail.km0digital.com)
         ↓
@@ -69,7 +69,7 @@ locale: ca
   Remitent: noreply@km0digital.com</pre></div>
   <ul class="doc-list">
     <li><strong>km0-opencloud:</strong> variables <code>SMTP_*</code> a <code>.env</code> i <code>extra_hosts</code> al compose per arribar a Postfix de l'host.</li>
-    <li><strong>Abast:</strong> les notificacions del cloud ja surten per KM0 Mail; el registre amb verificació per email segueix pendent (fase 1b).</li>
+    <li><strong>Abast:</strong> les notificacions del cloud ja surten per KM0 Email; el registre amb verificació per email segueix pendent (fase 1b).</li>
     <li><strong>LDAP:</strong> sense unificació a la fase 1; columna <code>mail_accounts.opencloud_uuid</code> reservada per al futur.</li>
   </ul>
 </section>

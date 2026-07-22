@@ -37,7 +37,7 @@ Eine **volle** Revision, kein Feinschliff:
 5. **Seitenstile:** Abschnittsrhythmus, Buttons, Auth-Formulare; eine Familie über Web und Schwesterflächen.
 6. **Anti-generische Regeln:** dokumentieren, was verboten ist, damit Agenten und Menschen nicht zum Durchschnitt zurückfallen.
 
-Teile dieser Arbeit sind später auf der öffentlichen Site gelandet (Tokens, K0-Marke, Anti-Slop-Doktrin). Dieser Tag hält den **Moment der Entscheidung** fest, nicht das volle technische Changelog.
+Teile dieser Arbeit sind später auf der öffentlichen Site gelandet (Tokens, K0-Lettermark von KM0, Anti-Slop-Doktrin). Dieser Tag hält den **Moment der Entscheidung** fest, nicht das volle technische Changelog.
 
 ## Nützliche Abschweifungen (kein falsches Protokoll)
 

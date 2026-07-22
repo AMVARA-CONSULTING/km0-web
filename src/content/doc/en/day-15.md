@@ -85,7 +85,7 @@ locale: en
   <ol class="doc-steps">
     <li><strong>Health:</strong> operators can run <code>./scripts/verify-register-api.sh</code> in km0-opencloud and confirm <code>graph_auth_ok: true</code>.</li>
     <li><strong>Registration:</strong> try <a href="https://cloud.km0digital.com/register.html">email/password registration</a> or sign in with Google if you already have an account.</li>
-    <li><strong>Series:</strong> read <a href="/en/doc/day-14/">day 14</a> (Harari and AI) and <a href="/en/doc/day-11/">day 11</a> (KM0 Mail).</li>
+    <li><strong>Series:</strong> read <a href="/en/doc/day-14/">day 14</a> (Harari and AI) and <a href="/en/doc/day-11/">day 11</a> (KM0 Email).</li>
     <li><strong>Ideas:</strong> tell us via the <a href="/en/ideas/">ideas form</a> or <a href="/en/#contact">contact</a> if you want more posts on KM0 Cloud operations.</li>
   </ol>
 </section>
@@ -93,5 +93,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Previous days</h2>
-  <p class="doc-closing"><a href="/en/doc/day-14/">Day 14</a> summarised Harari's video on AI and civilization; <a href="/en/doc/day-13/">day 13</a> covered meet 6 on visibility; <a href="/en/doc/day-11/">day 11</a> documented KM0 Mail. <a href="/en/doc/day-16/">Day 16</a> announces the Masnou meetup on AI, bureaucracy, and Palantir. Follow the series and try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> whenever you like.</p>
+  <p class="doc-closing"><a href="/en/doc/day-14/">Day 14</a> summarised Harari's video on AI and civilization; <a href="/en/doc/day-13/">day 13</a> covered meet 6 on visibility; <a href="/en/doc/day-11/">day 11</a> documented KM0 Email. <a href="/en/doc/day-16/">Day 16</a> announces the Masnou meetup on AI, bureaucracy, and Palantir. Follow the series and try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> whenever you like.</p>
 </section>

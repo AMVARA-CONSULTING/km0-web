@@ -8,7 +8,7 @@ platform: web
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
-  <p class="doc-lead">Aquesta guia explica com accedir a KM0 Cloud des d'un navegador web, des de zero. No calen coneixements tècnics: només el teu navegador habitual i les teves credencials.</p>
+  <p class="doc-lead">Aquesta guia explica com accedir a KM0 Cloud al navegador. No calen coneixements tècnics: només el teu navegador habitual i les teves credencials.</p>
 </section>
 
 <section class="doc-block">

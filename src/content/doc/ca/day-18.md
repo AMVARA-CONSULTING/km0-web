@@ -37,7 +37,7 @@ Revisió **completa**, no un retoc:
 5. **Estils de pàgina:** ritme de seccions, botons, formularis d'auth; mateixa família a la web i superfícies germanes.
 6. **Criteri anti-genèric:** documentar què es prohibeix perquè agents i humans no tornin a la mitjana.
 
-Part d'aquest treball ja s'ha executat després a la web pública (tokens, marca K0, doctrina anti-slop). Aquest dia documenta el **moment en què ho vam decidir**, no el changelog tècnic complet.
+Part d'aquest treball ja s'ha executat després a la web pública (tokens, lettermark K0 de KM0, doctrina anti-slop). Aquest dia documenta el **moment en què ho vam decidir**, no el changelog tècnic complet.
 
 ## Desviaments útils (per no fingir una acta perfecta)
 

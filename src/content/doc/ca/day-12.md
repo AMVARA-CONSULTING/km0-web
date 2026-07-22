@@ -7,7 +7,7 @@ locale: ca
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
-  <p class="doc-lead">Després d'activar el <a href="/ca/doc/day-11/">KM0 Mail en producció</a>, vam mantenir una <strong>xerrada amb una clienta</strong> (Luzma) centrada en com es sent usar KM0 des de fora: on és el login, què falta explicar i quines millores petites farien la diferència sense redissenyar tot el producte.</p>
+  <p class="doc-lead">Després d'activar el <a href="/ca/doc/day-11/">KM0 Email en producció</a>, vam mantenir una <strong>xerrada amb una clienta</strong> (Luzma) centrada en com es sent usar KM0 des de fora: on és el login, què falta explicar i quines millores petites farien la diferència sense redissenyar tot el producte.</p>
   <p class="doc-lead">Aquesta entrada no transcriu la reunió paraula per paraula; resumeix els temes accionables que van sortir i com encaixen en el roadmap immediat de km0-web i serveis relacionats.</p>
 </section>
 
@@ -107,5 +107,5 @@ locale: ca
 <section class="doc-closing-block">
   <p class="doc-block-title">Sèrie</p>
   <h2 class="doc-block-heading">Entrades relacionades</h2>
-  <p class="doc-closing">El <a href="/ca/doc/day-11/">dia 11</a> va documentar KM0 Mail; aquesta xerrada (dia 12) recull UX i accessibilitat; el <a href="/ca/doc/day-13/">dia 13</a> resumeix el meet 6 sobre visibilitat i associacions. Prova el <a href="https://mail.km0digital.com/">webmail</a>, consulta <a href="/ca/pricing/">preus</a> i explica'ns quin tutorial et faria falta.</p>
+  <p class="doc-closing">El <a href="/ca/doc/day-11/">dia 11</a> va documentar KM0 Email; aquesta xerrada (dia 12) recull UX i accessibilitat; el <a href="/ca/doc/day-13/">dia 13</a> resumeix el meet 6 sobre visibilitat i associacions. Prova el <a href="https://mail.km0digital.com/">webmail</a>, consulta <a href="/ca/pricing/">preus</a> i explica'ns quin tutorial et faria falta.</p>
 </section>

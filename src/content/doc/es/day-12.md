@@ -7,7 +7,7 @@ locale: es
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
-  <p class="doc-lead">Tras activar <a href="/doc/day-11/">KM0 Mail en producción</a>, mantuvimos una <strong>charla con una clienta</strong> (Luzma) centrada en cómo se siente usar KM0 desde fuera: dónde está el login, qué falta explicar y qué mejoras pequeñas harían la diferencia sin rediseñar todo el producto.</p>
+  <p class="doc-lead">Tras activar <a href="/doc/day-11/">KM0 Email en producción</a>, mantuvimos una <strong>charla con una clienta</strong> (Luzma) centrada en cómo se siente usar KM0 desde fuera: dónde está el login, qué falta explicar y qué mejoras pequeñas harían la diferencia sin rediseñar todo el producto.</p>
   <p class="doc-lead">Esta entrada no transcribe la reunión palabra por palabra; resume los temas accionables que salieron y cómo encajan en el roadmap inmediato de km0-web y servicios relacionados.</p>
 </section>
 
@@ -107,5 +107,5 @@ locale: es
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Entradas relacionadas</h2>
-  <p class="doc-closing">El <a href="/doc/day-11/">día 11</a> documentó KM0 Mail; esta charla (día 12) recoge UX y accesibilidad; el <a href="/doc/day-13/">día 13</a> resume el meet 6 sobre visibilidad y asociaciones. Prueba el <a href="https://mail.km0digital.com/">webmail</a>, consulta <a href="/pricing/">precios</a> y cuéntanos qué tutorial echarías de menos.</p>
+  <p class="doc-closing">El <a href="/doc/day-11/">día 11</a> documentó KM0 Email; esta charla (día 12) recoge UX y accesibilidad; el <a href="/doc/day-13/">día 13</a> resume el meet 6 sobre visibilidad y asociaciones. Prueba el <a href="https://mail.km0digital.com/">webmail</a>, consulta <a href="/pricing/">precios</a> y cuéntanos qué tutorial echarías de menos.</p>
 </section>

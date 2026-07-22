@@ -95,5 +95,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Previous days</h2>
-  <p class="doc-closing"><a href="/en/doc/day-13/">Day 13</a> covered meet 6 on visibility and associations; <a href="/en/doc/day-12/">day 12</a> the client talk on UX; <a href="/en/doc/day-11/">day 11</a> documented KM0 Mail. <a href="/en/doc/day-15/">Day 15</a> explains the expired register-api Graph token and automated renewal. Watch the video, share your reading, and follow the series.</p>
+  <p class="doc-closing"><a href="/en/doc/day-13/">Day 13</a> covered meet 6 on visibility and associations; <a href="/en/doc/day-12/">day 12</a> the client talk on UX; <a href="/en/doc/day-11/">day 11</a> documented KM0 Email. <a href="/en/doc/day-15/">Day 15</a> explains the expired register-api Graph token and automated renewal. Watch the video, share your reading, and follow the series.</p>
 </section>

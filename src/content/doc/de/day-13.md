@@ -7,7 +7,7 @@ locale: de
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Einführung</p>
-  <p class="doc-lead">Nach der Veröffentlichung von <a href="/de/doc/day-11/">KM0 Mail in Produktion</a> hielt das Team sein <strong>sechstes regelmäßiges Meet</strong> (Meet 6) ab. Es ging nicht um Deployments oder DNS: im Mittelpunkt stand, <strong>KM0 sichtbar zu machen</strong>, wem wir es erzählen und welche konkreten Schritte zum Wachstum nötig sind, ohne den Nähe-Ansatz zu verlieren.</p>
+  <p class="doc-lead">Nach der Veröffentlichung von <a href="/de/doc/day-11/">KM0 Email in Produktion</a> hielt das Team sein <strong>sechstes regelmäßiges Meet</strong> (Meet 6) ab. Es ging nicht um Deployments oder DNS: im Mittelpunkt stand, <strong>KM0 sichtbar zu machen</strong>, wem wir es erzählen und welche konkreten Schritte zum Wachstum nötig sind, ohne den Nähe-Ansatz zu verlieren.</p>
   <p class="doc-lead">Dieser Eintrag fasst Entscheidungen und Ideen aus dem Gespräch zusammen. Es ist kein wörtliches Protokoll, sondern die umsetzbare Zusammenfassung für alle, die der Serie von außen folgen.</p>
 </section>
 
@@ -95,5 +95,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Frühere Tage</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Mail dokumentiert; am <a href="/de/doc/day-12/">Tag 12</a> das Kundengespräch zur Nutzererfahrung; am <a href="/de/doc/day-9/">Tag 9</a> erschienen Preise und Rechtliches. <a href="/de/doc/day-14/">Tag 14</a> fasst Hararis Video über KI und Zivilisation zusammen. Folgen Sie der Serie, testen Sie das <a href="https://mail.km0digital.com/">Webmail</a> und schreiben Sie uns über <a href="/de/#contact">Kontakt</a>, wenn Sie eine AMPA oder einen Verein kennen, der passen könnte.</p>
+  <p class="doc-closing">Am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Email dokumentiert; am <a href="/de/doc/day-12/">Tag 12</a> das Kundengespräch zur Nutzererfahrung; am <a href="/de/doc/day-9/">Tag 9</a> erschienen Preise und Rechtliches. <a href="/de/doc/day-14/">Tag 14</a> fasst Hararis Video über KI und Zivilisation zusammen. Folgen Sie der Serie, testen Sie das <a href="https://mail.km0digital.com/">Webmail</a> und schreiben Sie uns über <a href="/de/#contact">Kontakt</a>, wenn Sie eine AMPA oder einen Verein kennen, der passen könnte.</p>
 </section>

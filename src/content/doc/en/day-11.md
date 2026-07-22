@@ -1,5 +1,5 @@
 ---
-title: "Day 11 - KM0 Mail in production"
+title: "Day 11 - KM0 Email in production"
 description: "@km0digital.com mail with Postfix, Dovecot, Rspamd, and Roundcube on mail.km0digital.com; MX/SPF/DKIM/DMARC DNS, OpenCloud relay, and phase 1b plans."
 pubDate: 2026-06-14
 locale: en
@@ -7,7 +7,7 @@ locale: en
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
-  <p class="doc-lead"><a href="/en/doc/day-9/">Day 9</a> shipped pricing, legal, OpenCloud registration, and conversion polish. <strong>We did not publish a day 10 entry</strong> (internal mail deployment without an article). On 14 June 2026 we turned on <strong>KM0 Mail</strong>: <code>@km0digital.com</code> mailboxes, webmail at <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, and SMTP relay for OpenCloud notifications.</p>
+  <p class="doc-lead"><a href="/en/doc/day-9/">Day 9</a> shipped pricing, legal, OpenCloud registration, and conversion polish. <strong>We did not publish a day 10 entry</strong> (internal mail deployment without an article). On 14 June 2026 we turned on <strong>KM0 Email</strong>: <code>@km0digital.com</code> mailboxes, webmail at <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, and SMTP relay for OpenCloud notifications.</p>
   <p class="doc-lead">KM0 no longer relies on Gmail or external APIs for operational mail on the domain, and opens the path to registration verification, idea alerts, and marketing on the same infrastructure.</p>
 </section>
 
@@ -25,7 +25,7 @@ locale: en
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">KM0 Mail</p>
+  <p class="doc-block-title">KM0 Email</p>
   <h2 class="doc-block-heading">Architecture and flow</h2>
   <div class="doc-note"><pre>Internet (MX @ → mail.km0digital.com)
         ↓
@@ -69,7 +69,7 @@ locale: en
   Sender: noreply@km0digital.com</pre></div>
   <ul class="doc-list">
     <li><strong>km0-opencloud:</strong> <code>SMTP_*</code> variables in <code>.env</code> and <code>extra_hosts</code> in compose to reach host Postfix.</li>
-    <li><strong>Scope:</strong> cloud notifications already leave via KM0 Mail; registration email verification remains pending (phase 1b).</li>
+    <li><strong>Scope:</strong> cloud notifications already leave via KM0 Email; registration email verification remains pending (phase 1b).</li>
     <li><strong>LDAP:</strong> no unification in phase 1; <code>mail_accounts.opencloud_uuid</code> column reserved for later.</li>
   </ul>
 </section>

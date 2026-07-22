@@ -37,7 +37,7 @@ A **full** revision, not a tweak:
 5. **Page styles:** section rhythm, buttons, auth forms; one family across web and sibling surfaces.
 6. **Anti-generic rules:** document what is banned so agents and humans do not drift back to the average.
 
-Some of that work has already shipped later on the public site (tokens, K0 mark, anti-slop doctrine). This day records the **moment we decided**, not the full technical changelog.
+Some of that work has already shipped later on the public site (tokens, KM0 K0 lettermark, anti-slop doctrine). This day records the **moment we decided**, not the full technical changelog.
 
 ## Useful digressions (no fake perfect minutes)
 

@@ -114,5 +114,5 @@ locale: ca
 <section class="doc-closing-block">
   <p class="doc-block-title">Següent pas</p>
   <h2 class="doc-block-heading">Dia 11</h2>
-  <p class="doc-closing">No vam publicar entrada del dia 10 (desplegament intern de correu). El <a href="/ca/doc/day-11/">dia 11</a> documenta <strong>KM0 Mail</strong> en producció: <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, DNS, lliurabilitat i integració parcial amb OpenCloud. Mentrestant, prova <a href="https://cloud.km0digital.com/">KM0 Cloud</a> o consulta <a href="/ca/pricing/">preus</a>.</p>
+  <p class="doc-closing">No vam publicar entrada del dia 10 (desplegament intern de correu). El <a href="/ca/doc/day-11/">dia 11</a> documenta <strong>KM0 Email</strong> en producció: <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, DNS, lliurabilitat i integració parcial amb OpenCloud. Mentrestant, prova <a href="https://cloud.km0digital.com/">KM0 Cloud</a> o consulta <a href="/ca/pricing/">preus</a>.</p>
 </section>

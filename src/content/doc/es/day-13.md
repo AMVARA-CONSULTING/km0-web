@@ -7,7 +7,7 @@ locale: es
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
-  <p class="doc-lead">Tras publicar <a href="/doc/day-11/">KM0 Mail en producción</a>, el equipo celebró la <strong>sexta reunión periódica</strong> (meet 6). No hablamos de despliegues ni de DNS: la mesa giró en torno a <strong>cómo hacer visible KM0</strong>, a quién contárselo y qué pasos concretos dar para crecer sin perder el enfoque de proximidad.</p>
+  <p class="doc-lead">Tras publicar <a href="/doc/day-11/">KM0 Email en producción</a>, el equipo celebró la <strong>sexta reunión periódica</strong> (meet 6). No hablamos de despliegues ni de DNS: la mesa giró en torno a <strong>cómo hacer visible KM0</strong>, a quién contárselo y qué pasos concretos dar para crecer sin perder el enfoque de proximidad.</p>
   <p class="doc-lead">Esta entrada recoge las decisiones y las ideas que salieron de la conversación. No es una transcripción literal; es el resumen accionable para quien sigue la serie desde fuera.</p>
 </section>
 
@@ -95,5 +95,5 @@ locale: es
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Días anteriores</h2>
-  <p class="doc-closing">El <a href="/doc/day-11/">día 11</a> documentó KM0 Mail; el <a href="/doc/day-12/">día 12</a> la charla con cliente sobre experiencia de usuario; el <a href="/doc/day-9/">día 9</a> publicó precios y legal. El <a href="/doc/day-14/">día 14</a> resume el vídeo de Harari sobre IA y civilización. Sigue la serie, prueba el <a href="https://mail.km0digital.com/">webmail</a> y cuéntanos por <a href="/#contact">contacto</a> si conoces una AMPA o asociación que encaje.</p>
+  <p class="doc-closing">El <a href="/doc/day-11/">día 11</a> documentó KM0 Email; el <a href="/doc/day-12/">día 12</a> la charla con cliente sobre experiencia de usuario; el <a href="/doc/day-9/">día 9</a> publicó precios y legal. El <a href="/doc/day-14/">día 14</a> resume el vídeo de Harari sobre IA y civilización. Sigue la serie, prueba el <a href="https://mail.km0digital.com/">webmail</a> y cuéntanos por <a href="/#contact">contacto</a> si conoces una AMPA o asociación que encaje.</p>
 </section>

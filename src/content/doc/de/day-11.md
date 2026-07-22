@@ -1,5 +1,5 @@
 ---
-title: "Tag 11 - KM0 Mail in Produktion"
+title: "Tag 11 - KM0 Email in Produktion"
 description: "@km0digital.com-Mail mit Postfix, Dovecot, Rspamd und Roundcube auf mail.km0digital.com; MX/SPF/DKIM/DMARC-DNS, OpenCloud-Relay und Phase-1b-Pläne."
 pubDate: 2026-06-14
 locale: de
@@ -7,7 +7,7 @@ locale: de
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Einleitung</p>
-  <p class="doc-lead">Am <a href="/de/doc/day-9/">Tag 9</a> wurden Preise, Rechtliches, OpenCloud-Registrierung und Conversion-Polish ausgeliefert. <strong>Es gibt keinen Tag-10-Artikel</strong> (internes Mail-Deployment ohne Beitrag). Am 14. Juni 2026 haben wir <strong>KM0 Mail</strong> aktiviert: <code>@km0digital.com</code>-Postfächer, Webmail unter <a href="https://mail.km0digital.com/">mail.km0digital.com</a> und SMTP-Relay für OpenCloud-Benachrichtigungen.</p>
+  <p class="doc-lead">Am <a href="/de/doc/day-9/">Tag 9</a> wurden Preise, Rechtliches, OpenCloud-Registrierung und Conversion-Polish ausgeliefert. <strong>Es gibt keinen Tag-10-Artikel</strong> (internes Mail-Deployment ohne Beitrag). Am 14. Juni 2026 haben wir <strong>KM0 Email</strong> aktiviert: <code>@km0digital.com</code>-Postfächer, Webmail unter <a href="https://mail.km0digital.com/">mail.km0digital.com</a> und SMTP-Relay für OpenCloud-Benachrichtigungen.</p>
   <p class="doc-lead">KM0 ist nicht mehr auf Gmail oder externe APIs für operativen Domain-Mail angewiesen und öffnet den Weg zu Registrierungsverifikation, Ideen-Alerts und Marketing auf derselben Infrastruktur.</p>
 </section>
 
@@ -25,7 +25,7 @@ locale: de
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">KM0 Mail</p>
+  <p class="doc-block-title">KM0 Email</p>
   <h2 class="doc-block-heading">Architektur und Ablauf</h2>
   <div class="doc-note"><pre>Internet (MX @ → mail.km0digital.com)
         ↓
@@ -69,7 +69,7 @@ locale: de
   Absender: noreply@km0digital.com</pre></div>
   <ul class="doc-list">
     <li><strong>km0-opencloud:</strong> <code>SMTP_*</code>-Variablen in <code>.env</code> und <code>extra_hosts</code> in Compose, um Host-Postfix zu erreichen.</li>
-    <li><strong>Umfang:</strong> Cloud-Benachrichtigungen gehen bereits über KM0 Mail; E-Mail-Verifikation bei Registrierung bleibt ausstehend (Phase 1b).</li>
+    <li><strong>Umfang:</strong> Cloud-Benachrichtigungen gehen bereits über KM0 Email; E-Mail-Verifikation bei Registrierung bleibt ausstehend (Phase 1b).</li>
     <li><strong>LDAP:</strong> keine Vereinheitlichung in Phase 1; Spalte <code>mail_accounts.opencloud_uuid</code> für später reserviert.</li>
   </ul>
 </section>

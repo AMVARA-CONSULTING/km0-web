@@ -1,5 +1,5 @@
 ---
-title: "Día 11 - KM0 Mail en producción"
+title: "Día 11 - KM0 Email en producción"
 description: "Correo @km0digital.com con Postfix, Dovecot, Rspamd y Roundcube en mail.km0digital.com; DNS MX/SPF/DKIM/DMARC, relay OpenCloud y planes de fase 1b."
 pubDate: 2026-06-14
 locale: es
@@ -7,7 +7,7 @@ locale: es
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
-  <p class="doc-lead">El <a href="/doc/day-9/">día 9</a> cerró precios, legal, registro OpenCloud y conversión. <strong>No publicamos entrada del día 10</strong> (despliegue interno de correo sin artículo). El 14 de junio de 2026 activamos <strong>KM0 Mail</strong>: buzones <code>@km0digital.com</code>, webmail en <a href="https://mail.km0digital.com/">mail.km0digital.com</a> y relay SMTP para notificaciones de OpenCloud.</p>
+  <p class="doc-lead">El <a href="/doc/day-9/">día 9</a> cerró precios, legal, registro OpenCloud y conversión. <strong>No publicamos entrada del día 10</strong> (despliegue interno de correo sin artículo). El 14 de junio de 2026 activamos <strong>KM0 Email</strong>: buzones <code>@km0digital.com</code>, webmail en <a href="https://mail.km0digital.com/">mail.km0digital.com</a> y relay SMTP para notificaciones de OpenCloud.</p>
   <p class="doc-lead">KM0 deja de depender de Gmail o APIs externas para el correo operativo del dominio y abre la puerta a verificación de registro, avisos de ideas y marketing sobre la misma infraestructura.</p>
 </section>
 
@@ -25,7 +25,7 @@ locale: es
 </section>
 
 <section class="doc-block doc-block-alt">
-  <p class="doc-block-title">KM0 Mail</p>
+  <p class="doc-block-title">KM0 Email</p>
   <h2 class="doc-block-heading">Arquitectura y flujo</h2>
   <div class="doc-note"><pre>Internet (MX @ → mail.km0digital.com)
         ↓
@@ -69,7 +69,7 @@ locale: es
   Remitente: noreply@km0digital.com</pre></div>
   <ul class="doc-list">
     <li><strong>km0-opencloud:</strong> variables <code>SMTP_*</code> en <code>.env</code> y <code>extra_hosts</code> en compose para alcanzar Postfix del host.</li>
-    <li><strong>Alcance:</strong> notificaciones del cloud ya salen por KM0 Mail; registro con verificación por email sigue pendiente (fase 1b).</li>
+    <li><strong>Alcance:</strong> notificaciones del cloud ya salen por KM0 Email; registro con verificación por email sigue pendiente (fase 1b).</li>
     <li><strong>LDAP:</strong> sin unificación en fase 1; columna <code>mail_accounts.opencloud_uuid</code> reservada para futuro.</li>
   </ul>
 </section>

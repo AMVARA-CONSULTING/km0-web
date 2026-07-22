@@ -7,7 +7,7 @@ locale: en
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
-  <p class="doc-lead">After publishing <a href="/en/doc/day-11/">KM0 Mail in production</a>, the team held its <strong>sixth regular meet</strong> (meet 6). We did not talk about deployments or DNS: the conversation focused on <strong>making KM0 visible</strong>, who to tell, and concrete steps to grow without losing the proximity-first approach.</p>
+  <p class="doc-lead">After publishing <a href="/en/doc/day-11/">KM0 Email in production</a>, the team held its <strong>sixth regular meet</strong> (meet 6). We did not talk about deployments or DNS: the conversation focused on <strong>making KM0 visible</strong>, who to tell, and concrete steps to grow without losing the proximity-first approach.</p>
   <p class="doc-lead">This entry summarises decisions and ideas from that conversation. It is not a literal transcript; it is the actionable recap for anyone following the series from outside.</p>
 </section>
 
@@ -95,5 +95,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Earlier days</h2>
-  <p class="doc-closing"><a href="/en/doc/day-11/">Day 11</a> documented KM0 Mail; <a href="/en/doc/day-12/">day 12</a> covers the client talk on user experience; <a href="/en/doc/day-9/">day 9</a> published pricing and legal. <a href="/en/doc/day-14/">Day 14</a> summarises Harari's video on AI and civilization. Follow the series, try the <a href="https://mail.km0digital.com/">webmail</a>, and tell us via <a href="/en/#contact">contact</a> if you know a PTA or association that might fit.</p>
+  <p class="doc-closing"><a href="/en/doc/day-11/">Day 11</a> documented KM0 Email; <a href="/en/doc/day-12/">day 12</a> covers the client talk on user experience; <a href="/en/doc/day-9/">day 9</a> published pricing and legal. <a href="/en/doc/day-14/">Day 14</a> summarises Harari's video on AI and civilization. Follow the series, try the <a href="https://mail.km0digital.com/">webmail</a>, and tell us via <a href="/en/#contact">contact</a> if you know a PTA or association that might fit.</p>
 </section>

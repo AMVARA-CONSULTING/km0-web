@@ -7,7 +7,7 @@ locale: de
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Einleitung</p>
-  <p class="doc-lead">Nach der Aktivierung von <a href="/de/doc/day-11/">KM0 Mail in Produktion</a> führten wir ein <strong>Kundengespräch</strong> (Luzma), das sich darauf konzentrierte, wie sich KM0 von außen anfühlt: wo der Login ist, was noch erklärt werden muss und welche kleinen Verbesserungen einen Unterschied machen würden, ohne das gesamte Produkt neu zu gestalten.</p>
+  <p class="doc-lead">Nach der Aktivierung von <a href="/de/doc/day-11/">KM0 Email in Produktion</a> führten wir ein <strong>Kundengespräch</strong> (Luzma), das sich darauf konzentrierte, wie sich KM0 von außen anfühlt: wo der Login ist, was noch erklärt werden muss und welche kleinen Verbesserungen einen Unterschied machen würden, ohne das gesamte Produkt neu zu gestalten.</p>
   <p class="doc-lead">Dieser Beitrag ist keine wörtliche Abschrift; er fasst die umsetzbaren Themen zusammen und ordnet sie in die unmittelbare Roadmap für km0-web und verwandte Dienste ein.</p>
 </section>
 
@@ -107,5 +107,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Verwandte Beiträge</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Mail dokumentiert; dieses Gespräch (Tag 12) fasst UX und Zugänglichkeit zusammen; am <a href="/de/doc/day-13/">Tag 13</a> steht Meet 6 zu Sichtbarkeit und Vereinen. Testen Sie das <a href="https://mail.km0digital.com/">Webmail</a>, sehen Sie <a href="/de/pricing/">Preise</a> und sagen Sie uns, welches Tutorial Ihnen fehlen würde.</p>
+  <p class="doc-closing">Am <a href="/de/doc/day-11/">Tag 11</a> wurde KM0 Email dokumentiert; dieses Gespräch (Tag 12) fasst UX und Zugänglichkeit zusammen; am <a href="/de/doc/day-13/">Tag 13</a> steht Meet 6 zu Sichtbarkeit und Vereinen. Testen Sie das <a href="https://mail.km0digital.com/">Webmail</a>, sehen Sie <a href="/de/pricing/">Preise</a> und sagen Sie uns, welches Tutorial Ihnen fehlen würde.</p>
 </section>

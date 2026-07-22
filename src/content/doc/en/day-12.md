@@ -7,7 +7,7 @@ locale: en
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
-  <p class="doc-lead">After turning on <a href="/en/doc/day-11/">KM0 Mail in production</a>, we held a <strong>client conversation</strong> (Luzma) focused on what it feels like to use KM0 from the outside: where login lives, what still needs explaining, and which small improvements would matter without redesigning the whole product.</p>
+  <p class="doc-lead">After turning on <a href="/en/doc/day-11/">KM0 Email in production</a>, we held a <strong>client conversation</strong> (Luzma) focused on what it feels like to use KM0 from the outside: where login lives, what still needs explaining, and which small improvements would matter without redesigning the whole product.</p>
   <p class="doc-lead">This entry is not a word-for-word transcript; it summarises the actionable themes and how they fit the immediate roadmap for km0-web and related services.</p>
 </section>
 
@@ -107,5 +107,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Related entries</h2>
-  <p class="doc-closing"><a href="/en/doc/day-11/">Day 11</a> documented KM0 Mail; this talk (day 12) captures UX and accessibility; <a href="/en/doc/day-13/">day 13</a> summarises meet 6 on visibility and associations. Try the <a href="https://mail.km0digital.com/">webmail</a>, see <a href="/en/pricing/">pricing</a>, and tell us which tutorial you would miss most.</p>
+  <p class="doc-closing"><a href="/en/doc/day-11/">Day 11</a> documented KM0 Email; this talk (day 12) captures UX and accessibility; <a href="/en/doc/day-13/">day 13</a> summarises meet 6 on visibility and associations. Try the <a href="https://mail.km0digital.com/">webmail</a>, see <a href="/en/pricing/">pricing</a>, and tell us which tutorial you would miss most.</p>
 </section>

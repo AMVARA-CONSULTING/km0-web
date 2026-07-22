@@ -37,7 +37,7 @@ Revisión **completa**, no un retoque:
 5. **Estilos de página:** ritmo de secciones, botones, formularios de auth; misma familia en web y superficies hermanas.
 6. **Criterio anti-genérico:** documentar qué se prohíbe para que agentes y humanos no regresen al promedio.
 
-Parte de ese trabajo ya se ha ejecutado después en la web pública (tokens, marca K0, doctrina anti-slop). Este día documenta el **momento en que lo decidimos**, no el changelog técnico completo.
+Parte de ese trabajo ya se ha ejecutado después en la web pública (tokens, lettermark K0 de KM0, doctrina anti-slop). Este día documenta el **momento en que lo decidimos**, no el changelog técnico completo.
 
 ## Desvíos útiles (para no fingir una acta perfecta)
 

@@ -114,5 +114,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Next step</p>
   <h2 class="doc-block-heading">Day 11</h2>
-  <p class="doc-closing">We did not publish a day 10 entry (internal mail deployment). <a href="/en/doc/day-11/">Day 11</a> documents <strong>KM0 Mail</strong> in production: <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, DNS, deliverability, and partial OpenCloud integration. Meanwhile, try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> or see <a href="/en/pricing/">pricing</a>.</p>
+  <p class="doc-closing">We did not publish a day 10 entry (internal mail deployment). <a href="/en/doc/day-11/">Day 11</a> documents <strong>KM0 Email</strong> in production: <a href="https://mail.km0digital.com/">mail.km0digital.com</a>, DNS, deliverability, and partial OpenCloud integration. Meanwhile, try <a href="https://cloud.km0digital.com/">KM0 Cloud</a> or see <a href="/en/pricing/">pricing</a>.</p>
 </section>

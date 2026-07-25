@@ -45,7 +45,7 @@ From `docs/brand-tokens.md` (dark only):
 Auth forms are UI, not long-form marketing:
 
 - **UI / labels / buttons:** IBM Plex Sans (self-hosted woff2 via `src/styles/fonts.css`; same faces as marketing)
-- **Optional display for H1:** Bricolage Grotesque
+- **Optional display for H1:** IBM Plex Sans
 - Do **not** use Inter / Roboto / Open Sans alone
 
 ## Mark assets (copy from km0-web)

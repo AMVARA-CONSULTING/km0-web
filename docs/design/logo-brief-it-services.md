@@ -22,7 +22,7 @@ Sources: responsive logo systems (Brainy Papers), favicon/scalability tests, tec
 | **Avoid generic tech tropes** | No circuit boards, wifi fans, clouds-with-arrows, abstract “nodes,” **camera/lens**, chatbot bubbles |
 | **Silhouette test** | Recognisable in pure black on white and white on navy |
 | **Color with contrast** | Signal teal OK as field or accent; must also work mono |
-| **Distinct from SaaS clones** | No Inter wordmark + purple orb; pair with KM0 type (Bricolage / Plex) when lockup exists |
+| **Distinct from SaaS clones** | No Inter wordmark + purple orb; pair with KM0 type (IBM Plex Sans) when lockup exists |
 
 Successful IT marks tend to be: lettermark (Notion N, Linear L), bold abstract geometry with unusual proportion, or a single custom glyph, **not** literal gadgets.
 

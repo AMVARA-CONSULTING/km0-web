@@ -188,7 +188,7 @@ Reject and return to WIP when any of these is the only pass story:
 1. **Commit a direction** before pixels: one sentence of vibe + one layout archetype + one type pair + one anchor hue + one accent (accent ≤ ~5% of surface). Cool civic editorial is locked in `docs/brand-tokens.md`.
 2. **Brand first in the first viewport:** product name is hero-level, not nav chrome. One headline, one supporting sentence, one CTA group, one dominant visual plane (prefer product proof over abstract art).
 3. **Bias the layout:** asymmetry once is enough to signal intent.
-4. **Type pairing:** display face ≠ body face (Bricolage + Source Serif 4). Extreme weight contrast beats timid 400/600.
+4. **Type pairing:** display face ≠ body face (IBM Plex Sans + Source Serif 4). Extreme weight contrast beats timid 400/600.
 5. **One job per section:** one purpose, one headline, usually one short support line. No cards in the hero. Cards only when they contain an interaction.
 6. **Atmosphere without slop:** Origin field motif only; continuous Paper elsewhere. Gradients/patterns/imagery must show place, product, or community - not abstract purple blobs or glow orbs.
 7. **Motion with purpose:** paint-phase vocabulary only (reveals + masthead compact + Offer pin); expo ease-out; always respect `prefers-reduced-motion`. No animation spam.

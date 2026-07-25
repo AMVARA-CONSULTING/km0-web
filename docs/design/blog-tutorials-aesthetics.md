@@ -20,7 +20,7 @@ KM0 `/doc/` and `/tutorials/` still feel dull after phase-1 chrome. Goal: pages 
 - **Nous blog:** huge titles, short dek, continuous field, no card grid.
 - **Stirling docs/marketing:** quiet craft, clear hierarchy, intentional bands.
 - **Hallmark editorial examples:** biased layout, type as the hero.
-- **KM0 tokens:** Paper / Ink / Signal; Bricolage + Source Serif 4 + IBM Plex Sans.
+- **KM0 tokens:** Paper / Ink / Signal; IBM Plex Sans + Source Serif 4.
 
 ## Current KM0 pain (code)
 

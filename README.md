@@ -8,7 +8,7 @@ Public marketing landing for **KM0 Digital**.
 
 ## About
 
-KM0 connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site: cool civic editorial brand (Ink / Paper / Signal teal, Bricolage Grotesque + Source Serif 4 + IBM Plex Sans). See `docs/brand-tokens.md` and `docs/design/anti-slop-doctrine.md`.
+KM0 connects people, ideas, and opportunities from the point of origin. This repository is the public marketing site: cool civic editorial brand (Ink / Paper / Signal teal, IBM Plex Sans + Source Serif 4). See `docs/brand-tokens.md` and `docs/design/anti-slop-doctrine.md`.
 
 **Privacy:** km0digital is built with a privacy-first mindset. We do not sell user data, build advertising profiles, or monetise files. See the landing page privacy section and `/legal/` for the full policy.
 

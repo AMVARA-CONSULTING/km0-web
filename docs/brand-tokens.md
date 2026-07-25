@@ -46,11 +46,11 @@ Spacing rhythm: `--space-section-y` / `--space-section-x` drive `.section-pad` a
 
 | Role | Face | Notes |
 |------|------|-------|
-| Display | **Bricolage Grotesque** | Distinctive, not Inter / Space Grotesk / Fraunces-default |
-| Body (marketing) | **Source Serif 4** | Editorial reading; pairs with grotesque display |
+| Display | **IBM Plex Sans** | Formal civic headlines (same family as UI; not Bricolage / Inter) |
+| Body (marketing) | **Source Serif 4** | Editorial reading; pairs with Plex display |
 | UI / labels / nav | **IBM Plex Sans** | Civic/technical UI voice |
 
-**Forbidden as primary:** Inter, Roboto, Open Sans, Arial, system-ui-only.
+**Forbidden as primary:** Inter, Roboto, Open Sans, Arial, system-ui-only, Bricolage Grotesque.
 
 ## Motion
 
@@ -151,5 +151,5 @@ One short brand in user-facing prose: **KM0**. Do not mix rival spellings.
 - **Colors:** Stamp field `#0F766E` + figure `#EEF0F2`. Mono uses navy `#0B1220` + white. Plaque carries its own field so it reads on Paper, Snow, and dark chrome.
 - **Favicon:** Same K0, **edge-to-edge** square (no padding, no rounded crop) so tabs stay readable at 16×16.
 - **Responsive tiers:** `logo.svg` (rounded tile for header/hero/footer) → `favicon.svg` (full-bleed micro) → `logo-mono.svg` → PNG/OG rasters.
-- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (Bricolage). OG card pairs the plaque with “Kilómetro 0 Digital”.
+- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (IBM Plex Sans). OG card pairs the plaque with “Kilómetro 0 Digital”.
 - **Do not** reintroduce concentric-lens stamps, hollow-only digit plaques that read as cameras, map-pins, or purple/magenta→blue gradient marks.

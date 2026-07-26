@@ -31,6 +31,14 @@ Requires **cursor-agent** on PATH (`~/.local/bin` or install Cursor CLI).
 | 030 | `030-closing-reviewer.md` | `CLOSED-*.md` |
 | 040 | `040-committer.md` | Uncommitted changes (optional; `AGENT_COMMITTER_USE_CURSOR=1`) |
 
+## Commit noise (001 stamp)
+
+`autoagents/001-gh-reviewer/time-of-last-review.txt` is a **local-only** append log for 001 scans. It is **gitignored**.
+
+- Agent 001 and the loop may append to it each cycle.
+- The committer and loop **must not** commit stamp-only changes (no `chore(autoagents): record 001 gh-reviewer…` commits).
+- Real commits still include FEAT/task product work as usual.
+
 ## GitHub labels
 
 | Label | Meaning |

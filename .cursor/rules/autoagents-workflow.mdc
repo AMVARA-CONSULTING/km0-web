@@ -33,7 +33,7 @@ Branch: **`main`**. Remote: **AMVARA-CONSULTING/km0-web**.
 | `002-coder/CODER.md` | NEW/WIP → UNTESTED |
 | `020-test.md` | UNTESTED → TESTING → CLOSED or WIP |
 | `030-closing-reviewer.md` | CLOSED → done/ archive |
-| `040-committer.md` | Commit on main |
+| `040-committer.md` | Commit on main (never 001 stamp-only) |
 
 ## Loop
 

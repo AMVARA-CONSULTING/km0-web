@@ -4,6 +4,8 @@ dist/
 .env
 autoagents/.env
 autoagents/.runtime/
+# Local 001 scan log only; never commit (avoids per-cycle noise commits)
+autoagents/001-gh-reviewer/time-of-last-review.txt
 autoissue/drafts/*
 !autoissue/drafts/.gitkeep
 .DS_Store

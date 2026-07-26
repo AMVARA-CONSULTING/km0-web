@@ -49,7 +49,7 @@ Footer displays **`package.json`** semver. Coders **must** run **`./scripts/bump
 | `handoff` | WIP → UNTESTED check |
 | `tester` | Tester |
 | `closing-review` | Archive CLOSED |
-| `committer` | Git commit (`AGENT_COMMITTER_USE_CURSOR=1` in `.env`) |
+| `committer` | Git commit (`AGENT_COMMITTER_USE_CURSOR=1` in `.env`); never stamp-only 001 commits |
 | `sync_github_from_tasks.py` | FEAT → comment/label; CLOSED → comment/close |
 | `redmine_sync.py` | Redmine closing note on archive (via move script) |
 

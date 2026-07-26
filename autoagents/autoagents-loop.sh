@@ -49,7 +49,8 @@ issue_linked_in_root_tasks() {
 
 last_review_iso_utc() {
   [[ -f "$LAST_REVIEW_FILE" ]] || return 0
-  head -1 "$LAST_REVIEW_FILE" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z' | head -1 || true
+  # Newest stamp is appended at end (file is local / gitignored).
+  grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z' "$LAST_REVIEW_FILE" | tail -1 || true
 }
 
 gh_stderr_looks_like_auth_failure() {
@@ -245,7 +246,9 @@ committer_changed_paths() {
   } | sort -u )
 }
 
-committer_paths_all_local_stamp_allowlist() {
+# True when the only dirty path is the local 001 stamp (should be gitignored).
+# Never commit that file: it produced per-cycle "record 001 gh-reviewer" noise.
+committer_paths_all_local_stamp_only() {
   local f had=0
   while IFS= read -r f; do
     [[ -z "$f" ]] && continue
@@ -258,42 +261,12 @@ committer_paths_all_local_stamp_allowlist() {
   ((had == 1))
 }
 
-committer_try_local_stamp_only() {
-  [[ "${AGENT_COMMITTER_LOCAL:-1}" == "0" ]] && return 1
-  local br
-  br=$(cd "$REPO_ROOT" && git rev-parse --abbrev-ref HEAD 2>/dev/null) || return 1
-  if [[ "$br" != "$GIT_BRANCH" ]]; then
-    echo "----- committer (local skip: repo not on ${GIT_BRANCH})" >&2
+committer_skip_local_stamp_only() {
+  if ! committer_paths_all_local_stamp_only; then
     return 1
   fi
-  if ! committer_paths_all_local_stamp_allowlist; then
-    return 1
-  fi
-  (
-    cd "$REPO_ROOT" || exit 1
-    git add -- autoagents/001-gh-reviewer/time-of-last-review.txt
-    if git diff --staged --quiet; then
-      exit 1
-    fi
-    git commit -m "chore(autoagents): update 001 reviewer time-of-last-review stamp"
-    set +e
-    git pull --rebase --autostash origin "$GIT_BRANCH"
-    local prc=$?
-    set -e
-    if ((prc != 0)); then
-      echo "----- committer (local: git pull --rebase failed)" >&2
-      exit 1
-    fi
-    set +e
-    git push origin "$GIT_BRANCH"
-    local psh=$?
-    set -e
-    if ((psh != 0)); then
-      echo "----- committer (local: git push failed)" >&2
-      exit 1
-    fi
-    exit 0
-  )
+  echo "----- committer (skip: only local 001 time-of-last-review.txt; never commit stamp)" >&2
+  return 0
 }
 
 run_agent() {
@@ -496,12 +469,12 @@ step_committer() {
   fi
   echo "-----> committer <----"
 
-  if [[ "${AGENT_COMMITTER_LOCAL:-1}" != "0" ]] && committer_try_local_stamp_only; then
-    echo "----- committer (local: stamp-only commit pushed)"
+  # Do not commit the 001 scan stamp (local-only; gitignored). Skip if that is the only change.
+  if committer_skip_local_stamp_only; then
     return 0
   fi
 
-  if [[ "${AGENT_COMMITTER_USE_CURSOR:-0}" != "1" ]] && [[ "${AGENT_COMMITTER_LOCAL:-1}" != "0" ]]; then
+  if [[ "${AGENT_COMMITTER_USE_CURSOR:-0}" != "1" ]]; then
     echo "----- committer (skip cursor-agent: set AGENT_COMMITTER_USE_CURSOR=1 for full committer)"
     ( cd "$REPO_ROOT" && git status -sb ) || true
     return 0

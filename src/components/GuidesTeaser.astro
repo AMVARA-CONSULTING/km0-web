@@ -17,7 +17,7 @@ const guides = (await getCollection('guides', ({ data }) => data.locale === loca
   .slice(0, 3);
 ---
 
-<section id="guias" class="section-pad guides-home" aria-labelledby="guides-home-heading">
+<section id="guides" class="section-pad guides-home" aria-labelledby="guides-home-heading">
   <div class="mx-auto max-w-6xl">
     <header class="guides-home__header" data-reveal>
       <h2 id="guides-home-heading" class="heading-section text-navy">
@@ -50,7 +50,7 @@ const guides = (await getCollection('guides', ({ data }) => data.locale === loca
     </ol>
 
     <p data-reveal data-delay="280" class="guides-home__more">
-      <a href={localeHref(locale, '/guias/')} class="guides-home__more-link">
+      <a href={localeHref(locale, '/guides/')} class="guides-home__more-link">
         {m.guides.home.viewAll}
       </a>
     </p>

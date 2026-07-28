@@ -38,9 +38,9 @@ export function tutorialPostHref(locale: Locale, slug: string): string {
   return `${localeHref(locale, '/tutorials')}${slug}/`;
 }
 
-/** Practical guide URL from slug (e.g. liberar-espacio-movil) */
+/** Practical guide URL from slug (e.g. free-phone-storage) */
 export function guidePostHref(locale: Locale, slug: string): string {
-  return `${localeHref(locale, '/guias')}${slug}/`;
+  return `${localeHref(locale, '/guides')}${slug}/`;
 }
 
 /** Strip locale prefix from a pathname, leaving the locale-neutral path (e.g. /ca/doc/foo/ → /doc/foo/) */

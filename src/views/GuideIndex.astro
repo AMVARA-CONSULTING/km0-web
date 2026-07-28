@@ -20,7 +20,7 @@ const guides = (await getCollection('guides', ({ data }) => data.locale === loca
 );
 
 const siteRoot = Astro.site ?? new URL('https://km0digital.com');
-const canonicalUrl = new URL(localeHref(locale, '/guias/'), siteRoot).href;
+const canonicalUrl = new URL(localeHref(locale, '/guides/'), siteRoot).href;
 ---
 
 <Layout

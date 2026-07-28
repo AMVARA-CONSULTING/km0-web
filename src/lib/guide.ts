@@ -1,6 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 
-/** URL slug from collection id (e.g. es/liberar-espacio-movil -> liberar-espacio-movil) */
+/** URL slug from collection id (e.g. es/free-phone-storage -> free-phone-storage) */
 export function guideSlug(entry: CollectionEntry<'guides'>): string {
   const parts = entry.id.split('/');
   const last = parts[parts.length - 1] ?? entry.id;

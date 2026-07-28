@@ -1,0 +1,17 @@
+---
+import GuidePost from '../../../views/GuidePost.astro';
+import { getCollection } from 'astro:content';
+import { guideSlug } from '../../../lib/guide';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => data.locale === 'de');
+  return guides.map((guide) => ({
+    params: { slug: guideSlug(guide) },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+---
+
+<GuidePost locale="de" guide={guide} />

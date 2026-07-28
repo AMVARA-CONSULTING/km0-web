@@ -1,0 +1,73 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref, guidePostHref } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+import { getCollection } from 'astro:content';
+import { guideSlug, compareGuides } from '../lib/guide';
+import { estimateReadingMinutes, formatReadingTime } from '../lib/reading';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const guides = (await getCollection('guides', ({ data }) => data.locale === locale)).sort(
+  compareGuides,
+);
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const canonicalUrl = new URL(localeHref(locale, '/guias/'), siteRoot).href;
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={messages.guides.metaTitle}
+  pageDescription={messages.guides.metaDescription}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="reading-page" data-analytics-page="guide_index">
+    <div class="reading-index">
+      <header class="reading-index-masthead">
+        <p class="reading-index-label">{messages.guides.eyebrow}</p>
+        <h1 class="reading-index-title">{messages.guides.heading}</h1>
+        <p class="reading-index-dek">{messages.guides.intro}</p>
+      </header>
+
+      <ul class="reading-catalog">
+        {
+          guides.map((guide, index) => {
+            const readingMinutes = estimateReadingMinutes(guide.body ?? '', locale);
+            const readingTime = formatReadingTime(messages.guides.readingTime, readingMinutes);
+            const slug = guideSlug(guide);
+
+            return (
+              <li class:list={['reading-entry', index === 0 && 'reading-entry--feature']}>
+                <h2 class="reading-entry-title">
+                  <a
+                    href={guidePostHref(locale, slug)}
+                    data-analytics="guide_view"
+                    data-guide-slug={slug}
+                  >
+                    {guide.data.title}
+                  </a>
+                </h2>
+                <p class="reading-entry-dek">{guide.data.description}</p>
+                <div class="reading-entry-meta">
+                  <span>{guide.data.teaser}</span>
+                  <span>{readingTime}</span>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>

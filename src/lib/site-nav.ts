@@ -45,6 +45,7 @@ export function footerNavColumns(locale: Locale, m: Messages): FooterNavColumn[]
       links: [
         { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
         { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
+        { id: 'guides', label: m.nav.guides, href: localeHref(locale, '/guias/') },
         { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
         { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
         { id: 'meeting', label: m.nav.meeting, href: localeHref(locale, '/meeting/') },

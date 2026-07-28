@@ -18,6 +18,7 @@
     "ideas": "Ideas",
     "meeting": "Encuentros",
     "tutorials": "Tutoriales",
+    "guides": "Guías",
     "presentation": "Presentación",
     "pricing": "Precios",
     "faq": "FAQ",
@@ -189,6 +190,26 @@
     "previousTutorial": "Tutorial anterior",
     "nextTutorial": "Tutorial siguiente",
     "relatedTutorials": "Más tutoriales"
+  },
+  "guides": {
+    "metaTitle": "Guías prácticas - Kilómetro 0 Digital",
+    "metaDescription": "Guías sencillas para liberar espacio, proteger fotos, compartir archivos y migrar desde Google Drive. Sin tecnicismos.",
+    "eyebrow": "Guías",
+    "heading": "Aprende antes de decidir",
+    "intro": "Problemas cotidianos con el móvil y los archivos, explicados paso a paso. KM0 Cloud aparece solo cuando encaja de forma natural.",
+    "readMore": "Abrir guía",
+    "backToIndex": "Volver a guías",
+    "breadcrumbHome": "Guías",
+    "readingTime": "{minutes} min de lectura",
+    "tocTitle": "En esta página",
+    "previousGuide": "Guía anterior",
+    "nextGuide": "Guía siguiente",
+    "relatedGuides": "Otras guías",
+    "home": {
+      "heading": "Aprende antes de decidir",
+      "intro": "Guías sencillas para proteger, compartir y recuperar tus archivos.",
+      "viewAll": "Ver todas las guías"
+    }
   },
   "faq": {
     "heading": "Preguntas frecuentes",

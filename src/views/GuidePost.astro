@@ -1,0 +1,213 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import DocArticleChrome from '../components/DocArticleChrome.astro';
+import Layout from '../layouts/Layout.astro';
+import { getMessages } from '../i18n';
+import { localeHref, guidePostHref, withHash } from '../i18n/paths';
+import type { Locale } from '../i18n/types';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { guideSlug, compareGuides } from '../lib/guide';
+import {
+  extractDocToc,
+  estimateReadingMinutes,
+  tocFromMarkdownHeadings,
+} from '../lib/reading';
+
+interface Props {
+  locale: Locale;
+  guide: CollectionEntry<'guides'>;
+}
+
+const { locale, guide } = Astro.props;
+const messages = getMessages(locale);
+const { Content, headings } = await guide.render();
+
+const guides = (await getCollection('guides', ({ data }) => data.locale === locale)).sort(
+  compareGuides,
+);
+const guideIndex = guides.findIndex((entry) => entry.id === guide.id);
+const previousGuide = guideIndex > 0 ? guides[guideIndex - 1] : undefined;
+const nextGuide =
+  guideIndex >= 0 && guideIndex < guides.length - 1 ? guides[guideIndex + 1] : undefined;
+const relatedGuides = guides.filter((entry) => entry.id !== guide.id).slice(0, 3);
+
+const mdToc = tocFromMarkdownHeadings(headings);
+const toc = mdToc.length > 0 ? mdToc : extractDocToc(guide.body ?? '');
+const readingMinutes = estimateReadingMinutes(guide.body ?? '', locale);
+
+const siteRoot = Astro.site ?? new URL('https://km0digital.com');
+const slug = guideSlug(guide);
+const guidePath = guidePostHref(locale, slug);
+const canonicalUrl = new URL(guidePath, siteRoot).href;
+const pageTitle = `${guide.data.title} - ${messages.brandNameShort}`;
+
+const CLOUD_URL = 'https://cloud.km0digital.com';
+
+function ctaHref(action: 'cloud' | 'pricing' | 'contact'): string {
+  if (action === 'cloud') return CLOUD_URL;
+  if (action === 'pricing') return localeHref(locale, '/pricing/');
+  return withHash(locale, 'contact');
+}
+
+const primaryHref = ctaHref(guide.data.primaryCta);
+const primaryExternal = guide.data.primaryCta === 'cloud';
+const helpHref = withHash(locale, 'contact');
+---
+
+<Layout
+  locale={locale}
+  messages={messages}
+  canonicalUrl={canonicalUrl}
+  pageTitle={pageTitle}
+  pageDescription={guide.data.description}
+>
+  <Header locale={locale} messages={messages} />
+  <main class="reading-page" data-analytics-page="guide_view" data-guide-slug={slug}>
+    <DocArticleChrome
+      breadcrumbHome={messages.guides.breadcrumbHome}
+      breadcrumbHomeHref={localeHref(locale, '/guias/')}
+      title={guide.data.title}
+      description={guide.data.description}
+      readingTimeLabel={messages.guides.readingTime}
+      readingMinutes={readingMinutes}
+      tocTitle={messages.guides.tocTitle}
+      toc={toc}
+      prevLabel={messages.guides.previousGuide}
+      nextLabel={messages.guides.nextGuide}
+      backHref={localeHref(locale, '/guias/')}
+      backLabel={messages.guides.backToIndex}
+      relatedTitle={messages.guides.relatedGuides}
+      prev={
+        previousGuide
+          ? {
+              href: guidePostHref(locale, guideSlug(previousGuide)),
+              title: previousGuide.data.title,
+            }
+          : undefined
+      }
+      next={
+        nextGuide
+          ? {
+              href: guidePostHref(locale, guideSlug(nextGuide)),
+              title: nextGuide.data.title,
+            }
+          : undefined
+      }
+      related={relatedGuides.map((entry) => ({
+        href: guidePostHref(locale, guideSlug(entry)),
+        title: entry.data.title,
+        description: entry.data.teaser,
+      }))}
+    >
+      <Content />
+
+      <aside class="guide-cloud" aria-labelledby="guide-cloud-heading">
+        <h2 id="guide-cloud-heading" class="guide-cloud__heading">{guide.data.cloudHeading}</h2>
+        <p class="guide-cloud__body">{guide.data.cloudBody}</p>
+        <div class="guide-cloud__actions">
+          {
+            primaryExternal ? (
+              <a
+                href={primaryHref}
+                class="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics="cloud_signup_click"
+                data-guide-slug={slug}
+                data-cta={guide.data.primaryCta}
+              >
+                {guide.data.primaryCtaLabel}
+              </a>
+            ) : (
+              <a
+                href={primaryHref}
+                class="btn-primary"
+                data-analytics="guide_cta_click"
+                data-guide-slug={slug}
+                data-cta={guide.data.primaryCta}
+              >
+                {guide.data.primaryCtaLabel}
+              </a>
+            )
+          }
+          <a
+            href={helpHref}
+            class="guide-cloud__help"
+            data-analytics="help_request_click"
+            data-guide-slug={slug}
+          >
+            {guide.data.secondaryCtaLabel}
+          </a>
+        </div>
+      </aside>
+    </DocArticleChrome>
+  </main>
+  <Footer locale={locale} messages={messages} />
+</Layout>
+
+<style>
+  .guide-cloud {
+    margin-top: 2.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--color-mist);
+    max-width: 40rem;
+  }
+
+  .guide-cloud__heading {
+    font-family: theme('fontFamily.display');
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin: 0 0 0.75rem;
+  }
+
+  .guide-cloud__body {
+    font-family: theme('fontFamily.body');
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: color-mix(in srgb, var(--color-ink) 88%, transparent);
+    margin: 0 0 1.5rem;
+  }
+
+  .guide-cloud__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
+  /* Keep primary CTA out of prose link underline rules */
+  :global(.reading-prose .guide-cloud a.btn-primary) {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  :global(.reading-prose .guide-cloud a.btn-primary:hover) {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .guide-cloud__help {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-signal) 45%, transparent);
+    text-underline-offset: 0.2em;
+  }
+
+  .guide-cloud__help:hover {
+    color: var(--color-signal);
+    text-decoration-color: var(--color-signal);
+  }
+
+  .guide-cloud__help:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
+  }
+</style>

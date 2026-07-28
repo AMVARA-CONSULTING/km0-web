@@ -28,6 +28,7 @@ export interface Messages {
     ideas: string;
     meeting: string;
     tutorials: string;
+    guides: string;
     presentation: string;
     pricing: string;
     faq: string;
@@ -165,6 +166,27 @@ export interface Messages {
     previousTutorial: string;
     nextTutorial: string;
     relatedTutorials: string;
+  };
+  /** Non-technical acquisition guides that lead toward KM0 Cloud. */
+  guides: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    readMore: string;
+    backToIndex: string;
+    breadcrumbHome: string;
+    readingTime: string;
+    tocTitle: string;
+    previousGuide: string;
+    nextGuide: string;
+    relatedGuides: string;
+    home: {
+      heading: string;
+      intro: string;
+      viewAll: string;
+    };
   };
   faq: {
     heading: string;

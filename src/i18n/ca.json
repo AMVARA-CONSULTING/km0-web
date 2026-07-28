@@ -18,6 +18,7 @@
     "ideas": "Idees",
     "meeting": "Trobades",
     "tutorials": "Tutorials",
+    "guides": "Guies",
     "presentation": "Presentació",
     "pricing": "Preus",
     "faq": "FAQ",
@@ -189,6 +190,26 @@
     "previousTutorial": "Tutorial anterior",
     "nextTutorial": "Tutorial següent",
     "relatedTutorials": "Més tutorials"
+  },
+  "guides": {
+    "metaTitle": "Guies pràctiques - Kilòmetre 0 Digital",
+    "metaDescription": "Guies senzilles per alliberar espai, protegir fotos, compartir fitxers i migrar des de Google Drive. Sense tecnicismes.",
+    "eyebrow": "Guies",
+    "heading": "Aprèn abans de decidir",
+    "intro": "Problemes quotidians amb el mòbil i els fitxers, explicats pas a pas. KM0 Cloud només apareix quan encaixa de forma natural.",
+    "readMore": "Obrir guia",
+    "backToIndex": "Tornar a les guies",
+    "breadcrumbHome": "Guies",
+    "readingTime": "{minutes} min de lectura",
+    "tocTitle": "En aquesta pàgina",
+    "previousGuide": "Guia anterior",
+    "nextGuide": "Guia següent",
+    "relatedGuides": "Altres guies",
+    "home": {
+      "heading": "Aprèn abans de decidir",
+      "intro": "Guies senzilles per protegir, compartir i recuperar els teus fitxers.",
+      "viewAll": "Veure totes les guies"
+    }
   },
   "faq": {
     "heading": "Preguntes freqüents",

@@ -18,6 +18,7 @@
     "ideas": "Ideen",
     "meeting": "Treffen",
     "tutorials": "Tutorials",
+    "guides": "Leitfäden",
     "presentation": "Präsentation",
     "pricing": "Preise",
     "faq": "FAQ",
@@ -189,6 +190,26 @@
     "previousTutorial": "Vorheriges Tutorial",
     "nextTutorial": "Nächstes Tutorial",
     "relatedTutorials": "Weitere Tutorials"
+  },
+  "guides": {
+    "metaTitle": "Praktische Leitfäden - Kilometer 0 Digital",
+    "metaDescription": "Einfache Leitfäden zu Speicherplatz, Fotoschutz, Dateifreigabe und Umzug von Google Drive. Ohne Fachjargon.",
+    "eyebrow": "Leitfäden",
+    "heading": "Lernen, bevor du entscheidest",
+    "intro": "Alltagsprobleme mit Handy und Dateien, Schritt für Schritt erklärt. KM0 Cloud erscheint nur, wenn es natürlich passt.",
+    "readMore": "Leitfaden öffnen",
+    "backToIndex": "Zurück zu den Leitfäden",
+    "breadcrumbHome": "Leitfäden",
+    "readingTime": "{minutes} Min. Lesezeit",
+    "tocTitle": "Auf dieser Seite",
+    "previousGuide": "Vorheriger Leitfaden",
+    "nextGuide": "Nächster Leitfaden",
+    "relatedGuides": "Weitere Leitfäden",
+    "home": {
+      "heading": "Lernen, bevor du entscheidest",
+      "intro": "Einfache Leitfäden zum Schutz, Teilen und Wiederherstellen deiner Dateien.",
+      "viewAll": "Alle Leitfäden ansehen"
+    }
   },
   "faq": {
     "heading": "Häufige Fragen",

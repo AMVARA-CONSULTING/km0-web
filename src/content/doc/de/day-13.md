@@ -86,7 +86,7 @@ locale: de
   <ol class="doc-steps">
     <li><strong>Mail:</strong> <a href="https://mail.km0digital.com/">mail.km0digital.com</a> testen, wenn Sie ein KM0-Postfach haben.</li>
     <li><strong>Cloud:</strong> unter <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> registrieren oder <a href="/de/pricing/">Preise</a> ansehen.</li>
-    <li><strong>Ideen:</strong> Vorschläge über das <a href="/de/ideas/">Ideenformular</a> oder <a href="/de/#contact">Kontakt</a> senden.</li>
+    <li><strong>Ideen:</strong> Vorschläge über das <a href="/de/#contact">Ideenformular</a> oder <a href="/de/#contact">Kontakt</a> senden.</li>
     <li><strong>Präsentation:</strong> PDF unter <a href="/de/presentation/">/presentation/</a> herunterladen und mit Ihrer AMPA oder Ihrem Verein teilen.</li>
     <li><strong>WhatsApp:</strong> der Community-Gruppe über den Kontaktbereich der Website beitreten.</li>
   </ol>

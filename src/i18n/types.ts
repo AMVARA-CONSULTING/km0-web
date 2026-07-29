@@ -63,8 +63,6 @@ export interface Messages {
     intro: string;
     /** Quiet secondary: WhatsApp group (same URL as Contact) */
     whatsappLink: string;
-    /** Quiet secondary: Ideas form */
-    ideasLink: string;
   };
   hero: {
     titleLine1: string;
@@ -214,11 +212,10 @@ export interface Messages {
     visionBody: string;
   };
   ideas: {
-    metaTitle: string;
-    metaDescription: string;
-    eyebrow: string;
-    heading: string;
-    intro: string;
+    panelTitle: string;
+    launcherLabel: string;
+    openAria: string;
+    closeAria: string;
     scopeLabel: string;
     scopeHint: string;
     scopeOptions: {
@@ -230,6 +227,8 @@ export interface Messages {
     ideaPlaceholder: string;
     nameLabel: string;
     namePlaceholder: string;
+    passwordLabel: string;
+    passwordPlaceholder: string;
     submit: string;
     success: string;
     error: string;

@@ -19,7 +19,7 @@ locale: ca
     <li><strong>Confiança:</strong> pàgines <a href="/ca/legal/">legal</a> (avís, privacitat RGPD, cookies) i <a href="/ca/security/">seguretat</a> (ISO 27001 AMVARA, divulgació responsable) en quatre idiomes (#21).</li>
     <li><strong>Registre:</strong> auto-registre email/contrasenya via <code>register-api</code> a OpenCloud; login Dex amb <code>dex-auth.js</code> i auto sign-in després del registre.</li>
     <li><strong>Conversió:</strong> landing amb KM0 Cloud més visible (#26); tipografia del blog i tutorials refinada (#27); CTAs de serveis polits.</li>
-    <li><strong>Idees:</strong> email immediat a l'equip de desenvolupament quan algú envia una idea a <a href="/ca/ideas/">/ideas/</a> (<code>f41329c</code>).</li>
+    <li><strong>Idees:</strong> email immediat a l'equip de desenvolupament quan algú envia una idea a <a href="/ca/#contact">contacte</a> (<code>f41329c</code>).</li>
   </ul>
 </section>
 
@@ -106,7 +106,7 @@ locale: ca
     <li><strong>Preus:</strong> visitar <a href="/ca/pricing/">/pricing/</a> i comprovar hero, taula i CTA a cada idioma.</li>
     <li><strong>Legal:</strong> revisar <a href="/ca/legal/">/legal/</a> i <a href="/ca/security/">/security/</a>; enllaços des de FAQ i peu.</li>
     <li><strong>Registre:</strong> crear compte de prova a <a href="https://cloud.km0digital.com/register">cloud.km0digital.com/register</a>; verificar auto sign-in.</li>
-    <li><strong>Idees:</strong> enviar prova a <a href="/ca/ideas/">/ideas/</a>; comprovar JSON al spool i email a l'equip via AutoMail.</li>
+    <li><strong>Idees:</strong> enviar prova a <a href="/ca/#contact">contacte</a>; comprovar JSON al spool i email a l'equip via AutoMail.</li>
     <li><strong>Fum:</strong> bucle autoagents - issues #21, #24, #25, #26, #27 tancades; register-api health OK.</li>
   </ol>
 </section>

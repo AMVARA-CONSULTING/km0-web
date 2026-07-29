@@ -80,5 +80,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Nächster Schritt</p>
   <h2 class="doc-block-heading">Tag 9</h2>
-  <p class="doc-closing">Am <a href="/de/doc/day-9/">Tag 9</a> erscheinen die <a href="/de/pricing/">Preisseite</a>, <a href="/de/legal/">Rechtliches</a> und <a href="/de/security/">Sicherheit</a>, die öffentliche Cloud-Registrierung und Conversion-Polish auf der Landingpage. Laden Sie die <a href="/de/presentation/">Präsentation</a> herunter oder testen Sie das <a href="/de/ideas/">Ideenformular</a>.</p>
+  <p class="doc-closing">Am <a href="/de/doc/day-9/">Tag 9</a> erscheinen die <a href="/de/pricing/">Preisseite</a>, <a href="/de/legal/">Rechtliches</a> und <a href="/de/security/">Sicherheit</a>, die öffentliche Cloud-Registrierung und Conversion-Polish auf der Landingpage. Laden Sie die <a href="/de/presentation/">Präsentation</a> herunter oder testen Sie das <a href="/de/#contact">Ideenformular</a>.</p>
 </section>

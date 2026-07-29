@@ -50,7 +50,7 @@ locale: es
   <ol class="doc-steps">
     <li><strong>Calendario:</strong> consulta la ficha del evento en <a href="/meeting/">Encuentros</a> (fecha, hora y enlace al mapa).</li>
     <li><strong>Serie:</strong> lee el <a href="/doc/day-14/">día 14</a> (Harari e IA) y el <a href="/doc/day-13/">día 13</a> (meet 6 sobre visibilidad).</li>
-    <li><strong>Ideas:</strong> si no puedes venir pero quieres aportar un ángulo sobre Palantir o burocracia algorítmica, usa el <a href="/ideas/">formulario de ideas</a>.</li>
+    <li><strong>Ideas:</strong> si no puedes venir pero quieres aportar un ángulo sobre Palantir o burocracia algorítmica, usa el <a href="/#contact">formulario de ideas</a>.</li>
   </ol>
 </section>
 

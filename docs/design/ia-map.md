@@ -44,7 +44,7 @@ Tutorials · Presentation · FAQ · Legal · Security · product deep links (Clo
 
 ## Stable routes (do not 404)
 
-`/doc/`, `/tutorials/`, `/pricing/`, `/ideas/`, `/meeting/`, `/security/`, `/legal/`, `/presentation/`
+`/doc/`, `/tutorials/`, `/pricing/`, `/meeting/`, `/security/`, `/legal/`, `/presentation/` (ideas intake is a site-wide widget, not a route)
 
 ## Anchor redirects note
 

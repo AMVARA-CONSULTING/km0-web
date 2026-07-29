@@ -86,7 +86,7 @@ locale: es
   <ol class="doc-steps">
     <li><strong>Correo:</strong> prueba <a href="https://mail.km0digital.com/">mail.km0digital.com</a> si tienes buzón KM0.</li>
     <li><strong>Cloud:</strong> regístrate en <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> o consulta <a href="/pricing/">precios</a>.</li>
-    <li><strong>Ideas:</strong> envía propuestas por el <a href="/ideas/">formulario de ideas</a> o <a href="/#contact">contacto</a>.</li>
+    <li><strong>Ideas:</strong> envía propuestas por el <a href="/#contact">formulario de ideas</a> o <a href="/#contact">contacto</a>.</li>
     <li><strong>Presentación:</strong> descarga el PDF en <a href="/presentation/">/presentation/</a> para compartir con tu AMPA o asociación.</li>
     <li><strong>WhatsApp:</strong> únete al grupo comunitario desde la sección de contacto de la web.</li>
   </ol>

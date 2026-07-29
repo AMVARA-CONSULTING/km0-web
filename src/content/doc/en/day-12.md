@@ -45,7 +45,7 @@ locale: en
     <li><strong>Cloud:</strong> link to <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> with registration and login.</li>
     <li><strong>Mail:</strong> access to <a href="https://mail.km0digital.com/">mail.km0digital.com</a> for mailbox holders.</li>
     <li><strong>Documentation:</strong> link to the <a href="/en/doc/">blog / doc</a> and downloadable <a href="/en/presentation/">presentation</a>.</li>
-    <li><strong>Ideas and contact:</strong> quick access to <a href="/en/ideas/">ideas</a> and <a href="/en/#contact">contact</a>.</li>
+    <li><strong>Ideas and contact:</strong> quick access to <a href="/en/#contact">ideas</a> and <a href="/en/#contact">contact</a>.</li>
     <li><strong>Implementation:</strong> lightweight component in km0-web; it complements current navigation rather than replacing it.</li>
   </ul>
   <div class="doc-callout">
@@ -100,7 +100,7 @@ locale: en
     <li><strong>Cloud:</strong> test registration at <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>.</li>
     <li><strong>Mail:</strong> webmail at <a href="https://mail.km0digital.com/">mail.km0digital.com</a> if you have a mailbox.</li>
     <li><strong>Doc:</strong> read <a href="/en/doc/day-11/">day 11</a> (mail) and <a href="/en/doc/day-13/">day 13</a> (meet 6).</li>
-    <li><strong>Feedback:</strong> send improvements via <a href="/en/ideas/">ideas</a> or <a href="/en/#contact">contact</a>.</li>
+    <li><strong>Feedback:</strong> send improvements via <a href="/en/#contact">ideas</a> or <a href="/en/#contact">contact</a>.</li>
   </ol>
 </section>
 

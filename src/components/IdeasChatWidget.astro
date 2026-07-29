@@ -1,0 +1,336 @@
+---
+import type { Locale, Messages } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+  messages: Messages;
+}
+
+const { locale, messages: m } = Astro.props;
+---
+
+<div
+  id="ideas-chat"
+  class="ideas-chat"
+  data-locale={locale}
+  data-char-count-template={m.ideas.charCount}
+>
+  <div
+    id="ideas-chat-panel"
+    class="ideas-chat__panel surface-snow"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="ideas-chat-title"
+    hidden
+  >
+    <div class="ideas-chat__chrome">
+      <h2 id="ideas-chat-title" class="ideas-chat__title">{m.ideas.panelTitle}</h2>
+      <button
+        type="button"
+        class="ideas-chat__close"
+        data-ideas-close
+        aria-label={m.ideas.closeAria}
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <form id="ideas-form" class="ideas-chat__form" novalidate>
+      <div class="ideas-chat__header-fields">
+        <div class="ideas-chat__field ideas-chat__field--scope">
+          <label for="ideas-scope" class="ideas-chat__label">{m.ideas.scopeLabel}</label>
+          <select
+            id="ideas-scope"
+            name="scope"
+            required
+            class="ideas-chat__control"
+          >
+            <option value="web" selected>{m.ideas.scopeOptions.web}</option>
+            <option value="cloud">{m.ideas.scopeOptions.cloud}</option>
+            <option value="mail">{m.ideas.scopeOptions.mail}</option>
+          </select>
+        </div>
+        <div class="ideas-chat__field ideas-chat__field--password">
+          <label for="ideas-password" class="ideas-chat__label">{m.ideas.passwordLabel}</label>
+          <input
+            type="password"
+            id="ideas-password"
+            name="password"
+            maxlength="200"
+            autocomplete="off"
+            class="ideas-chat__control"
+            placeholder={m.ideas.passwordPlaceholder}
+          />
+        </div>
+      </div>
+
+      <div class="ideas-chat__field">
+        <label for="ideas-idea" class="ideas-chat__label">{m.ideas.ideaLabel}</label>
+        <textarea
+          id="ideas-idea"
+          name="idea"
+          required
+          maxlength="4000"
+          rows="5"
+          class="ideas-chat__control ideas-chat__textarea"
+          placeholder={m.ideas.ideaPlaceholder}></textarea>
+        <p id="ideas-char-count" class="ideas-chat__hint ideas-chat__hint--end" aria-live="polite">
+          {m.ideas.charCount.replace('{count}', '0')}
+        </p>
+      </div>
+
+      <div class="ideas-chat__field">
+        <label for="ideas-name" class="ideas-chat__label">{m.ideas.nameLabel}</label>
+        <input
+          type="text"
+          id="ideas-name"
+          name="name"
+          maxlength="200"
+          autocomplete="name"
+          class="ideas-chat__control"
+          placeholder={m.ideas.namePlaceholder}
+        />
+      </div>
+
+      <div class="ideas-hp" aria-hidden="true">
+        <label for="ideas-website">Website</label>
+        <input type="text" id="ideas-website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <p id="ideas-error" class="ideas-chat__error hidden" role="alert">{m.ideas.error}</p>
+      <p id="ideas-success" class="ideas-chat__success hidden" role="status">{m.ideas.success}</p>
+
+      <button type="submit" class="btn-primary ideas-chat__submit" data-ideas-submit>
+        {m.ideas.submit}
+      </button>
+    </form>
+  </div>
+
+  <button
+    type="button"
+    id="ideas-chat-launcher"
+    class="ideas-chat__launcher"
+    data-ideas-launcher
+    aria-expanded="false"
+    aria-controls="ideas-chat-panel"
+    aria-label={m.ideas.openAria}
+  >
+    <span class="ideas-chat__launcher-label">{m.ideas.launcherLabel}</span>
+  </button>
+</div>
+
+<script>
+  import '../scripts/ideas-chat-widget.ts';
+</script>
+
+<style>
+  .ideas-chat {
+    position: fixed;
+    z-index: 60;
+    left: max(1rem, env(safe-area-inset-left, 0px));
+    bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    max-width: min(22.5rem, calc(100vw - 2rem));
+    pointer-events: none;
+  }
+
+  .ideas-chat__panel,
+  .ideas-chat__launcher {
+    pointer-events: auto;
+  }
+
+  .ideas-chat__panel {
+    width: min(22.5rem, calc(100vw - 2rem));
+    border: 1px solid var(--color-mist);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-ink) 18%, transparent);
+    padding: 0.85rem 0.95rem 1rem;
+  }
+
+  .ideas-chat__panel[hidden] {
+    display: none;
+  }
+
+  .ideas-chat__chrome {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ideas-chat__title {
+    margin: 0;
+    font-family: theme('fontFamily.display');
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-ink);
+  }
+
+  .ideas-chat__close {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: -0.25rem -0.35rem 0 0;
+    border: 0;
+    border-radius: 0.375rem;
+    background: transparent;
+    color: color-mix(in srgb, var(--color-ink) 65%, transparent);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .ideas-chat__close:hover {
+    color: var(--color-ink);
+    background: color-mix(in srgb, var(--color-mist) 55%, transparent);
+  }
+
+  .ideas-chat__close:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+
+  .ideas-chat__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .ideas-chat__header-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+  }
+
+  @media (max-width: 380px) {
+    .ideas-chat__header-fields {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ideas-chat__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .ideas-chat__label {
+    font-family: theme('fontFamily.sans');
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--color-ink) 75%, transparent);
+  }
+
+  .ideas-chat__control {
+    width: 100%;
+    border: 1px solid var(--color-mist);
+    border-radius: 0.375rem;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    line-height: 1.4;
+    padding: 0.45rem 0.55rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .ideas-chat__textarea {
+    font-family: theme('fontFamily.body');
+    resize: vertical;
+    min-height: 5.5rem;
+  }
+
+  .ideas-chat__control:focus {
+    outline: none;
+    border-color: var(--color-signal);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-signal) 22%, transparent);
+  }
+
+  .ideas-chat__hint {
+    margin: 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.7rem;
+    color: color-mix(in srgb, var(--color-ink) 50%, transparent);
+  }
+
+  .ideas-chat__hint--end {
+    text-align: right;
+  }
+
+  .ideas-chat__error {
+    margin: 0;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.8rem;
+    color: #b91c1c;
+  }
+
+  .ideas-chat__success {
+    margin: 0;
+    font-family: theme('fontFamily.body');
+    font-size: 0.9rem;
+    color: color-mix(in srgb, var(--color-ink) 80%, transparent);
+  }
+
+  .ideas-chat__submit {
+    width: 100%;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .ideas-chat__launcher {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--color-signal) 55%, var(--color-mist));
+    border-radius: 0.375rem;
+    background: var(--color-signal);
+    color: #fff;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--color-ink) 22%, transparent);
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .ideas-chat__launcher:hover {
+    background: var(--color-signal-hover);
+  }
+
+  .ideas-chat__launcher:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  .ideas-chat__launcher[aria-expanded='true'] {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  .ideas-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ideas-chat__control,
+    .ideas-chat__launcher {
+      transition: none;
+    }
+  }
+</style>

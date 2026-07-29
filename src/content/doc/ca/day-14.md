@@ -88,7 +88,7 @@ locale: ca
     <li><strong>Vídeo:</strong> veure <a href="https://www.youtube.com/watch?v=hBtVGwuJzpk" rel="noopener noreferrer" target="_blank">el vídeo a YouTube</a> i anotar quina part et sembla més propera al teu treball o associació.</li>
     <li><strong>Sèrie:</strong> llegir el <a href="/ca/doc/day-13/">dia 13</a> (meet 6) per al context d'IA local i associacions.</li>
     <li><strong>Producte:</strong> provar <a href="https://mail.km0digital.com/">webmail</a> o <a href="https://cloud.km0digital.com/">KM0 Cloud</a> si vols contrastar «IA llunyana» amb «infraestructura pròpia».</li>
-    <li><strong>Idees:</strong> explica'ns per <a href="/ca/ideas/">formulari d'idees</a> o <a href="/ca/#contact">contacte</a> quin tema d'IA t'agradaria que abordéssim en un meet.</li>
+    <li><strong>Idees:</strong> explica'ns per <a href="/ca/#contact">formulari d'idees</a> o <a href="/ca/#contact">contacte</a> quin tema d'IA t'agradaria que abordéssim en un meet.</li>
   </ol>
 </section>
 

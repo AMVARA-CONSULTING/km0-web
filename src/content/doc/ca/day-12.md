@@ -45,7 +45,7 @@ locale: ca
     <li><strong>Cloud:</strong> enllaç a <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> amb registre i login.</li>
     <li><strong>Mail:</strong> accés a <a href="https://mail.km0digital.com/">mail.km0digital.com</a> per a qui ja té bústia.</li>
     <li><strong>Documentació:</strong> enllaç al <a href="/ca/doc/">blog / doc</a> i a <a href="/ca/presentation/">presentació</a> descarregable.</li>
-    <li><strong>Idees i contacte:</strong> accés ràpid a <a href="/ca/ideas/">idees</a> i <a href="/ca/#contact">contacte</a>.</li>
+    <li><strong>Idees i contacte:</strong> accés ràpid a <a href="/ca/#contact">idees</a> i <a href="/ca/#contact">contacte</a>.</li>
     <li><strong>Implementació:</strong> component lleuger a km0-web; no substitueix la navegació actual, la complementa.</li>
   </ul>
   <div class="doc-callout">
@@ -100,7 +100,7 @@ locale: ca
     <li><strong>Cloud:</strong> registre de prova a <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>.</li>
     <li><strong>Mail:</strong> webmail a <a href="https://mail.km0digital.com/">mail.km0digital.com</a> si tens bústia.</li>
     <li><strong>Doc:</strong> llegir <a href="/ca/doc/day-11/">dia 11</a> (mail) i <a href="/ca/doc/day-13/">dia 13</a> (meet 6).</li>
-    <li><strong>Feedback:</strong> enviar millores per <a href="/ca/ideas/">idees</a> o <a href="/ca/#contact">contacte</a>.</li>
+    <li><strong>Feedback:</strong> enviar millores per <a href="/ca/#contact">idees</a> o <a href="/ca/#contact">contacte</a>.</li>
   </ol>
 </section>
 

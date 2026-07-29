@@ -88,7 +88,7 @@ locale: en
     <li><strong>Video:</strong> watch <a href="https://www.youtube.com/watch?v=hBtVGwuJzpk" rel="noopener noreferrer" target="_blank">the YouTube video</a> and note which part feels closest to your work or association.</li>
     <li><strong>Series:</strong> read <a href="/en/doc/day-13/">day 13</a> (meet 6) for context on local AI and associations.</li>
     <li><strong>Product:</strong> try <a href="https://mail.km0digital.com/">webmail</a> or <a href="https://cloud.km0digital.com/">KM0 Cloud</a> if you want to contrast «distant AI» with «your own infrastructure».</li>
-    <li><strong>Ideas:</strong> tell us via the <a href="/en/ideas/">ideas form</a> or <a href="/en/#contact">contact</a> which AI topic you would like us to cover in a meet.</li>
+    <li><strong>Ideas:</strong> tell us via the <a href="/en/#contact">ideas form</a> or <a href="/en/#contact">contact</a> which AI topic you would like us to cover in a meet.</li>
   </ol>
 </section>
 

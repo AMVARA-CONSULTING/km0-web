@@ -8,7 +8,7 @@ locale: en
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
   <p class="doc-lead">Day 7 is a special entry: it documents automation that closes a gap the earlier days left open. Someone submits an idea or incident; a developer used to read raw text, rewrite it as a GitHub issue, and only then start implementation. That handoff was the bottleneck.</p>
-  <p class="doc-lead">On 4 June 2026 we wired the full loop in two channels: public feedback on <a href="https://km0digital.com/en/ideas/">km0digital.com</a> (production) and internal admin Help on a Laravel ecommerce staging stack. Same mental model: queue, autoissue draft, human label, autoagents pickup.</p>
+  <p class="doc-lead">On 4 June 2026 we wired the full loop in two channels: public feedback on <a href="https://km0digital.com/en/#contact">km0digital.com</a> (production) and internal admin Help on a Laravel ecommerce staging stack. Same mental model: queue, autoissue draft, human label, autoagents pickup.</p>
 </section>
 
 <section class="doc-block">
@@ -28,7 +28,7 @@ locale: en
   <p class="doc-block-title">Architecture</p>
   <h2 class="doc-block-heading">Two inputs, one pattern</h2>
   <div class="doc-note"><pre>INPUT
-  km0-web:     POST /hooks/ideas        (public /ideas/)
+  km0-web:     POST /hooks/ideas        (ideas widget)
   ecommerce:   POST /api/v1/admin/help  (authenticated /admin/help)
         ↓
   JSON queue (spool / storage)
@@ -59,7 +59,7 @@ locale: en
   <p class="doc-block-title">Where it applies</p>
   <h2 class="doc-block-heading">Two entry points, one journey</h2>
   <ul class="doc-list">
-    <li><strong>KM0 users:</strong> the <a href="/en/ideas/">Ideas</a> form on km0digital.com. Product suggestions, website improvements, or gaps someone notices while using the cloud.</li>
+    <li><strong>KM0 users:</strong> the <a href="/en/#contact">Ideas</a> form on km0digital.com. Product suggestions, website improvements, or gaps someone notices while using the cloud.</li>
     <li><strong>People running an internal project:</strong> the Admin Help screen on an online shop in staging. For when a team member spots a bug or needs a change and wants it logged with a clear trail.</li>
   </ul>
   <p>In both cases the journey is the same: form → queue → drafted ticket → human review → implementation. Only the writer and the surface change, not the logic.</p>
@@ -68,7 +68,7 @@ locale: en
 <section class="doc-block">
   <p class="doc-block-title">Examples</p>
   <h2 class="doc-block-heading">What it looks like in practice</h2>
-  <p class="doc-block-intro">Suppose someone submits via <a href="/en/ideas/">Ideas</a>: “I'd like a button to share blog posts.” Within about fifteen seconds the system produces a titled, structured ticket: what the person asked for, which language they used, which part of the site it touches. It is marked <em>waiting for human validation</em>.</p>
+  <p class="doc-block-intro">Suppose someone submits via <a href="/en/#contact">Ideas</a>: “I'd like a button to share blog posts.” Within about fifteen seconds the system produces a titled, structured ticket: what the person asked for, which language they used, which part of the site it touches. It is marked <em>waiting for human validation</em>.</p>
   <p>Someone on the team reads it. If the wording is fine, they remove the mark and the ticket joins the automated implementation queue. If it needs nuance (“mobile only”, “WhatsApp icon”), they edit the ticket before approving. No copying the original message by hand.</p>
   <p>Another case: a shop admin in staging reports through Admin Help that a product filter does not save correctly. Same mechanics: a clear ticket, a review step, then development. The goal is that nobody has to guess what the sender meant.</p>
 </section>
@@ -90,5 +90,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Series</p>
   <h2 class="doc-block-heading">Days 1–6</h2>
-  <p class="doc-closing">Earlier entries cover the stack (OpenCloud, Dex, LDAP, native clients, tutorials, vision). Day 7 adds the feedback loop: try the <a href="/en/ideas/">ideas form</a> or browse <a href="/en/doc/day-6/">day 6</a> for device onboarding. Questions: <a href="/en/#contact">get in touch</a>.</p>
+  <p class="doc-closing">Earlier entries cover the stack (OpenCloud, Dex, LDAP, native clients, tutorials, vision). Day 7 adds the feedback loop: try the <a href="/en/#contact">ideas form</a> or browse <a href="/en/doc/day-6/">day 6</a> for device onboarding. Questions: <a href="/en/#contact">get in touch</a>.</p>
 </section>

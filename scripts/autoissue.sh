@@ -85,7 +85,9 @@ Do not create GitHub issues. Do not edit application source. Do your job."
 }
 
 create_issue_from_draft() {
-  local draft_path="$1" title body_file issue_url issue_num
+  local draft_path="$1"
+  local skip_human_validation="${2:-false}"
+  local title body_file issue_url issue_num create_args
 
   title="$(python3 - "$draft_path" <<'PY'
 import sys
@@ -125,8 +127,12 @@ PY
     return 1
   fi
 
-  ensure_label
-  if ! issue_url="$(gh issue create --repo "$GH_REPO" --title "$title" --body-file "$body_file" --label "$LABEL" 2>>"$LOG")"; then
+  create_args=(issue create --repo "$GH_REPO" --title "$title" --body-file "$body_file")
+  if [[ "$skip_human_validation" != "true" ]]; then
+    ensure_label
+    create_args+=(--label "$LABEL")
+  fi
+  if ! issue_url="$(gh "${create_args[@]}" 2>>"$LOG")"; then
     rm -f "$body_file"
     log "gh issue create failed for draft ${draft_path}"
     return 1
@@ -139,7 +145,7 @@ PY
 }
 
 process_one() {
-  local file="$1" base queue_id draft_path issue_num meta_path issue_url scope
+  local file="$1" base queue_id draft_path issue_num meta_path issue_url scope skip_human_validation
 
   base="$(basename "$file")"
 
@@ -166,13 +172,15 @@ process_one() {
   esac
   GH_REPO="$(repo_for_scope "$scope")"
 
+  skip_human_validation="$(jq -r 'if .skipHumanValidation == true then "true" else "false" end' "$file")"
+
   draft_path="${DRAFTS}/${queue_id}.md"
 
   if ! run_cursor_draft "$file" "$queue_id" "$draft_path"; then
     return 1
   fi
 
-  if ! issue_num="$(create_issue_from_draft "$draft_path")"; then
+  if ! issue_num="$(create_issue_from_draft "$draft_path" "$skip_human_validation")"; then
     return 1
   fi
 
@@ -185,11 +193,12 @@ process_one() {
     --arg scope "$scope" \
     --arg repo "$GH_REPO" \
     --arg draft "$draft_path" \
-    '{issue: $issue, issueUrl: $url, queueId: $id, scope: $scope, repo: $repo, draftPath: $draft, processedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))}' \
+    --argjson skipHumanValidation "$skip_human_validation" \
+    '{issue: $issue, issueUrl: $url, queueId: $id, scope: $scope, repo: $repo, draftPath: $draft, skipHumanValidation: $skipHumanValidation, processedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))}' \
     > "$meta_path"
 
   mv "$draft_path" "$QUEUE/processed/${queue_id}.draft.md"
-  log "created issue #${issue_num} in ${GH_REPO} for ${base} (queue id ${queue_id}, scope ${scope})"
+  log "created issue #${issue_num} in ${GH_REPO} for ${base} (queue id ${queue_id}, scope ${scope}, skipHumanValidation=${skip_human_validation})"
   return 0
 }
 

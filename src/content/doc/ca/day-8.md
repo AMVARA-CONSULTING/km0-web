@@ -80,5 +80,5 @@ locale: ca
 <section class="doc-closing-block">
   <p class="doc-block-title">Següent pas</p>
   <h2 class="doc-block-heading">Dia 9</h2>
-  <p class="doc-closing">El <a href="/ca/doc/day-9/">dia 9</a> publica la pàgina de <a href="/ca/pricing/">preus</a>, les pàgines de <a href="/ca/legal/">legal</a> i <a href="/ca/security/">seguretat</a>, el registre públic al cloud i el poliment de conversió a la landing. Mentrestant, descarrega la <a href="/ca/presentation/">presentació</a> o prova el <a href="/ca/ideas/">formulari d'idees</a>.</p>
+  <p class="doc-closing">El <a href="/ca/doc/day-9/">dia 9</a> publica la pàgina de <a href="/ca/pricing/">preus</a>, les pàgines de <a href="/ca/legal/">legal</a> i <a href="/ca/security/">seguretat</a>, el registre públic al cloud i el poliment de conversió a la landing. Mentrestant, descarrega la <a href="/ca/presentation/">presentació</a> o prova el <a href="/ca/#contact">formulari d'idees</a>.</p>
 </section>

@@ -19,7 +19,7 @@ locale: de
     <li><strong>Vertrauen:</strong> <a href="/de/legal/">Rechtliches</a> (Impressum, DSGVO-Datenschutz, Cookies) und <a href="/de/security/">Sicherheit</a> (AMVARA ISO 27001, Responsible Disclosure) in vier Sprachen (#21).</li>
     <li><strong>Registrierung:</strong> öffentliche E-Mail/Passwort-Self-Registration via <code>register-api</code> auf OpenCloud; Dex-Login mit <code>dex-auth.js</code> und Auto-Sign-in nach Registrierung.</li>
     <li><strong>Conversion:</strong> Landingpage mit sichtbarerem KM0 Cloud (#26); verfeinerte Blog- und Tutorial-Typografie (#27); polierte Service-Karten-CTAs.</li>
-    <li><strong>Ideen:</strong> sofortige E-Mail ans Entwicklungsteam, wenn jemand eine Idee über <a href="/de/ideas/">/ideas/</a> sendet (<code>f41329c</code>).</li>
+    <li><strong>Ideen:</strong> sofortige E-Mail ans Entwicklungsteam, wenn jemand eine Idee über <a href="/de/#contact">Kontakt</a> sendet (<code>f41329c</code>).</li>
   </ul>
 </section>
 
@@ -106,7 +106,7 @@ locale: de
     <li><strong>Preise:</strong> <a href="/de/pricing/">/pricing/</a> besuchen und Hero, Tabelle und CTA in jeder Sprache prüfen.</li>
     <li><strong>Rechtliches:</strong> <a href="/de/legal/">/legal/</a> und <a href="/de/security/">/security/</a> prüfen; Links aus FAQ und Fußzeile.</li>
     <li><strong>Registrierung:</strong> Testkonto unter <a href="https://cloud.km0digital.com/register">cloud.km0digital.com/register</a> anlegen; Auto-Sign-in prüfen.</li>
-    <li><strong>Ideen:</strong> Test über <a href="/de/ideas/">/ideas/</a> senden; JSON im Spool und Team-E-Mail via AutoMail prüfen.</li>
+    <li><strong>Ideen:</strong> Test über <a href="/de/#contact">Kontakt</a> senden; JSON im Spool und Team-E-Mail via AutoMail prüfen.</li>
     <li><strong>Smoke:</strong> Autoagents-Loop - Issues #21, #24, #25, #26, #27 geschlossen; register-api Health OK.</li>
   </ol>
 </section>

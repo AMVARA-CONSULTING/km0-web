@@ -88,7 +88,7 @@ locale: de
     <li><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=hBtVGwuJzpk" rel="noopener noreferrer" target="_blank">das YouTube-Video ansehen</a> und notieren, welcher Teil Ihrer Arbeit oder Ihrem Verein am nächsten liegt.</li>
     <li><strong>Serie:</strong> <a href="/de/doc/day-13/">Tag 13</a> (Meet 6) lesen für Kontext zu lokaler KI und Vereinen.</li>
     <li><strong>Produkt:</strong> <a href="https://mail.km0digital.com/">Webmail</a> oder <a href="https://cloud.km0digital.com/">KM0 Cloud</a> testen, um «ferne KI» mit «eigener Infrastruktur» zu vergleichen.</li>
-    <li><strong>Ideen:</strong> über das <a href="/de/ideas/">Ideenformular</a> oder <a href="/de/#contact">Kontakt</a> sagen, welches KI-Thema wir in einem Meet behandeln sollen.</li>
+    <li><strong>Ideen:</strong> über das <a href="/de/#contact">Ideenformular</a> oder <a href="/de/#contact">Kontakt</a> sagen, welches KI-Thema wir in einem Meet behandeln sollen.</li>
   </ol>
 </section>
 

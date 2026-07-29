@@ -59,17 +59,21 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 
 **Add a post:** create the `.md` in each locale (same filename slug, e.g. `day-0.md`), then `docker compose build && docker compose up -d`.
 
-### User ideas (`/ideas/`)
+### User ideas (site-wide chat widget)
 
-| Path | View |
-|------|------|
-| `/ideas/`, `/ca/ideas/`, `/en/ideas/`, `/de/ideas/` | `src/views/Ideas.astro` |
+Intake UI is a fixed bottom-left launcher on every page (`IdeasChatWidget` in `Layout.astro`). Dedicated `/ideas/` routes are gone; nginx **301**s them to the locale home.
+
+| Item | Location |
+|------|----------|
+| Widget | `src/components/IdeasChatWidget.astro`, `src/scripts/ideas-chat-widget.ts` |
+| Redirects | `nginx/container.conf` (`/ideas/`, `/ca|en|de/ideas/` → locale home) |
 
 - Form POST: `/hooks/ideas` (host nginx → webhook systemd on `:9181`)
 - Receiver: `scripts/receive-idea.sh` via [adnanh/webhook](https://github.com/adnanh/webhook) (`km0-ideas-receiver.service`)
+- Optional trust password: `KM0_IDEAS_TRUST_PASSWORD` in repo-root `.env` or `autoagents/.env` (never commit the real value). Correct password sets `skipHumanValidation: true` in the queue JSON (**password is not stored**). Wrong/empty password keeps normal human-validation labeling.
 - Dev email: `scripts/notify-idea-email.sh` (AutoMail API, fire-and-forget on enqueue; `AUTOMAIL_TOKEN` in repo-root `.env`)
 - Queue spool: `/var/spool/km0-ideas/incoming` (host bind mount, no Docker sidecar)
-- Processor (autoissue): `scripts/autoissue.sh` + `autoissue/autoissue-agent.md` (cursor-agent drafts, then `gh issue create`), triggered by `km0-idea-processor.path` (see [user-ideas-queue-plan.md](./user-ideas-queue-plan.md))
+- Processor (autoissue): `scripts/autoissue.sh` + `autoissue/autoissue-agent.md` (cursor-agent drafts, then `gh issue create`), triggered by `km0-idea-processor.path` (see [user-ideas-queue-plan.md](./user-ideas-queue-plan.md)). Honors `skipHumanValidation` (omit label `waiting for human validation` when true).
 
 ```bash
 # First-time host setup (spool dirs + webhook + systemd)
@@ -79,16 +83,21 @@ sudo ./scripts/setup-ideas-processor.sh
 # AUTOMAIL_TOKEN=...
 # AUTOMAIL_NOTIFY_TO=yoelberjaga@gmail.com
 
+# Optional trusted submitter bypass (host only, never commit real value):
+# KM0_IDEAS_TRUST_PASSWORD=...
+
 # Manual drain / replay
 sudo ./scripts/autoissue.sh
 ls -la /var/spool/km0-ideas/{incoming,processed,failed}/
 ```
 
 ```bash
-curl -sI http://127.0.0.1:9180/ideas/ http://127.0.0.1:9180/en/ideas/
+curl -sI http://127.0.0.1:9180/ideas/ http://127.0.0.1:9180/en/ideas/   # expect 301 → locale home
 curl -s -X POST http://127.0.0.1:9181/hooks/ideas \
   -H 'Content-Type: application/json' \
   -d '{"idea":"Test feedback","locale":"en","scope":"web"}'
+# Trusted (if KM0_IDEAS_TRUST_PASSWORD is set); response shape unchanged:
+# -d '{"idea":"Trusted feedback","locale":"en","scope":"web","password":"..."}'
 ls -la /var/spool/km0-ideas/incoming/
 systemctl status km0-ideas-receiver
 ```

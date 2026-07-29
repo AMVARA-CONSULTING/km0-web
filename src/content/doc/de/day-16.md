@@ -50,7 +50,7 @@ locale: de
   <ol class="doc-steps">
     <li><strong>Kalender:</strong> Event-Details unter <a href="/de/meeting/">Treffen</a> (Datum, Uhrzeit, Kartenlink).</li>
     <li><strong>Serie:</strong> <a href="/de/doc/day-14/">Tag 14</a> (Harari und KI) und <a href="/de/doc/day-13/">Tag 13</a> (Meet 6 zur Sichtbarkeit) lesen.</li>
-    <li><strong>Ideen:</strong> wenn du nicht kommen kannst, aber einen Blickwinkel zu Palantir oder algorithmischer Bürokratie einbringen willst, nutze das <a href="/de/ideas/">Ideenformular</a>.</li>
+    <li><strong>Ideen:</strong> wenn du nicht kommen kannst, aber einen Blickwinkel zu Palantir oder algorithmischer Bürokratie einbringen willst, nutze das <a href="/de/#contact">Ideenformular</a>.</li>
   </ol>
 </section>
 

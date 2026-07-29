@@ -88,7 +88,7 @@ locale: es
     <li><strong>Vídeo:</strong> ver <a href="https://www.youtube.com/watch?v=hBtVGwuJzpk" rel="noopener noreferrer" target="_blank">el vídeo en YouTube</a> y anotar qué parte te parece más cercana a tu trabajo o asociación.</li>
     <li><strong>Serie:</strong> leer el <a href="/doc/day-13/">día 13</a> (meet 6) para el contexto de IA local y asociaciones.</li>
     <li><strong>Producto:</strong> probar <a href="https://mail.km0digital.com/">webmail</a> o <a href="https://cloud.km0digital.com/">KM0 Cloud</a> si quieres contrastar «IA lejana» con «infraestructura propia».</li>
-    <li><strong>Ideas:</strong> cuéntanos por <a href="/ideas/">formulario de ideas</a> o <a href="/#contact">contacto</a> qué tema de IA te gustaría que abordemos en un meet.</li>
+    <li><strong>Ideas:</strong> cuéntanos por <a href="/#contact">formulario de ideas</a> o <a href="/#contact">contacto</a> qué tema de IA te gustaría que abordemos en un meet.</li>
   </ol>
 </section>
 

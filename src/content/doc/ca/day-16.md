@@ -50,7 +50,7 @@ locale: ca
   <ol class="doc-steps">
     <li><strong>Calendari:</strong> consulta la fitxa de l'esdeveniment a <a href="/ca/meeting/">Trobades</a> (data, hora i enllaç al mapa).</li>
     <li><strong>Sèrie:</strong> llegeix el <a href="/ca/doc/day-14/">dia 14</a> (Harari i IA) i el <a href="/ca/doc/day-13/">dia 13</a> (meet 6 sobre visibilitat).</li>
-    <li><strong>Idees:</strong> si no pots venir però vols aportar un angle sobre Palantir o burocràcia algorítmica, usa el <a href="/ca/ideas/">formulari d'idees</a>.</li>
+    <li><strong>Idees:</strong> si no pots venir però vols aportar un angle sobre Palantir o burocràcia algorítmica, usa el <a href="/ca/#contact">formulari d'idees</a>.</li>
   </ol>
 </section>
 

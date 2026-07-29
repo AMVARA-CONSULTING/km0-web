@@ -19,7 +19,7 @@ locale: en
     <li><strong>Trust:</strong> <a href="/en/legal/">legal</a> (notice, GDPR privacy, cookies) and <a href="/en/security/">security</a> (AMVARA ISO 27001, responsible disclosure) pages in four languages (#21).</li>
     <li><strong>Registration:</strong> public email/password self-registration via <code>register-api</code> on OpenCloud; Dex login with <code>dex-auth.js</code> and post-register auto sign-in.</li>
     <li><strong>Conversion:</strong> landing with more visible KM0 Cloud (#26); refined blog and tutorial typography (#27); polished service card CTAs.</li>
-    <li><strong>Ideas:</strong> immediate email to the development team when someone submits an idea on <a href="/en/ideas/">/ideas/</a> (<code>f41329c</code>).</li>
+    <li><strong>Ideas:</strong> immediate email to the development team when someone submits an idea on <a href="/en/#contact">contact</a> (<code>f41329c</code>).</li>
   </ul>
 </section>
 
@@ -106,7 +106,7 @@ locale: en
     <li><strong>Pricing:</strong> visit <a href="/en/pricing/">/pricing/</a> and check hero, table, and CTA in each language.</li>
     <li><strong>Legal:</strong> review <a href="/en/legal/">/legal/</a> and <a href="/en/security/">/security/</a>; links from FAQ and footer.</li>
     <li><strong>Registration:</strong> create a test account at <a href="https://cloud.km0digital.com/register">cloud.km0digital.com/register</a>; verify auto sign-in.</li>
-    <li><strong>Ideas:</strong> submit a test on <a href="/en/ideas/">/ideas/</a>; check JSON in spool and team email via AutoMail.</li>
+    <li><strong>Ideas:</strong> submit a test on <a href="/en/#contact">contact</a>; check JSON in spool and team email via AutoMail.</li>
     <li><strong>Smoke:</strong> autoagents loop - issues #21, #24, #25, #26, #27 closed; register-api health OK.</li>
   </ol>
 </section>

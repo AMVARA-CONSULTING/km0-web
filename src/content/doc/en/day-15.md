@@ -86,7 +86,7 @@ locale: en
     <li><strong>Health:</strong> operators can run <code>./scripts/verify-register-api.sh</code> in km0-opencloud and confirm <code>graph_auth_ok: true</code>.</li>
     <li><strong>Registration:</strong> try <a href="https://cloud.km0digital.com/register.html">email/password registration</a> or sign in with Google if you already have an account.</li>
     <li><strong>Series:</strong> read <a href="/en/doc/day-14/">day 14</a> (Harari and AI) and <a href="/en/doc/day-11/">day 11</a> (KM0 Email).</li>
-    <li><strong>Ideas:</strong> tell us via the <a href="/en/ideas/">ideas form</a> or <a href="/en/#contact">contact</a> if you want more posts on KM0 Cloud operations.</li>
+    <li><strong>Ideas:</strong> tell us via the <a href="/en/#contact">ideas form</a> or <a href="/en/#contact">contact</a> if you want more posts on KM0 Cloud operations.</li>
   </ol>
 </section>
 

@@ -45,7 +45,7 @@ locale: es
     <li><strong>Cloud:</strong> enlace a <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> con registro y login.</li>
     <li><strong>Mail:</strong> acceso a <a href="https://mail.km0digital.com/">mail.km0digital.com</a> para quien ya tiene buzón.</li>
     <li><strong>Documentación:</strong> enlace al <a href="/doc/">blog / doc</a> y a <a href="/presentation/">presentación</a> descargable.</li>
-    <li><strong>Ideas y contacto:</strong> acceso rápido a <a href="/ideas/">ideas</a> y <a href="/#contact">contacto</a>.</li>
+    <li><strong>Ideas y contacto:</strong> acceso rápido a <a href="/#contact">ideas</a> y <a href="/#contact">contacto</a>.</li>
     <li><strong>Implementación:</strong> componente ligero en km0-web; no sustituye la navegación actual, la complementa.</li>
   </ul>
   <div class="doc-callout">
@@ -100,7 +100,7 @@ locale: es
     <li><strong>Cloud:</strong> registro de prueba en <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a>.</li>
     <li><strong>Mail:</strong> webmail en <a href="https://mail.km0digital.com/">mail.km0digital.com</a> si tienes buzón.</li>
     <li><strong>Doc:</strong> leer <a href="/doc/day-11/">día 11</a> (mail) y <a href="/doc/day-13/">día 13</a> (meet 6).</li>
-    <li><strong>Feedback:</strong> enviar mejoras por <a href="/ideas/">ideas</a> o <a href="/#contact">contacto</a>.</li>
+    <li><strong>Feedback:</strong> enviar mejoras por <a href="/#contact">ideas</a> o <a href="/#contact">contacto</a>.</li>
   </ol>
 </section>
 

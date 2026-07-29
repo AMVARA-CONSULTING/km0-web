@@ -2,7 +2,7 @@
 
 Plan for collecting public comments from the static site without exposing the downstream secret script. The web only talks to a public receiver; the secret logic runs on the host with no HTTP endpoint.
 
-**Status:** receiver on host (systemd webhook), public form, **autoissue** processor (cursor-agent draft + `gh issue create`); host setup via `scripts/setup-ideas-processor.sh`. Dev email via AutoMail on enqueue (`scripts/notify-idea-email.sh`, `AUTOMAIL_TOKEN` in repo-root `.env`).
+**Status:** receiver on host (systemd webhook), site-wide ideas chat widget, **autoissue** processor (cursor-agent draft + `gh issue create`); host setup via `scripts/setup-ideas-processor.sh`. Dev email via AutoMail on enqueue (`scripts/notify-idea-email.sh`, `AUTOMAIL_TOKEN` in repo-root `.env`). Optional `KM0_IDEAS_TRUST_PASSWORD` skips the `waiting for human validation` label when the client password matches (server-side only; never stored in queue JSON).
 **Related:** [runbook.md](./runbook.md) (deploy and nginx).
 
 ---
@@ -10,13 +10,14 @@ Plan for collecting public comments from the static site without exposing the do
 ## Goal
 
 ```text
-Browser form (Astro)
+Browser ideas widget (Astro, bottom-left FAB on every page)
   → POST /hooks/ideas (nginx, rate limited)
   → Host webhook (Script 1, systemd km0-ideas-receiver.service)
-  → Atomic write to queue file (JSON)
+  → Atomic write to queue file (JSON; may include skipHumanValidation)
   → notify-idea-email.sh (AutoMail, background, no cursor-agent)
   → systemd path unit triggers autoissue (host only)
   → autoissue: cursor-agent drafts markdown from JSON, then gh issue create
+    (omit "waiting for human validation" when skipHumanValidation is true)
 ```
 
 **Public cannot:** read Script 2, call it over HTTP, or see its path in responses or frontend assets.  
@@ -79,8 +80,9 @@ Example: `20260604T153012Z-a1b2c3d4-e5f6-7890-abcd-ef1234567890.json`
   "receivedAt": "2026-06-04T15:30:12Z",
   "locale": "es",
   "scope": "web",
-  "email": "user@example.com",
+  "name": "Optional display name",
   "idea": "Plain text comment from the user.",
+  "skipHumanValidation": false,
   "meta": {
     "userAgent": "Mozilla/5.0 ...",
     "remoteAddr": "203.0.113.42"
@@ -91,12 +93,13 @@ Example: `20260604T153012Z-a1b2c3d4-e5f6-7890-abcd-ef1234567890.json`
 | Field | Rules |
 |-------|--------|
 | `idea` | Required, max 4000 chars, no NUL bytes, trim whitespace |
-| `email` | Optional, max 254 chars, basic format check |
+| `name` | Optional, max 200 chars |
 | `locale` | Optional, one of `es`, `ca`, `en`, `de` |
-| `scope` | Product target: `web` (km0digital), `cloud` (cloud.km0digital), or `mail` (mail.km0digital); defaults to `web` |
+| `scope` | Product target: `web` (km0-web), `cloud` (km0-opencloud), or `mail` (km0-mail); defaults to `web` |
+| `skipHumanValidation` | Boolean set by receiver only when client password matches `KM0_IDEAS_TRUST_PASSWORD`. Never store the password in the file. |
 | `meta` | Set by receiver only, never trusted from client |
 
-Script 1 generates `id` and `receivedAt`. Do not trust client-supplied IDs.
+Script 1 generates `id`, `receivedAt`, and `skipHumanValidation`. Do not trust client-supplied IDs or client-supplied `skipHumanValidation`.
 
 ---
 
@@ -106,10 +109,10 @@ Script 1 generates `id` and `receivedAt`. Do not trust client-supplied IDs.
 
 1. Accept `POST` with JSON body (or form fields mapped to JSON).
 2. Reject spam: honeypot field, nginx rate limit, optional [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/).
-3. Validate and normalize fields (length, charset).
+3. Validate and normalize fields (length, charset). Compare optional `password` to `KM0_IDEAS_TRUST_PASSWORD` (constant-time hash compare); set `skipHumanValidation` without storing the password.
 4. Write queue file **atomically** (see below).
 5. Fire-and-forget dev email via `notify-idea-email.sh` (AutoMail API; optional if `AUTOMAIL_TOKEN` unset).
-6. Return generic JSON: `{"ok": true}` or `{"ok": false, "error": "invalid_input"}` with no internal paths.
+6. Return generic JSON: `{"ok": true}` or `{"ok": false, "error": "invalid_input"}` with no internal paths (and no password acceptance signal).
 
 **Must not:** invoke Script 2, mention `/opt/km0-private`, or log full payloads at info level in production.
 
@@ -285,7 +288,7 @@ systemctl enable --now km0-idea-processor.path
 
 1. **Ops:** Create users, spool dirs, systemd units; run `sudo ./scripts/setup-ideas-processor.sh`.
 2. **Receiver:** Host webhook (`km0-ideas-receiver.service`), `receive-idea.sh`, nginx location on `:9181`.
-3. **Frontend:** Astro form, i18n strings, POST to `/hooks/ideas`, thank-you state.
+3. **Frontend:** site-wide `IdeasChatWidget`, i18n strings, POST to `/hooks/ideas`, in-panel success + field reset. `/ideas/` nginx 301 to locale home.
 4. **Hardening:** Turnstile, monitoring on `failed/` count, log rotation.
 5. **Docs:** Runbook section (enqueue verify, replay failed job, disable intake).
 

@@ -52,7 +52,8 @@ Verbatim user text from the `idea` field (preserve line breaks).
 | Locale | `<locale>` |
 | Product scope | `<scope: web | cloud | mail>` |
 | Submitter name | `<name or anonymous>` |
-| Source | [/ideas/](https://km0digital.com/ideas/) public form |
+| Source | Site-wide ideas widget on km0digital.com |
+
 
 ## Triage notes
 

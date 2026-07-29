@@ -44,9 +44,21 @@
       "planLabel": "Plan",
       "planMeta": "Hetzner · Falkenstein",
       "files": [
-        { "name": "Dokumente", "meta": "Ordner", "kind": "folder" },
-        { "name": "Familienfotos", "meta": "Ordner", "kind": "folder" },
-        { "name": "sitzungsnotiz.pdf", "meta": "2,4 MB", "kind": "file" }
+        {
+          "name": "Dokumente",
+          "meta": "Ordner",
+          "kind": "folder"
+        },
+        {
+          "name": "Familienfotos",
+          "meta": "Ordner",
+          "kind": "folder"
+        },
+        {
+          "name": "sitzungsnotiz.pdf",
+          "meta": "2,4 MB",
+          "kind": "file"
+        }
       ],
       "emailMeta": "@km0digital.com",
       "liveLabel": "Live-Cloud",
@@ -122,9 +134,8 @@
   },
   "community": {
     "heading": "Treffen",
-    "intro": "Wir treffen uns persönlich. WhatsApp und Ideen auch hier.",
-    "whatsappLink": "WhatsApp",
-    "ideasLink": "Ideen"
+    "intro": "Wir treffen uns persönlich. WhatsApp ist auch da.",
+    "whatsappLink": "WhatsApp"
   },
   "services": {
     "headingBefore": "Die ",
@@ -258,25 +269,26 @@
     "visionBody": "Ehrliche, lokale Infrastruktur und persönlicher Support: eine Alternative zu geschlossenen Big-Tech-Plattformen, die von Nutzerdaten leben."
   },
   "ideas": {
-    "metaTitle": "Ideen und Probleme - Kilometer 0 Digital",
-    "metaDescription": "Verbesserung senden oder Problem zu KM0 Web, KM0 Cloud oder KM0 Email melden.",
-    "eyebrow": "Feedback",
-    "heading": "Idee oder Problem senden",
-    "intro": "Das Technikteam prüft es. Produkt wählen und beschreiben, was fehlt oder nicht funktioniert.",
+    "panelTitle": "Idee senden",
+    "launcherLabel": "Ideen",
+    "openAria": "Ideen-Panel öffnen",
+    "closeAria": "Ideen-Panel schließen",
     "scopeLabel": "Produkt",
-    "scopeHint": "Bei Unsicherheit KM0 Web wählen.",
+    "scopeHint": "Wenn Sie unsicher sind, wählen Sie KM0 Web.",
     "scopeOptions": {
       "web": "KM0 Web",
       "cloud": "KM0 Cloud",
       "mail": "KM0 Email"
     },
     "ideaLabel": "Ihre Nachricht",
-    "ideaPlaceholder": "Beschreiben Sie Ihre Idee oder das aufgetretene Problem…",
+    "ideaPlaceholder": "Beschreiben Sie Ihre Idee oder das Problem…",
     "nameLabel": "Name",
     "namePlaceholder": "Name (optional)",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "optional",
     "submit": "Senden",
-    "success": "Danke. Ihr Feedback ist eingegangen.",
-    "error": "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+    "success": "Danke. Wir haben Ihr Feedback erhalten.",
+    "error": "Senden fehlgeschlagen. Bitte später erneut versuchen.",
     "charCount": "{count} / 4000"
   },
   "meeting": {
@@ -621,7 +633,7 @@
       {
         "id": "privacy",
         "title": "Datenschutzerklärung",
-        "bodyHtml": "<p><strong>Verantwortlicher:</strong> AMVARA CONSULTING S.L. (Angaben oben).<br><strong>Datenschutzkontakt:</strong> legal@amvara.de</p><p><strong>Privacy-first-Ansatz:</strong> KM0 Digital ist privacy-first aufgebaut. Wir sind kein Großkonzern, der Ihre Daten sammelt, um Sie zu profilieren oder Ihre Informationen zu verkaufen. Wir verarbeiten nur die Mindestmenge an Daten für einen nützlichen, zuverlässigen Service.</p><p>Diese Erklärung beschreibt, wie wir personenbezogene Daten auf <strong>km0digital.com</strong> (Marketing-Website), <strong>cloud.km0digital.com</strong> (KM0 Cloud) und <strong>mail.km0digital.com</strong> (KM0 Email) verarbeiten. Rechtliche Seiten für diese Eigenschaften werden auf km0digital.com gehostet.</p><p><strong>Marketing-Website (km0digital.com)</strong></p><ul class=\"doc-list\"><li><strong>Ideen-Formular (<code>/ideas/</code>):</strong> Nachricht (Pflicht), gewähltes Produkt (Pflicht), optionaler Name, Sprache, IP-Adresse und User-Agent. Einsendungen werden für wenige Minuten in einem Host-Spool zwischengespeichert und dann automatisch gelöscht. Name und Nachrichtenthema bleiben in einem GitHub Issue des Repositories des gewählten Produkts zur Bearbeitung erhalten.</li><li><strong>Kontaktbereich:</strong> keine Datenspeicherung auf der Website. Die Kontakt-E-Mail wird als Klartext angezeigt (legal@amvara.de).</li><li><strong>WhatsApp-Gruppenlink:</strong> Sie verlassen unsere Website und nutzen einen Dienst von Meta. Es gelten deren Richtlinien: <a href=\"https://www.whatsapp.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp-Datenschutzrichtlinie</a>.</li><li><strong>Cloud-Nutzerzahl (<code>/cloud/</code>):</strong> keine personenbezogenen Daten vom Besucher. Die Zahl wird beim Build über die OpenCloud Graph API mit serverseitigen Zugangsdaten abgerufen.</li><li><strong>Server-Logs:</strong> IP-Adresse, User-Agent, Zeitstempel und Anfragemetadaten in nginx- und Host-Zugriffslogs für Sicherheit und Fehlerbehebung (in der Regel bis zu 30 Tage, oder länger bei Incident-Untersuchungen).</li></ul><p><strong>KM0 Email (mail.km0digital.com)</strong></p><ul class=\"doc-list\"><li><strong>Kontodaten:</strong> E-Mail-Adresse, Passwort-Hash, Kontingente und Aliase für <code>@km0digital.com</code>-Postfächer.</li><li><strong>Postfachinhalt:</strong> gesendete und empfangene Nachrichten, Anhänge und Metadaten (Header, Daten).</li><li><strong>Webmail (Roundcube):</strong> Sitzungs-Cookies auf <code>mail.km0digital.com</code> bei Nutzung des Webmail (nicht auf der Marketing-Website km0digital.com).</li><li><strong>Betriebslogs:</strong> Postfix-, Dovecot-, nginx- und Rspamd-Logs für Sicherheit, Anti-Spam und Fehlerbehebung.</li></ul><p><strong>Zwecke und Rechtsgrundlagen</strong></p><ul class=\"doc-list\"><li>Betrieb der Website und KM0-Cloud-Dienste (Vertrag und berechtigtes Interesse).</li><li>Bearbeitung von Ideen und Support-Anfragen (berechtigtes Interesse und ggf. Einwilligung).</li><li>Sicherheit, Missbrauchsprävention und Rechtscompliance (berechtigtes Interesse und rechtliche Verpflichtung).</li></ul><p><strong>Aufbewahrung</strong></p><ul class=\"doc-list\"><li>Ideen-Spool-Dateien: Minuten, dann gelöscht.</li><li>GitHub Issues aus der Ideen-Pipeline: solange das Issue offen ist und danach als Projekthistorie auf GitHub bis zur Archivierung oder Löschung gemäß GitHub-Richtlinien.</li><li>Zugriffslogs: begrenzter Zeitraum wie oben beschrieben.</li><li>KM0-Cloud-Konto und Dateidaten: für die Dauer des Kontos und gemäß Backup- sowie gesetzlichen Anforderungen; siehe Abschnitt KM0 Cloud.</li><li>KM0-Mail-Postfachinhalt und Kontodaten: für die Dauer des Kontos plus operative Backups gemäß km0-mail-Runbook; gelöscht bei Kontolöschung, sofern keine gesetzliche Aufbewahrungspflicht gilt.</li></ul><p><strong>Empfänger und Auftragsverarbeiter (verifiziert)</strong></p><ul class=\"doc-list\"><li><strong>GitHub</strong> (Issue-Tracking der Ideen-Pipeline)</li><li><strong>Hetzner</strong> (EU-Hosting, Deutschland)</li><li><strong>Meta / WhatsApp</strong> (optionaler Community-Link)</li><li><strong>Let's Encrypt</strong> (TLS-Zertifikate)</li><li><strong>OpenCloud-Stack</strong> (KM0-Cloud-Infrastruktur)</li></ul><p>Daten werden überwiegend in der Europäischen Union verarbeitet. Verarbeitet ein Anbieter Daten außerhalb der EU, stützen wir uns auf die nach DSGVO erforderlichen Garantien.</p><p><strong>Ihre Rechte</strong></p><p>Nach DSGVO können Sie Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit verlangen, soweit anwendbar. Sie können eine Einwilligung jederzeit widerrufen, wenn die Verarbeitung darauf basiert. Kontakt: legal@amvara.de. Beschwerde bei der spanischen Datenschutzbehörde AEPD: <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener noreferrer\">www.aepd.es</a>.</p><p><strong>Sicherheit</strong></p><p>Wir setzen technische und organisatorische Maßnahmen ein, einschließlich HTTPS, Zugriffskontrollen und Praktiken im Einklang mit AMVARAs zertifiziertem ISMS nach ISO/IEC 27001:2022. Details auf unserer <a href=\"/de/security/\">Sicherheitsseite</a>.</p><p>Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Wesentliche Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht.</p>"
+        "bodyHtml": "<p><strong>Verantwortlicher:</strong> AMVARA CONSULTING S.L. (Angaben oben).<br><strong>Datenschutzkontakt:</strong> legal@amvara.de</p><p><strong>Privacy-first-Ansatz:</strong> KM0 Digital ist privacy-first aufgebaut. Wir sind kein Großkonzern, der Ihre Daten sammelt, um Sie zu profilieren oder Ihre Informationen zu verkaufen. Wir verarbeiten nur die Mindestmenge an Daten für einen nützlichen, zuverlässigen Service.</p><p>Diese Erklärung beschreibt, wie wir personenbezogene Daten auf <strong>km0digital.com</strong> (Marketing-Website), <strong>cloud.km0digital.com</strong> (KM0 Cloud) und <strong>mail.km0digital.com</strong> (KM0 Email) verarbeiten. Rechtliche Seiten für diese Eigenschaften werden auf km0digital.com gehostet.</p><p><strong>Marketing-Website (km0digital.com)</strong></p><ul class=\"doc-list\"><li><strong>Ideen-Widget (feste Schaltfläche auf der Website):</strong> Nachricht (Pflicht), gewähltes Produkt (Pflicht), optionaler Name, Sprache, IP-Adresse und User-Agent. Einsendungen werden für wenige Minuten in einem Host-Spool zwischengespeichert und dann automatisch gelöscht. Name und Nachrichtenthema bleiben in einem GitHub Issue des Repositories des gewählten Produkts zur Bearbeitung erhalten.</li><li><strong>Kontaktbereich:</strong> keine Datenspeicherung auf der Website. Die Kontakt-E-Mail wird als Klartext angezeigt (legal@amvara.de).</li><li><strong>WhatsApp-Gruppenlink:</strong> Sie verlassen unsere Website und nutzen einen Dienst von Meta. Es gelten deren Richtlinien: <a href=\"https://www.whatsapp.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp-Datenschutzrichtlinie</a>.</li><li><strong>Cloud-Nutzerzahl (<code>/cloud/</code>):</strong> keine personenbezogenen Daten vom Besucher. Die Zahl wird beim Build über die OpenCloud Graph API mit serverseitigen Zugangsdaten abgerufen.</li><li><strong>Server-Logs:</strong> IP-Adresse, User-Agent, Zeitstempel und Anfragemetadaten in nginx- und Host-Zugriffslogs für Sicherheit und Fehlerbehebung (in der Regel bis zu 30 Tage, oder länger bei Incident-Untersuchungen).</li></ul><p><strong>KM0 Email (mail.km0digital.com)</strong></p><ul class=\"doc-list\"><li><strong>Kontodaten:</strong> E-Mail-Adresse, Passwort-Hash, Kontingente und Aliase für <code>@km0digital.com</code>-Postfächer.</li><li><strong>Postfachinhalt:</strong> gesendete und empfangene Nachrichten, Anhänge und Metadaten (Header, Daten).</li><li><strong>Webmail (Roundcube):</strong> Sitzungs-Cookies auf <code>mail.km0digital.com</code> bei Nutzung des Webmail (nicht auf der Marketing-Website km0digital.com).</li><li><strong>Betriebslogs:</strong> Postfix-, Dovecot-, nginx- und Rspamd-Logs für Sicherheit, Anti-Spam und Fehlerbehebung.</li></ul><p><strong>Zwecke und Rechtsgrundlagen</strong></p><ul class=\"doc-list\"><li>Betrieb der Website und KM0-Cloud-Dienste (Vertrag und berechtigtes Interesse).</li><li>Bearbeitung von Ideen und Support-Anfragen (berechtigtes Interesse und ggf. Einwilligung).</li><li>Sicherheit, Missbrauchsprävention und Rechtscompliance (berechtigtes Interesse und rechtliche Verpflichtung).</li></ul><p><strong>Aufbewahrung</strong></p><ul class=\"doc-list\"><li>Ideen-Spool-Dateien: Minuten, dann gelöscht.</li><li>GitHub Issues aus der Ideen-Pipeline: solange das Issue offen ist und danach als Projekthistorie auf GitHub bis zur Archivierung oder Löschung gemäß GitHub-Richtlinien.</li><li>Zugriffslogs: begrenzter Zeitraum wie oben beschrieben.</li><li>KM0-Cloud-Konto und Dateidaten: für die Dauer des Kontos und gemäß Backup- sowie gesetzlichen Anforderungen; siehe Abschnitt KM0 Cloud.</li><li>KM0-Mail-Postfachinhalt und Kontodaten: für die Dauer des Kontos plus operative Backups gemäß km0-mail-Runbook; gelöscht bei Kontolöschung, sofern keine gesetzliche Aufbewahrungspflicht gilt.</li></ul><p><strong>Empfänger und Auftragsverarbeiter (verifiziert)</strong></p><ul class=\"doc-list\"><li><strong>GitHub</strong> (Issue-Tracking der Ideen-Pipeline)</li><li><strong>Hetzner</strong> (EU-Hosting, Deutschland)</li><li><strong>Meta / WhatsApp</strong> (optionaler Community-Link)</li><li><strong>Let's Encrypt</strong> (TLS-Zertifikate)</li><li><strong>OpenCloud-Stack</strong> (KM0-Cloud-Infrastruktur)</li></ul><p>Daten werden überwiegend in der Europäischen Union verarbeitet. Verarbeitet ein Anbieter Daten außerhalb der EU, stützen wir uns auf die nach DSGVO erforderlichen Garantien.</p><p><strong>Ihre Rechte</strong></p><p>Nach DSGVO können Sie Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit verlangen, soweit anwendbar. Sie können eine Einwilligung jederzeit widerrufen, wenn die Verarbeitung darauf basiert. Kontakt: legal@amvara.de. Beschwerde bei der spanischen Datenschutzbehörde AEPD: <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener noreferrer\">www.aepd.es</a>.</p><p><strong>Sicherheit</strong></p><p>Wir setzen technische und organisatorische Maßnahmen ein, einschließlich HTTPS, Zugriffskontrollen und Praktiken im Einklang mit AMVARAs zertifiziertem ISMS nach ISO/IEC 27001:2022. Details auf unserer <a href=\"/de/security/\">Sicherheitsseite</a>.</p><p>Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Wesentliche Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht.</p>"
       },
       {
         "id": "cookies",

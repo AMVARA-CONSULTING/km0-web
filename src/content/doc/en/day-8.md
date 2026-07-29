@@ -80,5 +80,5 @@ locale: en
 <section class="doc-closing-block">
   <p class="doc-block-title">Next step</p>
   <h2 class="doc-block-heading">Day 9</h2>
-  <p class="doc-closing"><a href="/en/doc/day-9/">Day 9</a> publishes the <a href="/en/pricing/">pricing</a> page, <a href="/en/legal/">legal</a> and <a href="/en/security/">security</a> pages, public cloud registration, and landing conversion polish. Meanwhile, download the <a href="/en/presentation/">presentation</a> or try the <a href="/en/ideas/">ideas form</a>.</p>
+  <p class="doc-closing"><a href="/en/doc/day-9/">Day 9</a> publishes the <a href="/en/pricing/">pricing</a> page, <a href="/en/legal/">legal</a> and <a href="/en/security/">security</a> pages, public cloud registration, and landing conversion polish. Meanwhile, download the <a href="/en/presentation/">presentation</a> or try the <a href="/en/#contact">ideas form</a>.</p>
 </section>

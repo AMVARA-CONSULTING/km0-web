@@ -8,7 +8,7 @@ locale: es
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
   <p class="doc-lead">El día 7 es una entrada especial: documenta la automatización que cierra un hueco que los días anteriores dejaban abierto. Alguien enviaba una idea o incidencia; un desarrollador leía el texto crudo, lo reescribía como issue de GitHub y solo entonces empezaba la implementación. Ese traspaso era el cuello de botella.</p>
-  <p class="doc-lead">El 4 de junio de 2026 cableamos el ciclo completo en dos canales: feedback público en <a href="https://km0digital.com/ideas/">km0digital.com</a> (producción) y Admin Help interno en un stack Laravel ecommerce en staging. Mismo modelo mental: cola, borrador autoissue, etiqueta humana, recogida por autoagents.</p>
+  <p class="doc-lead">El 4 de junio de 2026 cableamos el ciclo completo en dos canales: feedback público en <a href="https://km0digital.com/#contact">km0digital.com</a> (producción) y Admin Help interno en un stack Laravel ecommerce en staging. Mismo modelo mental: cola, borrador autoissue, etiqueta humana, recogida por autoagents.</p>
 </section>
 
 <section class="doc-block">
@@ -28,7 +28,7 @@ locale: es
   <p class="doc-block-title">Arquitectura</p>
   <h2 class="doc-block-heading">Dos entradas, un patrón</h2>
   <div class="doc-note"><pre>ENTRADA
-  km0-web:     POST /hooks/ideas        (público /ideas/)
+  km0-web:     POST /hooks/ideas        (widget de ideas)
   ecommerce:   POST /api/v1/admin/help  (/admin/help autenticado)
         ↓
   Cola JSON (spool / storage)
@@ -59,7 +59,7 @@ locale: es
   <p class="doc-block-title">Dónde aplica</p>
   <h2 class="doc-block-heading">Dos puertas de entrada, un recorrido</h2>
   <ul class="doc-list">
-    <li><strong>Quien usa KM0:</strong> el formulario <a href="/ideas/">Ideas</a> en km0digital.com. Sirve para sugerencias de producto, mejoras de la web o cosas que echas en falta al usar el cloud.</li>
+    <li><strong>Quien usa KM0:</strong> el formulario <a href="/#contact">Ideas</a> en km0digital.com. Sirve para sugerencias de producto, mejoras de la web o cosas que echas en falta al usar el cloud.</li>
     <li><strong>Quien opera un proyecto interno:</strong> la pantalla Admin Help de una tienda online en staging. Sirve cuando alguien del equipo ve un fallo o necesita un cambio y quiere dejarlo registrado con trazabilidad.</li>
   </ul>
   <p>En ambos casos el recorrido es el mismo: formulario → cola → ticket redactado → revisión humana → implementación. Cambia quién escribe y dónde, no la lógica.</p>
@@ -68,7 +68,7 @@ locale: es
 <section class="doc-block">
   <p class="doc-block-title">Ejemplos</p>
   <h2 class="doc-block-heading">Cómo se ve en la práctica</h2>
-  <p class="doc-block-intro">Imagina que alguien envía desde <a href="/ideas/">Ideas</a>: «Me gustaría un botón para compartir entradas del blog». En unos quince segundos el sistema genera un ticket titulado y ordenado: qué pide la persona, en qué idioma escribió, qué parte del sitio toca. Aparece marcado como <em>pendiente de validación humana</em>.</p>
+  <p class="doc-block-intro">Imagina que alguien envía desde <a href="/#contact">Ideas</a>: «Me gustaría un botón para compartir entradas del blog». En unos quince segundos el sistema genera un ticket titulado y ordenado: qué pide la persona, en qué idioma escribió, qué parte del sitio toca. Aparece marcado como <em>pendiente de validación humana</em>.</p>
   <p>Alguien del equipo lo lee. Si el texto está bien, quita la marca y el ticket pasa a la cola de implementación automática. Si hace falta matizar («solo en móvil», «icono de WhatsApp»), se edita el ticket antes de aprobarlo. Sin volver a copiar el mensaje original a mano.</p>
   <p>Otro caso: un administrador de la tienda en staging reporta desde Admin Help que un filtro de productos no guarda bien. Misma mecánica: ticket claro, revisión, y solo entonces entra en el flujo de desarrollo. El objetivo es que nadie tenga que adivinar qué quiso decir quien escribió.</p>
 </section>
@@ -90,5 +90,5 @@ locale: es
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Días 1–6</h2>
-  <p class="doc-closing">Las entradas anteriores cubren el stack (OpenCloud, Dex, LDAP, clientes nativos, tutoriales, visión). El día 7 añade el bucle de feedback: prueba el <a href="/ideas/">formulario de ideas</a> o revisa el <a href="/doc/day-6/">día 6</a> para onboarding en dispositivos. Dudas: <a href="/#contact">contacto</a>.</p>
+  <p class="doc-closing">Las entradas anteriores cubren el stack (OpenCloud, Dex, LDAP, clientes nativos, tutoriales, visión). El día 7 añade el bucle de feedback: prueba el <a href="/#contact">formulario de ideas</a> o revisa el <a href="/doc/day-6/">día 6</a> para onboarding en dispositivos. Dudas: <a href="/#contact">contacto</a>.</p>
 </section>

@@ -8,7 +8,7 @@ locale: de
 <section class="doc-lead-block">
   <p class="doc-block-title">Einleitung</p>
   <p class="doc-lead">Tag 7 ist ein Sondereintrag: Er dokumentiert Automatisierung, die eine Lücke schließt, die die früheren Tage offen ließen. Jemand reichte eine Idee oder Störung ein; ein Entwickler las Rohtext, formulierte daraus ein GitHub-Issue und erst dann begann die Implementierung. Diese Übergabe war der Engpass.</p>
-  <p class="doc-lead">Am 4. Juni 2026 haben wir die vollständige Schleife in zwei Kanälen verdrahtet: öffentliches Feedback auf <a href="https://km0digital.com/de/ideas/">km0digital.com</a> (Produktion) und internes Admin Help auf einem Laravel-E-Commerce-Staging-Stack. Gleiches Modell: Queue, Autoissue-Entwurf, menschliches Label, Autoagents-Pickup.</p>
+  <p class="doc-lead">Am 4. Juni 2026 haben wir die vollständige Schleife in zwei Kanälen verdrahtet: öffentliches Feedback auf <a href="https://km0digital.com/de/#contact">km0digital.com</a> (Produktion) und internes Admin Help auf einem Laravel-E-Commerce-Staging-Stack. Gleiches Modell: Queue, Autoissue-Entwurf, menschliches Label, Autoagents-Pickup.</p>
 </section>
 
 <section class="doc-block">
@@ -28,7 +28,7 @@ locale: de
   <p class="doc-block-title">Architektur</p>
   <h2 class="doc-block-heading">Zwei Eingänge, ein Muster</h2>
   <div class="doc-note"><pre>EINGANG
-  km0-web:     POST /hooks/ideas        (öffentlich /ideas/)
+  km0-web:     POST /hooks/ideas        (Ideen-Widget)
   ecommerce:   POST /api/v1/admin/help  (auth /admin/help)
         ↓
   JSON-Queue (Spool / Storage)
@@ -59,7 +59,7 @@ locale: de
   <p class="doc-block-title">Wo es gilt</p>
   <h2 class="doc-block-heading">Zwei Eingänge, ein Weg</h2>
   <ul class="doc-list">
-    <li><strong>KM0-Nutzer:</strong> das Formular <a href="/de/ideas/">Ideen</a> auf km0digital.com. Produktvorschläge, Website-Verbesserungen oder Lücken, die jemand beim Cloud-Nutzung bemerkt.</li>
+    <li><strong>KM0-Nutzer:</strong> das Formular <a href="/de/#contact">Ideen</a> auf km0digital.com. Produktvorschläge, Website-Verbesserungen oder Lücken, die jemand beim Cloud-Nutzung bemerkt.</li>
     <li><strong>Wer ein internes Projekt betreibt:</strong> der Admin-Help-Bildschirm eines Online-Shops in Staging. Wenn jemand im Team einen Fehler sieht oder eine Änderung braucht und sie nachvollziehbar festhalten will.</li>
   </ul>
   <p>In beiden Fällen ist der Weg derselbe: Formular → Warteschlange → formuliertes Ticket → menschliche Prüfung → Umsetzung. Nur wer schreibt und wo, ändert sich, nicht die Logik.</p>
@@ -68,7 +68,7 @@ locale: de
 <section class="doc-block">
   <p class="doc-block-title">Beispiele</p>
   <h2 class="doc-block-heading">So sieht es in der Praxis aus</h2>
-  <p class="doc-block-intro">Stell dir vor, jemand sendet über <a href="/de/ideas/">Ideen</a>: „Ich hätte gern einen Button zum Teilen von Blog-Beiträgen.“ In etwa fünfzehn Sekunden entsteht ein überschriebenes, geordnetes Ticket: was die Person will, in welcher Sprache sie schrieb, welchen Teil der Site es betrifft. Es ist als <em>wartet auf menschliche Prüfung</em> markiert.</p>
+  <p class="doc-block-intro">Stell dir vor, jemand sendet über <a href="/de/#contact">Ideen</a>: „Ich hätte gern einen Button zum Teilen von Blog-Beiträgen.“ In etwa fünfzehn Sekunden entsteht ein überschriebenes, geordnetes Ticket: was die Person will, in welcher Sprache sie schrieb, welchen Teil der Site es betrifft. Es ist als <em>wartet auf menschliche Prüfung</em> markiert.</p>
   <p>Jemand im Team liest es. Steht der Text, entfernt er die Markierung und das Ticket geht in die automatische Umsetzungs-Warteschlange. Braucht es Feinschliff („nur mobil“, „WhatsApp-Icon“), wird das Ticket vor der Freigabe bearbeitet. Ohne die Originalnachricht von Hand neu zu tippen.</p>
   <p>Ein anderer Fall: Ein Shop-Admin in Staging meldet über Admin Help, dass ein Produktfilter nicht richtig speichert. Gleiche Mechanik: klares Ticket, Prüfschritt, dann Entwicklung. Ziel ist, dass niemand raten muss, was der Absender meinte.</p>
 </section>
@@ -90,5 +90,5 @@ locale: de
 <section class="doc-closing-block">
   <p class="doc-block-title">Serie</p>
   <h2 class="doc-block-heading">Tage 1–6</h2>
-  <p class="doc-closing">Frühere Einträge decken den Stack ab (OpenCloud, Dex, LDAP, native Clients, Tutorials, Vision). Tag 7 ergänzt die Feedback-Schleife: probiere das <a href="/de/ideas/">Ideenformular</a> oder lies <a href="/de/doc/day-6/">Tag 6</a> für Geräte-Onboarding. Fragen: <a href="/de/#contact">Kontakt</a>.</p>
+  <p class="doc-closing">Frühere Einträge decken den Stack ab (OpenCloud, Dex, LDAP, native Clients, Tutorials, Vision). Tag 7 ergänzt die Feedback-Schleife: probiere das <a href="/de/#contact">Ideenformular</a> oder lies <a href="/de/doc/day-6/">Tag 6</a> für Geräte-Onboarding. Fragen: <a href="/de/#contact">Kontakt</a>.</p>
 </section>

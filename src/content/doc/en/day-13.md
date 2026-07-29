@@ -86,7 +86,7 @@ locale: en
   <ol class="doc-steps">
     <li><strong>Mail:</strong> try <a href="https://mail.km0digital.com/">mail.km0digital.com</a> if you have a KM0 mailbox.</li>
     <li><strong>Cloud:</strong> sign up at <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> or see <a href="/en/pricing/">pricing</a>.</li>
-    <li><strong>Ideas:</strong> send proposals via the <a href="/en/ideas/">ideas form</a> or <a href="/en/#contact">contact</a>.</li>
+    <li><strong>Ideas:</strong> send proposals via the <a href="/en/#contact">ideas form</a> or <a href="/en/#contact">contact</a>.</li>
     <li><strong>Presentation:</strong> download the PDF at <a href="/en/presentation/">/presentation/</a> to share with your PTA or association.</li>
     <li><strong>WhatsApp:</strong> join the community group from the contact section on the site.</li>
   </ol>

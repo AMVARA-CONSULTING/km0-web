@@ -86,7 +86,7 @@ locale: ca
   <ol class="doc-steps">
     <li><strong>Correu:</strong> prova <a href="https://mail.km0digital.com/">mail.km0digital.com</a> si tens bústia KM0.</li>
     <li><strong>Cloud:</strong> registra't a <a href="https://cloud.km0digital.com/">cloud.km0digital.com</a> o consulta <a href="/ca/pricing/">preus</a>.</li>
-    <li><strong>Idees:</strong> envia propostes pel <a href="/ca/ideas/">formulari d'idees</a> o <a href="/ca/#contact">contacte</a>.</li>
+    <li><strong>Idees:</strong> envia propostes pel <a href="/ca/#contact">formulari d'idees</a> o <a href="/ca/#contact">contacte</a>.</li>
     <li><strong>Presentació:</strong> descarrega el PDF a <a href="/ca/presentation/">/presentation/</a> per compartir amb la teva AMPA o associació.</li>
     <li><strong>WhatsApp:</strong> uneix-te al grup comunitari des de la secció de contacte del web.</li>
   </ol>

@@ -116,6 +116,25 @@ const { locale, messages: m } = Astro.props;
     aria-label={m.ideas.openAria}
   >
     <span class="ideas-chat__launcher-label">{m.ideas.launcherLabel}</span>
+    <svg
+      class="ideas-chat__launcher-mark"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <!-- K0 lettermark (Origin stamp), no plaque: circle FAB is the field -->
+      <rect x="2" y="3" width="6.5" height="26" fill="currentColor" />
+      <path fill="currentColor" d="M7.5 15 15 3.5h3.2L10.2 16.2z" />
+      <path fill="currentColor" d="M7.5 17 10.2 15.8 18.2 28.5H15z" />
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M17.5 5.5h12.5v21H17.5v-21zm3.7 4.7h5.1v11.6h-5.1V10.2z"
+      />
+    </svg>
+    <span class="ideas-chat__launcher-close" aria-hidden="true">×</span>
   </button>
 </div>
 
@@ -127,11 +146,11 @@ const { locale, messages: m } = Astro.props;
   .ideas-chat {
     position: fixed;
     z-index: 60;
-    left: max(1rem, env(safe-area-inset-left, 0px));
+    right: max(1rem, env(safe-area-inset-right, 0px));
     bottom: max(1rem, env(safe-area-inset-bottom, 0px));
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 0.75rem;
     max-width: min(22.5rem, calc(100vw - 2rem));
     pointer-events: none;
@@ -285,28 +304,53 @@ const { locale, messages: m } = Astro.props;
   }
 
   .ideas-chat__launcher {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.75rem;
-    padding: 0.55rem 0.95rem;
-    border: 1px solid color-mix(in srgb, var(--color-signal) 55%, var(--color-mist));
-    border-radius: 0.375rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    border: 1px solid color-mix(in srgb, var(--color-signal) 45%, var(--color-mist));
+    border-radius: 9999px;
     background: var(--color-signal);
-    color: #fff;
-    font-family: theme('fontFamily.sans');
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
+    color: var(--color-paper);
     cursor: pointer;
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--color-ink) 22%, transparent);
+    box-shadow: 0 8px 22px color-mix(in srgb, var(--color-ink) 24%, transparent);
     transition:
       background-color 0.2s ease,
-      border-color 0.2s ease;
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .ideas-chat__launcher-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .ideas-chat__launcher-mark {
+    width: 1.45rem;
+    height: 1.45rem;
+    display: block;
+  }
+
+  .ideas-chat__launcher-close {
+    display: none;
+    font-size: 1.55rem;
+    line-height: 1;
+    font-weight: 400;
   }
 
   .ideas-chat__launcher:hover {
     background: var(--color-signal-hover);
+    transform: translateY(-1px);
   }
 
   .ideas-chat__launcher:focus-visible {
@@ -317,6 +361,32 @@ const { locale, messages: m } = Astro.props;
   .ideas-chat__launcher[aria-expanded='true'] {
     background: var(--color-ink);
     border-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .ideas-chat__launcher[aria-expanded='true'] .ideas-chat__launcher-mark {
+    display: none;
+  }
+
+  .ideas-chat__launcher[aria-expanded='true'] .ideas-chat__launcher-close {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ideas-chat__launcher {
+      animation: ideas-chat-fab-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+  }
+
+  @keyframes ideas-chat-fab-in {
+    from {
+      opacity: 0;
+      transform: scale(0.86);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   .ideas-hp {
@@ -331,6 +401,11 @@ const { locale, messages: m } = Astro.props;
     .ideas-chat__control,
     .ideas-chat__launcher {
       transition: none;
+      animation: none;
+    }
+
+    .ideas-chat__launcher:hover {
+      transform: none;
     }
   }
 </style>

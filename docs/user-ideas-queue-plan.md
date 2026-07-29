@@ -10,7 +10,7 @@ Plan for collecting public comments from the static site without exposing the do
 ## Goal
 
 ```text
-Browser ideas widget (Astro, bottom-left FAB on every page)
+Browser ideas widget (Astro, bottom-right circular FAB on every page)
   → POST /hooks/ideas (nginx, rate limited)
   → Host webhook (Script 1, systemd km0-ideas-receiver.service)
   → Atomic write to queue file (JSON; may include skipHumanValidation)

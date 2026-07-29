@@ -1,0 +1,32 @@
+# Kilometer 0 Digital
+
+> EU-hosted private cloud and email from AMVARA CONSULTING S.L. Public pricing, human support. We do not sell your profile. Marketing site in Spanish (default), Catalan, English, and German.
+
+KM0 Cloud is OpenCloud at cloud.km0digital.com. KM0 Email provides @km0digital.com mailboxes and Roundcube at mail.km0digital.com. Infrastructure runs in Germany (Hetzner). This file is a curated map for AI agents; prefer these URLs over crawling the full site.
+
+## Pages
+
+- [Home (ES)](https://km0digital.com/): Default landing (Spanish)
+- [Home (EN)](https://km0digital.com/en/): English landing
+- [Home (CA)](https://km0digital.com/ca/): Catalan landing
+- [Home (DE)](https://km0digital.com/de/): German landing
+- [Pricing](https://km0digital.com/pricing/): Public Cloud, Email, and custom paths
+- [Presentation](https://km0digital.com/presentation/): Company presentation and PDF download
+- [Blog](https://km0digital.com/doc/): Technical notes and project updates
+- [Guides](https://km0digital.com/guides/): Practical how-tos without jargon
+- [Tutorials](https://km0digital.com/tutorials/): Getting started with KM0 Cloud
+- [Meetings](https://km0digital.com/meeting/): Community meetups calendar
+- [Legal](https://km0digital.com/legal/): Legal notice, privacy, cookies
+- [Security](https://km0digital.com/security/): Security practices and responsible disclosure
+
+## Products
+
+- [KM0 Cloud](https://cloud.km0digital.com/): Sign in to the live OpenCloud product
+- [KM0 Email](https://mail.km0digital.com/): Webmail for @km0digital.com
+
+## Optional
+
+- [Sitemap](https://km0digital.com/sitemap-index.xml): Full indexable URL list
+- [robots.txt](https://km0digital.com/robots.txt): Crawler access rules
+- [security.txt](https://km0digital.com/.well-known/security.txt): Security contact (RFC 9116)
+- [Operator (AMVARA)](https://amvara.de/): Parent company

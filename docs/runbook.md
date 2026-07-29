@@ -61,7 +61,7 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 
 ### User ideas (site-wide chat widget)
 
-Intake UI is a fixed bottom-left launcher on every page (`IdeasChatWidget` in `Layout.astro`). Dedicated `/ideas/` routes are gone; nginx **301**s them to the locale home.
+Intake UI is a fixed bottom-right circular FAB on every page (`IdeasChatWidget` in `Layout.astro`). Dedicated `/ideas/` routes are gone; nginx **301**s them to the locale home.
 
 | Item | Location |
 |------|----------|

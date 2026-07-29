@@ -24,9 +24,11 @@ load_trust_password() {
     return 0
   fi
   local env_file line value
+  # km0-receiver often cannot read root .env (mode 600). Never write to stderr:
+  # adnanh/webhook includes command stderr in the HTTP body and breaks JSON clients.
   for env_file in "${REPO_ROOT}/.env" "${REPO_ROOT}/autoagents/.env"; do
-    if [[ -f "$env_file" ]]; then
-      line="$(grep -E '^[[:space:]]*KM0_IDEAS_TRUST_PASSWORD=' "$env_file" | tail -n1 || true)"
+    if [[ -f "$env_file" && -r "$env_file" ]]; then
+      line="$(grep -E '^[[:space:]]*KM0_IDEAS_TRUST_PASSWORD=' "$env_file" 2>/dev/null | tail -n1 || true)"
       if [[ -n "$line" ]]; then
         value="${line#*=}"
         value="${value#$'\r'}"

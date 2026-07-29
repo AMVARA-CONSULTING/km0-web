@@ -111,8 +111,18 @@ function initIdeasChatWidget(): void {
         body: JSON.stringify(body),
       });
 
-      const data = (await response.json()) as { ok?: boolean };
+      const raw = await response.text();
+      const jsonStart = raw.indexOf('{');
+      const jsonText = jsonStart >= 0 ? raw.slice(jsonStart) : raw;
+      let data: { ok?: boolean };
+      try {
+        data = JSON.parse(jsonText) as { ok?: boolean };
+      } catch (parseError) {
+        console.error('ideas submit: invalid JSON response', response.status, raw.slice(0, 200));
+        throw parseError;
+      }
       if (!response.ok || !data.ok) {
+        console.error('ideas submit: rejected', response.status, data);
         throw new Error('submit failed');
       }
 
@@ -121,7 +131,10 @@ function initIdeasChatWidget(): void {
         clearStatus();
         resetFormFields();
       }, SUCCESS_RESET_MS);
-    } catch {
+    } catch (error) {
+      if (!(error instanceof SyntaxError)) {
+        console.error('ideas submit failed', error);
+      }
       errorEl.classList.remove('hidden');
       submitBtn?.removeAttribute('disabled');
     }

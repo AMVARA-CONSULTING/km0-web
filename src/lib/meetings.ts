@@ -28,6 +28,15 @@ export const MEETING_EVENTS: MeetingEventRecord[] = [
     venueWebsite: 'https://www.casinomasnou.com/',
     tag: 'informal',
   },
+  {
+    id: 'masnou-aug7-2026',
+    date: '2026-08-07',
+    time: '18:30',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Casino+del+Masnou,+Carrer+de+Barcelona+1,+08320+El+Masnou,+Barcelona',
+    venueWebsite: 'https://www.casinomasnou.com/',
+    tag: 'informal',
+  },
 ];
 
 export function parseMeetingDate(isoDate: string): Date {

@@ -164,6 +164,10 @@ export interface Messages {
     previousTutorial: string;
     nextTutorial: string;
     relatedTutorials: string;
+    groups: {
+      cloud: string;
+      mail: string;
+    };
   };
   /** Non-technical acquisition guides that lead toward KM0 Cloud. */
   guides: {

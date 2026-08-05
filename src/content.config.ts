@@ -18,6 +18,8 @@ const tutorials = defineCollection({
     locale: z.enum(['es', 'ca', 'en', 'de']),
     order: z.number(),
     platform: z.enum(['web', 'android', 'ios', 'macos']),
+    /** Product family used to group the tutorials index. */
+    product: z.enum(['cloud', 'mail']).default('cloud'),
   }),
 });
 

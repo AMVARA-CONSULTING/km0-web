@@ -189,10 +189,10 @@
   },
   "tutorials": {
     "metaTitle": "Tutorials - Kilometer 0 Digital",
-    "metaDescription": "Guides to get started with KM0 Cloud in the browser, on Android, iOS, and macOS.",
+    "metaDescription": "Step-by-step tutorials for KM0 Cloud and KM0 Mail: access, registration, sign-in, and your own domain.",
     "eyebrow": "Tutorials",
-    "heading": "KM0 Cloud guides",
-    "intro": "How to access and set up KM0 Cloud in the browser, on mobile, or as a web app on macOS.",
+    "heading": "KM0 tutorials",
+    "intro": "Simple guides by product: KM0 Cloud for your files and KM0 Mail for your email.",
     "readMore": "Open tutorial",
     "backToIndex": "Back to tutorials",
     "breadcrumbHome": "Tutorials",
@@ -200,7 +200,11 @@
     "tocTitle": "On this page",
     "previousTutorial": "Previous tutorial",
     "nextTutorial": "Next tutorial",
-    "relatedTutorials": "More tutorials"
+    "relatedTutorials": "More tutorials",
+    "groups": {
+      "cloud": "KM0 Cloud",
+      "mail": "KM0 Mail"
+    }
   },
   "guides": {
     "metaTitle": "Practical guides - Kilometer 0 Digital",

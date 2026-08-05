@@ -52,6 +52,14 @@
     @apply font-medium text-ink underline decoration-ink/25 underline-offset-2 transition-colors hover:decoration-ink;
   }
 
+  .reading-group + .reading-group {
+    @apply mt-16 md:mt-20;
+  }
+
+  .reading-group-title {
+    @apply mb-8 font-sans text-[0.75rem] font-medium uppercase tracking-[0.16em] text-signal;
+  }
+
   .reading-catalog {
     @apply m-0 list-none space-y-0 p-0;
   }
@@ -431,6 +439,19 @@
 
   .reading-prose .doc-subtitle {
     @apply mb-3 mt-8 max-w-none font-display text-base font-semibold text-ink md:text-lg;
+  }
+
+  /* Screenshot figure: bordered image with caption */
+  .reading-prose .doc-figure {
+    @apply my-6 max-w-none;
+  }
+
+  .reading-prose .doc-figure img {
+    @apply w-full rounded-lg border border-mist/70 bg-snow/40;
+  }
+
+  .reading-prose .doc-figure figcaption {
+    @apply mt-3 font-sans text-[0.8125rem] leading-relaxed text-ink/55;
   }
 
   .reading-prose .doc-callout {

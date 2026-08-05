@@ -189,10 +189,10 @@
   },
   "tutorials": {
     "metaTitle": "Tutorials - Kilometer 0 Digital",
-    "metaDescription": "Anleitungen für den Start mit KM0 Cloud im Browser, unter Android, iOS und macOS.",
+    "metaDescription": "Schritt-für-Schritt-Tutorials für KM0 Cloud und KM0 Mail: Zugang, Registrierung, Anmeldung und eigene Domain.",
     "eyebrow": "Tutorials",
-    "heading": "KM0-Cloud-Anleitungen",
-    "intro": "Zugang und Einrichtung von KM0 Cloud im Browser, mobil oder als Web-App unter macOS.",
+    "heading": "KM0-Tutorials",
+    "intro": "Einfache Anleitungen nach Produkt: KM0 Cloud für Ihre Dateien und KM0 Mail für Ihre E-Mails.",
     "readMore": "Tutorial öffnen",
     "backToIndex": "Zurück zu den Tutorials",
     "breadcrumbHome": "Tutorials",
@@ -200,7 +200,11 @@
     "tocTitle": "Auf dieser Seite",
     "previousTutorial": "Vorheriges Tutorial",
     "nextTutorial": "Nächstes Tutorial",
-    "relatedTutorials": "Weitere Tutorials"
+    "relatedTutorials": "Weitere Tutorials",
+    "groups": {
+      "cloud": "KM0 Cloud",
+      "mail": "KM0 Mail"
+    }
   },
   "guides": {
     "metaTitle": "Praktische Leitfäden - Kilometer 0 Digital",

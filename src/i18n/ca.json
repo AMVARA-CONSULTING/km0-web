@@ -189,10 +189,10 @@
   },
   "tutorials": {
     "metaTitle": "Tutorials - Kilòmetre 0 Digital",
-    "metaDescription": "Guies per començar amb KM0 Cloud al navegador, Android, iOS i macOS.",
+    "metaDescription": "Tutorials pas a pas per a KM0 Cloud i KM0 Mail: accés, registre, inici de sessió i domini propi.",
     "eyebrow": "Tutorials",
-    "heading": "Guies de KM0 Cloud",
-    "intro": "Com accedir i configurar KM0 Cloud des del navegador, el mòbil o com a app web a macOS.",
+    "heading": "Tutorials KM0",
+    "intro": "Guies senzilles per producte: KM0 Cloud per als teus fitxers i KM0 Mail per al teu correu.",
     "readMore": "Obrir tutorial",
     "backToIndex": "Tornar als tutorials",
     "breadcrumbHome": "Tutorials",
@@ -200,7 +200,11 @@
     "tocTitle": "En aquesta pàgina",
     "previousTutorial": "Tutorial anterior",
     "nextTutorial": "Tutorial següent",
-    "relatedTutorials": "Més tutorials"
+    "relatedTutorials": "Més tutorials",
+    "groups": {
+      "cloud": "KM0 Cloud",
+      "mail": "KM0 Mail"
+    }
   },
   "guides": {
     "metaTitle": "Guies pràctiques - Kilòmetre 0 Digital",

@@ -29,10 +29,6 @@ product: mail
     <li>Melden Sie sich unter <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a> an.</li>
     <li>Öffnen Sie <strong>Einstellungen</strong> und gehen Sie zum Bereich <strong>Meine Domains</strong>.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/settings-my-domains.png" alt="Bereich Meine Domains in den Webmail-Einstellungen mit dem Feld zum Hinzufügen einer Domain" />
-    <figcaption>Einstellungen, Meine Domains, im KM0-Mail-Webmail.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -55,10 +51,6 @@ product: mail
     <li><strong>TXT (SPF):</strong> erlaubt den Versand: <code>v=spf1 mx a:mail.km0digital.com ~all</code>.</li>
     <li><strong>TXT (DKIM):</strong> am Host <code>mail._domainkey</code>, mit dem im Panel angezeigten Schlüssel.</li>
   </ul>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/dns-records.png" alt="Tabelle der DNS-Einträge TXT, MX, SPF und DKIM mit Status ausstehend oder OK" />
-    <figcaption>Die DNS-Einträge und ihr Status unter Meine Domains.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -80,10 +72,6 @@ product: mail
     <li>Geben Sie den Benutzernamen ein (zum Beispiel <code>hallo</code>), um <code>hallo@ihredomain.com</code> zu erstellen.</li>
     <li>Legen Sie ein Passwort für diese Adresse fest und speichern Sie.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/add-address.png" alt="Formular zum Hinzufügen einer Adresse mit den Feldern Benutzername und Passwort" />
-    <figcaption>Erstellen einer Adresse auf der bestätigten Domain.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">

@@ -19,10 +19,6 @@ product: mail
     <li>Obre el teu navegador habitual (Chrome, Firefox, Safari, Edge o un altre).</li>
     <li>Ves a <a href="https://mail.km0digital.com/register">https://mail.km0digital.com/register</a>.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/register-form.png" alt="Formulari de registre de KM0 Mail amb els camps d'usuari, contrasenya i confirmació" />
-    <figcaption>Pàgina de registre a mail.km0digital.com/register.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block doc-block-alt">

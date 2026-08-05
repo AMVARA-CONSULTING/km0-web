@@ -29,10 +29,6 @@ product: mail
     <li>Inicia sessió a <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a>.</li>
     <li>Obre <strong>Configuració</strong> i entra a la secció <strong>Els meus dominis</strong>.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/settings-my-domains.png" alt="Secció Els meus dominis a la configuració del correu web amb el camp per afegir un domini" />
-    <figcaption>Configuració, Els meus dominis, al correu web de KM0 Mail.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -55,10 +51,6 @@ product: mail
     <li><strong>TXT (SPF):</strong> autoritza l'enviament: <code>v=spf1 mx a:mail.km0digital.com ~all</code>.</li>
     <li><strong>TXT (DKIM):</strong> al host <code>mail._domainkey</code>, amb la clau que mostra el panell.</li>
   </ul>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/dns-records.png" alt="Taula de registres DNS TXT, MX, SPF i DKIM amb l'estat pendent o correcte" />
-    <figcaption>Els registres DNS i el seu estat a Els meus dominis.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -80,10 +72,6 @@ product: mail
     <li>Escriu el nom d'usuari (per exemple <code>hola</code>) per crear <code>hola@elteudomini.com</code>.</li>
     <li>Defineix una contrasenya per a aquella adreça i desa.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/add-address.png" alt="Formulari per afegir una adreça amb els camps d'usuari i contrasenya" />
-    <figcaption>Crear una adreça al domini verificat.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">

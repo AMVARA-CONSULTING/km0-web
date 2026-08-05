@@ -29,10 +29,6 @@ product: mail
     <li>Inicia sesión en <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a>.</li>
     <li>Abre <strong>Ajustes</strong> y entra en la sección <strong>Mis dominios</strong>.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/settings-my-domains.png" alt="Sección Mis dominios en los ajustes del correo web con el campo para añadir un dominio" />
-    <figcaption>Ajustes, Mis dominios, en el correo web de KM0 Mail.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -55,10 +51,6 @@ product: mail
     <li><strong>TXT (SPF):</strong> autoriza el envío: <code>v=spf1 mx a:mail.km0digital.com ~all</code>.</li>
     <li><strong>TXT (DKIM):</strong> en el host <code>mail._domainkey</code>, con la clave que muestra el panel.</li>
   </ul>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/dns-records.png" alt="Tabla de registros DNS TXT, MX, SPF y DKIM con su estado pendiente o correcto" />
-    <figcaption>Los registros DNS y su estado en Mis dominios.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -80,10 +72,6 @@ product: mail
     <li>Escribe el nombre de usuario (por ejemplo <code>hola</code>) para crear <code>hola@tudominio.com</code>.</li>
     <li>Define una contraseña para esa dirección y guarda.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/add-address.png" alt="Formulario para añadir una dirección con los campos de usuario y contraseña" />
-    <figcaption>Crear una dirección en el dominio verificado.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">

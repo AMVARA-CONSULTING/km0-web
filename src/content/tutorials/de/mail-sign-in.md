@@ -19,10 +19,6 @@ product: mail
     <li>Gehen Sie zu <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a>.</li>
     <li>Sie sehen den Anmeldebildschirm von KM0 Mail.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/sign-in-form.png" alt="Anmeldebildschirm von KM0 Mail mit den Feldern für E-Mail und Passwort" />
-    <figcaption>Anmeldebildschirm unter mail.km0digital.com.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block doc-block-alt">

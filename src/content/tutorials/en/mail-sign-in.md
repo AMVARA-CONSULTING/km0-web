@@ -19,10 +19,6 @@ product: mail
     <li>Go to <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a>.</li>
     <li>You will see the KM0 Mail sign-in screen.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/sign-in-form.png" alt="KM0 Mail sign-in screen with email and password fields" />
-    <figcaption>Sign-in screen at mail.km0digital.com.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block doc-block-alt">

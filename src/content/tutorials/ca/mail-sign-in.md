@@ -19,10 +19,6 @@ product: mail
     <li>Ves a <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a>.</li>
     <li>Veuràs la pantalla d'accés de KM0 Mail.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/sign-in-form.png" alt="Pantalla d'accés de KM0 Mail amb els camps de correu i contrasenya" />
-    <figcaption>Pantalla d'accés a mail.km0digital.com.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block doc-block-alt">

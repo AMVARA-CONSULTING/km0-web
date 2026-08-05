@@ -29,10 +29,6 @@ product: mail
     <li>Sign in at <a href="https://mail.km0digital.com/">https://mail.km0digital.com/</a>.</li>
     <li>Open <strong>Settings</strong> and go to the <strong>My domains</strong> section.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/settings-my-domains.png" alt="My domains section in webmail settings with the field to add a domain" />
-    <figcaption>Settings, My domains, in KM0 Mail webmail.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -55,10 +51,6 @@ product: mail
     <li><strong>TXT (SPF):</strong> authorizes sending: <code>v=spf1 mx a:mail.km0digital.com ~all</code>.</li>
     <li><strong>TXT (DKIM):</strong> at host <code>mail._domainkey</code>, with the key shown in the panel.</li>
   </ul>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/dns-records.png" alt="DNS records table for TXT, MX, SPF, and DKIM with pending or OK status" />
-    <figcaption>The DNS records and their status in My domains.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">
@@ -80,10 +72,6 @@ product: mail
     <li>Type the username (for example <code>hello</code>) to create <code>hello@yourdomain.com</code>.</li>
     <li>Set a password for that address and save.</li>
   </ol>
-  <figure class="doc-figure">
-    <img src="/tutorials/mail/add-address.png" alt="Form to add an address with username and password fields" />
-    <figcaption>Creating an address on the verified domain.</figcaption>
-  </figure>
 </section>
 
 <section class="doc-block">

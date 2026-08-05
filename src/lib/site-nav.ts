@@ -15,6 +15,7 @@ export function headerNavLinks(locale: Locale, m: Messages): SiteNavLink[] {
     { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
     { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
     { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
+    { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
     { id: 'meeting', label: m.nav.meeting, href: localeHref(locale, '/meeting/') },
     { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
   ];

@@ -36,11 +36,13 @@ Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landin
 
 ## Primary nav (desktop + mobile)
 
-Home · Services · Pricing · Blog · Ideas · Encuentros · Contact
+Home · Services · Pricing · Blog · Tutorials · Encuentros · Contact
 
 ## Secondary (footer / overflow)
 
-Tutorials · Presentation · FAQ · Legal · Security · product deep links (Cloud, Email)
+Guides · Presentation · FAQ · Legal · Security · product deep links (Cloud, Email)
+
+Tutorials also remains in the footer Explore column for secondary discovery.
 
 ## Stable routes (do not 404)
 

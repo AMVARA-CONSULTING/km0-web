@@ -159,6 +159,8 @@
       {
         "id": "email",
         "title": "KM0 Email",
+        "priceFrom": "6,99 €/mes",
+        "priceAriaLabel": "6,99 euros al mes para KM0 Email",
         "subtitle": "Correo @km0digital.com con webmail",
         "desc": "Buzón profesional en el mismo ecosistema y la misma ubicación UE.",
         "cta": "Abrir Email",
@@ -389,8 +391,8 @@
         "id": "email",
         "meta": "Acompañante",
         "title": "KM0 Email",
-        "price": "Con el stack",
-        "priceNote": "@km0digital.com",
+        "price": "6,99 €",
+        "priceNote": "/mes · @km0digital.com",
         "body": "Buzón profesional en el mismo ecosistema UE que Cloud.",
         "features": [
           "Webmail en la misma región",

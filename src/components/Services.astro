@@ -52,7 +52,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
               <div class="offer-row__lead">
                 <p class="offer-row__meta">{isCloud ? '01' : '02'}</p>
                 <h3 class="offer-row__title">{item.title}</h3>
-                {isCloud && item.priceFrom && (
+                {item.priceFrom && (
                   <p class="offer-row__price" aria-label={item.priceAriaLabel}>
                     {item.priceFrom}
                   </p>

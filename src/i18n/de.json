@@ -159,6 +159,8 @@
       {
         "id": "email",
         "title": "KM0 Email",
+        "priceFrom": "6,99 €/Monat",
+        "priceAriaLabel": "6,99 Euro pro Monat für KM0 Email",
         "subtitle": "E-Mail @km0digital.com mit Webmail",
         "desc": "Professionelles Postfach im selben Ökosystem und am selben EU-Standort.",
         "cta": "E-Mail öffnen",
@@ -389,8 +391,8 @@
         "id": "email",
         "meta": "Begleiter",
         "title": "KM0 Email",
-        "price": "Im Stack",
-        "priceNote": "@km0digital.com",
+        "price": "6,99 €",
+        "priceNote": "/Monat · @km0digital.com",
         "body": "Professionelles Postfach im selben EU-Ökosystem wie Cloud.",
         "features": [
           "Webmail in derselben Region",

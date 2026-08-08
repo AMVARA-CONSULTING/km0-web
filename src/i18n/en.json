@@ -159,6 +159,8 @@
       {
         "id": "email",
         "title": "KM0 Email",
+        "priceFrom": "€6.99/month",
+        "priceAriaLabel": "€6.99 per month for KM0 Email",
         "subtitle": "@km0digital.com mail with webmail",
         "desc": "Professional mailbox in the same ecosystem and the same EU location.",
         "cta": "Open Email",
@@ -389,8 +391,8 @@
         "id": "email",
         "meta": "Companion",
         "title": "KM0 Email",
-        "price": "With the stack",
-        "priceNote": "@km0digital.com",
+        "price": "€6.99",
+        "priceNote": "/month · @km0digital.com",
         "body": "Professional mailbox in the same EU ecosystem as Cloud.",
         "features": [
           "Webmail in the same region",

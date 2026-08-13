@@ -6,6 +6,7 @@ Uses REDMINE_BASE_URL, REDMINE_API_KEY, and REDMINE_ISSUE_ID from the environmen
 (autoagents/.env loaded by autoagents-loop.sh before Python runs).
 
 Records task duration in the note text only (no Redmine time_entry / spent hours).
+Completion notes are wrapped in Redmine Textile {{collapse(tasks/<CLOSED-file>)}}.
 """
 from __future__ import annotations
 
@@ -27,6 +28,7 @@ REDMINE_BASE_URL = os.environ.get("REDMINE_BASE_URL", "https://redmine.amvara.de
 REDMINE_API_KEY = os.environ.get("REDMINE_API_KEY", "")
 REDMINE_ISSUE_ID = os.environ.get("REDMINE_ISSUE_ID", "")
 REDMINE_NOTE_MARKER = "autoagents task completed"
+REDMINE_NOTE_AUTHOR = os.environ.get("REDMINE_NOTE_AUTHOR", "km0-web autoagents")
 REDMINE_TIMEOUT = float(os.environ.get("REDMINE_TIMEOUT", "60"))
 
 SUMMARY_BULLET_RE = re.compile(
@@ -193,6 +195,19 @@ def _inline_code(text: str) -> str:
     return "".join(parts)
 
 
+def wrap_redmine_collapse(body: str, collapse_title: str) -> str:
+    """Wrap note body in Redmine Textile collapse macro (whitespace-sensitive)."""
+    return f"{{{{collapse({collapse_title})\n{body.rstrip()}\n}}}}"
+
+
+def _note_body_with_author(
+    *, author_label: str, formatted: str, collapse_title: str
+) -> str:
+    """Posted-by stays outside; Autoagents body goes inside {{collapse(title)}}."""
+    collapsed = wrap_redmine_collapse(formatted, collapse_title)
+    return f"*Posted by:* {author_label}\n{collapsed}"
+
+
 def closing_summary_to_textile(
     task_path: Path,
     summary_block: str,
@@ -266,8 +281,13 @@ def post_task_completion_note(task_path: Path, issue_id: int | None = None) -> s
     text = task_path.read_text(encoding="utf-8")
     summary = extract_closing_summary(text)
     duration_label = compute_task_duration(task_path, summary)
-    note_body = closing_summary_to_textile(
+    formatted = closing_summary_to_textile(
         task_path, summary, duration_label=duration_label
+    )
+    note_body = _note_body_with_author(
+        author_label=REDMINE_NOTE_AUTHOR,
+        formatted=formatted,
+        collapse_title=f"tasks/{task_path.name}",
     )
 
     try:

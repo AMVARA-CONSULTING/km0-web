@@ -59,7 +59,7 @@ const { messages: m } = Astro.props;
 
   .purpose__label {
     margin: 0 0 0.75rem;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.12em;
@@ -70,7 +70,7 @@ const { messages: m } = Astro.props;
   .purpose__body {
     margin: 0;
     max-width: 36ch;
-    font-family: theme('fontFamily.serif');
+    font-family: var(--font-body);
     font-size: clamp(1.125rem, 2.2vw, 1.35rem);
     line-height: 1.45;
     color: var(--color-ink);
@@ -78,7 +78,7 @@ const { messages: m } = Astro.props;
 
   .purpose__col:first-child .purpose__body {
     max-width: 22ch;
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: clamp(1.35rem, 2.8vw, 1.75rem);
     font-weight: 600;
     letter-spacing: -0.02em;

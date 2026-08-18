@@ -64,7 +64,7 @@ To add a post: create e.g. `src/content/doc/es/my-post.md` with frontmatter (`ti
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | [Astro](https://astro.build) 5 + [Tailwind CSS](https://tailwindcss.com) |
+| Frontend | [Astro](https://astro.build) 7 + [Tailwind CSS](https://tailwindcss.com) 4 (`@tailwindcss/vite`) |
 | Build | Node 22 (multi-stage Docker) |
 | Static server | nginx (Alpine) in container |
 | Production | Docker Compose → `127.0.0.1:9180` behind host Nginx (TLS) |
@@ -133,7 +133,7 @@ Do not run bare `npm update` or `npm install` without a deliberate version bump;
 |--------|----------|
 | Translate text | **`src/i18n/es.json`**, **`ca.json`**, **`en.json`**, **`de.json`** |
 | Sections / markup | **`src/views/Landing.astro`** and **`src/components/*.astro`** |
-| Colors and brand | `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs` |
+| Colors and brand | `docs/brand-tokens.md`, `src/styles/tokens.css`, `@theme` in `src/styles/global.css` |
 | Design doctrine / remodel | `docs/design/anti-slop-doctrine.md`, `docs/design/remodel-epic.md` |
 | Paint / craft parity | `docs/design/stirling-paint-phase.md`, `docs/design/craft-parity-phase.md` |
 | Logo and images | `public/brand/` |

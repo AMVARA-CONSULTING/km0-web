@@ -1,10 +1,30 @@
+@import 'tailwindcss';
 @import './fonts.css';
 @import './tokens.css';
 @import './reading.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+ * Tailwind v4 theme (replaces tailwind.config.mjs + @astrojs/tailwind).
+ * Channel RGB vars in tokens.css still drive non-utility CSS; these map
+ * utilities (bg-paper, text-ink/45, font-display, ease-apple).
+ */
+@theme {
+  --color-ink: rgb(230 233 237);
+  --color-paper: rgb(11 18 32);
+  --color-snow: rgb(20 27 40);
+  --color-mist: rgb(42 51 68);
+  --color-signal: rgb(45 212 191);
+  --color-signal-hover: rgb(94 234 212);
+  --color-navy: rgb(230 233 237);
+  --color-surface: rgb(11 18 32);
+
+  --font-display: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 @layer base {
   html {
@@ -288,7 +308,7 @@
 
   /* Peer H1 scale for secondary mastheads (pricing / about energy) */
   .heading-page {
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: clamp(2.15rem, 5.5vw, 3.25rem);
     font-weight: 600;
     letter-spacing: -0.035em;
@@ -319,7 +339,7 @@
 
   .page-meta {
     margin: 1rem 0 0;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.875rem;
     line-height: 1.5;
     color: var(--color-ink-muted);
@@ -345,7 +365,7 @@
   }
 
   .page-closer__secondary {
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--color-ink);

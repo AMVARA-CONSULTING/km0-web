@@ -7,7 +7,7 @@ import { getMessages } from '../i18n';
 import { localeHref, guidePostHref, withHash } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { guideSlug, compareGuides } from '../lib/guide';
 import {
   extractDocToc,
@@ -22,7 +22,7 @@ interface Props {
 
 const { locale, guide } = Astro.props;
 const messages = getMessages(locale);
-const { Content, headings } = await guide.render();
+const { Content, headings } = await render(guide);
 
 const guides = (await getCollection('guides', ({ data }) => data.locale === locale)).sort(
   compareGuides,
@@ -156,7 +156,7 @@ const helpHref = withHash(locale, 'contact');
   }
 
   .guide-cloud__heading {
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: 1.375rem;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -165,7 +165,7 @@ const helpHref = withHash(locale, 'contact');
   }
 
   .guide-cloud__body {
-    font-family: theme('fontFamily.body');
+    font-family: var(--font-body);
     font-size: 1.0625rem;
     line-height: 1.65;
     color: color-mix(in srgb, var(--color-ink) 88%, transparent);
@@ -192,7 +192,7 @@ const helpHref = withHash(locale, 'contact');
   }
 
   .guide-cloud__help {
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--color-ink);

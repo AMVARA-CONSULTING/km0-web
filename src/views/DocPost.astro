@@ -7,7 +7,7 @@ import { getMessages } from '../i18n';
 import { localeHref, docPostHref } from '../i18n/paths';
 import type { Locale } from '../i18n/types';
 import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { docSlug, formatDocDate, compareDocPosts } from '../lib/doc';
 import {
   extractDocToc,
@@ -22,7 +22,7 @@ interface Props {
 
 const { locale, post } = Astro.props;
 const messages = getMessages(locale);
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 
 const posts = (await getCollection('doc', ({ data }) => data.locale === locale)).sort(
   compareDocPosts,

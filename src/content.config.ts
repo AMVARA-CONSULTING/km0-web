@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const doc = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/doc' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -11,7 +12,7 @@ const doc = defineCollection({
 });
 
 const tutorials = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/tutorials' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -25,7 +26,7 @@ const tutorials = defineCollection({
 
 /** Practical acquisition guides (non-technical); distinct from product /tutorials. */
 const guides = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/guides' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),

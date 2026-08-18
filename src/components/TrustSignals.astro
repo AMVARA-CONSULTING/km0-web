@@ -94,7 +94,7 @@ function resolveTrustLink(item: Messages['trust']['items'][number]): TrustLink |
   }
 
   .trust__label {
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -103,7 +103,7 @@ function resolveTrustLink(item: Messages['trust']['items'][number]): TrustLink |
   }
 
   .trust__value {
-    font-family: theme('fontFamily.body');
+    font-family: var(--font-body);
     font-size: 0.875rem;
     line-height: 1.35;
     color: color-mix(in srgb, var(--color-ink) 88%, transparent);

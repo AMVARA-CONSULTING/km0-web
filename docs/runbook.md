@@ -172,7 +172,7 @@ ss -tlnp | grep 9180
 1. **Translations:** edit `src/i18n/es.json`, `ca.json`, `en.json`, and `de.json` (keep the same keys across locales).
 2. **Blog:** `src/content/doc/{locale}/<slug>.md` (see Blog section above).
 3. **Layout or sections:** `src/components/*.astro` or `src/views/Landing.astro`.
-4. **Brand / colors:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `tailwind.config.mjs`.
+4. **Brand / colors:** `docs/brand-tokens.md`, `src/styles/tokens.css`, `@theme` block in `src/styles/global.css` (Tailwind 4; no `tailwind.config.mjs` / `@astrojs/tailwind`).
 5. **Images:** `public/brand/`.
 6. Deploy: `docker compose build && docker compose up -d`.
 

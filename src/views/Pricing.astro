@@ -277,7 +277,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-hero-capacity-value {
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-variant-numeric: tabular-nums;
     font-size: clamp(4rem, 12vw, 6.25rem);
     font-weight: 700;
@@ -286,7 +286,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-hero-capacity-unit {
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: clamp(1.25rem, 3vw, 1.75rem);
     font-weight: 650;
     letter-spacing: -0.02em;
@@ -325,7 +325,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-hero-host-meta {
     margin: 0;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.6875rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -344,7 +344,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-hero-price-value {
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: clamp(1.125rem, 2.5vw, 1.375rem);
     font-weight: 600;
     color: var(--color-ink-muted);
@@ -399,7 +399,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-band-heading {
     margin: 0;
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: clamp(1.45rem, 3.2vw, 1.9rem);
     font-weight: 600;
     letter-spacing: -0.025em;
@@ -455,7 +455,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-path__meta {
     margin: 0;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.14em;
@@ -469,7 +469,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-path__title {
     margin: 0;
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: clamp(1.35rem, 2.5vw, 1.65rem);
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -485,7 +485,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-path__price-value {
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 1.85rem);
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -497,7 +497,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   }
 
   .pricing-path__price-note {
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-ink-muted);
@@ -565,7 +565,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   .pricing-table thead th {
     background: var(--surface-ink);
     color: var(--color-on-ink);
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.875rem;
     font-weight: 600;
   }
@@ -596,7 +596,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
   .pricing-claim {
     margin: 1.75rem 0 0;
     max-width: 60ch;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.55;
@@ -647,7 +647,7 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
 
   .pricing-ops-title {
     margin: 0 0 0.35rem;
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: 1.0625rem;
     font-weight: 600;
     color: var(--color-ink);

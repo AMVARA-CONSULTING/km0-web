@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
 
 const site = 'https://km0digital.com';
 
 export default defineConfig({
   site,
   output: 'static',
+  // Keep Astro 5 HTML whitespace (inline spaces) after Astro 7 default 'jsx'.
+  compressHTML: true,
   build: {
     format: 'directory',
   },
@@ -17,8 +19,10 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
-    tailwind(),
     sitemap({
       i18n: {
         defaultLocale: 'es',

@@ -182,7 +182,7 @@ const { locale, messages: m } = Astro.props;
 
   .ideas-chat__title {
     margin: 0;
-    font-family: theme('fontFamily.display');
+    font-family: var(--font-display);
     font-size: 1.05rem;
     font-weight: 600;
     line-height: 1.25;
@@ -241,7 +241,7 @@ const { locale, messages: m } = Astro.props;
   }
 
   .ideas-chat__label {
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 600;
     color: color-mix(in srgb, var(--color-ink) 75%, transparent);
@@ -253,7 +253,7 @@ const { locale, messages: m } = Astro.props;
     border-radius: 0.375rem;
     background: var(--color-paper);
     color: var(--color-ink);
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.875rem;
     line-height: 1.4;
     padding: 0.45rem 0.55rem;
@@ -261,7 +261,7 @@ const { locale, messages: m } = Astro.props;
   }
 
   .ideas-chat__textarea {
-    font-family: theme('fontFamily.body');
+    font-family: var(--font-body);
     resize: vertical;
     min-height: 5.5rem;
   }
@@ -274,7 +274,7 @@ const { locale, messages: m } = Astro.props;
 
   .ideas-chat__hint {
     margin: 0;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.7rem;
     color: color-mix(in srgb, var(--color-ink) 50%, transparent);
   }
@@ -285,14 +285,14 @@ const { locale, messages: m } = Astro.props;
 
   .ideas-chat__error {
     margin: 0;
-    font-family: theme('fontFamily.sans');
+    font-family: var(--font-sans);
     font-size: 0.8rem;
     color: #b91c1c;
   }
 
   .ideas-chat__success {
     margin: 0;
-    font-family: theme('fontFamily.body');
+    font-family: var(--font-body);
     font-size: 0.9rem;
     color: color-mix(in srgb, var(--color-ink) 80%, transparent);
   }

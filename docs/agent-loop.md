@@ -23,7 +23,7 @@ Requires **cursor-agent** on PATH (`~/.local/bin` or install Cursor CLI).
 
 | Step | Prompt | Trigger |
 |------|--------|---------|
-| 001 | `001-gh-reviewer.md` | Open GH issues without FEAT file, or Docker log incidents (`km0-web`) |
+| 001 | `001-gh-reviewer.md` | Actionable open GH issues without a task file (not `waiting for human validation` / `agent:planned`), or Docker log incidents (`km0-web`) |
 | 010 | `010-feature-coder.md` | `FEAT-*.md` (up to 5× per cycle) |
 | 002 | `002-coder/CODER.md` | `NEW-*.md` / `WIP-*.md` |
 | 012 | `012-feature-coder-handoff.md` | `WIP-*.md` handoff check |
@@ -43,7 +43,8 @@ Requires **cursor-agent** on PATH (`~/.local/bin` or install Cursor CLI).
 
 | Label | Meaning |
 |-------|---------|
-| `agent:planned` | 001 created FEAT task |
+| `waiting for human validation` | Parked idea; 001 must not run |
+| `agent:planned` | 001 created FEAT task; 001 must not re-run |
 | `agent:wip` | Coder working |
 | `agent:untested` | Ready for tester |
 | `agent:testing` | Tester active |

@@ -47,6 +47,29 @@ issue_linked_in_root_tasks() {
   return 1
 }
 
+# True when 001 / issue_checker must ignore the issue (do not launch cursor-agent).
+issue_001_skip_labels() {
+  local wrapped=",${1:-},"
+  [[ "$wrapped" == *",waiting for human validation,"* ]] && return 0
+  [[ "$wrapped" == *",agent:planned,"* ]] && return 0
+  return 1
+}
+
+# Classify one open issue for the 001 gate. Caller must set ctx (path) and untracked (int).
+classify_open_issue_for_001() {
+  local num="$1" labels="${2:-}"
+  [[ -z "$num" ]] && return 0
+  if issue_linked_in_root_tasks "$num"; then
+    return 0
+  fi
+  if issue_001_skip_labels "$labels"; then
+    echo "SKIPPED_FOR_001 issue #${num} (${labels:-no labels})" >>"$ctx"
+    return 0
+  fi
+  untracked=$((untracked + 1))
+  echo "UNTRACKED_IN_TASKS issue #${num}" >>"$ctx"
+}
+
 last_review_iso_utc() {
   [[ -f "$LAST_REVIEW_FILE" ]] || return 0
   # Newest stamp is appended at end (file is local / gitignored).
@@ -84,14 +107,11 @@ prepare_001_preflight_context() {
     if gh issue list --repo "$GH_REPO" --state open -L 40 --json number,title,labels,url,updatedAt >>"$ctx" 2>"$gh_list_err"; then
       rm -f "$gh_list_err"
       G001_GH_OK=1
-      local num untracked=0
-      while IFS= read -r num; do
-        [[ -z "${num:-}" ]] && continue
-        if ! issue_linked_in_root_tasks "$num"; then
-          untracked=$((untracked + 1))
-          echo "UNTRACKED_IN_TASKS issue #$num" >>"$ctx"
-        fi
-      done < <(gh issue list --repo "$GH_REPO" --state open -L 40 --json number -q '.[].number' 2>/dev/null || true)
+      local num labels untracked=0
+      while IFS=$'\t' read -r num labels; do
+        classify_open_issue_for_001 "$num" "$labels"
+      done < <(gh issue list --repo "$GH_REPO" --state open -L 40 --json number,labels \
+        -q '.[] | [.number, ([.labels[].name] | join(","))] | @tsv' 2>/dev/null || true)
       G001_UNTRACKED_ISSUES=$untracked
     else
       {
@@ -112,15 +132,12 @@ prepare_001_preflight_context() {
         rm -f "$gh_api_err"
         G001_GH_OK=1
         G001_GH_AUTH_FAILED=0
-        local num2 untracked2=0
-        while IFS= read -r num2; do
-          [[ -z "${num2:-}" ]] && continue
-          if ! issue_linked_in_root_tasks "$num2"; then
-            untracked2=$((untracked2 + 1))
-            echo "UNTRACKED_IN_TASKS issue #$num2" >>"$ctx"
-          fi
-        done < <(gh api "repos/${GH_REPO}/issues?state=open&per_page=40" --jq '.[] | select(.pull_request == null) | .number' 2>/dev/null || true)
-        G001_UNTRACKED_ISSUES=$untracked2
+        local num2 labels2 untracked=0
+        while IFS=$'\t' read -r num2 labels2; do
+          classify_open_issue_for_001 "$num2" "$labels2"
+        done < <(gh api "repos/${GH_REPO}/issues?state=open&per_page=40" \
+          --jq '.[] | select(.pull_request == null) | [.number, ([.labels[].name] | join(","))] | @tsv' 2>/dev/null || true)
+        G001_UNTRACKED_ISSUES=$untracked
       else
         {
           echo "(gh api fallback also failed - stderr:"

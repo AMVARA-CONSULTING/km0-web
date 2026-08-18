@@ -57,7 +57,7 @@ Footer displays **`package.json`** semver. Coders **must** run **`./scripts/bump
 
 - Repo: `AMVARA-CONSULTING/km0-web`
 - Account: Luipy56
-- Labels: `agent:planned`, `agent:wip`, `agent:untested`, `agent:testing`
+- Labels: `waiting for human validation` (skip 001), `agent:planned`, `agent:wip`, `agent:untested`, `agent:testing`
 
 ## Direct user chat
 

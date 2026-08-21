@@ -1,12 +1,26 @@
 ---
+import type { Locale } from '../i18n/types';
+import { SITE_VERSION } from '../lib/site-version';
+
 interface Props {
   title: string;
   description: string;
   canonicalUrl: string;
   image?: string;
   imageAlt?: string;
-  locale?: string;
+  /** Site locale key (es/ca/en/de). Mapped to Facebook OG locale form. */
+  locale?: Locale;
 }
+
+/** Facebook / WhatsApp og:locale (language_TERRITORY). */
+const ogLocaleBySite: Record<Locale, string> = {
+  es: 'es_ES',
+  ca: 'ca_ES',
+  en: 'en_GB',
+  de: 'de_DE',
+};
+
+const allOgLocales = Object.values(ogLocaleBySite);
 
 const site = Astro.site ?? new URL('https://km0digital.com');
 
@@ -19,9 +33,15 @@ const {
   locale,
 } = Astro.props;
 
-const ogImageUrl = new URL(image, site).href;
+const ogImagePath = image.startsWith('http') ? image : new URL(image, site).href;
+/** Cache-bust for WhatsApp / Facebook scrapers that key on URL. */
+const ogImageUrl = `${ogImagePath}${ogImagePath.includes('?') ? '&' : '?'}v=${SITE_VERSION}`;
 const alt = imageAlt ?? title;
 const siteUrl = site.href;
+const ogLocale = locale ? ogLocaleBySite[locale] : undefined;
+const alternateLocales = ogLocale
+  ? allOgLocales.filter((value) => value !== ogLocale)
+  : allOgLocales;
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -49,6 +69,12 @@ const webPageSchema = {
   description,
   url: canonicalUrl,
   isPartOf: { '@type': 'WebSite', url: siteUrl, name: 'km0digital' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: ogImageUrl,
+    width: 1200,
+    height: 630,
+  },
 };
 ---
 
@@ -63,10 +89,15 @@ const webPageSchema = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:secure_url" content={ogImageUrl} />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={alt} />
-{locale && <meta property="og:locale" content={locale} />}
+{ogLocale && <meta property="og:locale" content={ogLocale} />}
+{alternateLocales.map((value) => (
+  <meta property="og:locale:alternate" content={value} />
+))}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={canonicalUrl} />

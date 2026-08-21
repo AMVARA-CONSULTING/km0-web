@@ -11,6 +11,8 @@ export interface Messages {
   meta: {
     title: string;
     description: string;
+    /** Open Graph / WhatsApp preview image alt text */
+    ogImageAlt: string;
   };
   brandName: string;
   brandNameShort: string;

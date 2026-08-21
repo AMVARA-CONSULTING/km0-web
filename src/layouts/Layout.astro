@@ -39,8 +39,8 @@ const description = pageDescription ?? m.meta.description;
       title={title}
       description={description}
       canonicalUrl={canonicalUrl}
-      imageAlt={m.brandNameShort}
-      locale={localeBcp47[locale]}
+      imageAlt={m.meta.ogImageAlt}
+      locale={locale}
     />
     <link rel="alternate" hreflang="es" href={hrefs.es} />
     <link rel="alternate" hreflang="ca" href={hrefs.ca} />

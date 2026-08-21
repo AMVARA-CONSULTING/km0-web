@@ -125,7 +125,7 @@ One short brand in user-facing prose: **KM0**. Do not mix rival spellings.
 | Email / compact icon | `public/brand/logo-icon.png` (256) |
 | Cloud live QR | `public/brand/cloud-qr.png` (Paper modules on Ink quiet zone; Hero frames in Snow + Signal) |
 | WhatsApp group QR | `public/contact/whatsapp-group-qr.png` (same Paper-on-Ink recipe; Contact frames in Snow + Signal) |
-| OG preview | `public/brand/og-preview.png` (1200×630) |
+| OG preview | `public/brand/og-preview.png` (1200×630; Paper + Snow panel, K0 stamp, ES wordmark + UE offer; WhatsApp/Facebook safe margins) |
 | Favicon | `public/favicon.svg` (full-bleed K0) |
 | Apple touch | `public/apple-touch-icon.png` (180) |
 | 16/32 proof (design) | `docs/design/logo-k0-favicon-16.png`, `logo-k0-favicon-32.png`, `logo-k0-proof-sheet.png` |
@@ -151,5 +151,6 @@ One short brand in user-facing prose: **KM0**. Do not mix rival spellings.
 - **Colors:** Stamp field `#0F766E` + figure `#EEF0F2`. Mono uses navy `#0B1220` + white. Plaque carries its own field so it reads on Paper, Snow, and dark chrome.
 - **Favicon:** Same K0, **edge-to-edge** square (no padding, no rounded crop) so tabs stay readable at 16×16.
 - **Responsive tiers:** `logo.svg` (rounded tile for header/hero/footer) → `favicon.svg` (full-bleed micro) → `logo-mono.svg` → PNG/OG rasters.
-- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (IBM Plex Sans). OG card pairs the plaque with “Kilómetro 0 Digital”.
+- **Wordmark:** Live UI uses i18n brand mark in Header/Hero (IBM Plex Sans). OG card pairs the plaque with “Kilómetro 0 Digital”, a Signal support line (Cloud/Email/UE), and `km0digital.com` so WhatsApp link unfurls stay readable (not a near-empty navy field).
+- **Social meta:** `SeoManager.astro` emits `og:image` (+ `secure_url`, `type`, size, alt), Facebook-form `og:locale` / `og:locale:alternate`, and a `?v=` cache-bust from `package.json` so scrapers refresh after deploy.
 - **Do not** reintroduce concentric-lens stamps, hollow-only digit plaques that read as cameras, map-pins, or purple/magenta→blue gradient marks.

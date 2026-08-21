@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-08-21
+
+### Changed
+
+- Open Graph / WhatsApp share card: regenerated `og-preview.png` with readable brand + UE offer, hardened social meta (`secure_url`, type, Facebook-form locales, versioned cache-bust, localized `og:image:alt`).
+
 ## [1.3.0] - 2026-08-18
 
 ### Changed

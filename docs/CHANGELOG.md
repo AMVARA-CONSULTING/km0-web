@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-08-24
+
+### Added
+
+- KM0 Cloud web tutorials in es/ca/en/de: sharing files and folders (`sharing-files`) and Space permissions (`space-permissions`), with cross-links and OpenCloud 4.x-aligned steps.
+
 ## [1.3.1] - 2026-08-21
 
 ### Changed

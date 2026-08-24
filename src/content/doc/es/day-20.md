@@ -20,7 +20,7 @@ Así, quien busca ayuda encuentra su producto de un vistazo, sin mezclar context
 
 Tres tutoriales cortos que cubren el recorrido completo de un usuario nuevo:
 
-1. **Crear una cuenta gratuita:** eliges usuario y contraseña y obtienes tu dirección `@km0digital.com`.
+1. **Crear una cuenta de KM0 Mail:** plan base de 7,99 €/mes (correo y cloud); eliges usuario y contraseña y obtienes tu dirección `@km0digital.com`.
 2. **Iniciar sesión:** entrar al correo web con tu dirección y contraseña.
 3. **Usar tu propio dominio:** de principio a fin, añadir el dominio, publicar los DNS, verificarlo, crear direcciones y entrar con ellas.
 

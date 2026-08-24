@@ -20,7 +20,7 @@ So findet, wer Hilfe sucht, sein Produkt auf einen Blick, ohne Kontexte zu vermi
 
 Drei kurze Tutorials, die den kompletten Weg einer neuen Nutzerin abdecken:
 
-1. **Kostenloses Konto erstellen:** Benutzername und Passwort wählen und die eigene `@km0digital.com`-Adresse erhalten.
+1. **KM0-Mail-Konto erstellen:** Basisplan 7,99 €/Monat (Mail und Cloud); Benutzername und Passwort wählen und die eigene `@km0digital.com`-Adresse erhalten.
 2. **Anmelden:** ins Webmail mit Adresse und Passwort.
 3. **Eigene Domain nutzen:** von Anfang bis Ende, Domain hinzufügen, DNS veröffentlichen, bestätigen, Adressen anlegen und sich damit anmelden.
 

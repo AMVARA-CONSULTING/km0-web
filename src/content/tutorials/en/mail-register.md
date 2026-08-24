@@ -1,6 +1,6 @@
 ---
-title: "How to create a free KM0 Mail account"
-description: "Register for KM0 Mail and get your @km0digital.com address in a minute, step by step."
+title: "How to create a KM0 Mail account"
+description: "Register for KM0 Mail and get your @km0digital.com address. Base plan €7.99/month with mail and cloud."
 locale: en
 order: 1
 platform: web
@@ -9,7 +9,7 @@ product: mail
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
-  <p class="doc-lead">KM0 Mail gives you your own mailbox at <strong>@km0digital.com</strong>. No technical knowledge required: just a username and a password.</p>
+  <p class="doc-lead">KM0 Mail gives you your own mailbox at <strong>@km0digital.com</strong>. The base plan is <strong>€7.99/month</strong> and includes mail and cloud; extra storage is a paid add-on. You only need a username and a password. Check <a href="/en/pricing/">pricing</a> before you register.</p>
 </section>
 
 <section class="doc-block">

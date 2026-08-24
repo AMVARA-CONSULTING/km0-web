@@ -1,6 +1,6 @@
 ---
-title: "Com crear un compte gratuït de KM0 Mail"
-description: "Registra't a KM0 Mail i aconsegueix la teva adreça @km0digital.com en un minut, pas a pas."
+title: "Com crear un compte de KM0 Mail"
+description: "Registra't a KM0 Mail i aconsegueix la teva adreça @km0digital.com. Pla base de 7,99 €/mes amb correu i cloud."
 locale: ca
 order: 1
 platform: web
@@ -9,7 +9,7 @@ product: mail
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
-  <p class="doc-lead">KM0 Mail et dona una bústia pròpia a <strong>@km0digital.com</strong>. No calen coneixements tècnics: només un nom d'usuari i una contrasenya.</p>
+  <p class="doc-lead">KM0 Mail et dona una bústia pròpia a <strong>@km0digital.com</strong>. El compte base costa <strong>7,99 €/mes</strong> i inclou correu i cloud; l'espai extra es paga a part. Només necessites un nom d'usuari i una contrasenya. Consulta els <a href="/ca/pricing/">preus</a> abans de registrar-te.</p>
 </section>
 
 <section class="doc-block">

@@ -160,10 +160,10 @@
       {
         "id": "email",
         "title": "KM0 Email",
-        "priceFrom": "6,99 €/Monat",
-        "priceAriaLabel": "6,99 Euro pro Monat für KM0 Email",
+        "priceFrom": "7,99 €/Monat",
+        "priceAriaLabel": "7,99 Euro pro Monat für KM0 Email mit Mail und Cloud",
         "subtitle": "E-Mail @km0digital.com mit Webmail",
-        "desc": "Professionelles Postfach im selben Ökosystem und am selben EU-Standort.",
+        "desc": "Basisplan mit Mail und Cloud im selben EU-Ökosystem. Zusätzlicher Speicher als kostenpflichtiges Add-on.",
         "cta": "E-Mail öffnen",
         "url": "https://mail.km0digital.com",
         "available": true
@@ -390,15 +390,15 @@
       },
       {
         "id": "email",
-        "meta": "Begleiter",
+        "meta": "Basiskonto",
         "title": "KM0 Email",
-        "price": "6,99 €",
-        "priceNote": "/Monat · @km0digital.com",
-        "body": "Professionelles Postfach im selben EU-Ökosystem wie Cloud.",
+        "price": "7,99 €",
+        "priceNote": "/Monat · Mail + Cloud",
+        "body": "Mail und Cloud in einem Basisplan. Zusätzlicher Speicher wird separat berechnet.",
         "features": [
           "Webmail in derselben Region",
-          "Derselbe Betreiber, dieselbe Privacy-Haltung",
-          "Mit Cloud kombinieren, wenn beides nötig ist"
+          "Cloud im Basiskonto enthalten",
+          "Zusätzlicher Speicher auf Anfrage"
         ],
         "ctaLabel": "KM0 Email öffnen",
         "cta": "email"

@@ -160,10 +160,10 @@
       {
         "id": "email",
         "title": "KM0 Email",
-        "priceFrom": "6,99 €/mes",
-        "priceAriaLabel": "6,99 euros al mes per a KM0 Email",
+        "priceFrom": "7,99 €/mes",
+        "priceAriaLabel": "7,99 euros al mes per a KM0 Email amb correu i cloud",
         "subtitle": "Correu @km0digital.com amb webmail",
-        "desc": "Bústia professional al mateix ecosistema i la mateixa ubicació UE.",
+        "desc": "Pla base amb correu i cloud al mateix ecosistema UE. Espai extra com a complement de pagament.",
         "cta": "Obrir Email",
         "url": "https://mail.km0digital.com",
         "available": true
@@ -390,15 +390,15 @@
       },
       {
         "id": "email",
-        "meta": "Acompanyant",
+        "meta": "Compte base",
         "title": "KM0 Email",
-        "price": "6,99 €",
-        "priceNote": "/mes · @km0digital.com",
-        "body": "Bústia professional al mateix ecosistema UE que Cloud.",
+        "price": "7,99 €",
+        "priceNote": "/mes · mail + cloud",
+        "body": "Correu i cloud en un pla base. L'espai extra es contracta a part.",
         "features": [
           "Webmail a la mateixa regió",
-          "Mateix operador, mateixa postura de privacitat",
-          "Combina'l amb Cloud quan calgui"
+          "Cloud inclòs al compte base",
+          "Emmagatzematge extra sota petició"
         ],
         "ctaLabel": "Obrir KM0 Email",
         "cta": "email"

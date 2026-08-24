@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.3.3] - 2026-08-24
+
+### Changed
+
+- KM0 Mail copy in es/ca/en/de: removed "free/gratuita" wording; tutorials, day-20 blog, and i18n pricing/services now reflect the **7,99 €/month** base plan (mail + cloud, extra storage as paid add-on).
+
 ## [1.3.2] - 2026-08-24
 
 ### Added

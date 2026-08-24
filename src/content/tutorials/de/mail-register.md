@@ -1,6 +1,6 @@
 ---
-title: "KM0 Mail: kostenloses Konto erstellen"
-description: "Registrieren Sie sich bei KM0 Mail und erhalten Sie Ihre @km0digital.com-Adresse in einer Minute, Schritt für Schritt."
+title: "KM0 Mail: Konto erstellen"
+description: "Registrieren Sie sich bei KM0 Mail und erhalten Sie Ihre @km0digital.com-Adresse. Basisplan 7,99 €/Monat mit Mail und Cloud."
 locale: de
 order: 1
 platform: web
@@ -9,7 +9,7 @@ product: mail
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Einführung</p>
-  <p class="doc-lead">KM0 Mail gibt Ihnen ein eigenes Postfach unter <strong>@km0digital.com</strong>. Sie brauchen keine technischen Kenntnisse, nur einen Benutzernamen und ein Passwort.</p>
+  <p class="doc-lead">KM0 Mail gibt Ihnen ein eigenes Postfach unter <strong>@km0digital.com</strong>. Der Basisplan kostet <strong>7,99 €/Monat</strong> und umfasst Mail und Cloud; zusätzlicher Speicher ist ein kostenpflichtiges Add-on. Sie brauchen nur einen Benutzernamen und ein Passwort. Prüfen Sie die <a href="/de/pricing/">Preise</a>, bevor Sie sich registrieren.</p>
 </section>
 
 <section class="doc-block">

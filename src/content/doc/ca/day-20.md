@@ -20,7 +20,7 @@ Així, qui busca ajuda troba el seu producte d'un cop d'ull, sense barrejar cont
 
 Tres tutorials curts que cobreixen el recorregut complet d'un usuari nou:
 
-1. **Crear un compte gratuït:** tries usuari i contrasenya i obtens la teva adreça `@km0digital.com`.
+1. **Crear un compte de KM0 Mail:** pla base de 7,99 €/mes (correu i cloud); tries usuari i contrasenya i obtens la teva adreça `@km0digital.com`.
 2. **Iniciar sessió:** entrar al correu web amb la teva adreça i contrasenya.
 3. **Fer servir el teu propi domini:** de principi a fi, afegir el domini, publicar els DNS, verificar-lo, crear adreces i entrar-hi.
 

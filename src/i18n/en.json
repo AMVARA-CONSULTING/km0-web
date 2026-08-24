@@ -160,10 +160,10 @@
       {
         "id": "email",
         "title": "KM0 Email",
-        "priceFrom": "€6.99/month",
-        "priceAriaLabel": "€6.99 per month for KM0 Email",
+        "priceFrom": "€7.99/month",
+        "priceAriaLabel": "€7.99 per month for KM0 Email with mail and cloud",
         "subtitle": "@km0digital.com mail with webmail",
-        "desc": "Professional mailbox in the same ecosystem and the same EU location.",
+        "desc": "Base plan with mail and cloud in the same EU ecosystem. Extra storage as a paid add-on.",
         "cta": "Open Email",
         "url": "https://mail.km0digital.com",
         "available": true
@@ -390,15 +390,15 @@
       },
       {
         "id": "email",
-        "meta": "Companion",
+        "meta": "Base account",
         "title": "KM0 Email",
-        "price": "€6.99",
-        "priceNote": "/month · @km0digital.com",
-        "body": "Professional mailbox in the same EU ecosystem as Cloud.",
+        "price": "€7.99",
+        "priceNote": "/month · mail + cloud",
+        "body": "Mail and cloud on one base plan. Extra storage is billed separately.",
         "features": [
           "Webmail in the same region",
-          "Same operator, same privacy stance",
-          "Pair with Cloud when you need both"
+          "Cloud included in the base account",
+          "Extra storage on request"
         ],
         "ctaLabel": "Open KM0 Email",
         "cta": "email"

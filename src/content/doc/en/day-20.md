@@ -20,7 +20,7 @@ That way, someone looking for help finds their product at a glance, without mixi
 
 Three short tutorials that cover the full journey of a new user:
 
-1. **Create a free account:** pick a username and password and get your `@km0digital.com` address.
+1. **Create a KM0 Mail account:** base plan €7.99/month (mail and cloud); pick a username and password and get your `@km0digital.com` address.
 2. **Sign in:** reach webmail with your address and password.
 3. **Use your own domain:** end to end, add the domain, publish DNS, verify it, create addresses, and sign in with them.
 

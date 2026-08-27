@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.3.4] - 2026-08-28
+
+### Added
+
+- Blog days 21-23 in es/ca/en/de: meetup on autonomous driving and data, SME target-customer focus, and first company client (econsultants on OpenCloud KM0).
+
 ## [1.3.3] - 2026-08-24
 
 ### Changed

@@ -43,7 +43,7 @@
       "planCapacity": "500",
       "planUnit": "GB",
       "planLabel": "Plan",
-      "planMeta": "Hetzner · Falkenstein",
+      "planMeta": "Hetzner · UE",
       "files": [
         {
           "name": "Documentos",
@@ -77,12 +77,12 @@
     "items": [
       {
         "label": "Hosting",
-        "value": "Alemania (Hetzner · Falkenstein)"
+        "value": "UE (Hetzner)"
       },
       {
         "label": "Operador",
-        "value": "AMVARA CONSULTING S.L.",
-        "externalHref": "https://amvara.de"
+        "value": "AMVARA CONSULTING S.L. · Barcelona",
+        "href": "legal"
       },
       {
         "label": "Operaciones",
@@ -135,7 +135,7 @@
   },
   "community": {
     "heading": "Encuentros",
-    "intro": "Quedamos en persona. También hay WhatsApp.",
+    "intro": "Quedamos en El Masnou. También hay WhatsApp.",
     "whatsappLink": "WhatsApp"
   },
   "services": {
@@ -143,7 +143,7 @@
     "headingAccent": "productos",
     "headingAfter": "",
     "intro": "KM0 Cloud lidera. KM0 Email lo acompaña en la misma UE.",
-    "slogan": "Datos en Falkenstein. Precio sin letra pequeña.",
+    "slogan": "Datos en la UE. Precio sin letra pequeña.",
     "cloudTutorialCta": "Cómo empezar",
     "cloudPricingCta": "Ver precios",
     "items": [
@@ -153,7 +153,7 @@
         "priceFrom": "Desde 1,99 €/mes",
         "priceAriaLabel": "Desde 1,99 euros al mes por 500 GB",
         "subtitle": "Archivos, sincronización y colaboración",
-        "desc": "500 GB en servidores Hetzner (Alemania). Comparte, sincroniza y edita en tiempo real.",
+        "desc": "500 GB en la UE (Hetzner). Comparte, sincroniza y edita en tiempo real.",
         "secondaryCta": "Abrir Cloud",
         "url": "https://cloud.km0digital.com"
       },
@@ -364,7 +364,7 @@
       "period": "/mes",
       "capacity": "500",
       "unit": "GB",
-      "hostMeta": "Hetzner · Falkenstein",
+      "hostMeta": "Hetzner · UE",
       "ariaLabel": "Precio: 1,99 euros al mes por 500 GB de almacenamiento"
     },
     "intro": "Almacenamiento en la UE, sin letra pequeña. Abre Cloud, suma Email o pide un camino a medida.",
@@ -378,7 +378,7 @@
         "title": "KM0 Cloud",
         "price": "1,99 €",
         "priceNote": "/mes · 500 GB",
-        "body": "Archivos, sync y compartir en Hetzner (Falkenstein). Empieza sin llamada comercial.",
+        "body": "Archivos, sync y compartir en la UE (Hetzner). Empieza sin llamada comercial.",
         "features": [
           "500 GB en la UE",
           "Sin teatro de tarjeta para mirar",
@@ -477,7 +477,7 @@
       "items": [
         {
           "title": "Datos en la UE",
-          "desc": "Hosting en Alemania (Hetzner). Tratamiento principalmente en Europa."
+          "desc": "Hosting en la UE (Hetzner). Tratamiento principalmente en Europa."
         },
         {
           "title": "Copias y recuperación",
@@ -619,7 +619,7 @@
     "github": "GitHub",
     "version": "Versión",
     "repoSince": "Repositorio desde",
-    "poweredByHtml": "Powered by <a href=\"https://amvara.de\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA</a>",
+    "poweredByHtml": "Operado por <a href=\"/legal/\">AMVARA CONSULTING S.L.</a>",
     "pricing": "Precios",
     "legal": "Legal",
     "security": "Seguridad",

@@ -21,6 +21,9 @@ function resolveTrustLink(item: Messages['trust']['items'][number]): TrustLink |
   if (item.href === 'security') {
     return { href: localeHref(locale, '/security/'), external: false };
   }
+  if (item.href === 'legal') {
+    return { href: localeHref(locale, '/legal/'), external: false };
+  }
   return undefined;
 }
 ---

@@ -105,7 +105,7 @@ export interface Messages {
       label: string;
       value: string;
       /** Optional on-site link target */
-      href?: 'security';
+      href?: 'security' | 'legal';
       /** Optional absolute external URL (operator site, etc.) */
       externalHref?: string;
     }[];
@@ -260,7 +260,7 @@ export interface Messages {
       /** Display digits only (e.g. "500"); unit is separate. */
       capacity: string;
       unit: string;
-      /** Quiet host line under the capacity meter (e.g. Hetzner · Falkenstein). */
+      /** Quiet host line under the capacity meter (e.g. Hetzner · EU). */
       hostMeta: string;
       ariaLabel: string;
     };

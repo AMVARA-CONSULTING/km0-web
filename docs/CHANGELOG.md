@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.3.5] - 2026-08-29
+
+### Changed
+
+- Hosting copy in es/ca/en/de: Falkenstein-specific lines now say EU (Hetzner); operator trust row and footer powered-by link to the on-site legal page; community intro names El Masnou.
+
 ## [1.3.4] - 2026-08-28
 
 ### Added

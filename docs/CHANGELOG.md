@@ -2,9 +2,14 @@
 
 ## [Unreleased]
 
+### Added
+
+- Email templates: civic dark `message/` plain user-mail template (`es.html`) with `{{SUBJECT}}`, `{{PREHEADER}}`, `{{TITLE}}`, `{{BODY}}` (no pricing / feature list).
+
 ### Changed
 
 - Email templates (webstyle, cloudstyle, welcome): civic dark brand alignment (Signal teal, IBM Plex Sans / Source Serif 4), no Inter or purple gradient accents.
+- Webstyle ES: pricing CTA points at `/pricing/` (locale-neutral), not `/es/pricing/`.
 
 ## [1.3.5] - 2026-08-29
 

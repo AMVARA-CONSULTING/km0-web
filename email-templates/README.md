@@ -6,6 +6,8 @@ HTML templates for KM0 Cloud marketing and transactional email. Aligned with [br
 
 ```
 email-templates/
+  message/       # Civic dark  -  plain user mail (no pricing / feature list)
+    es.html
   webstyle/      # Civic dark  -  acquisition / marketing
     es.html ca.html en.html de.html
   cloudstyle/    # Dark theme  -  security alerts, account notices
@@ -29,6 +31,7 @@ Replace before send:
 
 | Variable | Used in |
 |----------|---------|
+| `{{SUBJECT}}`, `{{PREHEADER}}`, `{{TITLE}}`, `{{BODY}}` | Message (plain) |
 | `{{BODY}}` | Webstyle (main message paragraph) |
 | `{{ASSET_BASE_URL}}` | Cloudstyle, Welcome (default: `https://km0digital.com/brand`) |
 | `{{USER_NAME}}` | Cloudstyle, Welcome |

@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Email templates (webstyle, cloudstyle, welcome): civic dark brand alignment (Signal teal, IBM Plex Sans / Source Serif 4), no Inter or purple gradient accents.
+
 ## [1.3.5] - 2026-08-29
 
 ### Changed

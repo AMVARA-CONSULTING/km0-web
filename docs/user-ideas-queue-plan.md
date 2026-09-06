@@ -2,7 +2,7 @@
 
 Plan for collecting public comments from the static site without exposing the downstream secret script. The web only talks to a public receiver; the secret logic runs on the host with no HTTP endpoint.
 
-**Status:** receiver on host (systemd webhook), site-wide ideas chat widget, **autoissue** processor (cursor-agent draft + `gh issue create`); host setup via `scripts/setup-ideas-processor.sh`. Dev email via AutoMail on enqueue (`scripts/notify-idea-email.sh`, `AUTOMAIL_TOKEN` in repo-root `.env`). Optional `KM0_IDEAS_TRUST_PASSWORD` skips the `waiting for human validation` label when the client password matches (server-side only; never stored in queue JSON).
+**Status:** receiver on host (systemd webhook), site-wide ideas chat widget, **autoissue** processor (cursor-agent draft + `gh issue create`, with raw+AutoMail fallback); host setup via `scripts/setup-ideas-processor.sh`. Dev email via AutoMail on enqueue (`scripts/notify-idea-email.sh`, `AUTOMAIL_TOKEN` in repo-root `.env`). Optional `KM0_IDEAS_TRUST_PASSWORD` skips the `waiting for human validation` label when the client password matches (server-side only; never stored in queue JSON).
 **Related:** [runbook.md](./runbook.md) (deploy and nginx).
 
 ---
@@ -18,7 +18,23 @@ Browser ideas widget (Astro, bottom-right circular FAB on every page)
   → systemd path unit triggers autoissue (host only)
   → autoissue: cursor-agent drafts markdown from JSON, then gh issue create
     (omit "waiting for human validation" when skipHumanValidation is true)
+  → if cursor-agent (or gh create after draft) fails: autoissue-raw-fallback.sh
+    creates a raw issue with the same label + AutoMail alert
 ```
+
+
+## Raw fallback (cursor-agent down)
+
+When `cursor-agent` fails (usage limit, crash, missing binary) or `gh issue create` fails after a draft, `scripts/autoissue-raw-fallback.sh` still opens a GitHub issue:
+
+* Title: `[ideas/<locale>]` + truncated raw idea
+* Body: verbatim submission + queue context + `Intake mode: raw-fallback`
+* Label: `waiting for human validation` (unless `skipHumanValidation`)
+* AutoMail: subject `KM0 ideas RAW FALLBACK -> #<n>`
+
+### GitHub auth note
+
+`autoissue.sh` prefers the host `gh` session. It unsets `GH_TOKEN` from `autoagents/.env` unless `KM0_IDEAS_FORCE_GH_TOKEN=1`. A fine-grained PAT without org approval overrides host OAuth and breaks `createIssue`.
 
 **Public cannot:** read Script 2, call it over HTTP, or see its path in responses or frontend assets.  
 **Limit:** root and server admins can always read host files; this design hides the secret from the internet and from the Git repo.
@@ -56,6 +72,7 @@ sudo ./scripts/setup-ideas-processor.sh
 |------|---------|
 | `scripts/receive-idea.sh` | Validates payload, atomic enqueue (Script 1 logic) |
 | `scripts/notify-idea-email.sh` | AutoMail dev notification on enqueue (background) |
+| `scripts/autoissue-raw-fallback.sh` | Fallback: raw GitHub issue + AutoMail when cursor-agent fails |
 | `hooks/hooks.json` | [webhook](https://github.com/adnanh/webhook) config |
 | `deploy/systemd/km0-ideas-receiver.service` | Host webhook unit (`127.0.0.1:9181`) |
 | `nginx/` | Snippet for `/hooks/ideas` proxy and `limit_req` |

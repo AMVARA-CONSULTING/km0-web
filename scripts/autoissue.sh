@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Autoissue: drain queue JSON files, draft issues via cursor-agent, create GitHub issues.
+# On cursor-agent or draft-create failure: raw fallback (verbatim idea + label + AutoMail).
 set -euo pipefail
 
 REPO_ROOT="${KM0_WEB_ROOT:-/opt/km0-web}"
@@ -11,6 +12,7 @@ LOG="${KM0_IDEAS_LOG:-/var/log/km0-ideas/autoissue.log}"
 LOCK="/var/run/km0-idea-processor.lock"
 PROMPT="${REPO_ROOT}/autoissue/autoissue-agent.md"
 DRAFTS="${REPO_ROOT}/autoissue/drafts"
+RAW_FALLBACK="${REPO_ROOT}/scripts/autoissue-raw-fallback.sh"
 
 repo_for_scope() {
   case "${1:-web}" in
@@ -34,6 +36,36 @@ load_env() {
     source "$env_file"
     set +a
   fi
+  # AutoMail lives in repo-root .env (receiver EnvironmentFile).
+  local root_env="${REPO_ROOT}/.env"
+  if [[ -f "$root_env" ]]; then
+    set -a
+    # shellcheck disable=SC1090
+    source "$root_env"
+    set +a
+  fi
+}
+
+# Prefer host `gh` OAuth/session when available. Exporting a fine-grained
+# GH_TOKEN that lacks org approval overrides host auth and breaks createIssue.
+resolve_gh_auth() {
+  if [[ "${KM0_IDEAS_FORCE_GH_TOKEN:-0}" == "1" && -n "${GH_TOKEN:-}" ]]; then
+    export GH_TOKEN
+    log "gh auth: forced GH_TOKEN from env"
+    return 0
+  fi
+  if gh auth status --hostname github.com >/dev/null 2>&1; then
+    unset GH_TOKEN || true
+    log "gh auth: using host gh session (GH_TOKEN unset)"
+    return 0
+  fi
+  if [[ -n "${GH_TOKEN:-}" ]]; then
+    export GH_TOKEN
+    log "gh auth: using GH_TOKEN from env (host gh not authenticated)"
+    return 0
+  fi
+  log "gh auth: no host session and GH_TOKEN not set, aborting"
+  return 1
 }
 
 ensure_label() {
@@ -144,8 +176,40 @@ PY
   return 0
 }
 
+run_raw_fallback() {
+  local json_file="$1" draft_path="$2" skip_human_validation="$3" reason="$4"
+  if [[ ! -x "$RAW_FALLBACK" ]]; then
+    log "raw fallback script missing or not executable: ${RAW_FALLBACK}"
+    return 1
+  fi
+  "$RAW_FALLBACK" "$json_file" "$draft_path" "$skip_human_validation" "$reason"
+}
+
+write_meta_and_finish() {
+  local base="$1" queue_id="$2" issue_num="$3" scope="$4" draft_path="$5" skip_human_validation="$6" mode="$7"
+  local issue_url meta_path
+  issue_url="https://github.com/${GH_REPO}/issues/${issue_num}"
+  meta_path="$QUEUE/processed/${base%.json}.meta.json"
+  jq -n \
+    --argjson issue "$issue_num" \
+    --arg url "$issue_url" \
+    --arg id "$queue_id" \
+    --arg scope "$scope" \
+    --arg repo "$GH_REPO" \
+    --arg draft "$draft_path" \
+    --arg mode "$mode" \
+    --argjson skipHumanValidation "$skip_human_validation" \
+    '{issue: $issue, issueUrl: $url, queueId: $id, scope: $scope, repo: $repo, draftPath: $draft, skipHumanValidation: $skipHumanValidation, mode: $mode, processedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))}' \
+    > "$meta_path"
+
+  if [[ -f "$draft_path" ]]; then
+    mv "$draft_path" "$QUEUE/processed/${queue_id}.draft.md"
+  fi
+  log "created issue #${issue_num} in ${GH_REPO} for ${base} (queue id ${queue_id}, scope ${scope}, skipHumanValidation=${skip_human_validation}, mode=${mode})"
+}
+
 process_one() {
-  local file="$1" base queue_id draft_path issue_num meta_path issue_url scope skip_human_validation
+  local file="$1" base queue_id draft_path issue_num scope skip_human_validation
 
   base="$(basename "$file")"
 
@@ -176,40 +240,32 @@ process_one() {
 
   draft_path="${DRAFTS}/${queue_id}.md"
 
-  if ! run_cursor_draft "$file" "$queue_id" "$draft_path"; then
-    return 1
+  if run_cursor_draft "$file" "$queue_id" "$draft_path"; then
+    if issue_num="$(create_issue_from_draft "$draft_path" "$skip_human_validation")"; then
+      write_meta_and_finish "$base" "$queue_id" "$issue_num" "$scope" "$draft_path" "$skip_human_validation" "cursor-draft"
+      return 0
+    fi
+    log "draft create failed; raw fallback queue_id=${queue_id}"
+    if ! issue_num="$(run_raw_fallback "$file" "$draft_path" "$skip_human_validation" "gh issue create failed after cursor draft")"; then
+      return 1
+    fi
+    write_meta_and_finish "$base" "$queue_id" "$issue_num" "$scope" "$draft_path" "$skip_human_validation" "raw-fallback"
+    return 0
   fi
 
-  if ! issue_num="$(create_issue_from_draft "$draft_path" "$skip_human_validation")"; then
+  log "cursor-agent failed; raw fallback queue_id=${queue_id}"
+  if ! issue_num="$(run_raw_fallback "$file" "$draft_path" "$skip_human_validation" "cursor-agent failed")"; then
     return 1
   fi
-
-  issue_url="https://github.com/${GH_REPO}/issues/${issue_num}"
-  meta_path="$QUEUE/processed/${base%.json}.meta.json"
-  jq -n \
-    --argjson issue "$issue_num" \
-    --arg url "$issue_url" \
-    --arg id "$queue_id" \
-    --arg scope "$scope" \
-    --arg repo "$GH_REPO" \
-    --arg draft "$draft_path" \
-    --argjson skipHumanValidation "$skip_human_validation" \
-    '{issue: $issue, issueUrl: $url, queueId: $id, scope: $scope, repo: $repo, draftPath: $draft, skipHumanValidation: $skipHumanValidation, processedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))}' \
-    > "$meta_path"
-
-  mv "$draft_path" "$QUEUE/processed/${queue_id}.draft.md"
-  log "created issue #${issue_num} in ${GH_REPO} for ${base} (queue id ${queue_id}, scope ${scope}, skipHumanValidation=${skip_human_validation})"
+  write_meta_and_finish "$base" "$queue_id" "$issue_num" "$scope" "$draft_path" "$skip_human_validation" "raw-fallback"
   return 0
 }
 
 load_env
 
-if [[ -z "${GH_TOKEN:-}" ]]; then
-  log "GH_TOKEN not set, aborting"
+if ! resolve_gh_auth; then
   exit 1
 fi
-
-export GH_TOKEN
 
 exec 9>"$LOCK"
 if ! flock -n 9; then

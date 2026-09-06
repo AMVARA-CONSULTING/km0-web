@@ -1,8 +1,23 @@
 #!/usr/bin/env bash
-# Fire-and-forget dev notification via AutoMail (no cursor-agent).
+# Fire-and-forget notification via AutoMail (no cursor-agent).
+# Usage:
+#   notify-idea-email.sh <idea> [subject] [full_text]
+# If full_text is set, it is sent as the body; otherwise a short Spanish preview is used.
 set -euo pipefail
 
+REPO_ROOT="${KM0_WEB_ROOT:-/opt/km0-web}"
 idea="${1:-}"
+subject="${2:-Nueva idea km0digital}"
+custom_text="${3:-}"
+
+# Load AutoMail secrets when not already in the environment (processor path).
+if [[ -z "${AUTOMAIL_TOKEN:-}" && -f "${REPO_ROOT}/.env" ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "${REPO_ROOT}/.env"
+  set +a
+fi
+
 token="${AUTOMAIL_TOKEN:-}"
 to="${AUTOMAIL_NOTIFY_TO:-yoelberjaga@gmail.com}"
 api_url="${AUTOMAIL_API_URL:-https://automail.lu-zero.ldeluipy.es/api/send.php}"
@@ -16,17 +31,21 @@ if [[ -z "$token" ]]; then
   exit 0
 fi
 
-if [[ -z "$idea" ]]; then
+if [[ -z "$idea" && -z "$custom_text" ]]; then
   log_line "skip empty idea"
   exit 0
 fi
 
-preview="${idea:0:100}"
-text=$'Se ha enviado una nueva idea desde km0digital\n\n'"${preview}"
+if [[ -n "$custom_text" ]]; then
+  text="$custom_text"
+else
+  preview="${idea:0:100}"
+  text=$'Se ha enviado una nueva idea desde km0digital\n\n'"${preview}"
+fi
 
 payload="$(jq -n \
   --arg to "$to" \
-  --arg subject "Nueva idea km0digital" \
+  --arg subject "$subject" \
   --arg text "$text" \
   '{to: $to, subject: $subject, text: $text}')"
 

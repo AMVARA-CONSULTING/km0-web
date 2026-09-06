@@ -34,6 +34,7 @@ chmod 775 "${SPOOL}" "${SPOOL}/incoming"
 chmod 750 "${SPOOL}/processing" "${SPOOL}/processed" "${SPOOL}/failed"
 
 chmod +x "${ROOT}/scripts/autoissue.sh" \
+  "${ROOT}/scripts/autoissue-raw-fallback.sh" \
   "${ROOT}/scripts/process-idea.sh" \
   "${ROOT}/scripts/receive-idea.sh" \
   "${ROOT}/scripts/notify-idea-email.sh"

@@ -212,7 +212,9 @@ should_run_001_cursor_agent() {
     return 0
   fi
   if [[ "$G001_LOG_SIGNALS" == "1" ]]; then
-    if [[ "${AGENT_001_LOCAL_LOG_REVIEWER:-1}" != "0" ]] && [[ "$G001_GH_OK" == "1" ]] && [[ "${G001_UNTRACKED_ISSUES:-0}" -eq 0 ]]; then
+    # Scanner/noise log hits with no untracked GH issues: use local stamp, never burn cursor-agent
+    # (also when GH auth is broken - otherwise 001 re-fires every cycle forever).
+    if [[ "${AGENT_001_LOCAL_LOG_REVIEWER:-1}" != "0" ]] && [[ "${G001_UNTRACKED_ISSUES:-0}" -eq 0 ]]; then
       return 1
     fi
     return 0
@@ -401,8 +403,8 @@ Then follow 001-gh-reviewer.md - (A) GitHub → up to 3 × FEAT-*.md. (B) Docker
       "true" \
       "001-gh-reviewer.md" \
       "$msg"
-  elif [[ "$G001_LOG_SIGNALS" == "1" ]] && [[ "$G001_GH_OK" == "1" ]] && [[ "${G001_UNTRACKED_ISSUES:-0}" -eq 0 ]] && [[ "${AGENT_001_LOCAL_LOG_REVIEWER:-1}" != "0" ]]; then
-    echo "----- log reviewer (001) (skip cursor-agent: Docker heuristics only, GitHub ok, zero untracked issues)"
+  elif [[ "$G001_LOG_SIGNALS" == "1" ]] && [[ "${G001_UNTRACKED_ISSUES:-0}" -eq 0 ]] && [[ "${AGENT_001_LOCAL_LOG_REVIEWER:-1}" != "0" ]]; then
+    echo "----- log reviewer (001) (skip cursor-agent: Docker heuristics only, zero untracked issues)"
     append_001_local_no_cursor_stamp "$ctx"
   else
     echo "----- log reviewer (001) (skip: nothing for 001)"

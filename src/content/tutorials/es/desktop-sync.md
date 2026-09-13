@@ -65,6 +65,6 @@ platform: desktop
 
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Almacenamiento</p>
-  <h2 class="doc-block-heading">150 GB en autoservicio</h2>
+  <h2 class="doc-block-heading">150 GB de plan público</h2>
   <p class="doc-block-intro">El plan publicado es <strong>150 GB por 1,99 €/mes</strong>. Una biblioteca de varios años puede pasarse. Comprueba el tamaño antes de prometerte un volcado completo. Cuotas mayores se tratan bajo petición (ver <a href="/pricing/">precios</a> y contacto).</p>
 </section>

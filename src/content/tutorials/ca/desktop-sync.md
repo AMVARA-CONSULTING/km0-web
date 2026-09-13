@@ -65,6 +65,6 @@ platform: desktop
 
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Emmagatzematge</p>
-  <h2 class="doc-block-heading">150 GB en autoservei</h2>
+  <h2 class="doc-block-heading">150 GB de pla públic</h2>
   <p class="doc-block-intro">El pla publicat és <strong>150 GB per 1,99 €/mes</strong>. Una biblioteca de diversos anys pot superar-ho. Comprova la mida abans de prometre't un bolcat complet. Quotes més grans es tracten sota petició (vegeu <a href="/ca/pricing/">preus</a> i contacte).</p>
 </section>

@@ -8,7 +8,7 @@ platform: desktop
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Einführung</p>
-  <p class="doc-lead">KM0 Cloud nutzt den <strong>OpenCloud Desktop Client</strong> unter Windows, macOS und Linux. Sync hält einen lokalen Ordner mit Ihrem EU-Konto auf dem gleichen Stand. Der öffentliche Self-Serve-Tarif umfasst <strong>150 GB</strong>. Ist Ihre Bibliothek größer, klären Sie Kapazität vor einer großen Migration.</p>
+  <p class="doc-lead">KM0 Cloud nutzt den <strong>OpenCloud Desktop Client</strong> unter Windows, macOS und Linux. Sync hält einen lokalen Ordner mit Ihrem EU-Konto auf dem gleichen Stand. Der öffentliche Tarif umfasst <strong>150 GB</strong>. Ist Ihre Bibliothek größer, klären Sie Kapazität vor einer großen Migration.</p>
 </section>
 
 <section class="doc-block">
@@ -65,6 +65,6 @@ platform: desktop
 
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Speicher</p>
-  <h2 class="doc-block-heading">150 GB Self-Serve</h2>
+  <h2 class="doc-block-heading">150 GB öffentlicher Tarif</h2>
   <p class="doc-block-intro">Der veröffentlichte Tarif ist <strong>150 GB für 1,99 €/Monat</strong>. Eine mehrjährige Fotobibliothek kann das übersteigen. Prüfen Sie die Größe, bevor Sie einen Komplett-Dump planen. Größere Kontingente auf Anfrage (siehe <a href="/de/pricing/">Preise</a> und Kontakt).</p>
 </section>

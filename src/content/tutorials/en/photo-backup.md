@@ -8,7 +8,7 @@ platform: mobile
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
-  <p class="doc-lead">The OpenCloud apps for <strong>Android</strong> and <strong>iOS</strong> can upload new photos and videos to your KM0 Cloud account. Files live on EU servers at <code>cloud.km0digital.com</code>. The self-serve plan is <strong>150 GB</strong>: say that up front if the goal is a lifetime photo library.</p>
+  <p class="doc-lead">The OpenCloud apps for <strong>Android</strong> and <strong>iOS</strong> can upload new photos and videos to your KM0 Cloud account. Files live on EU servers at <code>cloud.km0digital.com</code>. The public plan is <strong>150 GB</strong>: say that up front if the goal is a lifetime photo library.</p>
 </section>
 
 <section class="doc-block">

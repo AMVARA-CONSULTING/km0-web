@@ -8,7 +8,7 @@ platform: mobile
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Einführung</p>
-  <p class="doc-lead">Die OpenCloud-Apps für <strong>Android</strong> und <strong>iOS</strong> können neue Fotos und Videos in Ihr KM0-Cloud-Konto hochladen. Die Dateien liegen auf EU-Servern unter <code>cloud.km0digital.com</code>. Der Self-Serve-Tarif umfasst <strong>150 GB</strong>: sagen Sie das klar, wenn das Ziel eine lebenslange Fotobibliothek ist.</p>
+  <p class="doc-lead">Die OpenCloud-Apps für <strong>Android</strong> und <strong>iOS</strong> können neue Fotos und Videos in Ihr KM0-Cloud-Konto hochladen. Die Dateien liegen auf EU-Servern unter <code>cloud.km0digital.com</code>. Der öffentliche Tarif umfasst <strong>150 GB</strong>: sagen Sie das klar, wenn das Ziel eine lebenslange Fotobibliothek ist.</p>
 </section>
 
 <section class="doc-block">

@@ -65,6 +65,6 @@ platform: desktop
 
 <section class="doc-block doc-block-alt">
   <p class="doc-block-title">Storage</p>
-  <h2 class="doc-block-heading">150 GB self-serve</h2>
+  <h2 class="doc-block-heading">150 GB public plan</h2>
   <p class="doc-block-intro">The published plan is <strong>150 GB for €1.99/month</strong>. A multi-year phone library can exceed that. Check size before you promise yourself a full dump. Larger quotas are handled on request (see <a href="/en/pricing/">pricing</a> and contact).</p>
 </section>

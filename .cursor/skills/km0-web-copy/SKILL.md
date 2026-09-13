@@ -31,6 +31,7 @@ Readers **scan**. They punish repetition and hype. LLMs must write **clearer and
 - **Objective > promotional.** State facts: EU hosting, prices, what the community is. Drop “revolucionario”, “única alternativa real” loops unless the claim is concrete and new.
 - **Say it once.** Privacy / ISO / “no vendemos datos” must not reappear in Vision + Mission + PrivacyTrust + FAQ + Services with the same sentence shape.
 - **Respect the reader.** No guilt trips, no fake urgency, no empty “únete al movimiento” without a next action.
+- **Anti-Big Tech hooks.** Prefer a clean leave-lock-in line (Microsoft 365 / Big Tech to EU Cloud + Email). Never ship `m$`, insult-hooks, or crude trademark shorthand on the public site.
 - **Local and specific.** Names, places, numbers that exist beat universal fluff.
 - **Honest proof (Hallmark-adapted).** Never invent metrics (“10× faster”, “50,000+ teams”, “99.9%”) for proof bars or trust strips. Use sourced numbers, the live Cloud counter, or omit the slot. Declared goals must read as goals, not live KPIs (`docs/design/hallmark-adaptations.md`).
 - **Clickable labels stay short.** Nav, footer, breadcrumb, and CTA strings should stay one line at ~375 px; shorten copy before shrinking type.

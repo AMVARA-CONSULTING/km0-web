@@ -8,6 +8,11 @@ const doc = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     locale: z.enum(['es', 'ca', 'en', 'de']),
+    /** Optional share image under public/ (e.g. /brand/maestro-og.png). */
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    /** Optional square portrait shown beside the post title. */
+    portrait: z.string().optional(),
   }),
 });
 
@@ -18,7 +23,7 @@ const tutorials = defineCollection({
     description: z.string(),
     locale: z.enum(['es', 'ca', 'en', 'de']),
     order: z.number(),
-    platform: z.enum(['web', 'android', 'ios', 'macos']),
+    platform: z.enum(['web', 'android', 'ios', 'macos', 'desktop', 'mobile']),
     /** Product family used to group the tutorials index. */
     product: z.enum(['cloud', 'mail']).default('cloud'),
   }),

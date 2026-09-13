@@ -78,7 +78,7 @@ export interface Messages {
       status: string;
       /** Full plan string for AT (aria-label); visual uses capacity + unit + label */
       planName: string;
-      /** Numeric capacity for once-only readout (e.g. "500") */
+      /** Numeric capacity for once-only readout (e.g. "150") */
       planCapacity: string;
       planUnit: string;
       /** Quiet localized plan word beside the capacity readout */
@@ -254,10 +254,12 @@ export interface Messages {
     heading: string;
     intro: string;
     heroCta: string;
+    /** Secondary masthead CTA: contact for 1 TB+ / multi-TB capacity. */
+    heroSecondaryCta: string;
     heroPrice: {
       amount: string;
       period: string;
-      /** Display digits only (e.g. "500"); unit is separate. */
+      /** Display digits only (e.g. "150"); unit is separate. */
       capacity: string;
       unit: string;
       /** Quiet host line under the capacity meter (e.g. Hetzner · EU). */
@@ -459,6 +461,8 @@ export interface Messages {
     security: string;
     version: string;
     repoSince: string;
+    /** Cumulative unique visitors label (count filled client-side). */
+    visitorsSoFar: string;
     poweredByHtml: string;
     navAriaLabel: string;
     exploreTitle: string;

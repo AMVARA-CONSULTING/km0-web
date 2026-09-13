@@ -32,3 +32,5 @@ Prova un cop: pots obrir les fotos sense aquell telèfon? Si la resposta és sí
 ## 5. Mantén l'hàbit
 
 Cada mes (o després d'un viatge), puja les fotos noves. Pujades curtes fallen menys que una migració enorme quan el mòbil ja és ple o trencat.
+
+Passos concrets a KM0 Cloud (Auto Upload, originals davant conversió, restaurar si el telèfon es mor i el límit de 150 GB): vegeu el <a href="/ca/tutorials/photo-backup/">tutorial de còpia de fotos</a>.

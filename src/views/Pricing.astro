@@ -49,6 +49,9 @@ const canonicalUrl = new URL(localeHref(locale, '/pricing/'), siteRoot).href;
               >
                 {p.heroCta}
               </a>
+              <a href={withHash(locale, 'contact')} class="page-closer__secondary">
+                {p.heroSecondaryCta}
+              </a>
             </div>
           </div>
           <div class="pricing-hero-stat" aria-label={p.heroPrice.ariaLabel} data-reveal data-delay="100">

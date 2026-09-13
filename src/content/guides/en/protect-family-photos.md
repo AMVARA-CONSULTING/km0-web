@@ -32,3 +32,5 @@ Try once: can you open the photos without that handset? If yes, you are protecte
 ## 5. Keep the habit
 
 Each month (or after a trip), upload new photos. Short uploads fail less often than one huge migration when the phone is already full or broken.
+
+For KM0 Cloud steps (Auto Upload, originals vs conversion, restore after a dead phone, and the 150 GB limit), see the <a href="/en/tutorials/photo-backup/">photo backup tutorial</a>.

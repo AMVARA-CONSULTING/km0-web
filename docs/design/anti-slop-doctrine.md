@@ -193,6 +193,7 @@ Reject and return to WIP when any of these is the only pass story:
 6. **Atmosphere without slop:** Origin field motif only; continuous Paper elsewhere. Gradients/patterns/imagery must show place, product, or community - not abstract purple blobs or glow orbs.
 7. **Motion with purpose:** paint-phase vocabulary only (reveals + masthead compact + Offer pin); expo ease-out; always respect `prefers-reduced-motion`. No animation spam.
 8. **Voice:** concrete, local, honest. Prefer facts over slogans. LLMs must rewrite toward clarity, not toward more adjectives.
+   - **Anti-Big Tech hooks:** name the alternative cleanly (e.g. leave Microsoft 365 without losing mail and files; EU Cloud + Email without an ad-profile business). Never use slang like `m$`, insult-hooks, or crude trademark abuse on the public site.
 9. **Mark system:** reuse the Origin stamp assets; do not invent a second logo language per page.
 10. **Surfaces:** continuous Paper; opt into `.surface-*` / intentional Snow-Ink bands. Never zebra.
 

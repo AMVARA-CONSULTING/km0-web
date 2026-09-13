@@ -54,4 +54,5 @@ platform: ios
     <li>No ometis <code>https://</code> ni facis servir caràcters incorrectes.</li>
   </ul>
   <p class="doc-block-intro">Si el problema continua, contacta amb el suport de KM0 pels canals oficials.</p>
+  <p class="doc-block-intro">Següent: <a href="/ca/tutorials/photo-backup/">còpia de fotos a Android i iOS</a> i <a href="/ca/tutorials/desktop-sync/">sincronització d'escriptori</a>.</p>
 </section>

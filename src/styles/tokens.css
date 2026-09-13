@@ -55,7 +55,7 @@
   --ease-apple: var(--ease-out-expo);
   --duration-reveal: 820ms;
   --duration-chrome: 280ms;
-  /* Hero 500 GB capacity moment (#104): once-only, compositor-friendly */
+  /* Hero 150 GB capacity moment (#104): once-only, compositor-friendly */
   --duration-hero-capacity: 480ms;
   --hero-meter-fill: 0.72;
   --reveal-distance: 2rem;

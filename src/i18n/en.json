@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Kilometer 0 Digital - your data, your control",
-    "description": "KM0 Cloud and KM0 Email hosted in the EU. 500 GB from €1.99/month. We do not sell your profile.",
-    "ogImageAlt": "Kilometer 0 Digital: KM0 Cloud and KM0 Email in the EU, 500 GB from €1.99/month"
+    "description": "KM0 Cloud and KM0 Email hosted in the EU. 150 GB from €1.99/month. We do not sell your profile.",
+    "ogImageAlt": "Kilometer 0 Digital: KM0 Cloud and KM0 Email in the EU, 150 GB from €1.99/month"
   },
   "brandName": "Kilometer 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -33,14 +33,14 @@
   "hero": {
     "titleLine1": "Private cloud ",
     "titleGradient": "and email.",
-    "tagline": "Hosted in the EU. 500 GB from €1.99/month. Public pricing, human support. We do not sell your profile.",
+    "tagline": "Leave Microsoft 365 without losing mail and files. 150 GB self-serve from €1.99/month · 1 TB+ / multi-TB on request · same EU servers · same support.",
     "ctaPrimary": "Open KM0 Cloud",
     "ctaSecondary": "Pricing",
     "logoAlt": "Kilometer 0 Digital logo",
     "proof": {
       "status": "EU · online",
-      "planName": "500 GB plan",
-      "planCapacity": "500",
+      "planName": "150 GB plan",
+      "planCapacity": "150",
       "planUnit": "GB",
       "planLabel": "plan",
       "planMeta": "Hetzner · EU",
@@ -105,7 +105,7 @@
         "meta": "Person · family",
         "title": "Home photos, Gmail optional",
         "body": "Each person syncs photos from their phone. Shared folders and secure links with family or friends. Optional @km0digital.com mail.",
-        "fact": "Cloud · iPhone and Android · 500 GB from €1.99/month",
+        "fact": "Cloud · iPhone and Android · 150 GB from €1.99/month",
         "ctaLabel": "Open KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "See pricing",
@@ -151,9 +151,9 @@
         "id": "cloud",
         "title": "KM0 Cloud",
         "priceFrom": "From €1.99/month",
-        "priceAriaLabel": "From €1.99 per month for 500 GB",
+        "priceAriaLabel": "From €1.99 per month for 150 GB",
         "subtitle": "Files, sync, and collaboration",
-        "desc": "500 GB in the EU (Hetzner). Share, sync, and edit in real time.",
+        "desc": "150 GB in the EU (Hetzner). Share, sync, and edit in real time.",
         "secondaryCta": "Open Cloud",
         "url": "https://cloud.km0digital.com"
       },
@@ -243,6 +243,11 @@
         "answerHtml": "Open <strong>KM0 Cloud</strong>, check <a href=\"/en/pricing/\">pricing</a>, write to us, or join <a href=\"#contact\">WhatsApp</a>. <a href=\"#community\">Meetings</a> are optional."
       },
       {
+        "id": "support-languages",
+        "question": "Which languages does support reply in?",
+        "answerHtml": "Spanish, Catalan, English, and German. Real people, no anonymous call center."
+      },
+      {
         "id": "hosting",
         "question": "Where is the data?",
         "answerHtml": "In Falkenstein, Germany, on <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a> servers. Inside the EU."
@@ -256,13 +261,33 @@
         "id": "data-privacy",
         "question": "Do you sell or profile my data?",
         "answerHtml": "No. We do not sell data or profile for ads. We process only what the service needs. See <a href=\"/en/legal/\">privacy</a>."
+      },
+      {
+        "id": "storage-150gb",
+        "question": "Is 150 GB enough for a lifetime of photos?",
+        "answerHtml": "Often not. The public self-serve plan is <strong>150 GB for €1.99/month</strong>. Large phone libraries can exceed that. Check size before a full dump; ask us for more capacity. Details in <a href=\"/en/tutorials/photo-backup/\">photo backup</a> and <a href=\"/en/pricing/\">pricing</a>."
+      },
+      {
+        "id": "desktop-sync",
+        "question": "How does desktop sync work (selective sync, unsync)?",
+        "answerHtml": "Install the OpenCloud Desktop Client, point it at <code>https://cloud.km0digital.com/</code>. On macOS/Linux use <strong>Choose What to Sync</strong>. Windows uses online placeholders and <strong>Free up space</strong>. There is <strong>no</strong> OneDrive-style Known Folder Move. Full write-up: <a href=\"/en/tutorials/desktop-sync/\">desktop sync</a>."
+      },
+      {
+        "id": "photo-backup",
+        "question": "How does phone photo backup work, and can I restore if the phone dies?",
+        "answerHtml": "Android and iOS OpenCloud apps can auto-upload new photos/videos to a folder you choose. On iOS, leave HEIC/MP4 conversion off to keep originals. If the handset fails, sign in from another device and download. Guide: <a href=\"/en/tutorials/photo-backup/\">photo backup</a>."
+      },
+      {
+        "id": "unlink-local-files",
+        "question": "Do you delete my local files when I unlink the client?",
+        "answerHtml": "<strong>No.</strong> OpenCloud’s <strong>Remove Sync Folder Connection</strong> stops sync and does not delete local files; server data stays. Deleting files yourself while sync is active can still remove them on the server. Policy detail: <a href=\"/en/tutorials/desktop-sync/\">desktop sync</a>."
       }
     ]
   },
   "contact": {
     "heading": "Contact",
-    "body": "Send an email or join WhatsApp. People reply, not a bot.",
-    "email": "hello.yoel@amvara.de",
+    "body": "Email or WhatsApp. We reply in Spanish, Catalan, English, and German.",
+    "email": "hello@km0digital.com",
     "whatsappLabel": "WhatsApp group",
     "whatsappHint": "Scan or tap to join",
     "whatsappQrAlt": "QR code for the KM0 WhatsApp group",
@@ -273,7 +298,7 @@
     "missionLabel": "Mission",
     "missionBody": "Goal: connect 10,000,000 people by 2030.",
     "visionLabel": "Vision",
-    "visionBody": "Honest, local infrastructure and personal support: an alternative to gated big tech that harvests user data."
+    "visionBody": "Honest, local infrastructure with human support: EU Cloud and Email as an alternative to Big Tech lock-in."
   },
   "ideas": {
     "panelTitle": "Send an idea",
@@ -356,31 +381,32 @@
   },
   "pricing": {
     "metaTitle": "Pricing - Kilometer 0 Digital",
-    "metaDescription": "500 GB for €1.99/month. Public paths for Cloud, Email, and custom proposals.",
+    "metaDescription": "150 GB self-serve for €1.99/month. 1 TB+ / multi-TB on request. Same EU servers, same support.",
     "eyebrow": "Pricing",
     "heading": "One public price.",
     "heroPrice": {
       "amount": "€1.99",
       "period": "/month",
-      "capacity": "500",
+      "capacity": "150",
       "unit": "GB",
       "hostMeta": "Hetzner · EU",
-      "ariaLabel": "Price: €1.99 per month for 500 GB of storage"
+      "ariaLabel": "Price: €1.99 per month for 150 GB of storage"
     },
-    "intro": "EU storage, no fine print. Open Cloud, add Email, or ask for a custom path.",
+    "intro": "150 GB self-serve · 1 TB+ / multi-TB on request · same EU servers · same support. Open Cloud, or write for larger capacity.",
     "heroCta": "Open KM0 Cloud",
+    "heroSecondaryCta": "Request capacity",
     "pathsHeading": "Choose a path",
-    "pathsIntro": "Same stack, three ways in. Cloud leads; Email rides with it; custom is for teams that need more.",
+    "pathsIntro": "Same stack, three ways in. Cloud is 150 GB self-serve; Email rides with it; custom is 1 TB+ quoted to a person.",
     "paths": [
       {
         "id": "cloud",
         "meta": "Self-serve",
         "title": "KM0 Cloud",
         "price": "€1.99",
-        "priceNote": "/month · 500 GB",
+        "priceNote": "/month · 150 GB",
         "body": "Files, sync, and share in the EU (Hetzner). Start without a sales call.",
         "features": [
-          "500 GB EU storage",
+          "150 GB EU storage",
           "No credit card theatre to browse",
           "Public price, no profile sales"
         ],
@@ -405,17 +431,17 @@
       },
       {
         "id": "custom",
-        "meta": "Organisation",
-        "title": "Custom path",
+        "meta": "On request",
+        "title": "More capacity",
         "price": "On request",
-        "priceNote": "capacity · terms · support",
-        "body": "More storage, named support, or specific terms for a team or community.",
+        "priceNote": "1 TB+ · multi-TB",
+        "body": "Photo dumps and archives are quoted. Same EU servers, same support, terms in writing.",
         "features": [
-          "Capacity beyond the public plan",
-          "Human support in your language",
-          "Terms written down, not buried"
+          "1 TB+ / multi-TB on request",
+          "Same EU servers and support as the public plan",
+          "Written quote: €/TB, backup, exit"
         ],
-        "ctaLabel": "Request a proposal",
+        "ctaLabel": "Request capacity",
         "cta": "contact"
       }
     ],
@@ -433,8 +459,8 @@
       {
         "provider": "KM0 Digital",
         "monthlyPrice": "€1.99",
-        "storageGb": "500 GB",
-        "costPerTbMonth": "≈€3.98",
+        "storageGb": "150 GB",
+        "costPerTbMonth": "≈€13.27",
         "highlight": true
       },
       {
@@ -485,7 +511,7 @@
         },
         {
           "title": "Nearby support",
-          "desc": "Spanish and Catalan, with real people."
+          "desc": "Spanish, Catalan, English, and German, with real people."
         },
         {
           "title": "ISO and privacy",
@@ -494,9 +520,9 @@
       ]
     },
     "custom": {
-      "heading": "Need a different path?",
-      "body": "Open Cloud now, or write for capacity, support, or specific terms.",
-      "cta": "Request a proposal"
+      "heading": "Need more than 150 GB?",
+      "body": "Self-serve stays at 150 GB. 1 TB+ and multi-TB are quoted: same EU servers (Hetzner / Falkenstein), same support. Quotes list price per TB, backup/retention, and exit terms.",
+      "cta": "Request capacity"
     }
   },
   "presentation": {
@@ -611,7 +637,7 @@
       "lead": "Open Cloud or write to us.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",
-      "email": "hello.yoel@amvara.de"
+      "email": "hello@km0digital.com"
     }
   },
   "footer": {
@@ -627,7 +653,8 @@
     "exploreTitle": "Explore",
     "aboutTitle": "About us",
     "legalTitle": "Legal and support",
-    "servicesTitle": "KM0 services"
+    "servicesTitle": "KM0 services",
+    "visitorsSoFar": "Visitors so far"
   },
   "legal": {
     "metaTitle": "Legal notice and privacy - Kilometer 0 Digital",
@@ -682,12 +709,12 @@
       {
         "id": "iso27001",
         "title": "ISO/IEC 27001:2022",
-        "bodyHtml": "<p>AMVARA CONSULTING S.L. is certified to <strong>ISO/IEC 27001:2022</strong> by TÜV NORD CERT. KM0 Digital, <code>cloud.km0digital.com</code>, and <code>mail.km0digital.com</code> fall within AMVARA's certificate scope as part of its platform and associated services (cloud and mail).</p><p>KM0 Digital does not hold ISO 27001 certification under its own name. We design, deploy, and maintain KM0 under AMVARA's certified information security management system and follow those controls in our operations.</p><p>If you need the certificate, statement of applicability, or a security questionnaire, contact hello.yoel@amvara.de.</p>"
+        "bodyHtml": "<p>AMVARA CONSULTING S.L. is certified to <strong>ISO/IEC 27001:2022</strong> by TÜV NORD CERT. KM0 Digital, <code>cloud.km0digital.com</code>, and <code>mail.km0digital.com</code> fall within AMVARA's certificate scope as part of its platform and associated services (cloud and mail).</p><p>KM0 Digital does not hold ISO 27001 certification under its own name. We design, deploy, and maintain KM0 under AMVARA's certified information security management system and follow those controls in our operations.</p><p>If you need the certificate, statement of applicability, or a security questionnaire, contact hello@km0digital.com.</p>"
       },
       {
         "id": "disclosure",
         "title": "Responsible vulnerability disclosure",
-        "bodyHtml": "<p>We welcome good-faith reports of security vulnerabilities affecting <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong>, and related AMVARA-operated KM0 mail infrastructure.</p><p><strong>Please do:</strong></p><ul class=\"doc-list\"><li>Report vulnerabilities promptly to hello.yoel@amvara.de.</li><li>Provide clear reproduction steps and impact assessment.</li><li>Avoid accessing, modifying, deleting, or exfiltrating data that is not yours.</li><li>Stop testing once a vulnerability is confirmed.</li><li>Allow reasonable time for remediation before public disclosure.</li></ul><p><strong>Please do not:</strong></p><ul class=\"doc-list\"><li>Conduct denial-of-service attacks.</li><li>Use social engineering, phishing, spam, or physical attacks.</li><li>Perform unauthorised data access or exfiltration.</li><li>Run intrusive automated scanning of production without prior written approval.</li><li>Attempt lateral movement, persistence, or public disclosure before we have had time to address the issue.</li></ul><p><strong>AMVARA will:</strong></p><ul class=\"doc-list\"><li>Acknowledge valid reports.</li><li>Investigate and communicate when appropriate.</li><li>Remediate based on severity and risk.</li><li>Not pursue legal action against researchers who follow this policy in good faith.</li></ul><p>Security contact: hello.yoel@amvara.de. Machine-readable policy: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
+        "bodyHtml": "<p>We welcome good-faith reports of security vulnerabilities affecting <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong>, and related AMVARA-operated KM0 mail infrastructure.</p><p><strong>Please do:</strong></p><ul class=\"doc-list\"><li>Report vulnerabilities promptly to hello@km0digital.com.</li><li>Provide clear reproduction steps and impact assessment.</li><li>Avoid accessing, modifying, deleting, or exfiltrating data that is not yours.</li><li>Stop testing once a vulnerability is confirmed.</li><li>Allow reasonable time for remediation before public disclosure.</li></ul><p><strong>Please do not:</strong></p><ul class=\"doc-list\"><li>Conduct denial-of-service attacks.</li><li>Use social engineering, phishing, spam, or physical attacks.</li><li>Perform unauthorised data access or exfiltration.</li><li>Run intrusive automated scanning of production without prior written approval.</li><li>Attempt lateral movement, persistence, or public disclosure before we have had time to address the issue.</li></ul><p><strong>AMVARA will:</strong></p><ul class=\"doc-list\"><li>Acknowledge valid reports.</li><li>Investigate and communicate when appropriate.</li><li>Remediate based on severity and risk.</li><li>Not pursue legal action against researchers who follow this policy in good faith.</li></ul><p>Security contact: hello@km0digital.com. Machine-readable policy: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
       }
     ]
   },

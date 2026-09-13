@@ -32,3 +32,5 @@ Probe einmal: kannst du die Fotos ohne dieses Telefon öffnen? Wenn ja, bist du 
 ## 5. Behalte die Gewohnheit
 
 Jeden Monat (oder nach einer Reise) neue Fotos hochladen. Kurze Uploads scheitern seltener als eine riesige Migration, wenn das Handy schon voll oder kaputt ist.
+
+Konkrete KM0-Cloud-Schritte (Auto Upload, Originale versus Konvertierung, Wiederherstellung bei Geräteausfall und das 150-GB-Limit): siehe das <a href="/de/tutorials/photo-backup/">Fotobackup-Tutorial</a>.

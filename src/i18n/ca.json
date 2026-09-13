@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Kilòmetre 0 Digital - les teves dades, el teu control",
-    "description": "KM0 Cloud i KM0 Email allotjats a la UE. 500 GB des d'1,99 €/mes. No venem el teu perfil.",
-    "ogImageAlt": "Kilòmetre 0 Digital: KM0 Cloud i KM0 Email a la UE, 500 GB des d'1,99 €/mes"
+    "description": "KM0 Cloud i KM0 Email allotjats a la UE. 150 GB des d'1,99 €/mes. No venem el teu perfil.",
+    "ogImageAlt": "Kilòmetre 0 Digital: KM0 Cloud i KM0 Email a la UE, 150 GB des d'1,99 €/mes"
   },
   "brandName": "Kilòmetre 0 Digital",
   "brandNameShort": "KM0 Digital",
@@ -33,14 +33,14 @@
   "hero": {
     "titleLine1": "Núvol privat ",
     "titleGradient": "i correu.",
-    "tagline": "Allotjats a la UE. 500 GB des d'1,99 €/mes. Preu públic, suport humà. No venem el teu perfil.",
+    "tagline": "Surt de Microsoft 365 sense perdre correu ni fitxers. 150 GB autoservei des d'1,99 €/mes · 1 TB+ / multi-TB sota petició · mateixos servidors UE · mateix suport.",
     "ctaPrimary": "Obrir KM0 Cloud",
     "ctaSecondary": "Veure preus",
     "logoAlt": "Logo Kilòmetre 0 Digital",
     "proof": {
       "status": "UE · actiu",
-      "planName": "Pla 500 GB",
-      "planCapacity": "500",
+      "planName": "Pla 150 GB",
+      "planCapacity": "150",
       "planUnit": "GB",
       "planLabel": "Pla",
       "planMeta": "Hetzner · UE",
@@ -105,7 +105,7 @@
         "meta": "Persona · família",
         "title": "Fotos a casa, sense Gmail obligatori",
         "body": "Cada persona sincronitza fotos des del mòbil. Carpetes compartides i enllaços segurs amb família o amics. Correu @km0digital.com, opcional.",
-        "fact": "Cloud · iPhone i Android · 500 GB des d'1,99 €/mes",
+        "fact": "Cloud · iPhone i Android · 150 GB des d'1,99 €/mes",
         "ctaLabel": "Obrir KM0 Cloud",
         "cta": "cloud",
         "secondaryCtaLabel": "Veure preus",
@@ -151,9 +151,9 @@
         "id": "cloud",
         "title": "KM0 Cloud",
         "priceFrom": "Des d'1,99 €/mes",
-        "priceAriaLabel": "Des d'1,99 euros al mes per 500 GB",
+        "priceAriaLabel": "Des d'1,99 euros al mes per 150 GB",
         "subtitle": "Fitxers, sincronització i col·laboració",
-        "desc": "500 GB a la UE (Hetzner). Comparteix, sincronitza i edita en temps real.",
+        "desc": "150 GB a la UE (Hetzner). Comparteix, sincronitza i edita en temps real.",
         "secondaryCta": "Obrir Cloud",
         "url": "https://cloud.km0digital.com"
       },
@@ -243,6 +243,11 @@
         "answerHtml": "Obre <strong>KM0 Cloud</strong>, mira els <a href=\"/ca/pricing/\">preus</a>, escriu o uneix-te al <a href=\"#contact\">WhatsApp</a>. Les <a href=\"#community\">trobades</a> són opcionals."
       },
       {
+        "id": "support-languages",
+        "question": "En quins idiomes respon el suport?",
+        "answerHtml": "En castellà, català, anglès i alemany. Persones reals, sense call center anònim."
+      },
+      {
         "id": "hosting",
         "question": "On són les dades?",
         "answerHtml": "A Falkenstein, Alemanya, en servidors de <a href=\"https://www.hetzner.com\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner</a>. Dins de la UE."
@@ -256,13 +261,33 @@
         "id": "data-privacy",
         "question": "Veniu o perfilleu les meves dades?",
         "answerHtml": "No. No venem dades ni perfillem per a publicitat. Només tractem el necessari per operar el servei. Vegeu <a href=\"/ca/legal/\">privacitat</a>."
+      },
+      {
+        "id": "storage-150gb",
+        "question": "N'hi ha prou amb 150 GB per a tota una vida de fotos?",
+        "answerHtml": "Sovint no. El pla públic d'autoservei és <strong>150 GB per 1,99 €/mes</strong>. Biblioteques grans del mòbil poden superar-ho. Mira la mida abans d'un bolcat complet; demana més capacitat si cal. Detall a <a href=\"/ca/tutorials/photo-backup/\">còpia de fotos</a> i <a href=\"/ca/pricing/\">preus</a>."
+      },
+      {
+        "id": "desktop-sync",
+        "question": "Com funciona el sync d'escriptori (selectiu, desincronitzar)?",
+        "answerHtml": "Instal·la el client OpenCloud Desktop i apunta a <code>https://cloud.km0digital.com/</code>. A macOS/Linux fes servir <strong>Choose What to Sync</strong>. A Windows hi ha marcadors en línia i <strong>Free up space</strong>. <strong>No</strong> hi ha Known Folder Move a l'estil OneDrive. Guia: <a href=\"/ca/tutorials/desktop-sync/\">sincronització d'escriptori</a>."
+      },
+      {
+        "id": "photo-backup",
+        "question": "Com és la còpia de fotos del mòbil i com restauro si es trenca?",
+        "answerHtml": "Les apps OpenCloud d'Android i iOS poden pujar automàticament fotos/vídeos nous a una carpeta que triïs. A iOS, deixa apagada la conversió HEIC/MP4 per conservar originals. Si el telèfon falla, inicia sessió en un altre dispositiu i descarrega. Guia: <a href=\"/ca/tutorials/photo-backup/\">còpia de fotos</a>."
+      },
+      {
+        "id": "unlink-local-files",
+        "question": "Esborreu els meus fitxers locals en desvincular el client?",
+        "answerHtml": "<strong>No.</strong> <strong>Remove Sync Folder Connection</strong> d'OpenCloud atura el sync i no esborra els fitxers locals; al servidor continuen. Si esborres tu amb el sync actiu, sí que pot esborrar-se també al servidor. Política: <a href=\"/ca/tutorials/desktop-sync/\">sincronització d'escriptori</a>."
       }
     ]
   },
   "contact": {
     "heading": "Contacte",
-    "body": "Escriu un correu o uneix-te al WhatsApp. Responen persones, no un bot.",
-    "email": "hello.yoel@amvara.de",
+    "body": "Escriu o uneix-te al WhatsApp. Responem en castellà, català, anglès i alemany.",
+    "email": "hello@km0digital.com",
     "whatsappLabel": "Grup de WhatsApp",
     "whatsappHint": "Escaneja o prem per unir-te",
     "whatsappQrAlt": "Codi QR del grup de WhatsApp de KM0",
@@ -273,7 +298,7 @@
     "missionLabel": "Missió",
     "missionBody": "Objectiu: connectar 10.000.000 de persones el 2030.",
     "visionLabel": "Visió",
-    "visionBody": "Infraestructura local i honesta, amb suport personalitzat: una alternativa a les plataformes tancades que viuen de les teves dades."
+    "visionBody": "Infraestructura local i honesta, amb suport humà: Cloud i Email a la UE com a alternativa al cadenat de les grans plataformes."
   },
   "ideas": {
     "panelTitle": "Enviar una idea",
@@ -356,31 +381,32 @@
   },
   "pricing": {
     "metaTitle": "Preus - Kilòmetre 0 Digital",
-    "metaDescription": "500 GB per 1,99 €/mes. Camins públics per a Cloud, Email i propostes a mida.",
+    "metaDescription": "150 GB autoservei per 1,99 €/mes. 1 TB+ / multi-TB sota petició. Mateixos servidors UE, mateix suport.",
     "eyebrow": "Preus",
     "heading": "Un preu públic.",
     "heroPrice": {
       "amount": "1,99 €",
       "period": "/mes",
-      "capacity": "500",
+      "capacity": "150",
       "unit": "GB",
       "hostMeta": "Hetzner · UE",
-      "ariaLabel": "Preu: 1,99 euros al mes per 500 GB d'emmagatzematge"
+      "ariaLabel": "Preu: 1,99 euros al mes per 150 GB d'emmagatzematge"
     },
-    "intro": "Emmagatzematge a la UE, sense lletra petita. Obre Cloud, suma Email o demana un camí a mida.",
+    "intro": "150 GB autoservei · 1 TB+ / multi-TB sota petició · mateixos servidors UE · mateix suport. Obre Cloud, o escriu per a més capacitat.",
     "heroCta": "Obrir KM0 Cloud",
+    "heroSecondaryCta": "Demanar capacitat",
     "pathsHeading": "Tria un camí",
-    "pathsIntro": "La mateixa infraestructura, tres entrades. Cloud lidera; Email acompanya; a mida és per a equips que necessiten més.",
+    "pathsIntro": "La mateixa infraestructura, tres entrades. Cloud és 150 GB autoservei; Email acompanya; a mida és 1 TB+ amb pressupost humà.",
     "paths": [
       {
         "id": "cloud",
         "meta": "Autoservei",
         "title": "KM0 Cloud",
         "price": "1,99 €",
-        "priceNote": "/mes · 500 GB",
+        "priceNote": "/mes · 150 GB",
         "body": "Fitxers, sync i compartir a la UE (Hetzner). Comença sense trucada comercial.",
         "features": [
-          "500 GB a la UE",
+          "150 GB a la UE",
           "Sense teatre de targeta per mirar",
           "Preu públic, sense venda de perfils"
         ],
@@ -405,17 +431,17 @@
       },
       {
         "id": "custom",
-        "meta": "Organització",
-        "title": "Camí a mida",
+        "meta": "Sota petició",
+        "title": "Més capacitat",
         "price": "Sota petició",
-        "priceNote": "capacitat · condicions · suport",
-        "body": "Més emmagatzematge, suport nominat o condicions concretes per a un equip o comunitat.",
+        "priceNote": "1 TB+ · multi-TB",
+        "body": "Bolcats de fotos i arxius es pressuposten. Mateixos servidors UE, mateix suport, condicions per escrit.",
         "features": [
-          "Capacitat per damunt del pla públic",
-          "Suport humà en la teva llengua",
-          "Condicions per escrit, no enterrades"
+          "1 TB+ / multi-TB sota petició",
+          "Mateixos servidors UE i suport que el pla públic",
+          "Pressupost per escrit: €/TB, còpies, sortida"
         ],
-        "ctaLabel": "Demanar proposta",
+        "ctaLabel": "Demanar capacitat",
         "cta": "contact"
       }
     ],
@@ -433,8 +459,8 @@
       {
         "provider": "KM0 Digital",
         "monthlyPrice": "1,99 €",
-        "storageGb": "500 GB",
-        "costPerTbMonth": "≈3,98 €",
+        "storageGb": "150 GB",
+        "costPerTbMonth": "≈13,27 €",
         "highlight": true
       },
       {
@@ -485,7 +511,7 @@
         },
         {
           "title": "Suport proper",
-          "desc": "Castellà i català, amb persones reals."
+          "desc": "Castellà, català, anglès i alemany, amb persones reals."
         },
         {
           "title": "ISO i privacitat",
@@ -494,9 +520,9 @@
       ]
     },
     "custom": {
-      "heading": "Necessites un altre camí?",
-      "body": "Obre Cloud ara, o escriu per a capacitat, suport o condicions concretes.",
-      "cta": "Demanar proposta"
+      "heading": "Necessites més de 150 GB?",
+      "body": "L'autoservei es queda en 150 GB. 1 TB+ i multi-TB es pressuposten: mateixos servidors UE (Hetzner / Falkenstein), mateix suport. Al pressupost: preu per TB, retenció de còpies i condicions de sortida.",
+      "cta": "Demanar capacitat"
     }
   },
   "presentation": {
@@ -611,7 +637,7 @@
       "lead": "Obre Cloud o escriu-nos.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",
-      "email": "hello.yoel@amvara.de"
+      "email": "hello@km0digital.com"
     }
   },
   "footer": {
@@ -627,7 +653,8 @@
     "exploreTitle": "Explora",
     "aboutTitle": "Coneix-nos",
     "legalTitle": "Legal i suport",
-    "servicesTitle": "Serveis KM0"
+    "servicesTitle": "Serveis KM0",
+    "visitorsSoFar": "Visitants fins ara"
   },
   "legal": {
     "metaTitle": "Avís legal i privadesa - Quilòmetre 0 Digital",
@@ -682,12 +709,12 @@
       {
         "id": "iso27001",
         "title": "ISO/IEC 27001:2022",
-        "bodyHtml": "<p>AMVARA CONSULTING S.L. està certificada segons <strong>ISO/IEC 27001:2022</strong> per TÜV NORD CERT. Quilòmetre 0 Digital, <code>cloud.km0digital.com</code> i <code>mail.km0digital.com</code> estan inclosos en l'abast del certificat d'AMVARA com a part de la seva plataforma i serveis associats (cloud i correu).</p><p>KM0 Digital no té certificació ISO 27001 a nom propi. Dissenyem, despleguem i mantenim KM0 sota el sistema de gestió de seguretat de la informació certificat d'AMVARA i seguim aquests controls en les nostres operacions.</p><p>Si necessiteu el certificat, la declaració d'aplicabilitat o un qüestionari de seguretat, contacteu amb hello.yoel@amvara.de.</p>"
+        "bodyHtml": "<p>AMVARA CONSULTING S.L. està certificada segons <strong>ISO/IEC 27001:2022</strong> per TÜV NORD CERT. Quilòmetre 0 Digital, <code>cloud.km0digital.com</code> i <code>mail.km0digital.com</code> estan inclosos en l'abast del certificat d'AMVARA com a part de la seva plataforma i serveis associats (cloud i correu).</p><p>KM0 Digital no té certificació ISO 27001 a nom propi. Dissenyem, despleguem i mantenim KM0 sota el sistema de gestió de seguretat de la informació certificat d'AMVARA i seguim aquests controls en les nostres operacions.</p><p>Si necessiteu el certificat, la declaració d'aplicabilitat o un qüestionari de seguretat, contacteu amb hello@km0digital.com.</p>"
       },
       {
         "id": "disclosure",
         "title": "Divulgació responsable de vulnerabilitats",
-        "bodyHtml": "<p>Agraïm informes de bona fe sobre vulnerabilitats que afectin <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong> i infraestructura de correu KM0 operada per AMVARA.</p><p><strong>Si us plau:</strong></p><ul class=\"doc-list\"><li>Informeu vulnerabilitats amb promptitud a hello.yoel@amvara.de.</li><li>Proporcioneu passos de reproducció i avaluació d'impacte.</li><li>Eviteu accedir, modificar, eliminar o exfiltrar dades que no siguin vostres.</li><li>Atureu les proves un cop confirmada la vulnerabilitat.</li><li>Permeteu un termini raonable per a la correcció abans de divulgació pública.</li></ul><p><strong>Eviteu:</strong></p><ul class=\"doc-list\"><li>Atacs de denegació de servei.</li><li>Enginyeria social, phishing, spam o atacs físics.</li><li>Accés o exfiltració de dades no autoritzats.</li><li>Escaneig automatitzat intrusiu en producció sense aprovació prèvia per escrit.</li><li>Moviment lateral, persistència o divulgació pública abans que puguem abordar el problema.</li></ul><p><strong>AMVARA:</strong></p><ul class=\"doc-list\"><li>Acusarà rebut d'informes vàlids.</li><li>Investigarà i comunicarà quan escaigui.</li><li>Corregirà segons gravetat i risc.</li><li>No emprendrà accions legals contra investigadors que segueixin aquesta política de bona fe.</li></ul><p>Contacte de seguretat: hello.yoel@amvara.de. Política llegible per màquina: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
+        "bodyHtml": "<p>Agraïm informes de bona fe sobre vulnerabilitats que afectin <strong>km0digital.com</strong>, <strong>cloud.km0digital.com</strong>, <strong>mail.km0digital.com</strong> i infraestructura de correu KM0 operada per AMVARA.</p><p><strong>Si us plau:</strong></p><ul class=\"doc-list\"><li>Informeu vulnerabilitats amb promptitud a hello@km0digital.com.</li><li>Proporcioneu passos de reproducció i avaluació d'impacte.</li><li>Eviteu accedir, modificar, eliminar o exfiltrar dades que no siguin vostres.</li><li>Atureu les proves un cop confirmada la vulnerabilitat.</li><li>Permeteu un termini raonable per a la correcció abans de divulgació pública.</li></ul><p><strong>Eviteu:</strong></p><ul class=\"doc-list\"><li>Atacs de denegació de servei.</li><li>Enginyeria social, phishing, spam o atacs físics.</li><li>Accés o exfiltració de dades no autoritzats.</li><li>Escaneig automatitzat intrusiu en producció sense aprovació prèvia per escrit.</li><li>Moviment lateral, persistència o divulgació pública abans que puguem abordar el problema.</li></ul><p><strong>AMVARA:</strong></p><ul class=\"doc-list\"><li>Acusarà rebut d'informes vàlids.</li><li>Investigarà i comunicarà quan escaigui.</li><li>Corregirà segons gravetat i risc.</li><li>No emprendrà accions legals contra investigadors que segueixin aquesta política de bona fe.</li></ul><p>Contacte de seguretat: hello@km0digital.com. Política llegible per màquina: <a href=\"/.well-known/security.txt\">/.well-known/security.txt</a>.</p>"
       }
     ]
   },

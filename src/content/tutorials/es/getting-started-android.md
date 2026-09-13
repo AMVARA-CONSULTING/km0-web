@@ -53,4 +53,5 @@ platform: android
     <li>No omitas <code>https://</code> ni uses caracteres incorrectos.</li>
   </ul>
   <p class="doc-block-intro">Si el problema continúa, contacta con el soporte de KM0 a través de los canales oficiales.</p>
+  <p class="doc-block-intro">Siguiente: <a href="/tutorials/photo-backup/">copia de fotos en Android e iOS</a> y <a href="/tutorials/desktop-sync/">sincronización de escritorio</a>.</p>
 </section>

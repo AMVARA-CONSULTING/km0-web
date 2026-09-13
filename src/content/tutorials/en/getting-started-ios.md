@@ -54,4 +54,5 @@ platform: ios
     <li>Do not omit <code>https://</code> or use incorrect characters.</li>
   </ul>
   <p class="doc-block-intro">If the problem persists, contact KM0 support through the official channels.</p>
+  <p class="doc-block-intro">Next: <a href="/en/tutorials/photo-backup/">photo backup on Android and iOS</a> (originals, restore if the phone dies) and <a href="/en/tutorials/desktop-sync/">desktop sync</a>.</p>
 </section>

@@ -32,3 +32,5 @@ Prueba una vez: ¿puedes abrir las fotos sin ese teléfono? Si la respuesta es s
 ## 5. Mantén la costumbre
 
 Cada mes (o tras un viaje), sube las fotos nuevas. Pocas subidas cortas fallan menos que una migración enorme cuando el móvil ya está lleno o roto.
+
+Pasos concretos en KM0 Cloud (Auto Upload, originales frente a conversión, restaurar si el teléfono muere y el límite de 150 GB): ver el <a href="/tutorials/photo-backup/">tutorial de copia de fotos</a>.

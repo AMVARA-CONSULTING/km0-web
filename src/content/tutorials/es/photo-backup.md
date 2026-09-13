@@ -8,7 +8,7 @@ platform: mobile
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
-  <p class="doc-lead">Las apps OpenCloud para <strong>Android</strong> e <strong>iOS</strong> pueden subir fotos y vídeos nuevos a tu cuenta KM0 Cloud. Los archivos viven en servidores de la UE en <code>cloud.km0digital.com</code>. El plan de autoservicio es de <strong>150 GB</strong>: dilo de entrada si el objetivo es una biblioteca de toda la vida.</p>
+  <p class="doc-lead">Las apps OpenCloud para <strong>Android</strong> e <strong>iOS</strong> pueden subir fotos y vídeos nuevos a tu cuenta KM0 Cloud. Los archivos viven en servidores de la UE en <code>cloud.km0digital.com</code>. El plan público es de <strong>150 GB</strong>: dilo de entrada si el objetivo es una biblioteca de toda la vida.</p>
 </section>
 
 <section class="doc-block">

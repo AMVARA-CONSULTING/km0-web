@@ -8,7 +8,7 @@ platform: mobile
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
-  <p class="doc-lead">Les apps OpenCloud per a <strong>Android</strong> i <strong>iOS</strong> poden pujar fotos i vídeos nous al teu compte KM0 Cloud. Els fitxers viuen en servidors de la UE a <code>cloud.km0digital.com</code>. El pla d'autoservei és de <strong>150 GB</strong>: digues-ho d'entrada si l'objectiu és una biblioteca de tota la vida.</p>
+  <p class="doc-lead">Les apps OpenCloud per a <strong>Android</strong> i <strong>iOS</strong> poden pujar fotos i vídeos nous al teu compte KM0 Cloud. Els fitxers viuen en servidors de la UE a <code>cloud.km0digital.com</code>. El pla públic és de <strong>150 GB</strong>: digues-ho d'entrada si l'objectiu és una biblioteca de tota la vida.</p>
 </section>
 
 <section class="doc-block">

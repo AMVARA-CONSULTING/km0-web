@@ -33,7 +33,7 @@
   "hero": {
     "titleLine1": "Private cloud ",
     "titleGradient": "and email.",
-    "tagline": "Leave Microsoft 365 without losing mail and files. 150 GB self-serve from €1.99/month · 1 TB+ / multi-TB on request · same EU servers · same support.",
+    "tagline": "Leave Microsoft 365 without losing mail and files. Public plan: 150 GB from €1.99/month. Need more (1 TB+)? Ask us. Same EU servers, same support.",
     "ctaPrimary": "Open KM0 Cloud",
     "ctaSecondary": "Pricing",
     "logoAlt": "Kilometer 0 Digital logo",
@@ -245,7 +245,7 @@
       {
         "id": "support-languages",
         "question": "Which languages does support reply in?",
-        "answerHtml": "Spanish, Catalan, English, and German. Real people, no anonymous call center."
+        "answerHtml": "We reply ourselves, in Spanish, Catalan, English, and German."
       },
       {
         "id": "hosting",
@@ -265,7 +265,7 @@
       {
         "id": "storage-150gb",
         "question": "Is 150 GB enough for a lifetime of photos?",
-        "answerHtml": "Often not. The public self-serve plan is <strong>150 GB for €1.99/month</strong>. Large phone libraries can exceed that. Check size before a full dump; ask us for more capacity. Details in <a href=\"/en/tutorials/photo-backup/\">photo backup</a> and <a href=\"/en/pricing/\">pricing</a>."
+        "answerHtml": "Often not. The public plan is <strong>150 GB for €1.99/month</strong>. Large phone libraries can outgrow it. Check size before a full dump; ask us for more capacity. Details in <a href=\"/en/tutorials/photo-backup/\">photo backup</a> and <a href=\"/en/pricing/\">pricing</a>."
       },
       {
         "id": "desktop-sync",
@@ -298,7 +298,7 @@
     "missionLabel": "Mission",
     "missionBody": "Goal: connect 10,000,000 people by 2030.",
     "visionLabel": "Vision",
-    "visionBody": "Honest, local infrastructure with human support: EU Cloud and Email as an alternative to Big Tech lock-in."
+    "visionBody": "EU Cloud and Email with a public price and human support: an alternative to big platforms that lock you in."
   },
   "ideas": {
     "panelTitle": "Send an idea",
@@ -381,7 +381,7 @@
   },
   "pricing": {
     "metaTitle": "Pricing - Kilometer 0 Digital",
-    "metaDescription": "150 GB self-serve for €1.99/month. 1 TB+ / multi-TB on request. Same EU servers, same support.",
+    "metaDescription": "Public 150 GB plan for €1.99/month. 1 TB+ on request. Same EU servers, same support.",
     "eyebrow": "Pricing",
     "heading": "One public price.",
     "heroPrice": {
@@ -392,22 +392,22 @@
       "hostMeta": "Hetzner · EU",
       "ariaLabel": "Price: €1.99 per month for 150 GB of storage"
     },
-    "intro": "150 GB self-serve · 1 TB+ / multi-TB on request · same EU servers · same support. Open Cloud, or write for larger capacity.",
+    "intro": "Public 150 GB plan · 1 TB+ on request · same EU servers and same support. Open Cloud, or write if you need more space.",
     "heroCta": "Open KM0 Cloud",
     "heroSecondaryCta": "Request capacity",
     "pathsHeading": "Choose a path",
-    "pathsIntro": "Same stack, three ways in. Cloud is 150 GB self-serve; Email rides with it; custom is 1 TB+ quoted to a person.",
+    "pathsIntro": "Same stack, three ways in. Cloud is the public 150 GB plan; Email rides with it; custom is 1 TB+ quoted by a person.",
     "paths": [
       {
         "id": "cloud",
-        "meta": "Self-serve",
+        "meta": "Public plan",
         "title": "KM0 Cloud",
         "price": "€1.99",
         "priceNote": "/month · 150 GB",
         "body": "Files, sync, and share in the EU (Hetzner). Start without a sales call.",
         "features": [
           "150 GB EU storage",
-          "No credit card theatre to browse",
+          "No card required just to take a look",
           "Public price, no profile sales"
         ],
         "ctaLabel": "Open KM0 Cloud",
@@ -521,7 +521,7 @@
     },
     "custom": {
       "heading": "Need more than 150 GB?",
-      "body": "Self-serve stays at 150 GB. 1 TB+ and multi-TB are quoted: same EU servers (Hetzner / Falkenstein), same support. Quotes list price per TB, backup/retention, and exit terms.",
+      "body": "The public plan stays at 150 GB. 1 TB+ and multi-TB are quoted: same EU servers (Hetzner / Falkenstein), same support. Quotes list price per TB, backup/retention, and exit terms.",
       "cta": "Request capacity"
     }
   },

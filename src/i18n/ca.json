@@ -33,7 +33,7 @@
   "hero": {
     "titleLine1": "Núvol privat ",
     "titleGradient": "i correu.",
-    "tagline": "Surt de Microsoft 365 sense perdre correu ni fitxers. 150 GB autoservei des d'1,99 €/mes · 1 TB+ / multi-TB sota petició · mateixos servidors UE · mateix suport.",
+    "tagline": "Surt de Microsoft 365 sense perdre correu ni fitxers. Pla públic: 150 GB des d'1,99 €/mes. Més capacitat (1 TB+) sota petició, mateixos servidors UE i mateix suport.",
     "ctaPrimary": "Obrir KM0 Cloud",
     "ctaSecondary": "Veure preus",
     "logoAlt": "Logo Kilòmetre 0 Digital",
@@ -245,7 +245,7 @@
       {
         "id": "support-languages",
         "question": "En quins idiomes respon el suport?",
-        "answerHtml": "En castellà, català, anglès i alemany. Persones reals, sense call center anònim."
+        "answerHtml": "Responem nosaltres, en castellà, català, anglès i alemany."
       },
       {
         "id": "hosting",
@@ -265,11 +265,11 @@
       {
         "id": "storage-150gb",
         "question": "N'hi ha prou amb 150 GB per a tota una vida de fotos?",
-        "answerHtml": "Sovint no. El pla públic d'autoservei és <strong>150 GB per 1,99 €/mes</strong>. Biblioteques grans del mòbil poden superar-ho. Mira la mida abans d'un bolcat complet; demana més capacitat si cal. Detall a <a href=\"/ca/tutorials/photo-backup/\">còpia de fotos</a> i <a href=\"/ca/pricing/\">preus</a>."
+        "answerHtml": "Sovint no. El pla públic és <strong>150 GB per 1,99 €/mes</strong>. Biblioteques grans del mòbil et poden quedar curtes. Mira la mida abans d'un bolcat complet; demana més capacitat si cal. Detall a <a href=\"/ca/tutorials/photo-backup/\">còpia de fotos</a> i <a href=\"/ca/pricing/\">preus</a>."
       },
       {
         "id": "desktop-sync",
-        "question": "Com funciona el sync d'escriptori (selectiu, desincronitzar)?",
+        "question": "Com funciona la sincronització d'escriptori (selectiva, desincronitzar)?",
         "answerHtml": "Instal·la el client OpenCloud Desktop i apunta a <code>https://cloud.km0digital.com/</code>. A macOS/Linux fes servir <strong>Choose What to Sync</strong>. A Windows hi ha marcadors en línia i <strong>Free up space</strong>. <strong>No</strong> hi ha Known Folder Move a l'estil OneDrive. Guia: <a href=\"/ca/tutorials/desktop-sync/\">sincronització d'escriptori</a>."
       },
       {
@@ -280,7 +280,7 @@
       {
         "id": "unlink-local-files",
         "question": "Esborreu els meus fitxers locals en desvincular el client?",
-        "answerHtml": "<strong>No.</strong> <strong>Remove Sync Folder Connection</strong> d'OpenCloud atura el sync i no esborra els fitxers locals; al servidor continuen. Si esborres tu amb el sync actiu, sí que pot esborrar-se també al servidor. Política: <a href=\"/ca/tutorials/desktop-sync/\">sincronització d'escriptori</a>."
+        "answerHtml": "<strong>No.</strong> Amb <strong>Remove Sync Folder Connection</strong> d'OpenCloud atures la sincronització i no s'esborren els fitxers locals; al servidor continuen. Si esborres tu amb la sincronització activa, sí que poden esborrar-se també al servidor. Política: <a href=\"/ca/tutorials/desktop-sync/\">sincronització d'escriptori</a>."
       }
     ]
   },
@@ -298,7 +298,7 @@
     "missionLabel": "Missió",
     "missionBody": "Objectiu: connectar 10.000.000 de persones el 2030.",
     "visionLabel": "Visió",
-    "visionBody": "Infraestructura local i honesta, amb suport humà: Cloud i Email a la UE com a alternativa al cadenat de les grans plataformes."
+    "visionBody": "Cloud i Email a la UE, amb preu públic i suport humà: una alternativa a les plataformes grans que t'hi tanquen."
   },
   "ideas": {
     "panelTitle": "Enviar una idea",
@@ -381,7 +381,7 @@
   },
   "pricing": {
     "metaTitle": "Preus - Kilòmetre 0 Digital",
-    "metaDescription": "150 GB autoservei per 1,99 €/mes. 1 TB+ / multi-TB sota petició. Mateixos servidors UE, mateix suport.",
+    "metaDescription": "150 GB de pla públic per 1,99 €/mes. 1 TB+ sota petició. Mateixos servidors UE, mateix suport.",
     "eyebrow": "Preus",
     "heading": "Un preu públic.",
     "heroPrice": {
@@ -392,22 +392,22 @@
       "hostMeta": "Hetzner · UE",
       "ariaLabel": "Preu: 1,99 euros al mes per 150 GB d'emmagatzematge"
     },
-    "intro": "150 GB autoservei · 1 TB+ / multi-TB sota petició · mateixos servidors UE · mateix suport. Obre Cloud, o escriu per a més capacitat.",
+    "intro": "150 GB de pla públic · 1 TB+ sota petició · mateixos servidors UE i mateix suport. Obre Cloud, o escriu si necessites més espai.",
     "heroCta": "Obrir KM0 Cloud",
     "heroSecondaryCta": "Demanar capacitat",
     "pathsHeading": "Tria un camí",
-    "pathsIntro": "La mateixa infraestructura, tres entrades. Cloud és 150 GB autoservei; Email acompanya; a mida és 1 TB+ amb pressupost humà.",
+    "pathsIntro": "La mateixa infraestructura, tres entrades. Cloud és el pla públic de 150 GB; Email acompanya; a mida és 1 TB+ amb un pressupost fet per una persona.",
     "paths": [
       {
         "id": "cloud",
-        "meta": "Autoservei",
+        "meta": "Pla públic",
         "title": "KM0 Cloud",
         "price": "1,99 €",
         "priceNote": "/mes · 150 GB",
-        "body": "Fitxers, sync i compartir a la UE (Hetzner). Comença sense trucada comercial.",
+        "body": "Fitxers, sincronització i compartir a la UE (Hetzner). Comença sense trucada comercial.",
         "features": [
           "150 GB a la UE",
-          "Sense teatre de targeta per mirar",
+          "Sense demanar targeta només per fer un cop d'ull",
           "Preu públic, sense venda de perfils"
         ],
         "ctaLabel": "Obrir KM0 Cloud",
@@ -521,7 +521,7 @@
     },
     "custom": {
       "heading": "Necessites més de 150 GB?",
-      "body": "L'autoservei es queda en 150 GB. 1 TB+ i multi-TB es pressuposten: mateixos servidors UE (Hetzner / Falkenstein), mateix suport. Al pressupost: preu per TB, retenció de còpies i condicions de sortida.",
+      "body": "El pla públic es queda en 150 GB. 1 TB+ i multi-TB es pressuposten: mateixos servidors UE (Hetzner / Falkenstein), mateix suport. Al pressupost: preu per TB, retenció de còpies i condicions de sortida.",
       "cta": "Demanar capacitat"
     }
   },

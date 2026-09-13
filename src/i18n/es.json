@@ -33,7 +33,7 @@
   "hero": {
     "titleLine1": "Nube privada ",
     "titleGradient": "y correo.",
-    "tagline": "Sal de Microsoft 365 sin perder correo ni archivos. 150 GB autoservicio desde 1,99 €/mes · 1 TB+ / multi-TB bajo petición · mismos servidores UE · mismo soporte.",
+    "tagline": "Sal de Microsoft 365 sin perder correo ni archivos. Plan público: 150 GB desde 1,99 €/mes. Más capacidad (1 TB+) bajo petición, mismos servidores UE y mismo soporte.",
     "ctaPrimary": "Abrir KM0 Cloud",
     "ctaSecondary": "Ver precios",
     "logoAlt": "Logo Kilómetro 0 Digital",
@@ -245,7 +245,7 @@
       {
         "id": "support-languages",
         "question": "¿En qué idiomas responde el soporte?",
-        "answerHtml": "En castellano, catalán, inglés y alemán. Personas reales, sin call center anónimo."
+        "answerHtml": "Respondemos nosotros, en castellano, catalán, inglés y alemán."
       },
       {
         "id": "hosting",
@@ -265,11 +265,11 @@
       {
         "id": "storage-150gb",
         "question": "¿Bastan 150 GB para toda una vida de fotos?",
-        "answerHtml": "A menudo no. El plan público de autoservicio es <strong>150 GB por 1,99 €/mes</strong>. Bibliotecas grandes del móvil pueden pasarse. Mira el tamaño antes de un volcado completo; pide más capacidad si hace falta. Detalle en <a href=\"/tutorials/photo-backup/\">copia de fotos</a> y <a href=\"/pricing/\">precios</a>."
+        "answerHtml": "A menudo no. El plan público es <strong>150 GB por 1,99 €/mes</strong>. Bibliotecas grandes del móvil se te pueden quedar cortas. Mira el tamaño antes de un volcado completo; pide más capacidad si hace falta. Detalle en <a href=\"/tutorials/photo-backup/\">copia de fotos</a> y <a href=\"/pricing/\">precios</a>."
       },
       {
         "id": "desktop-sync",
-        "question": "¿Cómo funciona el sync de escritorio (selectivo, desincronizar)?",
+        "question": "¿Cómo funciona la sincronización de escritorio (selectiva, desincronizar)?",
         "answerHtml": "Instala el cliente OpenCloud Desktop y apunta a <code>https://cloud.km0digital.com/</code>. En macOS/Linux usa <strong>Choose What to Sync</strong>. En Windows hay marcadores en línea y <strong>Free up space</strong>. <strong>No</strong> hay Known Folder Move al estilo OneDrive. Guía: <a href=\"/tutorials/desktop-sync/\">sincronización de escritorio</a>."
       },
       {
@@ -280,7 +280,7 @@
       {
         "id": "unlink-local-files",
         "question": "¿Borráis mis archivos locales al desvincular el cliente?",
-        "answerHtml": "<strong>No.</strong> <strong>Remove Sync Folder Connection</strong> de OpenCloud para el sync y no borra los archivos locales; en el servidor siguen. Si borras tú con el sync activo, sí puede borrarse también en el servidor. Política: <a href=\"/tutorials/desktop-sync/\">sincronización de escritorio</a>."
+        "answerHtml": "<strong>No.</strong> Con <strong>Remove Sync Folder Connection</strong> de OpenCloud paras la sincronización y no se borran los archivos locales; en el servidor siguen. Si borras tú con la sincronización activa, sí pueden borrarse también en el servidor. Política: <a href=\"/tutorials/desktop-sync/\">sincronización de escritorio</a>."
       }
     ]
   },
@@ -298,7 +298,7 @@
     "missionLabel": "Misión",
     "missionBody": "Objetivo: conectar a 10.000.000 de personas en 2030.",
     "visionLabel": "Visión",
-    "visionBody": "Infraestructura local y honesta, con soporte humano: Cloud y Email en la UE como alternativa al candado de las grandes plataformas."
+    "visionBody": "Cloud y Email en la UE, con precio público y soporte humano: una alternativa a las plataformas grandes que te encierran."
   },
   "ideas": {
     "panelTitle": "Enviar una idea",
@@ -381,7 +381,7 @@
   },
   "pricing": {
     "metaTitle": "Precios - Kilómetro 0 Digital",
-    "metaDescription": "150 GB autoservicio por 1,99 €/mes. 1 TB+ / multi-TB bajo petición. Mismos servidores UE, mismo soporte.",
+    "metaDescription": "150 GB de plan público por 1,99 €/mes. 1 TB+ bajo petición. Mismos servidores UE, mismo soporte.",
     "eyebrow": "Precios",
     "heading": "Un precio público.",
     "heroPrice": {
@@ -392,22 +392,22 @@
       "hostMeta": "Hetzner · UE",
       "ariaLabel": "Precio: 1,99 euros al mes por 150 GB de almacenamiento"
     },
-    "intro": "150 GB autoservicio · 1 TB+ / multi-TB bajo petición · mismos servidores UE · mismo soporte. Abre Cloud, o escribe para más capacidad.",
+    "intro": "150 GB de plan público · 1 TB+ bajo petición · mismos servidores UE y mismo soporte. Abre Cloud, o escribe si necesitas más espacio.",
     "heroCta": "Abrir KM0 Cloud",
     "heroSecondaryCta": "Pedir capacidad",
     "pathsHeading": "Elige un camino",
-    "pathsIntro": "Misma infraestructura, tres entradas. Cloud es 150 GB autoservicio; Email acompaña; a medida es 1 TB+ con presupuesto humano.",
+    "pathsIntro": "Misma infraestructura, tres entradas. Cloud es el plan público de 150 GB; Email acompaña; a medida es 1 TB+ con un presupuesto hecho por una persona.",
     "paths": [
       {
         "id": "cloud",
-        "meta": "Autoservicio",
+        "meta": "Plan público",
         "title": "KM0 Cloud",
         "price": "1,99 €",
         "priceNote": "/mes · 150 GB",
-        "body": "Archivos, sync y compartir en la UE (Hetzner). Empieza sin llamada comercial.",
+        "body": "Archivos, sincronización y compartir en la UE (Hetzner). Empieza sin llamada comercial.",
         "features": [
           "150 GB en la UE",
-          "Sin teatro de tarjeta para mirar",
+          "Sin pedir tarjeta solo para echar un vistazo",
           "Precio público, sin venta de perfiles"
         ],
         "ctaLabel": "Abrir KM0 Cloud",
@@ -521,7 +521,7 @@
     },
     "custom": {
       "heading": "¿Necesitas más de 150 GB?",
-      "body": "El autoservicio se queda en 150 GB. 1 TB+ y multi-TB se presupuestan: mismos servidores UE (Hetzner / Falkenstein), mismo soporte. En el presupuesto: precio por TB, retención de copias y condiciones de salida.",
+      "body": "El plan público se queda en 150 GB. 1 TB+ y multi-TB se presupuestan: mismos servidores UE (Hetzner / Falkenstein), mismo soporte. En el presupuesto: precio por TB, retención de copias y condiciones de salida.",
       "cta": "Pedir capacidad"
     }
   },

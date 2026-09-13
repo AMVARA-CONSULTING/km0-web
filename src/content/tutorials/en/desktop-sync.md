@@ -8,7 +8,7 @@ platform: desktop
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introduction</p>
-  <p class="doc-lead">KM0 Cloud uses the <strong>OpenCloud Desktop Client</strong> on Windows, macOS, and Linux. Sync keeps a local folder in step with your EU account. The public self-serve plan is <strong>150 GB</strong>. If your library is larger, ask for capacity before you start a big migration.</p>
+  <p class="doc-lead">KM0 Cloud uses the <strong>OpenCloud Desktop Client</strong> on Windows, macOS, and Linux. Sync keeps a local folder in step with your EU account. The public plan is <strong>150 GB</strong>. If your library is larger, ask for capacity before you start a big migration.</p>
 </section>
 
 <section class="doc-block">

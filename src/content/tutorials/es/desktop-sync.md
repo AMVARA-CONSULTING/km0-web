@@ -8,7 +8,7 @@ platform: desktop
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducción</p>
-  <p class="doc-lead">KM0 Cloud usa el <strong>cliente de escritorio OpenCloud</strong> en Windows, macOS y Linux. La sincronización mantiene una carpeta local al día con tu cuenta en la UE. El plan público de autoservicio es de <strong>150 GB</strong>. Si tu biblioteca es mayor, pide capacidad antes de una migración grande.</p>
+  <p class="doc-lead">KM0 Cloud usa el <strong>cliente de escritorio OpenCloud</strong> en Windows, macOS y Linux. La sincronización mantiene una carpeta local al día con tu cuenta en la UE. El plan público es de <strong>150 GB</strong>. Si tu biblioteca es mayor, pide capacidad antes de una migración grande.</p>
 </section>
 
 <section class="doc-block">

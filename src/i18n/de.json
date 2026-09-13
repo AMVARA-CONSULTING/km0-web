@@ -33,7 +33,7 @@
   "hero": {
     "titleLine1": "Private Cloud ",
     "titleGradient": "und E-Mail.",
-    "tagline": "Microsoft 365 verlassen, ohne Mail und Dateien zu verlieren. 150 GB Self-Serve ab 1,99 €/Monat · 1 TB+ / Multi-TB auf Anfrage · dieselben EU-Server · derselbe Support.",
+    "tagline": "Microsoft 365 verlassen, ohne Mail und Dateien zu verlieren. Öffentlicher Tarif: 150 GB ab 1,99 €/Monat. Mehr Speicher (1 TB+) auf Anfrage, dieselben EU-Server, derselbe Support.",
     "ctaPrimary": "KM0 Cloud öffnen",
     "ctaSecondary": "Preise",
     "logoAlt": "Logo Kilometer 0 Digital",
@@ -245,7 +245,7 @@
       {
         "id": "support-languages",
         "question": "In welchen Sprachen antwortet der Support?",
-        "answerHtml": "Auf Spanisch, Katalanisch, Englisch und Deutsch. Echte Menschen, kein anonymes Callcenter."
+        "answerHtml": "Wir antworten selbst, auf Spanisch, Katalanisch, Englisch und Deutsch."
       },
       {
         "id": "hosting",
@@ -265,11 +265,11 @@
       {
         "id": "storage-150gb",
         "question": "Reichen 150 GB für eine lebenslange Fotobibliothek?",
-        "answerHtml": "Oft nicht. Der öffentliche Self-Serve-Tarif ist <strong>150 GB für 1,99 €/Monat</strong>. Große Handy-Bibliotheken können das übersteigen. Prüfen Sie die Größe vor einem Komplett-Dump; fragen Sie nach mehr Kapazität. Details: <a href=\"/de/tutorials/photo-backup/\">Fotobackup</a> und <a href=\"/de/pricing/\">Preise</a>."
+        "answerHtml": "Oft nicht. Der öffentliche Tarif ist <strong>150 GB für 1,99 €/Monat</strong>. Große Handy-Bibliotheken können das übersteigen. Größe prüfen vor einem Komplett-Dump; nach mehr Kapazität fragen. Details: <a href=\"/de/tutorials/photo-backup/\">Fotobackup</a> und <a href=\"/de/pricing/\">Preise</a>."
       },
       {
         "id": "desktop-sync",
-        "question": "Wie funktioniert Desktop-Sync (selektiv, Unsync)?",
+        "question": "Wie funktioniert die Desktop-Synchronisation (selektiv, Unsync)?",
         "answerHtml": "Installieren Sie den OpenCloud Desktop Client und zeigen Sie auf <code>https://cloud.km0digital.com/</code>. Unter macOS/Linux: <strong>Choose What to Sync</strong>. Unter Windows: Online-Platzhalter und <strong>Free up space</strong>. Es gibt <strong>kein</strong> OneDrive-artiges Known Folder Move. Anleitung: <a href=\"/de/tutorials/desktop-sync/\">Desktop-Sync</a>."
       },
       {
@@ -280,7 +280,7 @@
       {
         "id": "unlink-local-files",
         "question": "Löscht ihr lokale Dateien, wenn ich den Client unlinke?",
-        "answerHtml": "<strong>Nein.</strong> OpenClouds <strong>Remove Sync Folder Connection</strong> beendet die Sync und löscht keine lokalen Dateien; Serverdaten bleiben. Selbst löschen bei aktiver Sync kann Dateien auch auf dem Server entfernen. Richtlinie: <a href=\"/de/tutorials/desktop-sync/\">Desktop-Sync</a>."
+        "answerHtml": "<strong>Nein.</strong> Mit OpenClouds <strong>Remove Sync Folder Connection</strong> beendest du die Sync; lokale Dateien werden nicht gelöscht, Serverdaten bleiben. Selbst löschen bei aktiver Sync kann Dateien auch auf dem Server entfernen. Richtlinie: <a href=\"/de/tutorials/desktop-sync/\">Desktop-Sync</a>."
       }
     ]
   },
@@ -298,7 +298,7 @@
     "missionLabel": "Mission",
     "missionBody": "Ziel: bis 2030 10.000.000 Menschen verbinden.",
     "visionLabel": "Vision",
-    "visionBody": "Ehrliche, lokale Infrastruktur mit menschlichem Support: EU-Cloud und E-Mail als Alternative zum Big-Tech-Lock-in."
+    "visionBody": "EU-Cloud und E-Mail mit öffentlichem Preis und menschlichem Support: eine Alternative zu großen Plattformen, die dich einschließen."
   },
   "ideas": {
     "panelTitle": "Idee senden",
@@ -381,7 +381,7 @@
   },
   "pricing": {
     "metaTitle": "Preise - Kilometer 0 Digital",
-    "metaDescription": "150 GB Self-Serve für 1,99 €/Monat. 1 TB+ / Multi-TB auf Anfrage. Dieselben EU-Server, derselbe Support.",
+    "metaDescription": "Öffentlicher 150-GB-Tarif für 1,99 €/Monat. 1 TB+ auf Anfrage. Dieselben EU-Server, derselbe Support.",
     "eyebrow": "Preise",
     "heading": "Ein öffentlicher Preis.",
     "heroPrice": {
@@ -392,22 +392,22 @@
       "hostMeta": "Hetzner · EU",
       "ariaLabel": "Preis: 1,99 Euro pro Monat für 150 GB Speicher"
     },
-    "intro": "150 GB Self-Serve · 1 TB+ / Multi-TB auf Anfrage · dieselben EU-Server · derselbe Support. Cloud öffnen, oder für mehr Kapazität schreiben.",
+    "intro": "Öffentlicher 150-GB-Tarif · 1 TB+ auf Anfrage · dieselben EU-Server und derselbe Support. Cloud öffnen, oder schreiben wenn du mehr Speicher brauchst.",
     "heroCta": "KM0 Cloud öffnen",
     "heroSecondaryCta": "Kapazität anfragen",
     "pathsHeading": "Wähle einen Weg",
-    "pathsIntro": "Derselbe Stack, drei Einstiege. Cloud ist 150 GB Self-Serve; Email begleitet; individuell ist 1 TB+ mit menschlichem Angebot.",
+    "pathsIntro": "Derselbe Stack, drei Einstiege. Cloud ist der öffentliche 150-GB-Tarif; Email begleitet; individuell ist 1 TB+ mit Angebot von einer Person.",
     "paths": [
       {
         "id": "cloud",
-        "meta": "Self-Serve",
+        "meta": "Öffentlicher Tarif",
         "title": "KM0 Cloud",
         "price": "1,99 €",
         "priceNote": "/Monat · 150 GB",
         "body": "Dateien, Sync und Teilen in der EU (Hetzner). Start ohne Vertriebsgespräch.",
         "features": [
           "150 GB EU-Speicher",
-          "Kein Kartentheater zum Ansehen",
+          "Keine Karte nur zum Anschauen nötig",
           "Öffentlicher Preis, kein Profilverkauf"
         ],
         "ctaLabel": "KM0 Cloud öffnen",
@@ -521,7 +521,7 @@
     },
     "custom": {
       "heading": "Brauchst du mehr als 150 GB?",
-      "body": "Self-Serve bleibt bei 150 GB. 1 TB+ und Multi-TB werden angeboten: dieselben EU-Server (Hetzner / Falkenstein), derselbe Support. Im Angebot: Preis pro TB, Backup/Aufbewahrung und Ausstiegskonditionen.",
+      "body": "Der öffentliche Tarif bleibt bei 150 GB. 1 TB+ und Multi-TB werden angeboten: dieselben EU-Server (Hetzner / Falkenstein), derselbe Support. Im Angebot: Preis pro TB, Backup/Aufbewahrung und Ausstiegskonditionen.",
       "cta": "Kapazität anfragen"
     }
   },

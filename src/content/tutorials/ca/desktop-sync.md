@@ -8,7 +8,7 @@ platform: desktop
 
 <section class="doc-lead-block">
   <p class="doc-block-title">Introducció</p>
-  <p class="doc-lead">KM0 Cloud fa servir el <strong>client d'escriptori OpenCloud</strong> a Windows, macOS i Linux. La sincronització manté una carpeta local al dia amb el teu compte a la UE. El pla públic d'autoservei és de <strong>150 GB</strong>. Si la biblioteca és més gran, demana capacitat abans d'una migració grossa.</p>
+  <p class="doc-lead">KM0 Cloud fa servir el <strong>client d'escriptori OpenCloud</strong> a Windows, macOS i Linux. La sincronització manté una carpeta local al dia amb el teu compte a la UE. El pla públic és de <strong>150 GB</strong>. Si la biblioteca és més gran, demana capacitat abans d'una migració grossa.</p>
 </section>
 
 <section class="doc-block">

@@ -703,13 +703,13 @@
     "eyebrow": "Security",
     "heading": "Security and responsible disclosure",
     "intro": "How we protect km0digital.com, KM0 Cloud, KM0 Email, and related infrastructure, and how to report security vulnerabilities in good faith.",
-    "updated": "Last updated: June 2026",
+    "updated": "Last updated: September 2026",
     "tocTitle": "On this page",
     "sections": [
       {
         "id": "practices",
         "title": "Security practices",
-        "bodyHtml": "<p>KM0 Digital is operated by <a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> We apply practices appropriate to a public marketing site and a self-hosted cloud platform:</p><ul class=\"doc-list\"><li><strong>Encryption:</strong> HTTPS/TLS for km0digital.com, cloud.km0digital.com, and mail.km0digital.com (Let's Encrypt certificates).</li><li><strong>KM0 Email:</strong> HTTPS on mail.km0digital.com; TLS for IMAPS (port 993) and authenticated SMTP submission (port 587); inbound SMTP on port 25; Rspamd anti-spam; DKIM signing and SPF/DMARC records; fail2ban for mail services.</li><li><strong>HTTP security headers:</strong> including Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy where configured.</li><li><strong>EU infrastructure:</strong> hosting in Germany (Hetzner) with data processed primarily within the EU.</li><li><strong>Access control:</strong> least privilege for operational access; multi-factor authentication for internal systems where applicable.</li><li><strong>Development:</strong> protected <code>main</code> branch, code review, dependency monitoring, and documented operations in the <a href=\"/en/doc/\">technical blog</a>.</li><li><strong>Backups and monitoring:</strong> operational backups and logging for reliability and incident response.</li></ul><p>We do not claim SOC 2, HIPAA, CCPA compliance, penetration-test programmes, or third-party audits unless explicitly verified and published.</p><p>For privacy-related information, see our <a href=\"/en/legal/\">legal and privacy page</a>.</p>"
+        "bodyHtml": "<p><a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> operates KM0 Digital. This page states what matters if you use the site, Cloud, or Email.</p><ul class=\"doc-list\"><li><strong>Encryption:</strong> HTTPS/TLS on km0digital.com, cloud.km0digital.com, and mail.km0digital.com, with Let's Encrypt certificates. Mail uses TLS for IMAP and for sending.</li><li><strong>Mail:</strong> spam filtering, DKIM signing, and SPF and DMARC records.</li><li><strong>Browser:</strong> HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy.</li><li><strong>Data:</strong> in Germany, at Hetzner, inside the EU.</li><li><strong>Copies:</strong> we keep service copies so we can restore.</li></ul><p>We do not claim SOC 2, HIPAA, or CCPA, and we do not claim a penetration test or a third-party audit, unless we publish that claim.</p><p>Privacy: <a href=\"/en/legal/\">legal page</a>.</p>"
       },
       {
         "id": "iso27001",

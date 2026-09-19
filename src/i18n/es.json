@@ -148,7 +148,7 @@
     "cloudPricingCta": "Ver precios",
     "capacityNote": {
       "label": "150 GB, en fotos",
-      "photos": "Unas 75.000 fotos de unos 2 MB. No es un tope de archivos: sirve para hacerse una idea. Una vida entera de fotos suele pedir más.",
+      "photos": "El plan mide gigas, no el número de archivos. Unas 75.000 fotos de unos 2 MB dan una idea del volumen. Una vida entera de fotos suele pedir más.",
       "move": "Si no cabe, o vienes de otro servicio, movemos los archivos con soporte humano. El traslado se presupuesta por escrito."
     },
     "items": [

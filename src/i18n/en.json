@@ -148,7 +148,7 @@
     "cloudPricingCta": "View pricing",
     "capacityNote": {
       "label": "150 GB, in photos",
-      "photos": "About 75,000 photos at roughly 2 MB each. Not a file cap: a size you can picture. A lifetime of photos usually needs more.",
+      "photos": "The plan meters gigabytes, not file count. About 75,000 photos at roughly 2 MB each is a way to picture that. A lifetime of photos usually needs more.",
       "move": "If it does not fit, or you are leaving another service, we move the files with human support. The transfer is quoted in writing."
     },
     "items": [

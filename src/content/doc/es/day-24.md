@@ -8,36 +8,34 @@ portrait: /brand/maestro.png
 imageAlt: "Retrato de Maestro, el orquestador Discord de KM0"
 ---
 
-Operar KM0 no es solo publicar Cloud y Mail. Hay webs, correo, auth, OpenCloud, monitores y un montón de hosts. **Maestro** es el orquestador que usamos en Discord para no perder el hilo entre servidores y proyectos.
+KM0 incluye webs, correo, auth, OpenCloud, monitores y unos diez hosts. Maestro es el bot de Discord con el que seguimos el trabajo entre servidores y proyectos.
 
-## El problema que resolvía
+## Cómo era antes
 
-Antes, cada arreglo empezaba igual: abrir terminal, entrar al servidor correcto, recordar dónde estaba el repo, reconstruir el contexto de memoria y arrancar un agente efímero con el prompt desde cero. Al cerrar la sesión, ese contexto se evaporaba.
+Cada arreglo empezaba igual: abrir terminal, entrar al servidor correcto, recordar la ruta del repo, reconstruir el contexto de memoria y arrancar un agente nuevo con el prompt desde cero. Al cerrar la sesión, ese contexto desaparecía.
 
-Con ~10 hosts y decenas de proyectos (km0-web, OpenCloud, mail, auth y el resto del perímetro Amvara), eso no escala. El coste real no era teclear comandos: era **reencontrar el mapa** cada vez.
+Con decenas de proyectos (km0-web, OpenCloud, mail, auth y el resto del perímetro Amvara), el tiempo se iba en volver a encontrar el mapa.
 
-## Qué es Maestro
+## Qué hace
 
-Un bot en Discord ligado a un catálogo de proyectos. Recibe la orden (comando o lenguaje natural), carga el contexto del caso, abre una sesión enfocada en el árbol correcto y llega al host por SSH. El hilo de Discord queda unido a esa sesión.
+Maestro está ligado a un catálogo de proyectos. Recibe la orden (comando o lenguaje natural), carga el contexto del caso, abre una sesión en el árbol correcto y entra al host por SSH. El hilo de Discord queda unido a esa sesión.
 
-Mientras el hilo esté abierto, puedes dejar el trabajo el lunes, pegar un log el jueves y continuar sin reexplicar el entorno. Al cerrar el hilo, queda un resumen de lo hecho; si el caso lo pide, también una nota en Redmine.
+Con el hilo abierto puedes dejar el trabajo el lunes, pegar un log el jueves y seguir sin explicar otra vez el entorno. Al cerrar queda un resumen de lo hecho. Si el caso lo pide, también una nota en Redmine.
 
-## Qué aporta a KM0
+## Cómo lo usamos
 
-No es un producto de la tienda: es la forma en que operamos la casa. Tres piezas concretas:
+Así operamos la casa.
 
-1. **Catálogo y contexto:** cada proyecto (por ejemplo este sitio en `/opt/km0-web`) tiene pack de rutas, runbooks y reglas. Maestro no inventa hosts; solo trabaja lo registrado.
-2. **Hangar OpenCloud:** espacio `maestro@km0digital.com` vía WebDAV (`human_input/`, `maestro_input/`). Sirve para pasar ficheros que Discord no debe retener (logs largos, capturas, entregables) sin pelear con el TTL del chat.
-3. **Trazabilidad:** notas en Redmine en inglés técnico (Textile), ligadas al ticket del proyecto. El chat deja de ser el único archivo de memoria.
+1. Catálogo y contexto. Cada proyecto (este sitio está en `/opt/km0-web`) tiene rutas, runbooks y reglas. Maestro trabaja lo registrado y no inventa hosts.
+2. Hangar OpenCloud. El espacio `maestro@km0digital.com` por WebDAV (`human_input/`, `maestro_input/`) mueve logs largos, capturas y entregables que Discord no debe guardar, sin pelear con el TTL del chat.
+3. Trazabilidad. Notas en Redmine en inglés técnico (Textile), ligadas al ticket del proyecto. El chat ya no es el único archivo.
 
-También puede leer adjuntos (imágenes, PDF, logs), invocar herramientas ya desplegadas en la flota (navegador headless, etc.) y devolver capturas en el mismo hilo. Lo que no está en el catálogo no existe para él: eso es una regla de seguridad, no un límite de marketing.
+También lee adjuntos (imágenes, PDF, logs), llama herramientas ya desplegadas en la flota (navegador headless, entre otras) y devuelve capturas en el mismo hilo. Si algo no está en el catálogo, Maestro no lo toca. Es una regla de seguridad.
 
-## Por qué lo contamos aquí
+## Por qué está en el blog
 
-El blog de KM0 documenta cómo se construye y se mantiene la infra, no solo el pitch comercial. Maestro encaja con esa línea: **operación audible**, con sesión, resumen y ticket, en lugar de “alguien lo arregló en una shell olvidada”.
+Este blog cuenta cómo se construye y se mantiene la infra detrás de Cloud y Mail. Maestro entra ahí: sesión, resumen y ticket, en lugar de un arreglo en una shell que nadie vuelve a abrir.
 
-El flujo es claro: Discord → núcleo (catálogo + sesión) → SSH al host; si hace falta, un puente de respaldo con sus propias normas.
+El camino es Discord, luego el núcleo (catálogo y sesión), luego SSH al host. Si hace falta, hay un puente de respaldo con sus propias normas.
 
-## Cierre
-
-Cloud y Mail siguen en la [UE](/#services). Si quieres ver cómo trabajamos o probar el producto, [contacta](/#contact) o ven a un [encuentro](/meeting/). El día a día de la flota, cuando hace falta, pasa por un mensaje en Discord: eso es Maestro.
+Cloud y Mail siguen en la [UE](/#services). Si quieres ver cómo trabajamos o probar el producto, [contacta](/#contact) o ven a un [encuentro](/meeting/). El día a día de la flota, cuando hace falta, empieza con un mensaje en Discord.

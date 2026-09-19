@@ -148,7 +148,7 @@
     "cloudPricingCta": "Preise ansehen",
     "capacityNote": {
       "label": "150 GB, in Fotos",
-      "photos": "Etwa 75.000 Fotos zu je rund 2 MB. Kein Dateilimit, sondern eine Größe zum Vorstellen. Ein Leben voller Fotos braucht meist mehr.",
+      "photos": "Der Plan rechnet in Gigabyte, nicht in Dateianzahl. Etwa 75.000 Fotos zu je rund 2 MB machen das Volumen greifbar. Ein Leben voller Fotos braucht meist mehr.",
       "move": "Wenn es nicht reicht oder Sie wechseln, ziehen wir die Dateien mit menschlichem Support um. Der Umzug wird schriftlich kalkuliert."
     },
     "items": [

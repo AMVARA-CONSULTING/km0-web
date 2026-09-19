@@ -8,36 +8,34 @@ portrait: /brand/maestro.png
 imageAlt: "Porträt von Maestro, dem Discord-Orchestrierer von KM0"
 ---
 
-KM0 zu betreiben heißt mehr als Cloud und Mail auszuliefern. Es gibt Websites, Mail, Auth, OpenCloud, Monitore und einen Haufen Hosts. **Maestro** ist der Discord-Orchestrierer, mit dem wir den Faden zwischen Servern und Projekten nicht verlieren.
+KM0 umfasst Websites, Mail, Auth, OpenCloud, Monitore und etwa zehn Hosts. Maestro ist der Discord-Bot, mit dem wir die Arbeit zwischen Servern und Projekten weiterführen.
 
-## Das Problem, das er löste
+## Vorher
 
-Früher begann jeder Fix gleich: Terminal öffnen, richtigen Server betreten, Repo-Pfad erinnern, Kontext aus dem Gedächtnis neu aufbauen und einen Wegwerf-Agenten mit Prompt von null starten. Am Ende der Session war der Kontext weg.
+Jeder Fix begann gleich: Terminal öffnen, den richtigen Server betreten, den Repo-Pfad erinnern, den Kontext aus dem Gedächtnis neu aufbauen und einen neuen Agenten mit Prompt von null starten. Am Ende der Session war der Kontext weg.
 
-Mit ~10 Hosts und Dutzenden Projekten (km0-web, OpenCloud, Mail, Auth und dem Rest des Amvara-Perimeters) skaliert das nicht. Die echten Kosten waren nicht Tippen: es war **jedes Mal die Karte wiederfinden**.
+Bei Dutzenden Projekten (km0-web, OpenCloud, Mail, Auth und dem Rest des Amvara-Perimeters) ging die Zeit dafür drauf, die Karte wiederzufinden.
 
-## Was Maestro ist
+## Was er tut
 
-Ein Discord-Bot an einen Projektkatalog gebunden. Er nimmt die Order (Slash-Befehl oder natürliche Sprache), lädt den Fallkontext, öffnet eine fokussierte Session im richtigen Baum und erreicht den Host per SSH. Der Discord-Thread bleibt an diese Session gebunden.
+Maestro hängt an einem Projektkatalog. Er nimmt die Anweisung (Slash-Befehl oder natürliche Sprache), lädt den Fallkontext, öffnet eine Session im richtigen Baum und erreicht den Host per SSH. Der Discord-Thread bleibt an diese Session gebunden.
 
-Solange der Thread offen ist, kannst du die Arbeit am Montag liegen lassen, am Donnerstag ein Log anhängen und weitermachen, ohne die Umgebung neu zu erklären. Beim Schließen bleibt eine Zusammenfassung; wenn der Fall es braucht, auch eine Redmine-Notiz.
+Solange der Thread offen ist, kannst du die Arbeit am Montag liegen lassen, am Donnerstag ein Log anhängen und weitermachen, ohne die Umgebung neu zu erklären. Beim Schließen bleibt eine Zusammenfassung. Wenn der Fall es braucht, auch eine Redmine-Notiz.
 
-## Was er KM0 gibt
+## Wie wir ihn nutzen
 
-Kein Shop-Produkt: so betreiben wir das Haus. Drei konkrete Teile:
+So betreiben wir das Haus.
 
-1. **Katalog und Kontext:** jedes Projekt (zum Beispiel diese Site unter `/opt/km0-web`) hat ein Pack aus Pfaden, Runbooks und Regeln. Maestro erfindet keine Hosts; er arbeitet nur Registriertes.
-2. **OpenCloud-Hangar:** Space `maestro@km0digital.com` über WebDAV (`human_input/`, `maestro_input/`). Für Dateien, die Discord nicht behalten soll (lange Logs, Screenshots, Deliverables), ohne Chat-TTL zu bekämpfen.
-3. **Nachverfolgbarkeit:** Redmine-Notizen in technischem Englisch (Textile), an das Projektticket gebunden. Der Chat ist nicht mehr das einzige Gedächtnisarchiv.
+1. Katalog und Kontext. Jedes Projekt (diese Site liegt unter `/opt/km0-web`) hat Pfade, Runbooks und Regeln. Maestro arbeitet nur Registriertes und erfindet keine Hosts.
+2. OpenCloud-Hangar. Der Space `maestro@km0digital.com` über WebDAV (`human_input/`, `maestro_input/`) schiebt lange Logs, Screenshots und Deliverables, die Discord nicht behalten soll, ohne gegen die Chat-TTL zu kämpfen.
+3. Nachverfolgbarkeit. Redmine-Notizen in technischem Englisch (Textile), an das Projektticket gebunden. Der Chat ist nicht mehr das einzige Archiv.
 
-Er kann auch Anhänge lesen (Bilder, PDF, Logs), schon deployed Tools in der Flotte aufrufen (Headless-Browser usw.) und Captures im selben Thread zurückgeben. Was nicht im Katalog steht, existiert für ihn nicht: Sicherheitsregel, kein Marketing-Limit.
+Er liest auch Anhänge (Bilder, PDF, Logs), ruft schon deployte Werkzeuge in der Flotte auf (Headless-Browser und andere) und gibt Captures im selben Thread zurück. Steht etwas nicht im Katalog, fasst Maestro es nicht an. Das ist eine Sicherheitsregel.
 
-## Warum wir es hier schreiben
+## Warum es im Blog steht
 
-Der KM0-Blog dokumentiert, wie die Infra gebaut und gehalten wird, nicht nur den Verkaufspitch. Maestro passt dazu: **hörbare Operation**, mit Session, Zusammenfassung und Ticket, statt „jemand hat es in einer vergessenen Shell gefixt“.
+Dieses Blog beschreibt, wie die Infra hinter Cloud und Mail gebaut und gehalten wird. Maestro gehört dazu: Session, Zusammenfassung und Ticket, statt eines Fixes in einer Shell, die niemand wieder öffnet.
 
-Der Ablauf ist klar: Discord → Kern (Katalog + Session) → SSH zum Host; bei Bedarf eine Backup-Brücke mit eigenen Regeln.
+Der Weg ist Discord, dann der Kern (Katalog und Session), dann SSH zum Host. Bei Bedarf gibt es eine Backup-Brücke mit eigenen Regeln.
 
-## Abschluss
-
-Cloud und Mail bleiben in der [EU](/de/#services). Wenn du sehen willst, wie wir arbeiten, oder das Produkt testen willst, [schreib uns](/de/#contact) oder komm zu einem [Treffen](/de/meeting/). Der Flottenalltag, wenn es drauf ankommt, beginnt mit einer Discord-Nachricht: das ist Maestro.
+Cloud und Mail bleiben in der [EU](/de/#services). Wenn du sehen willst, wie wir arbeiten, oder das Produkt testen willst, [schreib uns](/de/#contact) oder komm zu einem [Treffen](/de/meeting/). Der Flottenalltag beginnt, wenn es drauf ankommt, mit einer Discord-Nachricht.

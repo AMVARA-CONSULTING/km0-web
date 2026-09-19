@@ -19,7 +19,7 @@
   --color-surface: rgb(11 18 32);
 
   --font-display: 'IBM Plex Sans', system-ui, sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
 
   --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
@@ -209,7 +209,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-signal px-8 py-3 font-sans text-sm font-bold text-white transition-colors duration-300 ease-apple hover:bg-signal-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
+    @apply inline-flex items-center justify-center rounded-md bg-signal px-8 py-3 font-sans text-base font-bold text-white transition-colors duration-300 ease-apple hover:bg-signal-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
   }
 
   /*
@@ -245,7 +245,7 @@
   }
 
   .chip {
-    @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-sm font-medium text-navy/80 shadow-sm;
+    @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-base font-medium text-navy/80 shadow-sm;
   }
 
   .service-modal {
@@ -340,7 +340,7 @@
   .page-meta {
     margin: 1rem 0 0;
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.5;
     color: var(--color-ink-muted);
   }
@@ -366,7 +366,7 @@
 
   .page-closer__secondary {
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-ink);
     text-decoration: underline;
@@ -397,7 +397,7 @@
   }
 
   .page-toc-title {
-    @apply mb-3 font-sans text-xs font-medium uppercase tracking-[0.12em] text-ink/45;
+    @apply mb-3 font-sans text-base font-medium uppercase tracking-[0.12em] text-ink/45;
   }
 
   .page-toc-list {
@@ -405,7 +405,7 @@
   }
 
   .page-toc-list a {
-    @apply font-sans text-sm font-medium text-ink/70 underline decoration-ink/20 underline-offset-[3px] transition-colors hover:text-ink hover:decoration-ink/45;
+    @apply font-sans text-base font-medium text-ink/70 underline decoration-ink/20 underline-offset-[3px] transition-colors hover:text-ink hover:decoration-ink/45;
   }
 
   /*
@@ -415,7 +415,7 @@
    */
   .doc-kicker,
   .doc-eyebrow {
-    @apply mb-4 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-ink/45;
+    @apply mb-4 font-sans text-base font-medium uppercase tracking-[0.16em] text-ink/45;
   }
 
   .doc-index-intro {
@@ -428,7 +428,7 @@
 
   /* Prose for Legal / Security (and any non-reading page still on .doc-body) */
   .doc-body {
-    @apply max-w-[65ch] pt-9 font-body text-[1.125rem] leading-[1.65] text-ink/85 md:text-[1.1875rem] md:leading-[1.65];
+    @apply max-w-[65ch] pt-9 font-body text-[1.125rem] leading-[1.65] text-ink/85 md:text-[1.125rem] md:leading-[1.65];
     text-wrap: pretty;
   }
 
@@ -486,13 +486,13 @@
   }
 
   .doc-body pre {
-    @apply my-8 max-w-[65ch] overflow-x-auto rounded-none border border-mist/80 px-5 py-4 font-mono text-[0.8125rem] leading-relaxed md:text-sm;
+    @apply my-8 max-w-[65ch] overflow-x-auto rounded-none border border-mist/80 px-5 py-4 font-mono text-base leading-relaxed md:text-base;
     background-color: var(--surface-code);
     color: var(--color-on-code);
   }
 
   .doc-body code {
-    @apply rounded-sm bg-mist/40 px-1 py-0.5 font-mono text-[0.88em] text-ink;
+    @apply rounded-sm bg-mist/40 px-1 py-0.5 font-mono text-base text-ink;
   }
 
   .doc-body pre code {
@@ -500,7 +500,7 @@
   }
 
   .doc-body table {
-    @apply my-8 w-full max-w-none border-collapse text-sm;
+    @apply my-8 w-full max-w-none border-collapse text-base;
   }
 
   .doc-body thead {
@@ -513,7 +513,7 @@
   }
 
   .doc-body th {
-    @apply bg-transparent font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.06em] text-ink/70;
+    @apply bg-transparent font-sans text-base font-semibold uppercase tracking-[0.06em] text-ink/70;
   }
 
   .doc-body tbody tr:last-child td {
@@ -531,7 +531,7 @@
   }
 
   .doc-body .doc-block-title {
-    @apply mb-2 mt-0 scroll-mt-28 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-ink/40;
+    @apply mb-2 mt-0 scroll-mt-28 font-sans text-base font-medium uppercase tracking-[0.14em] text-ink/40;
   }
 
   .doc-body .doc-block-title::after {
@@ -543,7 +543,7 @@
   }
 
   .doc-body .doc-lead-block .doc-block-title {
-    @apply text-[0.6875rem];
+    @apply text-base;
   }
 
   .doc-body .doc-block-intro {
@@ -623,7 +623,7 @@
   }
 
   .doc-body .doc-callout-title {
-    @apply mb-3 block font-sans text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-ink/50;
+    @apply mb-3 block font-sans text-base font-medium uppercase tracking-[0.12em] text-ink/50;
   }
 
   .doc-body .doc-callout p {
@@ -635,11 +635,11 @@
   }
 
   .doc-body .doc-note:not(:has(pre)) {
-    @apply pl-5 font-body text-[0.9375rem] leading-[1.65] text-ink/70 md:text-base;
+    @apply pl-5 font-body text-base leading-[1.65] text-ink/70 md:text-base;
   }
 
   .doc-body .doc-note pre {
-    @apply m-0 max-w-none overflow-x-auto rounded-none border border-mist/80 px-5 py-5 font-mono text-[0.8125rem] leading-[1.65] md:px-6 md:py-6 md:text-sm;
+    @apply m-0 max-w-none overflow-x-auto rounded-none border border-mist/80 px-5 py-5 font-mono text-base leading-[1.65] md:px-6 md:py-6 md:text-base;
     background-color: var(--surface-code);
     color: color-mix(in srgb, var(--color-on-code) 95%, transparent);
   }

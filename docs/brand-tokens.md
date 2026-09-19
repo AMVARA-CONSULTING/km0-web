@@ -46,9 +46,9 @@ Spacing rhythm: `--space-section-y` / `--space-section-x` drive `.section-pad` a
 
 | Role | Face | Notes |
 |------|------|-------|
-| Display | **IBM Plex Sans** | Formal civic headlines (same family as UI; not Bricolage / Inter) |
-| Body (marketing) | **Source Serif 4** | Editorial reading; pairs with Plex display |
-| UI / labels / nav | **IBM Plex Sans** | Civic/technical UI voice |
+| Display | **IBM Plex Sans** | 600/700. Same family as body and UI |
+| Body | **IBM Plex Sans** | 400. Minimum 16px (1rem). Not a serif |
+| UI / labels / nav | **IBM Plex Sans** | Same family. Minimum 16px |
 
 **Forbidden as primary:** Inter, Roboto, Open Sans, Arial, system-ui-only, Bricolage Grotesque.
 

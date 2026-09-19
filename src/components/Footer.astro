@@ -23,7 +23,7 @@ const footerColumns = footerNavColumns(locale, m);
         {
           footerColumns.map((column) => (
             <div>
-              <h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-ink/50">
+              <h3 class="mb-3 font-sans text-base font-semibold uppercase tracking-[0.12em] text-ink/50">
                 {column.title}
               </h3>
               <ul class="flex flex-col gap-2">
@@ -32,7 +32,7 @@ const footerColumns = footerNavColumns(locale, m);
                     <li>
                       <a
                         href={link.href}
-                        class="font-sans text-sm text-ink/60 transition-colors hover:text-signal"
+                        class="font-sans text-base text-ink/60 transition-colors hover:text-signal"
                         {...(link.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
@@ -61,22 +61,22 @@ const footerColumns = footerNavColumns(locale, m);
         height="40"
         class="h-10 w-10 object-contain"
       />
-      <span class="font-display text-sm font-semibold tracking-tight text-ink">
+      <span class="font-display text-base font-semibold tracking-tight text-ink">
         {m.brandName}
       </span>
     </div>
     <div class="flex flex-col items-center gap-1 text-center">
-      <p class="font-sans text-sm text-ink/50">
+      <p class="font-sans text-base text-ink/50">
         © {year} {m.brandName}. {m.footer.rights}
       </p>
       <p
-        class="font-sans text-xs font-medium tabular-nums tracking-wide text-ink/45"
+        class="font-sans text-base font-medium tabular-nums tracking-wide text-ink/45"
         title={`${m.footer.version} ${SITE_VERSION}`}
       >
         {m.footer.version}
         <span class="text-ink/60">{SITE_VERSION}</span>
       </p>
-      <p class="font-sans text-xs text-ink/45">
+      <p class="font-sans text-base text-ink/45">
         {m.footer.repoSince}{' '}
         <a
           href={REPO_URL}
@@ -87,7 +87,7 @@ const footerColumns = footerNavColumns(locale, m);
         >{formatDocDate(REPO_CREATED_AT, locale)}</a>
       </p>
       <p
-        class="font-sans text-xs text-ink/45"
+        class="font-sans text-base text-ink/45"
         data-visitors-line
         data-locale={locale}
         hidden
@@ -99,7 +99,7 @@ const footerColumns = footerNavColumns(locale, m);
         ></span>
       </p>
       <p
-        class="font-sans text-sm text-ink/50 [&_a]:font-semibold [&_a]:text-ink/70 [&_a]:underline [&_a]:decoration-signal/30 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-signal"
+        class="font-sans text-base text-ink/50 [&_a]:font-semibold [&_a]:text-ink/70 [&_a]:underline [&_a]:decoration-signal/30 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-signal"
         set:html={m.footer.poweredByHtml}
       />
     </div>
@@ -108,7 +108,7 @@ const footerColumns = footerNavColumns(locale, m);
         href="https://github.com/AMVARA-CONSULTING/km0-web"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 font-sans text-sm text-ink/50 transition-colors hover:text-signal"
+        class="inline-flex items-center gap-1.5 font-sans text-base text-ink/50 transition-colors hover:text-signal"
       >
         <svg
           class="h-4 w-4 shrink-0"

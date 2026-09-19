@@ -142,10 +142,6 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
       z-index: 2;
     }
 
-    .offer__list {
-      /* Tall enough that the pin stays stuck while both rows scroll past */
-      min-height: 42rem;
-    }
   }
 
   :global(html[data-masthead='compact']) .offer__pin {
@@ -181,7 +177,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   /* Quiet Cloud reaffirm in pin; hero + Why hold the loud Open Cloud primaries */
   .offer__pin-link {
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-ink);
     text-decoration: underline;
@@ -231,7 +227,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer__slogan {
     margin: 0.75rem 0 0;
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--color-signal);
@@ -286,7 +282,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer-row__meta {
     margin: 0 0 0.5rem;
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
-    font-size: 0.6875rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     color: var(--color-signal);
@@ -313,7 +309,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer-row__subtitle {
     margin: 0.5rem 0 0;
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-ink);
   }
@@ -333,7 +329,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer-row__capacity-label {
     margin: 0;
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -342,14 +338,14 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 
   .offer-row__capacity-line {
     margin: 0.4rem 0 0;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     line-height: 1.5;
     color: color-mix(in srgb, var(--color-ink) 78%, transparent);
   }
 
   .offer-row__text-link {
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-ink);
     text-decoration: underline;

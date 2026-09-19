@@ -42,7 +42,7 @@
   --color-on-code: rgb(var(--rgb-on-code));
 
   /* Shared section rhythm - calmer professional scale */
-  --space-section-y: clamp(4rem, 7vw, 6.5rem);
+  --space-section-y: clamp(2.5rem, 4.5vw, 4rem);
   --space-section-x: clamp(1.5rem, 4vw, 5rem);
   --measure-band: 72rem;
 

@@ -150,15 +150,12 @@ const proof = m.hero.proof;
 <style>
   .hero {
     color: var(--color-ink);
-    padding: 7.5rem var(--space-section-x) var(--space-section-y);
+    padding: calc(var(--masthead-offset-compact) + 1.5rem) var(--space-section-x) 2.25rem;
   }
 
   @media (min-width: 1024px) {
     .hero {
-      padding-top: 9rem;
-      min-height: min(100svh, 52rem);
-      display: flex;
-      align-items: center;
+      padding-top: calc(var(--masthead-offset) + 1.75rem);
     }
   }
 
@@ -167,7 +164,7 @@ const proof = m.hero.proof;
     z-index: 1;
     margin: 0 auto;
     display: grid;
-    gap: 3rem;
+    gap: 1.75rem;
     width: 100%;
     max-width: 72rem;
     align-items: center;
@@ -176,7 +173,7 @@ const proof = m.hero.proof;
   @media (min-width: 960px) {
     .hero__grid {
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 4rem;
+      gap: 2.25rem;
     }
   }
 
@@ -228,7 +225,7 @@ const proof = m.hero.proof;
 
   .hero__link {
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-ink);
     text-decoration: underline;
@@ -311,7 +308,7 @@ const proof = m.hero.proof;
     flex: 1;
     min-width: 0;
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-ink);
     letter-spacing: -0.01em;
@@ -319,7 +316,7 @@ const proof = m.hero.proof;
 
   .hero__proof-status {
     font-family: var(--font-sans);
-    font-size: 0.6875rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -377,7 +374,7 @@ const proof = m.hero.proof;
 
   .hero__proof-plan-label {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.02em;
     text-transform: lowercase;
@@ -396,7 +393,7 @@ const proof = m.hero.proof;
 
   .hero__proof-plan-price {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-signal);
   }
@@ -423,7 +420,7 @@ const proof = m.hero.proof;
   .hero__proof-plan-meta {
     margin: 0.55rem 0 0;
     font-family: var(--font-sans);
-    font-size: 0.6875rem;
+    font-size: 1rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--color-ink-muted);
@@ -480,7 +477,7 @@ const proof = m.hero.proof;
   }
 
   .hero__proof-file-name {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-ink);
     overflow: hidden;
@@ -489,7 +486,7 @@ const proof = m.hero.proof;
   }
 
   .hero__proof-file-meta {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--color-ink-muted);
     white-space: nowrap;
   }
@@ -507,14 +504,14 @@ const proof = m.hero.proof;
 
   .hero__proof-email-label {
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-ink);
   }
 
   .hero__proof-email-meta {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-signal);
     letter-spacing: 0.01em;
@@ -620,7 +617,7 @@ const proof = m.hero.proof;
   .hero__proof-live-label {
     margin: 0;
     font-family: var(--font-sans);
-    font-size: 0.6875rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -630,7 +627,7 @@ const proof = m.hero.proof;
   .hero__proof-live-hint {
     margin: 0;
     font-family: var(--font-body);
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.4;
     color: var(--color-ink-muted);
   }
@@ -639,7 +636,7 @@ const proof = m.hero.proof;
     justify-self: start;
     margin-top: 0.2rem;
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-ink);
     text-decoration: underline;
@@ -662,7 +659,7 @@ const proof = m.hero.proof;
   .hero__proof-register {
     justify-self: start;
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-ink-muted);
     text-decoration: underline;
@@ -684,7 +681,7 @@ const proof = m.hero.proof;
   .hero__proof-host {
     margin: 0.15rem 0 0;
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.01em;
     color: var(--color-ink-muted);

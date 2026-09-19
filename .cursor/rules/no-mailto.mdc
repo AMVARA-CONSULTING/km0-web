@@ -21,11 +21,11 @@ Do not obfuscate addresses into unusable junk. Keep them readable and copyable.
 
 ```text
 // BAD
-<a href="mailto:hello.yoel@amvara.de">hello.yoel@amvara.de</a>
-Contact: mailto:hello.yoel@amvara.de
+<a href="mailto:hello@km0digital.com">hello@km0digital.com</a>
+Contact: mailto:hello@km0digital.com
 
 // GOOD
-hello.yoel@amvara.de
+hello@km0digital.com
 Contact: https://km0digital.com/security/
 ```
 

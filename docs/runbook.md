@@ -21,6 +21,18 @@
 - Locale switcher (CA | DE | EN | ES) and hash anchors `/#id` or `/ca/#id`: `src/components/Header.astro` and `src/i18n/paths.ts`.
 - Sitemap alternates: `@astrojs/sitemap` in `astro.config.mjs` (BCP-47 locale codes: `es`, `ca`, `en`, `de`).
 
+### Browser language on unprefixed URLs
+
+Unprefixed paths (`/`, `/pricing/`, `/doc/...`) are the Spanish pages. Container nginx (`nginx/container.conf`) negotiates locale on `GET` and `HEAD`:
+
+- First `Accept-Language` tag `ca`, `en`, or `de` → `302` to that prefix. Spanish and any other language stay on the unprefixed URL.
+- The language switcher adds `?km0_locale=` and a `km0_locale` cookie so an explicit choice wins over `Accept-Language`. Nginx answers that query with `301` to the same path without the query, and sets the cookie.
+- Search crawlers (Googlebot, Bingbot, and similar) are not redirected. `/` stays the Spanish canonical (`hreflang` `x-default`).
+- Link-preview crawlers follow the same `Accept-Language` rules. WhatsApp sends the chat language. X/Twitterbot usually sends none; those requests go to `/en/...` so a bare-domain card is English instead of always Spanish.
+- `fb_locale` (Facebook rescrape) wins over `Accept-Language`.
+
+Prefixed URLs (`/ca/`, `/en/`, `/de/`) are never redirected. Assets, `/api/`, and `/hooks/` are not redirected.
+
 ### SEO and search indexing
 
 - **robots.txt:** `public/robots.txt` (allows all crawlers, references sitemap).
@@ -58,6 +70,43 @@ curl -sI http://127.0.0.1:9180/ca/doc/ http://127.0.0.1:9180/en/doc/day-0/
 - Home: **Services** section (`#services`) between Values and Meaning; Cloud/Email links in i18n `services.items`
 
 **Add a post:** create the `.md` in each locale (same filename slug, e.g. `day-0.md`), then `docker compose build && docker compose up -d`.
+
+
+### Visitors so far (footer counter)
+
+Cumulative **unique visitors** in the site footer (first-party; no third-party analytics).
+
+| Piece | Location |
+|-------|----------|
+| Footer UI | `src/components/Footer.astro` + `src/scripts/visitors-counter.ts` |
+| Host API | `scripts/km0-visitors-counter.py` on `:9182` |
+| Unit | `km0-visitors-counter.service` (`deploy/systemd/`) |
+| State | `/var/spool/km0-visitors/state.json` (count + hashed ids only) |
+| Proxy | Host nginx `location = /api/visitors` → `:9182`; container nginx → `host.docker.internal:9182` |
+
+- Public JSON: `{"count": N}` only (GET or POST).
+- POST body: `{"id":"<client-uuid>"}` - increments once per distinct id (sha256 stored).
+- Client stores id in `localStorage` (`km0_visitor_id`).
+
+```bash
+# status
+systemctl status km0-visitors-counter --no-pager
+curl -s http://127.0.0.1:9182/api/visitors
+curl -s -X POST http://127.0.0.1:9182/api/visitors -H 'Content-Type: application/json' -d '{"id":"test-visitor-001"}'
+curl -sI https://km0digital.com/api/visitors
+```
+
+Install / refresh unit (once):
+
+```bash
+sudo install -d -o km0-receiver -g km0-receiver -m 0750 /var/spool/km0-visitors
+sudo cp deploy/systemd/km0-visitors-counter.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now km0-visitors-counter.service
+sudo nginx -t && sudo systemctl reload nginx
+# Docker bridge must reach the host API (same pattern as ideas :9181)
+sudo ufw allow from 172.16.0.0/12 to any port 9182 proto tcp comment "km0 visitors counter (Docker)"
+```
 
 ### User ideas (site-wide chat widget)
 
@@ -203,7 +252,7 @@ Avoid `npm install` or `npm update` without a deliberate bump; that can rewrite 
 | Port | Behaviour |
 |------|-----------|
 | 80 | ACME challenge + redirect to HTTPS |
-| 443 | TLS termination → `proxy_pass http://127.0.0.1:9180` (except `POST /hooks/ideas` → `:9181`) |
+| 443 | TLS termination → `proxy_pass http://127.0.0.1:9180` (except `POST /hooks/ideas` → `:9181`, `/api/visitors` → `:9182`) |
 
 ### Reload after config change
 

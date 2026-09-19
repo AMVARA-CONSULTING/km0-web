@@ -146,6 +146,11 @@
     "slogan": "Data in the EU. Price without fine print.",
     "cloudTutorialCta": "How to get started",
     "cloudPricingCta": "View pricing",
+    "capacityNote": {
+      "label": "150 GB, in photos",
+      "photos": "About 75,000 photos at roughly 2 MB each. Not a file cap: a size you can picture. A lifetime of photos usually needs more.",
+      "move": "If it does not fit, or you are leaving another service, we move the files with human support. The transfer is quoted in writing."
+    },
     "items": [
       {
         "id": "cloud",
@@ -265,7 +270,7 @@
       {
         "id": "storage-150gb",
         "question": "Is 150 GB enough for a lifetime of photos?",
-        "answerHtml": "Often not. The public plan is <strong>150 GB for €1.99/month</strong>. Large phone libraries can outgrow it. Check size before a full dump; ask us for more capacity. Details in <a href=\"/en/tutorials/photo-backup/\">photo backup</a> and <a href=\"/en/pricing/\">pricing</a>."
+        "answerHtml": "Often not. 150 GB is about <strong>75,000 photos</strong> at roughly 2 MB each, for <strong>€1.99/month</strong>. Large libraries outgrow it. Check size before a full dump; if you need more, we quote extra capacity and the file move. Details in <a href=\"/en/tutorials/photo-backup/\">photo backup</a> and <a href=\"/en/pricing/\">pricing</a>."
       },
       {
         "id": "desktop-sync",

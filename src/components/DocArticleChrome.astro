@@ -30,6 +30,8 @@ interface Props {
   pubDate?: Date;
   pubDateLabel?: string;
   platformLabel?: string;
+  portraitSrc?: string;
+  portraitAlt?: string;
   prev?: NavLink;
   next?: NavLink;
   related?: RelatedLink[];
@@ -52,6 +54,8 @@ const {
   pubDate,
   pubDateLabel,
   platformLabel,
+  portraitSrc,
+  portraitAlt,
   prev,
   next,
   related = [],
@@ -109,7 +113,20 @@ const readingTime = formatReadingTime(readingTimeLabel, readingMinutes);
           )}
           <span>{readingTime}</span>
         </div>
-        <h1 class="reading-title">{title}</h1>
+        <div class:list={['reading-title-row', portraitSrc && 'reading-title-row--portrait']}>
+          <h1 class="reading-title">{title}</h1>
+          {portraitSrc && (
+            <img
+              class="reading-portrait"
+              src={portraitSrc}
+              alt={portraitAlt ?? title}
+              width="640"
+              height="640"
+              decoding="async"
+              fetchpriority="high"
+            />
+          )}
+        </div>
         <p class="reading-dek">{description}</p>
       </header>
 

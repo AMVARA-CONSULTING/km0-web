@@ -1,0 +1,18 @@
+[Unit]
+Description=KM0 unique visitors counter (host)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=km0-receiver
+Group=km0-receiver
+Environment=KM0_VISITORS_HOST=0.0.0.0
+Environment=KM0_VISITORS_PORT=9182
+Environment=KM0_VISITORS_STATE=/var/spool/km0-visitors/state.json
+ExecStart=/usr/bin/python3 /opt/km0-web/scripts/km0-visitors-counter.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

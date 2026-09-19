@@ -118,6 +118,12 @@ export interface Messages {
     slogan: string;
     cloudTutorialCta: string;
     cloudPricingCta: string;
+    /** Shared landing + pricing note: 150 GB as photo count, plus quoted file move. */
+    capacityNote: {
+      label: string;
+      photos: string;
+      move: string;
+    };
     items: {
       id: string;
       title: string;

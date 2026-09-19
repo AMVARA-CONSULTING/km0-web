@@ -48,6 +48,8 @@ const pageTitle = `${post.data.title} - ${messages.brandNameShort}`;
   canonicalUrl={canonicalUrl}
   pageTitle={pageTitle}
   pageDescription={post.data.description}
+  pageImage={post.data.image}
+  pageImageAlt={post.data.imageAlt}
 >
   <Header locale={locale} messages={messages} />
   <main class="reading-page">
@@ -55,6 +57,8 @@ const pageTitle = `${post.data.title} - ${messages.brandNameShort}`;
       breadcrumbHome={messages.doc.breadcrumbHome}
       breadcrumbHomeHref={localeHref(locale, '/doc/')}
       title={post.data.title}
+      portraitSrc={post.data.portrait}
+      portraitAlt={post.data.imageAlt}
       description={post.data.description}
       readingTimeLabel={messages.doc.readingTime}
       readingMinutes={readingMinutes}

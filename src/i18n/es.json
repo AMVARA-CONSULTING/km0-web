@@ -146,6 +146,11 @@
     "slogan": "Datos en la UE. Precio sin letra pequeña.",
     "cloudTutorialCta": "Cómo empezar",
     "cloudPricingCta": "Ver precios",
+    "capacityNote": {
+      "label": "150 GB, en fotos",
+      "photos": "Unas 75.000 fotos de unos 2 MB. No es un tope de archivos: sirve para hacerse una idea. Una vida entera de fotos suele pedir más.",
+      "move": "Si no cabe, o vienes de otro servicio, movemos los archivos con soporte humano. El traslado se presupuesta por escrito."
+    },
     "items": [
       {
         "id": "cloud",
@@ -265,7 +270,7 @@
       {
         "id": "storage-150gb",
         "question": "¿Bastan 150 GB para toda una vida de fotos?",
-        "answerHtml": "A menudo no. El plan público es <strong>150 GB por 1,99 €/mes</strong>. Bibliotecas grandes del móvil se te pueden quedar cortas. Mira el tamaño antes de un volcado completo; pide más capacidad si hace falta. Detalle en <a href=\"/tutorials/photo-backup/\">copia de fotos</a> y <a href=\"/pricing/\">precios</a>."
+        "answerHtml": "A menudo no. 150 GB son unas <strong>75.000 fotos</strong> de unos 2 MB, por <strong>1,99 €/mes</strong>. Bibliotecas grandes se quedan cortas. Mira el tamaño antes de un volcado; si hace falta, pedimos más capacidad y presupuestamos el traslado. Detalle en <a href=\"/tutorials/photo-backup/\">copia de fotos</a> y <a href=\"/pricing/\">precios</a>."
       },
       {
         "id": "desktop-sync",

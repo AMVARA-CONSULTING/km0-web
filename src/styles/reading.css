@@ -175,8 +175,32 @@
     @apply mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-sans text-[0.75rem] uppercase tracking-[0.1em] text-ink/45;
   }
 
+  .reading-title-row {
+    @apply mb-5 flex items-center justify-between gap-5;
+  }
+
+  .reading-title-row .reading-title {
+    @apply mb-0 min-w-0 flex-1;
+  }
+
   .reading-title {
     @apply mb-5 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-ink text-balance md:text-5xl lg:text-[3.35rem];
+  }
+
+  .reading-portrait {
+    @apply h-auto w-[min(7.5rem,28vw)] shrink-0 aspect-square rounded-2xl border border-mist/70 object-cover bg-snow/40;
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-signal) 28%, transparent),
+      0 0 28px color-mix(in oklab, var(--color-signal) 22%, transparent);
+  }
+
+  @media (max-width: 420px) {
+    .reading-title-row--portrait {
+      @apply items-start;
+    }
+
+    .reading-portrait {
+      @apply w-[min(5.5rem,26vw)];
+    }
   }
 
   .reading-dek {
@@ -453,6 +477,15 @@
   .reading-prose .doc-figure figcaption {
     @apply mt-3 font-sans text-[0.8125rem] leading-relaxed text-ink/55;
   }
+
+  .reading-prose .doc-figure--portrait {
+    @apply mx-auto max-w-[14rem];
+  }
+
+  .reading-prose .doc-figure--portrait img {
+    @apply mx-auto h-auto w-full max-w-full aspect-square object-cover;
+  }
+
 
   .reading-prose .doc-callout {
     @apply relative mt-8 max-w-none border-0 border-l-2 border-signal/55 bg-transparent py-0.5 pl-5 leading-[1.65];

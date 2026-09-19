@@ -43,7 +43,7 @@ Cada peça té un rol comprovable: `systemctl status`, `nginx -t`, `docker compo
 
 ## Consola
 
-Per a sessions SSH consistents es va aplicar la guia [initialConfiguration](https://wiki.ldeluipy.es/initialConfiguration.html) del wiki:
+Per a sessions SSH consistents es va aplicar una guia de configuració inicial de consola:
 
 - Prompt de Bash llegible (ruta, estat de l'ordre, pistes visuals)
 - Historial i opcions segures que redueixen errors repetits

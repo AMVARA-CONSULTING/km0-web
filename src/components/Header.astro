@@ -58,8 +58,9 @@ const langs: { code: Locale; href: string; label: string }[] = [
             <span class="masthead__lang-item">
               {i > 0 && <span class="masthead__lang-sep" aria-hidden="true">/</span>}
               <a
-                href={lang.href}
+                href={`${lang.href}?km0_locale=${lang.code}`}
                 data-lang-switch
+                data-locale={lang.code}
                 class:list={[
                   'masthead__lang',
                   locale === lang.code && 'masthead__lang--active',
@@ -138,7 +139,17 @@ const langs: { code: Locale; href: string; label: string }[] = [
     const hash = window.location.hash;
     if (!hash) return;
     document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
-      link.href = `${link.pathname}${hash}`;
+      link.href = `${link.pathname}${link.search}${hash}`;
+    });
+  }
+
+  function lockLocaleChoice() {
+    document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const code = link.dataset.locale;
+        if (code !== 'es' && code !== 'ca' && code !== 'en' && code !== 'de') return;
+        document.cookie = `km0_locale=${code}; Path=/; Max-Age=31536000; SameSite=Lax`;
+      });
     });
   }
 
@@ -173,6 +184,7 @@ const langs: { code: Locale; href: string; label: string }[] = [
   }
 
   applyLangSwitchHash();
+  lockLocaleChoice();
   window.addEventListener('hashchange', applyLangSwitchHash);
   initMobileMenu();
 </script>

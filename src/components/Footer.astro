@@ -87,6 +87,18 @@ const footerColumns = footerNavColumns(locale, m);
         >{formatDocDate(REPO_CREATED_AT, locale)}</a>
       </p>
       <p
+        class="font-sans text-xs text-ink/45"
+        data-visitors-line
+        data-locale={locale}
+        hidden
+      >
+        {m.footer.visitorsSoFar}{' '}
+        <span
+          class="font-medium tabular-nums tracking-wide text-ink/60"
+          data-visitors-count
+        ></span>
+      </p>
+      <p
         class="font-sans text-sm text-ink/50 [&_a]:font-semibold [&_a]:text-ink/70 [&_a]:underline [&_a]:decoration-signal/30 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-signal"
         set:html={m.footer.poweredByHtml}
       />
@@ -113,3 +125,7 @@ const footerColumns = footerNavColumns(locale, m);
     </div>
   </div>
 </footer>
+
+<script>
+  import '../scripts/visitors-counter.ts';
+</script>

@@ -62,6 +62,13 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
               <div class="offer-row__body">
                 <p class="offer-row__desc">{item.desc}</p>
                 {isCloud && (
+                  <aside class="offer-row__capacity" aria-label={m.services.capacityNote.label}>
+                    <p class="offer-row__capacity-label">{m.services.capacityNote.label}</p>
+                    <p class="offer-row__capacity-line">{m.services.capacityNote.photos}</p>
+                    <p class="offer-row__capacity-line">{m.services.capacityNote.move}</p>
+                  </aside>
+                )}
+                {isCloud && (
                   <a
                     href={localeHref(locale, '/tutorials/getting-started-web/')}
                     class="offer-row__text-link"
@@ -315,6 +322,29 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
     margin: 0 0 1rem;
     line-height: 1.6;
     color: color-mix(in srgb, var(--color-ink) 70%, transparent);
+  }
+
+  .offer-row__capacity {
+    margin: 0 0 1rem;
+    padding: 0.15rem 0 0.15rem 0.85rem;
+    border-left: 2px solid var(--color-signal);
+  }
+
+  .offer-row__capacity-label {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-signal);
+  }
+
+  .offer-row__capacity-line {
+    margin: 0.4rem 0 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--color-ink) 78%, transparent);
   }
 
   .offer-row__text-link {

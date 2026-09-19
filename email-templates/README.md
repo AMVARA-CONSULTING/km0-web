@@ -64,4 +64,4 @@ curl -sS -X POST "${AUTOMAIL_API_URL:-https://automail.lu-zero.ldeluipy.es/api/s
 | en | Cloud and Email in the EU. | Review account activity |
 | de | Cloud und E-Mail in der EU. | Kontoaktivität prüfen |
 
-Public offer copy: **500 GB / 1,99 €/month** (see `src/i18n/*/json` pricing section).
+Public offer copy: **150 GB / 1,99 €/month** (see `src/i18n/*/json` pricing section).

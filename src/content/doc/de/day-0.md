@@ -43,7 +43,7 @@ Jedes Stück sollte prüfbar sein: `systemctl status`, `nginx -t`, `docker compo
 
 ## Shell-Ergonomie
 
-Für konsistente SSH-Sitzungen wurde die Wiki-Anleitung [initialConfiguration](https://wiki.ldeluipy.es/initialConfiguration.html) angewendet:
+Für konsistente SSH-Sitzungen wurde eine Anleitung zur initialen Konsolenkonfiguration angewendet:
 
 - Lesbarer Bash-Prompt (Pfad, Exit-Status, visuelle Hinweise)
 - History und sichere Defaults, die wiederholte Fehler reduzieren

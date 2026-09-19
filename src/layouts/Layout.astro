@@ -12,6 +12,8 @@ interface Props {
   canonicalUrl: string;
   pageTitle?: string;
   pageDescription?: string;
+  pageImage?: string;
+  pageImageAlt?: string;
 }
 
 const site = Astro.site ?? new URL('https://km0digital.com');
@@ -23,7 +25,7 @@ const hrefs: Record<Locale, string> = {
   de: new URL('/de/', site).href,
 };
 
-const { locale, messages: m, canonicalUrl, pageTitle, pageDescription } = Astro.props;
+const { locale, messages: m, canonicalUrl, pageTitle, pageDescription, pageImage, pageImageAlt } = Astro.props;
 const title = pageTitle ?? m.meta.title;
 const description = pageDescription ?? m.meta.description;
 ---
@@ -39,7 +41,8 @@ const description = pageDescription ?? m.meta.description;
       title={title}
       description={description}
       canonicalUrl={canonicalUrl}
-      imageAlt={m.meta.ogImageAlt}
+      image={pageImage}
+      imageAlt={pageImageAlt ?? m.meta.ogImageAlt}
       locale={locale}
     />
     <link rel="alternate" hreflang="es" href={hrefs.es} />

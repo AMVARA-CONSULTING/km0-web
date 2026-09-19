@@ -6,3 +6,4 @@ dist
 docs
 *.md
 !README.md
+autoagents

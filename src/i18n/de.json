@@ -146,6 +146,11 @@
     "slogan": "Daten in der EU. Preis ohne Kleingedrucktes.",
     "cloudTutorialCta": "Erste Schritte",
     "cloudPricingCta": "Preise ansehen",
+    "capacityNote": {
+      "label": "150 GB, in Fotos",
+      "photos": "Etwa 75.000 Fotos zu je rund 2 MB. Kein Dateilimit, sondern eine Größe zum Vorstellen. Ein Leben voller Fotos braucht meist mehr.",
+      "move": "Wenn es nicht reicht oder Sie wechseln, ziehen wir die Dateien mit menschlichem Support um. Der Umzug wird schriftlich kalkuliert."
+    },
     "items": [
       {
         "id": "cloud",
@@ -265,7 +270,7 @@
       {
         "id": "storage-150gb",
         "question": "Reichen 150 GB für eine lebenslange Fotobibliothek?",
-        "answerHtml": "Oft nicht. Der öffentliche Tarif ist <strong>150 GB für 1,99 €/Monat</strong>. Große Handy-Bibliotheken können das übersteigen. Größe prüfen vor einem Komplett-Dump; nach mehr Kapazität fragen. Details: <a href=\"/de/tutorials/photo-backup/\">Fotobackup</a> und <a href=\"/de/pricing/\">Preise</a>."
+        "answerHtml": "Oft nicht. 150 GB sind etwa <strong>75.000 Fotos</strong> zu je rund 2 MB, für <strong>1,99 €/Monat</strong>. Große Bibliotheken gehen darüber hinaus. Größe prüfen vor einem Komplett-Dump; bei Bedarf kalkulieren wir mehr Speicher und den Umzug. Details: <a href=\"/de/tutorials/photo-backup/\">Fotobackup</a> und <a href=\"/de/pricing/\">Preise</a>."
       },
       {
         "id": "desktop-sync",

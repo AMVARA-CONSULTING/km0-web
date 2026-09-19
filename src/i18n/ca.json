@@ -146,6 +146,11 @@
     "slogan": "Dades a la UE. Preu sense lletra petita.",
     "cloudTutorialCta": "Com començar",
     "cloudPricingCta": "Veure preus",
+    "capacityNote": {
+      "label": "150 GB, en fotos",
+      "photos": "Unes 75.000 fotos d'uns 2 MB. No és un límit de fitxers: serveix per fer-se una idea. Tota una vida de fotos sol demanar més.",
+      "move": "Si no hi cap, o vens d'un altre servei, movem els fitxers amb suport humà. El trasllat es pressuposta per escrit."
+    },
     "items": [
       {
         "id": "cloud",
@@ -265,7 +270,7 @@
       {
         "id": "storage-150gb",
         "question": "N'hi ha prou amb 150 GB per a tota una vida de fotos?",
-        "answerHtml": "Sovint no. El pla públic és <strong>150 GB per 1,99 €/mes</strong>. Biblioteques grans del mòbil et poden quedar curtes. Mira la mida abans d'un bolcat complet; demana més capacitat si cal. Detall a <a href=\"/ca/tutorials/photo-backup/\">còpia de fotos</a> i <a href=\"/ca/pricing/\">preus</a>."
+        "answerHtml": "Sovint no. 150 GB són unes <strong>75.000 fotos</strong> d'uns 2 MB, per <strong>1,99 €/mes</strong>. Les biblioteques grans queden curtes. Mira la mida abans d'un bolcat; si cal, demanem més capacitat i pressupostem el trasllat. Detall a <a href=\"/ca/tutorials/photo-backup/\">còpia de fotos</a> i <a href=\"/ca/pricing/\">preus</a>."
       },
       {
         "id": "desktop-sync",

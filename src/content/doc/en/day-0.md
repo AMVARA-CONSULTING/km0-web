@@ -43,7 +43,7 @@ Each piece should be checkable: `systemctl status`, `nginx -t`, `docker compose 
 
 ## Shell ergonomics
 
-For consistent SSH sessions, the wiki [initialConfiguration](https://wiki.ldeluipy.es/initialConfiguration.html) guide was applied:
+For consistent SSH sessions, an initial console configuration guide was applied:
 
 - Readable Bash prompt (path, command status, visual hints)
 - History and safe defaults that reduce repeated mistakes

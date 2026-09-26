@@ -45,5 +45,6 @@ product: mail
     <li><strong>Falsche E-Mail oder falsches Passwort:</strong> prüfen Sie, ob die Adresse vollständig ist, und versuchen Sie es erneut.</li>
     <li><strong>Senden nicht möglich:</strong> stellen Sie sicher, dass Sie das Konto bestätigt haben (siehe <a href="/de/tutorials/mail-register/">Tutorial zum Konto erstellen</a>).</li>
     <li><strong>Sie haben ein OpenCloud-Konto:</strong> nutzen Sie die sekundäre Option "OpenCloud / LDAP" auf demselben Bildschirm.</li>
+    <li><strong>Outlook nutzen:</strong> folgen Sie dem Tutorial <a href="/de/tutorials/mail-outlook/">KM0 Mail in Outlook einrichten</a>.</li>
   </ul>
 </section>

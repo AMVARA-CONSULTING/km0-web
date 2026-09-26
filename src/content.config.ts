@@ -26,6 +26,8 @@ const tutorials = defineCollection({
     platform: z.enum(['web', 'android', 'ios', 'macos', 'desktop', 'mobile']),
     /** Product family used to group the tutorials index. */
     product: z.enum(['cloud', 'mail']).default('cloud'),
+    /** When true, the tutorial is highlighted at the top of the tutorials index. */
+    featured: z.boolean().optional(),
   }),
 });
 

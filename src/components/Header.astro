@@ -16,6 +16,20 @@ const pathname = Astro.url.pathname;
 
 const nav = headerNavLinks(locale, m);
 
+/** Mark the current section in the top menu (e.g. Tutorials while browsing /tutorials/). */
+function navItemIsCurrent(href: string): boolean {
+  // Hash links (home / services / contact) are in-page anchors, not section routes.
+  if (href.includes('#')) return false;
+  try {
+    const path = new URL(href, 'https://km0digital.com').pathname.replace(/\/$/, '') || '/';
+    const here = pathname.replace(/\/$/, '') || '/';
+    return here === path || here.startsWith(`${path}/`);
+  } catch {
+    return false;
+  }
+}
+
+
 const langs: { code: Locale; href: string; label: string }[] = [
   { code: 'ca', href: switchLocaleHref(pathname, locale, 'ca'), label: 'CA' },
   { code: 'de', href: switchLocaleHref(pathname, locale, 'de'), label: 'DE' },
@@ -42,13 +56,20 @@ const langs: { code: Locale; href: string; label: string }[] = [
     <div class="masthead__end">
       <ul class="masthead__links">
         {
-          nav.map((item) => (
-            <li>
-              <a href={item.href} class="masthead__link">
-                {item.label}
-              </a>
-            </li>
-          ))
+          nav.map((item) => {
+            const current = navItemIsCurrent(item.href);
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={['masthead__link', current && 'masthead__link--current']}
+                  aria-current={current ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
 
@@ -122,13 +143,21 @@ const langs: { code: Locale; href: string; label: string }[] = [
   >
     <ul class="masthead__mobile-list">
       {
-        nav.map((item) => (
-          <li>
-            <a href={item.href} data-mobile-nav-link class="masthead__mobile-link">
-              {item.label}
-            </a>
-          </li>
-        ))
+        nav.map((item) => {
+          const current = navItemIsCurrent(item.href);
+          return (
+            <li>
+              <a
+                href={item.href}
+                data-mobile-nav-link
+                class:list={['masthead__mobile-link', current && 'masthead__mobile-link--current']}
+                aria-current={current ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
   </div>

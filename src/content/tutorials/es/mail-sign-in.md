@@ -45,5 +45,6 @@ product: mail
     <li><strong>Correo o contraseña incorrectos:</strong> revisa que la dirección esté completa y vuelve a intentarlo.</li>
     <li><strong>No puedo enviar correo:</strong> asegúrate de haber verificado la cuenta (mira el tutorial de <a href="/tutorials/mail-register/">crear cuenta</a>).</li>
     <li><strong>Tienes cuenta de OpenCloud:</strong> puedes usar la opción secundaria "OpenCloud / LDAP" en la misma pantalla.</li>
+    <li><strong>Quieres usar Outlook:</strong> sigue el tutorial de <a href="/tutorials/mail-outlook/">usar KM0 Mail en Outlook</a>.</li>
   </ul>
 </section>

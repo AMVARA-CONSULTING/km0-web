@@ -45,5 +45,6 @@ product: mail
     <li><strong>Wrong email or password:</strong> check that the address is complete and try again.</li>
     <li><strong>Cannot send mail:</strong> make sure you verified the account (see the <a href="/en/tutorials/mail-register/">create account tutorial</a>).</li>
     <li><strong>You have an OpenCloud account:</strong> you can use the secondary "OpenCloud / LDAP" option on the same screen.</li>
+    <li><strong>Outlook:</strong> follow the <a href="/en/tutorials/mail-outlook/">use KM0 Mail in Outlook</a> tutorial.</li>
   </ul>
 </section>

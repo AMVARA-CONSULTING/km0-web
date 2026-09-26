@@ -19,12 +19,17 @@ const tutorials = (await getCollection('tutorials', ({ data }) => data.locale ==
   compareTutorials,
 );
 
+const featuredTutorials = tutorials.filter((tutorial) => tutorial.data.featured === true);
+const featuredIds = new Set(featuredTutorials.map((tutorial) => tutorial.id));
+
 const productOrder = ['cloud', 'mail'] as const;
 const groups = productOrder
   .map((product) => ({
     product,
     label: messages.tutorials.groups[product],
-    items: tutorials.filter((tutorial) => tutorial.data.product === product),
+    items: tutorials.filter(
+      (tutorial) => tutorial.data.product === product && !featuredIds.has(tutorial.id),
+    ),
   }))
   .filter((group) => group.items.length > 0);
 
@@ -49,11 +54,10 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
       </header>
 
       {
-        groups.map((group, groupIndex) => (
+        featuredTutorials.length > 0 && (
           <section class="reading-group">
-            <h2 class="reading-group-title">{group.label}</h2>
             <ul class="reading-catalog">
-              {group.items.map((tutorial, index) => {
+              {featuredTutorials.map((tutorial) => {
                 const readingMinutes = estimateReadingMinutes(tutorial.body ?? '', locale);
                 const readingTime = formatReadingTime(
                   messages.tutorials.readingTime,
@@ -61,12 +65,39 @@ const canonicalUrl = new URL(localeHref(locale, '/tutorials/'), siteRoot).href;
                 );
 
                 return (
-                  <li
-                    class:list={[
-                      'reading-entry',
-                      groupIndex === 0 && index === 0 && 'reading-entry--feature',
-                    ]}
-                  >
+                  <li class="reading-entry reading-entry--feature">
+                    <h3 class="reading-entry-title">
+                      <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>
+                        {tutorial.data.title}
+                      </a>
+                    </h3>
+                    <p class="reading-entry-dek">{tutorial.data.description}</p>
+                    <div class="reading-entry-meta">
+                      <span class="reading-platform">{tutorial.data.platform}</span>
+                      <span>{readingTime}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        groups.map((group) => (
+          <section class="reading-group">
+            <h2 class="reading-group-title">{group.label}</h2>
+            <ul class="reading-catalog">
+              {group.items.map((tutorial) => {
+                const readingMinutes = estimateReadingMinutes(tutorial.body ?? '', locale);
+                const readingTime = formatReadingTime(
+                  messages.tutorials.readingTime,
+                  readingMinutes,
+                );
+
+                return (
+                  <li class="reading-entry">
                     <h3 class="reading-entry-title">
                       <a href={tutorialPostHref(locale, tutorialSlug(tutorial))}>
                         {tutorial.data.title}

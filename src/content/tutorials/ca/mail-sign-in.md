@@ -45,5 +45,6 @@ product: mail
     <li><strong>Correu o contrasenya incorrectes:</strong> comprova que l'adreça sigui completa i torna-ho a provar.</li>
     <li><strong>No puc enviar correu:</strong> assegura't d'haver verificat el compte (mira el tutorial de <a href="/ca/tutorials/mail-register/">crear compte</a>).</li>
     <li><strong>Tens compte d'OpenCloud:</strong> pots fer servir l'opció secundària "OpenCloud / LDAP" a la mateixa pantalla.</li>
+    <li><strong>Vols usar l'Outlook:</strong> segueix el tutorial de <a href="/ca/tutorials/mail-outlook/">usar KM0 Mail a l'Outlook</a>.</li>
   </ul>
 </section>

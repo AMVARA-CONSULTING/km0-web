@@ -29,6 +29,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--masthead-offset) + 0.75rem);
+  }
+
+  html[data-masthead='compact'] {
+    scroll-padding-top: calc(var(--masthead-offset-compact) + 0.75rem);
   }
 
   @media (prefers-reduced-motion: reduce) {

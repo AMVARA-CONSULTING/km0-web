@@ -36,13 +36,13 @@ Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landin
 
 ## Primary nav (desktop + mobile)
 
-Home · Services · Pricing · Blog · Tutorials · Encuentros · Contact
+Home · Services · Pricing · Contact
+
+The apps launcher in the masthead still opens Cloud and Email.
 
 ## Secondary (footer / overflow)
 
-Guides · Presentation · FAQ · Legal · Security · product deep links (Cloud, Email)
-
-Tutorials also remains in the footer Explore column for secondary discovery.
+Blog · Tutorials · Meetings · Guides · Presentation · FAQ · Legal · Security · product deep links (Cloud, Email)
 
 ## Stable routes (do not 404)
 

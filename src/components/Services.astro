@@ -123,6 +123,14 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 </script>
 
 <style>
+  .offer {
+    scroll-margin-top: calc(var(--masthead-offset) + 0.75rem);
+  }
+
+  :global(html[data-masthead='compact']) .offer {
+    scroll-margin-top: calc(var(--masthead-offset-compact) + 0.75rem);
+  }
+
   .offer__layout {
     display: grid;
     gap: 2.5rem;
@@ -139,7 +147,7 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
       position: sticky;
       top: var(--masthead-offset);
       align-self: start;
-      z-index: 2;
+      z-index: 0;
     }
 
   }
@@ -247,9 +255,15 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 
   .offer-row {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
     padding: 2rem 0;
     border-bottom: 1px solid var(--color-mist);
+    scroll-margin-top: calc(var(--masthead-offset) + 0.75rem);
+  }
+
+  :global(html[data-masthead='compact']) .offer-row {
+    scroll-margin-top: calc(var(--masthead-offset-compact) + 0.75rem);
   }
 
   /* Cloud leads; Email stays quieter companion (not equal feature strips) */
@@ -268,9 +282,6 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 
   @media (min-width: 768px) {
     .offer-row {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 2.5rem;
-      align-items: start;
       padding: 2.5rem 0;
     }
 

@@ -8,15 +8,12 @@ export type SiteNavLink = {
   external?: boolean;
 };
 
-/** Primary header navigation (≤7 items). Secondary routes live in the footer. */
+/** Primary header: rank product actions. Blog, tutorials, and meetings stay in the footer. */
 export function headerNavLinks(locale: Locale, m: Messages): SiteNavLink[] {
   return [
     { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
     { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
     { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
-    { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
-    { id: 'tutorials', label: m.nav.tutorials, href: localeHref(locale, '/tutorials/') },
-    { id: 'meeting', label: m.nav.meeting, href: localeHref(locale, '/meeting/') },
     { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
   ];
 }

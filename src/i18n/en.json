@@ -236,6 +236,10 @@
   },
   "faq": {
     "heading": "FAQ",
+    "eyebrow": "Help",
+    "intro": "Short answers on KM0 Cloud, KM0 Email, EU hosting, and how to start. Step-by-step guides live under Tutorials.",
+    "metaTitle": "FAQ - Kilometer 0 Digital",
+    "metaDescription": "What KM0 is, where data lives, ISO 27001, photos, desktop sync, and how to get in touch.",
     "items": [
       {
         "id": "movement",

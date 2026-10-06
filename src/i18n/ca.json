@@ -236,6 +236,10 @@
   },
   "faq": {
     "heading": "Preguntes freqüents",
+    "eyebrow": "Ajuda",
+    "intro": "Respostes curtes sobre KM0 Cloud, KM0 Email, dades a la UE i com començar. Les guies pas a pas són a Tutorials.",
+    "metaTitle": "Preguntes freqüents - Kilòmetre 0 Digital",
+    "metaDescription": "Què és KM0, on són les dades, ISO 27001, fotos, sincronització i com contactar.",
     "items": [
       {
         "id": "movement",

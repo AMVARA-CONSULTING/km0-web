@@ -13,16 +13,18 @@ Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landin
 | 5 | Why KM0 | Single contrast block (`#why`); presentation link for depth |
 | 6 | Cloud users | Live registered-user counter + Open Cloud CTA + register secondary (`#cloud-users`) |
 | 7 | Community / Encuentros | Short teaser (`#community`) → Meetings, WhatsApp, Ideas |
-| 8 | FAQ | Deduped: movement, participate, hosting, one ISO, one privacy (`#faq`) |
-| 9 | Contact | Email + WhatsApp QR (`#contact`) |
-| 10 | Purpose | Mission + Vision closer (`#purpose`); 10M/2030 framed as goal, not a live KPI |
-| 11 | Footer | Secondary routes + legal |
+| 8 | Contact | Email + WhatsApp QR (`#contact`) |
+| 9 | Purpose | Mission + Vision closer (`#purpose`); 10M/2030 framed as goal, not a live KPI |
+| 10 | Footer | Secondary routes + legal |
+
+FAQ lives on `/faq/` (and `/ca/faq/`, `/en/faq/`, `/de/faq/`). Home `#faq` redirects there.
 
 ### Removed from home
 
 | Former section | Disposition |
 |----------------|-------------|
 | Vision / Mission / Values / PrivacyTrust (old multi-block) | Merged into **Why KM0**; Mission/Vision statements restored as single **Purpose** closer (boss mandate 2026-07-18) |
+| Landing FAQ accordion | Moved to `/faq/` (locale prefixes) |
 | Meaning (logo symbolism) | Off home; use `/presentation/` |
 | MerchShowcase / Horizonte | Removed (no product URL) |
 | Standalone CloudUserStats section | Kept as intentional Ink band after Why |
@@ -46,8 +48,8 @@ Blog · Tutorials · Meetings · Guides · Presentation · FAQ · Legal · Secur
 
 ## Stable routes (do not 404)
 
-`/doc/`, `/tutorials/`, `/pricing/`, `/meeting/`, `/security/`, `/legal/`, `/presentation/` (ideas intake is a site-wide widget, not a route)
+`/doc/`, `/tutorials/`, `/pricing/`, `/meeting/`, `/security/`, `/legal/`, `/presentation/`, `/faq/` (ideas intake is a site-wide widget, not a route)
 
 ## Anchor redirects note
 
-Old hashes `#vision`, `#mission`, `#values`, `#meaning`, `#privacy-trust` no longer exist as standalone sections. Prefer `#why`, `#services`, `#community`, `#faq`, `#contact`, `#cloud-users`, `#purpose`.
+Old hashes `#vision`, `#mission`, `#values`, `#meaning`, `#privacy-trust` no longer exist as standalone sections. Prefer `#why`, `#services`, `#community`, `#contact`, `#cloud-users`, `#purpose`. Home `#faq` sends visitors to `/faq/`.

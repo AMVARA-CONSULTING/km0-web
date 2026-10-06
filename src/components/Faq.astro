@@ -3,18 +3,23 @@ import type { Messages } from '../i18n/types';
 
 interface Props {
   messages: Messages;
+  showHeading?: boolean;
 }
 
-const { messages: m } = Astro.props;
+const { messages: m, showHeading = true } = Astro.props;
 ---
 
-<section id="faq" class="section-pad faq" aria-labelledby="faq-heading">
+<section id="faq" class:list={['faq', showHeading && 'section-pad']} aria-labelledby="faq-heading">
   <div class="faq__shell mx-auto max-w-4xl">
-    <header class="faq__header" data-reveal>
-      <h2 id="faq-heading" class="heading-section text-navy">
-        {m.faq.heading}
-      </h2>
-    </header>
+    {
+      showHeading && (
+        <header class="faq__header" data-reveal>
+          <h2 id="faq-heading" class="heading-section text-navy">
+            {m.faq.heading}
+          </h2>
+        </header>
+      )
+    }
 
     <div class="faq__list" data-faq-accordion>
       {

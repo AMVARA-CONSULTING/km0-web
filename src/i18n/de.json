@@ -236,6 +236,10 @@
   },
   "faq": {
     "heading": "Häufige Fragen",
+    "eyebrow": "Hilfe",
+    "intro": "Kurze Antworten zu KM0 Cloud, KM0 Email, EU-Hosting und Einstieg. Schritt-für-Schritt steht unter Tutorials.",
+    "metaTitle": "Häufige Fragen - Kilometer 0 Digital",
+    "metaDescription": "Was KM0 ist, wo Daten liegen, ISO 27001, Fotos, Desktop-Sync und Kontakt.",
     "items": [
       {
         "id": "movement",

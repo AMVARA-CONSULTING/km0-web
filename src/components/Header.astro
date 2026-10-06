@@ -219,6 +219,15 @@ const langs: { code: Locale; href: string; label: string; spoken: string }[] = [
   lockLocaleChoice();
   window.addEventListener('hashchange', applyLangSwitchHash);
   initMobileMenu();
+
+  (function redirectLegacyFaqHash() {
+    if (window.location.hash !== '#faq') return;
+    const path = window.location.pathname.replace(/\/+$/, '') || '/';
+    const isHome = path === '/' || path === '/ca' || path === '/en' || path === '/de';
+    if (!isHome) return;
+    const dest = path === '/' ? '/faq/' : `${path}/faq/`;
+    window.location.replace(dest);
+  })();
 </script>
 
 <style>

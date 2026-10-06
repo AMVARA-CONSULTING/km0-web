@@ -200,6 +200,10 @@ export interface Messages {
   };
   faq: {
     heading: string;
+    eyebrow: string;
+    intro: string;
+    metaTitle: string;
+    metaDescription: string;
     items: {
       id: string;
       question: string;

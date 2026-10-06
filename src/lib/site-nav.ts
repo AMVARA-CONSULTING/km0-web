@@ -54,7 +54,7 @@ export function footerNavColumns(locale: Locale, m: Messages): FooterNavColumn[]
       links: [
         { id: 'why', label: m.nav.vision, href: withHash(locale, 'why') },
         { id: 'presentation', label: m.nav.presentation, href: localeHref(locale, '/presentation/') },
-        { id: 'faq', label: m.nav.faq, href: withHash(locale, 'faq') },
+        { id: 'faq', label: m.nav.faq, href: localeHref(locale, '/faq/') },
         { id: 'community', label: m.nav.community, href: withHash(locale, 'community') },
         { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
       ],

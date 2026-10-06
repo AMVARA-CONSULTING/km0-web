@@ -8,8 +8,8 @@ Canonical map after **FEAT-74** (IA restructure), updated **2026-07-18** (landin
 |------:|-------|----------------|
 | 1 | Header | Primary nav only |
 | 2 | Hero | Brand + promise; primary CTA → KM0 Cloud; secondary → Pricing; live proof + **Create account** text link → auth register |
-| 3 | TrustSignals | Quiet hosting / operator / ISO / security facts (`#trust`); not a competing proof band |
-| 4 | Offer (`Services`) | Cloud + Email, price hook, tutorials/pricing links |
+| 3 | Offer (`Services`) | Cloud + Email, price hook; Open Cloud / Open Email as primary pills |
+| 4 | TrustSignals | Quiet hosting / operator / ISO / security facts (`#trust`); after the offer so it does not compete with the fold |
 | 5 | Why KM0 | Single contrast block (`#why`); presentation link for depth |
 | 6 | Cloud users | Live registered-user counter + Open Cloud CTA + register secondary (`#cloud-users`) |
 | 7 | Community / Encuentros | Short teaser (`#community`) → Meetings, WhatsApp, Ideas |

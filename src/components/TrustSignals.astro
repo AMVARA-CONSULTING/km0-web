@@ -66,10 +66,11 @@ function resolveTrustLink(item: Messages['trust']['items'][number]): TrustLink |
 </section>
 
 <style>
-  /* Quiet fact strip: hairline under hero, not a competing proof band */
+  /* Quiet fact strip after the offer, not on the hero fold */
   .trust {
     color: var(--color-ink);
-    padding: 0 var(--space-section-x) clamp(1.25rem, 2.5vw, 1.75rem);
+    padding: clamp(1rem, 2vw, 1.5rem) var(--space-section-x) clamp(1.5rem, 2.5vw, 2rem);
+    border-top: 1px solid var(--color-mist);
   }
 
   .trust__list {

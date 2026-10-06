@@ -11,9 +11,6 @@ interface Props {
 
 const { locale, messages: m } = Astro.props;
 const hasComingSoon = m.services.items.some((item) => item.available === false);
-const cloudItem = m.services.items.find((item) => item.id === 'cloud');
-const pinCta = cloudItem?.secondaryCta ?? m.hero.ctaPrimary;
-const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
 ---
 
 <section id="services" class="section-pad offer" aria-labelledby="services-heading">
@@ -27,9 +24,6 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
           <p class="offer__intro">{m.services.intro}</p>
           <p class="offer__slogan">{m.services.slogan}</p>
         </header>
-        <a href={pinHref} class="offer__pin-link offer__pin-cta" data-reveal data-delay="100">
-          {pinCta}
-        </a>
       </div>
     </aside>
 
@@ -180,43 +174,6 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
   .offer__header {
     max-width: 40rem;
     margin-bottom: 0;
-  }
-
-  /* Quiet Cloud reaffirm in pin; hero + Why hold the loud Open Cloud primaries */
-  .offer__pin-link {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-ink);
-    text-decoration: underline;
-    text-decoration-color: color-mix(in srgb, var(--color-signal) 45%, transparent);
-    text-underline-offset: 0.2em;
-    transition: color 0.3s var(--ease-out-expo), text-decoration-color 0.3s var(--ease-out-expo);
-  }
-
-  .offer__pin-link:hover {
-    color: var(--color-signal);
-    text-decoration-color: var(--color-signal);
-  }
-
-  .offer__pin-link:focus-visible {
-    outline: 2px solid var(--color-signal);
-    outline-offset: 4px;
-  }
-
-  .offer__pin-cta {
-    display: none;
-    margin-top: 1.75rem;
-  }
-
-  @media (min-width: 1024px) {
-    .offer__pin-cta {
-      display: inline-flex;
-    }
-
-    .offer__pin--stuck .offer__pin-cta {
-      margin-top: 1.35rem;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {

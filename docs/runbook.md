@@ -407,6 +407,7 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 │   └── sites-available/km0 # host vhost template
 └── docs/
     ├── runbook.md                  # this file
+    ├── sso-keycloak.md             # Keycloak / IAM sibling map
     ├── brand-tokens.md             # colors, copy
     └── user-ideas-queue-plan.md    # user comment intake (queue + secret processor)
 ```
@@ -418,6 +419,7 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 | Doc | Topic |
 |-----|--------|
 | [user-ideas-queue-plan.md](./user-ideas-queue-plan.md) | Public form → spool JSON → host-only secret script |
+| [sso-keycloak.md](./sso-keycloak.md) | Keycloak live issuer, Cloud/Mail/Git/Redmine map (not this vhost) |
 
 ---
 
@@ -428,4 +430,5 @@ cat /root/.ssh/github_luipy56_ed25519.pub
 | 2026-05-21 | Initial deploy: Astro, Docker :9180, Nginx km0digital.com, LE TLS |
 | 2026-05-21 | OpenCloud moved to cloud.km0digital.com (DNS + LE pending) |
 | 2026-05-21 | i18n: `/` ES, `/ca/` CA, `/en/` EN; JSON strings + hreflang |
+| 2026-10-06 | Documented Keycloak cutover (Cloud issuer `km0digital`; Git/Redmine still `amvara`) in `docs/sso-keycloak.md` |
 | 2026-05-26 | Domain migration: `km0.amvara.de` → `km0digital.com` (301 redirect from old hostname) |

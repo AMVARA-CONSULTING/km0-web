@@ -20,6 +20,11 @@ Translations live in **`src/i18n/{es,ca,en,de}.json`**; default language is Span
 
 (Project docs and this README are mainly in English; on-site wording follows each locale.)
 
+## Sibling products (identity)
+
+This repo does **not** run login. After 5-6 Oct 2026, KM0 Cloud OIDC is **Keycloak** on amvara3 (`https://sso.km0digital.com/realms/km0digital`). Dex on amvara10 is leftover. Map: `docs/sso-keycloak.md`. Ticket [#8249](https://redmine.amvara.de/issues/8249).
+
+
 ## Design system
 
 Locked remodel direction (phases 1–3, paint, craft parity). Do not reintroduce light themes, purple gradients, zebra section bands, or generic SaaS hero recipes.
@@ -86,6 +91,7 @@ To add a post: create e.g. `src/content/doc/es/my-post.md` with frontmatter (`ti
 │   ├── brand-tokens.md
 │   ├── design/         # doctrine, paint, craft, IA, studies
 │   ├── runbook.md      # server operations
+│   ├── sso-keycloak.md  # Keycloak sibling map (not this stack)
 │   └── preview-hero.png
 ├── nginx/              # container config + host vhost template
 ├── Dockerfile

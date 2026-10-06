@@ -4,6 +4,7 @@
 
 ### Added
 
+- Operator map `docs/sso-keycloak.md`: Keycloak on amvara3 is the live Cloud OIDC issuer (realm `km0digital`); Git/Redmine still realm `amvara`.
 - Email templates: civic dark `message/` plain user-mail template (`es.html`) with `{{SUBJECT}}`, `{{PREHEADER}}`, `{{TITLE}}`, `{{BODY}}` (no pricing / feature list).
 
 ### Changed

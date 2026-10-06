@@ -19,6 +19,22 @@ h2. URLs
 
 ---
 
+
+h2. Identity (sibling, not this repo)
+
+After 5-6 Oct 2026, KM0 Cloud OIDC is Keycloak on *amvara3*.
+
+|_.Service|_.URL|_.Note|
+| SSO | "https://sso.km0digital.com":https://sso.km0digital.com | Realm @km0digital@ (live Cloud + Mail client) |
+| Auth hub | "https://auth.km0digital.com":https://auth.km0digital.com | Catalog @km0-auth@ |
+| Cloud | "https://cloud.km0digital.com":https://cloud.km0digital.com | Issuer Keycloak; Dex leftover |
+| Mail | "https://mail.km0digital.com":https://mail.km0digital.com | Login still separate from Cloud |
+| Git / Redmine OIDC | realm @amvara@ | Usual KM0 users have no access (open) |
+
+Operator map in this repo: @docs/sso-keycloak.md@. Ticket "#8249":https://redmine.amvara.de/issues/8249.
+
+---
+
 h2. HTTPS traffic flow
 
 <pre><code>

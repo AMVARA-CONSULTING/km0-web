@@ -233,9 +233,9 @@ const proof = m.hero.proof;
     font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-ink);
+    color: color-mix(in srgb, var(--color-ink) 62%, transparent);
     text-decoration: underline;
-    text-decoration-color: color-mix(in srgb, var(--color-signal) 45%, transparent);
+    text-decoration-color: color-mix(in srgb, var(--color-ink) 28%, transparent);
     text-underline-offset: 0.2em;
     transition: color 0.3s var(--ease-out-expo), text-decoration-color 0.3s var(--ease-out-expo);
   }

@@ -30,11 +30,11 @@ function navItemIsCurrent(href: string): boolean {
 }
 
 
-const langs: { code: Locale; href: string; label: string }[] = [
-  { code: 'ca', href: switchLocaleHref(pathname, locale, 'ca'), label: 'CA' },
-  { code: 'de', href: switchLocaleHref(pathname, locale, 'de'), label: 'DE' },
-  { code: 'en', href: switchLocaleHref(pathname, locale, 'en'), label: 'EN' },
-  { code: 'es', href: switchLocaleHref(pathname, locale, 'es'), label: 'ES' },
+const langs: { code: Locale; href: string; label: string; spoken: string }[] = [
+  { code: 'ca', href: switchLocaleHref(pathname, locale, 'ca'), label: 'CA', spoken: 'Català' },
+  { code: 'de', href: switchLocaleHref(pathname, locale, 'de'), label: 'DE', spoken: 'Deutsch' },
+  { code: 'en', href: switchLocaleHref(pathname, locale, 'en'), label: 'EN', spoken: 'English' },
+  { code: 'es', href: switchLocaleHref(pathname, locale, 'es'), label: 'ES', spoken: 'Español' },
 ];
 ---
 
@@ -87,6 +87,9 @@ const langs: { code: Locale; href: string; label: string }[] = [
                   locale === lang.code && 'masthead__lang--active',
                 ]}
                 hreflang={localeBcp47[lang.code]}
+                lang={localeBcp47[lang.code]}
+                aria-label={lang.spoken}
+                aria-current={locale === lang.code ? 'true' : undefined}
               >
                 {lang.label}
               </a>

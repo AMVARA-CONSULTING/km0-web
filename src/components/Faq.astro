@@ -29,7 +29,9 @@ const { messages: m } = Astro.props;
             <button
               type="button"
               class="faq-trigger"
+              id={`faq-trigger-${i}`}
               aria-expanded={i === 0 ? 'true' : 'false'}
+              aria-controls={`faq-panel-${i}`}
             >
               <span>{item.question}</span>
               <svg
@@ -43,7 +45,13 @@ const { messages: m } = Astro.props;
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div class="faq-panel" data-faq-panel>
+            <div
+              class="faq-panel"
+              data-faq-panel
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-trigger-${i}`}
+            >
               <div
                 class="faq-panel__content [&_a]:font-medium [&_a]:text-signal [&_a]:underline [&_a]:underline-offset-2"
                 set:html={item.answerHtml}

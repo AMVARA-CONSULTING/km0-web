@@ -96,14 +96,14 @@ const pinHref = cloudItem?.url ?? 'https://cloud.km0digital.com';
                         {item.cta}
                       </a>
                     ))}
+                  {isCloud && item.secondaryCta && (
+                    <a href={item.url} class="btn-primary">
+                      {item.secondaryCta}
+                    </a>
+                  )}
                   {isCloud && (
                     <a href={localeHref(locale, '/pricing/')} class="offer-row__text-link">
                       {m.services.cloudPricingCta}
-                    </a>
-                  )}
-                  {isCloud && item.secondaryCta && (
-                    <a href={item.url} class="offer-row__text-link">
-                      {item.secondaryCta}
                     </a>
                   )}
                 </div>

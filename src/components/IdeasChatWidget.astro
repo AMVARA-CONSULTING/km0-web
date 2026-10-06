@@ -156,13 +156,9 @@ const { locale, messages: m } = Astro.props;
     pointer-events: none;
   }
 
-  /* Keep the launcher off the live proof QR on small viewports */
-  @media (max-width: 959px) {
-    .ideas-chat {
-      right: auto;
-      left: max(1rem, env(safe-area-inset-left, 0px));
-      align-items: flex-start;
-    }
+  .ideas-chat--tucked .ideas-chat__launcher {
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .ideas-chat__panel,

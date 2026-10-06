@@ -44,6 +44,22 @@ function initIdeasChatWidget(): void {
       launcher.setAttribute('aria-label', openAria);
       launcher.focus();
     }
+    syncFabClearance();
+  };
+
+  const syncFabClearance = (): void => {
+    if (window.matchMedia('(min-width: 960px)').matches) {
+      root.classList.remove('ideas-chat--tucked');
+      return;
+    }
+    const hero = document.querySelector('.hero');
+    if (!hero) {
+      root.classList.remove('ideas-chat--tucked');
+      return;
+    }
+    const box = hero.getBoundingClientRect();
+    const coversFold = box.bottom > window.innerHeight - 88 && box.top < window.innerHeight;
+    root.classList.toggle('ideas-chat--tucked', coversFold && panel.hidden);
   };
 
   const clearStatus = (): void => {
@@ -78,6 +94,10 @@ function initIdeasChatWidget(): void {
       setOpen(false);
     }
   });
+
+  window.addEventListener('scroll', syncFabClearance, { passive: true });
+  window.addEventListener('resize', syncFabClearance, { passive: true });
+  syncFabClearance();
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();

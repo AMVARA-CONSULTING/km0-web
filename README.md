@@ -59,6 +59,8 @@ Footer semver comes from **`package.json`** `version` (via `src/lib/site-version
 
 Edit **`src/i18n/es.json`**, **`ca.json`**, **`en.json`**, and **`de.json`** together so keys stay aligned.
 
+Share/OG preview (`public/brand/og-preview.png`) is English-only (150 GB from €1.99/month). Negotiation default for humans without a language preference is English (`/en/`); Spanish remains at unprefixed `/`.
+
 ### Blog / doc
 
 Markdown posts live in **`src/content/doc/{es,ca,en,de}/`**. Collection schema: **`src/content.config.ts`**. Index and post pages use **`src/views/DocIndex.astro`** and **`DocPost.astro`**.

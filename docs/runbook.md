@@ -27,7 +27,9 @@ Unprefixed paths (`/`, `/pricing/`, `/doc/...`) are the Spanish pages. Container
 
 - First `Accept-Language` tag `ca`, `en`, or `de` → `302` to that prefix. Spanish and any other language stay on the unprefixed URL.
 - The language switcher adds `?km0_locale=` and a `km0_locale` cookie so an explicit choice wins over `Accept-Language`. Nginx answers that query with `301` to the same path without the query, and sets the cookie.
-- Search crawlers (Googlebot, Bingbot, and similar) are not redirected. `/` stays the Spanish canonical (`hreflang` `x-default`).
+- Search crawlers (Googlebot, Bingbot, and similar) are not redirected; unprefixed URLs stay the Spanish pages. `hreflang` `x-default` points at `/en/`.
+- Humans with no `Accept-Language` and no `km0_locale` cookie are redirected to `/en/` (English negotiation default). Spanish `Accept-Language` or cookie stays on unprefixed Spanish URLs.
+- Share card image `public/brand/og-preview.png` is a single English asset (150 GB / €1.99); bump `package.json` version to cache-bust.
 - Link-preview crawlers follow the same `Accept-Language` rules. WhatsApp sends the chat language. X/Twitterbot usually sends none; those requests go to `/en/...` so a bare-domain card is English instead of always Spanish.
 - `fb_locale` (Facebook rescrape) wins over `Accept-Language`.
 

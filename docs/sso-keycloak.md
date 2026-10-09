@@ -27,7 +27,7 @@ Do not send KM0 Cloud or Mail OIDC to realm `amvara`. That realm still exists fo
 **6 Oct**
 
 - Custom Keycloak image: bcrypt verifier (imported mailbox hashes) plus event listener `km0-mail-access` (role `km0MailUser` for `@km0digital.com`).
-- KM0 theme not on Keycloak yet.
+- Login theme `km0digital` applied on realm km0digital (amvara3 `/data/keycloak/app/themes/km0digital`). Account console still default.
 - Cloud and Mail login still separate. Logout is not symmetric (Mail logout does not end Cloud; Cloud logout can end Mail session without kicking the Mail UI).
 - Git (`git.amvara.de`) and Redmine (`redmine-gateway`) OIDC stay on realm `amvara`. Usual KM0 users have no Git/Redmine access until that is pointed at the right realm.
 

@@ -47,6 +47,15 @@ Prefixed URLs (`/ca/`, `/en/`, `/de/`) are never redirected. Assets, `/api/`, an
 1. [Google Search Console](https://search.google.com/search-console/about): verify `km0digital.com`, submit `https://km0digital.com/sitemap-index.xml`.
 2. [Bing Webmaster Tools](https://www.bing.com/webmasters/about): verify the domain and submit the same sitemap (helps non-Google search engines and regional filters).
 
+3. **IndexNow** (Bing / peers): key file at site root (`public/<INDEXNOW_KEY>.txt`, value in `.env` as `INDEXNOW_KEY`). After content deploys, notify engines:
+
+```bash
+python3 /opt/km0-web/scripts/submit-indexnow.py
+```
+
+Bing no longer accepts sitemap ping (`/ping` returns HTTP 410). IndexNow replaces that notify path. Bing Webmaster Tools still needs a one-time Microsoft sign-in to verify the property and attach the sitemap in the UI (or via Bing Webmaster API key).
+
+
 ```bash
 curl -sI https://km0digital.com/robots.txt
 curl -s https://km0digital.com/robots.txt

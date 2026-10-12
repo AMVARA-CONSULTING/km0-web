@@ -8,12 +8,13 @@ export type SiteNavLink = {
   external?: boolean;
 };
 
-/** Primary header: rank product actions. Blog, tutorials, and meetings stay in the footer. */
+/** Primary header: product actions + blog. Tutorials and meetings stay in the footer. */
 export function headerNavLinks(locale: Locale, m: Messages): SiteNavLink[] {
   return [
     { id: 'home', label: m.nav.home, href: withHash(locale, 'home') },
     { id: 'services', label: m.nav.services, href: withHash(locale, 'services') },
     { id: 'pricing', label: m.nav.pricing, href: localeHref(locale, '/pricing/') },
+    { id: 'blog', label: m.nav.blog, href: localeHref(locale, '/doc/') },
     { id: 'contact', label: m.nav.contact, href: withHash(locale, 'contact') },
   ];
 }

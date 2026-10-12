@@ -24,6 +24,9 @@ if [[ -f "$ENV_FILE" ]]; then
   set -a && source "$ENV_FILE" && set +a
 fi
 
+# Ensure Cursor CLI is visible when loop is started from non-interactive SSH/cron.
+export PATH="${HOME}/.local/bin:/root/.local/bin:${PATH}"
+
 cd "$SCRIPTDIR" || exit 1
 
 have_cursor_agent() {
@@ -288,6 +291,22 @@ committer_skip_local_stamp_only() {
   return 0
 }
 
+# Host-wide Cursor token/usage alert (Discord @everyone + cooldown).
+# Shared helper: /opt/amvara/scripts/cursor-token-alert.sh
+CURSOR_TOKEN_ALERT_BIN="${CURSOR_TOKEN_ALERT_BIN:-/opt/amvara/scripts/cursor-token-alert.sh}"
+AGENT_PROJECT_ID="${AGENT_PROJECT_ID:-$(basename "$REPO_ROOT")}"
+
+maybe_alert_cursor_tokens() {
+  local desc="$1" exit_code="$2" log_file="$3"
+  [[ -x "$CURSOR_TOKEN_ALERT_BIN" ]] || return 0
+  "$CURSOR_TOKEN_ALERT_BIN" \
+    --project "$AGENT_PROJECT_ID" \
+    --role "$desc" \
+    --exit "$exit_code" \
+    --log "$log_file" \
+    || true
+}
+
 run_agent() {
   local desc="$1" cond="$2" prompt="$3" msg="$4"
   local p="${SCRIPTDIR}/${prompt}"
@@ -312,12 +331,17 @@ run_agent() {
 
 Loop message:
 ${msg}"
+    mkdir -p "$AGENT_LOOP_TMP"
+    local _ca_log="${AGENT_LOOP_TMP}/cursor-agent-last.log"
+    : >"$_ca_log"
     set +e
-    cursor-agent --yolo --print --trust --workspace "$REPO_ROOT" "$full_prompt"
-    local _ca_rc=$?
+    # Capture output for token-exhaustion classifier; keep live console via tee.
+    cursor-agent --yolo --print --trust --workspace "$REPO_ROOT" "$full_prompt" 2>&1 | tee -a "$_ca_log"
+    local _ca_rc=${PIPESTATUS[0]}
     set -e
     if ((_ca_rc != 0)); then
       echo "----- $desc: cursor-agent exited ${_ca_rc} (continuing loop, non-fatal)" >&2
+      maybe_alert_cursor_tokens "$desc" "$_ca_rc" "$_ca_log"
     fi
   else
     echo "----- $desc (skip: nothing to do)"

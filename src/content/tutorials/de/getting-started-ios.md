@@ -38,10 +38,10 @@ platform: ios
   <h2 class="doc-block-heading">Weiter zur Anmeldung</h2>
   <ol class="doc-list">
     <li>Nach Bestätigung der Server-URL gelangen Sie zum Anmeldebildschirm.</li>
-    <li>Sie sehen Optionen ähnlich der Webversion: KM0-Cloud-Konto, Google, Apple oder andere, je nach Serverkonfiguration.</li>
+    <li>Ihr seht den gemeinsamen KM0-Anmeldebildschirm (derselbe Login wie im Browser). KM0-Zugangsdaten eingeben und bei aktiver 2FA den Authenticator-Code.</li>
     <li>Das Design kann iOS-Konventionen folgen, aber der Ablauf ist derselbe: Methode wählen und Anmeldung abschließen.</li>
   </ol>
-  <p class="doc-block-intro">Mehr Details zur Anmeldung finden Sie im Tutorial <a href="/de/tutorials/getting-started-web/">Erste Schritte im Browser</a>.</p>
+  <p class="doc-block-intro">Mehr Details zur Anmeldung: <a href="/de/tutorials/keycloak-sign-in-cloud/">Mit dem gemeinsamen Login bei KM0 Cloud anmelden</a>.</p>
 </section>
 
 <section class="doc-block doc-block-alt">

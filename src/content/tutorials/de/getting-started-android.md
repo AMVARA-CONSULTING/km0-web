@@ -38,9 +38,9 @@ platform: android
   <h2 class="doc-block-heading">Weiter zur Anmeldung</h2>
   <ol class="doc-list">
     <li>Nach der URL-Eingabe tippen Sie auf <strong>Weiter</strong> oder das Pfeilsymbol (je nach App-Version).</li>
-    <li>Sie sehen den Anmeldebildschirm mit denselben Optionen wie im Web: eigenes Konto, Google, Apple oder andere, je nach Serverkonfiguration.</li>
+    <li>Ihr seht den gemeinsamen KM0-Anmeldebildschirm (derselbe Login wie im Browser). KM0-Zugangsdaten eingeben und bei aktiver 2FA den Code aus der Authenticator-App.</li>
   </ol>
-  <p class="doc-block-intro">Mehr Details zur Anmeldung finden Sie im Tutorial <a href="/de/tutorials/getting-started-web/">Erste Schritte im Browser</a>.</p>
+  <p class="doc-block-intro">Mehr Details zur Anmeldung: <a href="/de/tutorials/keycloak-sign-in-cloud/">Mit dem gemeinsamen Login bei KM0 Cloud anmelden</a>.</p>
 </section>
 
 <section class="doc-block doc-block-alt">

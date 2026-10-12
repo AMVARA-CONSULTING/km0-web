@@ -38,10 +38,10 @@ platform: ios
   <h2 class="doc-block-heading">Continue to sign-in</h2>
   <ol class="doc-list">
     <li>After confirming the server URL, the app will take you to the sign-in screen.</li>
-    <li>You will see options similar to the web version: KM0 Cloud account, Google, Apple, or others, depending on server configuration.</li>
-    <li>The design may follow iOS conventions, but the process is the same: choose your method and complete sign-in.</li>
+    <li>You will see the shared KM0 sign-in screen (same login as in the browser). Enter your KM0 credentials, and a two-factor code if you enabled 2FA.</li>
+    <li>The layout may follow iOS conventions; the login is still the shared KM0 account.</li>
   </ol>
-  <p class="doc-block-intro">For more detail on signing in, see the <a href="/en/tutorials/getting-started-web/">Getting started in your browser</a> tutorial.</p>
+  <p class="doc-block-intro">For more detail on signing in, see <a href="/en/tutorials/keycloak-sign-in-cloud/">Sign in to KM0 Cloud with the shared login</a>.</p>
 </section>
 
 <section class="doc-block doc-block-alt">

@@ -466,6 +466,7 @@ export interface Messages {
   footer: {
     rights: string;
     github: string;
+    x: string;
     pricing: string;
     legal: string;
     security: string;

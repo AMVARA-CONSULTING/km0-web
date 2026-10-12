@@ -64,6 +64,13 @@ platform: desktop
 </section>
 
 <section class="doc-block doc-block-alt">
+  
+<section class="doc-block">
+  <p class="doc-block-title">Nach dem gemeinsamen Login</p>
+  <h2 class="doc-block-heading">Erneut anmelden wenn Sync steht</h2>
+  <p class="doc-block-intro">Cloud Web, Desktop und Mobil teilen einen KM0-Login. Wenn der Desktop-Client euch nach dem Wechsel abgemeldet hat, das bestehende Konto neu verbinden statt einen zweiten Sync-Ordner anzulegen. Schritt für Schritt: <a href="/de/tutorials/opencloud-desktop-relogin/">Erneute Anmeldung in OpenCloud Desktop</a>.</p>
+</section>
+
   <p class="doc-block-title">Speicher</p>
   <h2 class="doc-block-heading">150 GB öffentlicher Tarif</h2>
   <p class="doc-block-intro">Der veröffentlichte Tarif ist <strong>150 GB für 1,99 €/Monat</strong>. Eine mehrjährige Fotobibliothek kann das übersteigen. Prüfen Sie die Größe, bevor Sie einen Komplett-Dump planen. Größere Kontingente auf Anfrage (siehe <a href="/de/pricing/">Preise</a> und Kontakt).</p>

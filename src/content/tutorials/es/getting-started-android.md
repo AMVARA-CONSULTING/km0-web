@@ -38,9 +38,9 @@ platform: android
   <h2 class="doc-block-heading">Continúa hacia el inicio de sesión</h2>
   <ol class="doc-list">
     <li>Tras introducir la URL, pulsa <strong>Siguiente</strong> o la flecha (según la versión de la app).</li>
-    <li>Verás la pantalla de acceso con las mismas opciones que en la web: cuenta propia, Google, Apple u otras, según lo que soporte el servidor.</li>
+    <li>Verás la pantalla de acceso KM0 compartida (el mismo login que en el navegador). Introduce tus credenciales KM0 y el código de dos factores si activaste 2FA.</li>
   </ol>
-  <p class="doc-block-intro">Para más detalle sobre el acceso, consulta el tutorial <a href="/tutorials/getting-started-web/">Cómo empezar en el navegador</a>.</p>
+  <p class="doc-block-intro">Para más detalle sobre el acceso, consulta <a href="/tutorials/keycloak-sign-in-cloud/">Iniciar sesión en KM0 Cloud con el login compartido</a>.</p>
 </section>
 
 <section class="doc-block doc-block-alt">

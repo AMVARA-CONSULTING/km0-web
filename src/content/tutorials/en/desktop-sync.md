@@ -64,6 +64,13 @@ platform: desktop
 </section>
 
 <section class="doc-block doc-block-alt">
+  
+<section class="doc-block">
+  <p class="doc-block-title">After the shared login</p>
+  <h2 class="doc-block-heading">Re-login if sync stopped</h2>
+  <p class="doc-block-intro">Cloud web, desktop, and mobile share one KM0 login. If the desktop client logged you out after that change, reconnect the existing account instead of creating a second sync folder. Step-by-step: <a href="/en/tutorials/opencloud-desktop-relogin/">Re-login on OpenCloud Desktop</a>.</p>
+</section>
+
   <p class="doc-block-title">Storage</p>
   <h2 class="doc-block-heading">150 GB public plan</h2>
   <p class="doc-block-intro">The published plan is <strong>150 GB for €1.99/month</strong>. A multi-year phone library can exceed that. Check size before you promise yourself a full dump. Larger quotas are handled on request (see <a href="/en/pricing/">pricing</a> and contact).</p>

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /en/testing/
 
 Sitemap: https://km0digital.com/sitemap-index.xml

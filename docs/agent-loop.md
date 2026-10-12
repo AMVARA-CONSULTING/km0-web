@@ -99,3 +99,14 @@ Shell/Python sync - do not rely on cursor-agent alone:
 | CLOSED archived to `done/` | `move-agent-task-to-done.sh` → `redmine_sync.py note` (when Redmine configured) |
 
 Run `./scripts/setup-autoagents-gh.sh` once to create `agent:*` labels. Token needs **Issues: Read and write**.
+
+## Cursor token / usage alerts
+
+When `cursor-agent` exits non-zero and the log matches usage/token exhaustion (same signals as Maestro `token_alert`), the loop calls host helper:
+
+`/opt/amvara/scripts/cursor-token-alert.sh`
+
+- Discord webhook (same family as disk/econs alerts) with `@everyone`
+- Host-wide cooldown default **1800s** (`/etc/amvara/cursor-token-alert.env`)
+- Smoke: `cursor-token-alert.sh --smoke --project <id>`
+

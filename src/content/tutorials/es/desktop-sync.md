@@ -64,6 +64,13 @@ platform: desktop
 </section>
 
 <section class="doc-block doc-block-alt">
+  
+<section class="doc-block">
+  <p class="doc-block-title">Tras el login compartido</p>
+  <h2 class="doc-block-heading">Vuelve a iniciar sesión si el sync se paró</h2>
+  <p class="doc-block-intro">Cloud web, escritorio y móvil comparten un solo login KM0. Si el cliente de escritorio te cerró la sesión tras ese cambio, reconecta la cuenta existente en lugar de crear una segunda carpeta de sync. Paso a paso: <a href="/tutorials/opencloud-desktop-relogin/">Volver a iniciar sesión en OpenCloud Desktop</a>.</p>
+</section>
+
   <p class="doc-block-title">Almacenamiento</p>
   <h2 class="doc-block-heading">150 GB de plan público</h2>
   <p class="doc-block-intro">El plan publicado es <strong>150 GB por 1,99 €/mes</strong>. Una biblioteca de varios años puede pasarse. Comprueba el tamaño antes de prometerte un volcado completo. Cuotas mayores se tratan bajo petición (ver <a href="/pricing/">precios</a> y contacto).</p>

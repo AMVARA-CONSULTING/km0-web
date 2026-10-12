@@ -22,7 +22,7 @@ Logo for sends: `https://km0digital.com/brand/logo-icon.png` (source in `public/
 
 - Dark-only canvas (matches the marketing site; no light card, no purple gradient).
 - Signal teal bar + CTA (`#2DD4BF` on Paper text).
-- IBM Plex Sans for UI and body, with Helvetica / Arial fallbacks.
+- IBM Plex Sans named first for UI and body, with Helvetica / Arial fallbacks. No Google Fonts CDN `@import` (email clients use the stack fallbacks).
 - Soft radius card (`16px`), Mist hairlines (`#2A3344`), no pill CTAs.
 
 ## Placeholders

@@ -54,11 +54,29 @@ function initScrollReveal() {
         observer.unobserve(el);
       });
     },
-    /* Trigger when a meaningful slice is on screen so the rise is seen */
-    { threshold: 0.18, rootMargin: '0px 0px -12% 0px' }
+    /*
+     * threshold 0 (not 0.18): a tall node (legal/security body) can never
+     * cover 18% of itself inside a phone viewport, so it stayed opacity 0.
+     * Negative bottom margin still waits until a slice is in view.
+     */
+    { threshold: 0, rootMargin: '0px 0px -8% 0px' }
   );
 
-  elements.forEach((el) => observer.observe(el));
+  elements.forEach((el) => {
+    if (isAlreadyOnScreen(el)) {
+      el.classList.add('is-visible');
+      return;
+    }
+    observer.observe(el);
+  });
+}
+
+/** True when any pixel of el overlaps the viewport above the bottom band. */
+function isAlreadyOnScreen(el: HTMLElement): boolean {
+  const rect = el.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+  const bottomBand = vh * 0.08;
+  return rect.bottom > 0 && rect.top < vh - bottomBand;
 }
 
 function initMastheadScroll() {

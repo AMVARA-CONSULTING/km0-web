@@ -38,10 +38,10 @@ platform: ios
   <h2 class="doc-block-heading">Continua cap a l'inici de sessió</h2>
   <ol class="doc-list">
     <li>Després de confirmar la URL del servidor, l'app et portarà a la pantalla d'accés.</li>
-    <li>Veuràs opcions similars a la versió web: compte KM0 Cloud, Google, Apple o altres, segons la configuració del servidor.</li>
+    <li>Veuràs la pantalla d'accés KM0 compartida (el mateix login que al navegador). Introdueix les credencials KM0 i el codi de dos factors si has activat 2FA.</li>
     <li>El disseny pot adaptar-se a les convencions d'iOS, però el procés és el mateix: tria el teu mètode i completa l'accés.</li>
   </ol>
-  <p class="doc-block-intro">Per a més detall sobre l'accés, consulta el tutorial <a href="/ca/tutorials/getting-started-web/">Com començar al navegador</a>.</p>
+  <p class="doc-block-intro">Per a més detall sobre l'accés, consulta <a href="/ca/tutorials/keycloak-sign-in-cloud/">Iniciar sessió a KM0 Cloud amb el login compartit</a>.</p>
 </section>
 
 <section class="doc-block doc-block-alt">

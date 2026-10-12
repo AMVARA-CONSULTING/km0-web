@@ -49,10 +49,10 @@ const canonicalUrl = new URL(localeHref(locale, '/legal/'), siteRoot).href;
           </ol>
         </nav>
 
-        <div class="doc-body" data-reveal data-delay="100">
+        <div class="doc-body">
           {
             l.sections.map((section) => (
-              <section id={section.id} class="doc-block scroll-mt-28">
+              <section id={section.id} class="doc-block scroll-mt-28" data-reveal>
                 <h2 class="doc-block-title">{section.title}</h2>
                 <div set:html={section.bodyHtml} />
               </section>

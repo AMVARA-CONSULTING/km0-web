@@ -38,9 +38,9 @@ platform: android
   <h2 class="doc-block-heading">Continue to sign-in</h2>
   <ol class="doc-list">
     <li>After entering the URL, tap <strong>Next</strong> or the arrow icon (depending on the app version).</li>
-    <li>You will see the sign-in screen with the same options as on the web: own account, Google, Apple, or others, depending on what the server supports.</li>
+    <li>You will see the shared KM0 sign-in screen (same login as in the browser). Enter your KM0 credentials, and a two-factor code if you enabled 2FA.</li>
   </ol>
-  <p class="doc-block-intro">For more detail on signing in, see the <a href="/en/tutorials/getting-started-web/">Getting started in your browser</a> tutorial.</p>
+  <p class="doc-block-intro">For more detail on signing in, see <a href="/en/tutorials/keycloak-sign-in-cloud/">Sign in to KM0 Cloud with the shared login</a>.</p>
 </section>
 
 <section class="doc-block doc-block-alt">

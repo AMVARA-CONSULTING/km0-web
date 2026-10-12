@@ -249,6 +249,17 @@
     }
   }
 
+  /* No JS: keep legal/reading copy visible (content blockers, noscript). */
+  @media (scripting: none) {
+    [data-reveal],
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+  }
+
   .chip {
     @apply rounded-full border border-navy/10 bg-white px-5 py-2 text-base font-medium text-navy/80 shadow-sm;
   }

@@ -541,7 +541,7 @@
     "title": "Núvol i correu a la UE",
     "lead": "Cloud i correu a la UE, preu públic. Descarrega el PDF o torna a l’inici.",
     "download": "Descarregar PDF",
-    "downloadHint": "Document original (~618 KB)",
+    "downloadHint": "Document regenerat (~60 KB)",
     "why": {
       "title": "Per què existeix KM0?",
       "body": "Perquè vols fitxers i correu sense que el teu perfil sigui el producte. Som l'operador local."
@@ -646,7 +646,7 @@
       "lead": "Obre Cloud o escriu-nos.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",
-      "email": "hello@km0digital.com"
+      "email": "info@km0digital.com"
     }
   },
   "footer": {

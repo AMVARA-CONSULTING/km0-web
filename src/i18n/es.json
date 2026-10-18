@@ -541,7 +541,7 @@
     "title": "Nube y correo en la UE",
     "lead": "Cloud y correo en la UE, precio público. Descarga el PDF o vuelve al inicio.",
     "download": "Descargar PDF",
-    "downloadHint": "Documento original (~618 KB)",
+    "downloadHint": "Documento regenerado (~60 KB)",
     "why": {
       "title": "¿Por qué existe KM0?",
       "body": "Porque quieres archivos y correo sin que tu perfil sea el producto. Somos el operador local."
@@ -646,7 +646,7 @@
       "lead": "Abre Cloud o escríbenos.",
       "website": "km0digital.com",
       "cloud": "cloud.km0digital.com",
-      "email": "hello@km0digital.com"
+      "email": "info@km0digital.com"
     }
   },
   "footer": {

@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:22-alpine AS build
+FROM node:22.23.4-alpine AS build
 WORKDIR /app
 ARG CLOUD_ADMIN_USER
 ARG CLOUD_APP_TOKEN

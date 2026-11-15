@@ -14,9 +14,9 @@
     "prebuild": "npm run check:no-em-dash && npm run check:no-mailto"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/sitemap": "3.7.5",
     "@tailwindcss/vite": "4.3.5",
-    "astro": "7.4.7",
+    "astro": "7.4.12",
     "tailwindcss": "4.3.5"
   }
 }

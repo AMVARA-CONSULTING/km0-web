@@ -49,7 +49,7 @@ product: cloud
   <p class="doc-block-title">Problemes habituals</p>
   <h2 class="doc-block-heading">Solució de problemes (web)</h2>
   <ul class="doc-list">
-    <li><strong>He oblidat la contrasenya:</strong> usa la recuperació a la pantalla d'accés.</li>
+    <li><strong>He oblidat la contrasenya:</strong> usa la recuperació a la pantalla d'accés. Per <strong>canviar-la</strong> si encara saps l'actual: <a href="/ca/tutorials/keycloak-change-password/">Canviar la contrasenya del teu compte KM0</a>.</li>
     <li><strong>La pàgina fa voltes:</strong> esborra galetes de Cloud, o prova una finestra privada, i inicia sessió un cop.</li>
     <li><strong>La pàgina no carrega:</strong> comprova la connexió i que l'URL sigui exactament <code>https://cloud.km0digital.com/</code>.</li>
   </ul>

@@ -49,7 +49,7 @@ product: cloud
   <p class="doc-block-title">Häufige Probleme</p>
   <h2 class="doc-block-heading">Fehlerbehebung (Web)</h2>
   <ul class="doc-list">
-    <li><strong>Passwort vergessen:</strong> Wiederherstellung auf dem Anmeldebildschirm nutzen.</li>
+    <li><strong>Passwort vergessen:</strong> Wiederherstellung auf dem Anmeldebildschirm nutzen. Zum <strong>Ändern</strong> bei bekanntem aktuellem Passwort: <a href="/de/tutorials/keycloak-change-password/">KM0-Kontopasswort ändern</a>.</li>
     <li><strong>Seite schleift:</strong> Cookies für Cloud löschen oder privates Fenster, dann einmal anmelden.</li>
     <li><strong>Seite lädt nicht:</strong> Internet prüfen und URL genau <code>https://cloud.km0digital.com/</code>.</li>
   </ul>

@@ -708,13 +708,13 @@
     "eyebrow": "Security",
     "heading": "Security and responsible disclosure",
     "intro": "How we protect km0digital.com, KM0 Cloud, KM0 Email, and related infrastructure, and how to report security vulnerabilities in good faith.",
-    "updated": "Last updated: September 2026",
+    "updated": "Last updated: November 2026",
     "tocTitle": "On this page",
     "sections": [
       {
         "id": "practices",
         "title": "Security practices",
-        "bodyHtml": "<p><a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> operates KM0 Digital. This page states what matters if you use the site, Cloud, or Email.</p><ul class=\"doc-list\"><li><strong>Encryption:</strong> HTTPS/TLS on km0digital.com, cloud.km0digital.com, and mail.km0digital.com, with Let's Encrypt certificates. Mail uses TLS for IMAP and for sending.</li><li><strong>Mail:</strong> spam filtering, DKIM signing, and SPF and DMARC records.</li><li><strong>Browser:</strong> HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy.</li><li><strong>Data:</strong> in Germany, at Hetzner, inside the EU.</li><li><strong>Copies:</strong> we keep service copies so we can restore.</li></ul><p>We do not claim SOC 2, HIPAA, or CCPA, and we do not claim a penetration test or a third-party audit, unless we publish that claim.</p><p>Privacy: <a href=\"/en/legal/\">legal page</a>.</p>"
+        "bodyHtml": "<p><a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> operates KM0 Digital. This page states what matters if you use the site, Cloud, or Email.</p><ul class=\"doc-list\"><li><strong>Encryption:</strong> HTTPS/TLS on km0digital.com, cloud.km0digital.com, and mail.km0digital.com, with Let's Encrypt certificates. Mail uses TLS for IMAP and for sending.</li><li><strong>Mail:</strong> spam filtering, DKIM signing, and SPF and DMARC records.</li><li><strong>Browser:</strong> HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy.</li><li><strong>Data:</strong> in Germany, at Hetzner, inside the EU.</li><li><strong>Copies:</strong> we keep service copies so we can restore. Disaster recovery targets: RPO 1 day, RTO under 8 hours (depends on storage size).</li></ul><p>We do not claim SOC 2, HIPAA, or CCPA, and we do not claim a penetration test or a third-party audit, unless we publish that claim.</p><p>Privacy: <a href=\"/en/legal/\">legal page</a>.</p>"
       },
       {
         "id": "iso27001",

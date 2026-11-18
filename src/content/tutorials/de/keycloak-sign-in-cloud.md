@@ -48,6 +48,7 @@ featured: true
   <h2 class="doc-block-heading">Fehlerbehebung</h2>
   <ul class="doc-list">
     <li><strong>Passwort vergessen:</strong> <strong>Forgot Password?</strong> auf dem Anmeldebildschirm nutzen.</li>
+    <li><strong>Passwort ändern:</strong> <a href="/de/tutorials/keycloak-change-password/">KM0-Kontopasswort ändern</a> folgen (SSO-Konsole, nicht in OpenCloud).</li>
     <li><strong>Seite schleift:</strong> Cookies für Cloud löschen oder privates Fenster, dann einmal anmelden.</li>
     <li><strong>Desktop-Sync steht:</strong> <a href="/de/tutorials/opencloud-desktop-relogin/">Erneute Anmeldung in OpenCloud Desktop</a> folgen.</li>
   </ul>

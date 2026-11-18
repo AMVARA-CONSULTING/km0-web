@@ -48,6 +48,7 @@ featured: true
   <h2 class="doc-block-heading">Solución de problemas</h2>
   <ul class="doc-list">
     <li><strong>Olvidé la contraseña:</strong> usa <strong>Forgot Password?</strong> en la pantalla de acceso.</li>
+    <li><strong>Quiero cambiar la contraseña:</strong> sigue <a href="/tutorials/keycloak-change-password/">Cambiar la contraseña de tu cuenta KM0</a> (consola SSO, no dentro de OpenCloud).</li>
     <li><strong>La página da vueltas:</strong> borra cookies de Cloud, o prueba una ventana privada, e inicia sesión una vez.</li>
     <li><strong>El sync de escritorio se paró:</strong> sigue <a href="/tutorials/opencloud-desktop-relogin/">Volver a iniciar sesión en OpenCloud Desktop</a>.</li>
   </ul>

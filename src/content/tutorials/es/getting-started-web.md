@@ -49,7 +49,7 @@ product: cloud
   <p class="doc-block-title">Problemas habituales</p>
   <h2 class="doc-block-heading">Solución de problemas (web)</h2>
   <ul class="doc-list">
-    <li><strong>Olvidé la contraseña:</strong> usa la recuperación en la pantalla de acceso.</li>
+    <li><strong>Olvidé la contraseña:</strong> usa la recuperación en la pantalla de acceso. Para <strong>cambiarla</strong> conociendo la actual: <a href="/tutorials/keycloak-change-password/">Cambiar la contraseña de tu cuenta KM0</a>.</li>
     <li><strong>La página da vueltas:</strong> borra cookies de Cloud, o prueba una ventana privada, e inicia sesión una vez.</li>
     <li><strong>La página no carga:</strong> comprueba la conexión y que la URL sea exactamente <code>https://cloud.km0digital.com/</code>.</li>
   </ul>

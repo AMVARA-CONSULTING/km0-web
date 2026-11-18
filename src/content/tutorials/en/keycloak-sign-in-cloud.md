@@ -48,6 +48,7 @@ featured: true
   <h2 class="doc-block-heading">Troubleshooting</h2>
   <ul class="doc-list">
     <li><strong>I forgot my password:</strong> use <strong>Forgot Password?</strong> on the sign-in screen.</li>
+    <li><strong>I want to change my password:</strong> follow <a href="/en/tutorials/keycloak-change-password/">Change your KM0 account password</a> (SSO console, not inside OpenCloud).</li>
     <li><strong>The page loops:</strong> clear cookies for Cloud, or try a private window, then sign in once.</li>
     <li><strong>Desktop sync stopped:</strong> follow <a href="/en/tutorials/opencloud-desktop-relogin/">Re-login on OpenCloud Desktop</a>.</li>
   </ul>

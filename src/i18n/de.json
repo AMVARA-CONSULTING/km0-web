@@ -708,13 +708,13 @@
     "eyebrow": "Sicherheit",
     "heading": "Sicherheit und verantwortungsvolle Offenlegung",
     "intro": "Wie wir km0digital.com, KM0 Cloud, KM0 Email und zugehörige Infrastruktur schützen und wie Sie Sicherheitslücken in gutem Glauben melden.",
-    "updated": "Zuletzt aktualisiert: September 2026",
+    "updated": "Zuletzt aktualisiert: November 2026",
     "tocTitle": "Auf dieser Seite",
     "sections": [
       {
         "id": "practices",
         "title": "Sicherheitspraktiken",
-        "bodyHtml": "<p><a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> betreibt KM0 Digital. Hier steht, was zählt, wenn Sie die Website, Cloud oder E-Mail nutzen.</p><ul class=\"doc-list\"><li><strong>Verschlüsselung:</strong> HTTPS/TLS für km0digital.com, cloud.km0digital.com und mail.km0digital.com, mit Let's-Encrypt-Zertifikaten. E-Mail nutzt TLS für IMAP und für den Versand.</li><li><strong>E-Mail:</strong> Spam-Filter, DKIM-Signatur und SPF- und DMARC-Einträge.</li><li><strong>Browser:</strong> HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy und Permissions-Policy.</li><li><strong>Daten:</strong> in Deutschland, bei Hetzner, in der EU.</li><li><strong>Kopien:</strong> es gibt Kopien des Dienstes, damit wir wiederherstellen können.</li></ul><p>Wir behaupten nicht SOC 2, HIPAA oder CCPA, und auch keinen Penetrationstest oder ein Drittaudit, außer wir veröffentlichen das.</p><p>Datenschutz: <a href=\"/de/legal/\">Rechtsseite</a>.</p>"
+        "bodyHtml": "<p><a href=\"https://amvara.de/#/\" target=\"_blank\" rel=\"noopener noreferrer\">AMVARA CONSULTING S.L.</a> betreibt KM0 Digital. Hier steht, was zählt, wenn Sie die Website, Cloud oder E-Mail nutzen.</p><ul class=\"doc-list\"><li><strong>Verschlüsselung:</strong> HTTPS/TLS für km0digital.com, cloud.km0digital.com und mail.km0digital.com, mit Let's-Encrypt-Zertifikaten. E-Mail nutzt TLS für IMAP und für den Versand.</li><li><strong>E-Mail:</strong> Spam-Filter, DKIM-Signatur und SPF- und DMARC-Einträge.</li><li><strong>Browser:</strong> HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy und Permissions-Policy.</li><li><strong>Daten:</strong> in Deutschland, bei Hetzner, in der EU.</li><li><strong>Kopien:</strong> es gibt Kopien des Dienstes, damit wir wiederherstellen können. Disaster-Recovery-Ziele: RPO 1 Tag, RTO unter 8 Stunden (abhängig von der Speichermenge).</li></ul><p>Wir behaupten nicht SOC 2, HIPAA oder CCPA, und auch keinen Penetrationstest oder ein Drittaudit, außer wir veröffentlichen das.</p><p>Datenschutz: <a href=\"/de/legal/\">Rechtsseite</a>.</p>"
       },
       {
         "id": "iso27001",

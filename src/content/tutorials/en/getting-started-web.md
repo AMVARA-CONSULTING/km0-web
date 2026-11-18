@@ -49,7 +49,7 @@ product: cloud
   <p class="doc-block-title">Common problems</p>
   <h2 class="doc-block-heading">Troubleshooting (web)</h2>
   <ul class="doc-list">
-    <li><strong>I forgot my password:</strong> use the recovery option on the sign-in screen.</li>
+    <li><strong>I forgot my password:</strong> use the recovery option on the sign-in screen. To <strong>change</strong> it when you still know the current one: <a href="/en/tutorials/keycloak-change-password/">Change your KM0 account password</a>.</li>
     <li><strong>The page loops:</strong> clear cookies for Cloud, or try a private window, then sign in once.</li>
     <li><strong>The page does not load:</strong> check your internet connection and that the URL is exactly <code>https://cloud.km0digital.com/</code>.</li>
   </ul>
